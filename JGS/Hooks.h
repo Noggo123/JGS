@@ -50,7 +50,7 @@ namespace Hooks
 			}
 		}
 
-		if (pFunction->FunctionFlags & 0x01000000 || pFunction->FunctionFlags & 0x00200000 && FuncName.find("UpdateCamera") == std::string::npos && FuncName.find("NoBase") == std::string::npos && FuncName.find("ClientAckGoodMove") == std::string::npos)
+		if (pFunction->FunctionFlags & 0x01000000 || pFunction->FunctionFlags & 0x00200000 && !FuncName.contains("UpdateCamera") && !FuncName.contains("NoBase") && !FuncName.contains("ClientAckGoodMove"))
 		{
 			LOG("RPC: " << FuncName);
 		}
