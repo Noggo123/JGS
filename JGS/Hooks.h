@@ -160,8 +160,8 @@ namespace Hooks
 
 						auto Montage = EmoteAsset->GetAnimationHardReference(EFortCustomBodyType::All, EFortCustomGender::Both);
 
-						if (AthenaPlayerPawn->RepAnimMontageInfo.AnimMontage != Montage)
-						{
+					//	if (AthenaPlayerPawn->RepAnimMontageInfo.AnimMontage != Montage)
+						//{
 
 							AthenaPlayerPawn->RepAnimMontageInfo.AnimMontage = Montage;
 							AthenaPlayerPawn->RepAnimMontageInfo.PlayRate = 1;
@@ -174,6 +174,7 @@ namespace Hooks
 								auto thisok = AnimInstance->Montage_Play(Montage, 1, EMontagePlayReturnType::Duration, 0);
 
 								AthenaPlayerPawn->OnRep_ReplicatedAnimMontage();
+								AthenaPlayerPawn->OnRep_AttachmentReplication();
 							}
 						}
 					}
