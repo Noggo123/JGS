@@ -156,8 +156,7 @@ namespace Hooks
 						if (AthenaPlayerPawn->bIsCrouched) AthenaPlayerPawn->UnCrouch(true);
 
 						auto EmoteAsset = static_cast<AFortPlayerController_ServerPlayEmoteItem_Params*>(pParams)->EmoteAsset;
-						printf("\LogServer: %s want to play %s!\n", AthenaPlayerPawn->PlayerState->GetPlayerName().ToString().c_str(), EmoteAsset->GetName().c_str());
-
+						LOG("%s wants to play %s!", AthenaPlayerPawn->PlayerState->GetPlayerName().ToString().c_str(), EmoteAsset->GetName().c_str());
 
 						auto Montage = EmoteAsset->GetAnimationHardReference(EFortCustomBodyType::All, EFortCustomGender::Both);
 
