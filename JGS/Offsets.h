@@ -22,4 +22,5 @@ namespace Offsets
 
 	//Gameplay
 	uintptr_t InternalTryActivateAbility = 0x29B9D50;
+	uintptr_t SpawnActor = 0x1A9D0F0;
 }

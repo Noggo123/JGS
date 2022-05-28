@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Inventory.h"
 
 namespace Beacons
@@ -34,23 +35,21 @@ namespace Beacons
 
 	void NotifyActorDestroyedHook(UNetDriver* NetDriver, AActor* Actor, bool IsSeamlessTravel)
 	{
-		if (Actor)
+		LOG("Trying to destroy actor: " << Actor->GetName());
+
+		for (int i = 0; i < NetDriver->ClientConnections.Num(); i++)
 		{
-			for (int i = 0; i < NetDriver->ClientConnections.Num(); i++)
+			auto Connection = NetDriver->ClientConnections[i];
+
+			if (Connection)
 			{
-				auto Connection = NetDriver->ClientConnections[i];
+				auto ActorChannel = Replication::FindChannel(Actor, Connection);
+				if (!ActorChannel)
+					return;
 
-				if (Connection)
+				if (ActorChannel)
 				{
-					auto ActorChannel = Replication::FindChannel(Actor, Connection);
-					if (!ActorChannel)
-						return;
-
-					if (ActorChannel)
-					{
-						LOG("Trying to destroy actor: " << ActorChannel->GetName());
-						Replication::ActorChannelClose(ActorChannel);
-					}
+					Replication::ActorChannelClose(ActorChannel);
 				}
 			}
 		}

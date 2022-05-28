@@ -8,6 +8,7 @@ namespace Hooks
 	bool bHasInitedTheBeacon = false;
 
 	bool (*InternalTryActivateAbility)(UAbilitySystemComponent*, FGameplayAbilitySpecHandle, FPredictionKey, UGameplayAbility**, void*, const FGameplayEventData* TriggerEventData);
+	AActor* (*SpawnActor)(UWorld*, UClass*, FTransform, FActorSpawnParameters);
 
 	LPVOID(*ProcessEvent)(void*, void*, void*);
 	LPVOID ProcessEventHook(UObject* pObject, UFunction* pFunction, LPVOID pParams)
@@ -29,6 +30,18 @@ namespace Hooks
 				auto GameState = (AFortGameStateAthena*)(Globals::World->GameState);
 				GameState->GamePhase = EAthenaGamePhase::Warmup;
 				GameState->OnRep_GamePhase(EAthenaGamePhase::None);
+
+				TArray<AActor*> OutHLODs;
+				Globals::GPS->STATIC_GetAllActorsOfClass(Globals::World, AFortHLODSMActor::StaticClass(), &OutHLODs);
+				for (int i = 0; i < OutHLODs.Num(); i++)
+				{
+					auto Actor = OutHLODs[i];
+
+					if (Actor)
+					{
+						Actor->K2_DestroyActor();
+					}
+				}
 			}
 		}
 
@@ -42,7 +55,7 @@ namespace Hooks
 				{
 					auto FortPlayerController = (AFortPlayerControllerAthena*)(Connection->PlayerController);
 
-					if (FortPlayerController->IsInAircraft())
+					if (FortPlayerController->IsInAircraft() && FortPlayerController->Pawn /*Check if the pawn is still on spawn island if its not than they are dead!*/)
 					{
 						FortPlayerController->ServerAttemptAircraftJump({});
 					}
@@ -62,27 +75,27 @@ namespace Hooks
 
 		/////////// RPCS ////////////
 
-		if (FuncName.find("ServerReadyToStartMatch") != std::string::npos)
+		if (FuncName.contains("ServerReadyToStartMatch"))
 		{
 			auto PC = (AFortPlayerController*)pObject;
 			PC->bReadyToStartMatch = true;
 		}
 
-		if (FuncName.find("ServerClientPawnLoaded") != std::string::npos)
+		if (FuncName.contains("ServerClientPawnLoaded"))
 		{
 			auto PC = (AFortPlayerController*)pObject;
 			auto Params = (AFortPlayerController_ServerClientPawnLoaded_Params*)pParams;
 			PC->bClientPawnIsLoaded = Params->bIsPawnLoaded;
 		}
 
-		if (FuncName.find("ServerSetClientHasFinishedLoading") != std::string::npos)
+		if (FuncName.contains("ServerSetClientHasFinishedLoading"))
 		{
 			auto PC = (AFortPlayerController*)pObject;
 			auto Params = (AFortPlayerController_ServerSetClientHasFinishedLoading_Params*)pParams;
 			PC->bHasClientFinishedLoading = Params->bInHasFinishedLoading;
 		}
 
-		if (FuncName.find("ServerExecuteInventoryItem") != std::string::npos)
+		if (FuncName.contains("ServerExecuteInventoryItem"))
 		{
 			auto PC = (AFortPlayerController*)pObject;
 			auto Params = (AFortPlayerController_ServerExecuteInventoryItem_Params*)pParams;
@@ -107,7 +120,7 @@ namespace Hooks
 			}
 		}
 
-		if (FuncName.find("ServerAttemptAircraftJump") != std::string::npos)
+		if (FuncName.contains("ServerAttemptAircraftJump"))
 		{
 			auto PC = (AFortPlayerControllerAthena*)pObject;
 
@@ -122,13 +135,13 @@ namespace Hooks
 			}
 		}
 
-		if (FuncName.find("ServerReturnToMainMenu") != std::string::npos)
+		if (FuncName.contains("ServerReturnToMainMenu"))
 		{
 			auto PC = (AFortPlayerController*)pObject;
 			PC->ClientTravel(L"/Game/Maps/Frontend", ETravelType::TRAVEL_Absolute, false, FGuid());
 		}
 
-		if (FuncName.find("ServerHandlePickup") != std::string::npos)
+		if (FuncName.contains("ServerHandlePickup"))
 		{
 			auto Pawn = (AFortPlayerPawn*)pObject;
 			auto Params = (AFortPlayerPawn_ServerHandlePickup_Params*)pParams;
@@ -143,6 +156,11 @@ namespace Hooks
 			}
 		}
 
+		if (FuncName.contains("ServerCreateBuildingActor"))
+		{
+			auto PlayerController = (AFortPlayerController*)pObject;
+
+		}
 
 		// FIX TOMORROW
 		if (FuncName.find("ServerPlayEmoteItem") != std::string::npos)
