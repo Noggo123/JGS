@@ -23,6 +23,7 @@ namespace Replication
 	inline static __int64 (*SetChannelActor)(UActorChannel*, AActor*);
 	inline static void (*CallPreReplication)(AActor*, UNetDriver*);
 	inline static void (*SendClientAdjustment)(APlayerController*);
+	inline static void (*ActorChannelClose)(UActorChannel*);
 
 	UActorChannel* ReplicateToClient(AActor* InActor, UNetConnection* InConnection)
 	{
@@ -244,5 +245,6 @@ namespace Replication
 		ReplicateActor = decltype(ReplicateActor)(BaseAddress + Offsets::ReplicateActor);
 		CallPreReplication = decltype(CallPreReplication)(BaseAddress + Offsets::CallPreReplication);
 		SendClientAdjustment = decltype(SendClientAdjustment)(BaseAddress + Offsets::SendClientAdjustment);
+		ActorChannelClose = decltype(ActorChannelClose)(BaseAddress + Offsets::ActorChannelClose);
 	}
 }

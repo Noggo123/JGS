@@ -50,7 +50,12 @@ namespace Hooks
 			}
 		}
 
-		if (pFunction->FunctionFlags & 0x01000000 || pFunction->FunctionFlags & 0x00200000 && !FuncName.contains("UpdateCamera") && !FuncName.contains("NoBase") && !FuncName.contains("ClientAckGoodMove"))
+		if (pFunction->FunctionFlags & 0x01000000 || pFunction->FunctionFlags & 0x00200000 && 
+			!FuncName.contains("UpdateCamera") &&
+			!FuncName.contains("NoBase") &&
+			!FuncName.contains("ClientAckGoodMove") &&
+			!FuncName.contains("ServerMoveOld") &&
+			!FuncName.contains("ClientAdjustPosition"))
 		{
 			LOG("RPC: " << FuncName);
 		}

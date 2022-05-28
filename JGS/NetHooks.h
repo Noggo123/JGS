@@ -11,7 +11,7 @@ namespace Beacons
 	void(*UWorld_NotifyControlMessage)(UWorld* World, UNetConnection* NetConnection, uint8_t a3, void* a4);
 
 	void (*TickFlush)(UNetDriver*, float DeltaSeconds);
-	void (*AddNetworkActor)(UWorld*, AActor*);
+	void (*NotifyActorDestroyed)(UNetDriver*, AActor*, bool);
 
 	FVector GetPlayerStart()
 	{
@@ -30,6 +30,32 @@ namespace Beacons
 		LOG("AOnlineBeaconHost::NotifyControlMessage Called! " << std::to_string(a3).c_str());
 		LOG("Channel Count " << std::to_string(NetConnection->OpenChannels.Num()).c_str());
 		return UWorld_NotifyControlMessage(Globals::World, NetConnection, a3, a4);
+	}
+
+	void NotifyActorDestroyedHook(UNetDriver* NetDriver, AActor* Actor, bool IsSeamlessTravel)
+	{
+		if (Actor)
+		{
+			for (int i = 0; i < NetDriver->ClientConnections.Num(); i++)
+			{
+				auto Connection = NetDriver->ClientConnections[i];
+
+				if (Connection)
+				{
+					auto ActorChannel = Replication::FindChannel(Actor, Connection);
+					if (!ActorChannel)
+						return;
+
+					if (ActorChannel)
+					{
+						LOG("Trying to destroy actor: " << ActorChannel->GetName());
+						Replication::ActorChannelClose(ActorChannel);
+					}
+				}
+			}
+		}
+
+		return;
 	}
 
 	void TickFlushHook(UNetDriver* NetDriver, float DeltaSeconds)
@@ -138,6 +164,8 @@ namespace Beacons
 
 			MH_CreateHook((void*)(TickFlushAddr), TickFlushHook, (void**)(&TickFlush));
 			MH_EnableHook((void*)(TickFlushAddr));
+			MH_CreateHook((void*)(BaseAddr + Offsets::NotifyActorDestroyed), NotifyActorDestroyedHook, (void**)(&NotifyActorDestroyed));
+			MH_EnableHook((void*)(BaseAddr + Offsets::NotifyActorDestroyed));
 
 			LOG("Server is now listening!");
 		}

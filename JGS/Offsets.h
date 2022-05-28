@@ -9,6 +9,8 @@ namespace Offsets
 	uintptr_t CallPreReplication = 0x17972E0;
 	uintptr_t TickFlush = 0x1B1D1E0;
 	uintptr_t SendClientAdjustment = 0x1C1D490;
+	uintptr_t NotifyActorDestroyed = 0x1B15CF0;
+	uintptr_t ActorChannelClose = 0x198D480;
 
 	//Beacons
 	uintptr_t InitHost = 0x27B4820;
