@@ -61,14 +61,14 @@ namespace Inventory
         PC->QuickBars = NewQuickBars;
         PC->OnRep_QuickBar();
 
-		auto pWood = UObject::FindObject<UFortItemDefinition>("WoodItemData.WoodItemData");
-		auto pMetal = UObject::FindObject<UFortItemDefinition>("MetalItemData.MetalItemData");
-		auto pStone = UObject::FindObject<UFortItemDefinition>("StoneItemData.StoneItemData");
-        auto pRockets = UObject::FindObject<UFortItemDefinition>("AthenaAmmoDataRockets.AthenaAmmoDataRockets");
-        auto pShells = UObject::FindObject<UFortItemDefinition>("AthenaAmmoDataShells.AthenaAmmoDataShells");
-        auto pMedium = UObject::FindObject<UFortItemDefinition>("AthenaAmmoDataBulletsMedium.AthenaAmmoDataBulletsMedium");
-        auto pLight = UObject::FindObject<UFortItemDefinition>("AthenaAmmoDataBulletsLight.AthenaAmmoDataBulletsLight");
-        auto pHeavy = UObject::FindObject<UFortItemDefinition>("AthenaAmmoDataBulletsHeavy.AthenaAmmoDataBulletsHeavy");
+		auto pWood = UObject::FindObject<UFortItemDefinition>("FortResourceItemDefinition WoodItemData.WoodItemData");
+		auto pMetal = UObject::FindObject<UFortItemDefinition>("FortResourceItemDefinition MetalItemData.MetalItemData");
+		auto pStone = UObject::FindObject<UFortItemDefinition>("FortResourceItemDefinition StoneItemData.StoneItemData");
+        auto pRockets = UObject::FindObject<UFortItemDefinition>("FortAmmoItemDefinition AthenaAmmoDataRockets.AthenaAmmoDataRockets");
+        auto pShells = UObject::FindObject<UFortItemDefinition>("FortAmmoItemDefinition AthenaAmmoDataShells.AthenaAmmoDataShells");
+        auto pMedium = UObject::FindObject<UFortItemDefinition>("FortAmmoItemDefinition AthenaAmmoDataBulletsMedium.AthenaAmmoDataBulletsMedium");
+        auto pLight = UObject::FindObject<UFortItemDefinition>("FortAmmoItemDefinition AthenaAmmoDataBulletsLight.AthenaAmmoDataBulletsLight");
+        auto pHeavy = UObject::FindObject<UFortItemDefinition>("FortAmmoItemDefinition AthenaAmmoDataBulletsHeavy.AthenaAmmoDataBulletsHeavy");
         ItemsToAddMap.insert_or_assign(pWood, 999);
         ItemsToAddMap.insert_or_assign(pMetal, 999);
         ItemsToAddMap.insert_or_assign(pStone, 999);
@@ -98,9 +98,12 @@ namespace Inventory
             auto ItemDef = Item.first;
             auto ItemCount = Item.second;
 
-            auto NewWorldItem = (UFortWorldItem*)(ItemDef->CreateTemporaryItemInstanceBP(ItemCount, 0));
-            FortInventory->Inventory.ReplicatedEntries.Add(NewWorldItem->ItemEntry);
-            FortInventory->Inventory.ItemInstances.Add(NewWorldItem);
+            if (ItemDef)
+            {
+                auto NewWorldItem = (UFortWorldItem*)(ItemDef->CreateTemporaryItemInstanceBP(ItemCount, 0));
+                FortInventory->Inventory.ReplicatedEntries.Add(NewWorldItem->ItemEntry);
+                FortInventory->Inventory.ItemInstances.Add(NewWorldItem);
+            }
         }
 
         ItemsToAddMap.empty();

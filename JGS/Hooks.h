@@ -161,6 +161,9 @@ namespace Hooks
 				PC->Possess(NewPawn);
 
 				((AFortPlayerState*)NewPawn->PlayerState)->OnRep_PlayerTeam();
+
+				auto PickaxeGuid = PC->QuickBars->PrimaryQuickBar.Slots[0].Items[0];
+				PC->ServerExecuteInventoryItem(PickaxeGuid);
 			}
 		}
 

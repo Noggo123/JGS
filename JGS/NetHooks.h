@@ -114,6 +114,9 @@ namespace Beacons
 		PlayerState->OnRep_bHasStartedPlaying();
 		PlayerState->OnRep_CharacterParts();
 
+		auto NewCheatManager = (UFortCheatManager*)(Globals::GPS->STATIC_SpawnObject(UFortCheatManager::StaticClass(), PlayerController));
+		PlayerController->CheatManager = NewCheatManager;
+
 		Inventory::SetupInventory(PlayerController);
 		Inventory::UpdateInventory(PlayerController);
 
