@@ -36,7 +36,7 @@ DWORD WINAPI MainThread(LPVOID)
     SDK::FNameToString = decltype(SDK::FNameToString)(FNameToStringAddress);
     SDK::FreeInternal = decltype(SDK::FreeInternal)(FreeMemoryAddress);
 
-    Hooks::SpawnActor = decltype(Hooks::SpawnActor)(BaseAddr + Offsets::SpawnActor);
+    Hooks::SpawnActorInternal = decltype(Hooks::SpawnActorInternal)(BaseAddr + Offsets::SpawnActor);
     Hooks::InternalTryActivateAbility = decltype(Hooks::InternalTryActivateAbility)(BaseAddr + Offsets::InternalTryActivateAbility);
 
     auto FortEngine = SDK::UObject::FindObject<UFortEngine>("FortEngine_");

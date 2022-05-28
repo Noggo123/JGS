@@ -8,7 +8,36 @@ namespace Hooks
 	bool bHasInitedTheBeacon = false;
 
 	bool (*InternalTryActivateAbility)(UAbilitySystemComponent*, FGameplayAbilitySpecHandle, FPredictionKey, UGameplayAbility**, void*, const FGameplayEventData* TriggerEventData);
-	AActor* (*SpawnActor)(UWorld*, UClass*, FTransform, FActorSpawnParameters);
+	AActor* (*SpawnActorInternal)(UWorld*, UClass*, FTransform, FActorSpawnParameters);
+
+	template<typename T = AActor>
+	T* SpawnActor(FVector Location, FRotator Rotation, UClass* ActorClass)
+	{
+		auto DEG_TO_RAD = 3.14159 / 180;
+		auto DIVIDE_BY_2 = DEG_TO_RAD / 2;
+
+		auto SP = sin(Rotation.Pitch * DIVIDE_BY_2);
+		auto CP = cos(Rotation.Pitch * DIVIDE_BY_2);
+
+		auto SY = sin(Rotation.Yaw * DIVIDE_BY_2);
+		auto CY = cos(Rotation.Yaw * DIVIDE_BY_2);
+
+		auto SR = sin(Rotation.Roll * DIVIDE_BY_2);
+		auto CR = cos(Rotation.Roll * DIVIDE_BY_2);
+
+		FQuat Quat;
+		Quat.X = CR * SP * SY - SR * CP * CY;
+		Quat.Y = -CR * SP * CY - SR * CP * SY;
+		Quat.Z = CR * CP * SY - SR * SP * CY;
+		Quat.W = CR * CP * CY + SR * SP * SY;
+
+		FTransform Transform;
+		Transform.Rotation = Quat;
+		Transform.Scale3D = { 1, 1, 1 };
+		Transform.Translation = Location;
+
+		return (T*)SpawnActorInternal(Globals::World, ActorClass, Transform, FActorSpawnParameters());
+	}
 
 	LPVOID(*ProcessEvent)(void*, void*, void*);
 	LPVOID ProcessEventHook(UObject* pObject, UFunction* pFunction, LPVOID pParams)
@@ -159,7 +188,16 @@ namespace Hooks
 		if (FuncName.contains("ServerCreateBuildingActor"))
 		{
 			auto PlayerController = (AFortPlayerController*)pObject;
-
+			if (PlayerController)
+			{
+				auto BuildLoc = PlayerController->LastBuildPreviewGridSnapLoc;
+				auto BuildRot = PlayerController->LastBuildPreviewGridSnapRot;
+				auto BuildClass = PlayerController->CurrentBuildableClass;
+				auto BuildingActor = SpawnActor<ABuildingActor>(BuildLoc, BuildRot, BuildClass);
+				if (BuildingActor) {
+					BuildingActor->InitializeKismetSpawnedBuildingActor(BuildingActor, PlayerController);
+				}
+			}
 		}
 
 		// FIX TOMORROW
