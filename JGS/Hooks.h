@@ -140,6 +140,50 @@ namespace Hooks
 			}
 		}
 
+		if (FuncName.find("ServerPlayEmoteItem") != std::string::npos)
+		{
+			for (int i = 0; i < Beacons::Beacon->NetDriver->ClientConnections.Num(); i++)
+			{
+				auto Connection = Beacons::Beacon->NetDriver->ClientConnections[i];
+
+				if (Connection && Connection->PlayerController)
+				{
+					auto ControllerFromObject = (AFortPlayerControllerAthena*)pObject;
+					auto AthenaPlayerPawn = (AFortPlayerPawnAthena*)ControllerFromObject->Pawn;
+
+					if (!ControllerFromObject->bIsPlayerActivelyMoving)
+					{
+						if (AthenaPlayerPawn->bIsCrouched) AthenaPlayerPawn->UnCrouch(true);
+
+						auto EmoteAsset = static_cast<AFortPlayerController_ServerPlayEmoteItem_Params*>(pParams)->EmoteAsset;
+						LOG("%s wants to play %s!", AthenaPlayerPawn->PlayerState->GetPlayerName().ToString().c_str(), EmoteAsset->GetName().c_str());
+
+						auto Montage = EmoteAsset->GetAnimationHardReference(EFortCustomBodyType::All, EFortCustomGender::Both);
+
+						if (AthenaPlayerPawn->RepAnimMontageInfo.AnimMontage != Montage)
+						{
+
+							AthenaPlayerPawn->RepAnimMontageInfo.AnimMontage = Montage;
+							AthenaPlayerPawn->RepAnimMontageInfo.PlayRate = 1;
+							AthenaPlayerPawn->RepAnimMontageInfo.IsStopped = false;
+							AthenaPlayerPawn->RepAnimMontageInfo.SkipPositionCorrection = true;
+
+							if (AthenaPlayerPawn->RepAnimMontageInfo.AnimMontage == Montage)
+							{
+								auto AnimInstance = AthenaPlayerPawn->Mesh->GetAnimInstance();
+								auto thisok = AnimInstance->Montage_Play(Montage, 1, EMontagePlayReturnType::Duration, 0);
+
+								AthenaPlayerPawn->OnRep_ReplicatedAnimMontage();
+								AthenaPlayerPawn->OnRep_AttachmentMesh();
+								AthenaPlayerPawn->OnRep_AttachmentReplication();
+								AthenaPlayerPawn->OnRep_ReplicateMovement();
+							}
+						}
+					}
+				}
+			}
+		}
+
 		/////////// RPCS ////////////
 
 		return ProcessEvent(pObject, pFunction, pParams);
