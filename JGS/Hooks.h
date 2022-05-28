@@ -25,6 +25,10 @@ namespace Hooks
 				Beacons::InitHooks(); //Sets up the beacon and inits replication for use!
 
 				bHasInitedTheBeacon = true;
+
+				auto GameState = (AFortGameStateAthena*)(Globals::World->GameState);
+				GameState->GamePhase = EAthenaGamePhase::Warmup;
+				GameState->OnRep_GamePhase(EAthenaGamePhase::None);
 			}
 		}
 
