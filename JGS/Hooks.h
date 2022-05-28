@@ -113,9 +113,7 @@ namespace Hooks
 			if (NewPawn) {
 				PC->Possess(NewPawn);
 
-				NewPawn->ServerChoosePart(EFortCustomPartType::Head, Globals::HeadPart);
-				NewPawn->ServerChoosePart(EFortCustomPartType::Body, Globals::BodyPart);
-				((AFortPlayerState*)NewPawn->PlayerState)->OnRep_CharacterParts();
+				((AFortPlayerState*)NewPawn->PlayerState)->OnRep_PlayerTeam();
 			}
 		}
 
@@ -140,6 +138,8 @@ namespace Hooks
 			}
 		}
 
+
+		// FIX TOMORROW
 		if (FuncName.find("ServerPlayEmoteItem") != std::string::npos)
 		{
 			for (int i = 0; i < Beacons::Beacon->NetDriver->ClientConnections.Num(); i++)
@@ -168,16 +168,13 @@ namespace Hooks
 							AthenaPlayerPawn->RepAnimMontageInfo.IsStopped = false;
 							AthenaPlayerPawn->RepAnimMontageInfo.SkipPositionCorrection = true;
 
-							if (AthenaPlayerPawn->RepAnimMontageInfo.AnimMontage == Montage)
-							{
-								auto AnimInstance = AthenaPlayerPawn->Mesh->GetAnimInstance();
-								auto thisok = AnimInstance->Montage_Play(Montage, 1, EMontagePlayReturnType::Duration, 0);
+							auto AnimInstance = AthenaPlayerPawn->Mesh->GetAnimInstance();
+							auto thisok = AnimInstance->Montage_Play(Montage, 1, EMontagePlayReturnType::Duration, 0);
 
-								AthenaPlayerPawn->OnRep_ReplicatedAnimMontage();
-								AthenaPlayerPawn->OnRep_AttachmentMesh();
-								AthenaPlayerPawn->OnRep_AttachmentReplication();
-								AthenaPlayerPawn->OnRep_ReplicateMovement();
-							}
+							AthenaPlayerPawn->OnRep_ReplicatedAnimMontage();
+							AthenaPlayerPawn->OnRep_AttachmentMesh();
+							AthenaPlayerPawn->OnRep_AttachmentReplication();
+							AthenaPlayerPawn->OnRep_ReplicateMovement();
 						}
 					}
 				}
