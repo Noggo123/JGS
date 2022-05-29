@@ -57,7 +57,7 @@ DWORD WINAPI MainThread(LPVOID)
 
     MH_Initialize();
 
-    Globals::PC->SwitchLevel(TEXT("Athena_Terrain"));
+    Globals::PC->SwitchLevel(TEXT("Athena_Faceoff"));
 
     Hooks::bIsReady = true;
 

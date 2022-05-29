@@ -119,6 +119,7 @@ namespace Beacons
 
 		Inventory::SetupInventory(PlayerController);
 		Inventory::UpdateInventory(PlayerController);
+		Abilities::GrantGameplayAbility(Pawn, UFortGameplayAbility_Jump::StaticClass());
 
 		PlayerState->OnRep_HeroType();
 
