@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,14 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function AthenaMatchStatsScreen.AthenaMatchStatsScreen_C.On_BorderTouchZone_MouseButtonDown
+struct UAthenaMatchStatsScreen_C_On_BorderTouchZone_MouseButtonDown_Params
+{
+	struct FGeometry                                   MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+	struct FPointerEvent                               MouseEvent;                                               // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FEventReply                                 ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
 
 // Function AthenaMatchStatsScreen.AthenaMatchStatsScreen_C.InputRefresh
 struct UAthenaMatchStatsScreen_C_InputRefresh_Params

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -164,7 +164,7 @@ void UItemInspectUpgradeConfirmation_C::Refresh()
 // Function ItemInspectUpgradeConfirmation.ItemInspectUpgradeConfirmation_C.BndEvt__UpgradeConfirmButton_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UItemInspectUpgradeConfirmation_C::BndEvt__UpgradeConfirmButton_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -184,7 +184,7 @@ void UItemInspectUpgradeConfirmation_C::BndEvt__UpgradeConfirmButton_K2Node_Comp
 // Function ItemInspectUpgradeConfirmation.ItemInspectUpgradeConfirmation_C.BndEvt__UpgradeCancelButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UItemInspectUpgradeConfirmation_C::BndEvt__UpgradeCancelButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -192,6 +192,23 @@ void UItemInspectUpgradeConfirmation_C::BndEvt__UpgradeCancelButton_K2Node_Compo
 
 	UItemInspectUpgradeConfirmation_C_BndEvt__UpgradeCancelButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature_Params params;
 	params.Button = Button;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemInspectUpgradeConfirmation.ItemInspectUpgradeConfirmation_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UItemInspectUpgradeConfirmation_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectUpgradeConfirmation.ItemInspectUpgradeConfirmation_C.Construct");
+
+	UItemInspectUpgradeConfirmation_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 

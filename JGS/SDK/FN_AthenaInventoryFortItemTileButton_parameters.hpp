@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -48,28 +48,12 @@ struct UAthenaInventoryFortItemTileButton_C_UpdateInteractionWidgetVisibility_Pa
 struct UAthenaInventoryFortItemTileButton_C_OnDragDetected_Params
 {
 	struct FGeometry*                                  MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	struct FPointerEvent                               PointerEvent;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FPointerEvent*                              PointerEvent;                                             // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	class UDragDropOperation*                          Operation;                                                // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaInventoryFortItemTileButton.AthenaInventoryFortItemTileButton_C.UpdateStyle
 struct UAthenaInventoryFortItemTileButton_C_UpdateStyle_Params
-{
-};
-
-// Function AthenaInventoryFortItemTileButton.AthenaInventoryFortItemTileButton_C.OnInventoryItemSelected_Event_0_1
-struct UAthenaInventoryFortItemTileButton_C_OnInventoryItemSelected_Event_0_1_Params
-{
-	class UFortItem*                                   Item;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function AthenaInventoryFortItemTileButton.AthenaInventoryFortItemTileButton_C.Construct
-struct UAthenaInventoryFortItemTileButton_C_Construct_Params
-{
-};
-
-// Function AthenaInventoryFortItemTileButton.AthenaInventoryFortItemTileButton_C.Destruct
-struct UAthenaInventoryFortItemTileButton_C_Destruct_Params
 {
 };
 

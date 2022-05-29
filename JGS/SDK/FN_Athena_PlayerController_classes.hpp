@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,12 +13,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass Athena_PlayerController.Athena_PlayerController_C
-// 0x0010 (0x3120 - 0x3110)
+// 0x0010 (0x3690 - 0x3680)
 class AAthena_PlayerController_C : public AFortPlayerControllerAthena
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x3110(0x0008) (Transient, DuplicateTransient)
-	class USceneComponent*                             ListenerOverride;                                         // 0x3118(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x3680(0x0008) (Transient, DuplicateTransient)
+	class USceneComponent*                             ListenerOverride;                                         // 0x3688(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

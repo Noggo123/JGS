@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,16 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function Engine.OnlineBlueprintCallProxyBase.Activate
+struct UOnlineBlueprintCallProxyBase_Activate_Params
+{
+};
+
+// Function Engine.BlueprintAsyncActionBase.Activate
+struct UBlueprintAsyncActionBase_Activate_Params
+{
+};
 
 // Function Engine.Actor.WasRecentlyRendered
 struct AActor_WasRecentlyRendered_Params
@@ -1450,6 +1460,463 @@ struct USceneComponent_DetachFromParent_Params
 	bool                                               bCallModify;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Engine.HUD.ShowHUD
+struct AHUD_ShowHUD_Params
+{
+};
+
+// Function Engine.HUD.ShowDebugToggleSubCategory
+struct AHUD_ShowDebugToggleSubCategory_Params
+{
+	struct FName                                       Category;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.HUD.ShowDebugForReticleTargetToggle
+struct AHUD_ShowDebugForReticleTargetToggle_Params
+{
+	class UClass*                                      DesiredClass;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.HUD.ShowDebug
+struct AHUD_ShowDebug_Params
+{
+	struct FName                                       DebugType;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.HUD.RemoveDebugText
+struct AHUD_RemoveDebugText_Params
+{
+	class AActor*                                      SrcActor;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bLeaveDurationText;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.HUD.RemoveAllDebugStrings
+struct AHUD_RemoveAllDebugStrings_Params
+{
+};
+
+// Function Engine.HUD.ReceiveHitBoxRelease
+struct AHUD_ReceiveHitBoxRelease_Params
+{
+	struct FName                                       BoxName;                                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.HUD.ReceiveHitBoxEndCursorOver
+struct AHUD_ReceiveHitBoxEndCursorOver_Params
+{
+	struct FName                                       BoxName;                                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.HUD.ReceiveHitBoxClick
+struct AHUD_ReceiveHitBoxClick_Params
+{
+	struct FName                                       BoxName;                                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.HUD.ReceiveHitBoxBeginCursorOver
+struct AHUD_ReceiveHitBoxBeginCursorOver_Params
+{
+	struct FName                                       BoxName;                                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.HUD.ReceiveDrawHUD
+struct AHUD_ReceiveDrawHUD_Params
+{
+	int                                                SizeX;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                SizeY;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.HUD.Project
+struct AHUD_Project_Params
+{
+	struct FVector                                     Location;                                                 // (Parm, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.HUD.PreviousDebugTarget
+struct AHUD_PreviousDebugTarget_Params
+{
+};
+
+// Function Engine.HUD.NextDebugTarget
+struct AHUD_NextDebugTarget_Params
+{
+};
+
+// Function Engine.HUD.GetTextSize
+struct AHUD_GetTextSize_Params
+{
+	struct FString                                     Text;                                                     // (Parm, ZeroConstructor)
+	float                                              OutWidth;                                                 // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	float                                              OutHeight;                                                // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	class UFont*                                       Font;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Scale;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.HUD.GetOwningPlayerController
+struct AHUD_GetOwningPlayerController_Params
+{
+	class APlayerController*                           ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.HUD.GetOwningPawn
+struct AHUD_GetOwningPawn_Params
+{
+	class APawn*                                       ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.HUD.GetActorsInSelectionRectangle
+struct AHUD_GetActorsInSelectionRectangle_Params
+{
+	class UClass*                                      ClassFilter;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector2D                                   FirstPoint;                                               // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FVector2D                                   SecondPoint;                                              // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	TArray<class AActor*>                              OutActors;                                                // (Parm, OutParm, ZeroConstructor)
+	bool                                               bIncludeNonCollidingComponents;                           // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bActorMustBeFullyEnclosed;                                // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.HUD.DrawTextureSimple
+struct AHUD_DrawTextureSimple_Params
+{
+	class UTexture*                                    Texture;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ScreenX;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ScreenY;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Scale;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bScalePosition;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.HUD.DrawTexture
+struct AHUD_DrawTexture_Params
+{
+	class UTexture*                                    Texture;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ScreenX;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ScreenY;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ScreenW;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ScreenH;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              TextureU;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              TextureV;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              TextureUWidth;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              TextureVHeight;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FLinearColor                                TintColor;                                                // (Parm, IsPlainOldData)
+	TEnumAsByte<EBlendMode>                            BlendMode;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Scale;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bScalePosition;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Rotation;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector2D                                   RotPivot;                                                 // (Parm, IsPlainOldData)
+};
+
+// Function Engine.HUD.DrawText
+struct AHUD_DrawText_Params
+{
+	struct FString                                     Text;                                                     // (Parm, ZeroConstructor)
+	struct FLinearColor                                TextColor;                                                // (Parm, IsPlainOldData)
+	float                                              ScreenX;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ScreenY;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	class UFont*                                       Font;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Scale;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bScalePosition;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.HUD.DrawRect
+struct AHUD_DrawRect_Params
+{
+	struct FLinearColor                                RectColor;                                                // (Parm, IsPlainOldData)
+	float                                              ScreenX;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ScreenY;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ScreenW;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ScreenH;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.HUD.DrawMaterialTriangle
+struct AHUD_DrawMaterialTriangle_Params
+{
+	class UMaterialInterface*                          Material;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector2D                                   V0_Pos;                                                   // (Parm, IsPlainOldData)
+	struct FVector2D                                   V1_Pos;                                                   // (Parm, IsPlainOldData)
+	struct FVector2D                                   V2_Pos;                                                   // (Parm, IsPlainOldData)
+	struct FVector2D                                   V0_UV;                                                    // (Parm, IsPlainOldData)
+	struct FVector2D                                   V1_UV;                                                    // (Parm, IsPlainOldData)
+	struct FVector2D                                   V2_UV;                                                    // (Parm, IsPlainOldData)
+	struct FLinearColor                                V0_Color;                                                 // (Parm, IsPlainOldData)
+	struct FLinearColor                                V1_Color;                                                 // (Parm, IsPlainOldData)
+	struct FLinearColor                                V2_Color;                                                 // (Parm, IsPlainOldData)
+};
+
+// Function Engine.HUD.DrawMaterialSimple
+struct AHUD_DrawMaterialSimple_Params
+{
+	class UMaterialInterface*                          Material;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ScreenX;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ScreenY;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ScreenW;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ScreenH;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Scale;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bScalePosition;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.HUD.DrawMaterial
+struct AHUD_DrawMaterial_Params
+{
+	class UMaterialInterface*                          Material;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ScreenX;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ScreenY;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ScreenW;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ScreenH;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              MaterialU;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              MaterialV;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              MaterialUWidth;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              MaterialVHeight;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Scale;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bScalePosition;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Rotation;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector2D                                   RotPivot;                                                 // (Parm, IsPlainOldData)
+};
+
+// Function Engine.HUD.DrawLine
+struct AHUD_DrawLine_Params
+{
+	float                                              StartScreenX;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              StartScreenY;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              EndScreenX;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              EndScreenY;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FLinearColor                                LineColor;                                                // (Parm, IsPlainOldData)
+	float                                              LineThickness;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.HUD.Deproject
+struct AHUD_Deproject_Params
+{
+	float                                              ScreenX;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ScreenY;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     WorldPosition;                                            // (Parm, OutParm, IsPlainOldData)
+	struct FVector                                     WorldDirection;                                           // (Parm, OutParm, IsPlainOldData)
+};
+
+// Function Engine.HUD.AddHitBox
+struct AHUD_AddHitBox_Params
+{
+	struct FVector2D                                   Position;                                                 // (Parm, IsPlainOldData)
+	struct FVector2D                                   Size;                                                     // (Parm, IsPlainOldData)
+	struct FName                                       InName;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bConsumesInput;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Priority;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.HUD.AddDebugText
+struct AHUD_AddDebugText_Params
+{
+	struct FString                                     DebugText;                                                // (Parm, ZeroConstructor)
+	class AActor*                                      SrcActor;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Duration;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     Offset;                                                   // (Parm, IsPlainOldData)
+	struct FVector                                     DesiredOffset;                                            // (Parm, IsPlainOldData)
+	struct FColor                                      TextColor;                                                // (Parm, IsPlainOldData)
+	bool                                               bSkipOverwriteCheck;                                      // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bAbsoluteLocation;                                        // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bKeepAttachedToActor;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	class UFont*                                       InFont;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              FontScale;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bDrawShadow;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Pawn.SpawnDefaultController
+struct APawn_SpawnDefaultController_Params
+{
+};
+
+// Function Engine.Pawn.SetCanAffectNavigationGeneration
+struct APawn_SetCanAffectNavigationGeneration_Params
+{
+	bool                                               bNewValue;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bForceUpdate;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Pawn.ReceiveUnpossessed
+struct APawn_ReceiveUnpossessed_Params
+{
+	class AController*                                 OldController;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Pawn.ReceivePossessed
+struct APawn_ReceivePossessed_Params
+{
+	class AController*                                 NewController;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Pawn.PawnMakeNoise
+struct APawn_PawnMakeNoise_Params
+{
+	float                                              Loudness;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     NoiseLocation;                                            // (Parm, IsPlainOldData)
+	bool                                               bUseNoiseMakerLocation;                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	class AActor*                                      NoiseMaker;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Pawn.OnRep_PlayerState
+struct APawn_OnRep_PlayerState_Params
+{
+};
+
+// Function Engine.Pawn.OnRep_Controller
+struct APawn_OnRep_Controller_Params
+{
+};
+
+// Function Engine.Pawn.LaunchPawn
+struct APawn_LaunchPawn_Params
+{
+	struct FVector                                     LaunchVelocity;                                           // (Parm, IsPlainOldData)
+	bool                                               bXYOverride;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bZOverride;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Pawn.K2_GetMovementInputVector
+struct APawn_K2_GetMovementInputVector_Params
+{
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Pawn.IsPlayerControlled
+struct APawn_IsPlayerControlled_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Pawn.IsMoveInputIgnored
+struct APawn_IsMoveInputIgnored_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Pawn.IsLocallyControlled
+struct APawn_IsLocallyControlled_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Pawn.IsControlled
+struct APawn_IsControlled_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Pawn.GetPendingMovementInputVector
+struct APawn_GetPendingMovementInputVector_Params
+{
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Pawn.GetNavAgentLocation
+struct APawn_GetNavAgentLocation_Params
+{
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Pawn.GetMovementComponent
+struct APawn_GetMovementComponent_Params
+{
+	class UPawnMovementComponent*                      ReturnValue;                                              // (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+};
+
+// Function Engine.Pawn.GetMovementBaseActor
+struct APawn_GetMovementBaseActor_Params
+{
+	class APawn*                                       Pawn;                                                     // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+	class AActor*                                      ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Pawn.GetLastMovementInputVector
+struct APawn_GetLastMovementInputVector_Params
+{
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Pawn.GetControlRotation
+struct APawn_GetControlRotation_Params
+{
+	struct FRotator                                    ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Pawn.GetController
+struct APawn_GetController_Params
+{
+	class AController*                                 ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Pawn.GetBaseAimRotation
+struct APawn_GetBaseAimRotation_Params
+{
+	struct FRotator                                    ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Pawn.DetachFromControllerPendingDestroy
+struct APawn_DetachFromControllerPendingDestroy_Params
+{
+};
+
+// Function Engine.Pawn.ConsumeMovementInputVector
+struct APawn_ConsumeMovementInputVector_Params
+{
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Pawn.AddMovementInput
+struct APawn_AddMovementInput_Params
+{
+	struct FVector                                     WorldDirection;                                           // (Parm, IsPlainOldData)
+	float                                              ScaleValue;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bForce;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Pawn.AddControllerYawInput
+struct APawn_AddControllerYawInput_Params
+{
+	float                                              Val;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Pawn.AddControllerRollInput
+struct APawn_AddControllerRollInput_Params
+{
+	float                                              Val;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Pawn.AddControllerPitchInput
+struct APawn_AddControllerPitchInput_Params
+{
+	float                                              Val;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.DefaultPawn.TurnAtRate
+struct ADefaultPawn_TurnAtRate_Params
+{
+	float                                              Rate;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.DefaultPawn.MoveUp_World
+struct ADefaultPawn_MoveUp_World_Params
+{
+	float                                              Val;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.DefaultPawn.MoveRight
+struct ADefaultPawn_MoveRight_Params
+{
+	float                                              Val;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.DefaultPawn.MoveForward
+struct ADefaultPawn_MoveForward_Params
+{
+	float                                              Val;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.DefaultPawn.LookUpAtRate
+struct ADefaultPawn_LookUpAtRate_Params
+{
+	float                                              Rate;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function Engine.PrimitiveComponent.WakeRigidBody
 struct UPrimitiveComponent_WakeRigidBody_Params
 {
@@ -1465,6 +1932,13 @@ struct UPrimitiveComponent_WakeAllRigidBodies_Params
 struct UPrimitiveComponent_SetWalkableSlopeOverride_Params
 {
 	struct FWalkableSlopeOverride                      NewOverride;                                              // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+};
+
+// Function Engine.PrimitiveComponent.SetUseCCD
+struct UPrimitiveComponent_SetUseCCD_Params
+{
+	bool                                               InUseCCD;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       BoneName;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Engine.PrimitiveComponent.SetTranslucentSortPriority
@@ -1720,6 +2194,12 @@ struct UPrimitiveComponent_SetBoundsScale_Params
 struct UPrimitiveComponent_SetAngularDamping_Params
 {
 	float                                              InDamping;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.PrimitiveComponent.SetAllUseCCD
+struct UPrimitiveComponent_SetAllUseCCD_Params
+{
+	bool                                               InUseCCD;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Engine.PrimitiveComponent.SetAllPhysicsLinearVelocity
@@ -2157,6 +2637,360 @@ struct UPrimitiveComponent_AddAngularImpulse_Params
 	bool                                               bVelChange;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Engine.Character.UnCrouch
+struct ACharacter_UnCrouch_Params
+{
+	bool                                               bClientSimulation;                                        // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Character.StopJumping
+struct ACharacter_StopJumping_Params
+{
+};
+
+// Function Engine.Character.StopAnimMontage
+struct ACharacter_StopAnimMontage_Params
+{
+	class UAnimMontage*                                AnimMontage;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Character.SetReplicateMovement
+struct ACharacter_SetReplicateMovement_Params
+{
+	bool                                               bInReplicateMovement;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Character.ServerMoveOld
+struct ACharacter_ServerMoveOld_Params
+{
+	float                                              OldTimeStamp;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector_NetQuantize10                       OldAccel;                                                 // (Parm)
+	unsigned char                                      OldMoveFlags;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Character.ServerMoveNoBase
+struct ACharacter_ServerMoveNoBase_Params
+{
+	float                                              Timestamp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector_NetQuantize10                       InAccel;                                                  // (Parm)
+	struct FVector_NetQuantize100                      ClientLoc;                                                // (Parm)
+	unsigned char                                      CompressedMoveFlags;                                      // (Parm, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      ClientRoll;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	uint32_t                                           View;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      ClientMovementMode;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Character.ServerMoveDualNoBase
+struct ACharacter_ServerMoveDualNoBase_Params
+{
+	float                                              TimeStamp0;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector_NetQuantize10                       InAccel0;                                                 // (Parm)
+	unsigned char                                      PendingFlags;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	uint32_t                                           View0;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Timestamp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector_NetQuantize10                       InAccel;                                                  // (Parm)
+	struct FVector_NetQuantize100                      ClientLoc;                                                // (Parm)
+	unsigned char                                      NewFlags;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      ClientRoll;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	uint32_t                                           View;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      ClientMovementMode;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Character.ServerMoveDualHybridRootMotion
+struct ACharacter_ServerMoveDualHybridRootMotion_Params
+{
+	float                                              TimeStamp0;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector_NetQuantize10                       InAccel0;                                                 // (Parm)
+	unsigned char                                      PendingFlags;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	uint32_t                                           View0;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Timestamp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector_NetQuantize10                       InAccel;                                                  // (Parm)
+	struct FVector_NetQuantize100                      ClientLoc;                                                // (Parm)
+	unsigned char                                      NewFlags;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      ClientRoll;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	uint32_t                                           View;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent*                         ClientMovementBase;                                       // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	struct FName                                       ClientBaseBoneName;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      ClientMovementMode;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Character.ServerMoveDual
+struct ACharacter_ServerMoveDual_Params
+{
+	float                                              TimeStamp0;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector_NetQuantize10                       InAccel0;                                                 // (Parm)
+	unsigned char                                      PendingFlags;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	uint32_t                                           View0;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Timestamp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector_NetQuantize10                       InAccel;                                                  // (Parm)
+	struct FVector_NetQuantize100                      ClientLoc;                                                // (Parm)
+	unsigned char                                      NewFlags;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      ClientRoll;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	uint32_t                                           View;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent*                         ClientMovementBase;                                       // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	struct FName                                       ClientBaseBoneName;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      ClientMovementMode;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Character.ServerMove
+struct ACharacter_ServerMove_Params
+{
+	float                                              Timestamp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector_NetQuantize10                       InAccel;                                                  // (Parm)
+	struct FVector_NetQuantize100                      ClientLoc;                                                // (Parm)
+	unsigned char                                      CompressedMoveFlags;                                      // (Parm, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      ClientRoll;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	uint32_t                                           View;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent*                         ClientMovementBase;                                       // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	struct FName                                       ClientBaseBoneName;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      ClientMovementMode;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Character.RootMotionDebugClientPrintOnScreen
+struct ACharacter_RootMotionDebugClientPrintOnScreen_Params
+{
+	struct FString                                     inString;                                                 // (Parm, ZeroConstructor)
+};
+
+// Function Engine.Character.PlayAnimMontage
+struct ACharacter_PlayAnimMontage_Params
+{
+	class UAnimMontage*                                AnimMontage;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              InPlayRate;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       StartSectionName;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Character.OnWalkingOffLedge
+struct ACharacter_OnWalkingOffLedge_Params
+{
+	struct FVector                                     PreviousFloorImpactNormal;                                // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FVector                                     PreviousFloorContactNormal;                               // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FVector                                     PreviousLocation;                                         // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	float                                              TimeDelta;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Character.OnRep_RootMotion
+struct ACharacter_OnRep_RootMotion_Params
+{
+};
+
+// Function Engine.Character.OnRep_ReplicatedBasedMovement
+struct ACharacter_OnRep_ReplicatedBasedMovement_Params
+{
+};
+
+// Function Engine.Character.OnRep_IsCrouched
+struct ACharacter_OnRep_IsCrouched_Params
+{
+};
+
+// Function Engine.Character.OnLaunched
+struct ACharacter_OnLaunched_Params
+{
+	struct FVector                                     LaunchVelocity;                                           // (Parm, IsPlainOldData)
+	bool                                               bXYOverride;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bZOverride;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Character.OnLanded
+struct ACharacter_OnLanded_Params
+{
+	struct FHitResult                                  Hit;                                                      // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+};
+
+// Function Engine.Character.OnJumped
+struct ACharacter_OnJumped_Params
+{
+};
+
+// Function Engine.Character.LaunchCharacter
+struct ACharacter_LaunchCharacter_Params
+{
+	struct FVector                                     LaunchVelocity;                                           // (Parm, IsPlainOldData)
+	bool                                               bXYOverride;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bZOverride;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Character.K2_UpdateCustomMovement
+struct ACharacter_K2_UpdateCustomMovement_Params
+{
+	float                                              DeltaTime;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Character.K2_OnStartCrouch
+struct ACharacter_K2_OnStartCrouch_Params
+{
+	float                                              HalfHeightAdjust;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ScaledHalfHeightAdjust;                                   // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Character.K2_OnMovementModeChanged
+struct ACharacter_K2_OnMovementModeChanged_Params
+{
+	TEnumAsByte<EMovementMode>                         PrevMovementMode;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EMovementMode>                         NewMovementMode;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      PrevCustomMode;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      NewCustomMode;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Character.K2_OnEndCrouch
+struct ACharacter_K2_OnEndCrouch_Params
+{
+	float                                              HalfHeightAdjust;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ScaledHalfHeightAdjust;                                   // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Character.Jump
+struct ACharacter_Jump_Params
+{
+};
+
+// Function Engine.Character.IsPlayingRootMotion
+struct ACharacter_IsPlayingRootMotion_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Character.IsPlayingNetworkedRootMotionMontage
+struct ACharacter_IsPlayingNetworkedRootMotionMontage_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Character.IsJumpProvidingForce
+struct ACharacter_IsJumpProvidingForce_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Character.GetCurrentMontage
+struct ACharacter_GetCurrentMontage_Params
+{
+	class UAnimMontage*                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Character.GetBaseTranslationOffset
+struct ACharacter_GetBaseTranslationOffset_Params
+{
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Character.GetBaseRotationOffsetRotator
+struct ACharacter_GetBaseRotationOffsetRotator_Params
+{
+	struct FRotator                                    ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Character.GetAnimRootMotionTranslationScale
+struct ACharacter_GetAnimRootMotionTranslationScale_Params
+{
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Character.Crouch
+struct ACharacter_Crouch_Params
+{
+	bool                                               bClientSimulation;                                        // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Character.ClientVeryShortAdjustPosition
+struct ACharacter_ClientVeryShortAdjustPosition_Params
+{
+	float                                              Timestamp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     NewLoc;                                                   // (Parm, IsPlainOldData)
+	class UPrimitiveComponent*                         NewBase;                                                  // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	struct FName                                       NewBaseBoneName;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bHasBase;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bBaseRelativePosition;                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      ServerMovementMode;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Character.ClientCheatWalk
+struct ACharacter_ClientCheatWalk_Params
+{
+};
+
+// Function Engine.Character.ClientCheatGhost
+struct ACharacter_ClientCheatGhost_Params
+{
+};
+
+// Function Engine.Character.ClientCheatFly
+struct ACharacter_ClientCheatFly_Params
+{
+};
+
+// Function Engine.Character.ClientAdjustRootMotionSourcePosition
+struct ACharacter_ClientAdjustRootMotionSourcePosition_Params
+{
+	float                                              Timestamp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FRootMotionSourceGroup                      ServerRootMotion;                                         // (Parm)
+	bool                                               bHasAnimRootMotion;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ServerMontageTrackPosition;                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ServerLoc;                                                // (Parm, IsPlainOldData)
+	struct FVector_NetQuantizeNormal                   ServerRotation;                                           // (Parm)
+	float                                              ServerVelZ;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent*                         ServerBase;                                               // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	struct FName                                       ServerBoneName;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bHasBase;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bBaseRelativePosition;                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      ServerMovementMode;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Character.ClientAdjustRootMotionPosition
+struct ACharacter_ClientAdjustRootMotionPosition_Params
+{
+	float                                              Timestamp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ServerMontageTrackPosition;                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ServerLoc;                                                // (Parm, IsPlainOldData)
+	struct FVector_NetQuantizeNormal                   ServerRotation;                                           // (Parm)
+	float                                              ServerVelZ;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent*                         ServerBase;                                               // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	struct FName                                       ServerBoneName;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bHasBase;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bBaseRelativePosition;                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      ServerMovementMode;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Character.ClientAdjustPosition
+struct ACharacter_ClientAdjustPosition_Params
+{
+	float                                              Timestamp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     NewLoc;                                                   // (Parm, IsPlainOldData)
+	struct FVector                                     NewVel;                                                   // (Parm, IsPlainOldData)
+	class UPrimitiveComponent*                         NewBase;                                                  // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	struct FName                                       NewBaseBoneName;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bHasBase;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bBaseRelativePosition;                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      ServerMovementMode;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Character.ClientAckGoodMove
+struct ACharacter_ClientAckGoodMove_Params
+{
+	float                                              Timestamp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.Character.CanJumpInternal
+struct ACharacter_CanJumpInternal_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Character.CanJump
+struct ACharacter_CanJump_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.Character.CacheInitialMeshOffset
+struct ACharacter_CacheInitialMeshOffset_Params
+{
+	struct FVector                                     MeshRelativeLocation;                                     // (Parm, IsPlainOldData)
+	struct FRotator                                    MeshRelativeRotation;                                     // (Parm, IsPlainOldData)
+};
+
 // Function Engine.MeshComponent.SetVectorParameterValueOnMaterials
 struct UMeshComponent_SetVectorParameterValueOnMaterials_Params
 {
@@ -2205,42 +3039,842 @@ struct UMeshComponent_GetMaterialIndex_Params
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.StaticMeshComponent.SetStaticMesh
-struct UStaticMeshComponent_SetStaticMesh_Params
+// Function Engine.SplineComponent.UpdateSpline
+struct USplineComponent_UpdateSpline_Params
 {
-	class UStaticMesh*                                 NewMesh;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.SetWorldLocationAtSplinePoint
+struct USplineComponent_SetWorldLocationAtSplinePoint_Params
+{
+	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     InLocation;                                               // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.SetUpVectorAtSplinePoint
+struct USplineComponent_SetUpVectorAtSplinePoint_Params
+{
+	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     InUpVector;                                               // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.SetUnselectedSplineSegmentColor
+struct USplineComponent_SetUnselectedSplineSegmentColor_Params
+{
+	struct FLinearColor                                SegmentColor;                                             // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.SetTangentsAtSplinePoint
+struct USplineComponent_SetTangentsAtSplinePoint_Params
+{
+	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     InArriveTangent;                                          // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FVector                                     InLeaveTangent;                                           // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.SetTangentAtSplinePoint
+struct USplineComponent_SetTangentAtSplinePoint_Params
+{
+	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     InTangent;                                                // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.SetSplineWorldPoints
+struct USplineComponent_SetSplineWorldPoints_Params
+{
+	TArray<struct FVector>                             Points;                                                   // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+};
+
+// Function Engine.SplineComponent.SetSplinePointType
+struct USplineComponent_SetSplinePointType_Params
+{
+	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplinePointType>                      Type;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.SetSplinePoints
+struct USplineComponent_SetSplinePoints_Params
+{
+	TArray<struct FVector>                             Points;                                                   // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.SetSplineLocalPoints
+struct USplineComponent_SetSplineLocalPoints_Params
+{
+	TArray<struct FVector>                             Points;                                                   // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+};
+
+// Function Engine.SplineComponent.SetSelectedSplineSegmentColor
+struct USplineComponent_SetSelectedSplineSegmentColor_Params
+{
+	struct FLinearColor                                SegmentColor;                                             // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.SetLocationAtSplinePoint
+struct USplineComponent_SetLocationAtSplinePoint_Params
+{
+	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     InLocation;                                               // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.SetDrawDebug
+struct USplineComponent_SetDrawDebug_Params
+{
+	bool                                               bShow;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.SetDefaultUpVector
+struct USplineComponent_SetDefaultUpVector_Params
+{
+	struct FVector                                     UpVector;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.SetClosedLoopAtPosition
+struct USplineComponent_SetClosedLoopAtPosition_Params
+{
+	bool                                               bInClosedLoop;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Key;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.SetClosedLoop
+struct USplineComponent_SetClosedLoop_Params
+{
+	bool                                               bInClosedLoop;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.RemoveSplinePoint
+struct USplineComponent_RemoveSplinePoint_Params
+{
+	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.IsClosedLoop
+struct USplineComponent_IsClosedLoop_Params
+{
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.StaticMeshComponent.SetReverseCulling
-struct UStaticMeshComponent_SetReverseCulling_Params
+// Function Engine.SplineComponent.GetWorldTangentAtDistanceAlongSpline
+struct USplineComponent_GetWorldTangentAtDistanceAlongSpline_Params
 {
-	bool                                               ReverseCulling;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.StaticMeshComponent.SetForcedLodModel
-struct UStaticMeshComponent_SetForcedLodModel_Params
+// Function Engine.SplineComponent.GetWorldRotationAtTime
+struct USplineComponent_GetWorldRotationAtTime_Params
 {
-	int                                                NewForcedLodModel;                                        // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FRotator                                    ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.StaticMeshComponent.SetDistanceFieldSelfShadowBias
-struct UStaticMeshComponent_SetDistanceFieldSelfShadowBias_Params
+// Function Engine.SplineComponent.GetWorldRotationAtDistanceAlongSpline
+struct USplineComponent_GetWorldRotationAtDistanceAlongSpline_Params
 {
-	float                                              NewValue;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FRotator                                    ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.StaticMeshComponent.OnRep_StaticMesh
-struct UStaticMeshComponent_OnRep_StaticMesh_Params
+// Function Engine.SplineComponent.GetWorldLocationAtTime
+struct USplineComponent_GetWorldLocationAtTime_Params
 {
-	class UStaticMesh*                                 OldStaticMesh;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.StaticMeshComponent.GetLocalBounds
-struct UStaticMeshComponent_GetLocalBounds_Params
+// Function Engine.SplineComponent.GetWorldLocationAtSplinePoint
+struct USplineComponent_GetWorldLocationAtSplinePoint_Params
 {
-	struct FVector                                     Min;                                                      // (Parm, OutParm, IsPlainOldData)
-	struct FVector                                     Max;                                                      // (Parm, OutParm, IsPlainOldData)
+	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetWorldLocationAtDistanceAlongSpline
+struct USplineComponent_GetWorldLocationAtDistanceAlongSpline_Params
+{
+	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetWorldDirectionAtTime
+struct USplineComponent_GetWorldDirectionAtTime_Params
+{
+	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetWorldDirectionAtDistanceAlongSpline
+struct USplineComponent_GetWorldDirectionAtDistanceAlongSpline_Params
+{
+	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetUpVectorAtTime
+struct USplineComponent_GetUpVectorAtTime_Params
+{
+	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetUpVectorAtSplinePoint
+struct USplineComponent_GetUpVectorAtSplinePoint_Params
+{
+	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetUpVectorAtDistanceAlongSpline
+struct USplineComponent_GetUpVectorAtDistanceAlongSpline_Params
+{
+	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetTransformAtTime
+struct USplineComponent_GetTransformAtTime_Params
+{
+	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUseScale;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FTransform                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetTransformAtSplinePoint
+struct USplineComponent_GetTransformAtSplinePoint_Params
+{
+	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUseScale;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FTransform                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetTransformAtDistanceAlongSpline
+struct USplineComponent_GetTransformAtDistanceAlongSpline_Params
+{
+	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUseScale;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FTransform                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetTangentAtTime
+struct USplineComponent_GetTangentAtTime_Params
+{
+	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetTangentAtSplinePoint
+struct USplineComponent_GetTangentAtSplinePoint_Params
+{
+	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetTangentAtDistanceAlongSpline
+struct USplineComponent_GetTangentAtDistanceAlongSpline_Params
+{
+	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetSplinePointType
+struct USplineComponent_GetSplinePointType_Params
+{
+	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplinePointType>                      ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetSplineLength
+struct USplineComponent_GetSplineLength_Params
+{
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetScaleAtTime
+struct USplineComponent_GetScaleAtTime_Params
+{
+	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetScaleAtSplinePoint
+struct USplineComponent_GetScaleAtSplinePoint_Params
+{
+	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetScaleAtDistanceAlongSpline
+struct USplineComponent_GetScaleAtDistanceAlongSpline_Params
+{
+	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetRotationAtTime
+struct USplineComponent_GetRotationAtTime_Params
+{
+	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FRotator                                    ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetRotationAtSplinePoint
+struct USplineComponent_GetRotationAtSplinePoint_Params
+{
+	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FRotator                                    ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetRotationAtDistanceAlongSpline
+struct USplineComponent_GetRotationAtDistanceAlongSpline_Params
+{
+	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FRotator                                    ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetRollAtTime
+struct USplineComponent_GetRollAtTime_Params
+{
+	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetRollAtSplinePoint
+struct USplineComponent_GetRollAtSplinePoint_Params
+{
+	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetRollAtDistanceAlongSpline
+struct USplineComponent_GetRollAtDistanceAlongSpline_Params
+{
+	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetRightVectorAtTime
+struct USplineComponent_GetRightVectorAtTime_Params
+{
+	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetRightVectorAtSplinePoint
+struct USplineComponent_GetRightVectorAtSplinePoint_Params
+{
+	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetRightVectorAtDistanceAlongSpline
+struct USplineComponent_GetRightVectorAtDistanceAlongSpline_Params
+{
+	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetNumberOfSplinePoints
+struct USplineComponent_GetNumberOfSplinePoints_Params
+{
+	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetLocationAtTime
+struct USplineComponent_GetLocationAtTime_Params
+{
+	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetLocationAtSplinePoint
+struct USplineComponent_GetLocationAtSplinePoint_Params
+{
+	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetLocationAtDistanceAlongSpline
+struct USplineComponent_GetLocationAtDistanceAlongSpline_Params
+{
+	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetLocationAndTangentAtSplinePoint
+struct USplineComponent_GetLocationAndTangentAtSplinePoint_Params
+{
+	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     Location;                                                 // (Parm, OutParm, IsPlainOldData)
+	struct FVector                                     Tangent;                                                  // (Parm, OutParm, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetLocalLocationAndTangentAtSplinePoint
+struct USplineComponent_GetLocalLocationAndTangentAtSplinePoint_Params
+{
+	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     LocalLocation;                                            // (Parm, OutParm, IsPlainOldData)
+	struct FVector                                     LocalTangent;                                             // (Parm, OutParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetLeaveTangentAtSplinePoint
+struct USplineComponent_GetLeaveTangentAtSplinePoint_Params
+{
+	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetInputKeyAtDistanceAlongSpline
+struct USplineComponent_GetInputKeyAtDistanceAlongSpline_Params
+{
+	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetDistanceAlongSplineAtSplinePoint
+struct USplineComponent_GetDistanceAlongSplineAtSplinePoint_Params
+{
+	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetDirectionAtTime
+struct USplineComponent_GetDirectionAtTime_Params
+{
+	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetDirectionAtSplinePoint
+struct USplineComponent_GetDirectionAtSplinePoint_Params
+{
+	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetDirectionAtDistanceAlongSpline
+struct USplineComponent_GetDirectionAtDistanceAlongSpline_Params
+{
+	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetDefaultUpVector
+struct USplineComponent_GetDefaultUpVector_Params
+{
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.GetArriveTangentAtSplinePoint
+struct USplineComponent_GetArriveTangentAtSplinePoint_Params
+{
+	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.FindUpVectorClosestToWorldLocation
+struct USplineComponent_FindUpVectorClosestToWorldLocation_Params
+{
+	struct FVector                                     WorldLocation;                                            // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.FindTransformClosestToWorldLocation
+struct USplineComponent_FindTransformClosestToWorldLocation_Params
+{
+	struct FVector                                     WorldLocation;                                            // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUseScale;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FTransform                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.FindTangentClosestToWorldLocation
+struct USplineComponent_FindTangentClosestToWorldLocation_Params
+{
+	struct FVector                                     WorldLocation;                                            // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.FindScaleClosestToWorldLocation
+struct USplineComponent_FindScaleClosestToWorldLocation_Params
+{
+	struct FVector                                     WorldLocation;                                            // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.FindRotationClosestToWorldLocation
+struct USplineComponent_FindRotationClosestToWorldLocation_Params
+{
+	struct FVector                                     WorldLocation;                                            // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FRotator                                    ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.FindRollClosestToWorldLocation
+struct USplineComponent_FindRollClosestToWorldLocation_Params
+{
+	struct FVector                                     WorldLocation;                                            // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.FindRightVectorClosestToWorldLocation
+struct USplineComponent_FindRightVectorClosestToWorldLocation_Params
+{
+	struct FVector                                     WorldLocation;                                            // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.FindLocationClosestToWorldLocation
+struct USplineComponent_FindLocationClosestToWorldLocation_Params
+{
+	struct FVector                                     WorldLocation;                                            // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.FindInputKeyClosestToWorldLocation
+struct USplineComponent_FindInputKeyClosestToWorldLocation_Params
+{
+	struct FVector                                     WorldLocation;                                            // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.FindDirectionClosestToWorldLocation
+struct USplineComponent_FindDirectionClosestToWorldLocation_Params
+{
+	struct FVector                                     WorldLocation;                                            // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.ClearSplinePoints
+struct USplineComponent_ClearSplinePoints_Params
+{
+	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.AddSplineWorldPoint
+struct USplineComponent_AddSplineWorldPoint_Params
+{
+	struct FVector                                     Position;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.AddSplinePointAtIndex
+struct USplineComponent_AddSplinePointAtIndex_Params
+{
+	struct FVector                                     Position;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.AddSplinePoint
+struct USplineComponent_AddSplinePoint_Params
+{
+	struct FVector                                     Position;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.AddSplineLocalPoint
+struct USplineComponent_AddSplineLocalPoint_Params
+{
+	struct FVector                                     Position;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.AddPoints
+struct USplineComponent_AddPoints_Params
+{
+	TArray<struct FSplinePoint>                        Points;                                                   // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.SplineComponent.AddPoint
+struct USplineComponent_AddPoint_Params
+{
+	struct FSplinePoint                                Point;                                                    // (ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.MovementComponent.StopMovementImmediately
+struct UMovementComponent_StopMovementImmediately_Params
+{
+};
+
+// Function Engine.MovementComponent.SnapUpdatedComponentToPlane
+struct UMovementComponent_SnapUpdatedComponentToPlane_Params
+{
+};
+
+// Function Engine.MovementComponent.SetUpdatedComponent
+struct UMovementComponent_SetUpdatedComponent_Params
+{
+	class USceneComponent*                             NewUpdatedComponent;                                      // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+};
+
+// Function Engine.MovementComponent.SetPlaneConstraintOrigin
+struct UMovementComponent_SetPlaneConstraintOrigin_Params
+{
+	struct FVector                                     PlaneOrigin;                                              // (Parm, IsPlainOldData)
+};
+
+// Function Engine.MovementComponent.SetPlaneConstraintNormal
+struct UMovementComponent_SetPlaneConstraintNormal_Params
+{
+	struct FVector                                     PlaneNormal;                                              // (Parm, IsPlainOldData)
+};
+
+// Function Engine.MovementComponent.SetPlaneConstraintFromVectors
+struct UMovementComponent_SetPlaneConstraintFromVectors_Params
+{
+	struct FVector                                     Forward;                                                  // (Parm, IsPlainOldData)
+	struct FVector                                     Up;                                                       // (Parm, IsPlainOldData)
+};
+
+// Function Engine.MovementComponent.SetPlaneConstraintEnabled
+struct UMovementComponent_SetPlaneConstraintEnabled_Params
+{
+	bool                                               bEnabled;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.MovementComponent.SetPlaneConstraintAxisSetting
+struct UMovementComponent_SetPlaneConstraintAxisSetting_Params
+{
+	EPlaneConstraintAxisSetting                        NewAxisSetting;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.MovementComponent.PhysicsVolumeChanged
+struct UMovementComponent_PhysicsVolumeChanged_Params
+{
+	class APhysicsVolume*                              NewVolume;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.MovementComponent.K2_MoveUpdatedComponent
+struct UMovementComponent_K2_MoveUpdatedComponent_Params
+{
+	struct FVector                                     Delta;                                                    // (Parm, IsPlainOldData)
+	struct FRotator                                    NewRotation;                                              // (Parm, IsPlainOldData)
+	struct FHitResult                                  OutHit;                                                   // (Parm, OutParm, IsPlainOldData)
+	bool                                               bSweep;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bTeleport;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.MovementComponent.K2_GetModifiedMaxSpeed
+struct UMovementComponent_K2_GetModifiedMaxSpeed_Params
+{
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.MovementComponent.K2_GetMaxSpeedModifier
+struct UMovementComponent_K2_GetMaxSpeedModifier_Params
+{
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.MovementComponent.IsExceedingMaxSpeed
+struct UMovementComponent_IsExceedingMaxSpeed_Params
+{
+	float                                              MaxSpeed;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.MovementComponent.GetPlaneConstraintOrigin
+struct UMovementComponent_GetPlaneConstraintOrigin_Params
+{
+	struct FVector                                     ReturnValue;                                              // (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, IsPlainOldData)
+};
+
+// Function Engine.MovementComponent.GetPlaneConstraintNormal
+struct UMovementComponent_GetPlaneConstraintNormal_Params
+{
+	struct FVector                                     ReturnValue;                                              // (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, IsPlainOldData)
+};
+
+// Function Engine.MovementComponent.GetPlaneConstraintAxisSetting
+struct UMovementComponent_GetPlaneConstraintAxisSetting_Params
+{
+	EPlaneConstraintAxisSetting                        ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.MovementComponent.GetPhysicsVolume
+struct UMovementComponent_GetPhysicsVolume_Params
+{
+	class APhysicsVolume*                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.MovementComponent.GetMaxSpeed
+struct UMovementComponent_GetMaxSpeed_Params
+{
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.MovementComponent.GetGravityZ
+struct UMovementComponent_GetGravityZ_Params
+{
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.MovementComponent.ConstrainNormalToPlane
+struct UMovementComponent_ConstrainNormalToPlane_Params
+{
+	struct FVector                                     Normal;                                                   // (Parm, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.MovementComponent.ConstrainLocationToPlane
+struct UMovementComponent_ConstrainLocationToPlane_Params
+{
+	struct FVector                                     Location;                                                 // (Parm, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.MovementComponent.ConstrainDirectionToPlane
+struct UMovementComponent_ConstrainDirectionToPlane_Params
+{
+	struct FVector                                     Direction;                                                // (Parm, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.NavMovementComponent.StopMovementKeepPathing
+struct UNavMovementComponent_StopMovementKeepPathing_Params
+{
+};
+
+// Function Engine.NavMovementComponent.StopActiveMovement
+struct UNavMovementComponent_StopActiveMovement_Params
+{
+};
+
+// Function Engine.NavMovementComponent.IsSwimming
+struct UNavMovementComponent_IsSwimming_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.NavMovementComponent.IsMovingOnGround
+struct UNavMovementComponent_IsMovingOnGround_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.NavMovementComponent.IsFlying
+struct UNavMovementComponent_IsFlying_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.NavMovementComponent.IsFalling
+struct UNavMovementComponent_IsFalling_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.NavMovementComponent.IsCrouching
+struct UNavMovementComponent_IsCrouching_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.PawnMovementComponent.K2_GetInputVector
+struct UPawnMovementComponent_K2_GetInputVector_Params
+{
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.PawnMovementComponent.IsMoveInputIgnored
+struct UPawnMovementComponent_IsMoveInputIgnored_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.PawnMovementComponent.GetPendingInputVector
+struct UPawnMovementComponent_GetPendingInputVector_Params
+{
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.PawnMovementComponent.GetPawnOwner
+struct UPawnMovementComponent_GetPawnOwner_Params
+{
+	class APawn*                                       ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.PawnMovementComponent.GetLastInputVector
+struct UPawnMovementComponent_GetLastInputVector_Params
+{
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.PawnMovementComponent.ConsumeInputVector
+struct UPawnMovementComponent_ConsumeInputVector_Params
+{
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.PawnMovementComponent.AddInputVector
+struct UPawnMovementComponent_AddInputVector_Params
+{
+	struct FVector                                     WorldVector;                                              // (Parm, IsPlainOldData)
+	bool                                               bForce;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Engine.SkinnedMeshComponent.UnHideBoneByName
@@ -2269,6 +3903,20 @@ struct USkinnedMeshComponent_TransformFromBoneSpace_Params
 	struct FRotator                                    OutRotation;                                              // (Parm, OutParm, IsPlainOldData)
 };
 
+// Function Engine.SkinnedMeshComponent.ShowMaterialSection
+struct USkinnedMeshComponent_ShowMaterialSection_Params
+{
+	int                                                MaterialID;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bShow;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                LODIndex;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.SkinnedMeshComponent.ShowAllMaterialSections
+struct USkinnedMeshComponent_ShowAllMaterialSections_Params
+{
+	int                                                LODIndex;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function Engine.SkinnedMeshComponent.SetVertexColorOverride_LinearColor
 struct USkinnedMeshComponent_SetVertexColorOverride_LinearColor_Params
 {
@@ -2288,6 +3936,12 @@ struct USkinnedMeshComponent_SetSkeletalMesh_Params
 {
 	class USkeletalMesh*                               NewMesh;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               bReinitPose;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.SkinnedMeshComponent.SetRenderStatic
+struct USkinnedMeshComponent_SetRenderStatic_Params
+{
+	bool                                               bNewValue;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Engine.SkinnedMeshComponent.SetPhysicsAsset
@@ -2333,6 +3987,14 @@ struct USkinnedMeshComponent_SetCapsuleIndirectShadowMinVisibility_Params
 	float                                              NewValue;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Engine.SkinnedMeshComponent.IsMaterialSectionShown
+struct USkinnedMeshComponent_IsMaterialSectionShown_Params
+{
+	int                                                MaterialID;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                LODIndex;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
 // Function Engine.SkinnedMeshComponent.IsBoneHiddenByName
 struct USkinnedMeshComponent_IsBoneHiddenByName_Params
 {
@@ -2366,6 +4028,12 @@ struct USkinnedMeshComponent_GetParentBone_Params
 {
 	struct FName                                       BoneName;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FName                                       ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SkinnedMeshComponent.GetNumLODs
+struct USkinnedMeshComponent_GetNumLODs_Params
+{
+	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Engine.SkinnedMeshComponent.GetNumBones
@@ -2422,6 +4090,11 @@ struct USkinnedMeshComponent_BoneIsChildOf_Params
 struct USkeletalMeshComponent_UnbindClothFromMasterPoseComponent_Params
 {
 	bool                                               bRestoreSimulationSpace;                                  // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.SkeletalMeshComponent.ToggleDisablePostProcessBlueprint
+struct USkeletalMeshComponent_ToggleDisablePostProcessBlueprint_Params
+{
 };
 
 // Function Engine.SkeletalMeshComponent.SuspendClothingSimulation
@@ -2512,6 +4185,12 @@ struct USkeletalMeshComponent_SetEnableBodyGravity_Params
 {
 	bool                                               bEnableGravity;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FName                                       BoneName;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.SkeletalMeshComponent.SetDisablePostProcessBlueprint
+struct USkeletalMeshComponent_SetDisablePostProcessBlueprint_Params
+{
+	bool                                               bInDisablePostProcess;                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Engine.SkeletalMeshComponent.SetDisableAnimCurves
@@ -2656,6 +4335,7 @@ struct USkeletalMeshComponent_ResetClothTeleportMode_Params
 // Function Engine.SkeletalMeshComponent.ResetAnimInstanceDynamics
 struct USkeletalMeshComponent_ResetAnimInstanceDynamics_Params
 {
+	ETeleportType                                      InTeleportType;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Engine.SkeletalMeshComponent.ResetAllowedAnimCurveEvaluation
@@ -2721,6 +4401,12 @@ struct USkeletalMeshComponent_IsBodyGravityEnabled_Params
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
+// Function Engine.SkeletalMeshComponent.HasValidAnimationInstance
+struct USkeletalMeshComponent_HasValidAnimationInstance_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
 // Function Engine.SkeletalMeshComponent.GetTeleportRotationThreshold
 struct USkeletalMeshComponent_GetTeleportRotationThreshold_Params
 {
@@ -2764,6 +4450,12 @@ struct USkeletalMeshComponent_GetMorphTarget_Params
 	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
+// Function Engine.SkeletalMeshComponent.GetDisablePostProcessBlueprint
+struct USkeletalMeshComponent_GetDisablePostProcessBlueprint_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
 // Function Engine.SkeletalMeshComponent.GetDisableAnimCurves
 struct USkeletalMeshComponent_GetDisableAnimCurves_Params
 {
@@ -2783,6 +4475,12 @@ struct USkeletalMeshComponent_GetCurrentJointAngles_Params
 struct USkeletalMeshComponent_GetClothMaxDistanceScale_Params
 {
 	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SkeletalMeshComponent.GetClothingSimulationInteractor
+struct USkeletalMeshComponent_GetClothingSimulationInteractor_Params
+{
+	class UClothingSimulationInteractor*               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Engine.SkeletalMeshComponent.GetBoneMass
@@ -2992,6 +4690,7 @@ struct UAnimInstance_Montage_Play_Params
 	float                                              InPlayRate;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 	EMontagePlayReturnType                             ReturnValueType;                                          // (Parm, ZeroConstructor, IsPlainOldData)
 	float                                              InTimeToStartMontageAt;                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bStopAllMontages;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
@@ -3464,525 +5163,273 @@ struct AController_CastToPlayerController_Params
 	class APlayerController*                           ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.Pawn.SpawnDefaultController
-struct APawn_SpawnDefaultController_Params
+// Function Engine.NavigationSystem.UnregisterNavigationInvoker
+struct UNavigationSystem_UnregisterNavigationInvoker_Params
+{
+	class AActor*                                      Invoker;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.NavigationSystem.SimpleMoveToLocation
+struct UNavigationSystem_SimpleMoveToLocation_Params
+{
+	class AController*                                 Controller;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     Goal;                                                     // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+};
+
+// Function Engine.NavigationSystem.SimpleMoveToActor
+struct UNavigationSystem_SimpleMoveToActor_Params
+{
+	class AController*                                 Controller;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	class AActor*                                      Goal;                                                     // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.NavigationSystem.SetMaxSimultaneousTileGenerationJobsCount
+struct UNavigationSystem_SetMaxSimultaneousTileGenerationJobsCount_Params
+{
+	int                                                MaxNumberOfJobs;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.NavigationSystem.SetGeometryGatheringMode
+struct UNavigationSystem_SetGeometryGatheringMode_Params
+{
+	ENavDataGatheringModeConfig                        NewMode;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.NavigationSystem.ResetMaxSimultaneousTileGenerationJobsCount
+struct UNavigationSystem_ResetMaxSimultaneousTileGenerationJobsCount_Params
 {
 };
 
-// Function Engine.Pawn.SetCanAffectNavigationGeneration
-struct APawn_SetCanAffectNavigationGeneration_Params
+// Function Engine.NavigationSystem.RegisterNavigationInvoker
+struct UNavigationSystem_RegisterNavigationInvoker_Params
 {
-	bool                                               bNewValue;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bForceUpdate;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	class AActor*                                      Invoker;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              TileGenerationRadius;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              TileRemovalRadius;                                        // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Engine.Pawn.ReceiveUnpossessed
-struct APawn_ReceiveUnpossessed_Params
+// Function Engine.NavigationSystem.ProjectPointToNavigation
+struct UNavigationSystem_ProjectPointToNavigation_Params
 {
-	class AController*                                 OldController;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Pawn.ReceivePossessed
-struct APawn_ReceivePossessed_Params
-{
-	class AController*                                 NewController;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Pawn.PawnMakeNoise
-struct APawn_PawnMakeNoise_Params
-{
-	float                                              Loudness;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     NoiseLocation;                                            // (Parm, IsPlainOldData)
-	bool                                               bUseNoiseMakerLocation;                                   // (Parm, ZeroConstructor, IsPlainOldData)
-	class AActor*                                      NoiseMaker;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Pawn.OnRep_PlayerState
-struct APawn_OnRep_PlayerState_Params
-{
-};
-
-// Function Engine.Pawn.OnRep_Controller
-struct APawn_OnRep_Controller_Params
-{
-};
-
-// Function Engine.Pawn.LaunchPawn
-struct APawn_LaunchPawn_Params
-{
-	struct FVector                                     LaunchVelocity;                                           // (Parm, IsPlainOldData)
-	bool                                               bXYOverride;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bZOverride;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Pawn.K2_GetMovementInputVector
-struct APawn_K2_GetMovementInputVector_Params
-{
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     Point;                                                    // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	class ANavigationData*                             NavData;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      FilterClass;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     QueryExtent;                                              // (ConstParm, Parm, IsPlainOldData)
 	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.Pawn.IsPlayerControlled
-struct APawn_IsPlayerControlled_Params
+// Function Engine.NavigationSystem.OnNavigationBoundsUpdated
+struct UNavigationSystem_OnNavigationBoundsUpdated_Params
 {
+	class ANavMeshBoundsVolume*                        NavVolume;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.NavigationSystem.NavigationRaycast
+struct UNavigationSystem_NavigationRaycast_Params
+{
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     RayStart;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FVector                                     RayEnd;                                                   // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FVector                                     HitLocation;                                              // (Parm, OutParm, IsPlainOldData)
+	class UClass*                                      FilterClass;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	class AController*                                 Querier;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.Pawn.IsMoveInputIgnored
-struct APawn_IsMoveInputIgnored_Params
+// Function Engine.NavigationSystem.K2_ProjectPointToNavigation
+struct UNavigationSystem_K2_ProjectPointToNavigation_Params
 {
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     Point;                                                    // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FVector                                     ProjectedLocation;                                        // (Parm, OutParm, IsPlainOldData)
+	class ANavigationData*                             NavData;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      FilterClass;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     QueryExtent;                                              // (ConstParm, Parm, IsPlainOldData)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.Pawn.IsLocallyControlled
-struct APawn_IsLocallyControlled_Params
+// Function Engine.NavigationSystem.K2_GetRandomReachablePointInRadius
+struct UNavigationSystem_K2_GetRandomReachablePointInRadius_Params
 {
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     Origin;                                                   // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FVector                                     RandomLocation;                                           // (Parm, OutParm, IsPlainOldData)
+	float                                              Radius;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	class ANavigationData*                             NavData;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      FilterClass;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.Pawn.IsControlled
-struct APawn_IsControlled_Params
+// Function Engine.NavigationSystem.K2_GetRandomPointInNavigableRadius
+struct UNavigationSystem_K2_GetRandomPointInNavigableRadius_Params
 {
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     Origin;                                                   // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FVector                                     RandomLocation;                                           // (Parm, OutParm, IsPlainOldData)
+	float                                              Radius;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	class ANavigationData*                             NavData;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      FilterClass;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.Pawn.GetPendingMovementInputVector
-struct APawn_GetPendingMovementInputVector_Params
+// Function Engine.NavigationSystem.IsNavigationBeingBuiltOrLocked
+struct UNavigationSystem_IsNavigationBeingBuiltOrLocked_Params
 {
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.NavigationSystem.IsNavigationBeingBuilt
+struct UNavigationSystem_IsNavigationBeingBuilt_Params
+{
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.NavigationSystem.GetRandomReachablePointInRadius
+struct UNavigationSystem_GetRandomReachablePointInRadius_Params
+{
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     Origin;                                                   // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	float                                              Radius;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	class ANavigationData*                             NavData;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      FilterClass;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.Pawn.GetNavAgentLocation
-struct APawn_GetNavAgentLocation_Params
+// Function Engine.NavigationSystem.GetRandomPointInNavigableRadius
+struct UNavigationSystem_GetRandomPointInNavigableRadius_Params
 {
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     Origin;                                                   // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	float                                              Radius;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	class ANavigationData*                             NavData;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      FilterClass;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.Pawn.GetMovementComponent
-struct APawn_GetMovementComponent_Params
+// Function Engine.NavigationSystem.GetPathLength
+struct UNavigationSystem_GetPathLength_Params
 {
-	class UPawnMovementComponent*                      ReturnValue;                                              // (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     PathStart;                                                // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FVector                                     PathEnd;                                                  // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	float                                              PathLength;                                               // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	class ANavigationData*                             NavData;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      FilterClass;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ENavigationQueryResult>                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.Pawn.GetMovementBaseActor
-struct APawn_GetMovementBaseActor_Params
+// Function Engine.NavigationSystem.GetPathCost
+struct UNavigationSystem_GetPathCost_Params
 {
-	class APawn*                                       Pawn;                                                     // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-	class AActor*                                      ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     PathStart;                                                // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FVector                                     PathEnd;                                                  // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	float                                              PathCost;                                                 // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	class ANavigationData*                             NavData;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      FilterClass;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ENavigationQueryResult>                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.Pawn.GetLastMovementInputVector
-struct APawn_GetLastMovementInputVector_Params
+// Function Engine.NavigationSystem.GetNavigationSystem
+struct UNavigationSystem_GetNavigationSystem_Params
 {
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	class UNavigationSystem*                           ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.Pawn.GetControlRotation
-struct APawn_GetControlRotation_Params
+// Function Engine.NavigationSystem.FindPathToLocationSynchronously
+struct UNavigationSystem_FindPathToLocationSynchronously_Params
 {
-	struct FRotator                                    ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     PathStart;                                                // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FVector                                     PathEnd;                                                  // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	class AActor*                                      PathfindingContext;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      FilterClass;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	class UNavigationPath*                             ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.Pawn.GetController
-struct APawn_GetController_Params
+// Function Engine.NavigationSystem.FindPathToActorSynchronously
+struct UNavigationSystem_FindPathToActorSynchronously_Params
 {
-	class AController*                                 ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     PathStart;                                                // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	class AActor*                                      GoalActor;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              TetherDistance;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	class AActor*                                      PathfindingContext;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      FilterClass;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	class UNavigationPath*                             ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.Pawn.GetBaseAimRotation
-struct APawn_GetBaseAimRotation_Params
+// Function Engine.StaticMeshComponent.SetStaticMesh
+struct UStaticMeshComponent_SetStaticMesh_Params
 {
-	struct FRotator                                    ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+	class UStaticMesh*                                 NewMesh;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.Pawn.DetachFromControllerPendingDestroy
-struct APawn_DetachFromControllerPendingDestroy_Params
+// Function Engine.StaticMeshComponent.SetReverseCulling
+struct UStaticMeshComponent_SetReverseCulling_Params
 {
+	bool                                               ReverseCulling;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Engine.Pawn.ConsumeMovementInputVector
-struct APawn_ConsumeMovementInputVector_Params
+// Function Engine.StaticMeshComponent.SetForcedLodModel
+struct UStaticMeshComponent_SetForcedLodModel_Params
 {
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+	int                                                NewForcedLodModel;                                        // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Engine.Pawn.AddMovementInput
-struct APawn_AddMovementInput_Params
+// Function Engine.StaticMeshComponent.SetDistanceFieldSelfShadowBias
+struct UStaticMeshComponent_SetDistanceFieldSelfShadowBias_Params
 {
-	struct FVector                                     WorldDirection;                                           // (Parm, IsPlainOldData)
-	float                                              ScaleValue;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bForce;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              NewValue;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Engine.Pawn.AddControllerYawInput
-struct APawn_AddControllerYawInput_Params
+// Function Engine.StaticMeshComponent.OnRep_StaticMesh
+struct UStaticMeshComponent_OnRep_StaticMesh_Params
 {
-	float                                              Val;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
+	class UStaticMesh*                                 OldStaticMesh;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Engine.Pawn.AddControllerRollInput
-struct APawn_AddControllerRollInput_Params
+// Function Engine.StaticMeshComponent.GetLocalBounds
+struct UStaticMeshComponent_GetLocalBounds_Params
 {
-	float                                              Val;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     Min;                                                      // (Parm, OutParm, IsPlainOldData)
+	struct FVector                                     Max;                                                      // (Parm, OutParm, IsPlainOldData)
 };
 
-// Function Engine.Pawn.AddControllerPitchInput
-struct APawn_AddControllerPitchInput_Params
+// Function Engine.NavLinkProxy.SetSmartLinkEnabled
+struct ANavLinkProxy_SetSmartLinkEnabled_Params
 {
-	float                                              Val;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bEnabled;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Engine.Character.UnCrouch
-struct ACharacter_UnCrouch_Params
+// Function Engine.NavLinkProxy.ResumePathFollowing
+struct ANavLinkProxy_ResumePathFollowing_Params
 {
-	bool                                               bClientSimulation;                                        // (Parm, ZeroConstructor, IsPlainOldData)
+	class AActor*                                      Agent;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Engine.Character.StopJumping
-struct ACharacter_StopJumping_Params
+// Function Engine.NavLinkProxy.ReceiveSmartLinkReached
+struct ANavLinkProxy_ReceiveSmartLinkReached_Params
 {
+	class AActor*                                      Agent;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     Destination;                                              // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
 };
 
-// Function Engine.Character.StopAnimMontage
-struct ACharacter_StopAnimMontage_Params
-{
-	class UAnimMontage*                                AnimMontage;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Character.SetReplicateMovement
-struct ACharacter_SetReplicateMovement_Params
-{
-	bool                                               bInReplicateMovement;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Character.ServerMoveOld
-struct ACharacter_ServerMoveOld_Params
-{
-	float                                              OldTimeStamp;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector_NetQuantize10                       OldAccel;                                                 // (Parm)
-	unsigned char                                      OldMoveFlags;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Character.ServerMoveNoBase
-struct ACharacter_ServerMoveNoBase_Params
-{
-	float                                              Timestamp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector_NetQuantize10                       InAccel;                                                  // (Parm)
-	struct FVector_NetQuantize100                      ClientLoc;                                                // (Parm)
-	unsigned char                                      CompressedMoveFlags;                                      // (Parm, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      ClientRoll;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	uint32_t                                           View;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      ClientMovementMode;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Character.ServerMoveDualNoBase
-struct ACharacter_ServerMoveDualNoBase_Params
-{
-	float                                              TimeStamp0;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector_NetQuantize10                       InAccel0;                                                 // (Parm)
-	unsigned char                                      PendingFlags;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-	uint32_t                                           View0;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Timestamp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector_NetQuantize10                       InAccel;                                                  // (Parm)
-	struct FVector_NetQuantize100                      ClientLoc;                                                // (Parm)
-	unsigned char                                      NewFlags;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      ClientRoll;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	uint32_t                                           View;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      ClientMovementMode;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Character.ServerMoveDualHybridRootMotion
-struct ACharacter_ServerMoveDualHybridRootMotion_Params
-{
-	float                                              TimeStamp0;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector_NetQuantize10                       InAccel0;                                                 // (Parm)
-	unsigned char                                      PendingFlags;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-	uint32_t                                           View0;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Timestamp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector_NetQuantize10                       InAccel;                                                  // (Parm)
-	struct FVector_NetQuantize100                      ClientLoc;                                                // (Parm)
-	unsigned char                                      NewFlags;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      ClientRoll;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	uint32_t                                           View;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	class UPrimitiveComponent*                         ClientMovementBase;                                       // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	struct FName                                       ClientBaseBoneName;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      ClientMovementMode;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Character.ServerMoveDual
-struct ACharacter_ServerMoveDual_Params
-{
-	float                                              TimeStamp0;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector_NetQuantize10                       InAccel0;                                                 // (Parm)
-	unsigned char                                      PendingFlags;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-	uint32_t                                           View0;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Timestamp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector_NetQuantize10                       InAccel;                                                  // (Parm)
-	struct FVector_NetQuantize100                      ClientLoc;                                                // (Parm)
-	unsigned char                                      NewFlags;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      ClientRoll;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	uint32_t                                           View;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	class UPrimitiveComponent*                         ClientMovementBase;                                       // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	struct FName                                       ClientBaseBoneName;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      ClientMovementMode;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Character.ServerMove
-struct ACharacter_ServerMove_Params
-{
-	float                                              Timestamp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector_NetQuantize10                       InAccel;                                                  // (Parm)
-	struct FVector_NetQuantize100                      ClientLoc;                                                // (Parm)
-	unsigned char                                      CompressedMoveFlags;                                      // (Parm, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      ClientRoll;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	uint32_t                                           View;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	class UPrimitiveComponent*                         ClientMovementBase;                                       // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	struct FName                                       ClientBaseBoneName;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      ClientMovementMode;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Character.RootMotionDebugClientPrintOnScreen
-struct ACharacter_RootMotionDebugClientPrintOnScreen_Params
-{
-	struct FString                                     inString;                                                 // (Parm, ZeroConstructor)
-};
-
-// Function Engine.Character.PlayAnimMontage
-struct ACharacter_PlayAnimMontage_Params
-{
-	class UAnimMontage*                                AnimMontage;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              InPlayRate;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FName                                       StartSectionName;                                         // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.Character.OnWalkingOffLedge
-struct ACharacter_OnWalkingOffLedge_Params
-{
-	struct FVector                                     PreviousFloorImpactNormal;                                // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	struct FVector                                     PreviousFloorContactNormal;                               // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	struct FVector                                     PreviousLocation;                                         // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	float                                              TimeDelta;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Character.OnRep_RootMotion
-struct ACharacter_OnRep_RootMotion_Params
-{
-};
-
-// Function Engine.Character.OnRep_ReplicatedBasedMovement
-struct ACharacter_OnRep_ReplicatedBasedMovement_Params
-{
-};
-
-// Function Engine.Character.OnRep_IsCrouched
-struct ACharacter_OnRep_IsCrouched_Params
-{
-};
-
-// Function Engine.Character.OnLaunched
-struct ACharacter_OnLaunched_Params
-{
-	struct FVector                                     LaunchVelocity;                                           // (Parm, IsPlainOldData)
-	bool                                               bXYOverride;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bZOverride;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Character.OnLanded
-struct ACharacter_OnLanded_Params
-{
-	struct FHitResult                                  Hit;                                                      // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-};
-
-// Function Engine.Character.OnJumped
-struct ACharacter_OnJumped_Params
-{
-};
-
-// Function Engine.Character.LaunchCharacter
-struct ACharacter_LaunchCharacter_Params
-{
-	struct FVector                                     LaunchVelocity;                                           // (Parm, IsPlainOldData)
-	bool                                               bXYOverride;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bZOverride;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Character.K2_UpdateCustomMovement
-struct ACharacter_K2_UpdateCustomMovement_Params
-{
-	float                                              DeltaTime;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Character.K2_OnStartCrouch
-struct ACharacter_K2_OnStartCrouch_Params
-{
-	float                                              HalfHeightAdjust;                                         // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ScaledHalfHeightAdjust;                                   // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Character.K2_OnMovementModeChanged
-struct ACharacter_K2_OnMovementModeChanged_Params
-{
-	TEnumAsByte<EMovementMode>                         PrevMovementMode;                                         // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EMovementMode>                         NewMovementMode;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      PrevCustomMode;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      NewCustomMode;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Character.K2_OnEndCrouch
-struct ACharacter_K2_OnEndCrouch_Params
-{
-	float                                              HalfHeightAdjust;                                         // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ScaledHalfHeightAdjust;                                   // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Character.Jump
-struct ACharacter_Jump_Params
-{
-};
-
-// Function Engine.Character.IsPlayingRootMotion
-struct ACharacter_IsPlayingRootMotion_Params
+// Function Engine.NavLinkProxy.IsSmartLinkEnabled
+struct ANavLinkProxy_IsSmartLinkEnabled_Params
 {
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.Character.IsPlayingNetworkedRootMotionMontage
-struct ACharacter_IsPlayingNetworkedRootMotionMontage_Params
+// Function Engine.NavLinkProxy.HasMovingAgents
+struct ANavLinkProxy_HasMovingAgents_Params
 {
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.Character.IsJumpProvidingForce
-struct ACharacter_IsJumpProvidingForce_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.Character.GetCurrentMontage
-struct ACharacter_GetCurrentMontage_Params
-{
-	class UAnimMontage*                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.Character.GetBaseTranslationOffset
-struct ACharacter_GetBaseTranslationOffset_Params
-{
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.Character.GetBaseRotationOffsetRotator
-struct ACharacter_GetBaseRotationOffsetRotator_Params
-{
-	struct FRotator                                    ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.Character.GetAnimRootMotionTranslationScale
-struct ACharacter_GetAnimRootMotionTranslationScale_Params
-{
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.Character.Crouch
-struct ACharacter_Crouch_Params
-{
-	bool                                               bClientSimulation;                                        // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Character.ClientVeryShortAdjustPosition
-struct ACharacter_ClientVeryShortAdjustPosition_Params
-{
-	float                                              Timestamp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     NewLoc;                                                   // (Parm, IsPlainOldData)
-	class UPrimitiveComponent*                         NewBase;                                                  // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	struct FName                                       NewBaseBoneName;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bHasBase;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bBaseRelativePosition;                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      ServerMovementMode;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Character.ClientCheatWalk
-struct ACharacter_ClientCheatWalk_Params
-{
-};
-
-// Function Engine.Character.ClientCheatGhost
-struct ACharacter_ClientCheatGhost_Params
-{
-};
-
-// Function Engine.Character.ClientCheatFly
-struct ACharacter_ClientCheatFly_Params
-{
-};
-
-// Function Engine.Character.ClientAdjustRootMotionSourcePosition
-struct ACharacter_ClientAdjustRootMotionSourcePosition_Params
-{
-	float                                              Timestamp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FRootMotionSourceGroup                      ServerRootMotion;                                         // (Parm)
-	bool                                               bHasAnimRootMotion;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ServerMontageTrackPosition;                               // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ServerLoc;                                                // (Parm, IsPlainOldData)
-	struct FVector_NetQuantizeNormal                   ServerRotation;                                           // (Parm)
-	float                                              ServerVelZ;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	class UPrimitiveComponent*                         ServerBase;                                               // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	struct FName                                       ServerBoneName;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bHasBase;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bBaseRelativePosition;                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      ServerMovementMode;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Character.ClientAdjustRootMotionPosition
-struct ACharacter_ClientAdjustRootMotionPosition_Params
-{
-	float                                              Timestamp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ServerMontageTrackPosition;                               // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ServerLoc;                                                // (Parm, IsPlainOldData)
-	struct FVector_NetQuantizeNormal                   ServerRotation;                                           // (Parm)
-	float                                              ServerVelZ;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	class UPrimitiveComponent*                         ServerBase;                                               // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	struct FName                                       ServerBoneName;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bHasBase;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bBaseRelativePosition;                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      ServerMovementMode;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Character.ClientAdjustPosition
-struct ACharacter_ClientAdjustPosition_Params
-{
-	float                                              Timestamp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     NewLoc;                                                   // (Parm, IsPlainOldData)
-	struct FVector                                     NewVel;                                                   // (Parm, IsPlainOldData)
-	class UPrimitiveComponent*                         NewBase;                                                  // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	struct FName                                       NewBaseBoneName;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bHasBase;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bBaseRelativePosition;                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      ServerMovementMode;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Character.ClientAckGoodMove
-struct ACharacter_ClientAckGoodMove_Params
-{
-	float                                              Timestamp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.Character.CanJumpInternal
-struct ACharacter_CanJumpInternal_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.Character.CanJump
-struct ACharacter_CanJump_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.Character.CacheInitialMeshOffset
-struct ACharacter_CacheInitialMeshOffset_Params
-{
-	struct FVector                                     MeshRelativeLocation;                                     // (Parm, IsPlainOldData)
-	struct FRotator                                    MeshRelativeRotation;                                     // (Parm, IsPlainOldData)
 };
 
 // Function Engine.AnimNotify.Received_Notify
@@ -4029,234 +5476,6 @@ struct UAnimNotifyState_Received_NotifyBegin_Params
 struct UAnimNotifyState_GetNotifyName_Params
 {
 	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
-};
-
-// Function Engine.BlueprintAsyncActionBase.Activate
-struct UBlueprintAsyncActionBase_Activate_Params
-{
-};
-
-// Function Engine.MovementComponent.StopMovementImmediately
-struct UMovementComponent_StopMovementImmediately_Params
-{
-};
-
-// Function Engine.MovementComponent.SnapUpdatedComponentToPlane
-struct UMovementComponent_SnapUpdatedComponentToPlane_Params
-{
-};
-
-// Function Engine.MovementComponent.SetUpdatedComponent
-struct UMovementComponent_SetUpdatedComponent_Params
-{
-	class USceneComponent*                             NewUpdatedComponent;                                      // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-};
-
-// Function Engine.MovementComponent.SetPlaneConstraintOrigin
-struct UMovementComponent_SetPlaneConstraintOrigin_Params
-{
-	struct FVector                                     PlaneOrigin;                                              // (Parm, IsPlainOldData)
-};
-
-// Function Engine.MovementComponent.SetPlaneConstraintNormal
-struct UMovementComponent_SetPlaneConstraintNormal_Params
-{
-	struct FVector                                     PlaneNormal;                                              // (Parm, IsPlainOldData)
-};
-
-// Function Engine.MovementComponent.SetPlaneConstraintFromVectors
-struct UMovementComponent_SetPlaneConstraintFromVectors_Params
-{
-	struct FVector                                     Forward;                                                  // (Parm, IsPlainOldData)
-	struct FVector                                     Up;                                                       // (Parm, IsPlainOldData)
-};
-
-// Function Engine.MovementComponent.SetPlaneConstraintEnabled
-struct UMovementComponent_SetPlaneConstraintEnabled_Params
-{
-	bool                                               bEnabled;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.MovementComponent.SetPlaneConstraintAxisSetting
-struct UMovementComponent_SetPlaneConstraintAxisSetting_Params
-{
-	EPlaneConstraintAxisSetting                        NewAxisSetting;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.MovementComponent.PhysicsVolumeChanged
-struct UMovementComponent_PhysicsVolumeChanged_Params
-{
-	class APhysicsVolume*                              NewVolume;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.MovementComponent.K2_MoveUpdatedComponent
-struct UMovementComponent_K2_MoveUpdatedComponent_Params
-{
-	struct FVector                                     Delta;                                                    // (Parm, IsPlainOldData)
-	struct FRotator                                    NewRotation;                                              // (Parm, IsPlainOldData)
-	struct FHitResult                                  OutHit;                                                   // (Parm, OutParm, IsPlainOldData)
-	bool                                               bSweep;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bTeleport;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.MovementComponent.K2_GetModifiedMaxSpeed
-struct UMovementComponent_K2_GetModifiedMaxSpeed_Params
-{
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.MovementComponent.K2_GetMaxSpeedModifier
-struct UMovementComponent_K2_GetMaxSpeedModifier_Params
-{
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.MovementComponent.IsExceedingMaxSpeed
-struct UMovementComponent_IsExceedingMaxSpeed_Params
-{
-	float                                              MaxSpeed;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.MovementComponent.GetPlaneConstraintOrigin
-struct UMovementComponent_GetPlaneConstraintOrigin_Params
-{
-	struct FVector                                     ReturnValue;                                              // (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, IsPlainOldData)
-};
-
-// Function Engine.MovementComponent.GetPlaneConstraintNormal
-struct UMovementComponent_GetPlaneConstraintNormal_Params
-{
-	struct FVector                                     ReturnValue;                                              // (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, IsPlainOldData)
-};
-
-// Function Engine.MovementComponent.GetPlaneConstraintAxisSetting
-struct UMovementComponent_GetPlaneConstraintAxisSetting_Params
-{
-	EPlaneConstraintAxisSetting                        ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.MovementComponent.GetPhysicsVolume
-struct UMovementComponent_GetPhysicsVolume_Params
-{
-	class APhysicsVolume*                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.MovementComponent.GetMaxSpeed
-struct UMovementComponent_GetMaxSpeed_Params
-{
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.MovementComponent.GetGravityZ
-struct UMovementComponent_GetGravityZ_Params
-{
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.MovementComponent.ConstrainNormalToPlane
-struct UMovementComponent_ConstrainNormalToPlane_Params
-{
-	struct FVector                                     Normal;                                                   // (Parm, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.MovementComponent.ConstrainLocationToPlane
-struct UMovementComponent_ConstrainLocationToPlane_Params
-{
-	struct FVector                                     Location;                                                 // (Parm, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.MovementComponent.ConstrainDirectionToPlane
-struct UMovementComponent_ConstrainDirectionToPlane_Params
-{
-	struct FVector                                     Direction;                                                // (Parm, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.NavMovementComponent.StopMovementKeepPathing
-struct UNavMovementComponent_StopMovementKeepPathing_Params
-{
-};
-
-// Function Engine.NavMovementComponent.StopActiveMovement
-struct UNavMovementComponent_StopActiveMovement_Params
-{
-};
-
-// Function Engine.NavMovementComponent.IsSwimming
-struct UNavMovementComponent_IsSwimming_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.NavMovementComponent.IsMovingOnGround
-struct UNavMovementComponent_IsMovingOnGround_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.NavMovementComponent.IsFlying
-struct UNavMovementComponent_IsFlying_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.NavMovementComponent.IsFalling
-struct UNavMovementComponent_IsFalling_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.NavMovementComponent.IsCrouching
-struct UNavMovementComponent_IsCrouching_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.PawnMovementComponent.K2_GetInputVector
-struct UPawnMovementComponent_K2_GetInputVector_Params
-{
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.PawnMovementComponent.IsMoveInputIgnored
-struct UPawnMovementComponent_IsMoveInputIgnored_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.PawnMovementComponent.GetPendingInputVector
-struct UPawnMovementComponent_GetPendingInputVector_Params
-{
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.PawnMovementComponent.GetPawnOwner
-struct UPawnMovementComponent_GetPawnOwner_Params
-{
-	class APawn*                                       ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.PawnMovementComponent.GetLastInputVector
-struct UPawnMovementComponent_GetLastInputVector_Params
-{
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.PawnMovementComponent.ConsumeInputVector
-struct UPawnMovementComponent_ConsumeInputVector_Params
-{
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.PawnMovementComponent.AddInputVector
-struct UPawnMovementComponent_AddInputVector_Params
-{
-	struct FVector                                     WorldVector;                                              // (Parm, IsPlainOldData)
-	bool                                               bForce;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Engine.CameraActor.GetAutoActivatePlayerIndex
@@ -4369,6 +5588,13 @@ struct APlayerController_SetAudioListenerOverride_Params
 	class USceneComponent*                             AttachToComponent;                                        // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 	struct FVector                                     Location;                                                 // (Parm, IsPlainOldData)
 	struct FRotator                                    Rotation;                                                 // (Parm, IsPlainOldData)
+};
+
+// Function Engine.PlayerController.SetAudioListenerAttenuationOverride
+struct APlayerController_SetAudioListenerAttenuationOverride_Params
+{
+	class USceneComponent*                             AttachToComponent;                                        // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	struct FVector                                     AttenuationLocationOVerride;                              // (Parm, IsPlainOldData)
 };
 
 // Function Engine.PlayerController.ServerViewSelf
@@ -4923,7 +6149,7 @@ struct APlayerController_ClientRepObjRef_Params
 struct APlayerController_ClientReceiveLocalizedMessage_Params
 {
 	class UClass*                                      MESSAGE;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	int                                                Switch;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                SWITCH;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 	class APlayerState*                                RelatedPlayerState_1_2;                                   // (Parm, ZeroConstructor, IsPlainOldData)
 	class APlayerState*                                RelatedPlayerState_2_3;                                   // (Parm, ZeroConstructor, IsPlainOldData)
 	class UObject*                                     OptionalObject;                                           // (Parm, ZeroConstructor, IsPlainOldData)
@@ -5086,6 +6312,11 @@ struct APlayerController_ClientAddTextureStreamingLoc_Params
 
 // Function Engine.PlayerController.ClearAudioListenerOverride
 struct APlayerController_ClearAudioListenerOverride_Params
+{
+};
+
+// Function Engine.PlayerController.ClearAudioListenerAttenuationOverride
+struct APlayerController_ClearAudioListenerAttenuationOverride_Params
 {
 };
 
@@ -6174,6 +7405,12 @@ struct UGameUserSettings_SetFoliageQuality_Params
 	int                                                Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Engine.GameUserSettings.SetDynamicResolutionEnabled
+struct UGameUserSettings_SetDynamicResolutionEnabled_Params
+{
+	bool                                               bEnable;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function Engine.GameUserSettings.SetBenchmarkFallbackValues
 struct UGameUserSettings_SetBenchmarkFallbackValues_Params
 {
@@ -6246,6 +7483,18 @@ struct UGameUserSettings_IsHDREnabled_Params
 
 // Function Engine.GameUserSettings.IsFullscreenModeDirty
 struct UGameUserSettings_IsFullscreenModeDirty_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.GameUserSettings.IsDynamicResolutionEnabled
+struct UGameUserSettings_IsDynamicResolutionEnabled_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.GameUserSettings.IsDynamicResolutionDirty
+struct UGameUserSettings_IsDynamicResolutionDirty_Params
 {
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
@@ -6520,37 +7769,6 @@ struct UCameraComponent_AddOrUpdateBlendable_Params
 	float                                              InWeight;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Engine.NavLinkProxy.SetSmartLinkEnabled
-struct ANavLinkProxy_SetSmartLinkEnabled_Params
-{
-	bool                                               bEnabled;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.NavLinkProxy.ResumePathFollowing
-struct ANavLinkProxy_ResumePathFollowing_Params
-{
-	class AActor*                                      Agent;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.NavLinkProxy.ReceiveSmartLinkReached
-struct ANavLinkProxy_ReceiveSmartLinkReached_Params
-{
-	class AActor*                                      Agent;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     Destination;                                              // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-};
-
-// Function Engine.NavLinkProxy.IsSmartLinkEnabled
-struct ANavLinkProxy_IsSmartLinkEnabled_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.NavLinkProxy.HasMovingAgents
-struct ANavLinkProxy_HasMovingAgents_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
 // Function Engine.LevelScriptActor.WorldOriginLocationChanged
 struct ALevelScriptActor_WorldOriginLocationChanged_Params
 {
@@ -6823,206 +8041,6 @@ struct UBoxComponent_GetScaledBoxExtent_Params
 	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.NavigationSystem.UnregisterNavigationInvoker
-struct UNavigationSystem_UnregisterNavigationInvoker_Params
-{
-	class AActor*                                      Invoker;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.NavigationSystem.SimpleMoveToLocation
-struct UNavigationSystem_SimpleMoveToLocation_Params
-{
-	class AController*                                 Controller;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     Goal;                                                     // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-};
-
-// Function Engine.NavigationSystem.SimpleMoveToActor
-struct UNavigationSystem_SimpleMoveToActor_Params
-{
-	class AController*                                 Controller;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	class AActor*                                      Goal;                                                     // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.NavigationSystem.SetMaxSimultaneousTileGenerationJobsCount
-struct UNavigationSystem_SetMaxSimultaneousTileGenerationJobsCount_Params
-{
-	int                                                MaxNumberOfJobs;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.NavigationSystem.SetGeometryGatheringMode
-struct UNavigationSystem_SetGeometryGatheringMode_Params
-{
-	ENavDataGatheringModeConfig                        NewMode;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.NavigationSystem.ResetMaxSimultaneousTileGenerationJobsCount
-struct UNavigationSystem_ResetMaxSimultaneousTileGenerationJobsCount_Params
-{
-};
-
-// Function Engine.NavigationSystem.RegisterNavigationInvoker
-struct UNavigationSystem_RegisterNavigationInvoker_Params
-{
-	class AActor*                                      Invoker;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              TileGenerationRadius;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              TileRemovalRadius;                                        // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.NavigationSystem.ProjectPointToNavigation
-struct UNavigationSystem_ProjectPointToNavigation_Params
-{
-	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     Point;                                                    // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	class ANavigationData*                             NavData;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	class UClass*                                      FilterClass;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     QueryExtent;                                              // (ConstParm, Parm, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.NavigationSystem.OnNavigationBoundsUpdated
-struct UNavigationSystem_OnNavigationBoundsUpdated_Params
-{
-	class ANavMeshBoundsVolume*                        NavVolume;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.NavigationSystem.NavigationRaycast
-struct UNavigationSystem_NavigationRaycast_Params
-{
-	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     RayStart;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	struct FVector                                     RayEnd;                                                   // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	struct FVector                                     HitLocation;                                              // (Parm, OutParm, IsPlainOldData)
-	class UClass*                                      FilterClass;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	class AController*                                 Querier;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.NavigationSystem.K2_ProjectPointToNavigation
-struct UNavigationSystem_K2_ProjectPointToNavigation_Params
-{
-	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     Point;                                                    // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	struct FVector                                     ProjectedLocation;                                        // (Parm, OutParm, IsPlainOldData)
-	class ANavigationData*                             NavData;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	class UClass*                                      FilterClass;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     QueryExtent;                                              // (ConstParm, Parm, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.NavigationSystem.K2_GetRandomReachablePointInRadius
-struct UNavigationSystem_K2_GetRandomReachablePointInRadius_Params
-{
-	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     Origin;                                                   // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	struct FVector                                     RandomLocation;                                           // (Parm, OutParm, IsPlainOldData)
-	float                                              Radius;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-	class ANavigationData*                             NavData;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	class UClass*                                      FilterClass;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.NavigationSystem.K2_GetRandomPointInNavigableRadius
-struct UNavigationSystem_K2_GetRandomPointInNavigableRadius_Params
-{
-	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     Origin;                                                   // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	struct FVector                                     RandomLocation;                                           // (Parm, OutParm, IsPlainOldData)
-	float                                              Radius;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-	class ANavigationData*                             NavData;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	class UClass*                                      FilterClass;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.NavigationSystem.IsNavigationBeingBuiltOrLocked
-struct UNavigationSystem_IsNavigationBeingBuiltOrLocked_Params
-{
-	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.NavigationSystem.IsNavigationBeingBuilt
-struct UNavigationSystem_IsNavigationBeingBuilt_Params
-{
-	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.NavigationSystem.GetRandomReachablePointInRadius
-struct UNavigationSystem_GetRandomReachablePointInRadius_Params
-{
-	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     Origin;                                                   // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	float                                              Radius;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-	class ANavigationData*                             NavData;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	class UClass*                                      FilterClass;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.NavigationSystem.GetRandomPointInNavigableRadius
-struct UNavigationSystem_GetRandomPointInNavigableRadius_Params
-{
-	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     Origin;                                                   // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	float                                              Radius;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-	class ANavigationData*                             NavData;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	class UClass*                                      FilterClass;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.NavigationSystem.GetPathLength
-struct UNavigationSystem_GetPathLength_Params
-{
-	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     PathStart;                                                // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	struct FVector                                     PathEnd;                                                  // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	float                                              PathLength;                                               // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-	class ANavigationData*                             NavData;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	class UClass*                                      FilterClass;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ENavigationQueryResult>                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.NavigationSystem.GetPathCost
-struct UNavigationSystem_GetPathCost_Params
-{
-	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     PathStart;                                                // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	struct FVector                                     PathEnd;                                                  // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	float                                              PathCost;                                                 // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-	class ANavigationData*                             NavData;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	class UClass*                                      FilterClass;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ENavigationQueryResult>                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.NavigationSystem.GetNavigationSystem
-struct UNavigationSystem_GetNavigationSystem_Params
-{
-	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	class UNavigationSystem*                           ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.NavigationSystem.FindPathToLocationSynchronously
-struct UNavigationSystem_FindPathToLocationSynchronously_Params
-{
-	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     PathStart;                                                // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	struct FVector                                     PathEnd;                                                  // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	class AActor*                                      PathfindingContext;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	class UClass*                                      FilterClass;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	class UNavigationPath*                             ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.NavigationSystem.FindPathToActorSynchronously
-struct UNavigationSystem_FindPathToActorSynchronously_Params
-{
-	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     PathStart;                                                // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	class AActor*                                      GoalActor;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              TetherDistance;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-	class AActor*                                      PathfindingContext;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	class UClass*                                      FilterClass;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	class UNavigationPath*                             ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
 // Function Engine.PlayerInput.SetMouseSensitivity
 struct UPlayerInput_SetMouseSensitivity_Params
 {
@@ -7116,284 +8134,133 @@ struct APlayerState_GetPlayerName_Params
 	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
 };
 
-// Function Engine.DefaultPawn.TurnAtRate
-struct ADefaultPawn_TurnAtRate_Params
-{
-	float                                              Rate;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.DefaultPawn.MoveUp_World
-struct ADefaultPawn_MoveUp_World_Params
-{
-	float                                              Val;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.DefaultPawn.MoveRight
-struct ADefaultPawn_MoveRight_Params
-{
-	float                                              Val;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.DefaultPawn.MoveForward
-struct ADefaultPawn_MoveForward_Params
-{
-	float                                              Val;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.DefaultPawn.LookUpAtRate
-struct ADefaultPawn_LookUpAtRate_Params
-{
-	float                                              Rate;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.HUD.ShowHUD
-struct AHUD_ShowHUD_Params
+// Function Engine.AudioComponent.Stop
+struct UAudioComponent_Stop_Params
 {
 };
 
-// Function Engine.HUD.ShowDebugToggleSubCategory
-struct AHUD_ShowDebugToggleSubCategory_Params
+// Function Engine.AudioComponent.SetWaveParameter
+struct UAudioComponent_SetWaveParameter_Params
 {
-	struct FName                                       Category;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.HUD.ShowDebugForReticleTargetToggle
-struct AHUD_ShowDebugForReticleTargetToggle_Params
-{
-	class UClass*                                      DesiredClass;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.HUD.ShowDebug
-struct AHUD_ShowDebug_Params
-{
-	struct FName                                       DebugType;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.HUD.RemoveDebugText
-struct AHUD_RemoveDebugText_Params
-{
-	class AActor*                                      SrcActor;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bLeaveDurationText;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.HUD.RemoveAllDebugStrings
-struct AHUD_RemoveAllDebugStrings_Params
-{
-};
-
-// Function Engine.HUD.ReceiveHitBoxRelease
-struct AHUD_ReceiveHitBoxRelease_Params
-{
-	struct FName                                       BoxName;                                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.HUD.ReceiveHitBoxEndCursorOver
-struct AHUD_ReceiveHitBoxEndCursorOver_Params
-{
-	struct FName                                       BoxName;                                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.HUD.ReceiveHitBoxClick
-struct AHUD_ReceiveHitBoxClick_Params
-{
-	struct FName                                       BoxName;                                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.HUD.ReceiveHitBoxBeginCursorOver
-struct AHUD_ReceiveHitBoxBeginCursorOver_Params
-{
-	struct FName                                       BoxName;                                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.HUD.ReceiveDrawHUD
-struct AHUD_ReceiveDrawHUD_Params
-{
-	int                                                SizeX;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	int                                                SizeY;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.HUD.Project
-struct AHUD_Project_Params
-{
-	struct FVector                                     Location;                                                 // (Parm, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.HUD.GetTextSize
-struct AHUD_GetTextSize_Params
-{
-	struct FString                                     Text;                                                     // (Parm, ZeroConstructor)
-	float                                              OutWidth;                                                 // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-	float                                              OutHeight;                                                // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-	class UFont*                                       Font;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Scale;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.HUD.GetOwningPlayerController
-struct AHUD_GetOwningPlayerController_Params
-{
-	class APlayerController*                           ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.HUD.GetOwningPawn
-struct AHUD_GetOwningPawn_Params
-{
-	class APawn*                                       ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.HUD.GetActorsInSelectionRectangle
-struct AHUD_GetActorsInSelectionRectangle_Params
-{
-	class UClass*                                      ClassFilter;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector2D                                   FirstPoint;                                               // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	struct FVector2D                                   SecondPoint;                                              // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	TArray<class AActor*>                              OutActors;                                                // (Parm, OutParm, ZeroConstructor)
-	bool                                               bIncludeNonCollidingComponents;                           // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bActorMustBeFullyEnclosed;                                // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.HUD.DrawTextureSimple
-struct AHUD_DrawTextureSimple_Params
-{
-	class UTexture*                                    Texture;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ScreenX;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ScreenY;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Scale;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bScalePosition;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.HUD.DrawTexture
-struct AHUD_DrawTexture_Params
-{
-	class UTexture*                                    Texture;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ScreenX;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ScreenY;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ScreenW;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ScreenH;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              TextureU;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              TextureV;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              TextureUWidth;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              TextureVHeight;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FLinearColor                                TintColor;                                                // (Parm, IsPlainOldData)
-	TEnumAsByte<EBlendMode>                            BlendMode;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Scale;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bScalePosition;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Rotation;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector2D                                   RotPivot;                                                 // (Parm, IsPlainOldData)
-};
-
-// Function Engine.HUD.DrawText
-struct AHUD_DrawText_Params
-{
-	struct FString                                     Text;                                                     // (Parm, ZeroConstructor)
-	struct FLinearColor                                TextColor;                                                // (Parm, IsPlainOldData)
-	float                                              ScreenX;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ScreenY;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	class UFont*                                       Font;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Scale;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bScalePosition;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.HUD.DrawRect
-struct AHUD_DrawRect_Params
-{
-	struct FLinearColor                                RectColor;                                                // (Parm, IsPlainOldData)
-	float                                              ScreenX;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ScreenY;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ScreenW;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ScreenH;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.HUD.DrawMaterialTriangle
-struct AHUD_DrawMaterialTriangle_Params
-{
-	class UMaterialInterface*                          Material;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector2D                                   V0_Pos;                                                   // (Parm, IsPlainOldData)
-	struct FVector2D                                   V1_Pos;                                                   // (Parm, IsPlainOldData)
-	struct FVector2D                                   V2_Pos;                                                   // (Parm, IsPlainOldData)
-	struct FVector2D                                   V0_UV;                                                    // (Parm, IsPlainOldData)
-	struct FVector2D                                   V1_UV;                                                    // (Parm, IsPlainOldData)
-	struct FVector2D                                   V2_UV;                                                    // (Parm, IsPlainOldData)
-	struct FLinearColor                                V0_Color;                                                 // (Parm, IsPlainOldData)
-	struct FLinearColor                                V1_Color;                                                 // (Parm, IsPlainOldData)
-	struct FLinearColor                                V2_Color;                                                 // (Parm, IsPlainOldData)
-};
-
-// Function Engine.HUD.DrawMaterialSimple
-struct AHUD_DrawMaterialSimple_Params
-{
-	class UMaterialInterface*                          Material;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ScreenX;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ScreenY;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ScreenW;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ScreenH;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Scale;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bScalePosition;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.HUD.DrawMaterial
-struct AHUD_DrawMaterial_Params
-{
-	class UMaterialInterface*                          Material;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ScreenX;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ScreenY;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ScreenW;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ScreenH;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              MaterialU;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              MaterialV;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              MaterialUWidth;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              MaterialVHeight;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Scale;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bScalePosition;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Rotation;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector2D                                   RotPivot;                                                 // (Parm, IsPlainOldData)
-};
-
-// Function Engine.HUD.DrawLine
-struct AHUD_DrawLine_Params
-{
-	float                                              StartScreenX;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              StartScreenY;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              EndScreenX;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              EndScreenY;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FLinearColor                                LineColor;                                                // (Parm, IsPlainOldData)
-	float                                              LineThickness;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.HUD.Deproject
-struct AHUD_Deproject_Params
-{
-	float                                              ScreenX;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ScreenY;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     WorldPosition;                                            // (Parm, OutParm, IsPlainOldData)
-	struct FVector                                     WorldDirection;                                           // (Parm, OutParm, IsPlainOldData)
-};
-
-// Function Engine.HUD.AddHitBox
-struct AHUD_AddHitBox_Params
-{
-	struct FVector2D                                   Position;                                                 // (Parm, IsPlainOldData)
-	struct FVector2D                                   Size;                                                     // (Parm, IsPlainOldData)
 	struct FName                                       InName;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bConsumesInput;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-	int                                                Priority;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	class USoundWave*                                  InWave;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Engine.HUD.AddDebugText
-struct AHUD_AddDebugText_Params
+// Function Engine.AudioComponent.SetVolumeMultiplier
+struct UAudioComponent_SetVolumeMultiplier_Params
 {
-	struct FString                                     DebugText;                                                // (Parm, ZeroConstructor)
-	class AActor*                                      SrcActor;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Duration;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     Offset;                                                   // (Parm, IsPlainOldData)
-	struct FVector                                     DesiredOffset;                                            // (Parm, IsPlainOldData)
-	struct FColor                                      TextColor;                                                // (Parm, IsPlainOldData)
-	bool                                               bSkipOverwriteCheck;                                      // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bAbsoluteLocation;                                        // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bKeepAttachedToActor;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	class UFont*                                       InFont;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              FontScale;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bDrawShadow;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              NewVolumeMultiplier;                                      // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.AudioComponent.SetUISound
+struct UAudioComponent_SetUISound_Params
+{
+	bool                                               bInUISound;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.AudioComponent.SetSubmixSend
+struct UAudioComponent_SetSubmixSend_Params
+{
+	class USoundSubmix*                                Submix;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              SendLevel;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.AudioComponent.SetSound
+struct UAudioComponent_SetSound_Params
+{
+	class USoundBase*                                  NewSound;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.AudioComponent.SetPitchMultiplier
+struct UAudioComponent_SetPitchMultiplier_Params
+{
+	float                                              NewPitchMultiplier;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.AudioComponent.SetPaused
+struct UAudioComponent_SetPaused_Params
+{
+	bool                                               bPause;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.AudioComponent.SetLowPassFilterFrequency
+struct UAudioComponent_SetLowPassFilterFrequency_Params
+{
+	float                                              InLowPassFilterFrequency;                                 // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.AudioComponent.SetLowPassFilterEnabled
+struct UAudioComponent_SetLowPassFilterEnabled_Params
+{
+	bool                                               InLowPassFilterEnabled;                                   // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.AudioComponent.SetIntParameter
+struct UAudioComponent_SetIntParameter_Params
+{
+	struct FName                                       InName;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                inInt;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.AudioComponent.SetFloatParameter
+struct UAudioComponent_SetFloatParameter_Params
+{
+	struct FName                                       InName;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              InFloat;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.AudioComponent.SetBoolParameter
+struct UAudioComponent_SetBoolParameter_Params
+{
+	struct FName                                       InName;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               InBool;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.AudioComponent.Play
+struct UAudioComponent_Play_Params
+{
+	float                                              StartTime;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.AudioComponent.IsPlaying
+struct UAudioComponent_IsPlaying_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.AudioComponent.FadeOut
+struct UAudioComponent_FadeOut_Params
+{
+	float                                              FadeOutDuration;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              FadeVolumeLevel;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.AudioComponent.FadeIn
+struct UAudioComponent_FadeIn_Params
+{
+	float                                              FadeInDuration;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              FadeVolumeLevel;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              StartTime;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.AudioComponent.BP_GetAttenuationSettingsToApply
+struct UAudioComponent_BP_GetAttenuationSettingsToApply_Params
+{
+	struct FSoundAttenuationSettings                   OutAttenuationSettings;                                   // (Parm, OutParm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.AudioComponent.AdjustVolume
+struct UAudioComponent_AdjustVolume_Params
+{
+	float                                              AdjustVolumeDuration;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              AdjustVolumeLevel;                                        // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.AudioComponent.AdjustAttenuation
+struct UAudioComponent_AdjustAttenuation_Params
+{
+	struct FSoundAttenuationSettings                   InAttenuationSettings;                                    // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function Engine.WorldSettings.OnRep_WorldGravityZ
@@ -7796,135 +8663,6 @@ struct UAtmosphericFogComponent_DisableSunDisk_Params
 struct UAtmosphericFogComponent_DisableGroundScattering_Params
 {
 	bool                                               NewGroundScattering;                                      // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.AudioComponent.Stop
-struct UAudioComponent_Stop_Params
-{
-};
-
-// Function Engine.AudioComponent.SetWaveParameter
-struct UAudioComponent_SetWaveParameter_Params
-{
-	struct FName                                       InName;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-	class USoundWave*                                  InWave;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.AudioComponent.SetVolumeMultiplier
-struct UAudioComponent_SetVolumeMultiplier_Params
-{
-	float                                              NewVolumeMultiplier;                                      // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.AudioComponent.SetUISound
-struct UAudioComponent_SetUISound_Params
-{
-	bool                                               bInUISound;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.AudioComponent.SetSubmixSend
-struct UAudioComponent_SetSubmixSend_Params
-{
-	class USoundSubmix*                                Submix;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              SendLevel;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.AudioComponent.SetSound
-struct UAudioComponent_SetSound_Params
-{
-	class USoundBase*                                  NewSound;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.AudioComponent.SetPitchMultiplier
-struct UAudioComponent_SetPitchMultiplier_Params
-{
-	float                                              NewPitchMultiplier;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.AudioComponent.SetPaused
-struct UAudioComponent_SetPaused_Params
-{
-	bool                                               bPause;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.AudioComponent.SetLowPassFilterFrequency
-struct UAudioComponent_SetLowPassFilterFrequency_Params
-{
-	float                                              InLowPassFilterFrequency;                                 // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.AudioComponent.SetLowPassFilterEnabled
-struct UAudioComponent_SetLowPassFilterEnabled_Params
-{
-	bool                                               InLowPassFilterEnabled;                                   // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.AudioComponent.SetIntParameter
-struct UAudioComponent_SetIntParameter_Params
-{
-	struct FName                                       InName;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-	int                                                inInt;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.AudioComponent.SetFloatParameter
-struct UAudioComponent_SetFloatParameter_Params
-{
-	struct FName                                       InName;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              InFloat;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.AudioComponent.SetBoolParameter
-struct UAudioComponent_SetBoolParameter_Params
-{
-	struct FName                                       InName;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               InBool;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.AudioComponent.Play
-struct UAudioComponent_Play_Params
-{
-	float                                              StartTime;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.AudioComponent.IsPlaying
-struct UAudioComponent_IsPlaying_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.AudioComponent.FadeOut
-struct UAudioComponent_FadeOut_Params
-{
-	float                                              FadeOutDuration;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              FadeVolumeLevel;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.AudioComponent.FadeIn
-struct UAudioComponent_FadeIn_Params
-{
-	float                                              FadeInDuration;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              FadeVolumeLevel;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              StartTime;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.AudioComponent.BP_GetAttenuationSettingsToApply
-struct UAudioComponent_BP_GetAttenuationSettingsToApply_Params
-{
-	struct FSoundAttenuationSettings                   OutAttenuationSettings;                                   // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.AudioComponent.AdjustVolume
-struct UAudioComponent_AdjustVolume_Params
-{
-	float                                              AdjustVolumeDuration;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              AdjustVolumeLevel;                                        // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.AudioComponent.AdjustAttenuation
-struct UAudioComponent_AdjustAttenuation_Params
-{
-	struct FSoundAttenuationSettings                   InAttenuationSettings;                                    // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function Engine.AudioVolume.SetReverbSettings
@@ -8395,6 +9133,7 @@ struct UCanvas_K2_DrawBox_Params
 	struct FVector2D                                   ScreenPosition;                                           // (Parm, IsPlainOldData)
 	struct FVector2D                                   ScreenSize;                                               // (Parm, IsPlainOldData)
 	float                                              Thickness;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FLinearColor                                RenderColor;                                              // (Parm, IsPlainOldData)
 };
 
 // Function Engine.Canvas.K2_DrawBorder
@@ -8622,6 +9361,14 @@ struct UDataTableFunctionLibrary_GetDataTableRowFromName_Params
 	struct FName                                       RowName;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FTableRowBase                               OutRow;                                                   // (Parm, OutParm)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.DataTableFunctionLibrary.GetDataTableColumnAsString
+struct UDataTableFunctionLibrary_GetDataTableColumnAsString_Params
+{
+	class UDataTable*                                  DataTable;                                                // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       PropertyName;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	TArray<struct FString>                             ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
 };
 
 // Function Engine.DataTableFunctionLibrary.EvaluateCurveTableRow
@@ -9310,6 +10057,7 @@ struct UGameplayStatics_SpawnEmitterAttached_Params
 	struct FVector                                     Scale;                                                    // (Parm, IsPlainOldData)
 	TEnumAsByte<EAttachLocation>                       LocationType;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               bAutoDestroy;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	EPSCPoolMethod                                     PoolingMethod;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 	class UParticleSystemComponent*                    ReturnValue;                                              // (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 };
 
@@ -9322,6 +10070,7 @@ struct UGameplayStatics_SpawnEmitterAtLocation_Params
 	struct FRotator                                    Rotation;                                                 // (Parm, IsPlainOldData)
 	struct FVector                                     Scale;                                                    // (Parm, IsPlainOldData)
 	bool                                               bAutoDestroy;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	EPSCPoolMethod                                     PoolingMethod;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 	class UParticleSystemComponent*                    ReturnValue;                                              // (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 };
 
@@ -9598,7 +10347,7 @@ struct UGameplayStatics_PlayDialogue2D_Params
 // Function Engine.GameplayStatics.ParseOption
 struct UGameplayStatics_ParseOption_Params
 {
-	struct FString                                     options;                                                  // (Parm, ZeroConstructor)
+	struct FString                                     Options;                                                  // (Parm, ZeroConstructor)
 	struct FString                                     Key;                                                      // (Parm, ZeroConstructor)
 	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
 };
@@ -9609,7 +10358,7 @@ struct UGameplayStatics_OpenLevel_Params
 	class UObject*                                     WorldContextObject;                                       // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 	struct FName                                       LevelName;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               bAbsolute;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FString                                     options;                                                  // (Parm, ZeroConstructor)
+	struct FString                                     Options;                                                  // (Parm, ZeroConstructor)
 };
 
 // Function Engine.GameplayStatics.MakeHitResult
@@ -9662,7 +10411,7 @@ struct UGameplayStatics_IsGamePaused_Params
 // Function Engine.GameplayStatics.HasOption
 struct UGameplayStatics_HasOption_Params
 {
-	struct FString                                     options;                                                  // (Parm, ZeroConstructor)
+	struct FString                                     Options;                                                  // (Parm, ZeroConstructor)
 	struct FString                                     InKey;                                                    // (Parm, ZeroConstructor)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
@@ -9797,7 +10546,7 @@ struct UGameplayStatics_GetKeyValue_Params
 // Function Engine.GameplayStatics.GetIntOption
 struct UGameplayStatics_GetIntOption_Params
 {
-	struct FString                                     options;                                                  // (Parm, ZeroConstructor)
+	struct FString                                     Options;                                                  // (Parm, ZeroConstructor)
 	struct FString                                     Key;                                                      // (Parm, ZeroConstructor)
 	int                                                DefaultValue;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -10793,6 +11542,13 @@ struct UKismetInputLibrary_PointerEvent_GetCursorDelta_Params
 
 // Function Engine.KismetInputLibrary.Key_IsVectorAxis
 struct UKismetInputLibrary_Key_IsVectorAxis_Params
+{
+	struct FKey                                        Key;                                                      // (ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.KismetInputLibrary.Key_IsValid
+struct UKismetInputLibrary_Key_IsValid_Params
 {
 	struct FKey                                        Key;                                                      // (ConstParm, Parm, OutParm, ReferenceParm)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -12758,15 +13514,6 @@ struct UKismetMathLibrary_InverseTransformDirection_Params
 	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
 };
 
-// Function Engine.KismetMathLibrary.InverseLerp
-struct UKismetMathLibrary_InverseLerp_Params
-{
-	float                                              A;                                                        // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              B;                                                        // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
 // Function Engine.KismetMathLibrary.InRange_IntInt
 struct UKismetMathLibrary_InRange_IntInt_Params
 {
@@ -12985,6 +13732,16 @@ struct UKismetMathLibrary_GetTimeOfDay_Params
 struct UKismetMathLibrary_GetTAU_Params
 {
 	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.KismetMathLibrary.GetSlopeDegreeAngles
+struct UKismetMathLibrary_GetSlopeDegreeAngles_Params
+{
+	struct FVector                                     MyRightYAxis;                                             // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FVector                                     FloorNormal;                                              // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FVector                                     UpVector;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	float                                              OutSlopePitchDegreeAngle;                                 // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	float                                              OutSlopeRollDegreeAngle;                                  // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Engine.KismetMathLibrary.GetSeconds
@@ -16201,6 +16958,22 @@ struct UKismetSystemLibrary_GetConvenientWindowedResolutions_Params
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
+// Function Engine.KismetSystemLibrary.GetConsoleVariableIntValue
+struct UKismetSystemLibrary_GetConsoleVariableIntValue_Params
+{
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FString                                     VariableName;                                             // (Parm, ZeroConstructor)
+	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.KismetSystemLibrary.GetConsoleVariableFloatValue
+struct UKismetSystemLibrary_GetConsoleVariableFloatValue_Params
+{
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FString                                     VariableName;                                             // (Parm, ZeroConstructor)
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
 // Function Engine.KismetSystemLibrary.GetComponentBounds
 struct UKismetSystemLibrary_GetComponentBounds_Params
 {
@@ -17016,6 +17789,13 @@ struct UKismetTextLibrary_StringTableIdAndKeyFromText_Params
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
+// Function Engine.KismetTextLibrary.PolyglotDataToText
+struct UKismetTextLibrary_PolyglotDataToText_Params
+{
+	struct FPolyglotTextData                           PolyglotData;                                             // (ConstParm, Parm, OutParm, ReferenceParm)
+	struct FText                                       ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
 // Function Engine.KismetTextLibrary.NotEqual_TextText
 struct UKismetTextLibrary_NotEqual_TextText_Params
 {
@@ -17030,6 +17810,14 @@ struct UKismetTextLibrary_NotEqual_IgnoreCase_TextText_Params
 	struct FText                                       A;                                                        // (ConstParm, Parm, OutParm, ReferenceParm)
 	struct FText                                       B;                                                        // (ConstParm, Parm, OutParm, ReferenceParm)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.KismetTextLibrary.IsPolyglotDataValid
+struct UKismetTextLibrary_IsPolyglotDataValid_Params
+{
+	struct FPolyglotTextData                           PolyglotData;                                             // (ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                               IsValid;                                                  // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	struct FText                                       ErrorMessage;                                             // (Parm, OutParm)
 };
 
 // Function Engine.KismetTextLibrary.GetEmptyText
@@ -17131,6 +17919,7 @@ struct UKismetTextLibrary_Conv_NameToText_Params
 struct UKismetTextLibrary_Conv_IntToText_Params
 {
 	int                                                Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bAlwaysSign;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               bUseGrouping;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                MinimumIntegralDigits;                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                MaximumIntegralDigits;                                    // (Parm, ZeroConstructor, IsPlainOldData)
@@ -17142,6 +17931,7 @@ struct UKismetTextLibrary_Conv_FloatToText_Params
 {
 	float                                              Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<ERoundingMode>                         RoundingMode;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bAlwaysSign;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               bUseGrouping;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                MinimumIntegralDigits;                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                MaximumIntegralDigits;                                    // (Parm, ZeroConstructor, IsPlainOldData)
@@ -17214,6 +18004,7 @@ struct UKismetTextLibrary_AsPercent_Float_Params
 {
 	float                                              Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<ERoundingMode>                         RoundingMode;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bAlwaysSign;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               bUseGrouping;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                MinimumIntegralDigits;                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                MaximumIntegralDigits;                                    // (Parm, ZeroConstructor, IsPlainOldData)
@@ -17249,6 +18040,7 @@ struct UKismetTextLibrary_AsCurrency_Integer_Params
 {
 	int                                                Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<ERoundingMode>                         RoundingMode;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bAlwaysSign;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               bUseGrouping;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                MinimumIntegralDigits;                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                MaximumIntegralDigits;                                    // (Parm, ZeroConstructor, IsPlainOldData)
@@ -17263,6 +18055,7 @@ struct UKismetTextLibrary_AsCurrency_Float_Params
 {
 	float                                              Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<ERoundingMode>                         RoundingMode;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bAlwaysSign;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               bUseGrouping;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                MinimumIntegralDigits;                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                MaximumIntegralDigits;                                    // (Parm, ZeroConstructor, IsPlainOldData)
@@ -17327,13 +18120,23 @@ struct ULevelStreamingKismet_SetShouldBeLoaded_Params
 	bool                                               bShouldBeLoaded;                                          // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Engine.LevelStreamingKismet.LoadLevelInstanceBySoftObjectPtr
+struct ULevelStreamingKismet_LoadLevelInstanceBySoftObjectPtr_Params
+{
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     Location;                                                 // (Parm, IsPlainOldData)
+	struct FRotator                                    Rotation;                                                 // (Parm, IsPlainOldData)
+	bool                                               bOutSuccess;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	class ULevelStreamingKismet*                       ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
 // Function Engine.LevelStreamingKismet.LoadLevelInstance
 struct ULevelStreamingKismet_LoadLevelInstance_Params
 {
 	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FString                                     LevelName;                                                // (Parm, ZeroConstructor)
-	struct FVector                                     Location;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	struct FRotator                                    Rotation;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FVector                                     Location;                                                 // (Parm, IsPlainOldData)
+	struct FRotator                                    Rotation;                                                 // (Parm, IsPlainOldData)
 	bool                                               bOutSuccess;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 	class ULevelStreamingKismet*                       ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
@@ -17566,11 +18369,6 @@ struct ANavModifierVolume_SetAreaClass_Params
 	class UClass*                                      NewAreaClass;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Engine.OnlineBlueprintCallProxyBase.Activate
-struct UOnlineBlueprintCallProxyBase_Activate_Params
-{
-};
-
 // Function Engine.ParticleSystem.ContainsEmitterType
 struct UParticleSystem_ContainsEmitterType_Params
 {
@@ -17706,6 +18504,11 @@ struct UParticleSystemComponent_SetActorParameter_Params
 {
 	struct FName                                       ParameterName;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 	class AActor*                                      Param;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.ParticleSystemComponent.ReleaseToPool
+struct UParticleSystemComponent_ReleaseToPool_Params
+{
 };
 
 // Function Engine.ParticleSystemComponent.GetNumActiveParticles
@@ -18359,6 +19162,15 @@ struct UPointLightComponent_SetAttenuationRadius_Params
 	float                                              NewRadius;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Engine.PointLightComponent.GetUnitsConversionFactor
+struct UPointLightComponent_GetUnitsConversionFactor_Params
+{
+	ELightUnits                                        SrcUnits;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	ELightUnits                                        TargetUnits;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              CosHalfConeAngle;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
 // Function Engine.PoseableMeshComponent.SetBoneTransformByName
 struct UPoseableMeshComponent_SetBoneTransformByName_Params
 {
@@ -18547,6 +19359,12 @@ struct ASceneCaptureCube_OnInterpToggle_Params
 	bool                                               bEnable;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Engine.SkeletalMesh.SetLODSettings
+struct USkeletalMesh_SetLODSettings_Params
+{
+	class USkeletalMeshLODSettings*                    InLODSettings;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function Engine.SkeletalMesh.NumSockets
 struct USkeletalMesh_NumSockets_Params
 {
@@ -18652,6 +19470,12 @@ struct USkyLightComponent_SetMinOcclusion_Params
 	float                                              InMinOcclusion;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Engine.SkyLightComponent.SetLowerHemisphereColor
+struct USkyLightComponent_SetLowerHemisphereColor_Params
+{
+	struct FLinearColor                                InLowerHemisphereColor;                                   // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+};
+
 // Function Engine.SkyLightComponent.SetLightColor
 struct USkyLightComponent_SetLightColor_Params
 {
@@ -18687,621 +19511,6 @@ struct USkyLightComponent_SetCubemap_Params
 // Function Engine.SkyLightComponent.RecaptureSky
 struct USkyLightComponent_RecaptureSky_Params
 {
-};
-
-// Function Engine.SplineComponent.UpdateSpline
-struct USplineComponent_UpdateSpline_Params
-{
-};
-
-// Function Engine.SplineComponent.SetWorldLocationAtSplinePoint
-struct USplineComponent_SetWorldLocationAtSplinePoint_Params
-{
-	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     InLocation;                                               // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.SetUpVectorAtSplinePoint
-struct USplineComponent_SetUpVectorAtSplinePoint_Params
-{
-	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     InUpVector;                                               // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.SetUnselectedSplineSegmentColor
-struct USplineComponent_SetUnselectedSplineSegmentColor_Params
-{
-	struct FLinearColor                                SegmentColor;                                             // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.SetTangentsAtSplinePoint
-struct USplineComponent_SetTangentsAtSplinePoint_Params
-{
-	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     InArriveTangent;                                          // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	struct FVector                                     InLeaveTangent;                                           // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.SetTangentAtSplinePoint
-struct USplineComponent_SetTangentAtSplinePoint_Params
-{
-	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     InTangent;                                                // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.SetSplineWorldPoints
-struct USplineComponent_SetSplineWorldPoints_Params
-{
-	TArray<struct FVector>                             Points;                                                   // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
-};
-
-// Function Engine.SplineComponent.SetSplinePointType
-struct USplineComponent_SetSplinePointType_Params
-{
-	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplinePointType>                      Type;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.SetSplinePoints
-struct USplineComponent_SetSplinePoints_Params
-{
-	TArray<struct FVector>                             Points;                                                   // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.SetSplineLocalPoints
-struct USplineComponent_SetSplineLocalPoints_Params
-{
-	TArray<struct FVector>                             Points;                                                   // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
-};
-
-// Function Engine.SplineComponent.SetSelectedSplineSegmentColor
-struct USplineComponent_SetSelectedSplineSegmentColor_Params
-{
-	struct FLinearColor                                SegmentColor;                                             // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.SetLocationAtSplinePoint
-struct USplineComponent_SetLocationAtSplinePoint_Params
-{
-	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     InLocation;                                               // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.SetDrawDebug
-struct USplineComponent_SetDrawDebug_Params
-{
-	bool                                               bShow;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.SetDefaultUpVector
-struct USplineComponent_SetDefaultUpVector_Params
-{
-	struct FVector                                     UpVector;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.SetClosedLoopAtPosition
-struct USplineComponent_SetClosedLoopAtPosition_Params
-{
-	bool                                               bInClosedLoop;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Key;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.SetClosedLoop
-struct USplineComponent_SetClosedLoop_Params
-{
-	bool                                               bInClosedLoop;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.RemoveSplinePoint
-struct USplineComponent_RemoveSplinePoint_Params
-{
-	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.IsClosedLoop
-struct USplineComponent_IsClosedLoop_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetWorldTangentAtDistanceAlongSpline
-struct USplineComponent_GetWorldTangentAtDistanceAlongSpline_Params
-{
-	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetWorldRotationAtTime
-struct USplineComponent_GetWorldRotationAtTime_Params
-{
-	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FRotator                                    ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetWorldRotationAtDistanceAlongSpline
-struct USplineComponent_GetWorldRotationAtDistanceAlongSpline_Params
-{
-	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FRotator                                    ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetWorldLocationAtTime
-struct USplineComponent_GetWorldLocationAtTime_Params
-{
-	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetWorldLocationAtSplinePoint
-struct USplineComponent_GetWorldLocationAtSplinePoint_Params
-{
-	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetWorldLocationAtDistanceAlongSpline
-struct USplineComponent_GetWorldLocationAtDistanceAlongSpline_Params
-{
-	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetWorldDirectionAtTime
-struct USplineComponent_GetWorldDirectionAtTime_Params
-{
-	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetWorldDirectionAtDistanceAlongSpline
-struct USplineComponent_GetWorldDirectionAtDistanceAlongSpline_Params
-{
-	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetUpVectorAtTime
-struct USplineComponent_GetUpVectorAtTime_Params
-{
-	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetUpVectorAtSplinePoint
-struct USplineComponent_GetUpVectorAtSplinePoint_Params
-{
-	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetUpVectorAtDistanceAlongSpline
-struct USplineComponent_GetUpVectorAtDistanceAlongSpline_Params
-{
-	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetTransformAtTime
-struct USplineComponent_GetTransformAtTime_Params
-{
-	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUseScale;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FTransform                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetTransformAtSplinePoint
-struct USplineComponent_GetTransformAtSplinePoint_Params
-{
-	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUseScale;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FTransform                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetTransformAtDistanceAlongSpline
-struct USplineComponent_GetTransformAtDistanceAlongSpline_Params
-{
-	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUseScale;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FTransform                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetTangentAtTime
-struct USplineComponent_GetTangentAtTime_Params
-{
-	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetTangentAtSplinePoint
-struct USplineComponent_GetTangentAtSplinePoint_Params
-{
-	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetTangentAtDistanceAlongSpline
-struct USplineComponent_GetTangentAtDistanceAlongSpline_Params
-{
-	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetSplinePointType
-struct USplineComponent_GetSplinePointType_Params
-{
-	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplinePointType>                      ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetSplineLength
-struct USplineComponent_GetSplineLength_Params
-{
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetScaleAtTime
-struct USplineComponent_GetScaleAtTime_Params
-{
-	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetScaleAtSplinePoint
-struct USplineComponent_GetScaleAtSplinePoint_Params
-{
-	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetScaleAtDistanceAlongSpline
-struct USplineComponent_GetScaleAtDistanceAlongSpline_Params
-{
-	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetRotationAtTime
-struct USplineComponent_GetRotationAtTime_Params
-{
-	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FRotator                                    ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetRotationAtSplinePoint
-struct USplineComponent_GetRotationAtSplinePoint_Params
-{
-	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FRotator                                    ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetRotationAtDistanceAlongSpline
-struct USplineComponent_GetRotationAtDistanceAlongSpline_Params
-{
-	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FRotator                                    ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetRollAtTime
-struct USplineComponent_GetRollAtTime_Params
-{
-	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetRollAtSplinePoint
-struct USplineComponent_GetRollAtSplinePoint_Params
-{
-	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetRollAtDistanceAlongSpline
-struct USplineComponent_GetRollAtDistanceAlongSpline_Params
-{
-	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetRightVectorAtTime
-struct USplineComponent_GetRightVectorAtTime_Params
-{
-	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetRightVectorAtSplinePoint
-struct USplineComponent_GetRightVectorAtSplinePoint_Params
-{
-	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetRightVectorAtDistanceAlongSpline
-struct USplineComponent_GetRightVectorAtDistanceAlongSpline_Params
-{
-	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetNumberOfSplinePoints
-struct USplineComponent_GetNumberOfSplinePoints_Params
-{
-	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetLocationAtTime
-struct USplineComponent_GetLocationAtTime_Params
-{
-	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetLocationAtSplinePoint
-struct USplineComponent_GetLocationAtSplinePoint_Params
-{
-	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetLocationAtDistanceAlongSpline
-struct USplineComponent_GetLocationAtDistanceAlongSpline_Params
-{
-	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetLocationAndTangentAtSplinePoint
-struct USplineComponent_GetLocationAndTangentAtSplinePoint_Params
-{
-	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     Location;                                                 // (Parm, OutParm, IsPlainOldData)
-	struct FVector                                     Tangent;                                                  // (Parm, OutParm, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetLocalLocationAndTangentAtSplinePoint
-struct USplineComponent_GetLocalLocationAndTangentAtSplinePoint_Params
-{
-	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     LocalLocation;                                            // (Parm, OutParm, IsPlainOldData)
-	struct FVector                                     LocalTangent;                                             // (Parm, OutParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetLeaveTangentAtSplinePoint
-struct USplineComponent_GetLeaveTangentAtSplinePoint_Params
-{
-	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetInputKeyAtDistanceAlongSpline
-struct USplineComponent_GetInputKeyAtDistanceAlongSpline_Params
-{
-	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetDistanceAlongSplineAtSplinePoint
-struct USplineComponent_GetDistanceAlongSplineAtSplinePoint_Params
-{
-	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetDirectionAtTime
-struct USplineComponent_GetDirectionAtTime_Params
-{
-	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUseConstantVelocity;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetDirectionAtSplinePoint
-struct USplineComponent_GetDirectionAtSplinePoint_Params
-{
-	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetDirectionAtDistanceAlongSpline
-struct USplineComponent_GetDirectionAtDistanceAlongSpline_Params
-{
-	float                                              Distance;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetDefaultUpVector
-struct USplineComponent_GetDefaultUpVector_Params
-{
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.GetArriveTangentAtSplinePoint
-struct USplineComponent_GetArriveTangentAtSplinePoint_Params
-{
-	int                                                PointIndex;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.FindUpVectorClosestToWorldLocation
-struct USplineComponent_FindUpVectorClosestToWorldLocation_Params
-{
-	struct FVector                                     WorldLocation;                                            // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.FindTransformClosestToWorldLocation
-struct USplineComponent_FindTransformClosestToWorldLocation_Params
-{
-	struct FVector                                     WorldLocation;                                            // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUseScale;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FTransform                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.FindTangentClosestToWorldLocation
-struct USplineComponent_FindTangentClosestToWorldLocation_Params
-{
-	struct FVector                                     WorldLocation;                                            // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.FindScaleClosestToWorldLocation
-struct USplineComponent_FindScaleClosestToWorldLocation_Params
-{
-	struct FVector                                     WorldLocation;                                            // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.FindRotationClosestToWorldLocation
-struct USplineComponent_FindRotationClosestToWorldLocation_Params
-{
-	struct FVector                                     WorldLocation;                                            // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FRotator                                    ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.FindRollClosestToWorldLocation
-struct USplineComponent_FindRollClosestToWorldLocation_Params
-{
-	struct FVector                                     WorldLocation;                                            // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.FindRightVectorClosestToWorldLocation
-struct USplineComponent_FindRightVectorClosestToWorldLocation_Params
-{
-	struct FVector                                     WorldLocation;                                            // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.FindLocationClosestToWorldLocation
-struct USplineComponent_FindLocationClosestToWorldLocation_Params
-{
-	struct FVector                                     WorldLocation;                                            // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.FindInputKeyClosestToWorldLocation
-struct USplineComponent_FindInputKeyClosestToWorldLocation_Params
-{
-	struct FVector                                     WorldLocation;                                            // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.FindDirectionClosestToWorldLocation
-struct USplineComponent_FindDirectionClosestToWorldLocation_Params
-{
-	struct FVector                                     WorldLocation;                                            // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.ClearSplinePoints
-struct USplineComponent_ClearSplinePoints_Params
-{
-	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.AddSplineWorldPoint
-struct USplineComponent_AddSplineWorldPoint_Params
-{
-	struct FVector                                     Position;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.AddSplinePointAtIndex
-struct USplineComponent_AddSplinePointAtIndex_Params
-{
-	struct FVector                                     Position;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.AddSplinePoint
-struct USplineComponent_AddSplinePoint_Params
-{
-	struct FVector                                     Position;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	TEnumAsByte<ESplineCoordinateSpace>                CoordinateSpace;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.AddSplineLocalPoint
-struct USplineComponent_AddSplineLocalPoint_Params
-{
-	struct FVector                                     Position;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.AddPoints
-struct USplineComponent_AddPoints_Params
-{
-	TArray<struct FSplinePoint>                        Points;                                                   // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
-	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Engine.SplineComponent.AddPoint
-struct USplineComponent_AddPoint_Params
-{
-	struct FSplinePoint                                Point;                                                    // (ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                               bUpdateSpline;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Engine.SplineMeshComponent.UpdateMesh
@@ -19511,6 +19720,18 @@ struct USpotLightComponent_SetOuterConeAngle_Params
 struct USpotLightComponent_SetInnerConeAngle_Params
 {
 	float                                              NewInnerConeAngle;                                        // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.SpringArmComponent.IsCollisionFixApplied
+struct USpringArmComponent_IsCollisionFixApplied_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SpringArmComponent.GetUnfixedCameraPosition
+struct USpringArmComponent_GetUnfixedCameraPosition_Params
+{
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
 };
 
 // Function Engine.SpringArmComponent.GetTargetRotation
@@ -19913,12 +20134,33 @@ struct UVectorFieldComponent_SetIntensity_Params
 	float                                              NewIntensity;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Engine.VisualLoggerKismetLibrary.RedirectVislog
+struct UVisualLoggerKismetLibrary_RedirectVislog_Params
+{
+	class UObject*                                     SourceOwner;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	class UObject*                                     DestinationOwner;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function Engine.VisualLoggerKismetLibrary.LogText
 struct UVisualLoggerKismetLibrary_LogText_Params
 {
 	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FString                                     Text;                                                     // (Parm, ZeroConstructor)
 	struct FName                                       LogCategory;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bAddToMessageLog;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.VisualLoggerKismetLibrary.LogSegment
+struct UVisualLoggerKismetLibrary_LogSegment_Params
+{
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     SegmentStart;                                             // (ConstParm, Parm, IsPlainOldData)
+	struct FVector                                     SegmentEnd;                                               // (ConstParm, Parm, IsPlainOldData)
+	struct FString                                     Text;                                                     // (Parm, ZeroConstructor)
+	struct FLinearColor                                ObjectColor;                                              // (Parm, IsPlainOldData)
+	float                                              Thickness;                                                // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       CategoryName;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bAddToMessageLog;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Engine.VisualLoggerKismetLibrary.LogLocation
@@ -19930,6 +20172,7 @@ struct UVisualLoggerKismetLibrary_LogLocation_Params
 	struct FLinearColor                                ObjectColor;                                              // (Parm, IsPlainOldData)
 	float                                              Radius;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FName                                       LogCategory;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bAddToMessageLog;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Engine.VisualLoggerKismetLibrary.LogBox
@@ -19940,6 +20183,49 @@ struct UVisualLoggerKismetLibrary_LogBox_Params
 	struct FString                                     Text;                                                     // (Parm, ZeroConstructor)
 	struct FLinearColor                                ObjectColor;                                              // (Parm, IsPlainOldData)
 	struct FName                                       LogCategory;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bAddToMessageLog;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.VisualLoggerKismetLibrary.EnableRecording
+struct UVisualLoggerKismetLibrary_EnableRecording_Params
+{
+	bool                                               bEnabled;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.VOIPTalker.RegisterWithPlayerState
+struct UVOIPTalker_RegisterWithPlayerState_Params
+{
+	class APlayerState*                                OwningState;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Engine.VOIPTalker.GetVoiceLevel
+struct UVOIPTalker_GetVoiceLevel_Params
+{
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.VOIPTalker.CreateTalkerForPlayer
+struct UVOIPTalker_CreateTalkerForPlayer_Params
+{
+	class APlayerState*                                OwningState;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	class UVOIPTalker*                                 ReturnValue;                                              // (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+};
+
+// Function Engine.VOIPTalker.BPOnTalkingEnd
+struct UVOIPTalker_BPOnTalkingEnd_Params
+{
+};
+
+// Function Engine.VOIPTalker.BPOnTalkingBegin
+struct UVOIPTalker_BPOnTalkingBegin_Params
+{
+	class UAudioComponent*                             AudioComponent;                                           // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+};
+
+// Function Engine.VOIPStatics.SetMicThreshold
+struct UVOIPStatics_SetMicThreshold_Params
+{
+	float                                              InThreshold;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Engine.WindDirectionalSourceComponent.SetWindType

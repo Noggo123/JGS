@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -57,7 +57,7 @@ void UTopBarSkillPoints_C::HandleLocalAccountInfoChanged(const struct FFortPriva
 // Function TopBarSkillPoints.TopBarSkillPoints_C.GetMissionRewardBadgeTooltipWidget
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 
 class UWidget* UTopBarSkillPoints_C::GetMissionRewardBadgeTooltipWidget()
 {
@@ -100,7 +100,7 @@ void UTopBarSkillPoints_C::Has_Mission_Reward_Boost(bool* Result)
 // Function TopBarSkillPoints.TopBarSkillPoints_C.GetFounderBadgetTooltipWidget
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 
 class UWidget* UTopBarSkillPoints_C::GetFounderBadgetTooltipWidget()
 {
@@ -121,7 +121,7 @@ class UWidget* UTopBarSkillPoints_C::GetFounderBadgetTooltipWidget()
 // Function TopBarSkillPoints.TopBarSkillPoints_C.GetMonthlyVIPBadgetTooltipWidget
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 
 class UWidget* UTopBarSkillPoints_C::GetMonthlyVIPBadgetTooltipWidget()
 {
@@ -324,7 +324,7 @@ void UTopBarSkillPoints_C::GetBonusExperienceDescription(struct FText* Result)
 // Function TopBarSkillPoints.TopBarSkillPoints_C.GetSkillPointsTooltipWidget
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 
 class UWidget* UTopBarSkillPoints_C::GetSkillPointsTooltipWidget()
 {
@@ -345,7 +345,7 @@ class UWidget* UTopBarSkillPoints_C::GetSkillPointsTooltipWidget()
 // Function TopBarSkillPoints.TopBarSkillPoints_C.GetBonusExperienceTooltipWidget
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 
 class UWidget* UTopBarSkillPoints_C::GetBonusExperienceTooltipWidget()
 {
@@ -440,7 +440,7 @@ void UTopBarSkillPoints_C::Xp_Boost_Changed(int BoostAmount)
 // Function TopBarSkillPoints.TopBarSkillPoints_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_36_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UTopBarSkillPoints_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_36_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {

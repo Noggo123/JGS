@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,6 +22,13 @@ struct UEulaTab_C_Activate_Scroll_Box_Params
 // Function EulaTab.EulaTab_C.Construct
 struct UEulaTab_C_Construct_Params
 {
+};
+
+// Function EulaTab.EulaTab_C.OnEulaDownloadComplete
+struct UEulaTab_C_OnEulaDownloadComplete_Params
+{
+	bool                                               bSuccessful;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FText                                       EULAText;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
 // Function EulaTab.EulaTab_C.ExecuteUbergraph_EulaTab

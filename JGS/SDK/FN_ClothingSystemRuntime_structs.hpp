@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -30,7 +28,8 @@ enum class EMaskTarget_PhysMesh : uint8_t
 	MaxDistance                    = 1,
 	BackstopDistance               = 2,
 	BackstopRadius                 = 3,
-	MaskTarget_MAX                 = 4
+	AnimDriveMultiplier            = 4,
+	MaskTarget_MAX                 = 5
 };
 
 
@@ -50,7 +49,7 @@ struct FClothConstraintSetup
 };
 
 // ScriptStruct ClothingSystemRuntime.ClothConfig
-// 0x00BC
+// 0x00C4
 struct FClothConfig
 {
 	EClothingWindMethod                                WindMethod;                                               // 0x0000(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
@@ -77,6 +76,8 @@ struct FClothConfig
 	float                                              TetherStiffness;                                          // 0x00B0(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	float                                              TetherLimit;                                              // 0x00B4(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	float                                              CollisionThickness;                                       // 0x00B8(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              AnimDriveSpringStiffness;                                 // 0x00BC(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              AnimDriveDamperStiffness;                                 // 0x00C0(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct ClothingSystemRuntime.ClothVertBoneData
@@ -89,7 +90,7 @@ struct FClothVertBoneData
 };
 
 // ScriptStruct ClothingSystemRuntime.ClothPhysicalMeshData
-// 0x0098
+// 0x00A8
 struct FClothPhysicalMeshData
 {
 	TArray<struct FVector>                             Vertices;                                                 // 0x0000(0x0010) (Edit, ZeroConstructor)
@@ -98,20 +99,21 @@ struct FClothPhysicalMeshData
 	TArray<float>                                      MaxDistances;                                             // 0x0030(0x0010) (Edit, ZeroConstructor)
 	TArray<float>                                      BackstopDistances;                                        // 0x0040(0x0010) (Edit, ZeroConstructor)
 	TArray<float>                                      BackstopRadiuses;                                         // 0x0050(0x0010) (Edit, ZeroConstructor)
-	TArray<float>                                      InverseMasses;                                            // 0x0060(0x0010) (Edit, ZeroConstructor)
-	TArray<struct FClothVertBoneData>                  BoneData;                                                 // 0x0070(0x0010) (Edit, ZeroConstructor)
-	int                                                MaxBoneWeights;                                           // 0x0080(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	int                                                NumFixedVerts;                                            // 0x0084(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	TArray<uint32_t>                                   SelfCollisionIndices;                                     // 0x0088(0x0010) (Edit, ZeroConstructor)
+	TArray<float>                                      AnimDriveMultipliers;                                     // 0x0060(0x0010) (Edit, ZeroConstructor)
+	TArray<float>                                      InverseMasses;                                            // 0x0070(0x0010) (Edit, ZeroConstructor)
+	TArray<struct FClothVertBoneData>                  BoneData;                                                 // 0x0080(0x0010) (Edit, ZeroConstructor)
+	int                                                MaxBoneWeights;                                           // 0x0090(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	int                                                NumFixedVerts;                                            // 0x0094(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	TArray<uint32_t>                                   SelfCollisionIndices;                                     // 0x0098(0x0010) (Edit, ZeroConstructor)
 };
 
 // ScriptStruct ClothingSystemRuntime.ClothLODData
-// 0x00E8
+// 0x00F8
 struct FClothLODData
 {
-	struct FClothPhysicalMeshData                      PhysicalMeshData;                                         // 0x0000(0x0098) (Edit)
-	struct FClothCollisionData                         CollisionData;                                            // 0x0098(0x0030) (Edit)
-	unsigned char                                      UnknownData00[0x20];                                      // 0x00C8(0x0020) MISSED OFFSET
+	struct FClothPhysicalMeshData                      PhysicalMeshData;                                         // 0x0000(0x00A8) (Edit)
+	struct FClothCollisionData                         CollisionData;                                            // 0x00A8(0x0030) (Edit)
+	unsigned char                                      UnknownData00[0x20];                                      // 0x00D8(0x0020) MISSED OFFSET
 };
 
 // ScriptStruct ClothingSystemRuntime.ClothParameterMask_PhysMesh

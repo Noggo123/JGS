@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,22 +13,22 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // ScriptStruct WidgetCarousel.WidgetCarouselNavigationBarStyle
-// 0x0720 (0x0728 - 0x0008)
+// 0x07F0 (0x07F8 - 0x0008)
 struct FWidgetCarouselNavigationBarStyle : public FSlateWidgetStyle
 {
-	struct FSlateBrush                                 HighlightBrush;                                           // 0x0008(0x0078) (Edit, BlueprintVisible)
-	struct FButtonStyle                                LeftButtonStyle;                                          // 0x0080(0x0238) (Edit, BlueprintVisible)
-	struct FButtonStyle                                CenterButtonStyle;                                        // 0x02B8(0x0238) (Edit, BlueprintVisible)
-	struct FButtonStyle                                RightButtonStyle;                                         // 0x04F0(0x0238) (Edit, BlueprintVisible)
+	struct FSlateBrush                                 HighlightBrush;                                           // 0x0008(0x0088) (Edit, BlueprintVisible)
+	struct FButtonStyle                                LeftButtonStyle;                                          // 0x0090(0x0278) (Edit, BlueprintVisible)
+	struct FButtonStyle                                CenterButtonStyle;                                        // 0x0308(0x0278) (Edit, BlueprintVisible)
+	struct FButtonStyle                                RightButtonStyle;                                         // 0x0580(0x0278) (Edit, BlueprintVisible)
 };
 
 // ScriptStruct WidgetCarousel.WidgetCarouselNavigationButtonStyle
-// 0x0328 (0x0330 - 0x0008)
+// 0x0388 (0x0390 - 0x0008)
 struct FWidgetCarouselNavigationButtonStyle : public FSlateWidgetStyle
 {
-	struct FButtonStyle                                InnerButtonStyle;                                         // 0x0008(0x0238)
-	struct FSlateBrush                                 NavigationButtonLeftImage;                                // 0x0240(0x0078)
-	struct FSlateBrush                                 NavigationButtonRightImage;                               // 0x02B8(0x0078)
+	struct FButtonStyle                                InnerButtonStyle;                                         // 0x0008(0x0278)
+	struct FSlateBrush                                 NavigationButtonLeftImage;                                // 0x0280(0x0088)
+	struct FSlateBrush                                 NavigationButtonRightImage;                               // 0x0308(0x0088)
 };
 
 }

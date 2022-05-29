@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -82,6 +82,27 @@ struct UBP_FortExpeditionMasterWidget_C_Handle_Back_Params
 	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C.DialogResult_99152A754621D0E9A8C9C889926A827D
+struct UBP_FortExpeditionMasterWidget_C_DialogResult_99152A754621D0E9A8C9C889926A827D_Params
+{
+	EFortDialogResult                                  Result;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       ResultName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C.DialogResult_67CD2E3A4E1A6780703420B1064D5BD1
+struct UBP_FortExpeditionMasterWidget_C_DialogResult_67CD2E3A4E1A6780703420B1064D5BD1_Params
+{
+	EFortDialogResult                                  Result;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       ResultName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C.DialogResult_39A80A89449E8489E8E81EAECC14DE95
+struct UBP_FortExpeditionMasterWidget_C_DialogResult_39A80A89449E8489E8E81EAECC14DE95_Params
+{
+	EFortDialogResult                                  Result;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       ResultName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C.Construct
 struct UBP_FortExpeditionMasterWidget_C_Construct_Params
 {
@@ -104,6 +125,16 @@ struct UBP_FortExpeditionMasterWidget_C_HACK_OnActivate_UpdateMasterWidget_Param
 
 // Function BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C.OnActivated
 struct UBP_FortExpeditionMasterWidget_C_OnActivated_Params
+{
+};
+
+// Function BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C.OnRewardsBlockedByStorage
+struct UBP_FortExpeditionMasterWidget_C_OnRewardsBlockedByStorage_Params
+{
+};
+
+// Function BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C.OnRewardsBlockedByLockedProfile
+struct UBP_FortExpeditionMasterWidget_C_OnRewardsBlockedByLockedProfile_Params
 {
 };
 

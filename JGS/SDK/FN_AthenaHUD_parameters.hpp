@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,35 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function AthenaHUD.AthenaHUD_C.IsClientNotifiedOfWin
+struct UAthenaHUD_C_IsClientNotifiedOfWin_Params
+{
+	bool                                               bClientWon;                                               // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               bTeamWon;                                                 // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaHUD.AthenaHUD_C.HandlePawnSet_RCPawnVisibilityUpdates
+struct UAthenaHUD_C_HandlePawnSet_RCPawnVisibilityUpdates_Params
+{
+	ESlateVisibility                                   InVisibility;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaHUD.AthenaHUD_C.HandlePawnSet_VisibilityUpdates
+struct UAthenaHUD_C_HandlePawnSet_VisibilityUpdates_Params
+{
+	ESlateVisibility                                   InVisibility;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaHUD.AthenaHUD_C.HandlePawnSet
+struct UAthenaHUD_C_HandlePawnSet_Params
+{
+};
+
+// Function AthenaHUD.AthenaHUD_C.BindDelegates
+struct UAthenaHUD_C_BindDelegates_Params
+{
+};
 
 // Function AthenaHUD.AthenaHUD_C.SetupCameraMode
 struct UAthenaHUD_C_SetupCameraMode_Params
@@ -29,14 +58,14 @@ struct UAthenaHUD_C_CheckHUDElementVisibility_Params
 {
 	struct FGameplayTagContainer                       HiddenHUDElementTags;                                     // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	struct FGameplayTag                                HUDElementTagToCheck;                                     // (BlueprintVisible, BlueprintReadOnly, Parm)
-	class UWidget*                                     HUDElement;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+	class UWidget*                                     HUDElement;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
 };
 
 // Function AthenaHUD.AthenaHUD_C.PopContentWidgetInternal
 struct UAthenaHUD_C_PopContentWidgetInternal_Params
 {
 	struct FContentPushState*                          State;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm)
-	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 };
 
 // Function AthenaHUD.AthenaHUD_C.ShowPicker
@@ -105,7 +134,7 @@ struct UAthenaHUD_C_HandleCursorModeChanged_Params
 {
 	bool                                               IsEnabled;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	struct FName                                       ActionName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UUserWidget*                                 CursorModeContentCustomWidget;                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UUserWidget*                                 CursorModeContentCustomWidget;                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function AthenaHUD.AthenaHUD_C.OnDeclined_13B571B74B3BBCF095CCFA8AED69EBED
@@ -130,20 +159,20 @@ struct UAthenaHUD_C_QuestsCompleted_Params
 	TArray<class UFortQuestItem*>                      Quests;                                                   // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
-// Function AthenaHUD.AthenaHUD_C.Construct
-struct UAthenaHUD_C_Construct_Params
-{
-};
-
 // Function AthenaHUD.AthenaHUD_C.PushContentWidgetInternal
 struct UAthenaHUD_C_PushContentWidgetInternal_Params
 {
-	class UWidget**                                    Widget;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UWidget**                                    Widget;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 	struct FContentPushState*                          State;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
 // Function AthenaHUD.AthenaHUD_C.Destruct
 struct UAthenaHUD_C_Destruct_Params
+{
+};
+
+// Function AthenaHUD.AthenaHUD_C.Construct
+struct UAthenaHUD_C_Construct_Params
 {
 };
 
@@ -200,6 +229,25 @@ struct UAthenaHUD_C_On_Team_Won_Params
 struct UAthenaHUD_C_ViewModelChanged_Params
 {
 	class UAthenaPlayerViewModel**                     ViewModel;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaHUD.AthenaHUD_C.OnHUDScaleChanged
+struct UAthenaHUD_C_OnHUDScaleChanged_Params
+{
+	float*                                             HUDScale;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaHUD.AthenaHUD_C.SetFullScreenMapVisibility
+struct UAthenaHUD_C_SetFullScreenMapVisibility_Params
+{
+	bool*                                              bIsVisible;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaHUD.AthenaHUD_C.OnPlaylistExtensionWidgetCreated
+struct UAthenaHUD_C_OnPlaylistExtensionWidgetCreated_Params
+{
+	EPlaylistUIExtensionSlot*                          ExtensionSlot;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UUserWidget**                                Widget;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function AthenaHUD.AthenaHUD_C.ExecuteUbergraph_AthenaHUD

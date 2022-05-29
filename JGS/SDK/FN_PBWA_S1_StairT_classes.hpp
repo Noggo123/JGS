@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass PBWA_S1_StairT.PBWA_S1_StairT_C
-// 0x0000 (0x0E10 - 0x0E10)
+// 0x0000 (0x0DC0 - 0x0DC0)
 class APBWA_S1_StairT_C : public ABuildingStairs
 {
 public:

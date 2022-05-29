@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -53,11 +53,11 @@ struct APlayerPawn_Generic_C_Setup_FX_Mesh_Duplicates_Params
 {
 	class UMaterialInterface*                          Material_to_Apply;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 	TArray<class UMaterialInstanceDynamic*>            Charm_MID_Array;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-	class USkeletalMeshComponent*                      Charm_Mesh;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+	class USkeletalMeshComponent*                      Charm_Mesh;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
 	TArray<class UMaterialInstanceDynamic*>            Head_MID_Array;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-	class USkeletalMeshComponent*                      Head_Mesh;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+	class USkeletalMeshComponent*                      Head_Mesh;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
 	TArray<class UMaterialInstanceDynamic*>            Body_MID_Array;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-	class USkeletalMeshComponent*                      Body_Mesh;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+	class USkeletalMeshComponent*                      Body_Mesh;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
 	int                                                Translucent_Sort_Order;                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               Transfer_Material_Parameters;                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
@@ -69,7 +69,7 @@ struct APlayerPawn_Generic_C_Create_and_Duplicate_Effect_Poseable_Skeletal_Mesh_
 	class UMaterialInterface*                          Material_to_Apply;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	TArray<class UMaterialInstanceDynamic*>            Empty_MID_Array;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 	int                                                TranslucentSortPriority;                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UPoseableMeshComponent*                      PoseableMesh;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+	class UPoseableMeshComponent*                      PoseableMesh;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
 };
 
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.ToggleShieldVisibility
@@ -80,8 +80,8 @@ struct APlayerPawn_Generic_C_ToggleShieldVisibility_Params
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.SlaveAMeshToTheBody
 struct APlayerPawn_Generic_C_SlaveAMeshToTheBody_Params
 {
-	class USkeletalMeshComponent*                      Mesh;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class USkeletalMeshComponent*                      Master;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class USkeletalMeshComponent*                      Mesh;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class USkeletalMeshComponent*                      Master;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.SetShieldMids_InternalLoop
@@ -112,7 +112,7 @@ struct APlayerPawn_Generic_C_FindShieldOpacity_Params
 struct APlayerPawn_Generic_C_Create_and_Duplicate_Effect_Skeletal_Meshes_Parent_Params
 {
 	TEnumAsByte<EFortCustomPartType>                   BodyType;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class USkeletalMeshComponent*                      DuplicatedSkeletalMeshComponent;                          // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+	class USkeletalMeshComponent*                      DuplicatedSkeletalMeshComponent;                          // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
 	class UMaterialInterface*                          Material_to_Apply;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	TArray<class UMaterialInstanceDynamic*>            Empty_MID_Array;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 	int                                                TranslucentSortPriority;                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
@@ -271,13 +271,6 @@ struct APlayerPawn_Generic_C_SetFirstPersonCamera_Params
 	bool*                                              bNewUseFirstPersonCamera;                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function PlayerPawn_Generic.PlayerPawn_Generic_C.GameplayCue.GravitySphere
-struct APlayerPawn_Generic_C_GameplayCue_GravitySphere_Params
-{
-	TEnumAsByte<EGameplayCueEvent>                     EventType;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayCueParameters                      Parameters;                                               // (BlueprintVisible, BlueprintReadOnly, Parm)
-};
-
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.InternalSetFirstPersonCamera
 struct APlayerPawn_Generic_C_InternalSetFirstPersonCamera_Params
 {
@@ -311,11 +304,6 @@ struct APlayerPawn_Generic_C_OnDisplaySentence_Params
 
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.OnClearSentence
 struct APlayerPawn_Generic_C_OnClearSentence_Params
-{
-};
-
-// Function PlayerPawn_Generic.PlayerPawn_Generic_C.CleanupGravitySphereFootEffects
-struct APlayerPawn_Generic_C_CleanupGravitySphereFootEffects_Params
 {
 };
 
@@ -372,11 +360,6 @@ struct APlayerPawn_Generic_C_OnDeathServer_Params
 	struct FGameplayEffectContextHandle*               EffectContext;                                            // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
-// Function PlayerPawn_Generic.PlayerPawn_Generic_C.Entered WaterVolume
-struct APlayerPawn_Generic_C_Entered_WaterVolume_Params
-{
-};
-
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.CharacterDestroyed
 struct APlayerPawn_Generic_C_CharacterDestroyed_Params
 {
@@ -406,10 +389,22 @@ struct APlayerPawn_Generic_C_PlayGameplayWindEffect_Params
 	TEnumAsByte<EPlayerWindParticleEmitters>           Player_Wind_Particle_Emitter_To_Fire;                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function PlayerPawn_Generic.PlayerPawn_Generic_C.GameplayCue.Abilities.Death.FadeCapsule_StW
+struct APlayerPawn_Generic_C_GameplayCue_Abilities_Death_FadeCapsule_StW_Params
+{
+	TEnumAsByte<EGameplayCueEvent>                     EventType;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayCueParameters                      Parameters;                                               // (BlueprintVisible, BlueprintReadOnly, Parm)
+};
+
+// Function PlayerPawn_Generic.PlayerPawn_Generic_C.Entered Water Volume
+struct APlayerPawn_Generic_C_Entered_Water_Volume_Params
+{
+};
+
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.Player Creates a Splash
 struct APlayerPawn_Generic_C_Player_Creates_a_Splash_Params
 {
-	struct FTransform                                  NewTransform;                                             // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FTransform*                                 NewTransform;                                             // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
 };
 
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.OnLand_CE

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function VaultCharacterPlacementHelper.VaultCharacterPlacementHelper_C.UpdatePosition For Camera
+struct AVaultCharacterPlacementHelper_C_UpdatePosition_For_Camera_Params
+{
+	EFrontEndCamera                                    FrontendCamera;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function VaultCharacterPlacementHelper.VaultCharacterPlacementHelper_C.UserConstructionScript
 struct AVaultCharacterPlacementHelper_C_UserConstructionScript_Params
@@ -34,6 +40,13 @@ struct AVaultCharacterPlacementHelper_C_SubGameChanged_Event_0_1_Params
 struct AVaultCharacterPlacementHelper_C_ReceiveTick_Params
 {
 	float*                                             DeltaSeconds;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function VaultCharacterPlacementHelper.VaultCharacterPlacementHelper_C.OnFrontEndCameraChanged
+struct AVaultCharacterPlacementHelper_C_OnFrontEndCameraChanged_Params
+{
+	EFrontEndCamera                                    NewCamera;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	EFrontEndCamera                                    OldCamera;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function VaultCharacterPlacementHelper.VaultCharacterPlacementHelper_C.ExecuteUbergraph_VaultCharacterPlacementHelper

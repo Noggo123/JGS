@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Function WeakSpot.WeakSpot_C.UserConstructionScript
-// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
 void AWeakSpot_C::UserConstructionScript()
 {
@@ -63,14 +63,14 @@ void AWeakSpot_C::ScaleDownParticleTL__UpdateFunc()
 }
 
 
-// Function WeakSpot.WeakSpot_C.OnHitCrack
+// Function WeakSpot.WeakSpot_C.OnHit
 // (Event, Public, BlueprintEvent)
 
-void AWeakSpot_C::OnHitCrack()
+void AWeakSpot_C::OnHit()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function WeakSpot.WeakSpot_C.OnHitCrack");
+	static auto fn = UObject::FindObject<UFunction>("Function WeakSpot.WeakSpot_C.OnHit");
 
-	AWeakSpot_C_OnHitCrack_Params params;
+	AWeakSpot_C_OnHit_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -80,14 +80,14 @@ void AWeakSpot_C::OnHitCrack()
 }
 
 
-// Function WeakSpot.WeakSpot_C.OnStartDirectionEffect
-// (Event, Public, BlueprintEvent)
+// Function WeakSpot.WeakSpot_C.HideMesh
+// (BlueprintCallable, BlueprintEvent)
 
-void AWeakSpot_C::OnStartDirectionEffect()
+void AWeakSpot_C::HideMesh()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function WeakSpot.WeakSpot_C.OnStartDirectionEffect");
+	static auto fn = UObject::FindObject<UFunction>("Function WeakSpot.WeakSpot_C.HideMesh");
 
-	AWeakSpot_C_OnStartDirectionEffect_Params params;
+	AWeakSpot_C_HideMesh_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -114,14 +114,14 @@ void AWeakSpot_C::OnFadeOut()
 }
 
 
-// Function WeakSpot.WeakSpot_C.HideMesh
-// (BlueprintCallable, BlueprintEvent)
+// Function WeakSpot.WeakSpot_C.OnStartDirectionEffect
+// (Event, Public, BlueprintEvent)
 
-void AWeakSpot_C::HideMesh()
+void AWeakSpot_C::OnStartDirectionEffect()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function WeakSpot.WeakSpot_C.HideMesh");
+	static auto fn = UObject::FindObject<UFunction>("Function WeakSpot.WeakSpot_C.OnStartDirectionEffect");
 
-	AWeakSpot_C_HideMesh_Params params;
+	AWeakSpot_C_OnStartDirectionEffect_Params params;
 
 	auto flags = fn->FunctionFlags;
 

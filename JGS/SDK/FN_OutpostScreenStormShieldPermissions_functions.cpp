@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UOutpostScreenStormShieldPermissions_C::CenterWidget()
 // Function OutpostScreenStormShieldPermissions.OutpostScreenStormShieldPermissions_C.SetParent
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UOutpostScreenStormShield_C* ParentWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UOutpostScreenStormShield_C* ParentWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UOutpostScreenStormShieldPermissions_C::SetParent(class UOutpostScreenStormShield_C* ParentWidget)
 {

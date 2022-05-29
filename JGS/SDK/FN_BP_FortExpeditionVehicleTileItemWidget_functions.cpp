@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function BP_FortExpeditionVehicleTileItemWidget.BP_FortExpeditionVehicleTileItemWidget_C.Set Name
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   SquadId                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   SquadId                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionVehicleTileItemWidget_C::Set_Name(const struct FName& SquadId)
 {
@@ -35,44 +35,40 @@ void UBP_FortExpeditionVehicleTileItemWidget_C::Set_Name(const struct FName& Squ
 // Function BP_FortExpeditionVehicleTileItemWidget.BP_FortExpeditionVehicleTileItemWidget_C.Set Rating
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   SquadId                        (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FName                   SquadId                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
-void UBP_FortExpeditionVehicleTileItemWidget_C::Set_Rating(struct FName* SquadId)
+void UBP_FortExpeditionVehicleTileItemWidget_C::Set_Rating(const struct FName& SquadId)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function BP_FortExpeditionVehicleTileItemWidget.BP_FortExpeditionVehicleTileItemWidget_C.Set Rating");
 
 	UBP_FortExpeditionVehicleTileItemWidget_C_Set_Rating_Params params;
+	params.SquadId = SquadId;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (SquadId != nullptr)
-		*SquadId = params.SquadId;
 }
 
 
 // Function BP_FortExpeditionVehicleTileItemWidget.BP_FortExpeditionVehicleTileItemWidget_C.Set Icon
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   SquadId                        (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FName                   SquadId                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
-void UBP_FortExpeditionVehicleTileItemWidget_C::Set_Icon(struct FName* SquadId)
+void UBP_FortExpeditionVehicleTileItemWidget_C::Set_Icon(const struct FName& SquadId)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function BP_FortExpeditionVehicleTileItemWidget.BP_FortExpeditionVehicleTileItemWidget_C.Set Icon");
 
 	UBP_FortExpeditionVehicleTileItemWidget_C_Set_Icon_Params params;
+	params.SquadId = SquadId;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (SquadId != nullptr)
-		*SquadId = params.SquadId;
 }
 
 
@@ -80,7 +76,7 @@ void UBP_FortExpeditionVehicleTileItemWidget_C::Set_Icon(struct FName* SquadId)
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject**                InData                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonListView**        OwningList                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonListView**        OwningList                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UBP_FortExpeditionVehicleTileItemWidget_C::SetData(class UObject** InData, class UCommonListView** OwningList)
 {

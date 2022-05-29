@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -63,23 +63,6 @@ void UTeddyBear_GliderChute_AnimBP_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 }
 
 
-// Function TeddyBear_GliderChute_AnimBP.TeddyBear_GliderChute_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_TeddyBear_GliderChute_AnimBP_AnimGraphNode_SequencePlayer_B61792C5413AAA333931119E94040F61
-// (BlueprintEvent)
-
-void UTeddyBear_GliderChute_AnimBP_C::EvaluateGraphExposedInputs_ExecuteUbergraph_TeddyBear_GliderChute_AnimBP_AnimGraphNode_SequencePlayer_B61792C5413AAA333931119E94040F61()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TeddyBear_GliderChute_AnimBP.TeddyBear_GliderChute_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_TeddyBear_GliderChute_AnimBP_AnimGraphNode_SequencePlayer_B61792C5413AAA333931119E94040F61");
-
-	UTeddyBear_GliderChute_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_TeddyBear_GliderChute_AnimBP_AnimGraphNode_SequencePlayer_B61792C5413AAA333931119E94040F61_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function TeddyBear_GliderChute_AnimBP.TeddyBear_GliderChute_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_TeddyBear_GliderChute_AnimBP_AnimGraphNode_BlendSpacePlayer_8957D07F4189CEB7EEA42EBBAEABA5B7
 // (BlueprintEvent)
 
@@ -125,6 +108,40 @@ void UTeddyBear_GliderChute_AnimBP_C::BlueprintUpdateAnimation(float* DeltaTimeX
 
 	UTeddyBear_GliderChute_AnimBP_C_BlueprintUpdateAnimation_Params params;
 	params.DeltaTimeX = DeltaTimeX;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function TeddyBear_GliderChute_AnimBP.TeddyBear_GliderChute_AnimBP_C.AnimNotify_dynamicsOff
+// (BlueprintCallable, BlueprintEvent)
+
+void UTeddyBear_GliderChute_AnimBP_C::AnimNotify_dynamicsOff()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function TeddyBear_GliderChute_AnimBP.TeddyBear_GliderChute_AnimBP_C.AnimNotify_dynamicsOff");
+
+	UTeddyBear_GliderChute_AnimBP_C_AnimNotify_dynamicsOff_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function TeddyBear_GliderChute_AnimBP.TeddyBear_GliderChute_AnimBP_C.AnimNotify_dynamicsOn
+// (BlueprintCallable, BlueprintEvent)
+
+void UTeddyBear_GliderChute_AnimBP_C::AnimNotify_dynamicsOn()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function TeddyBear_GliderChute_AnimBP.TeddyBear_GliderChute_AnimBP_C.AnimNotify_dynamicsOn");
+
+	UTeddyBear_GliderChute_AnimBP_C_AnimNotify_dynamicsOn_Params params;
 
 	auto flags = fn->FunctionFlags;
 

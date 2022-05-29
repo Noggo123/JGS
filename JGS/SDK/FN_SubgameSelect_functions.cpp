@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -38,7 +38,7 @@ void USubgameSelect_C::UpdateHeaderAndFooter(bool HideHeader, bool HideFooter)
 // (Event, Protected, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FContentPushState*      State                          (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 
 class UWidget* USubgameSelect_C::PopContentWidgetInternal(struct FContentPushState* State)
 {
@@ -114,7 +114,7 @@ void USubgameSelect_C::OnEnterState(EFortUIState* PreviousUIState)
 // Function SubgameSelect.SubgameSelect_C.PushContentWidgetInternal
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UWidget**                Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidget**                Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // struct FContentPushState*      State                          (BlueprintVisible, BlueprintReadOnly, Parm)
 
 void USubgameSelect_C::PushContentWidgetInternal(class UWidget** Widget, struct FContentPushState* State)

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ struct UPerkTierWidgetNew_C_Construct_Params
 struct UPerkTierWidgetNew_C_OnGeneratePerk_Params
 {
 	struct FFortUIPerk*                                Perk;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm)
-	class UFortPerkWidget_NUI**                        PerkWidget;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortPerkWidget_NUI**                        PerkWidget;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function PerkTierWidgetNew.PerkTierWidgetNew_C.ExecuteUbergraph_PerkTierWidgetNew

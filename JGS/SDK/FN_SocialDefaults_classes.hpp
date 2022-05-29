@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -31,11 +29,11 @@ public:
 
 
 // Class SocialDefaults.SocialActionButtonStyleDataAsset
-// 0x0238 (0x0268 - 0x0030)
+// 0x0278 (0x02A8 - 0x0030)
 class USocialActionButtonStyleDataAsset : public UDataAsset
 {
 public:
-	struct FButtonStyle                                Style;                                                    // 0x0030(0x0238) (Edit)
+	struct FButtonStyle                                Style;                                                    // 0x0030(0x0278) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -80,11 +78,11 @@ public:
 
 
 // Class SocialDefaults.SocialChatChromeStyleDataAsset
-// 0x06F8 (0x0728 - 0x0030)
+// 0x07C8 (0x07F8 - 0x0030)
 class USocialChatChromeStyleDataAsset : public UDataAsset
 {
 public:
-	struct FChatChromeStyle                            Style;                                                    // 0x0030(0x06F8) (Edit)
+	struct FChatChromeStyle                            Style;                                                    // 0x0030(0x07C8) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -96,11 +94,11 @@ public:
 
 
 // Class SocialDefaults.SocialChatMarkupStyleDataAsset
-// 0x0590 (0x05C0 - 0x0030)
+// 0x0608 (0x0638 - 0x0030)
 class USocialChatMarkupStyleDataAsset : public UDataAsset
 {
 public:
-	struct FChatMarkupStyle                            Style;                                                    // 0x0030(0x0590) (Edit)
+	struct FChatMarkupStyle                            Style;                                                    // 0x0030(0x0608) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -112,11 +110,11 @@ public:
 
 
 // Class SocialDefaults.SocialChatStyleDataAsset
-// 0x1170 (0x11A0 - 0x0030)
+// 0x1360 (0x1390 - 0x0030)
 class USocialChatStyleDataAsset : public UDataAsset
 {
 public:
-	struct FChatStyle                                  Style;                                                    // 0x0030(0x1170) (Edit)
+	struct FChatStyle                                  Style;                                                    // 0x0030(0x1360) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -128,11 +126,11 @@ public:
 
 
 // Class SocialDefaults.SocialCheckBoxStyleDataAsset
-// 0x04F0 (0x0520 - 0x0030)
+// 0x0580 (0x05B0 - 0x0030)
 class USocialCheckBoxStyleDataAsset : public UDataAsset
 {
 public:
-	struct FCheckBoxStyle                              Style;                                                    // 0x0030(0x04F0) (Edit)
+	struct FCheckBoxStyle                              Style;                                                    // 0x0030(0x0580) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -144,11 +142,11 @@ public:
 
 
 // Class SocialDefaults.SocialFontStyleDataAsset
-// 0x0240 (0x0270 - 0x0030)
+// 0x0210 (0x0240 - 0x0030)
 class USocialFontStyleDataAsset : public UDataAsset
 {
 public:
-	struct FSocialFontStyle                            Style;                                                    // 0x0030(0x0240) (Edit)
+	struct FSocialFontStyle                            Style;                                                    // 0x0030(0x0210) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -176,11 +174,11 @@ public:
 
 
 // Class SocialDefaults.SocialListStyleDataAsset
-// 0x2268 (0x2298 - 0x0030)
+// 0x26F8 (0x2728 - 0x0030)
 class USocialListStyleDataAsset : public UDataAsset
 {
 public:
-	struct FSocialListStyle                            Style;                                                    // 0x0030(0x2268) (Edit)
+	struct FSocialListStyle                            Style;                                                    // 0x0030(0x26F8) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -208,11 +206,11 @@ public:
 
 
 // Class SocialDefaults.SocialRadioBoxStyleDataAsset
-// 0x04F0 (0x0520 - 0x0030)
+// 0x0580 (0x05B0 - 0x0030)
 class USocialRadioBoxStyleDataAsset : public UDataAsset
 {
 public:
-	struct FCheckBoxStyle                              Style;                                                    // 0x0030(0x04F0) (Edit)
+	struct FCheckBoxStyle                              Style;                                                    // 0x0030(0x0580) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -224,11 +222,11 @@ public:
 
 
 // Class SocialDefaults.SocialScrollBarStyleDataAsset
-// 0x0440 (0x0470 - 0x0030)
+// 0x04D0 (0x0500 - 0x0030)
 class USocialScrollBarStyleDataAsset : public UDataAsset
 {
 public:
-	struct FScrollBarStyle                             Style;                                                    // 0x0030(0x0440) (Edit)
+	struct FScrollBarStyle                             Style;                                                    // 0x0030(0x04D0) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -256,7 +254,7 @@ public:
 
 
 // Class SocialDefaults.SocialStyleDataAsset
-// 0x5E68 (0x5E98 - 0x0030)
+// 0x6760 (0x6790 - 0x0030)
 class USocialStyleDataAsset : public UDataAsset
 {
 public:
@@ -278,7 +276,7 @@ public:
 	class USocialScrollBarStyleDataAsset*              ScrollBoxStyle;                                           // 0x00A8(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 	class USocialChatMarkupStyleDataAsset*             MarkupStyle;                                              // 0x00B0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 	class USocialProfanityDataAsset*                   ProfanityDataAsset;                                       // 0x00B8(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x5DD8];                                    // 0x00C0(0x5DD8) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x66D0];                                    // 0x00C0(0x66D0) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

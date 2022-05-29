@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,13 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function QuickbarBase.QuickbarBase_C.HandleQuickbarContentChanged
+struct UQuickbarBase_C_HandleQuickbarContentChanged_Params
+{
+	EFortQuickBars                                     QuickBarType;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	TArray<int>                                        ChangedSlots;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+};
 
 // Function QuickbarBase.QuickbarBase_C.UpdateCurrentFocusedQuickbar
 struct UQuickbarBase_C_UpdateCurrentFocusedQuickbar_Params
@@ -80,6 +87,7 @@ struct UQuickbarBase_C_OnQuickbarSlotFocusChanged_Params
 struct UQuickbarBase_C_OnQuickbarContentsChanged_Params
 {
 	EFortQuickBars                                     QuickbarIndex;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	TArray<int>                                        ChangedSlots;                                             // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function QuickbarBase.QuickbarBase_C.OnQuickbarForceFullUpdate

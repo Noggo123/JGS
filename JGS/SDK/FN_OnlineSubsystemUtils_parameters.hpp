@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,54 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
-
-// Function OnlineSubsystemUtils.OnlineBeaconClient.ClientOnConnected
-struct AOnlineBeaconClient_ClientOnConnected_Params
-{
-};
-
-// Function OnlineSubsystemUtils.PartyBeaconClient.ServerUpdateReservationRequest
-struct APartyBeaconClient_ServerUpdateReservationRequest_Params
-{
-	struct FString                                     SessionId;                                                // (Parm, ZeroConstructor)
-	struct FPartyReservation                           ReservationUpdate;                                        // (ConstParm, Parm, ReferenceParm)
-};
-
-// Function OnlineSubsystemUtils.PartyBeaconClient.ServerReservationRequest
-struct APartyBeaconClient_ServerReservationRequest_Params
-{
-	struct FString                                     SessionId;                                                // (Parm, ZeroConstructor)
-	struct FPartyReservation                           Reservation;                                              // (ConstParm, Parm, ReferenceParm)
-};
-
-// Function OnlineSubsystemUtils.PartyBeaconClient.ServerCancelReservationRequest
-struct APartyBeaconClient_ServerCancelReservationRequest_Params
-{
-	struct FUniqueNetIdRepl                            PartyLeader;                                              // (ConstParm, Parm, ReferenceParm)
-};
-
-// Function OnlineSubsystemUtils.PartyBeaconClient.ClientSendReservationUpdates
-struct APartyBeaconClient_ClientSendReservationUpdates_Params
-{
-	int                                                NumRemainingReservations;                                 // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function OnlineSubsystemUtils.PartyBeaconClient.ClientSendReservationFull
-struct APartyBeaconClient_ClientSendReservationFull_Params
-{
-};
-
-// Function OnlineSubsystemUtils.PartyBeaconClient.ClientReservationResponse
-struct APartyBeaconClient_ClientReservationResponse_Params
-{
-	TEnumAsByte<EPartyReservationResult>               ReservationResponse;                                      // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function OnlineSubsystemUtils.PartyBeaconClient.ClientCancelReservationResponse
-struct APartyBeaconClient_ClientCancelReservationResponse_Params
-{
-	TEnumAsByte<EPartyReservationResult>               ReservationResponse;                                      // (Parm, ZeroConstructor, IsPlainOldData)
-};
 
 // Function OnlineSubsystemUtils.AchievementBlueprintLibrary.GetCachedAchievementProgress
 struct UAchievementBlueprintLibrary_GetCachedAchievementProgress_Params
@@ -277,6 +229,54 @@ struct ULogoutCallbackProxy_Logout_Params
 	class ULogoutCallbackProxy*                        ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
+// Function OnlineSubsystemUtils.OnlineBeaconClient.ClientOnConnected
+struct AOnlineBeaconClient_ClientOnConnected_Params
+{
+};
+
+// Function OnlineSubsystemUtils.PartyBeaconClient.ServerUpdateReservationRequest
+struct APartyBeaconClient_ServerUpdateReservationRequest_Params
+{
+	struct FString                                     SessionId;                                                // (Parm, ZeroConstructor)
+	struct FPartyReservation                           ReservationUpdate;                                        // (ConstParm, Parm, ReferenceParm)
+};
+
+// Function OnlineSubsystemUtils.PartyBeaconClient.ServerReservationRequest
+struct APartyBeaconClient_ServerReservationRequest_Params
+{
+	struct FString                                     SessionId;                                                // (Parm, ZeroConstructor)
+	struct FPartyReservation                           Reservation;                                              // (ConstParm, Parm, ReferenceParm)
+};
+
+// Function OnlineSubsystemUtils.PartyBeaconClient.ServerCancelReservationRequest
+struct APartyBeaconClient_ServerCancelReservationRequest_Params
+{
+	struct FUniqueNetIdRepl                            PartyLeader;                                              // (ConstParm, Parm, ReferenceParm)
+};
+
+// Function OnlineSubsystemUtils.PartyBeaconClient.ClientSendReservationUpdates
+struct APartyBeaconClient_ClientSendReservationUpdates_Params
+{
+	int                                                NumRemainingReservations;                                 // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function OnlineSubsystemUtils.PartyBeaconClient.ClientSendReservationFull
+struct APartyBeaconClient_ClientSendReservationFull_Params
+{
+};
+
+// Function OnlineSubsystemUtils.PartyBeaconClient.ClientReservationResponse
+struct APartyBeaconClient_ClientReservationResponse_Params
+{
+	TEnumAsByte<EPartyReservationResult>               ReservationResponse;                                      // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function OnlineSubsystemUtils.PartyBeaconClient.ClientCancelReservationResponse
+struct APartyBeaconClient_ClientCancelReservationResponse_Params
+{
+	TEnumAsByte<EPartyReservationResult>               ReservationResponse;                                      // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function OnlineSubsystemUtils.QuitMatchCallbackProxy.QuitMatch
 struct UQuitMatchCallbackProxy_QuitMatch_Params
 {
@@ -340,6 +340,12 @@ struct UTurnBasedBlueprintLibrary_GetIsMyTurn_Params
 	class APlayerController*                           PlayerController;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FString                                     MatchID;                                                  // (Parm, ZeroConstructor)
 	bool                                               bIsMyTurn;                                                // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function OnlineSubsystemUtils.VoipListenerSynthComponent.IsIdling
+struct UVoipListenerSynthComponent_IsIdling_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 }

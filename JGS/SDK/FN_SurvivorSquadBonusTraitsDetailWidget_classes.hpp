@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass SurvivorSquadBonusTraitsDetailWidget.SurvivorSquadBonusTraitsDetailWidget_C
-// 0x0210 (0x04B8 - 0x02A8)
+// 0x0240 (0x04E8 - 0x02A8)
 class USurvivorSquadBonusTraitsDetailWidget_C : public UFortSquadSlotSurvivorTraitMatchesDetailWidget
 {
 public:
@@ -40,9 +38,9 @@ public:
 	class UCommonTextBlock*                            TextPersonalityDivider;                                   // 0x0338(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
 	class UCommonTextBlock*                            TextPersonalityMatch;                                     // 0x0340(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
 	class UCommonTextBlock*                            TextTertiararyHeader;                                     // 0x0348(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
-	struct FSlateBrush                                 HighlightedCheckmarkBrush;                                // 0x0350(0x0078) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateBrush                                 NormalCheckmarkBrush;                                     // 0x03C8(0x0078) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateBrush                                 NonMatchBrush;                                            // 0x0440(0x0078) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateBrush                                 HighlightedCheckmarkBrush;                                // 0x0350(0x0088) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateBrush                                 NormalCheckmarkBrush;                                     // 0x03D8(0x0088) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateBrush                                 NonMatchBrush;                                            // 0x0460(0x0088) (Edit, BlueprintVisible, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{

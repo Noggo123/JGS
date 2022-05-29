@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -31,17 +29,15 @@ enum class ESoundwaveSampleRateSettings : uint8_t
 //Script Structs
 //---------------------------------------------------------------------------
 
-// ScriptStruct AudioPlatformConfiguration.PlatformCompressionOverrides
-// 0x0060
-struct FPlatformCompressionOverrides
+// ScriptStruct AudioPlatformConfiguration.PlatformRuntimeAudioCompressionOverrides
+// 0x0010
+struct FPlatformRuntimeAudioCompressionOverrides
 {
 	bool                                               bOverrideCompressionTimes;                                // 0x0000(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x3];                                       // 0x0001(0x0003) MISSED OFFSET
 	float                                              DurationThreshold;                                        // 0x0004(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	int                                                MaxNumRandomBranches;                                     // 0x0008(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	bool                                               bResampleForDevice;                                       // 0x000C(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x3];                                       // 0x000D(0x0003) MISSED OFFSET
-	TMap<ESoundwaveSampleRateSettings, float>          PlatformSampleRates;                                      // 0x0010(0x0050) (Edit, ZeroConstructor)
+	int                                                SoundCueQualityIndex;                                     // 0x000C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 };
 
 }

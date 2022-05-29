@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,7 @@ namespace SDK
 // Parameters:
 // class UClass*                  NewWidgetClass                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ForceCreateUI                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UFortAnnouncementWidget* NewWidget                      (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// class UFortAnnouncementWidget* NewWidget                      (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UAnnouncement_Layout_C::CreateAnnouncementWidget(class UClass* NewWidgetClass, bool ForceCreateUI, class UFortAnnouncementWidget** NewWidget)
 {
@@ -86,6 +86,23 @@ void UAnnouncement_Layout_C::OnStartNewAnnouncement(class AFortClientAnnouncemen
 
 	UAnnouncement_Layout_C_OnStartNewAnnouncement_Params params;
 	params.NewAnnouncement = NewAnnouncement;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Announcement_Layout.Announcement_Layout_C.Destruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UAnnouncement_Layout_C::Destruct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Announcement_Layout.Announcement_Layout_C.Destruct");
+
+	UAnnouncement_Layout_C_Destruct_Params params;
 
 	auto flags = fn->FunctionFlags;
 

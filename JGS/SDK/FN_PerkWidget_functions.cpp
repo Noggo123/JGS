@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function PerkWidget.PerkWidget_C.CreateToolTipWidget
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 
 class UWidget* UPerkWidget_C::CreateToolTipWidget()
 {
@@ -285,6 +285,43 @@ void UPerkWidget_C::Construct()
 	static auto fn = UObject::FindObject<UFunction>("Function PerkWidget.PerkWidget_C.Construct");
 
 	UPerkWidget_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PerkWidget.PerkWidget_C.OnPerkUpdated
+// (Event, Public, BlueprintEvent)
+
+void UPerkWidget_C::OnPerkUpdated()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PerkWidget.PerkWidget_C.OnPerkUpdated");
+
+	UPerkWidget_C_OnPerkUpdated_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PerkWidget.PerkWidget_C.OnTooltipDescriptionReady
+// (Event, Public, HasOutParms, BlueprintEvent)
+// Parameters:
+// TArray<struct FText>*          DescriptionList                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+
+void UPerkWidget_C::OnTooltipDescriptionReady(TArray<struct FText>* DescriptionList)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PerkWidget.PerkWidget_C.OnTooltipDescriptionReady");
+
+	UPerkWidget_C_OnTooltipDescriptionReady_Params params;
+	params.DescriptionList = DescriptionList;
 
 	auto flags = fn->FunctionFlags;
 

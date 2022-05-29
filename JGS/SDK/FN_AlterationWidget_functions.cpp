@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -139,14 +139,14 @@ struct FLinearColor UAlterationWidget_C::GetHighlightColor()
 }
 
 
-// Function AlterationWidget.AlterationWidget_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function AlterationWidget.AlterationWidget_C.OnSetup
+// (Event, Public, BlueprintEvent)
 
-void UAlterationWidget_C::Construct()
+void UAlterationWidget_C::OnSetup()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AlterationWidget.AlterationWidget_C.Construct");
+	static auto fn = UObject::FindObject<UFunction>("Function AlterationWidget.AlterationWidget_C.OnSetup");
 
-	UAlterationWidget_C_Construct_Params params;
+	UAlterationWidget_C_OnSetup_Params params;
 
 	auto flags = fn->FunctionFlags;
 

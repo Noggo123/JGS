@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -33,7 +33,7 @@ void AB_Prj_Bullet_Sniper_C::UserConstructionScript()
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
 // class AActor**                 OtherActor                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UPrimitiveComponent**    OtherComp                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UPrimitiveComponent**    OtherComp                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // struct FHitResult*             HitResult                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
 // bool*                          bIsOverlap                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -46,43 +46,6 @@ void AB_Prj_Bullet_Sniper_C::OnTouched(class AActor** OtherActor, class UPrimiti
 	params.OtherComp = OtherComp;
 	params.HitResult = HitResult;
 	params.bIsOverlap = bIsOverlap;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function B_Prj_Bullet_Sniper.B_Prj_Bullet_Sniper_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float*                         DeltaSeconds                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void AB_Prj_Bullet_Sniper_C::ReceiveTick(float* DeltaSeconds)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function B_Prj_Bullet_Sniper.B_Prj_Bullet_Sniper_C.ReceiveTick");
-
-	AB_Prj_Bullet_Sniper_C_ReceiveTick_Params params;
-	params.DeltaSeconds = DeltaSeconds;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function B_Prj_Bullet_Sniper.B_Prj_Bullet_Sniper_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void AB_Prj_Bullet_Sniper_C::ReceiveBeginPlay()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function B_Prj_Bullet_Sniper.B_Prj_Bullet_Sniper_C.ReceiveBeginPlay");
-
-	AB_Prj_Bullet_Sniper_C_ReceiveBeginPlay_Params params;
 
 	auto flags = fn->FunctionFlags;
 

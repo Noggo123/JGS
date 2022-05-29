@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,8 +12,25 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function AthenaGamePhaseChangeWidget.AthenaGamePhaseChangeWidget_C.PlayIntroAnimation
+// Function AthenaGamePhaseChangeWidget.AthenaGamePhaseChangeWidget_C.SimplifiedAnimationFinished
 // (Public, BlueprintCallable, BlueprintEvent)
+
+void UAthenaGamePhaseChangeWidget_C::SimplifiedAnimationFinished()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaGamePhaseChangeWidget.AthenaGamePhaseChangeWidget_C.SimplifiedAnimationFinished");
+
+	UAthenaGamePhaseChangeWidget_C_SimplifiedAnimationFinished_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaGamePhaseChangeWidget.AthenaGamePhaseChangeWidget_C.PlayIntroAnimation
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // EAthenaGamePhaseStep           Step                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -79,7 +96,7 @@ void UAthenaGamePhaseChangeWidget_C::UpdateMessaging(EAthenaGamePhaseStep* Step,
 // Function AthenaGamePhaseChangeWidget.AthenaGamePhaseChangeWidget_C.OnAnimationFinished
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation**       Animation                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidgetAnimation**       Animation                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UAthenaGamePhaseChangeWidget_C::OnAnimationFinished(class UWidgetAnimation** Animation)
 {
@@ -107,6 +124,23 @@ void UAthenaGamePhaseChangeWidget_C::GamePhaseStepChanged(EAthenaGamePhaseStep* 
 
 	UAthenaGamePhaseChangeWidget_C_GamePhaseStepChanged_Params params;
 	params.Step = Step;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaGamePhaseChangeWidget.AthenaGamePhaseChangeWidget_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UAthenaGamePhaseChangeWidget_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaGamePhaseChangeWidget.AthenaGamePhaseChangeWidget_C.Construct");
+
+	UAthenaGamePhaseChangeWidget_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 

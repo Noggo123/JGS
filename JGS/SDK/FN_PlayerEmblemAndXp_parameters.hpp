@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,13 +17,11 @@ namespace SDK
 // Function PlayerEmblemAndXp.PlayerEmblemAndXp_C.SetupReward
 struct UPlayerEmblemAndXp_C_SetupReward_Params
 {
-	class UWidget*                                     Container;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UTextBlock*                                  RewardText;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UFortMultiSizeItemCard*                      RewardItemCard;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UImage*                                      RewardImageWidget;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonTextBlock*                            RewardCountTextBlock;                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UWidget*                                     Container;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UTextBlock*                                  RewardText;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UDailyQuestRewardInfo_C*                     RewardInfoWidget;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 	bool                                               HasReward;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FFortItemInstanceQuantityPair               RewardItem;                                               // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FFortItemQuantityPair                       RewardItem;                                               // (BlueprintVisible, BlueprintReadOnly, Parm)
 	int                                                LevelRewarded;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 

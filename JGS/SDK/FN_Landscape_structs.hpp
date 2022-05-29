@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -146,12 +144,12 @@ struct FWeightmapLayerAllocationInfo
 struct FGrassVariety
 {
 	class UStaticMesh*                                 GrassMesh;                                                // 0x0000(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              GrassDensity;                                             // 0x0008(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FPerPlatformFloat                           GrassDensity;                                             // 0x0008(0x0004) (Edit)
 	bool                                               bUseGrid;                                                 // 0x000C(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x3];                                       // 0x000D(0x0003) MISSED OFFSET
 	float                                              PlacementJitter;                                          // 0x0010(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	int                                                StartCullDistance;                                        // 0x0014(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	int                                                EndCullDistance;                                          // 0x0018(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FPerPlatformInt                             StartCullDistance;                                        // 0x0014(0x0004) (Edit)
+	struct FPerPlatformInt                             EndCullDistance;                                          // 0x0018(0x0004) (Edit)
 	int                                                MinLOD;                                                   // 0x001C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	EGrassScaling                                      Scaling;                                                  // 0x0020(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData01[0x3];                                       // 0x0021(0x0003) MISSED OFFSET
@@ -199,27 +197,27 @@ struct FLandscapeSplineSegmentConnection
 };
 
 // ScriptStruct Landscape.GrassInput
-// 0x0048
+// 0x0040
 struct FGrassInput
 {
 	struct FName                                       Name;                                                     // 0x0000(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 	class ULandscapeGrassType*                         GrassType;                                                // 0x0008(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FExpressionInput                            Input;                                                    // 0x0010(0x0038)
+	struct FExpressionInput                            Input;                                                    // 0x0010(0x0030)
 };
 
 // ScriptStruct Landscape.LayerBlendInput
-// 0x0098
+// 0x0088
 struct FLayerBlendInput
 {
 	struct FName                                       LayerName;                                                // 0x0000(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<ELandscapeLayerBlendType>              BlendType;                                                // 0x0008(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x7];                                       // 0x0009(0x0007) MISSED OFFSET
-	struct FExpressionInput                            LayerInput;                                               // 0x0010(0x0038)
-	struct FExpressionInput                            HeightInput;                                              // 0x0048(0x0038)
-	float                                              PreviewWeight;                                            // 0x0080(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ConstLayerInput;                                          // 0x0084(0x000C) (Edit, IsPlainOldData)
-	float                                              ConstHeightInput;                                         // 0x0090(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x0094(0x0004) MISSED OFFSET
+	struct FExpressionInput                            LayerInput;                                               // 0x0010(0x0030)
+	struct FExpressionInput                            HeightInput;                                              // 0x0040(0x0030)
+	float                                              PreviewWeight;                                            // 0x0070(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ConstLayerInput;                                          // 0x0074(0x000C) (Edit, IsPlainOldData)
+	float                                              ConstHeightInput;                                         // 0x0080(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x0084(0x0004) MISSED OFFSET
 };
 
 // ScriptStruct Landscape.LandscapeEditToolRenderData

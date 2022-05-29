@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -132,22 +132,20 @@ void AWindManager_C::UpdateWindDeltaCyl(float Static_Cylinder_Outer_Radius, floa
 // Function WindManager.WindManager_C.RemoveWindCylinder
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortWindImpulseCylinder WindImpulseCylinder            (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortWindImpulseCylinder WindImpulseCylinder            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void AWindManager_C::RemoveWindCylinder(struct FFortWindImpulseCylinder* WindImpulseCylinder)
+void AWindManager_C::RemoveWindCylinder(const struct FFortWindImpulseCylinder& WindImpulseCylinder)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function WindManager.WindManager_C.RemoveWindCylinder");
 
 	AWindManager_C_RemoveWindCylinder_Params params;
+	params.WindImpulseCylinder = WindImpulseCylinder;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (WindImpulseCylinder != nullptr)
-		*WindImpulseCylinder = params.WindImpulseCylinder;
 }
 
 
@@ -177,7 +175,7 @@ void AWindManager_C::UpdateStormWindCylinder(const struct FFortWindImpulseCylind
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                          Scale                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class USceneCaptureComponent2D* Scene_Capture                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class USceneCaptureComponent2D* Scene_Capture                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // struct FVector                 ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
 
 struct FVector AWindManager_C::Calculate_Camera_Position(float Scale, class USceneCaptureComponent2D* Scene_Capture)
@@ -201,7 +199,7 @@ struct FVector AWindManager_C::Calculate_Camera_Position(float Scale, class USce
 // Function WindManager.WindManager_C.SetRenderOnlyAssets
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UPrimitiveComponent*     InComponent                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UPrimitiveComponent*     InComponent                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void AWindManager_C::SetRenderOnlyAssets(class UPrimitiveComponent* InComponent)
 {
@@ -314,14 +312,16 @@ void AWindManager_C::ReceiveTick(float* DeltaSeconds)
 // Function WindManager.WindManager_C.Register player for render to texture purposes
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class APlayerPawn_Generic_C*   Player_Pawn_Generic            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UPrimitiveComponent*     Effect_Water_Interaction_FX    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UPrimitiveComponent*     Gameplay_Wind_INteraction_Effects (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
-void AWindManager_C::Register_player_for_render_to_texture_purposes(class APlayerPawn_Generic_C* Player_Pawn_Generic)
+void AWindManager_C::Register_player_for_render_to_texture_purposes(class UPrimitiveComponent* Effect_Water_Interaction_FX, class UPrimitiveComponent* Gameplay_Wind_INteraction_Effects)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function WindManager.WindManager_C.Register player for render to texture purposes");
 
 	AWindManager_C_Register_player_for_render_to_texture_purposes_Params params;
-	params.Player_Pawn_Generic = Player_Pawn_Generic;
+	params.Effect_Water_Interaction_FX = Effect_Water_Interaction_FX;
+	params.Gameplay_Wind_INteraction_Effects = Gameplay_Wind_INteraction_Effects;
 
 	auto flags = fn->FunctionFlags;
 
@@ -334,7 +334,7 @@ void AWindManager_C::Register_player_for_render_to_texture_purposes(class APlaye
 // Function WindManager.WindManager_C.AddWindParticleSystemComponent
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UParticleSystemComponent** ParticleSystemComponent        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UParticleSystemComponent** ParticleSystemComponent        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void AWindManager_C::AddWindParticleSystemComponent(class UParticleSystemComponent** ParticleSystemComponent)
 {
@@ -458,7 +458,7 @@ void AWindManager_C::Play_Water_Splash_Particle_System_At_Location(const struct 
 // Function WindManager.WindManager_C.Add Wind Component
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UPrimitiveComponent*     InComponent                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UPrimitiveComponent*     InComponent                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void AWindManager_C::Add_Wind_Component(class UPrimitiveComponent* InComponent)
 {

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,29 +14,14 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function WebLogin.WebLogin_C.HandleBack
-struct UWebLogin_C_HandleBack_Params
+// Function WebLogin.WebLogin_C.DisplayWidget
+struct UWebLogin_C_DisplayWidget_Params
 {
+	class UWidget**                                    WebWidget;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
-// Function WebLogin.WebLogin_C.BindDelegates
-struct UWebLogin_C_BindDelegates_Params
-{
-};
-
-// Function WebLogin.WebLogin_C.Dismiss
-struct UWebLogin_C_Dismiss_Params
-{
-};
-
-// Function WebLogin.WebLogin_C.Display
-struct UWebLogin_C_Display_Params
-{
-	class UWidget*                                     WebWidget;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function WebLogin.WebLogin_C.OnActivated
-struct UWebLogin_C_OnActivated_Params
+// Function WebLogin.WebLogin_C.DismissWidget
+struct UWebLogin_C_DismissWidget_Params
 {
 };
 
@@ -44,11 +29,6 @@ struct UWebLogin_C_OnActivated_Params
 struct UWebLogin_C_ExecuteUbergraph_WebLogin_Params
 {
 	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function WebLogin.WebLogin_C.OnLoginDialogDismissed__DelegateSignature
-struct UWebLogin_C_OnLoginDialogDismissed__DelegateSignature_Params
-{
 };
 
 }

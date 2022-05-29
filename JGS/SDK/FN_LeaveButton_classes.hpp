@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -37,6 +35,7 @@ public:
 	}
 
 
+	void GetDescriptionText(struct FText* DescriptionText);
 	void IsInNeighborhood(bool* bIsInNeighborhood);
 	void Update_Style_State();
 	void SetText(const struct FText& TextOverride);
@@ -57,6 +56,7 @@ public:
 	void BndEvt__Leave_K2Node_ComponentBoundEvent_90_CommonButtonClicked__DelegateSignature(class UCommonButton* Button);
 	void Destruct();
 	void PreConstruct(bool* IsDesignTime);
+	void HandlePlayerStateChanged(const struct FFortTeamMemberInfo& TeamMemberInfo);
 	void ExecuteUbergraph_LeaveButton(int EntryPoint);
 	void Update_Visibility__DelegateSignature(bool Visibility);
 	void OnClicked__DelegateSignature();

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,7 +37,7 @@ void UAthenaPlayerActionAlert_C::AlertPlayer(EAthenaPlayerActionAlert* Alert, st
 // Function AthenaPlayerActionAlert.AthenaPlayerActionAlert_C.OnAnimationFinished
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation**       Animation                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidgetAnimation**       Animation                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UAthenaPlayerActionAlert_C::OnAnimationFinished(class UWidgetAnimation** Animation)
 {

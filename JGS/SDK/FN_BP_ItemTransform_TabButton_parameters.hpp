@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,24 +14,9 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Get FortPC
-struct UBP_ItemTransform_TabButton_C_Get_FortPC_Params
+// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Refresh Bang State Internal
+struct UBP_ItemTransform_TabButton_C_Refresh_Bang_State_Internal_Params
 {
-	class AFortPlayerController*                       FortPC;                                                   // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Get Item from Transform Seen State
-struct UBP_ItemTransform_TabButton_C_Get_Item_from_Transform_Seen_State_Params
-{
-	class UFortAccountItem*                            Transform_Key;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UFortAccountItem*                            Item;                                                     // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Calculate Unseen Keys
-struct UBP_ItemTransform_TabButton_C_Calculate_Unseen_Keys_Params
-{
-	TArray<class UFortAccountItem*>                    Array;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-	int                                                NumUnseen;                                                // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Get Tab Id as Request Type

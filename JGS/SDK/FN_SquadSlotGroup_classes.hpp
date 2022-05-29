@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass SquadSlotGroup.SquadSlotGroup_C
-// 0x0130 (0x0340 - 0x0210)
+// 0x0140 (0x0350 - 0x0210)
 class USquadSlotGroup_C : public UCommonUserWidget
 {
 public:
@@ -26,7 +24,7 @@ public:
 	class UImage*                                      Image_0_1;                                                // 0x0230(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
 	class UHorizontalBox*                              SquadSlotBox;                                             // 0x0238(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
 	struct FText                                       GroupLabelText;                                           // 0x0240(0x0018) (Edit, BlueprintVisible)
-	struct FMargin                                     SquadSlotPadding;                                         // 0x0258(0x0010) (Edit, BlueprintVisible)
+	struct FMargin                                     SquadSlotPadding;                                         // 0x0258(0x0010) (Edit, BlueprintVisible, IsPlainOldData)
 	float                                              HeadingWidth;                                             // 0x0268(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	bool                                               bShowHeader;                                              // 0x026C(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x3];                                       // 0x026D(0x0003) MISSED OFFSET
@@ -34,9 +32,9 @@ public:
 	struct FText                                       TooltipHeader;                                            // 0x0288(0x0018) (Edit, BlueprintVisible)
 	bool                                               bShowImageInHeader;                                       // 0x02A0(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData01[0x7];                                       // 0x02A1(0x0007) MISSED OFFSET
-	struct FSlateBrush                                 HeaderImageBrush;                                         // 0x02A8(0x0078) (Edit, BlueprintVisible)
-	struct FScriptMulticastDelegate                    HandleMouseEnter;                                         // 0x0320(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable)
-	struct FScriptMulticastDelegate                    HandleMouseLeave;                                         // 0x0330(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable)
+	struct FSlateBrush                                 HeaderImageBrush;                                         // 0x02A8(0x0088) (Edit, BlueprintVisible)
+	struct FScriptMulticastDelegate                    HandleMouseEnter;                                         // 0x0330(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable)
+	struct FScriptMulticastDelegate                    HandleMouseLeave;                                         // 0x0340(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable)
 
 	static UClass* StaticClass()
 	{

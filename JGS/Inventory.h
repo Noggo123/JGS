@@ -4,10 +4,6 @@
 
 namespace Inventory
 {
-    static auto BaseAddr = (uintptr_t)(GetModuleHandle(NULL));
-    static auto MarkArrayDirty = reinterpret_cast<void(*)(FFastArraySerializer)>(BaseAddr + 0x0);
-    static auto MarkItemDirty = reinterpret_cast<void(*)(FFastArraySerializer, FFastArraySerializerItem)>(BaseAddr + 0x0);
-
     void AddDefaultQuickBarItems(AFortPlayerController* PC)
     {
         auto QuickBars = PC->QuickBars;
@@ -52,9 +48,14 @@ namespace Inventory
         QuickBars->ServerAddItemInternal(RoofWorldBuildItem->GetItemGuid(), SDK::EFortQuickBars::Secondary, 3);
     }
 
-	void SetupInventory(AFortPlayerController* PC)
-	{
+    void SetupInventory(AFortPlayerController* PC)
+    {
         std::map<UFortItemDefinition*, int> ItemsToAddMap;
+
+        auto NewInventory = (AFortInventory*)(Util::SpawnActor(AFortInventory::StaticClass(), {}, {}));
+        NewInventory->InventoryType = EFortInventoryType::World;
+        NewInventory->SetOwner(PC);
+        PC->WorldInventory = NewInventory;
 
         auto NewQuickBars = (AFortQuickBars*)Util::SpawnActor(AFortQuickBars::StaticClass(), {}, {});
         NewQuickBars->SetOwner(PC);
@@ -78,18 +79,18 @@ namespace Inventory
         ItemsToAddMap.insert_or_assign(pLight, 999);
         ItemsToAddMap.insert_or_assign(pHeavy, 999);
 
-		auto FortInventory = PC->WorldInventory;
+        auto FortInventory = PC->WorldInventory;
         auto QuickBars = PC->QuickBars;
-
-        QuickBars->EnableSlot(EFortQuickBars::Primary, 0);
-        QuickBars->EnableSlot(EFortQuickBars::Primary, 1);
-        QuickBars->EnableSlot(EFortQuickBars::Primary, 2);
-        QuickBars->EnableSlot(EFortQuickBars::Primary, 3);
-        QuickBars->EnableSlot(EFortQuickBars::Primary, 4);
-        QuickBars->EnableSlot(EFortQuickBars::Secondary, 0);
-        QuickBars->EnableSlot(EFortQuickBars::Secondary, 1);
-        QuickBars->EnableSlot(EFortQuickBars::Secondary, 2);
-        QuickBars->EnableSlot(EFortQuickBars::Secondary, 3);
+        
+        QuickBars->ServerEnableSlot(EFortQuickBars::Primary, 0);
+        QuickBars->ServerEnableSlot(EFortQuickBars::Primary, 1);
+        QuickBars->ServerEnableSlot(EFortQuickBars::Primary, 2);
+        QuickBars->ServerEnableSlot(EFortQuickBars::Primary, 3);
+        QuickBars->ServerEnableSlot(EFortQuickBars::Primary, 4);
+        QuickBars->ServerEnableSlot(EFortQuickBars::Secondary, 0);
+        QuickBars->ServerEnableSlot(EFortQuickBars::Secondary, 1);
+        QuickBars->ServerEnableSlot(EFortQuickBars::Secondary, 2);
+        QuickBars->ServerEnableSlot(EFortQuickBars::Secondary, 3);
 
         AddDefaultQuickBarItems(PC);
 

@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -37,6 +35,16 @@ enum class ERangeBoundTypes : uint8_t
 };
 
 
+// Enum CoreUObject.ELocalizedTextSourceCategory
+enum class ELocalizedTextSourceCategory : uint8_t
+{
+	Game                           = 0,
+	Engine                         = 1,
+	Editor                         = 2,
+	ELocalizedTextSourceCategory_MAX = 3
+};
+
+
 // Enum CoreUObject.EAutomationEventType
 enum class EAutomationEventType : uint8_t
 {
@@ -44,6 +52,27 @@ enum class EAutomationEventType : uint8_t
 	Warning                        = 1,
 	Error                          = 2,
 	EAutomationEventType_MAX       = 3
+};
+
+
+// Enum CoreUObject.EMouseCursor
+enum class EMouseCursor : uint8_t
+{
+	None                           = 0,
+	Default                        = 1,
+	TextEditBeam                   = 2,
+	ResizeLeftRight                = 3,
+	ResizeUpDown                   = 4,
+	ResizeSouthEast                = 5,
+	ResizeSouthWest                = 6,
+	CardinalCross                  = 7,
+	Crosshairs                     = 8,
+	Hand                           = 9,
+	GrabHand                       = 10,
+	GrabHandClosed                 = 11,
+	SlashedCircle                  = 12,
+	EyeDropper                     = 13,
+	EMouseCursor_MAX               = 14
 };
 
 
@@ -125,27 +154,6 @@ enum class EUnit : uint8_t
 };
 
 
-// Enum CoreUObject.EMouseCursor
-enum class EMouseCursor : uint8_t
-{
-	None                           = 0,
-	Default                        = 1,
-	TextEditBeam                   = 2,
-	ResizeLeftRight                = 3,
-	ResizeUpDown                   = 4,
-	ResizeSouthEast                = 5,
-	ResizeSouthWest                = 6,
-	CardinalCross                  = 7,
-	Crosshairs                     = 8,
-	Hand                           = 9,
-	GrabHand                       = 10,
-	GrabHandClosed                 = 11,
-	SlashedCircle                  = 12,
-	EyeDropper                     = 13,
-	EMouseCursor_MAX               = 14
-};
-
-
 // Enum CoreUObject.EPixelFormat
 enum class EPixelFormat : uint8_t
 {
@@ -211,7 +219,9 @@ enum class EPixelFormat : uint8_t
 	PF_XGXR8                       = 59,
 	PF_R8G8B8A8_UINT               = 60,
 	PF_R8G8B8A8_SNORM              = 61,
-	//PF_MAX                         = 62
+	PF_R16G16B16A16_UNORM          = 62,
+	PF_R16G16B16A16_SNORM          = 63,
+	PF_MAX_                         = 64
 };
 
 
@@ -739,6 +749,20 @@ struct FInt32Interval
 {
 	int                                                Min;                                                      // 0x0000(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	int                                                Max;                                                      // 0x0004(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct CoreUObject.PolyglotTextData
+// 0x00B0
+struct FPolyglotTextData
+{
+	ELocalizedTextSourceCategory                       Category;                                                 // 0x0000(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0001(0x0007) MISSED OFFSET
+	struct FString                                     NativeCulture;                                            // 0x0008(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
+	struct FString                                     Namespace;                                                // 0x0018(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
+	struct FString                                     Key;                                                      // 0x0028(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
+	struct FString                                     NativeString;                                             // 0x0038(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
+	TMap<struct FString, struct FString>               LocalizedStrings;                                         // 0x0048(0x0050) (Edit, BlueprintVisible, ZeroConstructor)
+	struct FText                                       CachedText;                                               // 0x0098(0x0018) (Transient)
 };
 
 // ScriptStruct CoreUObject.AutomationEvent

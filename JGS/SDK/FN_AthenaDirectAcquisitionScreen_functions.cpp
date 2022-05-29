@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,28 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function AthenaDirectAcquisitionScreen.AthenaDirectAcquisitionScreen_C.HandlePurchaseHistory
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaDirectAcquisitionScreen_C::HandlePurchaseHistory(bool* Passthrough)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaDirectAcquisitionScreen.AthenaDirectAcquisitionScreen_C.HandlePurchaseHistory");
+
+	UAthenaDirectAcquisitionScreen_C_HandlePurchaseHistory_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Passthrough != nullptr)
+		*Passthrough = params.Passthrough;
+}
+
 
 // Function AthenaDirectAcquisitionScreen.AthenaDirectAcquisitionScreen_C.Focus
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -108,6 +130,23 @@ void UAthenaDirectAcquisitionScreen_C::OnActivated()
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaDirectAcquisitionScreen.AthenaDirectAcquisitionScreen_C.OnActivated");
 
 	UAthenaDirectAcquisitionScreen_C_OnActivated_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaDirectAcquisitionScreen.AthenaDirectAcquisitionScreen_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UAthenaDirectAcquisitionScreen_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaDirectAcquisitionScreen.AthenaDirectAcquisitionScreen_C.Construct");
+
+	UAthenaDirectAcquisitionScreen_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 

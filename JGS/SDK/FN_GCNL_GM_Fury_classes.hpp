@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,14 +13,14 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass GCNL_GM_Fury.GCNL_GM_Fury_C
-// 0x00B0 (0x0540 - 0x0490)
+// 0x00B0 (0x04F0 - 0x0440)
 class AGCNL_GM_Fury_C : public AFortGameplayCueNotify_Looping
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0490(0x0008) (Transient, DuplicateTransient)
-	class UParticleSystemComponent*                    FuryPS;                                                   // 0x0498(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	TMap<struct FName, struct FLinearColor>            VectorParameters;                                         // 0x04A0(0x0050) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
-	TMap<struct FName, float>                          ScalarParameters;                                         // 0x04F0(0x0050) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0440(0x0008) (Transient, DuplicateTransient)
+	class UParticleSystemComponent*                    FuryPS;                                                   // 0x0448(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
+	TMap<struct FName, struct FLinearColor>            VectorParameters;                                         // 0x0450(0x0050) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	TMap<struct FName, float>                          ScalarParameters;                                         // 0x04A0(0x0050) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{

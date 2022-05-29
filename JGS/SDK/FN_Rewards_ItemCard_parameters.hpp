@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function Rewards_ItemCard.Rewards_ItemCard_C.SetItemLimitReachedNotification
+struct URewards_ItemCard_C_SetItemLimitReachedNotification_Params
+{
+	bool                                               ShouldShow;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function Rewards_ItemCard.Rewards_ItemCard_C.SetQuantityOverride
 struct URewards_ItemCard_C_SetQuantityOverride_Params
@@ -193,7 +199,7 @@ struct URewards_ItemCard_C_PreConstruct_Params
 // Function Rewards_ItemCard.Rewards_ItemCard_C.BndEvt__ButtonInspect_K2Node_ComponentBoundEvent_5_CommonButtonClicked__DelegateSignature
 struct URewards_ItemCard_C_BndEvt__ButtonInspect_K2Node_ComponentBoundEvent_5_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function Rewards_ItemCard.Rewards_ItemCard_C.Construct
@@ -215,19 +221,19 @@ struct URewards_ItemCard_C_OnPopInAnimationFinished__DelegateSignature_Params
 // Function Rewards_ItemCard.Rewards_ItemCard_C.OnResizeAnimationFinished__DelegateSignature
 struct URewards_ItemCard_C_OnResizeAnimationFinished__DelegateSignature_Params
 {
-	class URewards_ItemCard_C*                         RewardsItemCard;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class URewards_ItemCard_C*                         RewardsItemCard;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function Rewards_ItemCard.Rewards_ItemCard_C.OnInspectClicked__DelegateSignature
 struct URewards_ItemCard_C_OnInspectClicked__DelegateSignature_Params
 {
-	class URewards_ItemCard_C*                         Card;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class URewards_ItemCard_C*                         Card;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function Rewards_ItemCard.Rewards_ItemCard_C.OnSlideAnimationFinished__DelegateSignature
 struct URewards_ItemCard_C_OnSlideAnimationFinished__DelegateSignature_Params
 {
-	class URewards_ItemCard_C*                         RewardsItemCard;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class URewards_ItemCard_C*                         RewardsItemCard;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 }

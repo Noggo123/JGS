@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,18 +14,23 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function DailyQuestWidget.DailyQuestWidget_C.CreateAllObjectiveWidgets
-struct UDailyQuestWidget_C_CreateAllObjectiveWidgets_Params
+// Function DailyQuestWidget.DailyQuestWidget_C.Entrance Anim
+struct UDailyQuestWidget_C_Entrance_Anim_Params
 {
 };
 
-// Function DailyQuestWidget.DailyQuestWidget_C.UpdateObjectiveWidgets
-struct UDailyQuestWidget_C_UpdateObjectiveWidgets_Params
+// Function DailyQuestWidget.DailyQuestWidget_C.Collect Anim
+struct UDailyQuestWidget_C_Collect_Anim_Params
 {
 };
 
-// Function DailyQuestWidget.DailyQuestWidget_C.FilterObjectives
-struct UDailyQuestWidget_C_FilterObjectives_Params
+// Function DailyQuestWidget.DailyQuestWidget_C.Completed State
+struct UDailyQuestWidget_C_Completed_State_Params
+{
+};
+
+// Function DailyQuestWidget.DailyQuestWidget_C.UpdateProgress
+struct UDailyQuestWidget_C_UpdateProgress_Params
 {
 };
 

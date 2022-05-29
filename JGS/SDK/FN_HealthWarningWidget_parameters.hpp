@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,35 +14,9 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function HealthWarningWidget.HealthWarningWidget_C.SetupShowTimer
-struct UHealthWarningWidget_C_SetupShowTimer_Params
-{
-};
-
-// Function HealthWarningWidget.HealthWarningWidget_C.OnActivated
-struct UHealthWarningWidget_C_OnActivated_Params
-{
-};
-
 // Function HealthWarningWidget.HealthWarningWidget_C.HandleShowTimerComplete
 struct UHealthWarningWidget_C_HandleShowTimerComplete_Params
 {
-};
-
-// Function HealthWarningWidget.HealthWarningWidget_C.Destruct
-struct UHealthWarningWidget_C_Destruct_Params
-{
-};
-
-// Function HealthWarningWidget.HealthWarningWidget_C.Construct
-struct UHealthWarningWidget_C_Construct_Params
-{
-};
-
-// Function HealthWarningWidget.HealthWarningWidget_C.AddIconToScreen
-struct UHealthWarningWidget_C_AddIconToScreen_Params
-{
-	class UCommonLazyImage**                           Image;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function HealthWarningWidget.HealthWarningWidget_C.ExecuteUbergraph_HealthWarningWidget

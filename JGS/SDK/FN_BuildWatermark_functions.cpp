@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -46,8 +46,62 @@ void UBuildWatermark_C::Construct()
 }
 
 
+// Function BuildWatermark.BuildWatermark_C.HandlePlayerStateChanged
+// (HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FFortTeamMemberInfo     TeamInfo                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void UBuildWatermark_C::HandlePlayerStateChanged(const struct FFortTeamMemberInfo& TeamInfo)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BuildWatermark.BuildWatermark_C.HandlePlayerStateChanged");
+
+	UBuildWatermark_C_HandlePlayerStateChanged_Params params;
+	params.TeamInfo = TeamInfo;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BuildWatermark.BuildWatermark_C.HandlePartyJoined
+// (BlueprintCallable, BlueprintEvent)
+
+void UBuildWatermark_C::HandlePartyJoined()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BuildWatermark.BuildWatermark_C.HandlePartyJoined");
+
+	UBuildWatermark_C_HandlePartyJoined_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BuildWatermark.BuildWatermark_C.Destruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UBuildWatermark_C::Destruct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BuildWatermark.BuildWatermark_C.Destruct");
+
+	UBuildWatermark_C_Destruct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function BuildWatermark.BuildWatermark_C.ExecuteUbergraph_BuildWatermark
-// ()
+// (HasDefaults)
 // Parameters:
 // int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 

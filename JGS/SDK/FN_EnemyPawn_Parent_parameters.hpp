@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -108,7 +108,7 @@ struct AEnemyPawn_Parent_C_SpawnMeshAttachedToCharacter_Params
 	bool                                               Absolute_Location;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               Absolute_Rotation;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               Absolute_Scale;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UStaticMeshComponent*                        Static_Mesh_Component_Reference;                          // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	class UStaticMeshComponent*                        Static_Mesh_Component_Reference;                          // (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function EnemyPawn_Parent.EnemyPawn_Parent_C.RestorePreviousMaterialOnCharacterMesh
@@ -140,7 +140,7 @@ struct AEnemyPawn_Parent_C_SetCharacterFresnelGlowColors_Params
 struct AEnemyPawn_Parent_C_SpawnParticleSystemOnCharacterMesh_Params
 {
 	class UParticleSystem*                             ParticleSystemTemplate;                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UParticleSystemComponent*                    ParticleSystemComponentReferenceVar;                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UParticleSystemComponent*                    ParticleSystemComponentReferenceVar;                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 	struct FName                                       AttachPointName;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	struct FVector                                     Location;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
 	struct FRotator                                    Rotation;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
@@ -150,7 +150,7 @@ struct AEnemyPawn_Parent_C_SpawnParticleSystemOnCharacterMesh_Params
 	bool                                               AbsoluteLocation;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               AbsoluteRotation;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               AbsoluteScale;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UParticleSystemComponent*                    PSComponentReference;                                     // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	class UParticleSystemComponent*                    PSComponentReference;                                     // (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function EnemyPawn_Parent.EnemyPawn_Parent_C.OverridePhysicalMaterialOnCharacterMesh

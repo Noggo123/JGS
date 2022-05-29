@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,24 +14,9 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.Teleport
-struct APlayerPawn_Generic_Parent_C_Teleport_Params
-{
-	struct FGameplayCueParameters                      GameplayCueParameters;                                    // (BlueprintVisible, BlueprintReadOnly, Parm)
-	bool                                               TeleportOut_;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Default_PlayLength;                                       // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.UserConstructionScript
 struct APlayerPawn_Generic_Parent_C_UserConstructionScript_Params
 {
-};
-
-// Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.GameplayCue.Teleport.Out
-struct APlayerPawn_Generic_Parent_C_GameplayCue_Teleport_Out_Params
-{
-	TEnumAsByte<EGameplayCueEvent>                     EventType;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayCueParameters                      Parameters;                                               // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
 // Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.ReceiveBeginPlay
@@ -39,11 +24,15 @@ struct APlayerPawn_Generic_Parent_C_ReceiveBeginPlay_Params
 {
 };
 
-// Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.GameplayCue.Teleport.In
-struct APlayerPawn_Generic_Parent_C_GameplayCue_Teleport_In_Params
+// Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.Entered Water Volume
+struct APlayerPawn_Generic_Parent_C_Entered_Water_Volume_Params
 {
-	TEnumAsByte<EGameplayCueEvent>                     EventType;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayCueParameters                      Parameters;                                               // (BlueprintVisible, BlueprintReadOnly, Parm)
+};
+
+// Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.Player Creates a Splash
+struct APlayerPawn_Generic_Parent_C_Player_Creates_a_Splash_Params
+{
+	struct FTransform                                  NewTransform;                                             // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
 };
 
 // Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.ExecuteUbergraph_PlayerPawn_Generic_Parent

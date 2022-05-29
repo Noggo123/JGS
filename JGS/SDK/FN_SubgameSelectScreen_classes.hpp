@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass SubgameSelectScreen.SubgameSelectScreen_C
-// 0x0120 (0x04E0 - 0x03C0)
+// 0x0141 (0x0501 - 0x03C0)
 class USubgameSelectScreen_C : public UFortSubGameSelectBase
 {
 public:
@@ -50,12 +48,17 @@ public:
 	class UCommonLazyImage*                            TitleImage;                                               // 0x04A0(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
 	bool                                               WasLastPlayForward;                                       // 0x04A8(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x7];                                       // 0x04A9(0x0007) MISSED OFFSET
-	class UProgressModalWidget_C*                      LeavingMatchmakingDialog;                                 // 0x04B0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UProgressModalWidget_C*                      LeavingMatchmakingDialog;                                 // 0x04B0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
 	class UMaterialInstanceDynamic*                    MID_Keyart;                                               // 0x04B8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	struct FTimerHandle                                CycleTimer;                                               // 0x04C0(0x0008) (Edit, BlueprintVisible, DisableEditOnInstance)
 	int                                                PveRotatorIndex;                                          // 0x04C8(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData01[0x4];                                       // 0x04CC(0x0004) MISSED OFFSET
 	TArray<struct FSubGameSelectRotatorItems>          Items;                                                    // 0x04D0(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	class UFileMediaSource*                            BRTrailerMediaSource;                                     // 0x04E0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UFortMediaSubtitlesPlayer*                   BRSubtitlePlayer;                                         // 0x04E8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UFileMediaSource*                            STWTrailerMediaSource;                                    // 0x04F0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UFortMediaSubtitlesPlayer*                   STWSubtitlePlayer;                                        // 0x04F8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	ESubGame                                           SelectedSubgame;                                          // 0x0500(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -64,6 +67,7 @@ public:
 	}
 
 
+	void StartSubgameSelectMusic();
 	void IsMinorShutdownWarningEnabled(bool* Enabled);
 	void ShowUpsell();
 	void InitializeRedeemButton();
@@ -75,8 +79,6 @@ public:
 	void ToggleTimer(bool Enabled);
 	void SafeSetSubGame(ESubGame SubGame);
 	void SetDescriptionForSubGame(ESubGame SubGame);
-	void OnCodeRedeemCanceled_4BE2E0B94F226EFF37B0C4B3DCA8A2CF();
-	void OnCodeRedeemComplete_4BE2E0B94F226EFF37B0C4B3DCA8A2CF();
 	void DialogResult_FA087F7E461591BDBC2AECAB522E633C(EFortDialogResult Result, const struct FName& ResultName);
 	void DialogResult_9B87D67040B12081C9B651A92AD99EA4(EFortDialogResult Result, const struct FName& ResultName);
 	void BndEvt__CampaignBtn_K2Node_ComponentBoundEvent_282_CommonButtonClicked__DelegateSignature(class UCommonButton* Button);
@@ -93,7 +95,6 @@ public:
 	void BndEvt__CampaignBtn_K2Node_ComponentBoundEvent_107_CommonButtonClicked__DelegateSignature(class UCommonButton* Button);
 	void CustomEvent_2_3();
 	void OnActivated();
-	void BndEvt__ButtonRedeem_K2Node_ComponentBoundEvent_67_CommonButtonClicked__DelegateSignature(class UCommonButton* Button);
 	void OnRealMoneyPurchaseComleteHandler(bool bSuccess);
 	void Destruct();
 	void BndEvt__ButtonExit_K2Node_ComponentBoundEvent_193_CommonButtonClicked__DelegateSignature(class UCommonButton* Button);
@@ -101,6 +102,8 @@ public:
 	void ShowMinorShutdownMessage(bool bIsCampaign);
 	void HandleMinorWarning_Campaign();
 	void HandleMinorWarning_Athena();
+	void BndEvt__ButtonRedeem_K2Node_ComponentBoundEvent_68_CommonButtonClicked__DelegateSignature(class UCommonButton* Button);
+	void OnRedeemCodeComplete();
 	void ExecuteUbergraph_SubgameSelectScreen(int EntryPoint);
 };
 

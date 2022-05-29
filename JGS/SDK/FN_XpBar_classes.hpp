@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -39,6 +37,7 @@ public:
 	void Construct();
 	void Account_Info_Changed(const struct FFortPublicAccountInfo& NewInfo);
 	void Xp_Boost_Changed(int BoostAmount);
+	void Destruct();
 	void ExecuteUbergraph_XpBar(int EntryPoint);
 };
 

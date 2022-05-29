@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass Athena_Matchmaking_GameModeButton.Athena_Matchmaking_GameModeButton_C
-// 0x00E8 (0x02F0 - 0x0208)
+// 0x00B8 (0x02C0 - 0x0208)
 class UAthena_Matchmaking_GameModeButton_C : public UUserWidget
 {
 public:
@@ -31,10 +29,8 @@ public:
 	int                                                ButtonMinHeight;                                          // 0x0250(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData01[0x4];                                       // 0x0254(0x0004) MISSED OFFSET
 	struct FScriptMulticastDelegate                    GameModeSelected;                                         // 0x0258(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable)
-	EFortAthenaPlaylist                                MyGameMode;                                               // 0x0268(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	bool                                               bStandardGameMode;                                        // 0x0269(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	bool                                               bGameModeDisabled;                                        // 0x026A(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x5];                                       // 0x026B(0x0005) MISSED OFFSET
+	bool                                               bGameModeDisabled;                                        // 0x0268(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x7];                                       // 0x0269(0x0007) MISSED OFFSET
 	class UClass*                                      OverrideButtonClass;                                      // 0x0270(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	bool                                               bOverrideButtonStyle;                                     // 0x0278(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData03[0x7];                                       // 0x0279(0x0007) MISSED OFFSET
@@ -42,10 +38,8 @@ public:
 	bool                                               bShowModeDescription;                                     // 0x0298(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData04[0x7];                                       // 0x0299(0x0007) MISSED OFFSET
 	struct FScriptMulticastDelegate                    ButtonHovered;                                            // 0x02A0(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable)
-	class UAthenaMatchmakingOptionsDisplay_v2_C*       MyOwningDisplay;                                          // 0x02B0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UClass*                                      MyMissionGen;                                             // 0x02B8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FText                                       MyModeTitle;                                              // 0x02C0(0x0018) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FText                                       MyModeDescription;                                        // 0x02D8(0x0018) (Edit, BlueprintVisible, DisableEditOnInstance)
+	class UAthenaMatchmakingOptionsDisplay_v2_C*       MyOwningDisplay;                                          // 0x02B0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
+	class UFortPlaylistAthena*                         MyPlaylist;                                               // 0x02B8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -55,15 +49,13 @@ public:
 
 
 	void SetButtonSize(bool UseLargeSize);
-	void ConfigButtonWithMissionGen(class UClass* InMission);
-	void SetMissionGenData(bool* Success);
 	void SetOwningDisplayWidget(class UAthenaMatchmakingOptionsDisplay_v2_C* OwningDisplay);
 	void UpdateGameModeAvailibilty();
 	void ShowDisabledMessage(bool Show);
 	void DisableGameModeButton();
-	void IsGameModeAvailable(EFortAthenaPlaylist InMode, bool* Available);
+	void IsGameModeAvailable(class UFortPlaylistAthena* InMode, bool* Available);
 	struct FEventReply OnFocusReceived(struct FGeometry* MyGeometry, struct FFocusEvent* InFocusEvent);
-	void SetupGameModeButton(const struct FText& ModeDisplayName, bool bHasExtraInfo, bool bIsEnabled, const struct FText& ExtraInfoText);
+	void SetupGameModeButton(class UFortPlaylistAthena* PlaylistObj, bool bIsEnabled);
 	void PreConstruct(bool* IsDesignTime);
 	void BndEvt__PlayButton_K2Node_ComponentBoundEvent_191_CommonButtonClicked__DelegateSignature(class UCommonButton* Button);
 	void OnModeButtonHovered(class UCommonButton* Button);

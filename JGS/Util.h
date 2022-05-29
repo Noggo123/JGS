@@ -9,6 +9,9 @@
 #include <iostream>
 #include <Windows.h>
 #include <Psapi.h>
+#include "SDK.hpp"
+
+using namespace SDK;
 
 #define LOG(str) std::cout << "LogJGS: " << str << std::endl;
 
@@ -138,7 +141,7 @@ public:
 		return Actor;
 	}
 
-	static bool AreGuidsTheSame(SDK::FGuid guidA, SDK::FGuid guidB)
+	static bool AreGuidsTheSame(FGuid guidA, FGuid guidB)
 	{
 		if (guidA.A == guidB.A && guidA.B == guidB.B && guidA.C == guidB.C && guidA.D == guidB.D)
 			return true;

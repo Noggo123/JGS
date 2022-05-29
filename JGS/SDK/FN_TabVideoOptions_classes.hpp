@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -47,20 +45,21 @@ public:
 	}
 
 
+	void UpdateOverallQualityLevel();
 	void Initialize_Display_Resolutions();
 	void Update_Data(bool Reset_Quality_Selector);
 	void Initialize_Data();
-	void Shadows_Changed(int Tab_Id);
-	void Anti_Aliasing_Changed(int Tab_Id);
-	void Textures_Changed(int Tab_Id);
-	void Post_Processing_Changed(int Tab_Id);
-	void Effects_Changed(int Tab_Id);
-	void Quality_Changed(int Tab_Id);
+	void Shadows_Changed(int Tab_ID);
+	void Anti_Aliasing_Changed(int Tab_ID);
+	void Textures_Changed(int Tab_ID);
+	void Post_Processing_Changed(int Tab_ID);
+	void Effects_Changed(int Tab_ID);
+	void Quality_Changed(int Tab_ID);
 	void UpdateOptionsTab();
 	void Window_Mode__Changed(int Selected_Index);
 	void CustomEvent_22_23(int Selected_Index);
 	void CustomEvent_23_24(int Selected_Index);
-	void View_Distance_Changed(int Tab_Id);
+	void View_Distance_Changed(int Tab_ID);
 	void Construct();
 	void CenterOnTab();
 	void VSync_Changed(int Selected_Index);
@@ -69,6 +68,8 @@ public:
 	void CustomEvent_1_2(int Selected_Index);
 	void PreConstruct(bool* IsDesignTime);
 	void _3D_Resolution_Changed(float Slider_Value);
+	void OnGameUserSettingsUINeedsUpdate();
+	void Destruct();
 	void ExecuteUbergraph_TabVideoOptions(int EntryPoint);
 	void Disable_Overlay__DelegateSignature();
 	void Enable_Overlay__DelegateSignature(bool Accept_Input);

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,26 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function RadialPicker.RadialPicker_C.On Item Touched
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class URadialPickerItem_C*     Touched_Item                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void URadialPicker_C::On_Item_Touched(class URadialPickerItem_C* Touched_Item)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function RadialPicker.RadialPicker_C.On Item Touched");
+
+	URadialPicker_C_On_Item_Touched_Params params;
+	params.Touched_Item = Touched_Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function RadialPicker.RadialPicker_C.SetShowMouseCursor
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -280,6 +300,40 @@ void URadialPicker_C::InitializePicker(EFortPickerMode PickerMode, int InitialOp
 }
 
 
+// Function RadialPicker.RadialPicker_C.Event AcceptOption
+// (BlueprintCallable, BlueprintEvent)
+
+void URadialPicker_C::Event_AcceptOption()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function RadialPicker.RadialPicker_C.Event AcceptOption");
+
+	URadialPicker_C_Event_AcceptOption_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function RadialPicker.RadialPicker_C.Event CancelPicker
+// (BlueprintCallable, BlueprintEvent)
+
+void URadialPicker_C::Event_CancelPicker()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function RadialPicker.RadialPicker_C.Event CancelPicker");
+
+	URadialPicker_C_Event_CancelPicker_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function RadialPicker.RadialPicker_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
@@ -310,40 +364,6 @@ void URadialPicker_C::Construct()
 	static auto fn = UObject::FindObject<UFunction>("Function RadialPicker.RadialPicker_C.Construct");
 
 	URadialPicker_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function RadialPicker.RadialPicker_C.Event AcceptOption
-// (BlueprintCallable, BlueprintEvent)
-
-void URadialPicker_C::Event_AcceptOption()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function RadialPicker.RadialPicker_C.Event AcceptOption");
-
-	URadialPicker_C_Event_AcceptOption_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function RadialPicker.RadialPicker_C.Event CancelPicker
-// (BlueprintCallable, BlueprintEvent)
-
-void URadialPicker_C::Event_CancelPicker()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function RadialPicker.RadialPicker_C.Event CancelPicker");
-
-	URadialPicker_C_Event_CancelPicker_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -407,6 +427,166 @@ void URadialPicker_C::OnPickerRefreshItems()
 }
 
 
+// Function RadialPicker.RadialPicker_C.BndEvt__PickerOption0_K2Node_ComponentBoundEvent_2_On Item Touched__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class URadialPickerItem_C*     Picked_Option                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void URadialPicker_C::BndEvt__PickerOption0_K2Node_ComponentBoundEvent_2_On_Item_Touched__DelegateSignature(class URadialPickerItem_C* Picked_Option)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function RadialPicker.RadialPicker_C.BndEvt__PickerOption0_K2Node_ComponentBoundEvent_2_On Item Touched__DelegateSignature");
+
+	URadialPicker_C_BndEvt__PickerOption0_K2Node_ComponentBoundEvent_2_On_Item_Touched__DelegateSignature_Params params;
+	params.Picked_Option = Picked_Option;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function RadialPicker.RadialPicker_C.BndEvt__PickerOption1_K2Node_ComponentBoundEvent_8_On Item Touched__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class URadialPickerItem_C*     Picked_Option                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void URadialPicker_C::BndEvt__PickerOption1_K2Node_ComponentBoundEvent_8_On_Item_Touched__DelegateSignature(class URadialPickerItem_C* Picked_Option)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function RadialPicker.RadialPicker_C.BndEvt__PickerOption1_K2Node_ComponentBoundEvent_8_On Item Touched__DelegateSignature");
+
+	URadialPicker_C_BndEvt__PickerOption1_K2Node_ComponentBoundEvent_8_On_Item_Touched__DelegateSignature_Params params;
+	params.Picked_Option = Picked_Option;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function RadialPicker.RadialPicker_C.BndEvt__PickerOption2_K2Node_ComponentBoundEvent_9_On Item Touched__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class URadialPickerItem_C*     Picked_Option                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void URadialPicker_C::BndEvt__PickerOption2_K2Node_ComponentBoundEvent_9_On_Item_Touched__DelegateSignature(class URadialPickerItem_C* Picked_Option)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function RadialPicker.RadialPicker_C.BndEvt__PickerOption2_K2Node_ComponentBoundEvent_9_On Item Touched__DelegateSignature");
+
+	URadialPicker_C_BndEvt__PickerOption2_K2Node_ComponentBoundEvent_9_On_Item_Touched__DelegateSignature_Params params;
+	params.Picked_Option = Picked_Option;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function RadialPicker.RadialPicker_C.BndEvt__PickerOption3_K2Node_ComponentBoundEvent_12_On Item Touched__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class URadialPickerItem_C*     Picked_Option                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void URadialPicker_C::BndEvt__PickerOption3_K2Node_ComponentBoundEvent_12_On_Item_Touched__DelegateSignature(class URadialPickerItem_C* Picked_Option)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function RadialPicker.RadialPicker_C.BndEvt__PickerOption3_K2Node_ComponentBoundEvent_12_On Item Touched__DelegateSignature");
+
+	URadialPicker_C_BndEvt__PickerOption3_K2Node_ComponentBoundEvent_12_On_Item_Touched__DelegateSignature_Params params;
+	params.Picked_Option = Picked_Option;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function RadialPicker.RadialPicker_C.BndEvt__PickerOption4_K2Node_ComponentBoundEvent_16_On Item Touched__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class URadialPickerItem_C*     Picked_Option                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void URadialPicker_C::BndEvt__PickerOption4_K2Node_ComponentBoundEvent_16_On_Item_Touched__DelegateSignature(class URadialPickerItem_C* Picked_Option)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function RadialPicker.RadialPicker_C.BndEvt__PickerOption4_K2Node_ComponentBoundEvent_16_On Item Touched__DelegateSignature");
+
+	URadialPicker_C_BndEvt__PickerOption4_K2Node_ComponentBoundEvent_16_On_Item_Touched__DelegateSignature_Params params;
+	params.Picked_Option = Picked_Option;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function RadialPicker.RadialPicker_C.BndEvt__PickerOption5_K2Node_ComponentBoundEvent_21_On Item Touched__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class URadialPickerItem_C*     Picked_Option                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void URadialPicker_C::BndEvt__PickerOption5_K2Node_ComponentBoundEvent_21_On_Item_Touched__DelegateSignature(class URadialPickerItem_C* Picked_Option)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function RadialPicker.RadialPicker_C.BndEvt__PickerOption5_K2Node_ComponentBoundEvent_21_On Item Touched__DelegateSignature");
+
+	URadialPicker_C_BndEvt__PickerOption5_K2Node_ComponentBoundEvent_21_On_Item_Touched__DelegateSignature_Params params;
+	params.Picked_Option = Picked_Option;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function RadialPicker.RadialPicker_C.BndEvt__PickerOption6_K2Node_ComponentBoundEvent_27_On Item Touched__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class URadialPickerItem_C*     Picked_Option                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void URadialPicker_C::BndEvt__PickerOption6_K2Node_ComponentBoundEvent_27_On_Item_Touched__DelegateSignature(class URadialPickerItem_C* Picked_Option)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function RadialPicker.RadialPicker_C.BndEvt__PickerOption6_K2Node_ComponentBoundEvent_27_On Item Touched__DelegateSignature");
+
+	URadialPicker_C_BndEvt__PickerOption6_K2Node_ComponentBoundEvent_27_On_Item_Touched__DelegateSignature_Params params;
+	params.Picked_Option = Picked_Option;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function RadialPicker.RadialPicker_C.BndEvt__PickerOption7_K2Node_ComponentBoundEvent_34_On Item Touched__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class URadialPickerItem_C*     Picked_Option                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void URadialPicker_C::BndEvt__PickerOption7_K2Node_ComponentBoundEvent_34_On_Item_Touched__DelegateSignature(class URadialPickerItem_C* Picked_Option)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function RadialPicker.RadialPicker_C.BndEvt__PickerOption7_K2Node_ComponentBoundEvent_34_On Item Touched__DelegateSignature");
+
+	URadialPicker_C_BndEvt__PickerOption7_K2Node_ComponentBoundEvent_34_On_Item_Touched__DelegateSignature_Params params;
+	params.Picked_Option = Picked_Option;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function RadialPicker.RadialPicker_C.ExecuteUbergraph_RadialPicker
 // (HasDefaults)
 // Parameters:
@@ -418,6 +598,23 @@ void URadialPicker_C::ExecuteUbergraph_RadialPicker(int EntryPoint)
 
 	URadialPicker_C_ExecuteUbergraph_RadialPicker_Params params;
 	params.EntryPoint = EntryPoint;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function RadialPicker.RadialPicker_C.Picker Closing__DelegateSignature
+// (Public, Delegate, BlueprintCallable, BlueprintEvent)
+
+void URadialPicker_C::Picker_Closing__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function RadialPicker.RadialPicker_C.Picker Closing__DelegateSignature");
+
+	URadialPicker_C_Picker_Closing__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 

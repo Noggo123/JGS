@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,67 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function MissionBlueprintFunctionLibrary.MissionBlueprintFunctionLibrary_C.NPC_LockThenRotateInPlace
+// (Static, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           LockedInPlace                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortPlayerPawn*         PlayerPawn                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortAIPawn*             SurvivorPawn                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UMissionBlueprintFunctionLibrary_C::STATIC_NPC_LockThenRotateInPlace(bool LockedInPlace, class AFortPlayerPawn* PlayerPawn, class AFortAIPawn* SurvivorPawn, class UObject* __WorldContext)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MissionBlueprintFunctionLibrary.MissionBlueprintFunctionLibrary_C.NPC_LockThenRotateInPlace");
+
+	UMissionBlueprintFunctionLibrary_C_NPC_LockThenRotateInPlace_Params params;
+	params.LockedInPlace = LockedInPlace;
+	params.PlayerPawn = PlayerPawn;
+	params.SurvivorPawn = SurvivorPawn;
+	params.__WorldContext = __WorldContext;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MissionBlueprintFunctionLibrary.MissionBlueprintFunctionLibrary_C.GetControllersNearActorThatRequireQuestObjective
+// (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                          Distance                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AActor*                  Actor                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortQuestItemDefinition* Quest_Item                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   Quest_Item_Backend_Objective_Name (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TArray<class AFortPlayerController*> PlayerControllersNearbyThatRequireQuest (Parm, OutParm, ZeroConstructor)
+// bool                           SuccessfullyFoundPlayer        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UMissionBlueprintFunctionLibrary_C::STATIC_GetControllersNearActorThatRequireQuestObjective(float Distance, class AActor* Actor, class UFortQuestItemDefinition* Quest_Item, const struct FName& Quest_Item_Backend_Objective_Name, class UObject* __WorldContext, TArray<class AFortPlayerController*>* PlayerControllersNearbyThatRequireQuest, bool* SuccessfullyFoundPlayer)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MissionBlueprintFunctionLibrary.MissionBlueprintFunctionLibrary_C.GetControllersNearActorThatRequireQuestObjective");
+
+	UMissionBlueprintFunctionLibrary_C_GetControllersNearActorThatRequireQuestObjective_Params params;
+	params.Distance = Distance;
+	params.Actor = Actor;
+	params.Quest_Item = Quest_Item;
+	params.Quest_Item_Backend_Objective_Name = Quest_Item_Backend_Objective_Name;
+	params.__WorldContext = __WorldContext;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (PlayerControllersNearbyThatRequireQuest != nullptr)
+		*PlayerControllersNearbyThatRequireQuest = params.PlayerControllersNearbyThatRequireQuest;
+	if (SuccessfullyFoundPlayer != nullptr)
+		*SuccessfullyFoundPlayer = params.SuccessfullyFoundPlayer;
+}
+
 
 // Function MissionBlueprintFunctionLibrary.MissionBlueprintFunctionLibrary_C.HaveAllPlayersCompletedQuest
 // (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
@@ -105,7 +166,7 @@ void UMissionBlueprintFunctionLibrary_C::STATIC_DoesAnyPlayerRequireQuestObjecti
 // Function MissionBlueprintFunctionLibrary.MissionBlueprintFunctionLibrary_C.HideParticleComponentsAttachedToMesh
 // (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UStaticMeshComponent*    MeshComponent                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UStaticMeshComponent*    MeshComponent                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           SuccessfullyDeactivatedParticle (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 

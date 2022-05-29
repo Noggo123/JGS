@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -14,13 +12,13 @@ namespace SDK
 //Enums
 //---------------------------------------------------------------------------
 
-// Enum Party.EPartyType
-enum class EPartyType : uint8_t
+// Enum Party.ECrossplayPreference
+enum class ECrossplayPreference : uint8_t
 {
-	Public                         = 0,
-	FriendsOnly                    = 1,
-	Private                        = 2,
-	EPartyType_MAX                 = 3
+	NoSelection                    = 0,
+	OptedIn                        = 1,
+	OptedOut                       = 2,
+	ECrossplayPreference_MAX       = 3
 };
 
 
@@ -35,7 +33,19 @@ enum class EJoinPartyDenialReason : uint8_t
 	PartyPrivate                   = 5,
 	NeedsTutorial                  = 6,
 	GameModeRestricted             = 7,
-	EJoinPartyDenialReason_MAX     = 8
+	JoinerCrossplayRestricted      = 8,
+	MemberCrossplayRestricted      = 9,
+	EJoinPartyDenialReason_MAX     = 10
+};
+
+
+// Enum Party.EPartyType
+enum class EPartyType : uint8_t
+{
+	Public                         = 0,
+	FriendsOnly                    = 1,
+	Private                        = 2,
+	EPartyType_MAX                 = 3
 };
 
 

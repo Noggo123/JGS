@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Function AthenaSeasonLevelFreeRewardsWidget.AthenaSeasonLevelFreeRewardsWidget_C.UpdateStyling
-// (Public, BlueprintCallable, BlueprintEvent)
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
 void UAthenaSeasonLevelFreeRewardsWidget_C::UpdateStyling()
 {
@@ -59,6 +59,23 @@ void UAthenaSeasonLevelFreeRewardsWidget_C::OnLockedStatusChanged(bool* FreeUnlo
 	UAthenaSeasonLevelFreeRewardsWidget_C_OnLockedStatusChanged_Params params;
 	params.FreeUnlocked = FreeUnlocked;
 	params.PaidUnlocked = PaidUnlocked;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaSeasonLevelFreeRewardsWidget.AthenaSeasonLevelFreeRewardsWidget_C.PlayIntro
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void UAthenaSeasonLevelFreeRewardsWidget_C::PlayIntro()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaSeasonLevelFreeRewardsWidget.AthenaSeasonLevelFreeRewardsWidget_C.PlayIntro");
+
+	UAthenaSeasonLevelFreeRewardsWidget_C_PlayIntro_Params params;
 
 	auto flags = fn->FunctionFlags;
 

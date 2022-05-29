@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,43 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function AthenaTeamMemberInfo.AthenaTeamMemberInfo_C.MapPingTimeOut
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UAthenaTeamMemberInfo_C::MapPingTimeOut()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaTeamMemberInfo.AthenaTeamMemberInfo_C.MapPingTimeOut");
+
+	UAthenaTeamMemberInfo_C_MapPingTimeOut_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaTeamMemberInfo.AthenaTeamMemberInfo_C.Mapping
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AFortGameStateAthena*    AthenaGameState                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaTeamMemberInfo_C::Mapping(class AFortGameStateAthena* AthenaGameState)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaTeamMemberInfo.AthenaTeamMemberInfo_C.Mapping");
+
+	UAthenaTeamMemberInfo_C_Mapping_Params params;
+	params.AthenaGameState = AthenaGameState;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function AthenaTeamMemberInfo.AthenaTeamMemberInfo_C.InitSpeakerMaterial
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -279,7 +316,7 @@ void UAthenaTeamMemberInfo_C::DisplayAddFriendIfApplicable()
 // Function AthenaTeamMemberInfo.AthenaTeamMemberInfo_C.BndEvt__AddFriendButton_K2Node_ComponentBoundEvent_11_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UAthenaTeamMemberInfo_C::BndEvt__AddFriendButton_K2Node_ComponentBoundEvent_11_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -483,6 +520,43 @@ void UAthenaTeamMemberInfo_C::DisconnectedStateChanged(bool* Disconnected)
 
 	UAthenaTeamMemberInfo_C_DisconnectedStateChanged_Params params;
 	params.Disconnected = Disconnected;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaTeamMemberInfo.AthenaTeamMemberInfo_C.PlayerPlatformChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// struct FString*                CurrentPlatform                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+
+void UAthenaTeamMemberInfo_C::PlayerPlatformChanged(struct FString* CurrentPlatform)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaTeamMemberInfo.AthenaTeamMemberInfo_C.PlayerPlatformChanged");
+
+	UAthenaTeamMemberInfo_C_PlayerPlatformChanged_Params params;
+	params.CurrentPlatform = CurrentPlatform;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaTeamMemberInfo.AthenaTeamMemberInfo_C.MapIndicatorPositionChanged
+// (Event, Protected, BlueprintEvent)
+
+void UAthenaTeamMemberInfo_C::MapIndicatorPositionChanged()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaTeamMemberInfo.AthenaTeamMemberInfo_C.MapIndicatorPositionChanged");
+
+	UAthenaTeamMemberInfo_C_MapIndicatorPositionChanged_Params params;
 
 	auto flags = fn->FunctionFlags;
 

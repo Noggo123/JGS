@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -84,6 +84,12 @@ struct UAthenaPlayerLevel_C_EventTrack_Leveled_Params
 // Function AthenaPlayerLevel.AthenaPlayerLevel_C.Destruct
 struct UAthenaPlayerLevel_C_Destruct_Params
 {
+};
+
+// Function AthenaPlayerLevel.AthenaPlayerLevel_C.PreConstruct
+struct UAthenaPlayerLevel_C_PreConstruct_Params
+{
+	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaPlayerLevel.AthenaPlayerLevel_C.ExecuteUbergraph_AthenaPlayerLevel

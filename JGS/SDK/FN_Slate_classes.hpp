@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,11 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class Slate.ButtonWidgetStyle
-// 0x0238 (0x0268 - 0x0030)
+// 0x0278 (0x02A8 - 0x0030)
 class UButtonWidgetStyle : public USlateWidgetStyleContainerBase
 {
 public:
-	struct FButtonStyle                                ButtonStyle;                                              // 0x0030(0x0238) (Edit, BlueprintVisible)
+	struct FButtonStyle                                ButtonStyle;                                              // 0x0030(0x0278) (Edit, BlueprintVisible)
 
 	static UClass* StaticClass()
 	{
@@ -31,11 +29,11 @@ public:
 
 
 // Class Slate.CheckBoxWidgetStyle
-// 0x04F0 (0x0520 - 0x0030)
+// 0x0580 (0x05B0 - 0x0030)
 class UCheckBoxWidgetStyle : public USlateWidgetStyleContainerBase
 {
 public:
-	struct FCheckBoxStyle                              CheckBoxStyle;                                            // 0x0030(0x04F0) (Edit)
+	struct FCheckBoxStyle                              CheckBoxStyle;                                            // 0x0030(0x0580) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -47,11 +45,11 @@ public:
 
 
 // Class Slate.ComboBoxWidgetStyle
-// 0x0378 (0x03A8 - 0x0030)
+// 0x03D8 (0x0408 - 0x0030)
 class UComboBoxWidgetStyle : public USlateWidgetStyleContainerBase
 {
 public:
-	struct FComboBoxStyle                              ComboBoxStyle;                                            // 0x0030(0x0378) (Edit)
+	struct FComboBoxStyle                              ComboBoxStyle;                                            // 0x0030(0x03D8) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -63,11 +61,11 @@ public:
 
 
 // Class Slate.ComboButtonWidgetStyle
-// 0x0340 (0x0370 - 0x0030)
+// 0x03A0 (0x03D0 - 0x0030)
 class UComboButtonWidgetStyle : public USlateWidgetStyleContainerBase
 {
 public:
-	struct FComboButtonStyle                           ComboButtonStyle;                                         // 0x0030(0x0340) (Edit)
+	struct FComboButtonStyle                           ComboButtonStyle;                                         // 0x0030(0x03A0) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -79,11 +77,11 @@ public:
 
 
 // Class Slate.EditableTextBoxWidgetStyle
-// 0x0728 (0x0758 - 0x0030)
+// 0x07F0 (0x0820 - 0x0030)
 class UEditableTextBoxWidgetStyle : public USlateWidgetStyleContainerBase
 {
 public:
-	struct FEditableTextBoxStyle                       EditableTextBoxStyle;                                     // 0x0030(0x0728) (Edit)
+	struct FEditableTextBoxStyle                       EditableTextBoxStyle;                                     // 0x0030(0x07F0) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -95,11 +93,11 @@ public:
 
 
 // Class Slate.EditableTextWidgetStyle
-// 0x01F0 (0x0220 - 0x0030)
+// 0x0218 (0x0248 - 0x0030)
 class UEditableTextWidgetStyle : public USlateWidgetStyleContainerBase
 {
 public:
-	struct FEditableTextStyle                          EditableTextStyle;                                        // 0x0030(0x01F0) (Edit)
+	struct FEditableTextStyle                          EditableTextStyle;                                        // 0x0030(0x0218) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -111,11 +109,11 @@ public:
 
 
 // Class Slate.ProgressWidgetStyle
-// 0x0170 (0x01A0 - 0x0030)
+// 0x01A0 (0x01D0 - 0x0030)
 class UProgressWidgetStyle : public USlateWidgetStyleContainerBase
 {
 public:
-	struct FProgressBarStyle                           ProgressBarStyle;                                         // 0x0030(0x0170) (Edit, BlueprintVisible)
+	struct FProgressBarStyle                           ProgressBarStyle;                                         // 0x0030(0x01A0) (Edit, BlueprintVisible)
 
 	static UClass* StaticClass()
 	{
@@ -127,11 +125,11 @@ public:
 
 
 // Class Slate.ScrollBarWidgetStyle
-// 0x0440 (0x0470 - 0x0030)
+// 0x04D0 (0x0500 - 0x0030)
 class UScrollBarWidgetStyle : public USlateWidgetStyleContainerBase
 {
 public:
-	struct FScrollBarStyle                             ScrollBarStyle;                                           // 0x0030(0x0440) (Edit)
+	struct FScrollBarStyle                             ScrollBarStyle;                                           // 0x0030(0x04D0) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -143,11 +141,11 @@ public:
 
 
 // Class Slate.ScrollBoxWidgetStyle
-// 0x01E8 (0x0218 - 0x0030)
+// 0x0228 (0x0258 - 0x0030)
 class UScrollBoxWidgetStyle : public USlateWidgetStyleContainerBase
 {
 public:
-	struct FScrollBoxStyle                             ScrollBoxStyle;                                           // 0x0030(0x01E8) (Edit)
+	struct FScrollBoxStyle                             ScrollBoxStyle;                                           // 0x0030(0x0228) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -176,11 +174,11 @@ public:
 
 
 // Class Slate.SpinBoxWidgetStyle
-// 0x0298 (0x02C8 - 0x0030)
+// 0x02E8 (0x0318 - 0x0030)
 class USpinBoxWidgetStyle : public USlateWidgetStyleContainerBase
 {
 public:
-	struct FSpinBoxStyle                               SpinBoxStyle;                                             // 0x0030(0x0298) (Edit)
+	struct FSpinBoxStyle                               SpinBoxStyle;                                             // 0x0030(0x02E8) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -192,11 +190,11 @@ public:
 
 
 // Class Slate.TextBlockWidgetStyle
-// 0x01C8 (0x01F8 - 0x0030)
+// 0x01E0 (0x0210 - 0x0030)
 class UTextBlockWidgetStyle : public USlateWidgetStyleContainerBase
 {
 public:
-	struct FTextBlockStyle                             TextBlockStyle;                                           // 0x0030(0x01C8) (Edit)
+	struct FTextBlockStyle                             TextBlockStyle;                                           // 0x0030(0x01E0) (Edit)
 
 	static UClass* StaticClass()
 	{

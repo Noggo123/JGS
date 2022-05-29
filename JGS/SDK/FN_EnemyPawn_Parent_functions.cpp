@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -304,7 +304,7 @@ void AEnemyPawn_Parent_C::SpecialEventHalloweenPumpkinHeadHusk(bool ApplyPumpkin
 // bool                           Absolute_Location              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           Absolute_Rotation              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           Absolute_Scale                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UStaticMeshComponent*    Static_Mesh_Component_Reference (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// class UStaticMeshComponent*    Static_Mesh_Component_Reference (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void AEnemyPawn_Parent_C::SpawnMeshAttachedToCharacter(class UStaticMesh* Static_Mesh, const struct FName& Socket_Name, const struct FTransform& Relative_Transform, bool Absolute_Location, bool Absolute_Rotation, bool Absolute_Scale, class UStaticMeshComponent** Static_Mesh_Component_Reference)
 {
@@ -414,7 +414,7 @@ void AEnemyPawn_Parent_C::SetCharacterFresnelGlowColors(const struct FLinearColo
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UParticleSystem*         ParticleSystemTemplate         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UParticleSystemComponent* ParticleSystemComponentReferenceVar (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UParticleSystemComponent* ParticleSystemComponentReferenceVar (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // struct FName                   AttachPointName                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // struct FVector                 Location                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
 // struct FRotator                Rotation                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
@@ -424,7 +424,7 @@ void AEnemyPawn_Parent_C::SetCharacterFresnelGlowColors(const struct FLinearColo
 // bool                           AbsoluteLocation               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           AbsoluteRotation               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           AbsoluteScale                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UParticleSystemComponent* PSComponentReference           (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// class UParticleSystemComponent* PSComponentReference           (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void AEnemyPawn_Parent_C::SpawnParticleSystemOnCharacterMesh(class UParticleSystem* ParticleSystemTemplate, class UParticleSystemComponent* ParticleSystemComponentReferenceVar, const struct FName& AttachPointName, const struct FVector& Location, const struct FRotator& Rotation, bool AutoActivate, bool AutoDestroy, bool AbsoluteLocation, bool AbsoluteRotation, bool AbsoluteScale, TArray<struct FParticleSysParam>* InstanceParameters, class UParticleSystemComponent** PSComponentReference)
 {

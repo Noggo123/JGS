@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,7 +23,7 @@ struct UCraftingIngredient_C_ShowDivider_Params
 // Function CraftingIngredient.CraftingIngredient_C.Get Tooltip
 struct UCraftingIngredient_C_Get_Tooltip_Params
 {
-	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 };
 
 // Function CraftingIngredient.CraftingIngredient_C.Refresh

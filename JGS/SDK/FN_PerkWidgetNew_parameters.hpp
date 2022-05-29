@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,7 +22,7 @@ struct UPerkWidgetNew_C_UpdatePerk_Params
 // Function PerkWidgetNew.PerkWidgetNew_C.Get_OverlayAbilityPerk_ToolTipWidget
 struct UPerkWidgetNew_C_Get_OverlayAbilityPerk_ToolTipWidget_Params
 {
-	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 };
 
 // Function PerkWidgetNew.PerkWidgetNew_C.InitializeSettings
@@ -99,6 +99,12 @@ struct UPerkWidgetNew_C_InitializeBasicPerk_Params
 struct UPerkWidgetNew_C_PreConstruct_Params
 {
 	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function PerkWidgetNew.PerkWidgetNew_C.OnCombinedTooltipDescriptionReady
+struct UPerkWidgetNew_C_OnCombinedTooltipDescriptionReady_Params
+{
+	struct FText*                                      Description;                                              // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 };
 
 // Function PerkWidgetNew.PerkWidgetNew_C.ExecuteUbergraph_PerkWidgetNew

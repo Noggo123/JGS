@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass HitPointBar.HitPointBar_C
-// 0x02DA (0x04EA - 0x0210)
+// 0x02AA (0x04BA - 0x0210)
 class UHitPointBar_C : public UCommonUserWidget
 {
 public:
@@ -44,10 +42,10 @@ public:
 	struct FLinearColor                                Critical_Color_C;                                         // 0x02B8(0x0010) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
 	float                                              Last_Value;                                               // 0x02C8(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	float                                              FadeUpdateRate;                                           // 0x02CC(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FFortMultiSizeFont                          MultiFont;                                                // 0x02D0(0x0210) (Edit, BlueprintVisible, DisableEditOnInstance)
-	class UTexture2D*                                  Baseplate_Texture;                                        // 0x04E0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	bool                                               Volatile;                                                 // 0x04E8(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	bool                                               HasSetInitialValues;                                      // 0x04E9(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FFortMultiSizeFont                          MultiFont;                                                // 0x02D0(0x01E0) (Edit, BlueprintVisible, DisableEditOnInstance)
+	class UTexture2D*                                  Baseplate_Texture;                                        // 0x04B0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               Volatile;                                                 // 0x04B8(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               HasSetInitialValues;                                      // 0x04B9(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,11 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass GAB_Emote_Generic.GAB_Emote_Generic_C
-// 0x0008 (0x0AB8 - 0x0AB0)
+// 0x0008 (0x0AC8 - 0x0AC0)
 class UGAB_Emote_Generic_C : public UFortGameplayAbility
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0AB0(0x0008) (Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0AC0(0x0008) (Transient, DuplicateTransient)
 
 	static UClass* StaticClass()
 	{
@@ -28,6 +26,7 @@ public:
 	}
 
 
+	void GetMontageToPlay(class UFortMontageItemDefinitionBase* EmoteAsset, TEnumAsByte<EFortCustomBodyType> BodyType, TEnumAsByte<EFortCustomGender> Gender);
 	void GetBodyTypeAndGender(TEnumAsByte<EFortCustomBodyType>* BodyType, TEnumAsByte<EFortCustomGender>* Gender);
 	void K2_OnEndAbility(bool* bWasCancelled);
 	void Completed_DE7019AA4E006879EDD264899869FEE2(const struct FGameplayAbilityTargetDataHandle& TargetData, const struct FGameplayTag& ApplicationTag);
@@ -35,6 +34,7 @@ public:
 	void Triggered_DE7019AA4E006879EDD264899869FEE2(const struct FGameplayAbilityTargetDataHandle& TargetData, const struct FGameplayTag& ApplicationTag);
 	void OnLoaded_D5C2B0D14DEB9277D15965B97800FD1D(class UObject* Loaded);
 	void K2_ActivateAbility();
+	void OnMontageStartedPlaying();
 	void ExecuteUbergraph_GAB_Emote_Generic(int EntryPoint);
 };
 

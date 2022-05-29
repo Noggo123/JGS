@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,6 +14,11 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
+// Function Trap_Ceiling_Spikes.Trap_Ceiling_Spikes_C. ChangeToFriendlyMaterial
+struct ATrap_Ceiling_Spikes_C__ChangeToFriendlyMaterial_Params
+{
+};
+
 // Function Trap_Ceiling_Spikes.Trap_Ceiling_Spikes_C.MaterialSweepOnSpikes
 struct ATrap_Ceiling_Spikes_C_MaterialSweepOnSpikes_Params
 {
@@ -26,12 +31,6 @@ struct ATrap_Ceiling_Spikes_C_MaterialSweepOnSpikes_Params
 struct ATrap_Ceiling_Spikes_C_SetSpikePosition_Params
 {
 	float                                              NewSpikePosition;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Trap_Ceiling_Spikes.Trap_Ceiling_Spikes_C.GetFireLocationAndRotation
-struct ATrap_Ceiling_Spikes_C_GetFireLocationAndRotation_Params
-{
-	struct FTransform                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
 };
 
 // Function Trap_Ceiling_Spikes.Trap_Ceiling_Spikes_C.UserConstructionScript
@@ -103,6 +102,11 @@ struct ATrap_Ceiling_Spikes_C_OnOutOfDurability_Params
 
 // Function Trap_Ceiling_Spikes.Trap_Ceiling_Spikes_C.OnWorldReady
 struct ATrap_Ceiling_Spikes_C_OnWorldReady_Params
+{
+};
+
+// Function Trap_Ceiling_Spikes.Trap_Ceiling_Spikes_C.OnInitTeam
+struct ATrap_Ceiling_Spikes_C_OnInitTeam_Params
 {
 };
 

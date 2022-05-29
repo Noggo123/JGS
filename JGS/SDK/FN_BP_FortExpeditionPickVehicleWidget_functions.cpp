@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,22 +32,20 @@ void UBP_FortExpeditionPickVehicleWidget_C::Pre_Select_for_Console()
 // Function BP_FortExpeditionPickVehicleWidget.BP_FortExpeditionPickVehicleWidget_C.Determine Available Expedition Squads
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTagContainer   RequirementTags                (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGameplayTagContainer   RequirementTags                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void UBP_FortExpeditionPickVehicleWidget_C::Determine_Available_Expedition_Squads(struct FGameplayTagContainer* RequirementTags)
+void UBP_FortExpeditionPickVehicleWidget_C::Determine_Available_Expedition_Squads(const struct FGameplayTagContainer& RequirementTags)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function BP_FortExpeditionPickVehicleWidget.BP_FortExpeditionPickVehicleWidget_C.Determine Available Expedition Squads");
 
 	UBP_FortExpeditionPickVehicleWidget_C_Determine_Available_Expedition_Squads_Params params;
+	params.RequirementTags = RequirementTags;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (RequirementTags != nullptr)
-		*RequirementTags = params.RequirementTags;
 }
 
 
@@ -171,7 +169,7 @@ void UBP_FortExpeditionPickVehicleWidget_C::OnActivated()
 // Function BP_FortExpeditionPickVehicleWidget.BP_FortExpeditionPickVehicleWidget_C.BndEvt__CommonTileView_0_K2Node_ComponentBoundEvent_59_OnListViewItemWidgetCreated__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UUserWidget*             Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UUserWidget*             Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UBP_FortExpeditionPickVehicleWidget_C::BndEvt__CommonTileView_0_K2Node_ComponentBoundEvent_59_OnListViewItemWidgetCreated__DelegateSignature(class UUserWidget* Widget)
 {
@@ -228,7 +226,7 @@ void UBP_FortExpeditionPickVehicleWidget_C::HACK_GetMeOutOfSelectContext()
 // Function BP_FortExpeditionPickVehicleWidget.BP_FortExpeditionPickVehicleWidget_C.HandleVehicleButtonHovered
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UBP_FortExpeditionPickVehicleWidget_C::HandleVehicleButtonHovered(class UCommonButton* Button)
 {
@@ -248,7 +246,7 @@ void UBP_FortExpeditionPickVehicleWidget_C::HandleVehicleButtonHovered(class UCo
 // Function BP_FortExpeditionPickVehicleWidget.BP_FortExpeditionPickVehicleWidget_C.HandleVehcileButtonUnhovered
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UBP_FortExpeditionPickVehicleWidget_C::HandleVehcileButtonUnhovered(class UCommonButton* Button)
 {

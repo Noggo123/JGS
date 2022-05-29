@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -33,6 +33,21 @@ struct UAthenaSeasonReward_C_Setup_Params
 
 // Function AthenaSeasonReward.AthenaSeasonReward_C.OnHovered
 struct UAthenaSeasonReward_C_OnHovered_Params
+{
+};
+
+// Function AthenaSeasonReward.AthenaSeasonReward_C.PlayIntro
+struct UAthenaSeasonReward_C_PlayIntro_Params
+{
+};
+
+// Function AthenaSeasonReward.AthenaSeasonReward_C.ViewItem
+struct UAthenaSeasonReward_C_ViewItem_Params
+{
+};
+
+// Function AthenaSeasonReward.AthenaSeasonReward_C.OnClicked
+struct UAthenaSeasonReward_C_OnClicked_Params
 {
 };
 

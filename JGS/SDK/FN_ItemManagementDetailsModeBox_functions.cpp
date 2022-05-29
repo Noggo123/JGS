@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,123 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.GetStatsTabVisibility
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// ESlateVisibility               StatsTabVisbility              (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementDetailsModeBox_C::GetStatsTabVisibility(ESlateVisibility* StatsTabVisbility)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.GetStatsTabVisibility");
+
+	UItemManagementDetailsModeBox_C_GetStatsTabVisibility_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (StatsTabVisbility != nullptr)
+		*StatsTabVisbility = params.StatsTabVisbility;
+}
+
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleOpenCustomFilter
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementDetailsModeBox_C::HandleOpenCustomFilter(bool* Passthrough)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleOpenCustomFilter");
+
+	UItemManagementDetailsModeBox_C_HandleOpenCustomFilter_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Passthrough != nullptr)
+		*Passthrough = params.Passthrough;
+}
+
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RegisterOpenCustomFilter
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UItemManagementDetailsModeBox_C::RegisterOpenCustomFilter()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RegisterOpenCustomFilter");
+
+	UItemManagementDetailsModeBox_C_RegisterOpenCustomFilter_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RefreshDestroyAction
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UItemManagementDetailsModeBox_C::RefreshDestroyAction()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RefreshDestroyAction");
+
+	UItemManagementDetailsModeBox_C_RefreshDestroyAction_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.UpdateReadOnlyWIFE
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UItemManagementDetailsModeBox_C::UpdateReadOnlyWIFE()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.UpdateReadOnlyWIFE");
+
+	UItemManagementDetailsModeBox_C_UpdateReadOnlyWIFE_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.PreferReadOnlyWIFE
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// bool                           ReadOnly                       (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementDetailsModeBox_C::PreferReadOnlyWIFE(bool* ReadOnly)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.PreferReadOnlyWIFE");
+
+	UItemManagementDetailsModeBox_C_PreferReadOnlyWIFE_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (ReadOnly != nullptr)
+		*ReadOnly = params.ReadOnly;
+}
+
 
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleMore
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
@@ -151,14 +268,14 @@ void UItemManagementDetailsModeBox_C::UnbindEvents()
 }
 
 
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RefreshTransferAction
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RefreshTransferActions
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void UItemManagementDetailsModeBox_C::RefreshTransferAction()
+void UItemManagementDetailsModeBox_C::RefreshTransferActions()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RefreshTransferAction");
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RefreshTransferActions");
 
-	UItemManagementDetailsModeBox_C_RefreshTransferAction_Params params;
+	UItemManagementDetailsModeBox_C_RefreshTransferActions_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -225,11 +342,12 @@ void UItemManagementDetailsModeBox_C::RegisterInspectUpgrade()
 
 
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleQuickbarContentsChanged
-// (Public, BlueprintCallable, BlueprintEvent)
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // EFortQuickBars                 QuickbarIndex                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TArray<int>                    ChangedSlots                   (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
-void UItemManagementDetailsModeBox_C::HandleQuickbarContentsChanged(EFortQuickBars QuickbarIndex)
+void UItemManagementDetailsModeBox_C::HandleQuickbarContentsChanged(EFortQuickBars QuickbarIndex, TArray<int>* ChangedSlots)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleQuickbarContentsChanged");
 
@@ -241,6 +359,9 @@ void UItemManagementDetailsModeBox_C::HandleQuickbarContentsChanged(EFortQuickBa
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+
+	if (ChangedSlots != nullptr)
+		*ChangedSlots = params.ChangedSlots;
 }
 
 
@@ -430,14 +551,14 @@ void UItemManagementDetailsModeBox_C::SetItemVisualization()
 }
 
 
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.UpdateConsumeItemButtonState
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RefreshConsumeAction
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void UItemManagementDetailsModeBox_C::UpdateConsumeItemButtonState()
+void UItemManagementDetailsModeBox_C::RefreshConsumeAction()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.UpdateConsumeItemButtonState");
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RefreshConsumeAction");
 
-	UItemManagementDetailsModeBox_C_UpdateConsumeItemButtonState_Params params;
+	UItemManagementDetailsModeBox_C_RefreshConsumeAction_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -930,10 +1051,32 @@ void UItemManagementDetailsModeBox_C::DialogResult_475B18A9452A639A04116D83A8B1C
 }
 
 
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.DialogResult_4190138B4388B0E2F8396BBD395808D5
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EFortDialogResult              Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ResultName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementDetailsModeBox_C::DialogResult_4190138B4388B0E2F8396BBD395808D5(EFortDialogResult Result, const struct FName& ResultName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.DialogResult_4190138B4388B0E2F8396BBD395808D5");
+
+	UItemManagementDetailsModeBox_C_DialogResult_4190138B4388B0E2F8396BBD395808D5_Params params;
+	params.Result = Result;
+	params.ResultName = ResultName;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.BndEvt__DetailPanelWidgetSwitcher_K2Node_ComponentBoundEvent_16_OnActiveWidgetChanged__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UWidget*                 ActiveWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidget*                 ActiveWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // int                            ActiveWidgetIndex              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementDetailsModeBox_C::BndEvt__DetailPanelWidgetSwitcher_K2Node_ComponentBoundEvent_16_OnActiveWidgetChanged__DelegateSignature(class UWidget* ActiveWidget, int ActiveWidgetIndex)
@@ -990,7 +1133,7 @@ void UItemManagementDetailsModeBox_C::OnActivated()
 // (BlueprintEvent)
 // Parameters:
 // struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UItemManagementDetailsModeBox_C::BndEvt__DetailPanelTabList_OPI_K2Node_ComponentBoundEvent_4_OnTabButtonCreated__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton)
 {
@@ -1012,7 +1155,7 @@ void UItemManagementDetailsModeBox_C::BndEvt__DetailPanelTabList_OPI_K2Node_Comp
 // (BlueprintEvent)
 // Parameters:
 // struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UItemManagementDetailsModeBox_C::BndEvt__DetailPanelTabList_OP_K2Node_ComponentBoundEvent_15_OnTabButtonCreated__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton)
 {
@@ -1034,7 +1177,7 @@ void UItemManagementDetailsModeBox_C::BndEvt__DetailPanelTabList_OP_K2Node_Compo
 // (BlueprintEvent)
 // Parameters:
 // struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UItemManagementDetailsModeBox_C::BndEvt__DetailPanelTabList_OI_K2Node_ComponentBoundEvent_27_OnTabButtonCreated__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton)
 {
@@ -1073,7 +1216,7 @@ void UItemManagementDetailsModeBox_C::HandleConsumeItemProgressChangedBP()
 // (BlueprintEvent)
 // Parameters:
 // struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UItemManagementDetailsModeBox_C::BndEvt__DetailPanelTabList_MSB_K2Node_ComponentBoundEvent_18_OnTabButtonCreated__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton)
 {
@@ -1156,6 +1299,26 @@ void UItemManagementDetailsModeBox_C::OnDestroyItem(class UFortItem* Item)
 
 	UItemManagementDetailsModeBox_C_OnDestroyItem_Params params;
 	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleCraftItemFailed
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EFortCraftFailCause            FailureCause                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementDetailsModeBox_C::HandleCraftItemFailed(EFortCraftFailCause FailureCause)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleCraftItemFailed");
+
+	UItemManagementDetailsModeBox_C_HandleCraftItemFailed_Params params;
+	params.FailureCause = FailureCause;
 
 	auto flags = fn->FunctionFlags;
 

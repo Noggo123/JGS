@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Function AthenaSeasonLevelPaidRewardsWidget.AthenaSeasonLevelPaidRewardsWidget_C.UpdateStyling
-// (Public, BlueprintCallable, BlueprintEvent)
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
 void UAthenaSeasonLevelPaidRewardsWidget_C::UpdateStyling()
 {
@@ -76,6 +76,23 @@ void UAthenaSeasonLevelPaidRewardsWidget_C::OnNavigateTo()
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaSeasonLevelPaidRewardsWidget.AthenaSeasonLevelPaidRewardsWidget_C.OnNavigateTo");
 
 	UAthenaSeasonLevelPaidRewardsWidget_C_OnNavigateTo_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaSeasonLevelPaidRewardsWidget.AthenaSeasonLevelPaidRewardsWidget_C.PlayIntro
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void UAthenaSeasonLevelPaidRewardsWidget_C::PlayIntro()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaSeasonLevelPaidRewardsWidget.AthenaSeasonLevelPaidRewardsWidget_C.PlayIntro");
+
+	UAthenaSeasonLevelPaidRewardsWidget_C_PlayIntro_Params params;
 
 	auto flags = fn->FunctionFlags;
 

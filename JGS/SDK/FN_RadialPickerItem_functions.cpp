@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,31 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function RadialPickerItem.RadialPickerItem_C.OnTouchStarted
+// (BlueprintCosmetic, Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+// struct FPointerEvent*          InTouchEvent                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FEventReply             ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FEventReply URadialPickerItem_C::OnTouchStarted(struct FGeometry* MyGeometry, struct FPointerEvent* InTouchEvent)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function RadialPickerItem.RadialPickerItem_C.OnTouchStarted");
+
+	URadialPickerItem_C_OnTouchStarted_Params params;
+	params.MyGeometry = MyGeometry;
+	params.InTouchEvent = InTouchEvent;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function RadialPickerItem.RadialPickerItem_C.SetKeybindVisibility
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -147,6 +172,26 @@ void URadialPickerItem_C::ExecuteUbergraph_RadialPickerItem(int EntryPoint)
 
 	URadialPickerItem_C_ExecuteUbergraph_RadialPickerItem_Params params;
 	params.EntryPoint = EntryPoint;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function RadialPickerItem.RadialPickerItem_C.On Item Touched__DelegateSignature
+// (Public, Delegate, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class URadialPickerItem_C*     Picked_Option                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void URadialPickerItem_C::On_Item_Touched__DelegateSignature(class URadialPickerItem_C* Picked_Option)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function RadialPickerItem.RadialPickerItem_C.On Item Touched__DelegateSignature");
+
+	URadialPickerItem_C_On_Item_Touched__DelegateSignature_Params params;
+	params.Picked_Option = Picked_Option;
 
 	auto flags = fn->FunctionFlags;
 

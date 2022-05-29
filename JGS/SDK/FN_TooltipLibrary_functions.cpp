@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,7 +22,7 @@ namespace SDK
 // struct FText                   RestXP                         (BlueprintVisible, BlueprintReadOnly, Parm)
 // struct FText                   Body                           (BlueprintVisible, BlueprintReadOnly, Parm)
 // class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonUserWidget*       Out                            (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// class UCommonUserWidget*       Out                            (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UTooltipLibrary_C::STATIC_CreateXPTooltip(class APlayerController* Owner, const struct FText& Header, const struct FText& CommanderXP, const struct FText& BoostXP, const struct FText& RestXP, const struct FText& Body, class UObject* __WorldContext, class UCommonUserWidget** Out)
 {
@@ -56,7 +56,7 @@ void UTooltipLibrary_C::STATIC_CreateXPTooltip(class APlayerController* Owner, c
 // struct FText                   Header_Text                    (BlueprintVisible, BlueprintReadOnly, Parm)
 // class USlateBrushAsset*        Icon_Brush                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UUserWidget*             Output                         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// class UUserWidget*             Output                         (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UTooltipLibrary_C::STATIC_Create_Basic_Multi_Line_Tooltip(class APlayerController* Owning_Player, const struct FText& Header_Text, class USlateBrushAsset* Icon_Brush, class UObject* __WorldContext, TArray<struct FText>* Body_Text, class UUserWidget** Output)
 {
@@ -90,7 +90,7 @@ void UTooltipLibrary_C::STATIC_Create_Basic_Multi_Line_Tooltip(class APlayerCont
 // class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // class UFortItem*               ComparedItem                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UWidget*                 Return_Value                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// class UWidget*                 Return_Value                   (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UTooltipLibrary_C::STATIC_Create_Compare_Item_Tooltip(class APlayerController* Owning_Player, const struct FText& Header_Text, class USlateBrushAsset* Header_Icon, class UFortItem* Item, class UFortItem* ComparedItem, class UObject* __WorldContext, class UWidget** Return_Value)
 {
@@ -124,7 +124,7 @@ void UTooltipLibrary_C::STATIC_Create_Compare_Item_Tooltip(class APlayerControll
 // class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // int                            OverrideQuantity               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UWidget*                 Return_Value                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// class UWidget*                 Return_Value                   (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UTooltipLibrary_C::STATIC_Create_Item_Tooltip(class APlayerController* Owning_Player, const struct FText& Header_Text, class USlateBrushAsset* Header_Icon, class UFortItem* Item, int OverrideQuantity, class UObject* __WorldContext, class UWidget** Return_Value)
 {
@@ -152,7 +152,7 @@ void UTooltipLibrary_C::STATIC_Create_Item_Tooltip(class APlayerController* Owni
 // Function TooltipLibrary.TooltipLibrary_C.Set Enabled And Tooltip Text
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidget*                 Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidget*                 Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // bool                           Enabled                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // struct FText                   Tooltip_Text                   (BlueprintVisible, BlueprintReadOnly, Parm)
 // class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
@@ -181,9 +181,9 @@ void UTooltipLibrary_C::STATIC_Set_Enabled_And_Tooltip_Text(class UWidget* Widge
 // class APlayerController*       Owning_Player                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // struct FText                   Header_Text                    (BlueprintVisible, BlueprintReadOnly, Parm)
 // class USlateBrushAsset*        Icon_Brush                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UUserWidget*             Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UUserWidget*             Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UUserWidget*             Output                         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// class UUserWidget*             Output                         (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UTooltipLibrary_C::STATIC_Create_Custom_Tooltip(class APlayerController* Owning_Player, const struct FText& Header_Text, class USlateBrushAsset* Icon_Brush, class UUserWidget* Widget, class UObject* __WorldContext, class UUserWidget** Output)
 {
@@ -214,10 +214,12 @@ void UTooltipLibrary_C::STATIC_Create_Custom_Tooltip(class APlayerController* Ow
 // struct FText                   Body_Text                      (BlueprintVisible, BlueprintReadOnly, Parm)
 // struct FText                   Header_Text                    (BlueprintVisible, BlueprintReadOnly, Parm)
 // class USlateBrushAsset*        Icon_Brush                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UClass*                  Header_Style                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UClass*                  Body_Style                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UUserWidget*             Output                         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// class UUserWidget*             Output                         (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
-void UTooltipLibrary_C::STATIC_Create_Basic_Tooltip(class APlayerController* Owning_Player, const struct FText& Body_Text, const struct FText& Header_Text, class USlateBrushAsset* Icon_Brush, class UObject* __WorldContext, class UUserWidget** Output)
+void UTooltipLibrary_C::STATIC_Create_Basic_Tooltip(class APlayerController* Owning_Player, const struct FText& Body_Text, const struct FText& Header_Text, class USlateBrushAsset* Icon_Brush, class UClass* Header_Style, class UClass* Body_Style, class UObject* __WorldContext, class UUserWidget** Output)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function TooltipLibrary.TooltipLibrary_C.Create Basic Tooltip");
 
@@ -226,6 +228,8 @@ void UTooltipLibrary_C::STATIC_Create_Basic_Tooltip(class APlayerController* Own
 	params.Body_Text = Body_Text;
 	params.Header_Text = Header_Text;
 	params.Icon_Brush = Icon_Brush;
+	params.Header_Style = Header_Style;
+	params.Body_Style = Body_Style;
 	params.__WorldContext = __WorldContext;
 
 	auto flags = fn->FunctionFlags;

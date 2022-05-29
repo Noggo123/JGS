@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -26,27 +26,6 @@ void UResults_CommanderXPBar_C::DebugSections()
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-}
-
-
-// Function Results_CommanderXPBar.Results_CommanderXPBar_C.Get_ProgressBarNew_ToolTipWidget
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UWidget* UResults_CommanderXPBar_C::Get_ProgressBarNew_ToolTipWidget()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Results_CommanderXPBar.Results_CommanderXPBar_C.Get_ProgressBarNew_ToolTipWidget");
-
-	UResults_CommanderXPBar_C_Get_ProgressBarNew_ToolTipWidget_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
@@ -148,7 +127,7 @@ void UResults_CommanderXPBar_C::clearXpBar()
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.PlayAnimationCommon
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*        Animation                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidgetAnimation*        Animation                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UResults_CommanderXPBar_C::PlayAnimationCommon(class UWidgetAnimation* Animation)
 {

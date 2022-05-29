@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -19,13 +19,8 @@ struct UAthenaSquadList_C_ClearSquadMembers_Params
 {
 };
 
-// Function AthenaSquadList.AthenaSquadList_C.HandleSquadMembersChanged
-struct UAthenaSquadList_C_HandleSquadMembersChanged_Params
-{
-};
-
-// Function AthenaSquadList.AthenaSquadList_C.ClearContents
-struct UAthenaSquadList_C_ClearContents_Params
+// Function AthenaSquadList.AthenaSquadList_C.RebuildSquadMembersList
+struct UAthenaSquadList_C_RebuildSquadMembersList_Params
 {
 };
 
@@ -38,11 +33,6 @@ struct UAthenaSquadList_C_AppendSquadMember_Params
 
 // Function AthenaSquadList.AthenaSquadList_C.Construct
 struct UAthenaSquadList_C_Construct_Params
-{
-};
-
-// Function AthenaSquadList.AthenaSquadList_C.HandlePartyLeft
-struct UAthenaSquadList_C_HandlePartyLeft_Params
 {
 };
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,12 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
-
-// Function Trap_Floor_Player_Launch_Pad.Trap_Floor_Player_Launch_Pad_C.GetFireLocationAndRotation
-struct ATrap_Floor_Player_Launch_Pad_C_GetFireLocationAndRotation_Params
-{
-	struct FTransform                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
 
 // Function Trap_Floor_Player_Launch_Pad.Trap_Floor_Player_Launch_Pad_C.UserConstructionScript
 struct ATrap_Floor_Player_Launch_Pad_C_UserConstructionScript_Params

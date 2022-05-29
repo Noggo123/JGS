@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,6 +14,12 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
+// Function HorizontalTabList.HorizontalTabList_C.SetVerticalAlignment
+struct UHorizontalTabList_C_SetVerticalAlignment_Params
+{
+	TEnumAsByte<EVerticalAlignment>                    FillVertically;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function HorizontalTabList.HorizontalTabList_C.UpdateGamepadKeyVisibility
 struct UHorizontalTabList_C_UpdateGamepadKeyVisibility_Params
 {
@@ -23,7 +29,7 @@ struct UHorizontalTabList_C_UpdateGamepadKeyVisibility_Params
 struct UHorizontalTabList_C_Get_Tab_From_Id_Params
 {
 	struct FName                                       TabNameID;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonButton*                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	class UCommonButton*                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 };
 
 // Function HorizontalTabList.HorizontalTabList_C.ChangeInputBindings
@@ -65,7 +71,7 @@ struct UHorizontalTabList_C_CustomEvent_0_1_Params
 struct UHorizontalTabList_C_HandleTabCreated_Params
 {
 	struct FName*                                      TabNameID;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonButton**                              TabButton;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton**                              TabButton;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function HorizontalTabList.HorizontalTabList_C.ExecuteUbergraph_HorizontalTabList

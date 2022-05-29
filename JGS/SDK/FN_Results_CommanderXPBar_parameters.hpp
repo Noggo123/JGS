@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,12 +17,6 @@ namespace SDK
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.DebugSections
 struct UResults_CommanderXPBar_C_DebugSections_Params
 {
-};
-
-// Function Results_CommanderXPBar.Results_CommanderXPBar_C.Get_ProgressBarNew_ToolTipWidget
-struct UResults_CommanderXPBar_C_Get_ProgressBarNew_ToolTipWidget_Params
-{
-	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.GetHoveredProgressBarSection
@@ -56,7 +50,7 @@ struct UResults_CommanderXPBar_C_clearXpBar_Params
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.PlayAnimationCommon
 struct UResults_CommanderXPBar_C_PlayAnimationCommon_Params
 {
-	class UWidgetAnimation*                            Animation;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UWidgetAnimation*                            Animation;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.SkipToFinalState

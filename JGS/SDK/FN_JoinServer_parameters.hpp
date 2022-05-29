@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -55,7 +55,7 @@ struct UJoinServer_C_ShowRejoinWindow_Params
 // Function JoinServer.JoinServer_C.HandleGetMainMenuContent
 struct UJoinServer_C_HandleGetMainMenuContent_Params
 {
-	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 };
 
 // Function JoinServer.JoinServer_C.ShowTutorialCanceled

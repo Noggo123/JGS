@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,23 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function ItemDescriptionDetailWidget.ItemDescriptionDetailWidget_C.UpdateQuantityTextBlock
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UItemDescriptionDetailWidget_C::UpdateQuantityTextBlock()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemDescriptionDetailWidget.ItemDescriptionDetailWidget_C.UpdateQuantityTextBlock");
+
+	UItemDescriptionDetailWidget_C_UpdateQuantityTextBlock_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function ItemDescriptionDetailWidget.ItemDescriptionDetailWidget_C.IsItemSimple
 // (Private, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)

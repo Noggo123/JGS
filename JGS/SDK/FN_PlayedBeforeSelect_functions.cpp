@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,6 +20,23 @@ void UPlayedBeforeSelect_C::OnActivated()
 	static auto fn = UObject::FindObject<UFunction>("Function PlayedBeforeSelect.PlayedBeforeSelect_C.OnActivated");
 
 	UPlayedBeforeSelect_C_OnActivated_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayedBeforeSelect.PlayedBeforeSelect_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UPlayedBeforeSelect_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayedBeforeSelect.PlayedBeforeSelect_C.Construct");
+
+	UPlayedBeforeSelect_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 

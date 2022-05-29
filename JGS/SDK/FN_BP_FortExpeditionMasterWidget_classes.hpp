@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C
-// 0x00CB (0x050B - 0x0440)
+// 0x00E5 (0x0525 - 0x0440)
 class UBP_FortExpeditionMasterWidget_C : public UFortExpeditionMasterWidget
 {
 public:
@@ -28,12 +26,14 @@ public:
 	struct FDataTableRowHandle                         SortInputAction;                                          // 0x0490(0x0010) (Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                               bRewardsShowing;                                          // 0x04A0(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x7];                                       // 0x04A1(0x0007) MISSED OFFSET
-	class UFrontEndRewards_Widget_C*                   RewardsWidget;                                            // 0x04A8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UFrontEndRewards_Widget_C*                   RewardsWidget;                                            // 0x04A8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
 	TArray<class UFortExpeditionItem*>                 CompletedExpeditions;                                     // 0x04B0(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
-	struct FFrontEndRewards_Definition                 RewardsDefinition;                                        // 0x04C0(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
-	EFortExpeditionListSort                            ExpeditionListSortType;                                   // 0x0508(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	EFortExpeditionListSort                            ExpeditionListSortBegin;                                  // 0x0509(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	EFortExpeditionListSort                            ExpeditionListSortEnd;                                    // 0x050A(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FFrontEndRewards_Definition                 RewardsDefinition;                                        // 0x04C0(0x0060) (Edit, BlueprintVisible, DisableEditOnInstance)
+	EFortExpeditionListSort                            ExpeditionListSortType;                                   // 0x0520(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	EFortExpeditionListSort                            ExpeditionListSortBegin;                                  // 0x0521(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	EFortExpeditionListSort                            ExpeditionListSortEnd;                                    // 0x0522(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               BlockedByStorageWarningShown;                             // 0x0523(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               BlockedByProfileLockWarningShown;                         // 0x0524(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -54,11 +54,16 @@ public:
 	void Setup_Bindings();
 	void Setup_Input_Action_Handlers();
 	void Handle_Back(bool* Passthrough);
+	void DialogResult_99152A754621D0E9A8C9C889926A827D(EFortDialogResult Result, const struct FName& ResultName);
+	void DialogResult_67CD2E3A4E1A6780703420B1064D5BD1(EFortDialogResult Result, const struct FName& ResultName);
+	void DialogResult_39A80A89449E8489E8E81EAECC14DE95(EFortDialogResult Result, const struct FName& ResultName);
 	void Construct();
 	void Destruct();
 	void HandleAllCompletedExpeditionsCollected();
 	void HACK_OnActivate_UpdateMasterWidget();
 	void OnActivated();
+	void OnRewardsBlockedByStorage();
+	void OnRewardsBlockedByLockedProfile();
 	void ExecuteUbergraph_BP_FortExpeditionMasterWidget(int EntryPoint);
 };
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,14 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function ConfirmationWindow.ConfirmationWindow_C.TapToClose
+struct UConfirmationWindow_C_TapToClose_Params
+{
+	struct FGeometry                                   MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+	struct FPointerEvent                               MouseEvent;                                               // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FEventReply                                 ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
 
 // Function ConfirmationWindow.ConfirmationWindow_C.CenterFirstButton
 struct UConfirmationWindow_C_CenterFirstButton_Params
@@ -64,7 +72,7 @@ struct UConfirmationWindow_C_GetLatentActionWaitHandle_Params
 // Function ConfirmationWindow.ConfirmationWindow_C.Set Hover Description
 struct UConfirmationWindow_C_Set_Hover_Description_Params
 {
-	class UCommonButton*                               Button_to_Hover;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button_to_Hover;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function ConfirmationWindow.ConfirmationWindow_C.SetupLeft
@@ -95,7 +103,7 @@ struct UConfirmationWindow_C_KillCurrentConfirmation_Params
 // Function ConfirmationWindow.ConfirmationWindow_C.GetResultName
 struct UConfirmationWindow_C_GetResultName_Params
 {
-	class UIconTextButton_C*                           ConfirmButton;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UIconTextButton_C*                           ConfirmButton;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 	struct FName                                       ResultName;                                               // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -123,7 +131,7 @@ struct UConfirmationWindow_C_HasAnyConfirmAction_Params
 // Function ConfirmationWindow.ConfirmationWindow_C.ConfirmActionClicked
 struct UConfirmationWindow_C_ConfirmActionClicked_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function ConfirmationWindow.ConfirmationWindow_C.IsSimpleConfirmAction
@@ -135,7 +143,7 @@ struct UConfirmationWindow_C_IsSimpleConfirmAction_Params
 // Function ConfirmationWindow.ConfirmationWindow_C.DeclineActionClicked
 struct UConfirmationWindow_C_DeclineActionClicked_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function ConfirmationWindow.ConfirmationWindow_C.AddDeclineButton

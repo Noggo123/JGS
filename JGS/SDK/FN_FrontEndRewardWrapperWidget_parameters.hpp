@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,7 +22,7 @@ struct UFrontEndRewardWrapperWidget_C_IntroAnimation_Params
 // Function FrontEndRewardWrapperWidget.FrontEndRewardWrapperWidget_C.AddToWrapper
 struct UFrontEndRewardWrapperWidget_C_AddToWrapper_Params
 {
-	class UWidget*                                     Widget;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UWidget*                                     Widget;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 	struct FText                                       DisplayName;                                              // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 

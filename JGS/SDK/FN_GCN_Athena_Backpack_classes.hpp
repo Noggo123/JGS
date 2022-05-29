@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,12 +13,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass GCN_Athena_Backpack.GCN_Athena_Backpack_C
-// 0x0010 (0x04A0 - 0x0490)
+// 0x0010 (0x0450 - 0x0440)
 class AGCN_Athena_Backpack_C : public AFortGameplayCueNotify_Looping
 {
 public:
-	class USkeletalMeshComponent*                      BackpackSkelMesh;                                         // 0x0490(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class AActor*                                      PlayerPawn;                                               // 0x0498(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData)
+	class USkeletalMeshComponent*                      BackpackSkelMesh;                                         // 0x0440(0x0008) (BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class AActor*                                      PlayerPawn;                                               // 0x0448(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

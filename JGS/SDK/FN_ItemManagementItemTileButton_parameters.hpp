@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function ItemManagementItemTileButton.ItemManagementItemTileButton_C.UpdateCollectionBookIndicator
+struct UItemManagementItemTileButton_C_UpdateCollectionBookIndicator_Params
+{
+};
 
 // Function ItemManagementItemTileButton.ItemManagementItemTileButton_C.HandleSlottedSurvivor
 struct UItemManagementItemTileButton_C_HandleSlottedSurvivor_Params
@@ -44,7 +49,7 @@ struct UItemManagementItemTileButton_C_SetEquipSlotOverlay_Params
 struct UItemManagementItemTileButton_C_OnDragDetected_Params
 {
 	struct FGeometry*                                  MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	struct FPointerEvent                               PointerEvent;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FPointerEvent*                              PointerEvent;                                             // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	class UDragDropOperation*                          Operation;                                                // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -123,6 +128,11 @@ struct UItemManagementItemTileButton_C_HandleItemChangedBP_Params
 struct UItemManagementItemTileButton_C_BndEvt__PopupMenuAnchor_K2Node_ComponentBoundEvent_0_OnMenuOpenChangedEvent__DelegateSignature_Params
 {
 	bool                                               bIsOpen;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementItemTileButton.ItemManagementItemTileButton_C.HandleShowCollectionBookIndicatorChanged
+struct UItemManagementItemTileButton_C_HandleShowCollectionBookIndicatorChanged_Params
+{
 };
 
 // Function ItemManagementItemTileButton.ItemManagementItemTileButton_C.ExecuteUbergraph_ItemManagementItemTileButton

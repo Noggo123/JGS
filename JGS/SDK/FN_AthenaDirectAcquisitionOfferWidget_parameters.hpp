@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -36,6 +36,26 @@ struct UAthenaDirectAcquisitionOfferWidget_C_IsItemExpanded_Params
 struct UAthenaDirectAcquisitionOfferWidget_C_GetData_Params
 {
 	class UObject*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function AthenaDirectAcquisitionOfferWidget.AthenaDirectAcquisitionOfferWidget_C.UpdateBadge
+struct UAthenaDirectAcquisitionOfferWidget_C_UpdateBadge_Params
+{
+};
+
+// Function AthenaDirectAcquisitionOfferWidget.AthenaDirectAcquisitionOfferWidget_C.UpdateStyle_Sizing
+struct UAthenaDirectAcquisitionOfferWidget_C_UpdateStyle_Sizing_Params
+{
+};
+
+// Function AthenaDirectAcquisitionOfferWidget.AthenaDirectAcquisitionOfferWidget_C.UpdateStyle_Border
+struct UAthenaDirectAcquisitionOfferWidget_C_UpdateStyle_Border_Params
+{
+};
+
+// Function AthenaDirectAcquisitionOfferWidget.AthenaDirectAcquisitionOfferWidget_C.UpdateStyle_MainText
+struct UAthenaDirectAcquisitionOfferWidget_C_UpdateStyle_MainText_Params
+{
 };
 
 // Function AthenaDirectAcquisitionOfferWidget.AthenaDirectAcquisitionOfferWidget_C.SetupSaleInfo
@@ -79,7 +99,7 @@ struct UAthenaDirectAcquisitionOfferWidget_C_LargeImageLoaded_Params
 struct UAthenaDirectAcquisitionOfferWidget_C_SetupPrice_Params
 {
 	int                                                PriceIndex;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UItemCount_C*                                PriceWidget;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UItemCount_C*                                PriceWidget;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function AthenaDirectAcquisitionOfferWidget.AthenaDirectAcquisitionOfferWidget_C.UpdateStyle
@@ -181,7 +201,7 @@ struct UAthenaDirectAcquisitionOfferWidget_C_OnUpdateStatus_Params
 struct UAthenaDirectAcquisitionOfferWidget_C_SetData_Params
 {
 	class UObject*                                     InData;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonListView*                             OwningList;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonListView*                             OwningList;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function AthenaDirectAcquisitionOfferWidget.AthenaDirectAcquisitionOfferWidget_C.Construct

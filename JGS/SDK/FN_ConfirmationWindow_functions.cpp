@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,31 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function ConfirmationWindow.ConfirmationWindow_C.TapToClose
+// (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FGeometry               MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+// struct FPointerEvent           MouseEvent                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FEventReply             ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FEventReply UConfirmationWindow_C::TapToClose(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ConfirmationWindow.ConfirmationWindow_C.TapToClose");
+
+	UConfirmationWindow_C_TapToClose_Params params;
+	params.MyGeometry = MyGeometry;
+	params.MouseEvent = MouseEvent;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function ConfirmationWindow.ConfirmationWindow_C.CenterFirstButton
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -176,7 +201,7 @@ void UConfirmationWindow_C::GetLatentActionWaitHandle(struct FFortDialogExternal
 // Function ConfirmationWindow.ConfirmationWindow_C.Set Hover Description
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button_to_Hover                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button_to_Hover                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UConfirmationWindow_C::Set_Hover_Description(class UCommonButton* Button_to_Hover)
 {
@@ -281,7 +306,7 @@ void UConfirmationWindow_C::KillCurrentConfirmation()
 // Function ConfirmationWindow.ConfirmationWindow_C.GetResultName
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UIconTextButton_C*       ConfirmButton                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UIconTextButton_C*       ConfirmButton                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // struct FName                   ResultName                     (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UConfirmationWindow_C::GetResultName(class UIconTextButton_C* ConfirmButton, struct FName* ResultName)
@@ -373,7 +398,7 @@ bool UConfirmationWindow_C::HasAnyConfirmAction()
 // Function ConfirmationWindow.ConfirmationWindow_C.ConfirmActionClicked
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UConfirmationWindow_C::ConfirmActionClicked(class UCommonButton* Button)
 {
@@ -414,7 +439,7 @@ bool UConfirmationWindow_C::IsSimpleConfirmAction()
 // Function ConfirmationWindow.ConfirmationWindow_C.DeclineActionClicked
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UConfirmationWindow_C::DeclineActionClicked(class UCommonButton* Button)
 {

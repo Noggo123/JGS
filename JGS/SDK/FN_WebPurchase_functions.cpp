@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -71,7 +71,7 @@ void UWebPurchase_C::Dismiss()
 // Function WebPurchase.WebPurchase_C.Display
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidget*                 WebWidget                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidget*                 WebWidget                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // struct FString                 AttemptedMTXOfferId            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 
 void UWebPurchase_C::Display(class UWidget* WebWidget, const struct FString& AttemptedMTXOfferId)

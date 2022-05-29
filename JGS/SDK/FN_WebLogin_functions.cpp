@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,67 +12,16 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function WebLogin.WebLogin_C.HandleBack
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UWebLogin_C::HandleBack()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function WebLogin.WebLogin_C.HandleBack");
-
-	UWebLogin_C_HandleBack_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function WebLogin.WebLogin_C.BindDelegates
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UWebLogin_C::BindDelegates()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function WebLogin.WebLogin_C.BindDelegates");
-
-	UWebLogin_C_BindDelegates_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function WebLogin.WebLogin_C.Dismiss
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UWebLogin_C::Dismiss()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function WebLogin.WebLogin_C.Dismiss");
-
-	UWebLogin_C_Dismiss_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function WebLogin.WebLogin_C.Display
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function WebLogin.WebLogin_C.DisplayWidget
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidget*                 WebWidget                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidget**                WebWidget                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
-void UWebLogin_C::Display(class UWidget* WebWidget)
+void UWebLogin_C::DisplayWidget(class UWidget** WebWidget)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function WebLogin.WebLogin_C.Display");
+	static auto fn = UObject::FindObject<UFunction>("Function WebLogin.WebLogin_C.DisplayWidget");
 
-	UWebLogin_C_Display_Params params;
+	UWebLogin_C_DisplayWidget_Params params;
 	params.WebWidget = WebWidget;
 
 	auto flags = fn->FunctionFlags;
@@ -83,14 +32,14 @@ void UWebLogin_C::Display(class UWidget* WebWidget)
 }
 
 
-// Function WebLogin.WebLogin_C.OnActivated
-// (Event, Protected, BlueprintEvent)
+// Function WebLogin.WebLogin_C.DismissWidget
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
-void UWebLogin_C::OnActivated()
+void UWebLogin_C::DismissWidget()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function WebLogin.WebLogin_C.OnActivated");
+	static auto fn = UObject::FindObject<UFunction>("Function WebLogin.WebLogin_C.DismissWidget");
 
-	UWebLogin_C_OnActivated_Params params;
+	UWebLogin_C_DismissWidget_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -111,23 +60,6 @@ void UWebLogin_C::ExecuteUbergraph_WebLogin(int EntryPoint)
 
 	UWebLogin_C_ExecuteUbergraph_WebLogin_Params params;
 	params.EntryPoint = EntryPoint;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function WebLogin.WebLogin_C.OnLoginDialogDismissed__DelegateSignature
-// (Public, Delegate, BlueprintCallable, BlueprintEvent)
-
-void UWebLogin_C::OnLoginDialogDismissed__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function WebLogin.WebLogin_C.OnLoginDialogDismissed__DelegateSignature");
-
-	UWebLogin_C_OnLoginDialogDismissed__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 

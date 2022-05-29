@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function AthenaDirectAcquisitionScreen.AthenaDirectAcquisitionScreen_C.HandlePurchaseHistory
+struct UAthenaDirectAcquisitionScreen_C_HandlePurchaseHistory_Params
+{
+	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function AthenaDirectAcquisitionScreen.AthenaDirectAcquisitionScreen_C.Focus
 struct UAthenaDirectAcquisitionScreen_C_Focus_Params
@@ -42,6 +48,11 @@ struct UAthenaDirectAcquisitionScreen_C_OnOffersGenerated_Params
 
 // Function AthenaDirectAcquisitionScreen.AthenaDirectAcquisitionScreen_C.OnActivated
 struct UAthenaDirectAcquisitionScreen_C_OnActivated_Params
+{
+};
+
+// Function AthenaDirectAcquisitionScreen.AthenaDirectAcquisitionScreen_C.Construct
+struct UAthenaDirectAcquisitionScreen_C_Construct_Params
 {
 };
 

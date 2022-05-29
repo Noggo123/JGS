@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -29,13 +29,13 @@ struct AB_Minigun_Athena_C_BarrelGlow__UpdateFunc_Params
 {
 };
 
-// Function B_Minigun_Athena.B_Minigun_Athena_C.SpinUpAudioVolume__FinishedFunc
-struct AB_Minigun_Athena_C_SpinUpAudioVolume__FinishedFunc_Params
+// Function B_Minigun_Athena.B_Minigun_Athena_C.SpinAudioVolumeTimeline__FinishedFunc
+struct AB_Minigun_Athena_C_SpinAudioVolumeTimeline__FinishedFunc_Params
 {
 };
 
-// Function B_Minigun_Athena.B_Minigun_Athena_C.SpinUpAudioVolume__UpdateFunc
-struct AB_Minigun_Athena_C_SpinUpAudioVolume__UpdateFunc_Params
+// Function B_Minigun_Athena.B_Minigun_Athena_C.SpinAudioVolumeTimeline__UpdateFunc
+struct AB_Minigun_Athena_C_SpinAudioVolumeTimeline__UpdateFunc_Params
 {
 };
 
@@ -73,6 +73,11 @@ struct AB_Minigun_Athena_C_StopBarrelGlow_Params
 {
 };
 
+// Function B_Minigun_Athena.B_Minigun_Athena_C.OnAmmoCountChanged
+struct AB_Minigun_Athena_C_OnAmmoCountChanged_Params
+{
+};
+
 // Function B_Minigun_Athena.B_Minigun_Athena_C.Start Spin Up Audio
 struct AB_Minigun_Athena_C_Start_Spin_Up_Audio_Params
 {
@@ -80,6 +85,11 @@ struct AB_Minigun_Athena_C_Start_Spin_Up_Audio_Params
 
 // Function B_Minigun_Athena.B_Minigun_Athena_C.Start Spin Down Audio
 struct AB_Minigun_Athena_C_Start_Spin_Down_Audio_Params
+{
+};
+
+// Function B_Minigun_Athena.B_Minigun_Athena_C.OnWeaponAttached
+struct AB_Minigun_Athena_C_OnWeaponAttached_Params
 {
 };
 

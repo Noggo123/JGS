@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -14,34 +12,15 @@ namespace SDK
 //Classes
 //---------------------------------------------------------------------------
 
-// Class EpicCMSUIFramework.EpicCMSScreenBase
-// 0x0090 (0x0450 - 0x03C0)
-class UEpicCMSScreenBase : public UCommonActivatablePanel
-{
-public:
-	struct FString                                     TileSetFieldName;                                         // 0x03C0(0x0010) (Edit, ZeroConstructor)
-	unsigned char                                      UnknownData00[0x28];                                      // 0x03D0(0x0028) UNKNOWN PROPERTY: SoftObjectProperty EpicCMSUIFramework.EpicCMSScreenBase.TileTypeToTileClassDataTable
-	unsigned char                                      UnknownData01[0x28];                                      // 0x03F8(0x0028) UNKNOWN PROPERTY: SoftClassProperty EpicCMSUIFramework.EpicCMSScreenBase.LayoutErrorClass
-	unsigned char                                      UnknownData02[0x28];                                      // 0x0420(0x0028) UNKNOWN PROPERTY: SoftObjectProperty EpicCMSUIFramework.EpicCMSScreenBase.LayoutTypeToLayoutClassDataTable
-	unsigned char                                      UnknownData03[0x8];                                       // 0x0448(0x0008) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class EpicCMSUIFramework.EpicCMSScreenBase");
-		return ptr;
-	}
-
-};
-
-
 // Class EpicCMSUIFramework.EpicCMSImage
-// 0x0018 (0x0228 - 0x0210)
+// 0x0030 (0x0250 - 0x0220)
 class UEpicCMSImage : public UCommonLazyImage
 {
 public:
-	unsigned char                                      UnknownData00[0x10];                                      // 0x0210(0x0010) MISSED OFFSET
-	bool                                               bDownloadingExternalMedia;                                // 0x0220(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x7];                                       // 0x0221(0x0007) MISSED OFFSET
+	struct FScriptMulticastDelegate                    OnImageLoadingComplete;                                   // 0x0220(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
+	unsigned char                                      UnknownData00[0x10];                                      // 0x0230(0x0010) MISSED OFFSET
+	bool                                               bDownloadingExternalMedia;                                // 0x0240(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0xF];                                       // 0x0241(0x000F) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -71,14 +50,14 @@ public:
 
 
 // Class EpicCMSUIFramework.EpicCMSManager
-// 0x00B8 (0x00E0 - 0x0028)
+// 0x00C8 (0x00F0 - 0x0028)
 class UEpicCMSManager : public UObject
 {
 public:
 	unsigned char                                      UnknownData00[0x78];                                      // 0x0028(0x0078) MISSED OFFSET
 	struct FString                                     CmsEndpointOverride;                                      // 0x00A0(0x0010) (ZeroConstructor)
 	bool                                               bRefreshing;                                              // 0x00B0(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x2F];                                      // 0x00B1(0x002F) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x3F];                                      // 0x00B1(0x003F) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -89,23 +68,43 @@ public:
 };
 
 
+// Class EpicCMSUIFramework.EpicCMSScreenBase
+// 0x0090 (0x0450 - 0x03C0)
+class UEpicCMSScreenBase : public UCommonActivatablePanel
+{
+public:
+	struct FString                                     TileSetFieldName;                                         // 0x03C0(0x0010) (Edit, ZeroConstructor)
+	unsigned char                                      UnknownData00[0x28];                                      // 0x03D0(0x0028) UNKNOWN PROPERTY: SoftObjectProperty EpicCMSUIFramework.EpicCMSScreenBase.TileTypeToTileClassDataTable
+	unsigned char                                      UnknownData01[0x28];                                      // 0x03F8(0x0028) UNKNOWN PROPERTY: SoftClassProperty EpicCMSUIFramework.EpicCMSScreenBase.LayoutErrorClass
+	unsigned char                                      UnknownData02[0x28];                                      // 0x0420(0x0028) UNKNOWN PROPERTY: SoftObjectProperty EpicCMSUIFramework.EpicCMSScreenBase.LayoutTypeToLayoutClassDataTable
+	unsigned char                                      UnknownData03[0x8];                                       // 0x0448(0x0008) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class EpicCMSUIFramework.EpicCMSScreenBase");
+		return ptr;
+	}
+
+};
+
+
 // Class EpicCMSUIFramework.EpicCMSTileBase
-// 0x0118 (0x0898 - 0x0780)
+// 0x0118 (0x0918 - 0x0800)
 class UEpicCMSTileBase : public UCommonButton
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0780(0x0008) MISSED OFFSET
-	class UClass*                                      DefaultTitleTextStyle;                                    // 0x0788(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UClass*                                      FeaturedTitleTextStyle;                                   // 0x0790(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FText                                       Title;                                                    // 0x0798(0x0018) (BlueprintVisible, BlueprintReadOnly)
-	struct FString                                     Link;                                                     // 0x07B0(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-	bool                                               bDownloadingExternalMedia;                                // 0x07C0(0x0001) (ZeroConstructor, IsPlainOldData)
-	bool                                               bRefreshingMcpCatalog;                                    // 0x07C1(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0xB6];                                      // 0x07C2(0x00B6) MISSED OFFSET
-	class UCommonLazyImage*                            LazyImage_Icon;                                           // 0x0878(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	class UCommonTextBlock*                            TitleTextBlock;                                           // 0x0880(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	class UCommonTextBlock*                            SubtitleTextBlock;                                        // 0x0888(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	class UCommonTextBlock*                            EyebrowTextBlock;                                         // 0x0890(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0800(0x0008) MISSED OFFSET
+	class UClass*                                      DefaultTitleTextStyle;                                    // 0x0808(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UClass*                                      FeaturedTitleTextStyle;                                   // 0x0810(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FText                                       Title;                                                    // 0x0818(0x0018) (BlueprintVisible, BlueprintReadOnly)
+	struct FString                                     Link;                                                     // 0x0830(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+	bool                                               bDownloadingExternalMedia;                                // 0x0840(0x0001) (ZeroConstructor, IsPlainOldData)
+	bool                                               bRefreshingMcpCatalog;                                    // 0x0841(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0xB6];                                      // 0x0842(0x00B6) MISSED OFFSET
+	class UCommonLazyImage*                            LazyImage_Icon;                                           // 0x08F8(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UCommonTextBlock*                            TitleTextBlock;                                           // 0x0900(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UCommonTextBlock*                            SubtitleTextBlock;                                        // 0x0908(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UCommonTextBlock*                            EyebrowTextBlock;                                         // 0x0910(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,18 +20,8 @@ struct UAthenaQuickbarSecondary_C_UpdateQuickBarCaching_Params
 	bool                                               Desire_Caching;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function AthenaQuickbarSecondary.AthenaQuickbarSecondary_C.HandleMaximizeShowing
-struct UAthenaQuickbarSecondary_C_HandleMaximizeShowing_Params
-{
-};
-
 // Function AthenaQuickbarSecondary.AthenaQuickbarSecondary_C.HandleShowHideRail
 struct UAthenaQuickbarSecondary_C_HandleShowHideRail_Params
-{
-};
-
-// Function AthenaQuickbarSecondary.AthenaQuickbarSecondary_C.HandleMinimizeHiding
-struct UAthenaQuickbarSecondary_C_HandleMinimizeHiding_Params
 {
 };
 
@@ -83,6 +73,7 @@ struct UAthenaQuickbarSecondary_C_OnQuickBarSlotFocusChanged_Bind_Params
 struct UAthenaQuickbarSecondary_C_OnQuickbarContentsChanged_Params
 {
 	EFortQuickBars*                                    QuickbarIndex;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	TArray<int>*                                       ChangedSlots;                                             // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function AthenaQuickbarSecondary.AthenaQuickbarSecondary_C.Construct

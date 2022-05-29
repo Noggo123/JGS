@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -59,7 +59,7 @@ void ACheckExpeditionRewardsAction_C::Is_FrontEndRewards_Running(bool* bRunning)
 // Function CheckExpeditionRewardsAction.CheckExpeditionRewardsAction_C.HandleRewardsClaimError
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFrontEndRewards_Widget_C* RewardsWidget                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFrontEndRewards_Widget_C* RewardsWidget                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void ACheckExpeditionRewardsAction_C::HandleRewardsClaimError(class UFrontEndRewards_Widget_C* RewardsWidget)
 {
@@ -96,7 +96,7 @@ void ACheckExpeditionRewardsAction_C::Clear()
 // Function CheckExpeditionRewardsAction.CheckExpeditionRewardsAction_C.HandleRewardsClaimed
 // (Private, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFrontEndRewards_Widget_C* RewardsWidget                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFrontEndRewards_Widget_C* RewardsWidget                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void ACheckExpeditionRewardsAction_C::HandleRewardsClaimed(class UFrontEndRewards_Widget_C* RewardsWidget)
 {

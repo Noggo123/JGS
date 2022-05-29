@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,39 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnPartySuggestionAccept
+struct APartyCharacterPlacementHelper_C_OnPartySuggestionAccept_Params
+{
+	int                                                PlayerID;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnPartySuggestionChanged
+struct APartyCharacterPlacementHelper_C_OnPartySuggestionChanged_Params
+{
+	int                                                SlotIndex;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FFortPartySuggestion                        FortPartySuggestion;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+
+// Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnPartySuggestionRemoved
+struct APartyCharacterPlacementHelper_C_OnPartySuggestionRemoved_Params
+{
+	int                                                SlotIndex;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnPartySuggestionUpdated
+struct APartyCharacterPlacementHelper_C_OnPartySuggestionUpdated_Params
+{
+	int                                                SlotIndex;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FFortPartySuggestion                        FortPartySuggestion;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+
+// Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnPartySuggestionAdded
+struct APartyCharacterPlacementHelper_C_OnPartySuggestionAdded_Params
+{
+	int                                                SlotIndex;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FFortPartySuggestion                        FortPartySuggestion;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
 
 // Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.Refresh Lights
 struct APartyCharacterPlacementHelper_C_Refresh_Lights_Params
@@ -154,15 +187,21 @@ struct APartyCharacterPlacementHelper_C_HandleClientEvent_StoreTabSelected_Param
 	struct FFortClientEvent                            ClientEvent;                                              // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 };
 
+// Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnHotfixApplied
+struct APartyCharacterPlacementHelper_C_OnHotfixApplied_Params
+{
+};
+
 // Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.ExecuteUbergraph_PartyCharacterPlacementHelper
 struct APartyCharacterPlacementHelper_C_ExecuteUbergraph_PartyCharacterPlacementHelper_Params
 {
 	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.NewEventDispatcher_0__DelegateSignature
-struct APartyCharacterPlacementHelper_C_NewEventDispatcher_0__DelegateSignature_Params
+// Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.Debug_OnFriendLFGRequest__DelegateSignature
+struct APartyCharacterPlacementHelper_C_Debug_OnFriendLFGRequest__DelegateSignature_Params
 {
+	int                                                PlayerIndex;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

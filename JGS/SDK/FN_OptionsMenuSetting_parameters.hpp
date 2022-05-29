@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -38,6 +38,27 @@ struct UOptionsMenuSetting_C_GetData_Params
 	class UObject*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
+// Function OptionsMenuSetting.OptionsMenuSetting_C.Hide Tooltip
+struct UOptionsMenuSetting_C_Hide_Tooltip_Params
+{
+};
+
+// Function OptionsMenuSetting.OptionsMenuSetting_C.Show Tooltip
+struct UOptionsMenuSetting_C_Show_Tooltip_Params
+{
+};
+
+// Function OptionsMenuSetting.OptionsMenuSetting_C.OnGetMenuContent
+struct UOptionsMenuSetting_C_OnGetMenuContent_Params
+{
+	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+};
+
+// Function OptionsMenuSetting.OptionsMenuSetting_C.HandlePawnSet
+struct UOptionsMenuSetting_C_HandlePawnSet_Params
+{
+};
+
 // Function OptionsMenuSetting.OptionsMenuSetting_C.UpdateSize
 struct UOptionsMenuSetting_C_UpdateSize_Params
 {
@@ -46,24 +67,11 @@ struct UOptionsMenuSetting_C_UpdateSize_Params
 // Function OptionsMenuSetting.OptionsMenuSetting_C.Update Setting
 struct UOptionsMenuSetting_C_Update_Setting_Params
 {
-	class UCommonTextBlock*                            Tooltip_Text_Block;                                       // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function OptionsMenuSetting.OptionsMenuSetting_C.OnFocusReceived
-struct UOptionsMenuSetting_C_OnFocusReceived_Params
-{
-	struct FGeometry*                                  MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	struct FFocusEvent*                                InFocusEvent;                                             // (BlueprintVisible, BlueprintReadOnly, Parm)
-	struct FEventReply                                 ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	class UCommonTextBlock*                            Tooltip_Text_Block;                                       // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function OptionsMenuSetting.OptionsMenuSetting_C.Center on Widget
 struct UOptionsMenuSetting_C_Center_on_Widget_Params
-{
-};
-
-// Function OptionsMenuSetting.OptionsMenuSetting_C.OnAcquireFromPool
-struct UOptionsMenuSetting_C_OnAcquireFromPool_Params
 {
 };
 
@@ -156,7 +164,7 @@ struct UOptionsMenuSetting_C_BndEvt__TextRotator_K2Node_ComponentBoundEvent_20_O
 struct UOptionsMenuSetting_C_SetData_Params
 {
 	class UObject*                                     InData;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonListView*                             OwningList;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonListView*                             OwningList;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function OptionsMenuSetting.OptionsMenuSetting_C.OnReleaseToPool
@@ -167,13 +175,30 @@ struct UOptionsMenuSetting_C_OnReleaseToPool_Params
 // Function OptionsMenuSetting.OptionsMenuSetting_C.BndEvt__ButtonLeft_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature
 struct UOptionsMenuSetting_C_BndEvt__ButtonLeft_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function OptionsMenuSetting.OptionsMenuSetting_C.BndEvt__ButtonRight_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature
 struct UOptionsMenuSetting_C_BndEvt__ButtonRight_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+};
+
+// Function OptionsMenuSetting.OptionsMenuSetting_C.OnAcquireFromPool
+struct UOptionsMenuSetting_C_OnAcquireFromPool_Params
+{
+};
+
+// Function OptionsMenuSetting.OptionsMenuSetting_C.BndEvt__MenuAnchorSettingDescription_K2Node_ComponentBoundEvent_22_OnMenuOpenChangedEvent__DelegateSignature
+struct UOptionsMenuSetting_C_BndEvt__MenuAnchorSettingDescription_K2Node_ComponentBoundEvent_22_OnMenuOpenChangedEvent__DelegateSignature_Params
+{
+	bool                                               bIsOpen;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function OptionsMenuSetting.OptionsMenuSetting_C.BndEvt__ButtonTouchTooltip_K2Node_ComponentBoundEvent_69_CommonButtonClicked__DelegateSignature
+struct UOptionsMenuSetting_C_BndEvt__ButtonTouchTooltip_K2Node_ComponentBoundEvent_69_CommonButtonClicked__DelegateSignature_Params
+{
+	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function OptionsMenuSetting.OptionsMenuSetting_C.ExecuteUbergraph_OptionsMenuSetting

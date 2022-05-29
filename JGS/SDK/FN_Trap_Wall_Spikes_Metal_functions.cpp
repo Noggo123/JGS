@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,23 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function Trap_Wall_Spikes_Metal.Trap_Wall_Spikes_Metal_C.ChangeToFriendlyMaterial
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ATrap_Wall_Spikes_Metal_C::ChangeToFriendlyMaterial()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Trap_Wall_Spikes_Metal.Trap_Wall_Spikes_Metal_C.ChangeToFriendlyMaterial");
+
+	ATrap_Wall_Spikes_Metal_C_ChangeToFriendlyMaterial_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function Trap_Wall_Spikes_Metal.Trap_Wall_Spikes_Metal_C.MaterialSweepOnSpikes
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -53,27 +70,6 @@ void ATrap_Wall_Spikes_Metal_C::SetSpikePosition(float SpikePosition)
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-}
-
-
-// Function Trap_Wall_Spikes_Metal.Trap_Wall_Spikes_Metal_C.GetFireLocationAndRotation
-// (Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// struct FTransform              ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
-
-struct FTransform ATrap_Wall_Spikes_Metal_C::GetFireLocationAndRotation()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Trap_Wall_Spikes_Metal.Trap_Wall_Spikes_Metal_C.GetFireLocationAndRotation");
-
-	ATrap_Wall_Spikes_Metal_C_GetFireLocationAndRotation_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
@@ -311,6 +307,23 @@ void ATrap_Wall_Spikes_Metal_C::OnWorldReady()
 	static auto fn = UObject::FindObject<UFunction>("Function Trap_Wall_Spikes_Metal.Trap_Wall_Spikes_Metal_C.OnWorldReady");
 
 	ATrap_Wall_Spikes_Metal_C_OnWorldReady_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Trap_Wall_Spikes_Metal.Trap_Wall_Spikes_Metal_C.OnInitTeam
+// (Event, Protected, BlueprintEvent)
+
+void ATrap_Wall_Spikes_Metal_C::OnInitTeam()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Trap_Wall_Spikes_Metal.Trap_Wall_Spikes_Metal_C.OnInitTeam");
+
+	ATrap_Wall_Spikes_Metal_C_OnInitTeam_Params params;
 
 	auto flags = fn->FunctionFlags;
 

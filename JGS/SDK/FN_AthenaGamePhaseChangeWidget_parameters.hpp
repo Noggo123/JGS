@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function AthenaGamePhaseChangeWidget.AthenaGamePhaseChangeWidget_C.SimplifiedAnimationFinished
+struct UAthenaGamePhaseChangeWidget_C_SimplifiedAnimationFinished_Params
+{
+};
 
 // Function AthenaGamePhaseChangeWidget.AthenaGamePhaseChangeWidget_C.PlayIntroAnimation
 struct UAthenaGamePhaseChangeWidget_C_PlayIntroAnimation_Params
@@ -37,13 +42,18 @@ struct UAthenaGamePhaseChangeWidget_C_UpdateMessaging_Params
 // Function AthenaGamePhaseChangeWidget.AthenaGamePhaseChangeWidget_C.OnAnimationFinished
 struct UAthenaGamePhaseChangeWidget_C_OnAnimationFinished_Params
 {
-	class UWidgetAnimation**                           Animation;                                                // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UWidgetAnimation**                           Animation;                                                // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function AthenaGamePhaseChangeWidget.AthenaGamePhaseChangeWidget_C.GamePhaseStepChanged
 struct UAthenaGamePhaseChangeWidget_C_GamePhaseStepChanged_Params
 {
 	EAthenaGamePhaseStep*                              Step;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaGamePhaseChangeWidget.AthenaGamePhaseChangeWidget_C.Construct
+struct UAthenaGamePhaseChangeWidget_C_Construct_Params
+{
 };
 
 // Function AthenaGamePhaseChangeWidget.AthenaGamePhaseChangeWidget_C.ExecuteUbergraph_AthenaGamePhaseChangeWidget

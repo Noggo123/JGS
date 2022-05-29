@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,136 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function HUD_TeamInfo.HUD_TeamInfo_C.HandleTeamHitInfoChanged
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TArray<float>                  HealthFractions                (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// TArray<float>                  ShieldFractions                (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-
-void UHUD_TeamInfo_C::HandleTeamHitInfoChanged(TArray<float>* HealthFractions, TArray<float>* ShieldFractions)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HUD_TeamInfo.HUD_TeamInfo_C.HandleTeamHitInfoChanged");
-
-	UHUD_TeamInfo_C_HandleTeamHitInfoChanged_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (HealthFractions != nullptr)
-		*HealthFractions = params.HealthFractions;
-	if (ShieldFractions != nullptr)
-		*ShieldFractions = params.ShieldFractions;
-}
-
-
-// Function HUD_TeamInfo.HUD_TeamInfo_C.ClearContents
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UHUD_TeamInfo_C::ClearContents()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HUD_TeamInfo.HUD_TeamInfo_C.ClearContents");
-
-	UHUD_TeamInfo_C_ClearContents_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HUD_TeamInfo.HUD_TeamInfo_C.AppendTeamMember
-// (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FFortTeamMemberInfo     TeamMemberInfo                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// int                            TeamMemberNumber               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UHUD_TeamInfo_C::AppendTeamMember(int TeamMemberNumber, struct FFortTeamMemberInfo* TeamMemberInfo)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HUD_TeamInfo.HUD_TeamInfo_C.AppendTeamMember");
-
-	UHUD_TeamInfo_C_AppendTeamMember_Params params;
-	params.TeamMemberNumber = TeamMemberNumber;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (TeamMemberInfo != nullptr)
-		*TeamMemberInfo = params.TeamMemberInfo;
-}
-
-
-// Function HUD_TeamInfo.HUD_TeamInfo_C.ShiftTeamMembers
-// (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FFortTeamMemberInfo     TeamMemberInfo                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// int                            Index                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UHUD_TeamInfo_C::ShiftTeamMembers(int Index, struct FFortTeamMemberInfo* TeamMemberInfo)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HUD_TeamInfo.HUD_TeamInfo_C.ShiftTeamMembers");
-
-	UHUD_TeamInfo_C_ShiftTeamMembers_Params params;
-	params.Index = Index;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (TeamMemberInfo != nullptr)
-		*TeamMemberInfo = params.TeamMemberInfo;
-}
-
-
-// Function HUD_TeamInfo.HUD_TeamInfo_C.HandleTeamMemberChanged
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FFortTeamMemberInfo     Member_Info                    (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UHUD_TeamInfo_C::HandleTeamMemberChanged(const struct FFortTeamMemberInfo& Member_Info)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HUD_TeamInfo.HUD_TeamInfo_C.HandleTeamMemberChanged");
-
-	UHUD_TeamInfo_C_HandleTeamMemberChanged_Params params;
-	params.Member_Info = Member_Info;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HUD_TeamInfo.HUD_TeamInfo_C.HandleTeamMemberRemoved
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int                            Member_Index                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UHUD_TeamInfo_C::HandleTeamMemberRemoved(int Member_Index)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HUD_TeamInfo.HUD_TeamInfo_C.HandleTeamMemberRemoved");
-
-	UHUD_TeamInfo_C_HandleTeamMemberRemoved_Params params;
-	params.Member_Index = Member_Index;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function HUD_TeamInfo.HUD_TeamInfo_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -159,25 +29,8 @@ void UHUD_TeamInfo_C::Construct()
 }
 
 
-// Function HUD_TeamInfo.HUD_TeamInfo_C.HandlePartyLeft
-// (BlueprintCallable, BlueprintEvent)
-
-void UHUD_TeamInfo_C::HandlePartyLeft()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HUD_TeamInfo.HUD_TeamInfo_C.HandlePartyLeft");
-
-	UHUD_TeamInfo_C_HandlePartyLeft_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function HUD_TeamInfo.HUD_TeamInfo_C.ExecuteUbergraph_HUD_TeamInfo
-// (HasDefaults)
+// ()
 // Parameters:
 // int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 

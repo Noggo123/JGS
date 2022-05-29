@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -31,13 +29,13 @@ public:
 	class UNamedSlot*                                  ToastDisplayLayer;                                        // 0x0418(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
 	class UNamedSlot*                                  Tutorial_Layer;                                           // 0x0420(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
 	class UTutorialOverlay_C*                          TutorialOverlay;                                          // 0x0428(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
-	class UCommonActivatablePanel*                     CurrentModalWidget;                                       // 0x0430(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UCommonActivatablePanel*                     CurrentModalWidget;                                       // 0x0430(0x0008) (Edit, BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData)
 	TArray<class UCommonActivatablePanel*>             ModalQueue;                                               // 0x0438(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
 	TArray<struct FFortDialogDescription_NUI>          ConfirmationQueue;                                        // 0x0448(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
-	class UConfirmationWindow_C*                       ConfirmationWindow;                                       // 0x0458(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UErrorWindow_C*                              ErrorWindow;                                              // 0x0460(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UWebPurchase_C*                              WebPurchaseWindow;                                        // 0x0468(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UProgressModalWidget_C*                      ControllerDisconnectedModal;                              // 0x0470(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UConfirmationWindow_C*                       ConfirmationWindow;                                       // 0x0458(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
+	class UErrorWindow_C*                              ErrorWindow;                                              // 0x0460(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
+	class UWebPurchase_C*                              WebPurchaseWindow;                                        // 0x0468(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
+	class UProgressModalWidget_C*                      ControllerDisconnectedModal;                              // 0x0470(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
 	bool                                               bClosingConfirmation;                                     // 0x0478(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	bool                                               bClosingErrorDialog;                                      // 0x0479(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	bool                                               bShouldTriggerCameraModeOnClose;                          // 0x047A(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
@@ -76,19 +74,21 @@ public:
 	void QueueModalPanel(class UCommonActivatablePanel* ActivatablePanel);
 	void PopCurrentModal();
 	void ClearLayers();
+	void DialogResult_A5F073FB438FB0A3BEBB84BE5DB2FBA2(EFortDialogResult Result, const struct FName& ResultName);
 	void DisplayStateContent(bool* bDisplay);
 	void OnStateStarted();
 	void Destruct();
-	void KillConfirmation();
-	void Construct();
 	void DisplayErrorDialog(struct FFortErrorInfo* Info);
 	void OnShowConfirmation_NUI(struct FFortDialogDescription_NUI* Description);
+	void KillConfirmation();
 	void UpdateStateWidgetContent(class UFortUIStateWidget_NUI** StateWidget);
 	void QueueActivatablePanelIntoModalLayer(class UCommonActivatablePanel** Panel);
 	void OnStateEnded();
 	void PopActivatablePanelInModalLayer(class UCommonActivatablePanel** Panel);
 	void CloseConfirmationWindow();
 	void CloseErrorWindow();
+	void Construct();
+	void OnGameWindowCloseButtonClicked();
 	void ExecuteUbergraph_UIManager(int EntryPoint);
 };
 

@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass GA_Trap_FloorSpikes.GA_Trap_FloorSpikes_C
-// 0x0000 (0x0AE0 - 0x0AE0)
+// 0x0000 (0x0AF0 - 0x0AF0)
 class UGA_Trap_FloorSpikes_C : public UGA_TrapGeneric_C
 {
 public:

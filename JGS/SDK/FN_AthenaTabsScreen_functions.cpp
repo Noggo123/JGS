@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function AthenaTabsScreen.AthenaTabsScreen_C.SetTopBar
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UTopBar_C*               inTopbar                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UTopBar_C*               inTopbar                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UAthenaTabsScreen_C::SetTopBar(class UTopBar_C* inTopbar)
 {
@@ -56,7 +56,7 @@ void UAthenaTabsScreen_C::HandleTabSelected(const struct FName& TabName)
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UAthenaTabsScreen_C::HandleTabCreated(const struct FName& TabId, class UCommonButton* TabButton)
 {
@@ -91,28 +91,11 @@ void UAthenaTabsScreen_C::OnActivated()
 }
 
 
-// Function AthenaTabsScreen.AthenaTabsScreen_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UAthenaTabsScreen_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaTabsScreen.AthenaTabsScreen_C.Construct");
-
-	UAthenaTabsScreen_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function AthenaTabsScreen.AthenaTabsScreen_C.BndEvt__TopTabList_K2Node_ComponentBoundEvent_0_OnTabButtonCreated__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
 // struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UAthenaTabsScreen_C::BndEvt__TopTabList_K2Node_ComponentBoundEvent_0_OnTabButtonCreated__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton)
 {
@@ -171,7 +154,7 @@ void UAthenaTabsScreen_C::OnDeactivated()
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonUserWidget*       TabWidget                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonUserWidget*       TabWidget                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UAthenaTabsScreen_C::HandleTabContentCreated(const struct FName& TabId, class UCommonUserWidget* TabWidget)
 {
@@ -189,17 +172,14 @@ void UAthenaTabsScreen_C::HandleTabContentCreated(const struct FName& TabId, cla
 }
 
 
-// Function AthenaTabsScreen.AthenaTabsScreen_C.BndEvt__MainMenuButton_K2Node_ComponentBoundEvent_416_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// Function AthenaTabsScreen.AthenaTabsScreen_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void UAthenaTabsScreen_C::BndEvt__MainMenuButton_K2Node_ComponentBoundEvent_416_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
+void UAthenaTabsScreen_C::Construct()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaTabsScreen.AthenaTabsScreen_C.BndEvt__MainMenuButton_K2Node_ComponentBoundEvent_416_CommonButtonClicked__DelegateSignature");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaTabsScreen.AthenaTabsScreen_C.Construct");
 
-	UAthenaTabsScreen_C_BndEvt__MainMenuButton_K2Node_ComponentBoundEvent_416_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
+	UAthenaTabsScreen_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -212,7 +192,7 @@ void UAthenaTabsScreen_C::BndEvt__MainMenuButton_K2Node_ComponentBoundEvent_416_
 // Function AthenaTabsScreen.AthenaTabsScreen_C.BndEvt__Social_K2Node_ComponentBoundEvent_89_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UAthenaTabsScreen_C::BndEvt__Social_K2Node_ComponentBoundEvent_89_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -240,6 +220,82 @@ void UAthenaTabsScreen_C::PreConstruct(bool* IsDesignTime)
 
 	UAthenaTabsScreen_C_PreConstruct_Params params;
 	params.IsDesignTime = IsDesignTime;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaTabsScreen.AthenaTabsScreen_C.OnActiveFriendsCountUpdated
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            ActiveFriendsCount             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaTabsScreen_C::OnActiveFriendsCountUpdated(int ActiveFriendsCount)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaTabsScreen.AthenaTabsScreen_C.OnActiveFriendsCountUpdated");
+
+	UAthenaTabsScreen_C_OnActiveFriendsCountUpdated_Params params;
+	params.ActiveFriendsCount = ActiveFriendsCount;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaTabsScreen.AthenaTabsScreen_C.DisableTabsHotfixedOffTabs
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           NewParam                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void UAthenaTabsScreen_C::DisableTabsHotfixedOffTabs(const struct FName& TabId, class UCommonButton* NewParam)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaTabsScreen.AthenaTabsScreen_C.DisableTabsHotfixedOffTabs");
+
+	UAthenaTabsScreen_C_DisableTabsHotfixedOffTabs_Params params;
+	params.TabId = TabId;
+	params.NewParam = NewParam;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaTabsScreen.AthenaTabsScreen_C.ShowReplayBrowser
+// (Event, Protected, BlueprintEvent)
+
+void UAthenaTabsScreen_C::ShowReplayBrowser()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaTabsScreen.AthenaTabsScreen_C.ShowReplayBrowser");
+
+	UAthenaTabsScreen_C_ShowReplayBrowser_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaTabsScreen.AthenaTabsScreen_C.BndEvt__LargeMenuButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UAthenaTabsScreen_C::BndEvt__LargeMenuButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaTabsScreen.AthenaTabsScreen_C.BndEvt__LargeMenuButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
+
+	UAthenaTabsScreen_C_BndEvt__LargeMenuButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 

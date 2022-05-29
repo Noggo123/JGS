@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass BP_FortLiveStreamGrantWindowExpires.BP_FortLiveStreamGrantWindowExpires_C
-// 0x00F4 (0x0304 - 0x0210)
+// 0x0104 (0x0314 - 0x0210)
 class UBP_FortLiveStreamGrantWindowExpires_C : public UFortLiveStreamGrantWindowExpires
 {
 public:
@@ -25,15 +23,15 @@ public:
 	class UCommonTextBlock*                            ExpirationText;                                           // 0x0228(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
 	class USizeBox*                                    SizeBox_0_1;                                              // 0x0230(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
 	class UImage*                                      StreamImage;                                              // 0x0238(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
-	struct FSlateBrush                                 StreamBrush;                                              // 0x0240(0x0078) (Edit, BlueprintVisible)
-	struct FTimespan                                   SimulatedTimespan;                                        // 0x02B8(0x0008) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FScriptMulticastDelegate                    StreamTimerExpired;                                       // 0x02C0(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable)
-	struct FScriptMulticastDelegate                    StreamTimerStarted;                                       // 0x02D0(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable)
-	struct FTimerHandle                                SimulatedExpirationTimerHandle;                           // 0x02E0(0x0008) (Edit, BlueprintVisible, DisableEditOnInstance)
-	int                                                CurrentName;                                              // 0x02E8(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	int                                                TotalNames;                                               // 0x02EC(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	TArray<struct FText>                               Viewers;                                                  // 0x02F0(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
-	float                                              SecondsToDisplayName;                                     // 0x0300(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FSlateBrush                                 StreamBrush;                                              // 0x0240(0x0088) (Edit, BlueprintVisible)
+	struct FTimespan                                   SimulatedTimespan;                                        // 0x02C8(0x0008) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FScriptMulticastDelegate                    StreamTimerExpired;                                       // 0x02D0(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable)
+	struct FScriptMulticastDelegate                    StreamTimerStarted;                                       // 0x02E0(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable)
+	struct FTimerHandle                                SimulatedExpirationTimerHandle;                           // 0x02F0(0x0008) (Edit, BlueprintVisible, DisableEditOnInstance)
+	int                                                CurrentName;                                              // 0x02F8(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	int                                                TotalNames;                                               // 0x02FC(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	TArray<struct FText>                               Viewers;                                                  // 0x0300(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	float                                              SecondsToDisplayName;                                     // 0x0310(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -45,8 +43,8 @@ public:
 	class UWidget* GetToolTipWidget_0_1();
 	void Clean_Up_Name_Text();
 	void Update_Name_Text();
-	void Update_Expiration_Text(struct FTimespan* Timespan);
-	void Set_Stream_Brush(struct FSlateBrush* InBrush);
+	void Update_Expiration_Text(const struct FTimespan& Timespan);
+	void Set_Stream_Brush(const struct FSlateBrush& InBrush);
 	void PreConstruct(bool* IsDesignTime);
 	void Construct();
 	void OnLiveStreamingQuestWindowStarts_Event_0_1(float Seconds);

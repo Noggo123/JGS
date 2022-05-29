@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,41 +13,42 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass PlayerPawn_Constructor.PlayerPawn_Constructor_C
-// 0x0104 (0x1E30 - 0x1D2C)
+// 0x010B (0x21B8 - 0x20AD)
 class APlayerPawn_Constructor_C : public APlayerPawn_Generic_C
 {
 public:
-	unsigned char                                      UnknownData00[0x4];                                       // 0x1D2C(0x0004) MISSED OFFSET
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x1D30(0x0008) (Transient, DuplicateTransient)
-	class UStaticMeshComponent*                        ServerShieldMesh;                                         // 0x1D38(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UBoxComponent*                               ShieldCollider;                                           // 0x1D40(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UStaticMeshComponent*                        ShieldMesh;                                               // 0x1D48(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UParticleSystemComponent*                    IFFShield_Light;                                          // 0x1D50(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UBoxComponent*                               BullRushPoke;                                             // 0x1D58(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              TakeDamageTimeline_LineBrightness_E993138E4A26ED909055A89FDA7BCA47;// 0x1D60(0x0004) (ZeroConstructor, IsPlainOldData)
-	float                                              TakeDamageTimeline_DamageFlash_E993138E4A26ED909055A89FDA7BCA47;// 0x1D64(0x0004) (ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ETimelineDirection>                    TakeDamageTimeline__Direction_E993138E4A26ED909055A89FDA7BCA47;// 0x1D68(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x7];                                       // 0x1D69(0x0007) MISSED OFFSET
-	class UTimelineComponent*                          TakeDamageTimeline;                                       // 0x1D70(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UParticleSystem*                             P_Activate;                                               // 0x1D78(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class USkeletalMeshComponent*                      ShieldPlayerMesh;                                         // 0x1D80(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UMaterialInstanceDynamic*                    MID_IFF_ShieldFlicker;                                    // 0x1D88(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FName                                       DamageFlash;                                              // 0x1D90(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FName                                       LineBrightness;                                           // 0x1D98(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UParticleSystem*                             P_TIABExplosion;                                          // 0x1DA0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class USoundBase*                                  Sound_TIAB;                                               // 0x1DA8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class USoundBase*                                  Sound_Kinetic_Overload;                                   // 0x1DB0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class USoundBase*                                  Sound_Shield_Start;                                       // 0x1DB8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class USoundBase*                                  Sound_Shield_Stop;                                        // 0x1DC0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class USoundBase*                                  Sound_Shield_Impact_0_1;                                  // 0x1DC8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FVector                                     Finalized_IFF_BackPack_Offset;                            // 0x1DD0(0x000C) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
-	struct FVector                                     IFF_Local_Offset_Without_Backpack;                        // 0x1DDC(0x000C) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
-	struct FVector                                     IFF_Local_Offset_With_Back_Pack;                          // 0x1DE8(0x000C) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x4];                                       // 0x1DF4(0x0004) MISSED OFFSET
-	struct FScriptMulticastDelegate                    PlayArmAnim;                                              // 0x1DF8(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable)
-	TArray<class UPrimitiveComponent*>                 AllIFFMeshes;                                             // 0x1E08(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
-	class UMaterialInterface*                          IFFMaterialParent;                                        // 0x1E18(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	TArray<struct FIFFBoneConfig>                      IFFBoneConfigs;                                           // 0x1E20(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x20AD(0x0003) MISSED OFFSET
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x20B0(0x0008) (Transient, DuplicateTransient)
+	class UStaticMeshComponent*                        ServerShieldMesh;                                         // 0x20B8(0x0008) (BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UBoxComponent*                               ShieldCollider;                                           // 0x20C0(0x0008) (BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UStaticMeshComponent*                        ShieldMesh;                                               // 0x20C8(0x0008) (BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UParticleSystemComponent*                    IFFShield_Light;                                          // 0x20D0(0x0008) (BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UBoxComponent*                               BullRushPoke;                                             // 0x20D8(0x0008) (BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData)
+	float                                              TakeDamageTimeline_LineBrightness_E993138E4A26ED909055A89FDA7BCA47;// 0x20E0(0x0004) (ZeroConstructor, IsPlainOldData)
+	float                                              TakeDamageTimeline_DamageFlash_E993138E4A26ED909055A89FDA7BCA47;// 0x20E4(0x0004) (ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ETimelineDirection>                    TakeDamageTimeline__Direction_E993138E4A26ED909055A89FDA7BCA47;// 0x20E8(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x7];                                       // 0x20E9(0x0007) MISSED OFFSET
+	class UTimelineComponent*                          TakeDamageTimeline;                                       // 0x20F0(0x0008) (BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UParticleSystem*                             P_Activate;                                               // 0x20F8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class USkeletalMeshComponent*                      ShieldPlayerMesh;                                         // 0x2100(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
+	class UMaterialInstanceDynamic*                    MID_IFF_ShieldFlicker;                                    // 0x2108(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FName                                       DamageFlash;                                              // 0x2110(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FName                                       LineBrightness;                                           // 0x2118(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UParticleSystem*                             P_TIABExplosion;                                          // 0x2120(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class USoundBase*                                  Sound_TIAB;                                               // 0x2128(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class USoundBase*                                  Sound_Kinetic_Overload;                                   // 0x2130(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class USoundBase*                                  Sound_Shield_Start;                                       // 0x2138(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class USoundBase*                                  Sound_Shield_Stop;                                        // 0x2140(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class USoundBase*                                  Sound_Shield_Impact_0_1;                                  // 0x2148(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FVector                                     Finalized_IFF_BackPack_Offset;                            // 0x2150(0x000C) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
+	struct FVector                                     IFF_Local_Offset_Without_Backpack;                        // 0x215C(0x000C) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
+	struct FVector                                     IFF_Local_Offset_With_Back_Pack;                          // 0x2168(0x000C) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x4];                                       // 0x2174(0x0004) MISSED OFFSET
+	struct FScriptMulticastDelegate                    PlayArmAnim;                                              // 0x2178(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable)
+	TArray<class UPrimitiveComponent*>                 AllIFFMeshes;                                             // 0x2188(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	class UMaterialInterface*                          IFFMaterialParent;                                        // 0x2198(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	TArray<struct FIFFBoneConfig>                      IFFBoneConfigs;                                           // 0x21A0(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	class AB_Constructor_BASE_C*                       SavedBase;                                                // 0x21B0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -58,6 +57,7 @@ public:
 	}
 
 
+	void OnRep_SavedBase();
 	void SetIFFMeshesEnabled(bool IsEnabled);
 	void UserConstructionScript();
 	void TakeDamageTimeline__FinishedFunc();
@@ -76,6 +76,7 @@ public:
 	void SetMenuScreenClassName();
 	void MultiToggleShield(bool Toggle);
 	void ToggleShield(bool Toggle);
+	void SetBase(class AB_Constructor_BASE_C* SavedBase);
 	void ExecuteUbergraph_PlayerPawn_Constructor(int EntryPoint);
 	void PlayArmAnim__DelegateSignature();
 };

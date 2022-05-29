@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass ButtonStyle-Solid-Square-CollectionBook.ButtonStyle-Solid-Square-CollectionBook_C
-// 0x0000 (0x0470 - 0x0470)
+// 0x0000 (0x04F0 - 0x04F0)
 class UButtonStyle_Solid_Square_CollectionBook_C : public UCommonButtonStyle
 {
 public:

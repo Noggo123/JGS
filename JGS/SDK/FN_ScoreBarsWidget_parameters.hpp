@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -28,7 +28,7 @@ struct UScoreBarsWidget_C_HandleScoreNumberChanged_Params
 // Function ScoreBarsWidget.ScoreBarsWidget_C.HandleMessageDisplayed
 struct UScoreBarsWidget_C_HandleMessageDisplayed_Params
 {
-	class UFortUIMessageItemWidget*                    ItemWidget;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortUIMessageItemWidget*                    ItemWidget;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function ScoreBarsWidget.ScoreBarsWidget_C.HideScoreMessageSlots
@@ -44,7 +44,7 @@ struct UScoreBarsWidget_C_RegisterForScoreStreamEvents_Params
 // Function ScoreBarsWidget.ScoreBarsWidget_C.HandleScoreMessageExpired
 struct UScoreBarsWidget_C_HandleScoreMessageExpired_Params
 {
-	class UFortUIMessageItemWidget*                    Expired_Message;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortUIMessageItemWidget*                    Expired_Message;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function ScoreBarsWidget.ScoreBarsWidget_C.TryGetNextScoreMessage

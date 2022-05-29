@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -73,7 +73,7 @@ void UResults_BadgeLootBar_C::SetSkippingToEnd()
 // Function Results_BadgeLootBar.Results_BadgeLootBar_C.PlayAnimationCommon
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*        Animation                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidgetAnimation*        Animation                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UResults_BadgeLootBar_C::PlayAnimationCommon(class UWidgetAnimation* Animation)
 {
@@ -93,7 +93,7 @@ void UResults_BadgeLootBar_C::PlayAnimationCommon(class UWidgetAnimation* Animat
 // Function Results_BadgeLootBar.Results_BadgeLootBar_C.GetBadgePoints
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UResults_Badge_C*        Badge                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UResults_Badge_C*        Badge                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // int                            Points                         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UResults_BadgeLootBar_C::GetBadgePoints(class UResults_Badge_C* Badge, int* Points)
@@ -225,7 +225,7 @@ void UResults_BadgeLootBar_C::BndEvt__Anim_LevelUp_K2Node_ComponentBoundEvent_4_
 // Function Results_BadgeLootBar.Results_BadgeLootBar_C.Add Badge Points Sequence
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UResults_Badge_C*        Badge                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UResults_Badge_C*        Badge                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UResults_BadgeLootBar_C::Add_Badge_Points_Sequence(class UResults_Badge_C* Badge)
 {

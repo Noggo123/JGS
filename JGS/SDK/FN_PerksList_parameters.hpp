@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -19,23 +19,23 @@ struct UPerksList_C_ResetVariables_Params
 {
 };
 
+// Function PerksList.PerksList_C.Construct
+struct UPerksList_C_Construct_Params
+{
+};
+
 // Function PerksList.PerksList_C.OnGeneratePerkTier
 struct UPerksList_C_OnGeneratePerkTier_Params
 {
 	struct FFortUIPerkTier*                            FortPerkTier;                                             // (BlueprintVisible, BlueprintReadOnly, Parm)
-	class UFortPerkTierWidget_NUI**                    PerkTierWidget;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortPerkTierWidget_NUI**                    PerkTierWidget;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function PerksList.PerksList_C.OnGeneratePerk
 struct UPerksList_C_OnGeneratePerk_Params
 {
 	struct FFortUIPerk*                                FortPerk;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
-	class UFortPerkWidget_NUI**                        PerkWidget;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function PerksList.PerksList_C.Construct
-struct UPerksList_C_Construct_Params
-{
+	class UFortPerkWidget_NUI**                        PerkWidget;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function PerksList.PerksList_C.OnHeroChanged

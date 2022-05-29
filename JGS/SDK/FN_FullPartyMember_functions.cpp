@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -109,7 +109,7 @@ void UFullPartyMember_C::UpdateStatDisplays()
 // Function FullPartyMember.FullPartyMember_C.InitializeConnectedWidget
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFullPartyMemberConnected_C* ConnectedWidget                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFullPartyMemberConnected_C* ConnectedWidget                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UFullPartyMember_C::InitializeConnectedWidget(class UFullPartyMemberConnected_C* ConnectedWidget)
 {
@@ -192,7 +192,7 @@ void UFullPartyMember_C::UpdateLocalPlayerAction()
 // Function FullPartyMember.FullPartyMember_C.DuplicateConnectedWidget
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFullPartyMemberConnected_C* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// class UFullPartyMemberConnected_C* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 
 class UFullPartyMemberConnected_C* UFullPartyMember_C::DuplicateConnectedWidget()
 {

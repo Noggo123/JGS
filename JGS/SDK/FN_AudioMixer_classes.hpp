@@ -1,18 +1,59 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------
 //Classes
 //---------------------------------------------------------------------------
+
+// Class AudioMixer.SynthComponent
+// 0x03C0 (0x0650 - 0x0290)
+class USynthComponent : public USceneComponent
+{
+public:
+	unsigned char                                      bAutoDestroy : 1;                                         // 0x0290(0x0001)
+	unsigned char                                      bStopWhenOwnerDestroyed : 1;                              // 0x0290(0x0001)
+	unsigned char                                      bAllowSpatialization : 1;                                 // 0x0290(0x0001) (Edit, BlueprintVisible)
+	unsigned char                                      bOverrideAttenuation : 1;                                 // 0x0290(0x0001) (Edit, BlueprintVisible)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0291(0x0007) MISSED OFFSET
+	class USoundAttenuation*                           AttenuationSettings;                                      // 0x0298(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	struct FSoundAttenuationSettings                   AttenuationOverrides;                                     // 0x02A0(0x02A8) (Edit, BlueprintVisible)
+	class USoundConcurrency*                           ConcurrencySettings;                                      // 0x0548(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class USoundClass*                                 SoundClass;                                               // 0x0550(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class USoundEffectSourcePresetChain*               SourceEffectChain;                                        // 0x0558(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class USoundSubmix*                                SoundSubmix;                                              // 0x0560(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	TArray<struct FSoundSubmixSendInfo>                SoundSubmixSends;                                         // 0x0568(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
+	unsigned char                                      bIsUISound : 1;                                           // 0x0578(0x0001) (Edit, BlueprintVisible)
+	unsigned char                                      UnknownData01[0x3];                                       // 0x0579(0x0003) MISSED OFFSET
+	int                                                EnvelopeFollowerAttackTime;                               // 0x057C(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	int                                                EnvelopeFollowerReleaseTime;                              // 0x0580(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x4];                                       // 0x0584(0x0004) MISSED OFFSET
+	struct FScriptMulticastDelegate                    OnAudioEnvelopeValue;                                     // 0x0588(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
+	unsigned char                                      UnknownData03[0x80];                                      // 0x0598(0x0080) MISSED OFFSET
+	class USynthSound*                                 Synth;                                                    // 0x0618(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	class UAudioComponent*                             AudioComponent;                                           // 0x0620(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
+	unsigned char                                      UnknownData04[0x28];                                      // 0x0628(0x0028) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class AudioMixer.SynthComponent");
+		return ptr;
+	}
+
+
+	void Stop();
+	void Start();
+	void SetVolumeMultiplier(float VolumeMultiplier);
+	void SetSubmixSend(class USoundSubmix* Submix, float SendLevel);
+	bool IsPlaying();
+};
+
 
 // Class AudioMixer.AudioMixerBlueprintLibrary
 // 0x0000 (0x0028 - 0x0028)
@@ -96,11 +137,11 @@ public:
 
 
 // Class AudioMixer.SynthSound
-// 0x0020 (0x0300 - 0x02E0)
+// 0x0020 (0x02B0 - 0x0290)
 class USynthSound : public USoundWaveProcedural
 {
 public:
-	unsigned char                                      UnknownData00[0x20];                                      // 0x02E0(0x0020) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x20];                                      // 0x0290(0x0020) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -108,43 +149,6 @@ public:
 		return ptr;
 	}
 
-};
-
-
-// Class AudioMixer.SynthComponent
-// 0x0340 (0x05D0 - 0x0290)
-class USynthComponent : public USceneComponent
-{
-public:
-	unsigned char                                      bAutoDestroy : 1;                                         // 0x0290(0x0001)
-	unsigned char                                      bStopWhenOwnerDestroyed : 1;                              // 0x0290(0x0001)
-	unsigned char                                      bAllowSpatialization : 1;                                 // 0x0290(0x0001) (Edit, BlueprintVisible)
-	unsigned char                                      bOverrideAttenuation : 1;                                 // 0x0290(0x0001) (Edit, BlueprintVisible)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0291(0x0007) MISSED OFFSET
-	class USoundAttenuation*                           AttenuationSettings;                                      // 0x0298(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	struct FSoundAttenuationSettings                   AttenuationOverrides;                                     // 0x02A0(0x02C0) (Edit, BlueprintVisible)
-	class USoundConcurrency*                           ConcurrencySettings;                                      // 0x0560(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class USoundClass*                                 SoundClass;                                               // 0x0568(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	class USoundEffectSourcePresetChain*               SourceEffectChain;                                        // 0x0570(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	class USoundSubmix*                                SoundSubmix;                                              // 0x0578(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	TArray<struct FSoundSubmixSendInfo>                SoundSubmixSends;                                         // 0x0580(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
-	unsigned char                                      bIsUISound : 1;                                           // 0x0590(0x0001) (Edit, BlueprintVisible)
-	unsigned char                                      UnknownData01[0x7];                                       // 0x0591(0x0007) MISSED OFFSET
-	class USynthSound*                                 Synth;                                                    // 0x0598(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	class UAudioComponent*                             AudioComponent;                                           // 0x05A0(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x28];                                      // 0x05A8(0x0028) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class AudioMixer.SynthComponent");
-		return ptr;
-	}
-
-
-	void Stop();
-	void Start();
-	void SetSubmixSend(class USoundSubmix* Submix, float SendLevel);
-	bool IsPlaying();
 };
 
 

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -60,27 +60,6 @@ void ATrap_Floor_Player_Campfire_C::OnRep_IsActive()
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-}
-
-
-// Function Trap_Floor_Player_Campfire.Trap_Floor_Player_Campfire_C.GetFireLocationAndRotation
-// (Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// struct FTransform              ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
-
-struct FTransform ATrap_Floor_Player_Campfire_C::GetFireLocationAndRotation()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Trap_Floor_Player_Campfire.Trap_Floor_Player_Campfire_C.GetFireLocationAndRotation");
-
-	ATrap_Floor_Player_Campfire_C_GetFireLocationAndRotation_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 

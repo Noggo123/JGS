@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function PlayerPawn_Constructor.PlayerPawn_Constructor_C.OnRep_SavedBase
+struct APlayerPawn_Constructor_C_OnRep_SavedBase_Params
+{
+};
 
 // Function PlayerPawn_Constructor.PlayerPawn_Constructor_C.SetIFFMeshesEnabled
 struct APlayerPawn_Constructor_C_SetIFFMeshesEnabled_Params
@@ -117,6 +122,12 @@ struct APlayerPawn_Constructor_C_MultiToggleShield_Params
 struct APlayerPawn_Constructor_C_ToggleShield_Params
 {
 	bool                                               Toggle;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function PlayerPawn_Constructor.PlayerPawn_Constructor_C.SetBase
+struct APlayerPawn_Constructor_C_SetBase_Params
+{
+	class AB_Constructor_BASE_C*                       SavedBase;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function PlayerPawn_Constructor.PlayerPawn_Constructor_C.ExecuteUbergraph_PlayerPawn_Constructor

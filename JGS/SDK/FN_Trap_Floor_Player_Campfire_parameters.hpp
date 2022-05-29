@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -27,12 +27,6 @@ struct ATrap_Floor_Player_Campfire_C_HealTicks_Params
 // Function Trap_Floor_Player_Campfire.Trap_Floor_Player_Campfire_C.OnRep_IsActive
 struct ATrap_Floor_Player_Campfire_C_OnRep_IsActive_Params
 {
-};
-
-// Function Trap_Floor_Player_Campfire.Trap_Floor_Player_Campfire_C.GetFireLocationAndRotation
-struct ATrap_Floor_Player_Campfire_C_GetFireLocationAndRotation_Params
-{
-	struct FTransform                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
 };
 
 // Function Trap_Floor_Player_Campfire.Trap_Floor_Player_Campfire_C.UserConstructionScript

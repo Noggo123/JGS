@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,20 +12,64 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function DailyQuestsPanel.DailyQuestsPanel_C.UpdateBattlePass
+// Function DailyQuestsPanel.DailyQuestsPanel_C.Reset Button Anim
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void UDailyQuestsPanel_C::UpdateBattlePass()
+void UDailyQuestsPanel_C::Reset_Button_Anim()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function DailyQuestsPanel.DailyQuestsPanel_C.UpdateBattlePass");
+	static auto fn = UObject::FindObject<UFunction>("Function DailyQuestsPanel.DailyQuestsPanel_C.Reset Button Anim");
 
-	UDailyQuestsPanel_C_UpdateBattlePass_Params params;
+	UDailyQuestsPanel_C_Reset_Button_Anim_Params params;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+}
+
+
+// Function DailyQuestsPanel.DailyQuestsPanel_C.SetHeightBasedOnInputMode
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UDailyQuestsPanel_C::SetHeightBasedOnInputMode()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DailyQuestsPanel.DailyQuestsPanel_C.SetHeightBasedOnInputMode");
+
+	UDailyQuestsPanel_C_SetHeightBasedOnInputMode_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DailyQuestsPanel.DailyQuestsPanel_C.CreateMultiQuestWidget
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<class UFortQuestItem*>  Quests                         (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// class UVerticalBox*            QuestList                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// bool                           QuestCompleted                 (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UDailyQuestsPanel_C::CreateMultiQuestWidget(class UVerticalBox* QuestList, TArray<class UFortQuestItem*>* Quests, bool* QuestCompleted)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DailyQuestsPanel.DailyQuestsPanel_C.CreateMultiQuestWidget");
+
+	UDailyQuestsPanel_C_CreateMultiQuestWidget_Params params;
+	params.QuestList = QuestList;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Quests != nullptr)
+		*Quests = params.Quests;
+	if (QuestCompleted != nullptr)
+		*QuestCompleted = params.QuestCompleted;
 }
 
 
@@ -50,10 +94,11 @@ void UDailyQuestsPanel_C::SetInputActionHandlers()
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UFortQuestItem*          Quest                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UVerticalBox*            QuestList                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TArray<class UFortQuestItem*>  QuestArray                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// class UVerticalBox*            QuestList                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // bool                           QuestIsCompleted               (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UDailyQuestsPanel_C::ProcessQuestUpdate(class UFortQuestItem* Quest, class UVerticalBox* QuestList, bool* QuestIsCompleted)
+void UDailyQuestsPanel_C::ProcessQuestUpdate(class UFortQuestItem* Quest, class UVerticalBox* QuestList, TArray<class UFortQuestItem*>* QuestArray, bool* QuestIsCompleted)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DailyQuestsPanel.DailyQuestsPanel_C.ProcessQuestUpdate");
 
@@ -67,6 +112,8 @@ void UDailyQuestsPanel_C::ProcessQuestUpdate(class UFortQuestItem* Quest, class 
 
 	fn->FunctionFlags = flags;
 
+	if (QuestArray != nullptr)
+		*QuestArray = params.QuestArray;
 	if (QuestIsCompleted != nullptr)
 		*QuestIsCompleted = params.QuestIsCompleted;
 }
@@ -178,7 +225,7 @@ void UDailyQuestsPanel_C::OnQuestsGranted(TArray<class UFortQuestItem*>* NewQues
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UFortQuestItem*          Quest                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UVerticalBox*            QuestList                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UVerticalBox*            QuestList                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // bool                           QuestCompleted                 (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UDailyQuestsPanel_C::CreateQuestWidget(class UFortQuestItem* Quest, class UVerticalBox* QuestList, bool* QuestCompleted)
@@ -254,7 +301,7 @@ void UDailyQuestsPanel_C::Construct()
 // Function DailyQuestsPanel.DailyQuestsPanel_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_66_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UDailyQuestsPanel_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_66_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -271,17 +318,34 @@ void UDailyQuestsPanel_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_66_C
 }
 
 
-// Function DailyQuestsPanel.DailyQuestsPanel_C.OnAccountInfoChanged
-// (Event, Public, HasOutParms, BlueprintEvent)
-// Parameters:
-// struct FFortPublicAccountInfo* Result                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// Function DailyQuestsPanel.DailyQuestsPanel_C.BndEvt__ClaimReward_K2Node_ComponentBoundEvent_0_OnWidgetAnimationPlaybackStatusChanged__DelegateSignature
+// (BlueprintEvent)
 
-void UDailyQuestsPanel_C::OnAccountInfoChanged(struct FFortPublicAccountInfo* Result)
+void UDailyQuestsPanel_C::BndEvt__ClaimReward_K2Node_ComponentBoundEvent_0_OnWidgetAnimationPlaybackStatusChanged__DelegateSignature()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function DailyQuestsPanel.DailyQuestsPanel_C.OnAccountInfoChanged");
+	static auto fn = UObject::FindObject<UFunction>("Function DailyQuestsPanel.DailyQuestsPanel_C.BndEvt__ClaimReward_K2Node_ComponentBoundEvent_0_OnWidgetAnimationPlaybackStatusChanged__DelegateSignature");
 
-	UDailyQuestsPanel_C_OnAccountInfoChanged_Params params;
-	params.Result = Result;
+	UDailyQuestsPanel_C_BndEvt__ClaimReward_K2Node_ComponentBoundEvent_0_OnWidgetAnimationPlaybackStatusChanged__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DailyQuestsPanel.DailyQuestsPanel_C.PreConstruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Parameters:
+// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UDailyQuestsPanel_C::PreConstruct(bool* IsDesignTime)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DailyQuestsPanel.DailyQuestsPanel_C.PreConstruct");
+
+	UDailyQuestsPanel_C_PreConstruct_Params params;
+	params.IsDesignTime = IsDesignTime;
 
 	auto flags = fn->FunctionFlags;
 
@@ -292,7 +356,7 @@ void UDailyQuestsPanel_C::OnAccountInfoChanged(struct FFortPublicAccountInfo* Re
 
 
 // Function DailyQuestsPanel.DailyQuestsPanel_C.ExecuteUbergraph_DailyQuestsPanel
-// (HasDefaults)
+// ()
 // Parameters:
 // int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 

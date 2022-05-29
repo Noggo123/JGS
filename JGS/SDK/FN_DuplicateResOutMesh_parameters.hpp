@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,18 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function DuplicateResOutMesh.DuplicateResOutMesh_C.Store Original Material for Teleport In
+struct ADuplicateResOutMesh_C_Store_Original_Material_for_Teleport_In_Params
+{
+};
+
+// Function DuplicateResOutMesh.DuplicateResOutMesh_C.External Mesh Masked Setup
+struct ADuplicateResOutMesh_C_External_Mesh_Masked_Setup_Params
+{
+	TArray<class USkeletalMeshComponent*>              External_Mesh_Component_Array;                            // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<class UMaterialInstanceDynamic*>            Corrected_Mid_Array;                                      // (Parm, OutParm, ZeroConstructor)
+};
 
 // Function DuplicateResOutMesh.DuplicateResOutMesh_C.ProcessSpawnInTimeline
 struct ADuplicateResOutMesh_C_ProcessSpawnInTimeline_Params
@@ -76,7 +88,7 @@ struct ADuplicateResOutMesh_C_ReceiveTick_Params
 struct ADuplicateResOutMesh_C_UpdateExternalParameters_Params
 {
 	TArray<class UMaterialInstanceDynamic*>            MID_Array;                                                // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-	TArray<class USkeletalMeshComponent*>              External_MEsh_Component_Array;                            // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<class USkeletalMeshComponent*>              External_Mesh_Component_Array;                            // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function DuplicateResOutMesh.DuplicateResOutMesh_C.ExecuteUbergraph_DuplicateResOutMesh

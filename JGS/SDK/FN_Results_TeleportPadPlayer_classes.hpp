@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -35,7 +33,7 @@ public:
 	bool                                               bIsLocalPlayer;                                           // 0x0271(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x6];                                       // 0x0272(0x0006) MISSED OFFSET
 	class UTexture2D*                                  ThumbsUp;                                                 // 0x0278(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FUniqueNetIdRepl                            UniqueNetID;                                              // 0x0280(0x0028) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FUniqueNetIdRepl                            UniqueNetId;                                              // 0x0280(0x0028) (Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FScriptMulticastDelegate                    OnMissionStatsClicked;                                    // 0x02A8(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable)
 	struct FScriptMulticastDelegate                    OnAddFriendClicked;                                       // 0x02B8(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable)
 	struct FScriptMulticastDelegate                    OnUpVoteClicked;                                          // 0x02C8(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable)

@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass ErrorEntry.ErrorEntry_C
-// 0x00B0 (0x02C0 - 0x0210)
+// 0x00C9 (0x02D9 - 0x0210)
 class UErrorEntry_C : public UCommonUserWidget
 {
 public:
@@ -25,6 +23,8 @@ public:
 	unsigned char                                      UnknownData00[0x8];                                       // 0x0228(0x0008) MISSED OFFSET
 	struct FFortErrorInfo                              ErrorInfo;                                                // 0x0230(0x0080) (Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FString                                     ErrorUrlBase;                                             // 0x02B0(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	struct FText                                       debugMessage;                                             // 0x02C0(0x0018) (Edit, BlueprintVisible)
+	bool                                               bIsDebugMode;                                             // 0x02D8(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -36,8 +36,8 @@ public:
 	void Center_on_Widget(bool* Did_Center);
 	void SetErrorInfo(const struct FFortErrorInfo& ErrorInfo);
 	void GetButtonVisibility(ESlateVisibility* NewParam);
-	void Construct();
 	void BndEvt__IconTextButton_K2Node_ComponentBoundEvent_65_CommonButtonClicked__DelegateSignature(class UCommonButton* Button);
+	void Construct();
 	void ExecuteUbergraph_ErrorEntry(int EntryPoint);
 };
 

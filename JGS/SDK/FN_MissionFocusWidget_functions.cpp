@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -52,7 +52,7 @@ void UMissionFocusWidget_C::HandleFocusedMission(class AFortMission* FocusedMiss
 // Function MissionFocusWidget.MissionFocusWidget_C.HandleTimerComponentChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortMissionTimerComponent* TimerComponent                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortMissionTimerComponent* TimerComponent                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UMissionFocusWidget_C::HandleTimerComponentChanged(class UFortMissionTimerComponent* TimerComponent)
 {

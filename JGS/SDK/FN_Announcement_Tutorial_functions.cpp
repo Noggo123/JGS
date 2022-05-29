@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -52,23 +52,21 @@ void UAnnouncement_Tutorial_C::CheckContinueTutorial(const struct FFortClientAnn
 // Function Announcement_Tutorial.Announcement_Tutorial_C.GetLightboxVisibility
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FFortClientAnnouncementData_Tutorial FortClientAnnouncementData_Tutorial (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortClientAnnouncementData_Tutorial FortClientAnnouncementData_Tutorial (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // ESlateVisibility               ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-ESlateVisibility UAnnouncement_Tutorial_C::GetLightboxVisibility(struct FFortClientAnnouncementData_Tutorial* FortClientAnnouncementData_Tutorial)
+ESlateVisibility UAnnouncement_Tutorial_C::GetLightboxVisibility(const struct FFortClientAnnouncementData_Tutorial& FortClientAnnouncementData_Tutorial)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Announcement_Tutorial.Announcement_Tutorial_C.GetLightboxVisibility");
 
 	UAnnouncement_Tutorial_C_GetLightboxVisibility_Params params;
+	params.FortClientAnnouncementData_Tutorial = FortClientAnnouncementData_Tutorial;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (FortClientAnnouncementData_Tutorial != nullptr)
-		*FortClientAnnouncementData_Tutorial = params.FortClientAnnouncementData_Tutorial;
 
 	return params.ReturnValue;
 }

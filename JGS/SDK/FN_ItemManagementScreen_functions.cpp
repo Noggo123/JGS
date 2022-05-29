@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,84 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function ItemManagementScreen.ItemManagementScreen_C.GetShouldPrioritizeFavorites
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           SortFavoritesSeparately        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementScreen_C::GetShouldPrioritizeFavorites(bool* SortFavoritesSeparately)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.GetShouldPrioritizeFavorites");
+
+	UItemManagementScreen_C_GetShouldPrioritizeFavorites_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (SortFavoritesSeparately != nullptr)
+		*SortFavoritesSeparately = params.SortFavoritesSeparately;
+}
+
+
+// Function ItemManagementScreen.ItemManagementScreen_C.TogglePrioritizeFavorites
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UItemManagementScreen_C::TogglePrioritizeFavorites()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.TogglePrioritizeFavorites");
+
+	UItemManagementScreen_C_TogglePrioritizeFavorites_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementScreen.ItemManagementScreen_C.ToggleTileSize
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UItemManagementScreen_C::ToggleTileSize()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.ToggleTileSize");
+
+	UItemManagementScreen_C_ToggleTileSize_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementScreen.ItemManagementScreen_C.GuardActionForReadOnlyWIFE
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           Proceed                        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementScreen_C::GuardActionForReadOnlyWIFE(bool* Proceed)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.GuardActionForReadOnlyWIFE");
+
+	UItemManagementScreen_C_GuardActionForReadOnlyWIFE_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Proceed != nullptr)
+		*Proceed = params.Proceed;
+}
+
 
 // Function ItemManagementScreen.ItemManagementScreen_C.SizeScreen
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -457,6 +535,28 @@ void UItemManagementScreen_C::OnMCPRequestComplete_D020DD864A3EFC9A31973C8707626
 }
 
 
+// Function ItemManagementScreen.ItemManagementScreen_C.DialogResult_CDD8108541BE3E4EA0F093B03D59650F
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EFortDialogResult              Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ResultName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementScreen_C::DialogResult_CDD8108541BE3E4EA0F093B03D59650F(EFortDialogResult Result, const struct FName& ResultName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.DialogResult_CDD8108541BE3E4EA0F093B03D59650F");
+
+	UItemManagementScreen_C_DialogResult_CDD8108541BE3E4EA0F093B03D59650F_Params params;
+	params.Result = Result;
+	params.ResultName = ResultName;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function ItemManagementScreen.ItemManagementScreen_C.HandleDifferentItemManagementModeSetBP
 // (Event, Public, BlueprintEvent)
 
@@ -639,6 +739,26 @@ void UItemManagementScreen_C::HandleMulchQuantitySelection(class UFortItem** Ite
 
 	UItemManagementScreen_C_HandleMulchQuantitySelection_Params params;
 	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementScreen.ItemManagementScreen_C.ShowWarningReadOnlyWIFE
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           Force                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementScreen_C::ShowWarningReadOnlyWIFE(bool Force)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.ShowWarningReadOnlyWIFE");
+
+	UItemManagementScreen_C_ShowWarningReadOnlyWIFE_Params params;
+	params.Force = Force;
 
 	auto flags = fn->FunctionFlags;
 

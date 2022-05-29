@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,8 +14,8 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function AthenaPickupManager.AthenaPickupManager_C.UpdateKeybinds
-struct UAthenaPickupManager_C_UpdateKeybinds_Params
+// Function AthenaPickupManager.AthenaPickupManager_C.RefreshBackground
+struct UAthenaPickupManager_C_RefreshBackground_Params
 {
 };
 

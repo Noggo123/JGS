@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -60,7 +60,7 @@ void ABluGloManager_C::IssueBluGloRequestForMission(class AFortMission* Mission,
 // (Private, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FVector                 SpawnCenter                    (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// class UParticleSystemComponent* SpawnFXEmitter                 (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// class UParticleSystemComponent* SpawnFXEmitter                 (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void ABluGloManager_C::StartSpawnFXAndAudio(const struct FVector& SpawnCenter, class UParticleSystemComponent** SpawnFXEmitter)
 {
@@ -456,7 +456,7 @@ void ABluGloManager_C::OnBluGloQueryFinished(class AActor* ActorToSpawnFrom, con
 // Function BluGloManager.BluGloManager_C.SpawnFXComplete
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UParticleSystemComponent* PSystem                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UParticleSystemComponent* PSystem                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void ABluGloManager_C::SpawnFXComplete(class UParticleSystemComponent* PSystem)
 {

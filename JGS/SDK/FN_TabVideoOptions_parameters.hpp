@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function TabVideoOptions.TabVideoOptions_C.UpdateOverallQualityLevel
+struct UTabVideoOptions_C_UpdateOverallQualityLevel_Params
+{
+};
 
 // Function TabVideoOptions.TabVideoOptions_C.Initialize Display Resolutions
 struct UTabVideoOptions_C_Initialize_Display_Resolutions_Params
@@ -33,37 +38,37 @@ struct UTabVideoOptions_C_Initialize_Data_Params
 // Function TabVideoOptions.TabVideoOptions_C.Shadows Changed
 struct UTabVideoOptions_C_Shadows_Changed_Params
 {
-	int                                                Tab_Id;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Tab_ID;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TabVideoOptions.TabVideoOptions_C.Anti-Aliasing Changed
 struct UTabVideoOptions_C_Anti_Aliasing_Changed_Params
 {
-	int                                                Tab_Id;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Tab_ID;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TabVideoOptions.TabVideoOptions_C.Textures Changed
 struct UTabVideoOptions_C_Textures_Changed_Params
 {
-	int                                                Tab_Id;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Tab_ID;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TabVideoOptions.TabVideoOptions_C.Post-Processing Changed
 struct UTabVideoOptions_C_Post_Processing_Changed_Params
 {
-	int                                                Tab_Id;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Tab_ID;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TabVideoOptions.TabVideoOptions_C.Effects Changed
 struct UTabVideoOptions_C_Effects_Changed_Params
 {
-	int                                                Tab_Id;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Tab_ID;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TabVideoOptions.TabVideoOptions_C.Quality Changed
 struct UTabVideoOptions_C_Quality_Changed_Params
 {
-	int                                                Tab_Id;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Tab_ID;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TabVideoOptions.TabVideoOptions_C.UpdateOptionsTab
@@ -92,7 +97,7 @@ struct UTabVideoOptions_C_CustomEvent_23_24_Params
 // Function TabVideoOptions.TabVideoOptions_C.View Distance Changed
 struct UTabVideoOptions_C_View_Distance_Changed_Params
 {
-	int                                                Tab_Id;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Tab_ID;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TabVideoOptions.TabVideoOptions_C.Construct
@@ -139,6 +144,16 @@ struct UTabVideoOptions_C_PreConstruct_Params
 struct UTabVideoOptions_C__3D_Resolution_Changed_Params
 {
 	float                                              Slider_Value;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function TabVideoOptions.TabVideoOptions_C.OnGameUserSettingsUINeedsUpdate
+struct UTabVideoOptions_C_OnGameUserSettingsUINeedsUpdate_Params
+{
+};
+
+// Function TabVideoOptions.TabVideoOptions_C.Destruct
+struct UTabVideoOptions_C_Destruct_Params
+{
 };
 
 // Function TabVideoOptions.TabVideoOptions_C.ExecuteUbergraph_TabVideoOptions

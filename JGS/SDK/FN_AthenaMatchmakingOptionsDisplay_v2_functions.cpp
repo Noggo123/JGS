@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,120 +12,115 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.On_ClickBlocker_MouseButtonDown_0_1
+// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.SetScrollWidget
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UAthenaMatchmakingOptionsDisplay_v2_C::SetScrollWidget()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.SetScrollWidget");
+
+	UAthenaMatchmakingOptionsDisplay_v2_C_SetScrollWidget_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.OnBack
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaMatchmakingOptionsDisplay_v2_C::OnBack(bool* Passthrough)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.OnBack");
+
+	UAthenaMatchmakingOptionsDisplay_v2_C_OnBack_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Passthrough != nullptr)
+		*Passthrough = params.Passthrough;
+}
+
+
+// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.OnCustomMatchmaking
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaMatchmakingOptionsDisplay_v2_C::OnCustomMatchmaking(bool* Passthrough)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.OnCustomMatchmaking");
+
+	UAthenaMatchmakingOptionsDisplay_v2_C_OnCustomMatchmaking_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Passthrough != nullptr)
+		*Passthrough = params.Passthrough;
+}
+
+
+// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.TriggerMatchmakingPageTileOutroAnim
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UAthenaMatchmakingOptionsDisplay_v2_C::TriggerMatchmakingPageTileOutroAnim()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.TriggerMatchmakingPageTileOutroAnim");
+
+	UAthenaMatchmakingOptionsDisplay_v2_C_TriggerMatchmakingPageTileOutroAnim_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.TriggerMatchmakingPageTileIntroAnim
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UAthenaMatchmakingOptionsDisplay_v2_C::TriggerMatchmakingPageTileIntroAnim()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.TriggerMatchmakingPageTileIntroAnim");
+
+	UAthenaMatchmakingOptionsDisplay_v2_C_TriggerMatchmakingPageTileIntroAnim_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.Touch To Close
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FGeometry               MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent           MouseEvent                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FPointerEvent           MouseEvent                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // struct FEventReply             ReturnValue                    (Parm, OutParm, ReturnParm)
 
-struct FEventReply UAthenaMatchmakingOptionsDisplay_v2_C::On_ClickBlocker_MouseButtonDown_0_1(const struct FGeometry& MyGeometry, struct FPointerEvent* MouseEvent)
+struct FEventReply UAthenaMatchmakingOptionsDisplay_v2_C::Touch_To_Close(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.On_ClickBlocker_MouseButtonDown_0_1");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.Touch To Close");
 
-	UAthenaMatchmakingOptionsDisplay_v2_C_On_ClickBlocker_MouseButtonDown_0_1_Params params;
+	UAthenaMatchmakingOptionsDisplay_v2_C_Touch_To_Close_Params params;
 	params.MyGeometry = MyGeometry;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (MouseEvent != nullptr)
-		*MouseEvent = params.MouseEvent;
-
-	return params.ReturnValue;
-}
-
-
-// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.InitializeGameModeButtons
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaMatchmakingOptionsDisplay_v2_C::InitializeGameModeButtons()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.InitializeGameModeButtons");
-
-	UAthenaMatchmakingOptionsDisplay_v2_C_InitializeGameModeButtons_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.NoLTMAvailable
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaMatchmakingOptionsDisplay_v2_C::NoLTMAvailable()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.NoLTMAvailable");
-
-	UAthenaMatchmakingOptionsDisplay_v2_C_NoLTMAvailable_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.UpdateLTM
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaMatchmakingOptionsDisplay_v2_C::UpdateLTM()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.UpdateLTM");
-
-	UAthenaMatchmakingOptionsDisplay_v2_C_UpdateLTM_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.HandleStandardModeButtonIndex
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           Increment                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            NewIndex                       (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaMatchmakingOptionsDisplay_v2_C::HandleStandardModeButtonIndex(bool Increment, int* NewIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.HandleStandardModeButtonIndex");
-
-	UAthenaMatchmakingOptionsDisplay_v2_C_HandleStandardModeButtonIndex_Params params;
-	params.Increment = Increment;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (NewIndex != nullptr)
-		*NewIndex = params.NewIndex;
-}
-
-
-// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.Handle_Navigate_StandardModes_Down
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EUINavigation                  Navigation                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UWidget* UAthenaMatchmakingOptionsDisplay_v2_C::Handle_Navigate_StandardModes_Down(EUINavigation Navigation)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.Handle_Navigate_StandardModes_Down");
-
-	UAthenaMatchmakingOptionsDisplay_v2_C_Handle_Navigate_StandardModes_Down_Params params;
-	params.Navigation = Navigation;
+	params.MouseEvent = MouseEvent;
 
 	auto flags = fn->FunctionFlags;
 
@@ -134,199 +129,6 @@ class UWidget* UAthenaMatchmakingOptionsDisplay_v2_C::Handle_Navigate_StandardMo
 	fn->FunctionFlags = flags;
 
 	return params.ReturnValue;
-}
-
-
-// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.Handle_Navigate_StandardModes_Up
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EUINavigation                  Navigation                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UWidget* UAthenaMatchmakingOptionsDisplay_v2_C::Handle_Navigate_StandardModes_Up(EUINavigation Navigation)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.Handle_Navigate_StandardModes_Up");
-
-	UAthenaMatchmakingOptionsDisplay_v2_C_Handle_Navigate_StandardModes_Up_Params params;
-	params.Navigation = Navigation;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.UpdateStandardGameModeButtonAvailibilty
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaMatchmakingOptionsDisplay_v2_C::UpdateStandardGameModeButtonAvailibilty()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.UpdateStandardGameModeButtonAvailibilty");
-
-	UAthenaMatchmakingOptionsDisplay_v2_C_UpdateStandardGameModeButtonAvailibilty_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.SetupButtonBindings
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaMatchmakingOptionsDisplay_v2_C::SetupButtonBindings()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.SetupButtonBindings");
-
-	UAthenaMatchmakingOptionsDisplay_v2_C_SetupButtonBindings_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.Handle_Navigate_Left
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EUINavigation                  Navigation                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UWidget* UAthenaMatchmakingOptionsDisplay_v2_C::Handle_Navigate_Left(EUINavigation Navigation)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.Handle_Navigate_Left");
-
-	UAthenaMatchmakingOptionsDisplay_v2_C_Handle_Navigate_Left_Params params;
-	params.Navigation = Navigation;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.Handle_Navigate_Right
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EUINavigation                  Navigation                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UWidget* UAthenaMatchmakingOptionsDisplay_v2_C::Handle_Navigate_Right(EUINavigation Navigation)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.Handle_Navigate_Right");
-
-	UAthenaMatchmakingOptionsDisplay_v2_C_Handle_Navigate_Right_Params params;
-	params.Navigation = Navigation;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.ClearLTM
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaMatchmakingOptionsDisplay_v2_C::ClearLTM()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.ClearLTM");
-
-	UAthenaMatchmakingOptionsDisplay_v2_C_ClearLTM_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.AddLTM
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EFortAthenaPlaylist            LTMPlaylist                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           AddSpecialStyle                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaMatchmakingOptionsDisplay_v2_C::AddLTM(EFortAthenaPlaylist LTMPlaylist, bool AddSpecialStyle)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.AddLTM");
-
-	UAthenaMatchmakingOptionsDisplay_v2_C_AddLTM_Params params;
-	params.LTMPlaylist = LTMPlaylist;
-	params.AddSpecialStyle = AddSpecialStyle;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.ClearStandardGameModes
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaMatchmakingOptionsDisplay_v2_C::ClearStandardGameModes()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.ClearStandardGameModes");
-
-	UAthenaMatchmakingOptionsDisplay_v2_C_ClearStandardGameModes_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.AddStandardGameModes
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UAthenaMatchmakingOptionsDisplay_v2_C::AddStandardGameModes()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.AddStandardGameModes");
-
-	UAthenaMatchmakingOptionsDisplay_v2_C_AddStandardGameModes_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.CloseMatchmakingOptions
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaMatchmakingOptionsDisplay_v2_C::CloseMatchmakingOptions()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.CloseMatchmakingOptions");
-
-	UAthenaMatchmakingOptionsDisplay_v2_C_CloseMatchmakingOptions_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
 }
 
 
@@ -386,26 +188,6 @@ void UAthenaMatchmakingOptionsDisplay_v2_C::OnActivated()
 }
 
 
-// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_6_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaMatchmakingOptionsDisplay_v2_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_6_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_6_CommonButtonClicked__DelegateSignature");
-
-	UAthenaMatchmakingOptionsDisplay_v2_C_BndEvt__IconTextButton_K2Node_ComponentBoundEvent_6_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
@@ -423,17 +205,17 @@ void UAthenaMatchmakingOptionsDisplay_v2_C::Construct()
 }
 
 
-// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.OnGameModeButtonSelected
-// (BlueprintCallable, BlueprintEvent)
+// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.SetSquadFillText
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// class UAthena_Matchmaking_GameModeButton_C* SelectedGameModeButton         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          InCurrentSquadFill             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaMatchmakingOptionsDisplay_v2_C::OnGameModeButtonSelected(class UAthena_Matchmaking_GameModeButton_C* SelectedGameModeButton)
+void UAthenaMatchmakingOptionsDisplay_v2_C::SetSquadFillText(bool* InCurrentSquadFill)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.OnGameModeButtonSelected");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.SetSquadFillText");
 
-	UAthenaMatchmakingOptionsDisplay_v2_C_OnGameModeButtonSelected_Params params;
-	params.SelectedGameModeButton = SelectedGameModeButton;
+	UAthenaMatchmakingOptionsDisplay_v2_C_SetSquadFillText_Params params;
+	params.InCurrentSquadFill = InCurrentSquadFill;
 
 	auto flags = fn->FunctionFlags;
 
@@ -443,17 +225,17 @@ void UAthenaMatchmakingOptionsDisplay_v2_C::OnGameModeButtonSelected(class UAthe
 }
 
 
-// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.OnModeButtonHovered
-// (BlueprintCallable, BlueprintEvent)
+// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.BndEvt__AcceptButton_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature
+// (BlueprintEvent)
 // Parameters:
-// class UAthena_Matchmaking_GameModeButton_C* HoveredButton                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
-void UAthenaMatchmakingOptionsDisplay_v2_C::OnModeButtonHovered(class UAthena_Matchmaking_GameModeButton_C* HoveredButton)
+void UAthenaMatchmakingOptionsDisplay_v2_C::BndEvt__AcceptButton_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.OnModeButtonHovered");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.BndEvt__AcceptButton_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature");
 
-	UAthenaMatchmakingOptionsDisplay_v2_C_OnModeButtonHovered_Params params;
-	params.HoveredButton = HoveredButton;
+	UAthenaMatchmakingOptionsDisplay_v2_C_BndEvt__AcceptButton_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature_Params params;
+	params.Button = Button;
 
 	auto flags = fn->FunctionFlags;
 
@@ -463,14 +245,134 @@ void UAthenaMatchmakingOptionsDisplay_v2_C::OnModeButtonHovered(class UAthena_Ma
 }
 
 
-// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.PlaylistsUpdated
+// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.BndEvt__CancelButton_K2Node_ComponentBoundEvent_18_CommonButtonClicked__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void UAthenaMatchmakingOptionsDisplay_v2_C::BndEvt__CancelButton_K2Node_ComponentBoundEvent_18_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.BndEvt__CancelButton_K2Node_ComponentBoundEvent_18_CommonButtonClicked__DelegateSignature");
+
+	UAthenaMatchmakingOptionsDisplay_v2_C_BndEvt__CancelButton_K2Node_ComponentBoundEvent_18_CommonButtonClicked__DelegateSignature_Params params;
+	params.Button = Button;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.UpdateMatchmakingButtonsBP
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool*                          IsPartyLeader                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsMatchmaking                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          PlaylistSupportsPartySize      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          PlaylistIsTeam                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaMatchmakingOptionsDisplay_v2_C::UpdateMatchmakingButtonsBP(bool* IsPartyLeader, bool* IsMatchmaking, bool* PlaylistSupportsPartySize, bool* PlaylistIsTeam)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.UpdateMatchmakingButtonsBP");
+
+	UAthenaMatchmakingOptionsDisplay_v2_C_UpdateMatchmakingButtonsBP_Params params;
+	params.IsPartyLeader = IsPartyLeader;
+	params.IsMatchmaking = IsMatchmaking;
+	params.PlaylistSupportsPartySize = PlaylistSupportsPartySize;
+	params.PlaylistIsTeam = PlaylistIsTeam;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.OnRightPanelOutroFinshed
 // (BlueprintCallable, BlueprintEvent)
 
-void UAthenaMatchmakingOptionsDisplay_v2_C::PlaylistsUpdated()
+void UAthenaMatchmakingOptionsDisplay_v2_C::OnRightPanelOutroFinshed()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.PlaylistsUpdated");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.OnRightPanelOutroFinshed");
 
-	UAthenaMatchmakingOptionsDisplay_v2_C_PlaylistsUpdated_Params params;
+	UAthenaMatchmakingOptionsDisplay_v2_C_OnRightPanelOutroFinshed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.OnBeginIntro
+// (Event, Public, BlueprintEvent)
+
+void UAthenaMatchmakingOptionsDisplay_v2_C::OnBeginIntro()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.OnBeginIntro");
+
+	UAthenaMatchmakingOptionsDisplay_v2_C_OnBeginIntro_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.OnRightPanelIntroFinshed
+// (BlueprintCallable, BlueprintEvent)
+
+void UAthenaMatchmakingOptionsDisplay_v2_C::OnRightPanelIntroFinshed()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.OnRightPanelIntroFinshed");
+
+	UAthenaMatchmakingOptionsDisplay_v2_C_OnRightPanelIntroFinshed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.RepresentedPlaylistChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UFortPlaylistAthena**    NewRepresentedPlaylist         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaMatchmakingOptionsDisplay_v2_C::RepresentedPlaylistChanged(class UFortPlaylistAthena** NewRepresentedPlaylist)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.RepresentedPlaylistChanged");
+
+	UAthenaMatchmakingOptionsDisplay_v2_C_RepresentedPlaylistChanged_Params params;
+	params.NewRepresentedPlaylist = NewRepresentedPlaylist;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.OnTileDoubleClicked
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UCommonButton**          ButtonClicked                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void UAthenaMatchmakingOptionsDisplay_v2_C::OnTileDoubleClicked(class UCommonButton** ButtonClicked)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.OnTileDoubleClicked");
+
+	UAthenaMatchmakingOptionsDisplay_v2_C_OnTileDoubleClicked_Params params;
+	params.ButtonClicked = ButtonClicked;
 
 	auto flags = fn->FunctionFlags;
 
@@ -481,7 +383,7 @@ void UAthenaMatchmakingOptionsDisplay_v2_C::PlaylistsUpdated()
 
 
 // Function AthenaMatchmakingOptionsDisplay_v2.AthenaMatchmakingOptionsDisplay_v2_C.ExecuteUbergraph_AthenaMatchmakingOptionsDisplay_v2
-// ()
+// (HasDefaults)
 // Parameters:
 // int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 

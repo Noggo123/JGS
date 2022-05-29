@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UPerkWidgetNew_C::UpdatePerk()
 // Function PerkWidgetNew.PerkWidgetNew_C.Get_OverlayAbilityPerk_ToolTipWidget
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 
 class UWidget* UPerkWidgetNew_C::Get_OverlayAbilityPerk_ToolTipWidget()
 {
@@ -298,6 +298,26 @@ void UPerkWidgetNew_C::PreConstruct(bool* IsDesignTime)
 
 	UPerkWidgetNew_C_PreConstruct_Params params;
 	params.IsDesignTime = IsDesignTime;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PerkWidgetNew.PerkWidgetNew_C.OnCombinedTooltipDescriptionReady
+// (Event, Public, HasOutParms, BlueprintEvent)
+// Parameters:
+// struct FText*                  Description                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void UPerkWidgetNew_C::OnCombinedTooltipDescriptionReady(struct FText* Description)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PerkWidgetNew.PerkWidgetNew_C.OnCombinedTooltipDescriptionReady");
+
+	UPerkWidgetNew_C_OnCombinedTooltipDescriptionReady_Params params;
+	params.Description = Description;
 
 	auto flags = fn->FunctionFlags;
 

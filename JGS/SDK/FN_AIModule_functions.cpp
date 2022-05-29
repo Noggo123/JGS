@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,46 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function AIModule.AITask_MoveTo.AIMoveTo
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// class AAIController*           Controller                     (Parm, ZeroConstructor, IsPlainOldData)
-// struct FVector                 GoalLocation                   (Parm, IsPlainOldData)
-// class AActor*                  GoalActor                      (Parm, ZeroConstructor, IsPlainOldData)
-// float                          AcceptanceRadius               (Parm, ZeroConstructor, IsPlainOldData)
-// TEnumAsByte<EAIOptionFlag>     StopOnOverlap                  (Parm, ZeroConstructor, IsPlainOldData)
-// TEnumAsByte<EAIOptionFlag>     AcceptPartialPath              (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bUsePathfinding                (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bLockAILogic                   (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bUseContinuosGoalTracking      (Parm, ZeroConstructor, IsPlainOldData)
-// class UAITask_MoveTo*          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UAITask_MoveTo* UAITask_MoveTo::STATIC_AIMoveTo(class AAIController* Controller, const struct FVector& GoalLocation, class AActor* GoalActor, float AcceptanceRadius, TEnumAsByte<EAIOptionFlag> StopOnOverlap, TEnumAsByte<EAIOptionFlag> AcceptPartialPath, bool bUsePathfinding, bool bLockAILogic, bool bUseContinuosGoalTracking)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AIModule.AITask_MoveTo.AIMoveTo");
-
-	UAITask_MoveTo_AIMoveTo_Params params;
-	params.Controller = Controller;
-	params.GoalLocation = GoalLocation;
-	params.GoalActor = GoalActor;
-	params.AcceptanceRadius = AcceptanceRadius;
-	params.StopOnOverlap = StopOnOverlap;
-	params.AcceptPartialPath = AcceptPartialPath;
-	params.bUsePathfinding = bUsePathfinding;
-	params.bLockAILogic = bLockAILogic;
-	params.bUseContinuosGoalTracking = bUseContinuosGoalTracking;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
 
 // Function AIModule.AIController.UseBlackboard
 // (Final, Native, Public, HasOutParms, BlueprintCallable)
@@ -754,6 +714,195 @@ bool UAIPerceptionComponent::GetActorsPerception(class AActor* Actor, struct FAc
 }
 
 
+// Function AIModule.PathFollowingComponent.OnNavDataRegistered
+// (Final, Native, Protected)
+// Parameters:
+// class ANavigationData*         NavData                        (Parm, ZeroConstructor, IsPlainOldData)
+
+void UPathFollowingComponent::OnNavDataRegistered(class ANavigationData* NavData)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AIModule.PathFollowingComponent.OnNavDataRegistered");
+
+	UPathFollowingComponent_OnNavDataRegistered_Params params;
+	params.NavData = NavData;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AIModule.PathFollowingComponent.OnActorBump
+// (Native, Public, HasOutParms, HasDefaults)
+// Parameters:
+// class AActor*                  SelfActor                      (Parm, ZeroConstructor, IsPlainOldData)
+// class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector                 NormalImpulse                  (Parm, IsPlainOldData)
+// struct FHitResult              Hit                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+
+void UPathFollowingComponent::OnActorBump(class AActor* SelfActor, class AActor* OtherActor, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AIModule.PathFollowingComponent.OnActorBump");
+
+	UPathFollowingComponent_OnActorBump_Params params;
+	params.SelfActor = SelfActor;
+	params.OtherActor = OtherActor;
+	params.NormalImpulse = NormalImpulse;
+	params.Hit = Hit;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AIModule.PathFollowingComponent.GetPathDestination
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector                 ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
+
+struct FVector UPathFollowingComponent::GetPathDestination()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AIModule.PathFollowingComponent.GetPathDestination");
+
+	UPathFollowingComponent_GetPathDestination_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function AIModule.PathFollowingComponent.GetPathActionType
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TEnumAsByte<EPathFollowingAction> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+TEnumAsByte<EPathFollowingAction> UPathFollowingComponent::GetPathActionType()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AIModule.PathFollowingComponent.GetPathActionType");
+
+	UPathFollowingComponent_GetPathActionType_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function AIModule.CrowdFollowingComponent.SuspendCrowdSteering
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           bSuspend                       (Parm, ZeroConstructor, IsPlainOldData)
+
+void UCrowdFollowingComponent::SuspendCrowdSteering(bool bSuspend)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AIModule.CrowdFollowingComponent.SuspendCrowdSteering");
+
+	UCrowdFollowingComponent_SuspendCrowdSteering_Params params;
+	params.bSuspend = bSuspend;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AIModule.AISystem.AILoggingVerbose
+// (Exec, Native, Public)
+
+void UAISystem::AILoggingVerbose()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AIModule.AISystem.AILoggingVerbose");
+
+	UAISystem_AILoggingVerbose_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AIModule.AISystem.AIIgnorePlayers
+// (Exec, Native, Public)
+
+void UAISystem::AIIgnorePlayers()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AIModule.AISystem.AIIgnorePlayers");
+
+	UAISystem_AIIgnorePlayers_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AIModule.AITask_MoveTo.AIMoveTo
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class AAIController*           Controller                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector                 GoalLocation                   (Parm, IsPlainOldData)
+// class AActor*                  GoalActor                      (Parm, ZeroConstructor, IsPlainOldData)
+// float                          AcceptanceRadius               (Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EAIOptionFlag>     StopOnOverlap                  (Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EAIOptionFlag>     AcceptPartialPath              (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bUsePathfinding                (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bLockAILogic                   (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bUseContinuosGoalTracking      (Parm, ZeroConstructor, IsPlainOldData)
+// class UAITask_MoveTo*          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class UAITask_MoveTo* UAITask_MoveTo::STATIC_AIMoveTo(class AAIController* Controller, const struct FVector& GoalLocation, class AActor* GoalActor, float AcceptanceRadius, TEnumAsByte<EAIOptionFlag> StopOnOverlap, TEnumAsByte<EAIOptionFlag> AcceptPartialPath, bool bUsePathfinding, bool bLockAILogic, bool bUseContinuosGoalTracking)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AIModule.AITask_MoveTo.AIMoveTo");
+
+	UAITask_MoveTo_AIMoveTo_Params params;
+	params.Controller = Controller;
+	params.GoalLocation = GoalLocation;
+	params.GoalActor = GoalActor;
+	params.AcceptanceRadius = AcceptanceRadius;
+	params.StopOnOverlap = StopOnOverlap;
+	params.AcceptPartialPath = AcceptPartialPath;
+	params.bUsePathfinding = bUsePathfinding;
+	params.bLockAILogic = bLockAILogic;
+	params.bUseContinuosGoalTracking = bUseContinuosGoalTracking;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
 // Function AIModule.AIPerceptionSystem.ReportPerceptionEvent
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -872,42 +1021,6 @@ class UClass* UAIPerceptionSystem::STATIC_GetSenseClassForStimulus(class UObject
 	fn->FunctionFlags = flags;
 
 	return params.ReturnValue;
-}
-
-
-// Function AIModule.AISystem.AILoggingVerbose
-// (Exec, Native, Public)
-
-void UAISystem::AILoggingVerbose()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AIModule.AISystem.AILoggingVerbose");
-
-	UAISystem_AILoggingVerbose_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AIModule.AISystem.AIIgnorePlayers
-// (Exec, Native, Public)
-
-void UAISystem::AIIgnorePlayers()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AIModule.AISystem.AIIgnorePlayers");
-
-	UAISystem_AIIgnorePlayers_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
 }
 
 
@@ -1056,119 +1169,6 @@ void UBehaviorTreeComponent::AddCooldownTagDuration(const struct FGameplayTag& C
 	params.CooldownTag = CooldownTag;
 	params.CooldownDuration = CooldownDuration;
 	params.bAddToExistingDuration = bAddToExistingDuration;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AIModule.PathFollowingComponent.OnNavDataRegistered
-// (Final, Native, Protected)
-// Parameters:
-// class ANavigationData*         NavData                        (Parm, ZeroConstructor, IsPlainOldData)
-
-void UPathFollowingComponent::OnNavDataRegistered(class ANavigationData* NavData)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AIModule.PathFollowingComponent.OnNavDataRegistered");
-
-	UPathFollowingComponent_OnNavDataRegistered_Params params;
-	params.NavData = NavData;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AIModule.PathFollowingComponent.OnActorBump
-// (Native, Public, HasOutParms, HasDefaults)
-// Parameters:
-// class AActor*                  SelfActor                      (Parm, ZeroConstructor, IsPlainOldData)
-// class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData)
-// struct FVector                 NormalImpulse                  (Parm, IsPlainOldData)
-// struct FHitResult              Hit                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-
-void UPathFollowingComponent::OnActorBump(class AActor* SelfActor, class AActor* OtherActor, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AIModule.PathFollowingComponent.OnActorBump");
-
-	UPathFollowingComponent_OnActorBump_Params params;
-	params.SelfActor = SelfActor;
-	params.OtherActor = OtherActor;
-	params.NormalImpulse = NormalImpulse;
-	params.Hit = Hit;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AIModule.PathFollowingComponent.GetPathDestination
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector                 ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
-
-struct FVector UPathFollowingComponent::GetPathDestination()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AIModule.PathFollowingComponent.GetPathDestination");
-
-	UPathFollowingComponent_GetPathDestination_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function AIModule.PathFollowingComponent.GetPathActionType
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TEnumAsByte<EPathFollowingAction> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-TEnumAsByte<EPathFollowingAction> UPathFollowingComponent::GetPathActionType()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AIModule.PathFollowingComponent.GetPathActionType");
-
-	UPathFollowingComponent_GetPathActionType_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function AIModule.CrowdFollowingComponent.SuspendCrowdSteering
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// bool                           bSuspend                       (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCrowdFollowingComponent::SuspendCrowdSteering(bool bSuspend)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AIModule.CrowdFollowingComponent.SuspendCrowdSteering");
-
-	UCrowdFollowingComponent_SuspendCrowdSteering_Params params;
-	params.bSuspend = bSuspend;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -31,6 +31,28 @@ void AB_Melee_Generic_C::Melee_Effect_Color(struct FVector* Melee_Color_Set)
 
 	if (Melee_Color_Set != nullptr)
 		*Melee_Color_Set = params.Melee_Color_Set;
+}
+
+
+// Function B_Melee_Generic.B_Melee_Generic_C.SetActiveAlterationIdleParticles
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           Active                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Reset                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void AB_Melee_Generic_C::SetActiveAlterationIdleParticles(bool Active, bool Reset)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function B_Melee_Generic.B_Melee_Generic_C.SetActiveAlterationIdleParticles");
+
+	AB_Melee_Generic_C_SetActiveAlterationIdleParticles_Params params;
+	params.Active = Active;
+	params.Reset = Reset;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
 }
 
 
@@ -217,7 +239,7 @@ void AB_Melee_Generic_C::PlayRClickImpacts()
 // Parameters:
 // struct FHitResult*             HitResult                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
 // TEnumAsByte<EPhysicalSurface>* ImpactPhysicalSurface          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UParticleSystemComponent** SpawnedPSC                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UParticleSystemComponent** SpawnedPSC                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void AB_Melee_Generic_C::OnPlayImpactFX(struct FHitResult* HitResult, TEnumAsByte<EPhysicalSurface>* ImpactPhysicalSurface, class UParticleSystemComponent** SpawnedPSC)
 {
@@ -270,23 +292,6 @@ void AB_Melee_Generic_C::OnWeaponAttached()
 }
 
 
-// Function B_Melee_Generic.B_Melee_Generic_C.K2_OnUnEquip
-// (Event, Public, BlueprintEvent)
-
-void AB_Melee_Generic_C::K2_OnUnEquip()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function B_Melee_Generic.B_Melee_Generic_C.K2_OnUnEquip");
-
-	AB_Melee_Generic_C_K2_OnUnEquip_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function B_Melee_Generic.B_Melee_Generic_C.OnInitCosmeticAlterations
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -300,6 +305,43 @@ void AB_Melee_Generic_C::OnInitCosmeticAlterations(struct FFortCosmeticModificat
 	AB_Melee_Generic_C_OnInitCosmeticAlterations_Params params;
 	params.CosmeticMod = CosmeticMod;
 	params.DynamicMaterialInstance = DynamicMaterialInstance;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function B_Melee_Generic.B_Melee_Generic_C.OnWeaponVisibilityChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool*                          bVisible                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void AB_Melee_Generic_C::OnWeaponVisibilityChanged(bool* bVisible)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function B_Melee_Generic.B_Melee_Generic_C.OnWeaponVisibilityChanged");
+
+	AB_Melee_Generic_C_OnWeaponVisibilityChanged_Params params;
+	params.bVisible = bVisible;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function B_Melee_Generic.B_Melee_Generic_C.OnWeaponDetached
+// (Event, Public, BlueprintEvent)
+
+void AB_Melee_Generic_C::OnWeaponDetached()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function B_Melee_Generic.B_Melee_Generic_C.OnWeaponDetached");
+
+	AB_Melee_Generic_C_OnWeaponDetached_Params params;
 
 	auto flags = fn->FunctionFlags;
 

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -93,7 +93,7 @@ void UResolutionScaleSlider_C::Center_on_Widget()
 // Parameters:
 // struct FText                   Slider_Text                    (BlueprintVisible, BlueprintReadOnly, Parm)
 // struct FText                   Hover_Text                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UCommonTextBlock*        Tooltip_Text_Block             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonTextBlock*        Tooltip_Text_Block             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UResolutionScaleSlider_C::Update_Slider(const struct FText& Slider_Text, const struct FText& Hover_Text, class UCommonTextBlock* Tooltip_Text_Block)
 {

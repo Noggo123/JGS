@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,10 +15,10 @@ namespace SDK
 // Function BP_ExpeditionSquadSlotsView.BP_ExpeditionSquadSlotsView_C.CreateAndAddSquadSlotButton
 // (Event, Protected, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int*                           SquadSlotIndex                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FHomebaseSquadSlot      SquadSlotDefinition            (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// class UWidget*                 OutSquadSlotButtonHost         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-// class UFortSquadSlotSelectorButton* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// int*                           SquadSlotIndex                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FHomebaseSquadSlot*     SquadSlotDefinition            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class UWidget*                 OutSquadSlotButtonHost         (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UFortSquadSlotSelectorButton* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 
 class UFortSquadSlotSelectorButton* UBP_ExpeditionSquadSlotsView_C::CreateAndAddSquadSlotButton(int* SquadSlotIndex, struct FHomebaseSquadSlot* SquadSlotDefinition, class UWidget** OutSquadSlotButtonHost)
 {
@@ -26,6 +26,7 @@ class UFortSquadSlotSelectorButton* UBP_ExpeditionSquadSlotsView_C::CreateAndAdd
 
 	UBP_ExpeditionSquadSlotsView_C_CreateAndAddSquadSlotButton_Params params;
 	params.SquadSlotIndex = SquadSlotIndex;
+	params.SquadSlotDefinition = SquadSlotDefinition;
 
 	auto flags = fn->FunctionFlags;
 
@@ -33,8 +34,6 @@ class UFortSquadSlotSelectorButton* UBP_ExpeditionSquadSlotsView_C::CreateAndAdd
 
 	fn->FunctionFlags = flags;
 
-	if (SquadSlotDefinition != nullptr)
-		*SquadSlotDefinition = params.SquadSlotDefinition;
 	if (OutSquadSlotButtonHost != nullptr)
 		*OutSquadSlotButtonHost = params.OutSquadSlotButtonHost;
 

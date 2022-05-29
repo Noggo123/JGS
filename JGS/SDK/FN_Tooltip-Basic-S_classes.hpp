@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass Tooltip-Basic-S.Tooltip-Basic-S_C
-// 0x0078 (0x0288 - 0x0210)
+// 0x0088 (0x0298 - 0x0210)
 class UTooltip_Basic_S_C : public UCommonUserWidget
 {
 public:
@@ -30,6 +28,8 @@ public:
 	struct FText                                       BodyText;                                                 // 0x0250(0x0018) (Edit, BlueprintVisible)
 	struct FText                                       HeaderText;                                               // 0x0268(0x0018) (Edit, BlueprintVisible)
 	class USlateBrushAsset*                            Icon_Brush;                                               // 0x0280(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      Body_Style;                                               // 0x0288(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      Header_Style;                                             // 0x0290(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

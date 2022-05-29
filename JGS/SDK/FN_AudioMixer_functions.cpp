@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,108 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function AudioMixer.SynthComponent.Stop
+// (Final, Native, Public, BlueprintCallable)
+
+void USynthComponent::Stop()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AudioMixer.SynthComponent.Stop");
+
+	USynthComponent_Stop_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AudioMixer.SynthComponent.Start
+// (Final, Native, Public, BlueprintCallable)
+
+void USynthComponent::Start()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AudioMixer.SynthComponent.Start");
+
+	USynthComponent_Start_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AudioMixer.SynthComponent.SetVolumeMultiplier
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                          VolumeMultiplier               (Parm, ZeroConstructor, IsPlainOldData)
+
+void USynthComponent::SetVolumeMultiplier(float VolumeMultiplier)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AudioMixer.SynthComponent.SetVolumeMultiplier");
+
+	USynthComponent_SetVolumeMultiplier_Params params;
+	params.VolumeMultiplier = VolumeMultiplier;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AudioMixer.SynthComponent.SetSubmixSend
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class USoundSubmix*            Submix                         (Parm, ZeroConstructor, IsPlainOldData)
+// float                          SendLevel                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void USynthComponent::SetSubmixSend(class USoundSubmix* Submix, float SendLevel)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AudioMixer.SynthComponent.SetSubmixSend");
+
+	USynthComponent_SetSubmixSend_Params params;
+	params.Submix = Submix;
+	params.SendLevel = SendLevel;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AudioMixer.SynthComponent.IsPlaying
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool USynthComponent::IsPlaying()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AudioMixer.SynthComponent.IsPlaying");
+
+	USynthComponent_IsPlaying_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function AudioMixer.AudioMixerBlueprintLibrary.SetBypassSourceEffectChainEntry
 // (Final, Native, Static, Public, BlueprintCallable)
@@ -265,87 +367,6 @@ void USubmixEffectReverbPreset::SetSettings(const struct FSubmixEffectReverbSett
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-}
-
-
-// Function AudioMixer.SynthComponent.Stop
-// (Final, Native, Public, BlueprintCallable)
-
-void USynthComponent::Stop()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AudioMixer.SynthComponent.Stop");
-
-	USynthComponent_Stop_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AudioMixer.SynthComponent.Start
-// (Final, Native, Public, BlueprintCallable)
-
-void USynthComponent::Start()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AudioMixer.SynthComponent.Start");
-
-	USynthComponent_Start_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AudioMixer.SynthComponent.SetSubmixSend
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class USoundSubmix*            Submix                         (Parm, ZeroConstructor, IsPlainOldData)
-// float                          SendLevel                      (Parm, ZeroConstructor, IsPlainOldData)
-
-void USynthComponent::SetSubmixSend(class USoundSubmix* Submix, float SendLevel)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AudioMixer.SynthComponent.SetSubmixSend");
-
-	USynthComponent_SetSubmixSend_Params params;
-	params.Submix = Submix;
-	params.SendLevel = SendLevel;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AudioMixer.SynthComponent.IsPlaying
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool USynthComponent::IsPlaying()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AudioMixer.SynthComponent.IsPlaying");
-
-	USynthComponent_IsPlaying_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -76,14 +76,17 @@ void UErrorEntry_C::GetButtonVisibility(ESlateVisibility* NewParam)
 }
 
 
-// Function ErrorEntry.ErrorEntry_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function ErrorEntry.ErrorEntry_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_65_CommonButtonClicked__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
-void UErrorEntry_C::Construct()
+void UErrorEntry_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_65_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ErrorEntry.ErrorEntry_C.Construct");
+	static auto fn = UObject::FindObject<UFunction>("Function ErrorEntry.ErrorEntry_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_65_CommonButtonClicked__DelegateSignature");
 
-	UErrorEntry_C_Construct_Params params;
+	UErrorEntry_C_BndEvt__IconTextButton_K2Node_ComponentBoundEvent_65_CommonButtonClicked__DelegateSignature_Params params;
+	params.Button = Button;
 
 	auto flags = fn->FunctionFlags;
 
@@ -93,17 +96,14 @@ void UErrorEntry_C::Construct()
 }
 
 
-// Function ErrorEntry.ErrorEntry_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_65_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// Function ErrorEntry.ErrorEntry_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void UErrorEntry_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_65_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
+void UErrorEntry_C::Construct()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ErrorEntry.ErrorEntry_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_65_CommonButtonClicked__DelegateSignature");
+	static auto fn = UObject::FindObject<UFunction>("Function ErrorEntry.ErrorEntry_C.Construct");
 
-	UErrorEntry_C_BndEvt__IconTextButton_K2Node_ComponentBoundEvent_65_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
+	UErrorEntry_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 

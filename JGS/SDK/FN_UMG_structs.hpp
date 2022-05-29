@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -39,6 +37,25 @@ enum class EVirtualKeyboardType : uint8_t
 };
 
 
+// Enum UMG.EUMGSequencePlayMode
+enum class EUMGSequencePlayMode : uint8_t
+{
+	Forward                        = 0,
+	Reverse                        = 1,
+	PingPong                       = 2,
+	EUMGSequencePlayMode_MAX       = 3
+};
+
+
+// Enum UMG.EWidgetTickFrequency
+enum class EWidgetTickFrequency : uint8_t
+{
+	Never                          = 0,
+	Auto                           = 1,
+	EWidgetTickFrequency_MAX       = 2
+};
+
+
 // Enum UMG.EDragPivot
 enum class EDragPivot : uint8_t
 {
@@ -62,16 +79,6 @@ enum class ESlateSizeRule : uint8_t
 	Automatic                      = 0,
 	Fill                           = 1,
 	ESlateSizeRule_MAX             = 2
-};
-
-
-// Enum UMG.EUMGSequencePlayMode
-enum class EUMGSequencePlayMode : uint8_t
-{
-	Forward                        = 0,
-	Reverse                        = 1,
-	PingPong                       = 2,
-	EUMGSequencePlayMode_MAX       = 3
 };
 
 
@@ -165,6 +172,31 @@ struct FEventReply
 	unsigned char                                      UnknownData00[0xB8];                                      // 0x0000(0x00B8) MISSED OFFSET
 };
 
+// ScriptStruct UMG.NamedSlotBinding
+// 0x0010
+struct FNamedSlotBinding
+{
+	struct FName                                       Name;                                                     // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	class UWidget*                                     Content;                                                  // 0x0008(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+};
+
+// ScriptStruct UMG.PaintContext
+// 0x0030
+struct FPaintContext
+{
+	unsigned char                                      UnknownData00[0x30];                                      // 0x0000(0x0030) MISSED OFFSET
+};
+
+// ScriptStruct UMG.ShapedTextOptions
+// 0x0003
+struct FShapedTextOptions
+{
+	unsigned char                                      bOverride_TextShapingMethod : 1;                          // 0x0000(0x0001) (Edit)
+	unsigned char                                      bOverride_TextFlowDirection : 1;                          // 0x0000(0x0001) (Edit)
+	ETextShapingMethod                                 TextShapingMethod;                                        // 0x0001(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	ETextFlowDirection                                 TextFlowDirection;                                        // 0x0002(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+};
+
 // ScriptStruct UMG.PropertyPathSegment
 // 0x0020
 struct FPropertyPathSegment
@@ -187,21 +219,9 @@ struct FDynamicPropertyPath
 // 0x0028
 struct FAnchorData
 {
-	struct FMargin                                     Offsets;                                                  // 0x0000(0x0010) (Edit, BlueprintVisible)
+	struct FMargin                                     Offsets;                                                  // 0x0000(0x0010) (Edit, BlueprintVisible, IsPlainOldData)
 	struct FAnchors                                    Anchors;                                                  // 0x0010(0x0010) (Edit, BlueprintVisible)
 	struct FVector2D                                   Alignment;                                                // 0x0020(0x0008) (Edit, BlueprintVisible, IsPlainOldData)
-};
-
-// ScriptStruct UMG.ShapedTextOptions
-// 0x0008
-struct FShapedTextOptions
-{
-	unsigned char                                      bOverride_TextShapingMethod : 1;                          // 0x0000(0x0001) (Edit)
-	unsigned char                                      bOverride_TextFlowDirection : 1;                          // 0x0000(0x0001) (Edit)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x0001(0x0003) MISSED OFFSET
-	ETextShapingMethod                                 TextShapingMethod;                                        // 0x0004(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	ETextFlowDirection                                 TextFlowDirection;                                        // 0x0005(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x2];                                       // 0x0006(0x0002) MISSED OFFSET
 };
 
 // ScriptStruct UMG.SlateChildSize
@@ -225,21 +245,6 @@ struct FSlateMeshVertex
 	struct FVector2D                                   UV3;                                                      // 0x0024(0x0008) (IsPlainOldData)
 	struct FVector2D                                   UV4;                                                      // 0x002C(0x0008) (IsPlainOldData)
 	struct FVector2D                                   UV5;                                                      // 0x0034(0x0008) (IsPlainOldData)
-};
-
-// ScriptStruct UMG.NamedSlotBinding
-// 0x0010
-struct FNamedSlotBinding
-{
-	struct FName                                       Name;                                                     // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
-	class UWidget*                                     Content;                                                  // 0x0008(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-};
-
-// ScriptStruct UMG.PaintContext
-// 0x0030
-struct FPaintContext
-{
-	unsigned char                                      UnknownData00[0x30];                                      // 0x0000(0x0030) MISSED OFFSET
 };
 
 // ScriptStruct UMG.WidgetAnimationBinding
@@ -308,17 +313,17 @@ struct FMovieSceneWidgetMaterialSectionTemplate : public FMovieSceneParameterSec
 };
 
 // ScriptStruct UMG.RichTextStyleRow
-// 0x01C8 (0x01D0 - 0x0008)
+// 0x01E0 (0x01E8 - 0x0008)
 struct FRichTextStyleRow : public FTableRowBase
 {
-	struct FTextBlockStyle                             TextStyle;                                                // 0x0008(0x01C8) (Edit)
+	struct FTextBlockStyle                             TextStyle;                                                // 0x0008(0x01E0) (Edit)
 };
 
 // ScriptStruct UMG.RichImageRow
-// 0x0078 (0x0080 - 0x0008)
+// 0x0088 (0x0090 - 0x0008)
 struct FRichImageRow : public FTableRowBase
 {
-	struct FSlateBrush                                 Brush;                                                    // 0x0008(0x0078) (Edit)
+	struct FSlateBrush                                 Brush;                                                    // 0x0008(0x0088) (Edit)
 };
 
 }

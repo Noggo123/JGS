@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,223 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HandleOnItemCacheRewardsClaimFailed
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UFrontEndRewards_Widget_C::HandleOnItemCacheRewardsClaimFailed()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HandleOnItemCacheRewardsClaimFailed");
+
+	UFrontEndRewards_Widget_C_HandleOnItemCacheRewardsClaimFailed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HandleOnItemCacheRewardsClaimed
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<struct FFortItemInstanceQuantityPair> Rewards                        (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+
+void UFrontEndRewards_Widget_C::HandleOnItemCacheRewardsClaimed(TArray<struct FFortItemInstanceQuantityPair>* Rewards)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HandleOnItemCacheRewardsClaimed");
+
+	UFrontEndRewards_Widget_C_HandleOnItemCacheRewardsClaimed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Rewards != nullptr)
+		*Rewards = params.Rewards;
+}
+
+
+// Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.PopulateItemCacheReward
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UFrontEndRewards_Widget_C::PopulateItemCacheReward()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.PopulateItemCacheReward");
+
+	UFrontEndRewards_Widget_C_PopulateItemCacheReward_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HandleOnGiftBoxRemoved
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           bSucceeded                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UFrontEndRewards_Widget_C::HandleOnGiftBoxRemoved(bool bSucceeded)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HandleOnGiftBoxRemoved");
+
+	UFrontEndRewards_Widget_C_HandleOnGiftBoxRemoved_Params params;
+	params.bSucceeded = bSucceeded;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.ShowGiftBox
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UFrontEndRewards_Widget_C::ShowGiftBox()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.ShowGiftBox");
+
+	UFrontEndRewards_Widget_C_ShowGiftBox_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HandleGiftBoxOpened
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UFrontEndRewards_Widget_C::HandleGiftBoxOpened()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HandleGiftBoxOpened");
+
+	UFrontEndRewards_Widget_C_HandleGiftBoxOpened_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.PopulateGiftBox
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UFrontEndRewards_Widget_C::PopulateGiftBox()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.PopulateGiftBox");
+
+	UFrontEndRewards_Widget_C_PopulateGiftBox_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.StartRewardsMusic
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UFrontEndRewards_Widget_C::StartRewardsMusic()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.StartRewardsMusic");
+
+	UFrontEndRewards_Widget_C_StartRewardsMusic_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HandleOnDifficultyIncreaseRewardsClaimFailed
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UFrontEndRewards_Widget_C::HandleOnDifficultyIncreaseRewardsClaimFailed()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HandleOnDifficultyIncreaseRewardsClaimFailed");
+
+	UFrontEndRewards_Widget_C_HandleOnDifficultyIncreaseRewardsClaimFailed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HandleOnDifficultyIncreaseRewardsClaimed
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<struct FFortItemInstanceQuantityPair> Rewards                        (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+
+void UFrontEndRewards_Widget_C::HandleOnDifficultyIncreaseRewardsClaimed(TArray<struct FFortItemInstanceQuantityPair>* Rewards)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HandleOnDifficultyIncreaseRewardsClaimed");
+
+	UFrontEndRewards_Widget_C_HandleOnDifficultyIncreaseRewardsClaimed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Rewards != nullptr)
+		*Rewards = params.Rewards;
+}
+
+
+// Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.ClaimDifficultyIncreaseRewards
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UFrontEndRewards_Widget_C::ClaimDifficultyIncreaseRewards()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.ClaimDifficultyIncreaseRewards");
+
+	UFrontEndRewards_Widget_C_ClaimDifficultyIncreaseRewards_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.PopulateDifficultyIncreaseRewards
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UFrontEndRewards_Widget_C::PopulateDifficultyIncreaseRewards()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.PopulateDifficultyIncreaseRewards");
+
+	UFrontEndRewards_Widget_C_PopulateDifficultyIncreaseRewards_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HandleOnMissionRewardsClaimFailed
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -1161,7 +1378,7 @@ void UFrontEndRewards_Widget_C::OnPrimaryActionTextChanged(struct FText* Text)
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.BndEvt__ButtonOpen_K2Node_ComponentBoundEvent_26_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UFrontEndRewards_Widget_C::BndEvt__ButtonOpen_K2Node_ComponentBoundEvent_26_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -1343,7 +1560,7 @@ void UFrontEndRewards_Widget_C::ExecuteUbergraph_FrontEndRewards_Widget(int Entr
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.OnRewardsIgnored__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFrontEndRewards_Widget_C* RewardsWidget                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFrontEndRewards_Widget_C* RewardsWidget                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UFrontEndRewards_Widget_C::OnRewardsIgnored__DelegateSignature(class UFrontEndRewards_Widget_C* RewardsWidget)
 {
@@ -1363,7 +1580,7 @@ void UFrontEndRewards_Widget_C::OnRewardsIgnored__DelegateSignature(class UFront
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.OnRewardsClaimError__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFrontEndRewards_Widget_C* RewardsWidget                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFrontEndRewards_Widget_C* RewardsWidget                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UFrontEndRewards_Widget_C::OnRewardsClaimError__DelegateSignature(class UFrontEndRewards_Widget_C* RewardsWidget)
 {
@@ -1383,7 +1600,7 @@ void UFrontEndRewards_Widget_C::OnRewardsClaimError__DelegateSignature(class UFr
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.OnRewardsClaimed__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFrontEndRewards_Widget_C* RewardsWidget                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFrontEndRewards_Widget_C* RewardsWidget                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UFrontEndRewards_Widget_C::OnRewardsClaimed__DelegateSignature(class UFrontEndRewards_Widget_C* RewardsWidget)
 {

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -29,13 +29,13 @@ struct AWeakSpot_C_ScaleDownParticleTL__UpdateFunc_Params
 {
 };
 
-// Function WeakSpot.WeakSpot_C.OnHitCrack
-struct AWeakSpot_C_OnHitCrack_Params
+// Function WeakSpot.WeakSpot_C.OnHit
+struct AWeakSpot_C_OnHit_Params
 {
 };
 
-// Function WeakSpot.WeakSpot_C.OnStartDirectionEffect
-struct AWeakSpot_C_OnStartDirectionEffect_Params
+// Function WeakSpot.WeakSpot_C.HideMesh
+struct AWeakSpot_C_HideMesh_Params
 {
 };
 
@@ -44,8 +44,8 @@ struct AWeakSpot_C_OnFadeOut_Params
 {
 };
 
-// Function WeakSpot.WeakSpot_C.HideMesh
-struct AWeakSpot_C_HideMesh_Params
+// Function WeakSpot.WeakSpot_C.OnStartDirectionEffect
+struct AWeakSpot_C_OnStartDirectionEffect_Params
 {
 };
 

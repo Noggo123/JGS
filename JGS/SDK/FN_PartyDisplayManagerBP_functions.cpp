@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,84 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.HandlePartyMemberInProgressDisplayChanges
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AFortPlayerPawn*         Pawn                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void APartyDisplayManagerBP_C::HandlePartyMemberInProgressDisplayChanges(class AFortPlayerPawn* Pawn)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.HandlePartyMemberInProgressDisplayChanges");
+
+	APartyDisplayManagerBP_C_HandlePartyMemberInProgressDisplayChanges_Params params;
+	params.Pawn = Pawn;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.PartyMemberInProgressCheck
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AFortPlayerPawn*         Pawn                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void APartyDisplayManagerBP_C::PartyMemberInProgressCheck(class AFortPlayerPawn* Pawn)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.PartyMemberInProgressCheck");
+
+	APartyDisplayManagerBP_C_PartyMemberInProgressCheck_Params params;
+	params.Pawn = Pawn;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.GetPrefabActorForCurrentDisplayedItem
+// (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class AActor* APartyDisplayManagerBP_C::GetPrefabActorForCurrentDisplayedItem()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.GetPrefabActorForCurrentDisplayedItem");
+
+	APartyDisplayManagerBP_C_GetPrefabActorForCurrentDisplayedItem_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.PostSetupPrefabVisuals
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void APartyDisplayManagerBP_C::PostSetupPrefabVisuals()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.PostSetupPrefabVisuals");
+
+	APartyDisplayManagerBP_C_PostSetupPrefabVisuals_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.ResetTeslaHackParticles
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -30,9 +108,11 @@ void APartyDisplayManagerBP_C::ResetTeslaHackParticles()
 
 
 // Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.SetupPrefabVisuals
-// (Private, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Private, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           Success                        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void APartyDisplayManagerBP_C::SetupPrefabVisuals()
+void APartyDisplayManagerBP_C::SetupPrefabVisuals(bool* Success)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.SetupPrefabVisuals");
 
@@ -43,13 +123,16 @@ void APartyDisplayManagerBP_C::SetupPrefabVisuals()
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+
+	if (Success != nullptr)
+		*Success = params.Success;
 }
 
 
 // Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.GetMeshForCurrentDisplayedItem
 // (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UMeshComponent*          OutDisplayedMesh               (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// class UMeshComponent*          OutDisplayedMesh               (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void APartyDisplayManagerBP_C::GetMeshForCurrentDisplayedItem(class UMeshComponent** OutDisplayedMesh)
 {
@@ -338,6 +421,40 @@ void APartyDisplayManagerBP_C::ScaleAnimEvolve__UpdateFunc()
 }
 
 
+// Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.HoloMatColorPulse__FinishedFunc
+// (BlueprintEvent)
+
+void APartyDisplayManagerBP_C::HoloMatColorPulse__FinishedFunc()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.HoloMatColorPulse__FinishedFunc");
+
+	APartyDisplayManagerBP_C_HoloMatColorPulse__FinishedFunc_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.HoloMatColorPulse__UpdateFunc
+// (BlueprintEvent)
+
+void APartyDisplayManagerBP_C::HoloMatColorPulse__UpdateFunc()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.HoloMatColorPulse__UpdateFunc");
+
+	APartyDisplayManagerBP_C_HoloMatColorPulse__UpdateFunc_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.ShowLoading
 // (Event, Public, BlueprintEvent)
 
@@ -373,16 +490,18 @@ void APartyDisplayManagerBP_C::HideLoading()
 
 
 // Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.ShowItem
-// (Event, Public, BlueprintEvent)
+// (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
 // class UFortItem**              ItemToView                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FGuid*                  RequestID                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
 
-void APartyDisplayManagerBP_C::ShowItem(class UFortItem** ItemToView)
+void APartyDisplayManagerBP_C::ShowItem(class UFortItem** ItemToView, struct FGuid* RequestID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.ShowItem");
 
 	APartyDisplayManagerBP_C_ShowItem_Params params;
 	params.ItemToView = ItemToView;
+	params.RequestID = RequestID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -465,14 +584,16 @@ void APartyDisplayManagerBP_C::PerformScaleMeshFX()
 // Parameters:
 // class UFortItem**              ItemWhoseAssetsWereLoaded      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // TArray<class UObject*>*        LoadedAssets                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// struct FGuid*                  RequestID                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
 
-void APartyDisplayManagerBP_C::HandleLoadingAssetsForItemCompleted(class UFortItem** ItemWhoseAssetsWereLoaded, TArray<class UObject*>* LoadedAssets)
+void APartyDisplayManagerBP_C::HandleLoadingAssetsForItemCompleted(class UFortItem** ItemWhoseAssetsWereLoaded, TArray<class UObject*>* LoadedAssets, struct FGuid* RequestID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.HandleLoadingAssetsForItemCompleted");
 
 	APartyDisplayManagerBP_C_HandleLoadingAssetsForItemCompleted_Params params;
 	params.ItemWhoseAssetsWereLoaded = ItemWhoseAssetsWereLoaded;
 	params.LoadedAssets = LoadedAssets;
+	params.RequestID = RequestID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -493,6 +614,83 @@ void APartyDisplayManagerBP_C::ReceiveTick(float* DeltaSeconds)
 
 	APartyDisplayManagerBP_C_ReceiveTick_Params params;
 	params.DeltaSeconds = DeltaSeconds;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.Set Character Parts Visibility
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           NewVisible                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void APartyDisplayManagerBP_C::Set_Character_Parts_Visibility(bool NewVisible)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.Set Character Parts Visibility");
+
+	APartyDisplayManagerBP_C_Set_Character_Parts_Visibility_Params params;
+	params.NewVisible = NewVisible;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.CharacterCustomizationFinished
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class AFortPlayerPawn**        Pawn                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void APartyDisplayManagerBP_C::CharacterCustomizationFinished(class AFortPlayerPawn** Pawn)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.CharacterCustomizationFinished");
+
+	APartyDisplayManagerBP_C_CharacterCustomizationFinished_Params params;
+	params.Pawn = Pawn;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.PostLoadCustomization
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AFortPlayerPawn*         Pawn                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void APartyDisplayManagerBP_C::PostLoadCustomization(class AFortPlayerPawn* Pawn)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.PostLoadCustomization");
+
+	APartyDisplayManagerBP_C_PostLoadCustomization_Params params;
+	params.Pawn = Pawn;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void APartyDisplayManagerBP_C::ReceiveBeginPlay()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.ReceiveBeginPlay");
+
+	APartyDisplayManagerBP_C_ReceiveBeginPlay_Params params;
 
 	auto flags = fn->FunctionFlags;
 

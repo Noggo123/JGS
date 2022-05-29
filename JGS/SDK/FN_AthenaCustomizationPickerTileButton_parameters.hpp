@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -28,7 +28,7 @@ struct UAthenaCustomizationPickerTileButton_C_UpdateBangState_Params
 struct UAthenaCustomizationPickerTileButton_C_SetData_Params
 {
 	class UObject**                                    InData;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonListView**                            OwningList;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonListView**                            OwningList;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function AthenaCustomizationPickerTileButton.AthenaCustomizationPickerTileButton_C.OnSelected
@@ -36,10 +36,9 @@ struct UAthenaCustomizationPickerTileButton_C_OnSelected_Params
 {
 };
 
-// Function AthenaCustomizationPickerTileButton.AthenaCustomizationPickerTileButton_C.SetSelected
-struct UAthenaCustomizationPickerTileButton_C_SetSelected_Params
+// Function AthenaCustomizationPickerTileButton.AthenaCustomizationPickerTileButton_C.Construct
+struct UAthenaCustomizationPickerTileButton_C_Construct_Params
 {
-	bool*                                              bSelected;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaCustomizationPickerTileButton.AthenaCustomizationPickerTileButton_C.ExecuteUbergraph_AthenaCustomizationPickerTileButton

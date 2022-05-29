@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,7 @@ namespace SDK
 // Function PerkWidget.PerkWidget_C.CreateToolTipWidget
 struct UPerkWidget_C_CreateToolTipWidget_Params
 {
-	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 };
 
 // Function PerkWidget.PerkWidget_C.InitializeTextInfo
@@ -93,6 +93,17 @@ struct UPerkWidget_C_PreConstruct_Params
 // Function PerkWidget.PerkWidget_C.Construct
 struct UPerkWidget_C_Construct_Params
 {
+};
+
+// Function PerkWidget.PerkWidget_C.OnPerkUpdated
+struct UPerkWidget_C_OnPerkUpdated_Params
+{
+};
+
+// Function PerkWidget.PerkWidget_C.OnTooltipDescriptionReady
+struct UPerkWidget_C_OnTooltipDescriptionReady_Params
+{
+	TArray<struct FText>*                              DescriptionList;                                          // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function PerkWidget.PerkWidget_C.ExecuteUbergraph_PerkWidget

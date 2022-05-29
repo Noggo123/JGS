@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,22 +20,10 @@ struct UAthena_Matchmaking_GameModeButton_C_SetButtonSize_Params
 	bool                                               UseLargeSize;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Athena_Matchmaking_GameModeButton.Athena_Matchmaking_GameModeButton_C.ConfigButtonWithMissionGen
-struct UAthena_Matchmaking_GameModeButton_C_ConfigButtonWithMissionGen_Params
-{
-	class UClass*                                      InMission;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Athena_Matchmaking_GameModeButton.Athena_Matchmaking_GameModeButton_C.SetMissionGenData
-struct UAthena_Matchmaking_GameModeButton_C_SetMissionGenData_Params
-{
-	bool                                               Success;                                                  // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function Athena_Matchmaking_GameModeButton.Athena_Matchmaking_GameModeButton_C.SetOwningDisplayWidget
 struct UAthena_Matchmaking_GameModeButton_C_SetOwningDisplayWidget_Params
 {
-	class UAthenaMatchmakingOptionsDisplay_v2_C*       OwningDisplay;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UAthenaMatchmakingOptionsDisplay_v2_C*       OwningDisplay;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function Athena_Matchmaking_GameModeButton.Athena_Matchmaking_GameModeButton_C.UpdateGameModeAvailibilty
@@ -57,7 +45,7 @@ struct UAthena_Matchmaking_GameModeButton_C_DisableGameModeButton_Params
 // Function Athena_Matchmaking_GameModeButton.Athena_Matchmaking_GameModeButton_C.IsGameModeAvailable
 struct UAthena_Matchmaking_GameModeButton_C_IsGameModeAvailable_Params
 {
-	EFortAthenaPlaylist                                InMode;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortPlaylistAthena*                         InMode;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               Available;                                                // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -72,10 +60,8 @@ struct UAthena_Matchmaking_GameModeButton_C_OnFocusReceived_Params
 // Function Athena_Matchmaking_GameModeButton.Athena_Matchmaking_GameModeButton_C.SetupGameModeButton
 struct UAthena_Matchmaking_GameModeButton_C_SetupGameModeButton_Params
 {
-	struct FText                                       ModeDisplayName;                                          // (BlueprintVisible, BlueprintReadOnly, Parm)
-	bool                                               bHasExtraInfo;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortPlaylistAthena*                         PlaylistObj;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               bIsEnabled;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FText                                       ExtraInfoText;                                            // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
 // Function Athena_Matchmaking_GameModeButton.Athena_Matchmaking_GameModeButton_C.PreConstruct
@@ -87,13 +73,13 @@ struct UAthena_Matchmaking_GameModeButton_C_PreConstruct_Params
 // Function Athena_Matchmaking_GameModeButton.Athena_Matchmaking_GameModeButton_C.BndEvt__PlayButton_K2Node_ComponentBoundEvent_191_CommonButtonClicked__DelegateSignature
 struct UAthena_Matchmaking_GameModeButton_C_BndEvt__PlayButton_K2Node_ComponentBoundEvent_191_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function Athena_Matchmaking_GameModeButton.Athena_Matchmaking_GameModeButton_C.OnModeButtonHovered
 struct UAthena_Matchmaking_GameModeButton_C_OnModeButtonHovered_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function Athena_Matchmaking_GameModeButton.Athena_Matchmaking_GameModeButton_C.Construct
@@ -110,13 +96,13 @@ struct UAthena_Matchmaking_GameModeButton_C_ExecuteUbergraph_Athena_Matchmaking_
 // Function Athena_Matchmaking_GameModeButton.Athena_Matchmaking_GameModeButton_C.ButtonHovered__DelegateSignature
 struct UAthena_Matchmaking_GameModeButton_C_ButtonHovered__DelegateSignature_Params
 {
-	class UAthena_Matchmaking_GameModeButton_C*        HoveredButton;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UAthena_Matchmaking_GameModeButton_C*        HoveredButton;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function Athena_Matchmaking_GameModeButton.Athena_Matchmaking_GameModeButton_C.GameModeSelected__DelegateSignature
 struct UAthena_Matchmaking_GameModeButton_C_GameModeSelected__DelegateSignature_Params
 {
-	class UAthena_Matchmaking_GameModeButton_C*        SelectedGameModeButton;                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UAthena_Matchmaking_GameModeButton_C*        SelectedGameModeButton;                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 }

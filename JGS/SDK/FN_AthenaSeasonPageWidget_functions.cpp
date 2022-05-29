@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -51,32 +51,12 @@ void UAthenaSeasonPageWidget_C::GetFirstLevel(int* FirstLevel)
 }
 
 
-// Function AthenaSeasonPageWidget.AthenaSeasonPageWidget_C.HandleUsingGamepadChanged
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           UsingGamepad                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaSeasonPageWidget_C::HandleUsingGamepadChanged(bool UsingGamepad)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaSeasonPageWidget.AthenaSeasonPageWidget_C.HandleUsingGamepadChanged");
-
-	UAthenaSeasonPageWidget_C_HandleUsingGamepadChanged_Params params;
-	params.UsingGamepad = UsingGamepad;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function AthenaSeasonPageWidget.AthenaSeasonPageWidget_C.AddFreeRewards
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int                            InColumn                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // class UFortSeasonPassLevelInfo* LevelInfo                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UAthenaSeasonLevelFreeRewardsWidget_C* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// class UAthenaSeasonLevelFreeRewardsWidget_C* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 
 class UAthenaSeasonLevelFreeRewardsWidget_C* UAthenaSeasonPageWidget_C::AddFreeRewards(int InColumn, class UFortSeasonPassLevelInfo* LevelInfo)
 {
@@ -101,7 +81,7 @@ class UAthenaSeasonLevelFreeRewardsWidget_C* UAthenaSeasonPageWidget_C::AddFreeR
 // Parameters:
 // int                            InColumn                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // class UFortSeasonPassLevelInfo* LevelInfo                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UAthenaSeasonLevelPaidRewardsWidget_C* OutputPin                      (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// class UAthenaSeasonLevelPaidRewardsWidget_C* OutputPin                      (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UAthenaSeasonPageWidget_C::AddPaidRewards(int InColumn, class UFortSeasonPassLevelInfo* LevelInfo, class UAthenaSeasonLevelPaidRewardsWidget_C** OutputPin)
 {
@@ -208,86 +188,6 @@ void UAthenaSeasonPageWidget_C::AddLevelWidgets(class UFortSeasonPassLevelInfo* 
 }
 
 
-// Function AthenaSeasonPageWidget.AthenaSeasonPageWidget_C.BndEvt__RightPaidBtn_K2Node_ComponentBoundEvent_131_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaSeasonPageWidget_C::BndEvt__RightPaidBtn_K2Node_ComponentBoundEvent_131_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaSeasonPageWidget.AthenaSeasonPageWidget_C.BndEvt__RightPaidBtn_K2Node_ComponentBoundEvent_131_CommonButtonClicked__DelegateSignature");
-
-	UAthenaSeasonPageWidget_C_BndEvt__RightPaidBtn_K2Node_ComponentBoundEvent_131_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaSeasonPageWidget.AthenaSeasonPageWidget_C.BndEvt__RightFreeBtn_K2Node_ComponentBoundEvent_148_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaSeasonPageWidget_C::BndEvt__RightFreeBtn_K2Node_ComponentBoundEvent_148_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaSeasonPageWidget.AthenaSeasonPageWidget_C.BndEvt__RightFreeBtn_K2Node_ComponentBoundEvent_148_CommonButtonClicked__DelegateSignature");
-
-	UAthenaSeasonPageWidget_C_BndEvt__RightFreeBtn_K2Node_ComponentBoundEvent_148_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaSeasonPageWidget.AthenaSeasonPageWidget_C.BndEvt__LeftFreeBtn_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaSeasonPageWidget_C::BndEvt__LeftFreeBtn_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaSeasonPageWidget.AthenaSeasonPageWidget_C.BndEvt__LeftFreeBtn_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature");
-
-	UAthenaSeasonPageWidget_C_BndEvt__LeftFreeBtn_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaSeasonPageWidget.AthenaSeasonPageWidget_C.BndEvt__LeftPaidBtn_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaSeasonPageWidget_C::BndEvt__LeftPaidBtn_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaSeasonPageWidget.AthenaSeasonPageWidget_C.BndEvt__LeftPaidBtn_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature");
-
-	UAthenaSeasonPageWidget_C_BndEvt__LeftPaidBtn_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function AthenaSeasonPageWidget.AthenaSeasonPageWidget_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
@@ -364,6 +264,23 @@ void UAthenaSeasonPageWidget_C::OnBattlePassChanged()
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaSeasonPageWidget.AthenaSeasonPageWidget_C.OnBattlePassChanged");
 
 	UAthenaSeasonPageWidget_C_OnBattlePassChanged_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaSeasonPageWidget.AthenaSeasonPageWidget_C.ScreenShown
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void UAthenaSeasonPageWidget_C::ScreenShown()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaSeasonPageWidget.AthenaSeasonPageWidget_C.ScreenShown");
+
+	UAthenaSeasonPageWidget_C_ScreenShown_Params params;
 
 	auto flags = fn->FunctionFlags;
 

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,24 +12,37 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function Trap_Floor_Spikes.Trap_Floor_Spikes_C.GetFireLocationAndRotation
-// (Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// struct FTransform              ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
+// Function Trap_Floor_Spikes.Trap_Floor_Spikes_C.ChangeToNormalMaterial
+// (Public, BlueprintCallable, BlueprintEvent)
 
-struct FTransform ATrap_Floor_Spikes_C::GetFireLocationAndRotation()
+void ATrap_Floor_Spikes_C::ChangeToNormalMaterial()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Trap_Floor_Spikes.Trap_Floor_Spikes_C.GetFireLocationAndRotation");
+	static auto fn = UObject::FindObject<UFunction>("Function Trap_Floor_Spikes.Trap_Floor_Spikes_C.ChangeToNormalMaterial");
 
-	ATrap_Floor_Spikes_C_GetFireLocationAndRotation_Params params;
+	ATrap_Floor_Spikes_C_ChangeToNormalMaterial_Params params;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+}
 
-	return params.ReturnValue;
+
+// Function Trap_Floor_Spikes.Trap_Floor_Spikes_C. ChangeToFriendlyMaterial
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ATrap_Floor_Spikes_C::_ChangeToFriendlyMaterial()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Trap_Floor_Spikes.Trap_Floor_Spikes_C. ChangeToFriendlyMaterial");
+
+	ATrap_Floor_Spikes_C__ChangeToFriendlyMaterial_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
 }
 
 
@@ -311,6 +324,23 @@ void ATrap_Floor_Spikes_C::OnWorldReady()
 	static auto fn = UObject::FindObject<UFunction>("Function Trap_Floor_Spikes.Trap_Floor_Spikes_C.OnWorldReady");
 
 	ATrap_Floor_Spikes_C_OnWorldReady_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Trap_Floor_Spikes.Trap_Floor_Spikes_C.OnInitTeam
+// (Event, Protected, BlueprintEvent)
+
+void ATrap_Floor_Spikes_C::OnInitTeam()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Trap_Floor_Spikes.Trap_Floor_Spikes_C.OnInitTeam");
+
+	ATrap_Floor_Spikes_C_OnInitTeam_Params params;
 
 	auto flags = fn->FunctionFlags;
 

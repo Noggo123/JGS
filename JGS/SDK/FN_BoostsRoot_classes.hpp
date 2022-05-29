@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -39,6 +37,7 @@ public:
 	}
 
 
+	void SetAccountBoostsTabHiddenState();
 	void HandleStore(bool* Passthrough);
 	void HandleCursorModeChanging(bool IsEnabled);
 	void Set_Input_Action_Handlers();
@@ -48,6 +47,7 @@ public:
 	void OnActivated();
 	void BndEvt__SettingsTabs_K2Node_ComponentBoundEvent_95_OnTabButtonCreated__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton);
 	void BndEvt__CurrentTabSwitcher_K2Node_ComponentBoundEvent_29_OnActiveWidgetChanged__DelegateSignature(class UWidget* ActiveWidget, int ActiveWidgetIndex);
+	void OnDeactivated();
 	void ExecuteUbergraph_BoostsRoot(int EntryPoint);
 };
 

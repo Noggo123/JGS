@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,74 +12,20 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Get FortPC
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class AFortPlayerController*   FortPC                         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Refresh Bang State Internal
+// (Private, BlueprintCallable, BlueprintEvent)
 
-void UBP_ItemTransform_TabButton_C::Get_FortPC(class AFortPlayerController** FortPC)
+void UBP_ItemTransform_TabButton_C::Refresh_Bang_State_Internal()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Get FortPC");
+	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Refresh Bang State Internal");
 
-	UBP_ItemTransform_TabButton_C_Get_FortPC_Params params;
+	UBP_ItemTransform_TabButton_C_Refresh_Bang_State_Internal_Params params;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (FortPC != nullptr)
-		*FortPC = params.FortPC;
-}
-
-
-// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Get Item from Transform Seen State
-// (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UFortAccountItem*        Transform_Key                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UFortAccountItem*        Item                           (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UBP_ItemTransform_TabButton_C::Get_Item_from_Transform_Seen_State(class UFortAccountItem* Transform_Key, class UFortAccountItem** Item)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Get Item from Transform Seen State");
-
-	UBP_ItemTransform_TabButton_C_Get_Item_from_Transform_Seen_State_Params params;
-	params.Transform_Key = Transform_Key;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Item != nullptr)
-		*Item = params.Item;
-}
-
-
-// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Calculate Unseen Keys
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TArray<class UFortAccountItem*> Array                          (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// int                            NumUnseen                      (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UBP_ItemTransform_TabButton_C::Calculate_Unseen_Keys(TArray<class UFortAccountItem*>* Array, int* NumUnseen)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Calculate Unseen Keys");
-
-	UBP_ItemTransform_TabButton_C_Calculate_Unseen_Keys_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Array != nullptr)
-		*Array = params.Array;
-	if (NumUnseen != nullptr)
-		*NumUnseen = params.NumUnseen;
 }
 
 
@@ -125,7 +71,7 @@ void UBP_ItemTransform_TabButton_C::Set_Tab_Id(const struct FName& TabId)
 
 
 // Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Refresh Bang State
-// (Public, BlueprintCallable, BlueprintEvent)
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
 void UBP_ItemTransform_TabButton_C::Refresh_Bang_State()
 {

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,7 @@ namespace SDK
 // Function BluGlo_Node.BluGlo_Node_C.BlueprintGetInteractionString
 struct ABluGlo_Node_C_BlueprintGetInteractionString_Params
 {
-	class AFortPawn**                                  InteractingPawn;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AFortPawn**                                  InteractingPawn;                                          // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	struct FText                                       ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -29,7 +29,7 @@ struct ABluGlo_Node_C_OnRep_CanInteract_Params
 // Function BluGlo_Node.BluGlo_Node_C.BlueprintCanInteract
 struct ABluGlo_Node_C_BlueprintCanInteract_Params
 {
-	class AFortPawn**                                  InteractingPawn;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AFortPawn**                                  InteractingPawn;                                          // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 

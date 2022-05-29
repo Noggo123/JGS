@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,6 +14,74 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
+// Function ItemInspectScreen.ItemInspectScreen_C.GetItemActionSwitcherVisibility
+struct UItemInspectScreen_C_GetItemActionSwitcherVisibility_Params
+{
+	ESlateVisibility                                   Return_Value;                                             // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemInspectScreen.ItemInspectScreen_C.GetUpgradeItemInputActionState
+struct UItemInspectScreen_C_GetUpgradeItemInputActionState_Params
+{
+	EInputActionState                                  Return_Value;                                             // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemInspectScreen.ItemInspectScreen_C.GetPerkModifyVisibility
+struct UItemInspectScreen_C_GetPerkModifyVisibility_Params
+{
+	ESlateVisibility                                   Return_Value;                                             // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemInspectScreen.ItemInspectScreen_C.SetOverviewActionsInputState
+struct UItemInspectScreen_C_SetOverviewActionsInputState_Params
+{
+	EInputActionState                                  State;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemInspectScreen.ItemInspectScreen_C.GetLevelUpVisibility
+struct UItemInspectScreen_C_GetLevelUpVisibility_Params
+{
+	ESlateVisibility                                   Return_Value;                                             // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemInspectScreen.ItemInspectScreen_C.HandleSchematicUpgradeOptions
+struct UItemInspectScreen_C_HandleSchematicUpgradeOptions_Params
+{
+	bool                                               bPassThrough;                                             // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemInspectScreen.ItemInspectScreen_C.UpdateInspectionMode
+struct UItemInspectScreen_C_UpdateInspectionMode_Params
+{
+};
+
+// Function ItemInspectScreen.ItemInspectScreen_C.GetWindowTitleBarVisibility
+struct UItemInspectScreen_C_GetWindowTitleBarVisibility_Params
+{
+	ESlateVisibility                                   ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function ItemInspectScreen.ItemInspectScreen_C.UnbindDelegates
+struct UItemInspectScreen_C_UnbindDelegates_Params
+{
+};
+
+// Function ItemInspectScreen.ItemInspectScreen_C.BindDelegates
+struct UItemInspectScreen_C_BindDelegates_Params
+{
+};
+
+// Function ItemInspectScreen.ItemInspectScreen_C.GetWidgetForFramingViewedItem
+struct UItemInspectScreen_C_GetWidgetForFramingViewedItem_Params
+{
+	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+};
+
+// Function ItemInspectScreen.ItemInspectScreen_C.RefreshItemViewHandlerStates
+struct UItemInspectScreen_C_RefreshItemViewHandlerStates_Params
+{
+};
+
 // Function ItemInspectScreen.ItemInspectScreen_C.Setup Evolution Selection for Comparisons
 struct UItemInspectScreen_C_Setup_Evolution_Selection_for_Comparisons_Params
 {
@@ -21,10 +89,10 @@ struct UItemInspectScreen_C_Setup_Evolution_Selection_for_Comparisons_Params
 	int                                                RecipeIndex;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function ItemInspectScreen.ItemInspectScreen_C.GetUpgradeRarityInputState
-struct UItemInspectScreen_C_GetUpgradeRarityInputState_Params
+// Function ItemInspectScreen.ItemInspectScreen_C.GetUpgradeRarityVisibility
+struct UItemInspectScreen_C_GetUpgradeRarityVisibility_Params
 {
-	EInputActionState                                  ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	ESlateVisibility                                   ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function ItemInspectScreen.ItemInspectScreen_C.GetFavoriteInputState
@@ -33,10 +101,10 @@ struct UItemInspectScreen_C_GetFavoriteInputState_Params
 	EInputActionState                                  ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function ItemInspectScreen.ItemInspectScreen_C.GetEvolutionInputState
-struct UItemInspectScreen_C_GetEvolutionInputState_Params
+// Function ItemInspectScreen.ItemInspectScreen_C.GetEvolutionVisibility
+struct UItemInspectScreen_C_GetEvolutionVisibility_Params
 {
-	EInputActionState                                  ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	ESlateVisibility                                   ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function ItemInspectScreen.ItemInspectScreen_C.GetViewInputState
@@ -45,15 +113,15 @@ struct UItemInspectScreen_C_GetViewInputState_Params
 	EInputActionState                                  ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function ItemInspectScreen.ItemInspectScreen_C.HideDisableAllInputActions
-struct UItemInspectScreen_C_HideDisableAllInputActions_Params
+// Function ItemInspectScreen.ItemInspectScreen_C.SetAllInputActionStates
+struct UItemInspectScreen_C_SetAllInputActionStates_Params
 {
+	EInputActionState                                  InputActionState;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemInspectScreen.ItemInspectScreen_C.HandleUpgradeItemRarity
 struct UItemInspectScreen_C_HandleUpgradeItemRarity_Params
 {
-	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemInspectScreen.ItemInspectScreen_C.RefreshExtraDetailsTabs
@@ -65,12 +133,6 @@ struct UItemInspectScreen_C_RefreshExtraDetailsTabs_Params
 struct UItemInspectScreen_C_OnItemCycleChangedItem_Params
 {
 	class UFortItem*                                   NewItemToRepresent;                                       // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function ItemInspectScreen.ItemInspectScreen_C.Passthrough
-struct UItemInspectScreen_C_Passthrough_Params
-{
-	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemInspectScreen.ItemInspectScreen_C.SetInspectModeForChildPanels
@@ -118,18 +180,6 @@ struct UItemInspectScreen_C_HandleCursorModeChanging_Params
 	bool                                               IsEnabled;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function ItemInspectScreen.ItemInspectScreen_C.OpenItemInspect (Function)
-struct UItemInspectScreen_C_OpenItemInspect__Function__Params
-{
-	class UFortItem*                                   ItemToInspect;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	EFortItemInspectionMode                            Mode;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ShouldAllowUpgrading;                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ShouldAllowEvolution;                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ShouldAllowFavoriting;                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ShouldShowPreviewDisplay;                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               Allow_Rarity_Upgrading;                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function ItemInspectScreen.ItemInspectScreen_C.ResetDetailsPanel
 struct UItemInspectScreen_C_ResetDetailsPanel_Params
 {
@@ -165,22 +215,14 @@ struct UItemInspectScreen_C_HandleEvolutionChoiceHovered_Params
 	class UFortItem*                                   Item;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function ItemInspectScreen.ItemInspectScreen_C.SetInspectMode
-struct UItemInspectScreen_C_SetInspectMode_Params
-{
-	EFortItemInspectionMode                            NewInspectMode;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function ItemInspectScreen.ItemInspectScreen_C.HandleUpgrade
 struct UItemInspectScreen_C_HandleUpgrade_Params
 {
-	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemInspectScreen.ItemInspectScreen_C.HandleEvolution
 struct UItemInspectScreen_C_HandleEvolution_Params
 {
-	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemInspectScreen.ItemInspectScreen_C.HandleView
@@ -201,12 +243,6 @@ struct UItemInspectScreen_C_HandleBack_Params
 	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function ItemInspectScreen.ItemInspectScreen_C.SetItemToRepresent
-struct UItemInspectScreen_C_SetItemToRepresent_Params
-{
-	class UFortItem*                                   Item;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function ItemInspectScreen.ItemInspectScreen_C.OnMCPRequestComplete_5E880EAB4E8645A0B59BA29917400203
 struct UItemInspectScreen_C_OnMCPRequestComplete_5E880EAB4E8645A0B59BA29917400203_Params
 {
@@ -214,29 +250,6 @@ struct UItemInspectScreen_C_OnMCPRequestComplete_5E880EAB4E8645A0B59BA2991740020
 
 // Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__ItemInspectEvolutionConfirmation_K2Node_ComponentBoundEvent_4_OnEvolutionConfirm__DelegateSignature
 struct UItemInspectScreen_C_BndEvt__ItemInspectEvolutionConfirmation_K2Node_ComponentBoundEvent_4_OnEvolutionConfirm__DelegateSignature_Params
-{
-};
-
-// Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__InspectedItem_K2Node_ComponentBoundEvent_9_FortOnItemChangedDelegate__DelegateSignature
-struct UItemInspectScreen_C_BndEvt__InspectedItem_K2Node_ComponentBoundEvent_9_FortOnItemChangedDelegate__DelegateSignature_Params
-{
-	bool                                               bItemChanged;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bAmmoChanged;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bIngredientsChanged;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__InspectedItem_K2Node_ComponentBoundEvent_10_FortOnItemDestroyedDelegate__DelegateSignature
-struct UItemInspectScreen_C_BndEvt__InspectedItem_K2Node_ComponentBoundEvent_10_FortOnItemDestroyedDelegate__DelegateSignature_Params
-{
-};
-
-// Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_1_OnUpgradeCancel__DelegateSignature
-struct UItemInspectScreen_C_BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_1_OnUpgradeCancel__DelegateSignature_Params
-{
-};
-
-// Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_0_OnUpgradeConfirm__DelegateSignature
-struct UItemInspectScreen_C_BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_0_OnUpgradeConfirm__DelegateSignature_Params
 {
 };
 
@@ -257,18 +270,6 @@ struct UItemInspectScreen_C_OnActivated_Params
 {
 };
 
-// Function ItemInspectScreen.ItemInspectScreen_C.OpenItemInspect
-struct UItemInspectScreen_C_OpenItemInspect_Params
-{
-	class UFortItem**                                  ItemToInspect;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	EFortItemInspectionMode*                           Mode;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool*                                              ShouldAllowUpgrading;                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool*                                              ShouldAllowEvolution;                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool*                                              ShouldAllowFavorite;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool*                                              IsTemporaryItem;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool*                                              bAllowRarityUpgrading;                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function ItemInspectScreen.ItemInspectScreen_C.Destruct
 struct UItemInspectScreen_C_Destruct_Params
 {
@@ -283,7 +284,7 @@ struct UItemInspectScreen_C_OnDeactivated_Params
 struct UItemInspectScreen_C_BndEvt__DetailPanelTabList_PC_K2Node_ComponentBoundEvent_385_OnTabButtonCreated__DelegateSignature_Params
 {
 	struct FName                                       TabId;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonButton*                               TabButton;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               TabButton;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function ItemInspectScreen.ItemInspectScreen_C.OnInputModeChanged
@@ -297,8 +298,8 @@ struct UItemInspectScreen_C_BndEvt__ItemInspectEvolveRarityConfirmation_K2Node_C
 {
 };
 
-// Function ItemInspectScreen.ItemInspectScreen_C.Construct
-struct UItemInspectScreen_C_Construct_Params
+// Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_1_OnUpgradeCancel__DelegateSignature
+struct UItemInspectScreen_C_BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_1_OnUpgradeCancel__DelegateSignature_Params
 {
 };
 
@@ -307,6 +308,41 @@ struct UItemInspectScreen_C_BndEvt__ItemInspectEvolveRarityConfirmation_K2Node_C
 {
 	class UFortItem*                                   Item;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	int                                                RecipeIndex;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_0_OnUpgradeConfirm__DelegateSignature
+struct UItemInspectScreen_C_BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_0_OnUpgradeConfirm__DelegateSignature_Params
+{
+};
+
+// Function ItemInspectScreen.ItemInspectScreen_C.HandleIsPreviewingChanged
+struct UItemInspectScreen_C_HandleIsPreviewingChanged_Params
+{
+};
+
+// Function ItemInspectScreen.ItemInspectScreen_C.HandleDifferentItemToInspectSetBP
+struct UItemInspectScreen_C_HandleDifferentItemToInspectSetBP_Params
+{
+};
+
+// Function ItemInspectScreen.ItemInspectScreen_C.HandleDifferentInspectionModeSetBP
+struct UItemInspectScreen_C_HandleDifferentInspectionModeSetBP_Params
+{
+};
+
+// Function ItemInspectScreen.ItemInspectScreen_C.HandleItemToInspectChangedBP
+struct UItemInspectScreen_C_HandleItemToInspectChangedBP_Params
+{
+};
+
+// Function ItemInspectScreen.ItemInspectScreen_C.HandleItemToInspectDestroyedBP
+struct UItemInspectScreen_C_HandleItemToInspectDestroyedBP_Params
+{
+};
+
+// Function ItemInspectScreen.ItemInspectScreen_C.Construct
+struct UItemInspectScreen_C_Construct_Params
+{
 };
 
 // Function ItemInspectScreen.ItemInspectScreen_C.ExecuteUbergraph_ItemInspectScreen

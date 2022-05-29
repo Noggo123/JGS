@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -16,6 +16,11 @@ namespace SDK
 
 // Function SquadSlotItemPicker.SquadSlotItemPicker_C.Construct
 struct USquadSlotItemPicker_C_Construct_Params
+{
+};
+
+// Function SquadSlotItemPicker.SquadSlotItemPicker_C.HandleChangeSort
+struct USquadSlotItemPicker_C_HandleChangeSort_Params
 {
 };
 

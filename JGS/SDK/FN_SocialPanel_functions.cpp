@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -59,6 +59,57 @@ void USocialPanel_C::Construct()
 	static auto fn = UObject::FindObject<UFunction>("Function SocialPanel.SocialPanel_C.Construct");
 
 	USocialPanel_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function SocialPanel.SocialPanel_C.OnActivated
+// (Event, Protected, BlueprintEvent)
+
+void USocialPanel_C::OnActivated()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function SocialPanel.SocialPanel_C.OnActivated");
+
+	USocialPanel_C_OnActivated_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function SocialPanel.SocialPanel_C.OnDeactivated
+// (Event, Protected, BlueprintEvent)
+
+void USocialPanel_C::OnDeactivated()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function SocialPanel.SocialPanel_C.OnDeactivated");
+
+	USocialPanel_C_OnDeactivated_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function SocialPanel.SocialPanel_C.OnBeginIntro
+// (Event, Public, BlueprintEvent)
+
+void USocialPanel_C::OnBeginIntro()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function SocialPanel.SocialPanel_C.OnBeginIntro");
+
+	USocialPanel_C_OnBeginIntro_Params params;
 
 	auto flags = fn->FunctionFlags;
 

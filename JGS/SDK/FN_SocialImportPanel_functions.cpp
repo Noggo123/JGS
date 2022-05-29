@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,23 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function SocialImportPanel.SocialImportPanel_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void USocialImportPanel_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function SocialImportPanel.SocialImportPanel_C.Construct");
-
-	USocialImportPanel_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function SocialImportPanel.SocialImportPanel_C.OnLauncherImportOpened
 // (Event, Public, BlueprintEvent)
@@ -97,8 +80,45 @@ void USocialImportPanel_C::OnWaitingViewRequested()
 }
 
 
+// Function SocialImportPanel.SocialImportPanel_C.OnPanelTypeSet
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// ESocialImportPanelType*        NewType                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void USocialImportPanel_C::OnPanelTypeSet(ESocialImportPanelType* NewType)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function SocialImportPanel.SocialImportPanel_C.OnPanelTypeSet");
+
+	USocialImportPanel_C_OnPanelTypeSet_Params params;
+	params.NewType = NewType;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function SocialImportPanel.SocialImportPanel_C.OnActivated
+// (Event, Protected, BlueprintEvent)
+
+void USocialImportPanel_C::OnActivated()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function SocialImportPanel.SocialImportPanel_C.OnActivated");
+
+	USocialImportPanel_C_OnActivated_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function SocialImportPanel.SocialImportPanel_C.ExecuteUbergraph_SocialImportPanel
-// ()
+// (HasDefaults)
 // Parameters:
 // int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 

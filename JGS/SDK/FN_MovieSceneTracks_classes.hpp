@@ -1,18 +1,33 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------
 //Classes
 //---------------------------------------------------------------------------
+
+// Class MovieSceneTracks.MovieScenePropertyTrack
+// 0x0020 (0x00E0 - 0x00C0)
+class UMovieScenePropertyTrack : public UMovieSceneNameableTrack
+{
+public:
+	struct FString                                     PropertyPath;                                             // 0x00C0(0x0010) (ZeroConstructor)
+	TArray<class UMovieSceneSection*>                  Sections;                                                 // 0x00D0(0x0010) (ExportObject, ZeroConstructor)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class MovieSceneTracks.MovieScenePropertyTrack");
+		return ptr;
+	}
+
+};
+
 
 // Class MovieSceneTracks.MovieSceneTransformOrigin
 // 0x0000 (0x0028 - 0x0028)
@@ -32,11 +47,13 @@ public:
 
 
 // Class MovieSceneTracks.MovieScene3DConstraintSection
-// 0x0010 (0x0120 - 0x0110)
+// 0x0030 (0x0140 - 0x0110)
 class UMovieScene3DConstraintSection : public UMovieSceneSection
 {
 public:
-	struct FGuid                                       ConstraintId;                                             // 0x0110(0x0010) (IsPlainOldData)
+	struct FGuid                                       ConstraintId;                                             // 0x0110(0x0010) (Deprecated, IsPlainOldData)
+	struct FMovieSceneObjectBindingID                  ConstraintBindingID;                                      // 0x0120(0x0018) (Edit)
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0138(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -48,19 +65,18 @@ public:
 
 
 // Class MovieSceneTracks.MovieScene3DAttachSection
-// 0x0020 (0x0140 - 0x0120)
+// 0x0010 (0x0150 - 0x0140)
 class UMovieScene3DAttachSection : public UMovieScene3DConstraintSection
 {
 public:
-	struct FName                                       AttachSocketName;                                         // 0x0120(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FName                                       AttachComponentName;                                      // 0x0128(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	EAttachmentRule                                    AttachmentLocationRule;                                   // 0x0130(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	EAttachmentRule                                    AttachmentRotationRule;                                   // 0x0131(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	EAttachmentRule                                    AttachmentScaleRule;                                      // 0x0132(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	EDetachmentRule                                    DetachmentLocationRule;                                   // 0x0133(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	EDetachmentRule                                    DetachmentRotationRule;                                   // 0x0134(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	EDetachmentRule                                    DetachmentScaleRule;                                      // 0x0135(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0xA];                                       // 0x0136(0x000A) MISSED OFFSET
+	struct FName                                       AttachComponentName;                                      // 0x0140(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	EAttachmentRule                                    AttachmentLocationRule;                                   // 0x0148(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	EAttachmentRule                                    AttachmentRotationRule;                                   // 0x0149(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	EAttachmentRule                                    AttachmentScaleRule;                                      // 0x014A(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	EDetachmentRule                                    DetachmentLocationRule;                                   // 0x014B(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	EDetachmentRule                                    DetachmentRotationRule;                                   // 0x014C(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	EDetachmentRule                                    DetachmentScaleRule;                                      // 0x014D(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x2];                                       // 0x014E(0x0002) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -103,18 +119,18 @@ public:
 
 
 // Class MovieSceneTracks.MovieScene3DPathSection
-// 0x0080 (0x01A0 - 0x0120)
+// 0x0070 (0x01B0 - 0x0140)
 class UMovieScene3DPathSection : public UMovieScene3DConstraintSection
 {
 public:
-	struct FRichCurve                                  TimingCurve;                                              // 0x0120(0x0070) (Edit)
-	EMovieScene3DPathSection_Axis                      FrontAxisEnum;                                            // 0x0190(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	EMovieScene3DPathSection_Axis                      UpAxisEnum;                                               // 0x0191(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x2];                                       // 0x0192(0x0002) MISSED OFFSET
-	unsigned char                                      bFollow : 1;                                              // 0x0194(0x0001) (Edit)
-	unsigned char                                      bReverse : 1;                                             // 0x0194(0x0001) (Edit)
-	unsigned char                                      bForceUpright : 1;                                        // 0x0194(0x0001) (Edit)
-	unsigned char                                      UnknownData01[0xB];                                       // 0x0195(0x000B) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x68];                                      // 0x0140(0x0068) MISSED OFFSET
+	EMovieScene3DPathSection_Axis                      FrontAxisEnum;                                            // 0x01A8(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	EMovieScene3DPathSection_Axis                      UpAxisEnum;                                               // 0x01A9(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x2];                                       // 0x01AA(0x0002) MISSED OFFSET
+	unsigned char                                      bFollow : 1;                                              // 0x01AC(0x0001) (Edit)
+	unsigned char                                      bReverse : 1;                                             // 0x01AC(0x0001) (Edit)
+	unsigned char                                      bForceUpright : 1;                                        // 0x01AC(0x0001) (Edit)
+	unsigned char                                      UnknownData02[0x3];                                       // 0x01AD(0x0003) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -156,23 +172,6 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindClass("Class MovieSceneTracks.MovieScene3DTransformSection");
-		return ptr;
-	}
-
-};
-
-
-// Class MovieSceneTracks.MovieScenePropertyTrack
-// 0x0020 (0x00E0 - 0x00C0)
-class UMovieScenePropertyTrack : public UMovieSceneNameableTrack
-{
-public:
-	struct FString                                     PropertyPath;                                             // 0x00C0(0x0010) (ZeroConstructor)
-	TArray<class UMovieSceneSection*>                  Sections;                                                 // 0x00D0(0x0010) (ExportObject, ZeroConstructor)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class MovieSceneTracks.MovieScenePropertyTrack");
 		return ptr;
 	}
 
@@ -384,11 +383,13 @@ public:
 
 
 // Class MovieSceneTracks.MovieSceneCameraCutSection
-// 0x0010 (0x0120 - 0x0110)
+// 0x0030 (0x0140 - 0x0110)
 class UMovieSceneCameraCutSection : public UMovieSceneSection
 {
 public:
-	struct FGuid                                       CameraGuid;                                               // 0x0110(0x0010) (IsPlainOldData)
+	struct FGuid                                       CameraGuid;                                               // 0x0110(0x0010) (Deprecated, IsPlainOldData)
+	struct FMovieSceneObjectBindingID                  CameraBindingID;                                          // 0x0120(0x0018) (Edit)
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0138(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -453,57 +454,17 @@ public:
 };
 
 
-// Class MovieSceneTracks.MovieSceneSubSection
-// 0x0070 (0x0180 - 0x0110)
-class UMovieSceneSubSection : public UMovieSceneSection
-{
-public:
-	struct FMovieSceneSectionParameters                Parameters;                                               // 0x0110(0x0014) (Edit)
-	float                                              StartOffset;                                              // 0x0124(0x0004) (ZeroConstructor, Deprecated, IsPlainOldData)
-	float                                              TimeScale;                                                // 0x0128(0x0004) (ZeroConstructor, Deprecated, IsPlainOldData)
-	float                                              PrerollTime;                                              // 0x012C(0x0004) (ZeroConstructor, Deprecated, IsPlainOldData)
-	class UMovieSceneSequence*                         SubSequence;                                              // 0x0130(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	TLazyObjectPtr<class AActor>                       ActorToRecord;                                            // 0x0138(0x001C) (Edit, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0154(0x0004) MISSED OFFSET
-	struct FString                                     TargetSequenceName;                                       // 0x0158(0x0010) (Edit, ZeroConstructor)
-	struct FDirectoryPath                              TargetPathToRecordTo;                                     // 0x0168(0x0010) (Edit)
-	unsigned char                                      UnknownData01[0x8];                                       // 0x0178(0x0008) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class MovieSceneTracks.MovieSceneSubSection");
-		return ptr;
-	}
-
-};
-
-
 // Class MovieSceneTracks.MovieSceneCinematicShotSection
-// 0x0010 (0x0190 - 0x0180)
+// 0x0020 (0x01A0 - 0x0180)
 class UMovieSceneCinematicShotSection : public UMovieSceneSubSection
 {
 public:
-	unsigned char                                      UnknownData00[0x10];                                      // 0x0180(0x0010) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0180(0x0008) MISSED OFFSET
+	struct FText                                       DisplayName;                                              // 0x0188(0x0018) (Deprecated)
 
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindClass("Class MovieSceneTracks.MovieSceneCinematicShotSection");
-		return ptr;
-	}
-
-};
-
-
-// Class MovieSceneTracks.MovieSceneSubTrack
-// 0x0010 (0x00D0 - 0x00C0)
-class UMovieSceneSubTrack : public UMovieSceneNameableTrack
-{
-public:
-	unsigned char                                      UnknownData00[0x10];                                      // 0x00C0(0x0010) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class MovieSceneTracks.MovieSceneSubTrack");
 		return ptr;
 	}
 

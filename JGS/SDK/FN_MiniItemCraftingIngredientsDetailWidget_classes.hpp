@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -32,6 +30,7 @@ public:
 	void GetRecipeItemQuantityPairs(class UFortItem* Item, TArray<struct FFortItemQuantityPair>* Pairs);
 	void HandlePostDifferentItemToDetailSet();
 	void HandlePostDifferentItemToCompareWithSet();
+	void Construct();
 	void ExecuteUbergraph_MiniItemCraftingIngredientsDetailWidget(int EntryPoint);
 };
 

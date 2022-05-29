@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -87,7 +87,7 @@ void UUIManager_C::ClearConfirmationLayer()
 // Function UIManager.UIManager_C.RemoveModalPanel
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonActivatablePanel* Panel                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonActivatablePanel* Panel                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UUIManager_C::RemoveModalPanel(class UCommonActivatablePanel* Panel)
 {
@@ -107,7 +107,7 @@ void UUIManager_C::RemoveModalPanel(class UCommonActivatablePanel* Panel)
 // Function UIManager.UIManager_C.PopModalPanel
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonActivatablePanel* ActivatablePanel               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonActivatablePanel* ActivatablePanel               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UUIManager_C::PopModalPanel(class UCommonActivatablePanel* ActivatablePanel)
 {
@@ -127,7 +127,7 @@ void UUIManager_C::PopModalPanel(class UCommonActivatablePanel* ActivatablePanel
 // Function UIManager.UIManager_C.HandleStateContentUpdated
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortUIStateWidget_NUI*  NewStateWidget                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortUIStateWidget_NUI*  NewStateWidget                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UUIManager_C::HandleStateContentUpdated(class UFortUIStateWidget_NUI* NewStateWidget)
 {
@@ -227,7 +227,7 @@ void UUIManager_C::DismissWebPurchase()
 // Function UIManager.UIManager_C.DisplayWebPurchase
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidget*                 WebWidget                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidget*                 WebWidget                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // struct FString                 OfferId                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 
 void UUIManager_C::DisplayWebPurchase(class UWidget* WebWidget, const struct FString& OfferId)
@@ -249,7 +249,7 @@ void UUIManager_C::DisplayWebPurchase(class UWidget* WebWidget, const struct FSt
 // Function UIManager.UIManager_C.HandleDeactivatedErrorWindow
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonActivatablePanel* DeactivatedPanel               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonActivatablePanel* DeactivatedPanel               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UUIManager_C::HandleDeactivatedErrorWindow(class UCommonActivatablePanel* DeactivatedPanel)
 {
@@ -289,7 +289,7 @@ void UUIManager_C::ShowErrorInErrorWindow(const struct FFortErrorInfo& ErrorInfo
 // Function UIManager.UIManager_C.HandleDeactivatedPanelModalLayer
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonActivatablePanel* DeactivatedPanel               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonActivatablePanel* DeactivatedPanel               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UUIManager_C::HandleDeactivatedPanelModalLayer(class UCommonActivatablePanel* DeactivatedPanel)
 {
@@ -309,7 +309,7 @@ void UUIManager_C::HandleDeactivatedPanelModalLayer(class UCommonActivatablePane
 // Function UIManager.UIManager_C.AddActivatablePanelToModalLayer
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonActivatablePanel* ActivatablePanel               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonActivatablePanel* ActivatablePanel               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UUIManager_C::AddActivatablePanelToModalLayer(class UCommonActivatablePanel* ActivatablePanel)
 {
@@ -383,7 +383,7 @@ void UUIManager_C::ShowNextConfirmation()
 // Function UIManager.UIManager_C.HandleDeactivatedPanelConfirmationLayer
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonActivatablePanel* DeactivatedPanel               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonActivatablePanel* DeactivatedPanel               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UUIManager_C::HandleDeactivatedPanelConfirmationLayer(class UCommonActivatablePanel* DeactivatedPanel)
 {
@@ -475,7 +475,7 @@ void UUIManager_C::ShowNextModalWidget()
 // Function UIManager.UIManager_C.QueueModalPanel
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonActivatablePanel* ActivatablePanel               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonActivatablePanel* ActivatablePanel               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UUIManager_C::QueueModalPanel(class UCommonActivatablePanel* ActivatablePanel)
 {
@@ -517,6 +517,28 @@ void UUIManager_C::ClearLayers()
 	static auto fn = UObject::FindObject<UFunction>("Function UIManager.UIManager_C.ClearLayers");
 
 	UUIManager_C_ClearLayers_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UIManager.UIManager_C.DialogResult_A5F073FB438FB0A3BEBB84BE5DB2FBA2
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EFortDialogResult              Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ResultName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UUIManager_C::DialogResult_A5F073FB438FB0A3BEBB84BE5DB2FBA2(EFortDialogResult Result, const struct FName& ResultName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function UIManager.UIManager_C.DialogResult_A5F073FB438FB0A3BEBB84BE5DB2FBA2");
+
+	UUIManager_C_DialogResult_A5F073FB438FB0A3BEBB84BE5DB2FBA2_Params params;
+	params.Result = Result;
+	params.ResultName = ResultName;
 
 	auto flags = fn->FunctionFlags;
 
@@ -580,40 +602,6 @@ void UUIManager_C::Destruct()
 }
 
 
-// Function UIManager.UIManager_C.KillConfirmation
-// (Event, Public, BlueprintEvent)
-
-void UUIManager_C::KillConfirmation()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function UIManager.UIManager_C.KillConfirmation");
-
-	UUIManager_C_KillConfirmation_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function UIManager.UIManager_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UUIManager_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function UIManager.UIManager_C.Construct");
-
-	UUIManager_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function UIManager.UIManager_C.DisplayErrorDialog
 // (Event, Protected, HasOutParms, BlueprintEvent)
 // Parameters:
@@ -654,10 +642,27 @@ void UUIManager_C::OnShowConfirmation_NUI(struct FFortDialogDescription_NUI* Des
 }
 
 
+// Function UIManager.UIManager_C.KillConfirmation
+// (Event, Public, BlueprintEvent)
+
+void UUIManager_C::KillConfirmation()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function UIManager.UIManager_C.KillConfirmation");
+
+	UUIManager_C_KillConfirmation_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function UIManager.UIManager_C.UpdateStateWidgetContent
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UFortUIStateWidget_NUI** StateWidget                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortUIStateWidget_NUI** StateWidget                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UUIManager_C::UpdateStateWidgetContent(class UFortUIStateWidget_NUI** StateWidget)
 {
@@ -677,7 +682,7 @@ void UUIManager_C::UpdateStateWidgetContent(class UFortUIStateWidget_NUI** State
 // Function UIManager.UIManager_C.QueueActivatablePanelIntoModalLayer
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonActivatablePanel** Panel                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonActivatablePanel** Panel                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UUIManager_C::QueueActivatablePanelIntoModalLayer(class UCommonActivatablePanel** Panel)
 {
@@ -714,7 +719,7 @@ void UUIManager_C::OnStateEnded()
 // Function UIManager.UIManager_C.PopActivatablePanelInModalLayer
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonActivatablePanel** Panel                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonActivatablePanel** Panel                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UUIManager_C::PopActivatablePanelInModalLayer(class UCommonActivatablePanel** Panel)
 {
@@ -756,6 +761,40 @@ void UUIManager_C::CloseErrorWindow()
 	static auto fn = UObject::FindObject<UFunction>("Function UIManager.UIManager_C.CloseErrorWindow");
 
 	UUIManager_C_CloseErrorWindow_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UIManager.UIManager_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UUIManager_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function UIManager.UIManager_C.Construct");
+
+	UUIManager_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UIManager.UIManager_C.OnGameWindowCloseButtonClicked
+// (BlueprintCallable, BlueprintEvent)
+
+void UUIManager_C::OnGameWindowCloseButtonClicked()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function UIManager.UIManager_C.OnGameWindowCloseButtonClicked");
+
+	UUIManager_C_OnGameWindowCloseButtonClicked_Params params;
 
 	auto flags = fn->FunctionFlags;
 

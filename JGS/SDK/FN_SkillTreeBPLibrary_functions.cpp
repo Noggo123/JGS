@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -126,15 +126,16 @@ void USkillTreeBPLibrary_C::STATIC_UpdateSkillTreeNodeMaterial_DynamicData(class
 // Function SkillTreeBPLibrary.SkillTreeBPLibrary_C.GetSkillTreeNodeCostTint
 // (Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FHomebaseNode           HomebaseNode                   (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FHomebaseNode           HomebaseNode                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            NodeTintColour                 (Parm, OutParm, IsPlainOldData)
 
-void USkillTreeBPLibrary_C::STATIC_GetSkillTreeNodeCostTint(class UObject* __WorldContext, struct FHomebaseNode* HomebaseNode, struct FLinearColor* NodeTintColour)
+void USkillTreeBPLibrary_C::STATIC_GetSkillTreeNodeCostTint(const struct FHomebaseNode& HomebaseNode, class UObject* __WorldContext, struct FLinearColor* NodeTintColour)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function SkillTreeBPLibrary.SkillTreeBPLibrary_C.GetSkillTreeNodeCostTint");
 
 	USkillTreeBPLibrary_C_GetSkillTreeNodeCostTint_Params params;
+	params.HomebaseNode = HomebaseNode;
 	params.__WorldContext = __WorldContext;
 
 	auto flags = fn->FunctionFlags;
@@ -143,8 +144,6 @@ void USkillTreeBPLibrary_C::STATIC_GetSkillTreeNodeCostTint(class UObject* __Wor
 
 	fn->FunctionFlags = flags;
 
-	if (HomebaseNode != nullptr)
-		*HomebaseNode = params.HomebaseNode;
 	if (NodeTintColour != nullptr)
 		*NodeTintColour = params.NodeTintColour;
 }
@@ -155,18 +154,19 @@ void USkillTreeBPLibrary_C::STATIC_GetSkillTreeNodeCostTint(class UObject* __Wor
 // Parameters:
 // class UObject*                 World_Context                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // class UMaterialInstanceDynamic* Material                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FHomebaseNode           NodeData                       (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FHomebaseNode           NodeData                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // struct FFortSkillTreeNodeDisplayData DisplayData                    (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void USkillTreeBPLibrary_C::STATIC_UpdateSkillTreeNodeMaterial_StaticData(class UObject* World_Context, class UMaterialInstanceDynamic* Material, const struct FFortSkillTreeNodeDisplayData& DisplayData, class UCommonButton* Button, class UObject* __WorldContext, struct FHomebaseNode* NodeData)
+void USkillTreeBPLibrary_C::STATIC_UpdateSkillTreeNodeMaterial_StaticData(class UObject* World_Context, class UMaterialInstanceDynamic* Material, const struct FHomebaseNode& NodeData, const struct FFortSkillTreeNodeDisplayData& DisplayData, class UCommonButton* Button, class UObject* __WorldContext)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function SkillTreeBPLibrary.SkillTreeBPLibrary_C.UpdateSkillTreeNodeMaterial_StaticData");
 
 	USkillTreeBPLibrary_C_UpdateSkillTreeNodeMaterial_StaticData_Params params;
 	params.World_Context = World_Context;
 	params.Material = Material;
+	params.NodeData = NodeData;
 	params.DisplayData = DisplayData;
 	params.Button = Button;
 	params.__WorldContext = __WorldContext;
@@ -176,9 +176,6 @@ void USkillTreeBPLibrary_C::STATIC_UpdateSkillTreeNodeMaterial_StaticData(class 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (NodeData != nullptr)
-		*NodeData = params.NodeData;
 }
 
 

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,10 +12,32 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
+// Function SupportHeroSquadBonusesDetailWidget.SupportHeroSquadBonusesDetailWidget_C.HandleSquadSlotChanged
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FName                   SquadName                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            SlotIndex                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void USupportHeroSquadBonusesDetailWidget_C::HandleSquadSlotChanged(const struct FName& SquadName, int SlotIndex)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function SupportHeroSquadBonusesDetailWidget.SupportHeroSquadBonusesDetailWidget_C.HandleSquadSlotChanged");
+
+	USupportHeroSquadBonusesDetailWidget_C_HandleSquadSlotChanged_Params params;
+	params.SquadName = SquadName;
+	params.SlotIndex = SlotIndex;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function SupportHeroSquadBonusesDetailWidget.SupportHeroSquadBonusesDetailWidget_C.SetState
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortSupportPerkWidgetState    InState                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortSupportPerkWidgetState    InState                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
 void USupportHeroSquadBonusesDetailWidget_C::SetState(EFortSupportPerkWidgetState InState)
 {
@@ -108,6 +130,23 @@ void USupportHeroSquadBonusesDetailWidget_C::Construct()
 	static auto fn = UObject::FindObject<UFunction>("Function SupportHeroSquadBonusesDetailWidget.SupportHeroSquadBonusesDetailWidget_C.Construct");
 
 	USupportHeroSquadBonusesDetailWidget_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function SupportHeroSquadBonusesDetailWidget.SupportHeroSquadBonusesDetailWidget_C.Destruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void USupportHeroSquadBonusesDetailWidget_C::Destruct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function SupportHeroSquadBonusesDetailWidget.SupportHeroSquadBonusesDetailWidget_C.Destruct");
+
+	USupportHeroSquadBonusesDetailWidget_C_Destruct_Params params;
 
 	auto flags = fn->FunctionFlags;
 

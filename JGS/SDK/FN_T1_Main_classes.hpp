@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -118,7 +116,7 @@ public:
 	unsigned char                                      UnknownData00[0x3];                                       // 0x0609(0x0003) MISSED OFFSET
 	struct FSkillTreePageColors                        PageColors;                                               // 0x060C(0x00C0) (Edit, BlueprintVisible, DisableEditOnInstance)
 	unsigned char                                      UnknownData01[0x4];                                       // 0x06CC(0x0004) MISSED OFFSET
-	class UDefaultSkillNode_C*                         DefaultSkillNode_C_176_177;                               // 0x06D0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UDefaultSkillNode_C*                         DefaultSkillNode_C_176_177;                               // 0x06D0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,7 +23,7 @@ struct ABP_Hex_PARENT_C_HasPinnedQuest_Params
 // Function BP_Hex_PARENT.BP_Hex_PARENT_C.HandleUpdatingBannerMesh
 struct ABP_Hex_PARENT_C_HandleUpdatingBannerMesh_Params
 {
-	class USceneComponent*                             Target;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class USceneComponent*                             Target;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 	class UFortQuestItemDefinition*                    CompletedQuest;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	class UMaterialInstanceDynamic*                    Material_Instance_Dynamic;                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
@@ -72,16 +72,67 @@ struct ABP_Hex_PARENT_C_Timeline_12__UpdateFunc_Params
 {
 };
 
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.HandleTeamPowerChanged
-struct ABP_Hex_PARENT_C_HandleTeamPowerChanged_Params
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnLoaded_192496DB41CC2100CC1C729DB594CEF8
+struct ABP_Hex_PARENT_C_OnLoaded_192496DB41CC2100CC1C729DB594CEF8_Params
 {
-	int                                                TeamPower;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int                                                PersonalPower;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UObject*                                     Loaded;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.ForceDefocus
+struct ABP_Hex_PARENT_C_ForceDefocus_Params
+{
+};
+
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.CheckFocus
+struct ABP_Hex_PARENT_C_CheckFocus_Params
+{
 };
 
 // Function BP_Hex_PARENT.BP_Hex_PARENT_C.FireLightningA
 struct ABP_Hex_PARENT_C_FireLightningA_Params
 {
+};
+
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnMissionDataUpdated
+struct ABP_Hex_PARENT_C_OnMissionDataUpdated_Params
+{
+};
+
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnDefocus
+struct ABP_Hex_PARENT_C_OnDefocus_Params
+{
+};
+
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnFocus
+struct ABP_Hex_PARENT_C_OnFocus_Params
+{
+};
+
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnHostDeselect
+struct ABP_Hex_PARENT_C_OnHostDeselect_Params
+{
+};
+
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnHostSelect
+struct ABP_Hex_PARENT_C_OnHostSelect_Params
+{
+};
+
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnClientDeselect
+struct ABP_Hex_PARENT_C_OnClientDeselect_Params
+{
+};
+
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnClientSelect
+struct ABP_Hex_PARENT_C_OnClientSelect_Params
+{
+};
+
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.HandleTeamPowerChanged
+struct ABP_Hex_PARENT_C_HandleTeamPowerChanged_Params
+{
+	int                                                TeamPower;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                PersonalPower;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnInitializeTile
@@ -106,23 +157,8 @@ struct ABP_Hex_PARENT_C_CheckIfQuestShouldBePinned_Params
 {
 };
 
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.CheckFocus
-struct ABP_Hex_PARENT_C_CheckFocus_Params
-{
-};
-
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.ForceDefocus
-struct ABP_Hex_PARENT_C_ForceDefocus_Params
-{
-};
-
 // Function BP_Hex_PARENT.BP_Hex_PARENT_C.CheckForPinnedInLevel
 struct ABP_Hex_PARENT_C_CheckForPinnedInLevel_Params
-{
-};
-
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnMissionDataUpdated
-struct ABP_Hex_PARENT_C_OnMissionDataUpdated_Params
 {
 };
 
@@ -131,38 +167,8 @@ struct ABP_Hex_PARENT_C_RetryTileInitialized_Params
 {
 };
 
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnDefocus
-struct ABP_Hex_PARENT_C_OnDefocus_Params
-{
-};
-
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnFocus
-struct ABP_Hex_PARENT_C_OnFocus_Params
-{
-};
-
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnHostDeselect
-struct ABP_Hex_PARENT_C_OnHostDeselect_Params
-{
-};
-
 // Function BP_Hex_PARENT.BP_Hex_PARENT_C.SetMissionPowerLevelDependencies
 struct ABP_Hex_PARENT_C_SetMissionPowerLevelDependencies_Params
-{
-};
-
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnHostSelect
-struct ABP_Hex_PARENT_C_OnHostSelect_Params
-{
-};
-
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnClientDeselect
-struct ABP_Hex_PARENT_C_OnClientDeselect_Params
-{
-};
-
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnClientSelect
-struct ABP_Hex_PARENT_C_OnClientSelect_Params
 {
 };
 
@@ -194,6 +200,13 @@ struct ABP_Hex_PARENT_C_MissionLightningOff_Params
 // Function BP_Hex_PARENT.BP_Hex_PARENT_C.Unpause Updates
 struct ABP_Hex_PARENT_C_Unpause_Updates_Params
 {
+};
+
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.AsyncUpdateBanner
+struct ABP_Hex_PARENT_C_AsyncUpdateBanner_Params
+{
+	class UMaterialInstanceDynamic*                    Material_Instance_Dynamic;                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FUniqueNetIdRepl                            Unique_Net_Id;                                            // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
 // Function BP_Hex_PARENT.BP_Hex_PARENT_C.ExecuteUbergraph_BP_Hex_PARENT

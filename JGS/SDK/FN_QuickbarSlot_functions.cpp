@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,46 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function QuickbarSlot.QuickbarSlot_C.SetBottomComboSwitcherVisibility
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// ESlateVisibility               InVisibility                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UQuickbarSlot_C::SetBottomComboSwitcherVisibility(ESlateVisibility InVisibility)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSlot.QuickbarSlot_C.SetBottomComboSwitcherVisibility");
-
-	UQuickbarSlot_C_SetBottomComboSwitcherVisibility_Params params;
-	params.InVisibility = InVisibility;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function QuickbarSlot.QuickbarSlot_C.SetTopComboSwitcherVisibility
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// ESlateVisibility               InVisibility                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UQuickbarSlot_C::SetTopComboSwitcherVisibility(ESlateVisibility InVisibility)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSlot.QuickbarSlot_C.SetTopComboSwitcherVisibility");
-
-	UQuickbarSlot_C_SetTopComboSwitcherVisibility_Params params;
-	params.InVisibility = InVisibility;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function QuickbarSlot.QuickbarSlot_C.InitializeInvalidation
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -77,23 +37,6 @@ void UQuickbarSlot_C::UpdateItemBoxSize()
 	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSlot.QuickbarSlot_C.UpdateItemBoxSize");
 
 	UQuickbarSlot_C_UpdateItemBoxSize_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function QuickbarSlot.QuickbarSlot_C.UpdateItemCardsVisibility
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UQuickbarSlot_C::UpdateItemCardsVisibility()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSlot.QuickbarSlot_C.UpdateItemCardsVisibility");
-
-	UQuickbarSlot_C_UpdateItemCardsVisibility_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -160,206 +103,6 @@ void UQuickbarSlot_C::InitializeCooldowns()
 }
 
 
-// Function QuickbarSlot.QuickbarSlot_C.GetKeyBindingAction_Gamepad
-// (Private, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// struct FName                   KeyBindingAction               (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UQuickbarSlot_C::GetKeyBindingAction_Gamepad(struct FName* KeyBindingAction)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSlot.QuickbarSlot_C.GetKeyBindingAction_Gamepad");
-
-	UQuickbarSlot_C_GetKeyBindingAction_Gamepad_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (KeyBindingAction != nullptr)
-		*KeyBindingAction = params.KeyBindingAction;
-}
-
-
-// Function QuickbarSlot.QuickbarSlot_C.GetKeyBindingAction_Keyboard
-// (Private, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// struct FName                   Key_Binding_Action             (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UQuickbarSlot_C::GetKeyBindingAction_Keyboard(struct FName* Key_Binding_Action)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSlot.QuickbarSlot_C.GetKeyBindingAction_Keyboard");
-
-	UQuickbarSlot_C_GetKeyBindingAction_Keyboard_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Key_Binding_Action != nullptr)
-		*Key_Binding_Action = params.Key_Binding_Action;
-}
-
-
-// Function QuickbarSlot.QuickbarSlot_C.GetKeyBindingAction
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// struct FName                   KeyBindingAction               (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UQuickbarSlot_C::GetKeyBindingAction(struct FName* KeyBindingAction)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSlot.QuickbarSlot_C.GetKeyBindingAction");
-
-	UQuickbarSlot_C_GetKeyBindingAction_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (KeyBindingAction != nullptr)
-		*KeyBindingAction = params.KeyBindingAction;
-}
-
-
-// Function QuickbarSlot.QuickbarSlot_C.UpdateKeyBindingVisibility
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UQuickbarSlot_C::UpdateKeyBindingVisibility()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSlot.QuickbarSlot_C.UpdateKeyBindingVisibility");
-
-	UQuickbarSlot_C_UpdateKeyBindingVisibility_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function QuickbarSlot.QuickbarSlot_C.UpdateKeyBindingText
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UQuickbarSlot_C::UpdateKeyBindingText()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSlot.QuickbarSlot_C.UpdateKeyBindingText");
-
-	UQuickbarSlot_C_UpdateKeyBindingText_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function QuickbarSlot.QuickbarSlot_C.Resize
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EFortItemCardSize              Card_Size                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UQuickbarSlot_C::Resize(EFortItemCardSize Card_Size)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSlot.QuickbarSlot_C.Resize");
-
-	UQuickbarSlot_C_Resize_Params params;
-	params.Card_Size = Card_Size;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function QuickbarSlot.QuickbarSlot_C.Maximize
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           ShouldSkipAnimation            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UQuickbarSlot_C::Maximize(bool ShouldSkipAnimation)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSlot.QuickbarSlot_C.Maximize");
-
-	UQuickbarSlot_C_Maximize_Params params;
-	params.ShouldSkipAnimation = ShouldSkipAnimation;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function QuickbarSlot.QuickbarSlot_C.Minimize
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           ShouldSkipAnimation            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UQuickbarSlot_C::Minimize(bool ShouldSkipAnimation)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSlot.QuickbarSlot_C.Minimize");
-
-	UQuickbarSlot_C_Minimize_Params params;
-	params.ShouldSkipAnimation = ShouldSkipAnimation;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function QuickbarSlot.QuickbarSlot_C.SetSelected
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           Selected                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UQuickbarSlot_C::SetSelected(bool Selected)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSlot.QuickbarSlot_C.SetSelected");
-
-	UQuickbarSlot_C_SetSelected_Params params;
-	params.Selected = Selected;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function QuickbarSlot.QuickbarSlot_C.PreConstruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UQuickbarSlot_C::PreConstruct(bool* IsDesignTime)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSlot.QuickbarSlot_C.PreConstruct");
-
-	UQuickbarSlot_C_PreConstruct_Params params;
-	params.IsDesignTime = IsDesignTime;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function QuickbarSlot.QuickbarSlot_C.HandleMaximizeStarted
 // (BlueprintCallable, BlueprintEvent)
 
@@ -385,23 +128,6 @@ void UQuickbarSlot_C::HandleMinimizeFinished()
 	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSlot.QuickbarSlot_C.HandleMinimizeFinished");
 
 	UQuickbarSlot_C_HandleMinimizeFinished_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function QuickbarSlot.QuickbarSlot_C.RefreshItem
-// (BlueprintCallable, BlueprintEvent)
-
-void UQuickbarSlot_C::RefreshItem()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSlot.QuickbarSlot_C.RefreshItem");
-
-	UQuickbarSlot_C_RefreshItem_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -462,6 +188,26 @@ void UQuickbarSlot_C::Construct()
 }
 
 
+// Function QuickbarSlot.QuickbarSlot_C.PreConstruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Parameters:
+// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UQuickbarSlot_C::PreConstruct(bool* IsDesignTime)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSlot.QuickbarSlot_C.PreConstruct");
+
+	UQuickbarSlot_C_PreConstruct_Params params;
+	params.IsDesignTime = IsDesignTime;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function QuickbarSlot.QuickbarSlot_C.SetAnimatedBoxScaleFactor
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -473,6 +219,66 @@ void UQuickbarSlot_C::SetAnimatedBoxScaleFactor(float AnimatedBoxScaleFactor)
 
 	UQuickbarSlot_C_SetAnimatedBoxScaleFactor_Params params;
 	params.AnimatedBoxScaleFactor = AnimatedBoxScaleFactor;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function QuickbarSlot.QuickbarSlot_C.MaximizeSlot
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool*                          bShouldSkipAnimation           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UQuickbarSlot_C::MaximizeSlot(bool* bShouldSkipAnimation)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSlot.QuickbarSlot_C.MaximizeSlot");
+
+	UQuickbarSlot_C_MaximizeSlot_Params params;
+	params.bShouldSkipAnimation = bShouldSkipAnimation;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function QuickbarSlot.QuickbarSlot_C.MinimizeSlot
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool*                          bShouldSkipAnimation           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UQuickbarSlot_C::MinimizeSlot(bool* bShouldSkipAnimation)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSlot.QuickbarSlot_C.MinimizeSlot");
+
+	UQuickbarSlot_C_MinimizeSlot_Params params;
+	params.bShouldSkipAnimation = bShouldSkipAnimation;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function QuickbarSlot.QuickbarSlot_C.SetSlotSelected
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool*                          bSelected                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UQuickbarSlot_C::SetSlotSelected(bool* bSelected)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSlot.QuickbarSlot_C.SetSlotSelected");
+
+	UQuickbarSlot_C_SetSlotSelected_Params params;
+	params.bSelected = bSelected;
 
 	auto flags = fn->FunctionFlags;
 

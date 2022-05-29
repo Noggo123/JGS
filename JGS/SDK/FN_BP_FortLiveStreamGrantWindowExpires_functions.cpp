@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function BP_FortLiveStreamGrantWindowExpires.BP_FortLiveStreamGrantWindowExpires_C.GetToolTipWidget_0_1
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 
 class UWidget* UBP_FortLiveStreamGrantWindowExpires_C::GetToolTipWidget_0_1()
 {
@@ -70,44 +70,40 @@ void UBP_FortLiveStreamGrantWindowExpires_C::Update_Name_Text()
 // Function BP_FortLiveStreamGrantWindowExpires.BP_FortLiveStreamGrantWindowExpires_C.Update Expiration Text
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FTimespan               Timespan                       (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FTimespan               Timespan                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void UBP_FortLiveStreamGrantWindowExpires_C::Update_Expiration_Text(struct FTimespan* Timespan)
+void UBP_FortLiveStreamGrantWindowExpires_C::Update_Expiration_Text(const struct FTimespan& Timespan)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function BP_FortLiveStreamGrantWindowExpires.BP_FortLiveStreamGrantWindowExpires_C.Update Expiration Text");
 
 	UBP_FortLiveStreamGrantWindowExpires_C_Update_Expiration_Text_Params params;
+	params.Timespan = Timespan;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (Timespan != nullptr)
-		*Timespan = params.Timespan;
 }
 
 
 // Function BP_FortLiveStreamGrantWindowExpires.BP_FortLiveStreamGrantWindowExpires_C.Set Stream Brush
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSlateBrush             InBrush                        (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FSlateBrush             InBrush                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void UBP_FortLiveStreamGrantWindowExpires_C::Set_Stream_Brush(struct FSlateBrush* InBrush)
+void UBP_FortLiveStreamGrantWindowExpires_C::Set_Stream_Brush(const struct FSlateBrush& InBrush)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function BP_FortLiveStreamGrantWindowExpires.BP_FortLiveStreamGrantWindowExpires_C.Set Stream Brush");
 
 	UBP_FortLiveStreamGrantWindowExpires_C_Set_Stream_Brush_Params params;
+	params.InBrush = InBrush;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (InBrush != nullptr)
-		*InBrush = params.InBrush;
 }
 
 

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -36,7 +36,7 @@ void AGCN_Athena_Bush_C::Activated(class AActor* PlayerPawn)
 // (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor**                 MyTarget                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGameplayCueParameters* Parameters                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 bool AGCN_Athena_Bush_C::WhileActive(class AActor** MyTarget, struct FGameplayCueParameters* Parameters)
@@ -45,15 +45,13 @@ bool AGCN_Athena_Bush_C::WhileActive(class AActor** MyTarget, struct FGameplayCu
 
 	AGCN_Athena_Bush_C_WhileActive_Params params;
 	params.MyTarget = MyTarget;
+	params.Parameters = Parameters;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (Parameters != nullptr)
-		*Parameters = params.Parameters;
 
 	return params.ReturnValue;
 }
@@ -63,7 +61,7 @@ bool AGCN_Athena_Bush_C::WhileActive(class AActor** MyTarget, struct FGameplayCu
 // (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor**                 MyTarget                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGameplayCueParameters* Parameters                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 bool AGCN_Athena_Bush_C::OnRemove(class AActor** MyTarget, struct FGameplayCueParameters* Parameters)
@@ -72,15 +70,13 @@ bool AGCN_Athena_Bush_C::OnRemove(class AActor** MyTarget, struct FGameplayCuePa
 
 	AGCN_Athena_Bush_C_OnRemove_Params params;
 	params.MyTarget = MyTarget;
+	params.Parameters = Parameters;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (Parameters != nullptr)
-		*Parameters = params.Parameters;
 
 	return params.ReturnValue;
 }

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,26 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function IconTextButton.IconTextButton_C.ShowIcon
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           bShouldShow                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UIconTextButton_C::ShowIcon(bool bShouldShow)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function IconTextButton.IconTextButton_C.ShowIcon");
+
+	UIconTextButton_C_ShowIcon_Params params;
+	params.bShouldShow = bShouldShow;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IconTextButton.IconTextButton_C.SetTextInternal
 // (Private, BlueprintCallable, BlueprintEvent)

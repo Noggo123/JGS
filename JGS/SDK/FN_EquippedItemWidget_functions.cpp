@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -66,23 +66,6 @@ void UEquippedItemWidget_C::UpdateCurrentAmmo(int LocalCount, int LocalRemaining
 	UEquippedItemWidget_C_UpdateCurrentAmmo_Params params;
 	params.LocalCount = LocalCount;
 	params.LocalRemaining = LocalRemaining;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function EquippedItemWidget.EquippedItemWidget_C.UpdateAmmoCapacity
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UEquippedItemWidget_C::UpdateAmmoCapacity()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function EquippedItemWidget.EquippedItemWidget_C.UpdateAmmoCapacity");
-
-	UEquippedItemWidget_C_UpdateAmmoCapacity_Params params;
 
 	auto flags = fn->FunctionFlags;
 

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,26 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function EliminatedOverlay.EliminatedOverlay_C.ViewTargetKillsChanged
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            Kills                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UEliminatedOverlay_C::ViewTargetKillsChanged(int Kills)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function EliminatedOverlay.EliminatedOverlay_C.ViewTargetKillsChanged");
+
+	UEliminatedOverlay_C_ViewTargetKillsChanged_Params params;
+	params.Kills = Kills;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function EliminatedOverlay.EliminatedOverlay_C.StreamingLoadingChanged
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -58,11 +78,10 @@ void UEliminatedOverlay_C::SetBannerForKiller(struct FFortPlayerDeathReport* For
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FFortPlayerDeathReport  FortPlayerDeathReport          (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// class AFortPawn*               KillerPawn                     (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 // bool                           DidPlayerKillThemselves        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 // struct FText                   KillerName                     (Parm, OutParm)
 
-void UEliminatedOverlay_C::ProcessDeathReport(struct FFortPlayerDeathReport* FortPlayerDeathReport, class AFortPawn** KillerPawn, bool* DidPlayerKillThemselves, struct FText* KillerName)
+void UEliminatedOverlay_C::ProcessDeathReport(struct FFortPlayerDeathReport* FortPlayerDeathReport, bool* DidPlayerKillThemselves, struct FText* KillerName)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function EliminatedOverlay.EliminatedOverlay_C.ProcessDeathReport");
 
@@ -76,8 +95,6 @@ void UEliminatedOverlay_C::ProcessDeathReport(struct FFortPlayerDeathReport* For
 
 	if (FortPlayerDeathReport != nullptr)
 		*FortPlayerDeathReport = params.FortPlayerDeathReport;
-	if (KillerPawn != nullptr)
-		*KillerPawn = params.KillerPawn;
 	if (DidPlayerKillThemselves != nullptr)
 		*DidPlayerKillThemselves = params.DidPlayerKillThemselves;
 	if (KillerName != nullptr)

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,30 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function GAB_Emote_Generic.GAB_Emote_Generic_C.GetMontageToPlay
+// (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortMontageItemDefinitionBase* EmoteAsset                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EFortCustomBodyType> BodyType                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EFortCustomGender> Gender                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UGAB_Emote_Generic_C::GetMontageToPlay(class UFortMontageItemDefinitionBase* EmoteAsset, TEnumAsByte<EFortCustomBodyType> BodyType, TEnumAsByte<EFortCustomGender> Gender)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GAB_Emote_Generic.GAB_Emote_Generic_C.GetMontageToPlay");
+
+	UGAB_Emote_Generic_C_GetMontageToPlay_Params params;
+	params.EmoteAsset = EmoteAsset;
+	params.BodyType = BodyType;
+	params.Gender = Gender;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GAB_Emote_Generic.GAB_Emote_Generic_C.GetBodyTypeAndGender
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
@@ -151,6 +175,23 @@ void UGAB_Emote_Generic_C::K2_ActivateAbility()
 	static auto fn = UObject::FindObject<UFunction>("Function GAB_Emote_Generic.GAB_Emote_Generic_C.K2_ActivateAbility");
 
 	UGAB_Emote_Generic_C_K2_ActivateAbility_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GAB_Emote_Generic.GAB_Emote_Generic_C.OnMontageStartedPlaying
+// (BlueprintCallable, BlueprintEvent)
+
+void UGAB_Emote_Generic_C::OnMontageStartedPlaying()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GAB_Emote_Generic.GAB_Emote_Generic_C.OnMontageStartedPlaying");
+
+	UGAB_Emote_Generic_C_OnMontageStartedPlaying_Params params;
 
 	auto flags = fn->FunctionFlags;
 

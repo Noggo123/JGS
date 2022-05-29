@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -81,20 +79,19 @@ struct FProfileGroupEntry
 // 0x0058
 struct FMcpLootEntry
 {
-	struct FString                                     ItemType;                                                 // 0x0000(0x0010) (Edit, ZeroConstructor)
-	struct FString                                     ItemGuid;                                                 // 0x0010(0x0010) (ZeroConstructor)
-	int                                                Quantity;                                                 // 0x0020(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FString                                     ItemType;                                                 // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+	struct FString                                     ItemGuid;                                                 // 0x0010(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+	int                                                Quantity;                                                 // 0x0020(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0024(0x0004) MISSED OFFSET
 	struct FJsonObjectWrapper                          Attributes;                                               // 0x0028(0x0020) (Edit)
-	struct FString                                     ItemProfile;                                              // 0x0048(0x0010) (ZeroConstructor)
+	struct FString                                     ItemProfile;                                              // 0x0048(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
 };
 
-// ScriptStruct McpProfileSys.McpLootResult
-// 0x0020
-struct FMcpLootResult
+// ScriptStruct McpProfileSys.PublicUrlContext
+// 0x0000 (0x0070 - 0x0070)
+struct FPublicUrlContext : public FBaseUrlContext
 {
-	struct FString                                     TierGroupName;                                            // 0x0000(0x0010) (Edit, ZeroConstructor)
-	TArray<struct FMcpLootEntry>                       Items;                                                    // 0x0010(0x0010) (Edit, ZeroConstructor)
+
 };
 
 // ScriptStruct McpProfileSys.McpAddItemRequest
@@ -145,13 +142,6 @@ struct FMcpProfileChangeRequest
 	TArray<struct FJsonObjectWrapper>                  ChangeStatRequests;                                       // 0x0048(0x0010) (ZeroConstructor)
 };
 
-// ScriptStruct McpProfileSys.PublicUrlContext
-// 0x0000 (0x0070 - 0x0070)
-struct FPublicUrlContext : public FBaseUrlContext
-{
-
-};
-
 // ScriptStruct McpProfileSys.ProfileUpdateNotification
 // 0x0028
 struct FProfileUpdateNotification
@@ -195,11 +185,29 @@ struct FAccountIdAndProfileResponse
 	struct FProfileUpdate                              Response;                                                 // 0x0010(0x0070)
 };
 
+// ScriptStruct McpProfileSys.GiftBoxInfo
+// 0x0048
+struct FGiftBoxInfo
+{
+	struct FDateTime                                   GiftedOn;                                                 // 0x0000(0x0008) (BlueprintVisible, BlueprintReadOnly)
+	struct FString                                     FromAccountId;                                            // 0x0008(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+	TArray<struct FMcpLootEntry>                       LootList;                                                 // 0x0018(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+	struct FJsonObjectWrapper                          Params;                                                   // 0x0028(0x0020)
+};
+
 // ScriptStruct McpProfileSys.McpItemIdAndQuantity
 // 0x0000 (0x0058 - 0x0058)
 struct FMcpItemIdAndQuantity : public FMcpLootEntry
 {
 
+};
+
+// ScriptStruct McpProfileSys.McpLootResult
+// 0x0020
+struct FMcpLootResult
+{
+	struct FString                                     TierGroupName;                                            // 0x0000(0x0010) (Edit, ZeroConstructor)
+	TArray<struct FMcpLootEntry>                       Items;                                                    // 0x0010(0x0010) (Edit, ZeroConstructor)
 };
 
 }

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -109,6 +109,28 @@ void UQuestTreeEntry_C::Get_Quest_Item_Def(class UFortQuestItemDefinition** AsFo
 
 	if (AsFort_Quest_Item_Definition != nullptr)
 		*AsFort_Quest_Item_Definition = params.AsFort_Quest_Item_Definition;
+}
+
+
+// Function QuestTreeEntry.QuestTreeEntry_C.Quest Category Have Unseen Quests
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// bool                           HasUnseen                      (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UQuestTreeEntry_C::Quest_Category_Have_Unseen_Quests(bool* HasUnseen)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function QuestTreeEntry.QuestTreeEntry_C.Quest Category Have Unseen Quests");
+
+	UQuestTreeEntry_C_Quest_Category_Have_Unseen_Quests_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (HasUnseen != nullptr)
+		*HasUnseen = params.HasUnseen;
 }
 
 

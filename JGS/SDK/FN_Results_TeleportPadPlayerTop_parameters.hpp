@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,7 +22,7 @@ struct UResults_TeleportPadPlayerTop_C_Play_Anim_Intro_Params
 // Function Results_TeleportPadPlayerTop.Results_TeleportPadPlayerTop_C.Initialize
 struct UResults_TeleportPadPlayerTop_C_Initialize_Params
 {
-	struct FUniqueNetIdRepl                            UniqueNetID;                                              // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FUniqueNetIdRepl                            UniqueNetId;                                              // (BlueprintVisible, BlueprintReadOnly, Parm)
 	class UFortUIScoreReport*                          ScoreReport;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ScoreReportIndex;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };

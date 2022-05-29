@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,23 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function PlayerPawn_Constructor.PlayerPawn_Constructor_C.OnRep_SavedBase
+// (BlueprintCallable, BlueprintEvent)
+
+void APlayerPawn_Constructor_C::OnRep_SavedBase()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Constructor.PlayerPawn_Constructor_C.OnRep_SavedBase");
+
+	APlayerPawn_Constructor_C_OnRep_SavedBase_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function PlayerPawn_Constructor.PlayerPawn_Constructor_C.SetIFFMeshesEnabled
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -348,6 +365,26 @@ void APlayerPawn_Constructor_C::ToggleShield(bool Toggle)
 
 	APlayerPawn_Constructor_C_ToggleShield_Params params;
 	params.Toggle = Toggle;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Constructor.PlayerPawn_Constructor_C.SetBase
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AB_Constructor_BASE_C*   SavedBase                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void APlayerPawn_Constructor_C::SetBase(class AB_Constructor_BASE_C* SavedBase)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Constructor.PlayerPawn_Constructor_C.SetBase");
+
+	APlayerPawn_Constructor_C_SetBase_Params params;
+	params.SavedBase = SavedBase;
 
 	auto flags = fn->FunctionFlags;
 

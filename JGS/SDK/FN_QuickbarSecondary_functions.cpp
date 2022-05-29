@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -128,6 +128,57 @@ void UQuickbarSecondary_C::Destruct()
 	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSecondary.QuickbarSecondary_C.Destruct");
 
 	UQuickbarSecondary_C_Destruct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function QuickbarSecondary.QuickbarSecondary_C.OnPersonalVehicleModeChanged
+// (BlueprintCallable, BlueprintEvent)
+
+void UQuickbarSecondary_C::OnPersonalVehicleModeChanged()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSecondary.QuickbarSecondary_C.OnPersonalVehicleModeChanged");
+
+	UQuickbarSecondary_C_OnPersonalVehicleModeChanged_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function QuickbarSecondary.QuickbarSecondary_C.OnPersonalVehicleMountStarted
+// (BlueprintCallable, BlueprintEvent)
+
+void UQuickbarSecondary_C::OnPersonalVehicleMountStarted()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSecondary.QuickbarSecondary_C.OnPersonalVehicleMountStarted");
+
+	UQuickbarSecondary_C_OnPersonalVehicleMountStarted_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function QuickbarSecondary.QuickbarSecondary_C.OnPersonalVehicleMountStopped
+// (BlueprintCallable, BlueprintEvent)
+
+void UQuickbarSecondary_C::OnPersonalVehicleMountStopped()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function QuickbarSecondary.QuickbarSecondary_C.OnPersonalVehicleMountStopped");
+
+	UQuickbarSecondary_C_OnPersonalVehicleMountStopped_Params params;
 
 	auto flags = fn->FunctionFlags;
 

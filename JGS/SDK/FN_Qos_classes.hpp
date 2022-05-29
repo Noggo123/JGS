@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,11 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class Qos.QosBeaconClient
-// 0x0060 (0x0480 - 0x0420)
+// 0x0060 (0x0430 - 0x03D0)
 class AQosBeaconClient : public AOnlineBeaconClient
 {
 public:
-	unsigned char                                      UnknownData00[0x60];                                      // 0x0420(0x0060) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x60];                                      // 0x03D0(0x0060) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -34,11 +32,11 @@ public:
 
 
 // Class Qos.QosBeaconHost
-// 0x0010 (0x03A0 - 0x0390)
+// 0x0010 (0x0350 - 0x0340)
 class AQosBeaconHost : public AOnlineBeaconHostObject
 {
 public:
-	unsigned char                                      UnknownData00[0x10];                                      // 0x0390(0x0010) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x10];                                      // 0x0340(0x0010) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

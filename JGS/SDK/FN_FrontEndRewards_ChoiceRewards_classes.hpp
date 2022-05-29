@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass FrontEndRewards_ChoiceRewards.FrontEndRewards_ChoiceRewards_C
-// 0x00D1 (0x0309 - 0x0238)
+// 0x00E8 (0x0320 - 0x0238)
 class UFrontEndRewards_ChoiceRewards_C : public UFortRewardNotificationSubWidget
 {
 public:
@@ -49,6 +47,9 @@ public:
 	unsigned char                                      UnknownData01[0x4];                                       // 0x02F4(0x0004) MISSED OFFSET
 	struct FDataTableRowHandle                         InspectAction;                                            // 0x02F8(0x0010) (Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                               bCardSelectionDisabled;                                   // 0x0308(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x7];                                       // 0x0309(0x0007) MISSED OFFSET
+	class USoundBase*                                  ChooseRewardSound;                                        // 0x0310(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class USoundBase*                                  ChooseRewardGivenSound;                                   // 0x0318(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

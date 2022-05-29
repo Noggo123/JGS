@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UCollectionBookWidget_C::Construct()
 // Function CollectionBookWidget.CollectionBookWidget_C.SlotItemComplete
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortAccountItem*        ItemSlotted                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortAccountItem*        ItemSlotted                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // struct FName                   SlotId                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBookWidget_C::SlotItemComplete(class UFortAccountItem* ItemSlotted, const struct FName& SlotId)

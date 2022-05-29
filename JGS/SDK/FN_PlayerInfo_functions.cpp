@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,28 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function PlayerInfo.PlayerInfo_C.UpdateLocalPlayerInfo
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FFortTeamMemberInfo     Player_Info                    (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-
-void UPlayerInfo_C::UpdateLocalPlayerInfo(struct FFortTeamMemberInfo* Player_Info)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerInfo.PlayerInfo_C.UpdateLocalPlayerInfo");
-
-	UPlayerInfo_C_UpdateLocalPlayerInfo_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Player_Info != nullptr)
-		*Player_Info = params.Player_Info;
-}
-
 
 // Function PlayerInfo.PlayerInfo_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -51,34 +29,17 @@ void UPlayerInfo_C::Construct()
 }
 
 
-// Function PlayerInfo.PlayerInfo_C.HandlePlayerStateChanged
-// (HasOutParms, BlueprintCallable, BlueprintEvent)
+// Function PlayerInfo.PlayerInfo_C.OnPlayerInfoChanged
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     PlayerInfo                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortTeamMemberInfo*    NewInfo                        (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UPlayerInfo_C::HandlePlayerStateChanged(const struct FFortTeamMemberInfo& PlayerInfo)
+void UPlayerInfo_C::OnPlayerInfoChanged(struct FFortTeamMemberInfo* NewInfo)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerInfo.PlayerInfo_C.HandlePlayerStateChanged");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerInfo.PlayerInfo_C.OnPlayerInfoChanged");
 
-	UPlayerInfo_C_HandlePlayerStateChanged_Params params;
-	params.PlayerInfo = PlayerInfo;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerInfo.PlayerInfo_C.Destruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UPlayerInfo_C::Destruct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerInfo.PlayerInfo_C.Destruct");
-
-	UPlayerInfo_C_Destruct_Params params;
+	UPlayerInfo_C_OnPlayerInfoChanged_Params params;
+	params.NewInfo = NewInfo;
 
 	auto flags = fn->FunctionFlags;
 

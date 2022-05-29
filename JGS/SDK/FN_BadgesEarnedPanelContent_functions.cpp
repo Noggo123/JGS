@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -16,18 +16,19 @@ namespace SDK
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AFortPlayerController*   InFortPC                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FEarnedBadgeEntry       EarnedBadgeEntry               (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FEarnedBadgeEntry       EarnedBadgeEntry               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // bool                           Found                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 // class AFortPlayerController*   FortPC                         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 // class UFortBadgeItemDefinition* Badge                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 // int                            Count                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UBadgesEarnedPanelContent_C::Get_Badge_And_Count_For_Player(class AFortPlayerController* InFortPC, struct FEarnedBadgeEntry* EarnedBadgeEntry, bool* Found, class AFortPlayerController** FortPC, class UFortBadgeItemDefinition** Badge, int* Count)
+void UBadgesEarnedPanelContent_C::Get_Badge_And_Count_For_Player(class AFortPlayerController* InFortPC, const struct FEarnedBadgeEntry& EarnedBadgeEntry, bool* Found, class AFortPlayerController** FortPC, class UFortBadgeItemDefinition** Badge, int* Count)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function BadgesEarnedPanelContent.BadgesEarnedPanelContent_C.Get Badge And Count For Player");
 
 	UBadgesEarnedPanelContent_C_Get_Badge_And_Count_For_Player_Params params;
 	params.InFortPC = InFortPC;
+	params.EarnedBadgeEntry = EarnedBadgeEntry;
 
 	auto flags = fn->FunctionFlags;
 
@@ -35,8 +36,6 @@ void UBadgesEarnedPanelContent_C::Get_Badge_And_Count_For_Player(class AFortPlay
 
 	fn->FunctionFlags = flags;
 
-	if (EarnedBadgeEntry != nullptr)
-		*EarnedBadgeEntry = params.EarnedBadgeEntry;
 	if (Found != nullptr)
 		*Found = params.Found;
 	if (FortPC != nullptr)

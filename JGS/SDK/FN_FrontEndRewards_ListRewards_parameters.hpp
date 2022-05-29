@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -128,13 +128,13 @@ struct UFrontEndRewards_ListRewards_C_SelectCard_Params
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.SetCardSelected
 struct UFrontEndRewards_ListRewards_C_SetCardSelected_Params
 {
-	class URewards_ItemCard_C*                         Card;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class URewards_ItemCard_C*                         Card;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.HandleCardClicked
 struct UFrontEndRewards_ListRewards_C_HandleCardClicked_Params
 {
-	class URewards_ItemCard_C*                         Card;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class URewards_ItemCard_C*                         Card;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.ClearCards
@@ -145,7 +145,7 @@ struct UFrontEndRewards_ListRewards_C_ClearCards_Params
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.PlayCardSlide
 struct UFrontEndRewards_ListRewards_C_PlayCardSlide_Params
 {
-	class URewards_ItemCard_C*                         RewardsItemCard;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class URewards_ItemCard_C*                         RewardsItemCard;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 	float                                              StaggerDelay;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -157,7 +157,7 @@ struct UFrontEndRewards_ListRewards_C_SetItemDescription_Params
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.SetCardAlignment
 struct UFrontEndRewards_ListRewards_C_SetCardAlignment_Params
 {
-	class UWidget*                                     CardWidget;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UWidget*                                     CardWidget;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 	int                                                SelectionIndex;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -169,7 +169,7 @@ struct UFrontEndRewards_ListRewards_C_SelectPreviousCard_Params
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.HandleLastSlideAnimFinished
 struct UFrontEndRewards_ListRewards_C_HandleLastSlideAnimFinished_Params
 {
-	class URewards_ItemCard_C*                         RewardsItemCard;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class URewards_ItemCard_C*                         RewardsItemCard;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.GetCardAlignment
@@ -194,7 +194,7 @@ struct UFrontEndRewards_ListRewards_C_SelectNextCard_Params
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.AddCard
 struct UFrontEndRewards_ListRewards_C_AddCard_Params
 {
-	class URewards_ItemCard_C*                         Card;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class URewards_ItemCard_C*                         Card;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.InitDesignView

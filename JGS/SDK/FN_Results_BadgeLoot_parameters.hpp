@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -44,7 +44,7 @@ struct UResults_BadgeLoot_C_InitializeDelays_Params
 // Function Results_BadgeLoot.Results_BadgeLoot_C.PlayAnimationCommon
 struct UResults_BadgeLoot_C_PlayAnimationCommon_Params
 {
-	class UWidgetAnimation*                            Animation;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UWidgetAnimation*                            Animation;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function Results_BadgeLoot.Results_BadgeLoot_C.StepBadgeQueues
@@ -61,7 +61,7 @@ struct UResults_BadgeLoot_C_HasMoreBadgesToShow_Params
 // Function Results_BadgeLoot.Results_BadgeLoot_C.PopulateNextBadge
 struct UResults_BadgeLoot_C_PopulateNextBadge_Params
 {
-	class UResults_Badge_C*                            Badge;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UResults_Badge_C*                            Badge;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function Results_BadgeLoot.Results_BadgeLoot_C.Initialize
@@ -170,7 +170,7 @@ struct UResults_BadgeLoot_C_Skip_Params
 // Function Results_BadgeLoot.Results_BadgeLoot_C.BndEvt__ButtonContinue_K2Node_ComponentBoundEvent_279_CommonButtonClicked__DelegateSignature
 struct UResults_BadgeLoot_C_BndEvt__ButtonContinue_K2Node_ComponentBoundEvent_279_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function Results_BadgeLoot.Results_BadgeLoot_C.BndEvt__Anim_ContinueButtonIntro_K2Node_ComponentBoundEvent_2_OnWidgetAnimationPlaybackStatusChanged__DelegateSignature

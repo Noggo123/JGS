@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,57 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function NormalBangWrapper.NormalBangWrapper_C.InitialReset
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UNormalBangWrapper_C::InitialReset()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function NormalBangWrapper.NormalBangWrapper_C.InitialReset");
+
+	UNormalBangWrapper_C_InitialReset_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function NormalBangWrapper.NormalBangWrapper_C.TriggerReset
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UNormalBangWrapper_C::TriggerReset()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function NormalBangWrapper.NormalBangWrapper_C.TriggerReset");
+
+	UNormalBangWrapper_C_TriggerReset_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function NormalBangWrapper.NormalBangWrapper_C.TriggerIntro
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UNormalBangWrapper_C::TriggerIntro()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function NormalBangWrapper.NormalBangWrapper_C.TriggerIntro");
+
+	UNormalBangWrapper_C_TriggerIntro_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function NormalBangWrapper.NormalBangWrapper_C.Adjust Bang Image Translation
 // (Public, BlueprintCallable, BlueprintEvent)

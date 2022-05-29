@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,6 +20,23 @@ void USquadSlotItemPicker_C::Construct()
 	static auto fn = UObject::FindObject<UFunction>("Function SquadSlotItemPicker.SquadSlotItemPicker_C.Construct");
 
 	USquadSlotItemPicker_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function SquadSlotItemPicker.SquadSlotItemPicker_C.HandleChangeSort
+// (BlueprintCallable, BlueprintEvent)
+
+void USquadSlotItemPicker_C::HandleChangeSort()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function SquadSlotItemPicker.SquadSlotItemPicker_C.HandleChangeSort");
+
+	USquadSlotItemPicker_C_HandleChangeSort_Params params;
 
 	auto flags = fn->FunctionFlags;
 

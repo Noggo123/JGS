@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,6 +14,11 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
+// Function Trap_Wall_Spikes_Metal.Trap_Wall_Spikes_Metal_C.ChangeToFriendlyMaterial
+struct ATrap_Wall_Spikes_Metal_C_ChangeToFriendlyMaterial_Params
+{
+};
+
 // Function Trap_Wall_Spikes_Metal.Trap_Wall_Spikes_Metal_C.MaterialSweepOnSpikes
 struct ATrap_Wall_Spikes_Metal_C_MaterialSweepOnSpikes_Params
 {
@@ -26,12 +31,6 @@ struct ATrap_Wall_Spikes_Metal_C_MaterialSweepOnSpikes_Params
 struct ATrap_Wall_Spikes_Metal_C_SetSpikePosition_Params
 {
 	float                                              SpikePosition;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Trap_Wall_Spikes_Metal.Trap_Wall_Spikes_Metal_C.GetFireLocationAndRotation
-struct ATrap_Wall_Spikes_Metal_C_GetFireLocationAndRotation_Params
-{
-	struct FTransform                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
 };
 
 // Function Trap_Wall_Spikes_Metal.Trap_Wall_Spikes_Metal_C.UserConstructionScript
@@ -103,6 +102,11 @@ struct ATrap_Wall_Spikes_Metal_C_OnOutOfDurability_Params
 
 // Function Trap_Wall_Spikes_Metal.Trap_Wall_Spikes_Metal_C.OnWorldReady
 struct ATrap_Wall_Spikes_Metal_C_OnWorldReady_Params
+{
+};
+
+// Function Trap_Wall_Spikes_Metal.Trap_Wall_Spikes_Metal_C.OnInitTeam
+struct ATrap_Wall_Spikes_Metal_C_OnInitTeam_Params
 {
 };
 

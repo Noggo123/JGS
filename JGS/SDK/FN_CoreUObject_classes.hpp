@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -61,12 +59,12 @@ public:
 		for (int i = 0; i < GetGlobalObjects()->Num(); ++i)
 		{
 			auto object = GetGlobalObjects()->GetByIndex(i);
-
+	
 			if (object == nullptr)
 			{
 				continue;
 			}
-
+	
 			if (object->GetFullName() == name)
 			{
 				return reinterpret_cast<UClass*>(object);
@@ -78,7 +76,7 @@ public:
 	template<typename T>
 	static T* GetObjectCasted(std::size_t index)
 	{
-		return static_cast<T*>(GetGlobalObjects()->GetByIndex(index));
+		return static_cast<T*>(GetGlobalObjects().GetByIndex(index));
 	}
 
 	bool IsA(UClass* cmp) const;
@@ -199,11 +197,11 @@ public:
 
 
 // Class CoreUObject.Package
-// 0x0070 (0x0098 - 0x0028)
+// 0x0068 (0x0090 - 0x0028)
 class UPackage : public UObject
 {
 public:
-	unsigned char                                      UnknownData00[0x70];                                      // 0x0028(0x0070) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x68];                                      // 0x0028(0x0068) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -221,6 +219,12 @@ class UClass : public UStruct
 public:
 	unsigned char                                      UnknownData00[0x170];                                     // 0x0088(0x0170) MISSED OFFSET
 
+	template<typename T>
+	inline T* CreateDefaultObject()
+	{
+		return static_cast<T*>(CreateDefaultObject());
+	}
+
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindClass("Class CoreUObject.Class");
@@ -229,7 +233,7 @@ public:
 
 	inline UObject* CreateDefaultObject()
 	{
-		return GetVFunction<UObject*(*)(UClass*)>(this, 100)(this);
+		return GetVFunction<UObject*(*)(UClass*)>(this, 101)(this);
 	}
 
 };

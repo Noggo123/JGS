@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,23 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function Trap_Ceiling_Spikes.Trap_Ceiling_Spikes_C. ChangeToFriendlyMaterial
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ATrap_Ceiling_Spikes_C::_ChangeToFriendlyMaterial()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Trap_Ceiling_Spikes.Trap_Ceiling_Spikes_C. ChangeToFriendlyMaterial");
+
+	ATrap_Ceiling_Spikes_C__ChangeToFriendlyMaterial_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function Trap_Ceiling_Spikes.Trap_Ceiling_Spikes_C.MaterialSweepOnSpikes
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -53,27 +70,6 @@ void ATrap_Ceiling_Spikes_C::SetSpikePosition(float NewSpikePosition)
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-}
-
-
-// Function Trap_Ceiling_Spikes.Trap_Ceiling_Spikes_C.GetFireLocationAndRotation
-// (Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// struct FTransform              ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
-
-struct FTransform ATrap_Ceiling_Spikes_C::GetFireLocationAndRotation()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Trap_Ceiling_Spikes.Trap_Ceiling_Spikes_C.GetFireLocationAndRotation");
-
-	ATrap_Ceiling_Spikes_C_GetFireLocationAndRotation_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
@@ -311,6 +307,23 @@ void ATrap_Ceiling_Spikes_C::OnWorldReady()
 	static auto fn = UObject::FindObject<UFunction>("Function Trap_Ceiling_Spikes.Trap_Ceiling_Spikes_C.OnWorldReady");
 
 	ATrap_Ceiling_Spikes_C_OnWorldReady_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Trap_Ceiling_Spikes.Trap_Ceiling_Spikes_C.OnInitTeam
+// (Event, Protected, BlueprintEvent)
+
+void ATrap_Ceiling_Spikes_C::OnInitTeam()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Trap_Ceiling_Spikes.Trap_Ceiling_Spikes_C.OnInitTeam");
+
+	ATrap_Ceiling_Spikes_C_OnInitTeam_Params params;
 
 	auto flags = fn->FunctionFlags;
 

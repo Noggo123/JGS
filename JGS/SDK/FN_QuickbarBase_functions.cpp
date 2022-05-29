@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,30 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function QuickbarBase.QuickbarBase_C.HandleQuickbarContentChanged
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EFortQuickBars                 QuickBarType                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TArray<int>                    ChangedSlots                   (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+
+void UQuickbarBase_C::HandleQuickbarContentChanged(EFortQuickBars QuickBarType, TArray<int>* ChangedSlots)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function QuickbarBase.QuickbarBase_C.HandleQuickbarContentChanged");
+
+	UQuickbarBase_C_HandleQuickbarContentChanged_Params params;
+	params.QuickBarType = QuickBarType;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (ChangedSlots != nullptr)
+		*ChangedSlots = params.ChangedSlots;
+}
+
 
 // Function QuickbarBase.QuickbarBase_C.UpdateCurrentFocusedQuickbar
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
@@ -220,16 +244,18 @@ void UQuickbarBase_C::OnQuickbarSlotFocusChanged(EFortQuickBars QuickbarIndex, i
 
 
 // Function QuickbarBase.QuickbarBase_C.OnQuickbarContentsChanged
-// (BlueprintCallable, BlueprintEvent)
+// (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // EFortQuickBars                 QuickbarIndex                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TArray<int>                    ChangedSlots                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
-void UQuickbarBase_C::OnQuickbarContentsChanged(EFortQuickBars QuickbarIndex)
+void UQuickbarBase_C::OnQuickbarContentsChanged(EFortQuickBars QuickbarIndex, TArray<int> ChangedSlots)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function QuickbarBase.QuickbarBase_C.OnQuickbarContentsChanged");
 
 	UQuickbarBase_C_OnQuickbarContentsChanged_Params params;
 	params.QuickbarIndex = QuickbarIndex;
+	params.ChangedSlots = ChangedSlots;
 
 	auto flags = fn->FunctionFlags;
 

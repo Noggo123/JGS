@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,44 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
-
-// Function BannerLibrary.BannerLibrary_C.UpdateBannerMeshMaterialForUniqueId_New
-struct UBannerLibrary_C_UpdateBannerMeshMaterialForUniqueId_New_Params
-{
-	class UMaterialInstanceDynamic*                    Material_Instance_Dynamic;                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               UseIconMask;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FUniqueNetIdRepl                            UniqueId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
-	class UObject*                                     __WorldContext;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function BannerLibrary.BannerLibrary_C.Get Icon Texture and Colors
-struct UBannerLibrary_C_Get_Icon_Texture_and_Colors_Params
-{
-	struct FString                                     BannerIconId;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-	struct FString                                     BannerColorId;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-	class UObject*                                     __WorldContext;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UTexture2D*                                  Icon;                                                     // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-	struct FLinearColor                                PrimaryColor;                                             // (Parm, OutParm, IsPlainOldData)
-	struct FLinearColor                                Secondary_Color;                                          // (Parm, OutParm, IsPlainOldData)
-};
-
-// Function BannerLibrary.BannerLibrary_C.UpdateMaterial_New
-struct UBannerLibrary_C_UpdateMaterial_New_Params
-{
-	class UImage*                                      Banner_material;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FFortHomeBaseInfo                           Image_info;                                               // (BlueprintVisible, BlueprintReadOnly, Parm)
-	bool                                               Is_Icon;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UObject*                                     __WorldContext;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function BannerLibrary.BannerLibrary_C.UpdateBannerMeshMaterial_New
-struct UBannerLibrary_C_UpdateBannerMeshMaterial_New_Params
-{
-	class UMaterialInstanceDynamic*                    Material_Instance_Dynamic;                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               UseIconMask;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class AFortPlayerState*                            InstigatorPlayerState;                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UObject*                                     __WorldContext;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
 
 // Function BannerLibrary.BannerLibrary_C.UpdateBannerIconOnMaterial
 struct UBannerLibrary_C_UpdateBannerIconOnMaterial_Params

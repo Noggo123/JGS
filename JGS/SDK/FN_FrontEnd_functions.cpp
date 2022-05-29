@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,126 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function Frontend.FrontEnd_C.ResetVaultCameraZoom
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void AFrontEnd_C::ResetVaultCameraZoom()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Frontend.FrontEnd_C.ResetVaultCameraZoom");
+
+	AFrontEnd_C_ResetVaultCameraZoom_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Frontend.FrontEnd_C.UpdateVaultCameraZoom
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EFrontEndCamera                InCameraType                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void AFrontEnd_C::UpdateVaultCameraZoom(EFrontEndCamera InCameraType)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Frontend.FrontEnd_C.UpdateVaultCameraZoom");
+
+	AFrontEnd_C_UpdateVaultCameraZoom_Params params;
+	params.InCameraType = InCameraType;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Frontend.FrontEnd_C.ProcessTouchInput
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void AFrontEnd_C::ProcessTouchInput()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Frontend.FrontEnd_C.ProcessTouchInput");
+
+	AFrontEnd_C_ProcessTouchInput_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Frontend.FrontEnd_C.InpTchEvt_Moved
+// (BlueprintEvent)
+// Parameters:
+// TEnumAsByte<ETouchIndex>       FingerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector                 Location                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+
+void AFrontEnd_C::InpTchEvt_Moved(TEnumAsByte<ETouchIndex> FingerIndex, const struct FVector& Location)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Frontend.FrontEnd_C.InpTchEvt_Moved");
+
+	AFrontEnd_C_InpTchEvt_Moved_Params params;
+	params.FingerIndex = FingerIndex;
+	params.Location = Location;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Frontend.FrontEnd_C.InpTchEvt_Released
+// (BlueprintEvent)
+// Parameters:
+// TEnumAsByte<ETouchIndex>       FingerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector                 Location                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+
+void AFrontEnd_C::InpTchEvt_Released(TEnumAsByte<ETouchIndex> FingerIndex, const struct FVector& Location)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Frontend.FrontEnd_C.InpTchEvt_Released");
+
+	AFrontEnd_C_InpTchEvt_Released_Params params;
+	params.FingerIndex = FingerIndex;
+	params.Location = Location;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Frontend.FrontEnd_C.InpTchEvt_Pressed
+// (BlueprintEvent)
+// Parameters:
+// TEnumAsByte<ETouchIndex>       FingerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector                 Location                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+
+void AFrontEnd_C::InpTchEvt_Pressed(TEnumAsByte<ETouchIndex> FingerIndex, const struct FVector& Location)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Frontend.FrontEnd_C.InpTchEvt_Pressed");
+
+	AFrontEnd_C_InpTchEvt_Pressed_Params params;
+	params.FingerIndex = FingerIndex;
+	params.Location = Location;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function Frontend.FrontEnd_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_3_4
 // (BlueprintEvent)
@@ -92,19 +212,14 @@ void AFrontEnd_C::InpActEvt_RightMouseButton_K2Node_InputKeyEvent_0_1(const stru
 }
 
 
-// Function Frontend.FrontEnd_C.InpTchEvt_Moved
-// (BlueprintEvent)
-// Parameters:
-// TEnumAsByte<ETouchIndex>       FingerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FVector                 Location                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+// Function Frontend.FrontEnd_C.ResetRotation
+// (BlueprintCallable, BlueprintEvent)
 
-void AFrontEnd_C::InpTchEvt_Moved(TEnumAsByte<ETouchIndex> FingerIndex, const struct FVector& Location)
+void AFrontEnd_C::ResetRotation()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Frontend.FrontEnd_C.InpTchEvt_Moved");
+	static auto fn = UObject::FindObject<UFunction>("Function Frontend.FrontEnd_C.ResetRotation");
 
-	AFrontEnd_C_InpTchEvt_Moved_Params params;
-	params.FingerIndex = FingerIndex;
-	params.Location = Location;
+	AFrontEnd_C_ResetRotation_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -114,61 +229,14 @@ void AFrontEnd_C::InpTchEvt_Moved(TEnumAsByte<ETouchIndex> FingerIndex, const st
 }
 
 
-// Function Frontend.FrontEnd_C.InpTchEvt_Released
-// (BlueprintEvent)
-// Parameters:
-// TEnumAsByte<ETouchIndex>       FingerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FVector                 Location                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+// Function Frontend.FrontEnd_C.StoreInitialRotation
+// (BlueprintCallable, BlueprintEvent)
 
-void AFrontEnd_C::InpTchEvt_Released(TEnumAsByte<ETouchIndex> FingerIndex, const struct FVector& Location)
+void AFrontEnd_C::StoreInitialRotation()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Frontend.FrontEnd_C.InpTchEvt_Released");
+	static auto fn = UObject::FindObject<UFunction>("Function Frontend.FrontEnd_C.StoreInitialRotation");
 
-	AFrontEnd_C_InpTchEvt_Released_Params params;
-	params.FingerIndex = FingerIndex;
-	params.Location = Location;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Frontend.FrontEnd_C.InpTchEvt_Pressed
-// (BlueprintEvent)
-// Parameters:
-// TEnumAsByte<ETouchIndex>       FingerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FVector                 Location                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-
-void AFrontEnd_C::InpTchEvt_Pressed(TEnumAsByte<ETouchIndex> FingerIndex, const struct FVector& Location)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Frontend.FrontEnd_C.InpTchEvt_Pressed");
-
-	AFrontEnd_C_InpTchEvt_Pressed_Params params;
-	params.FingerIndex = FingerIndex;
-	params.Location = Location;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Frontend.FrontEnd_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float*                         DeltaSeconds                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void AFrontEnd_C::ReceiveTick(float* DeltaSeconds)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Frontend.FrontEnd_C.ReceiveTick");
-
-	AFrontEnd_C_ReceiveTick_Params params;
-	params.DeltaSeconds = DeltaSeconds;
+	AFrontEnd_C_StoreInitialRotation_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -198,31 +266,17 @@ void AFrontEnd_C::InpAxisKeyEvt_Gamepad_RightX_K2Node_InputAxisKeyEvent_4_5(floa
 }
 
 
-// Function Frontend.FrontEnd_C.ResetRotation
-// (BlueprintCallable, BlueprintEvent)
+// Function Frontend.FrontEnd_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float*                         DeltaSeconds                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void AFrontEnd_C::ResetRotation()
+void AFrontEnd_C::ReceiveTick(float* DeltaSeconds)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Frontend.FrontEnd_C.ResetRotation");
+	static auto fn = UObject::FindObject<UFunction>("Function Frontend.FrontEnd_C.ReceiveTick");
 
-	AFrontEnd_C_ResetRotation_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Frontend.FrontEnd_C.StoreInitialRotation
-// (BlueprintCallable, BlueprintEvent)
-
-void AFrontEnd_C::StoreInitialRotation()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Frontend.FrontEnd_C.StoreInitialRotation");
-
-	AFrontEnd_C_StoreInitialRotation_Params params;
+	AFrontEnd_C_ReceiveTick_Params params;
+	params.DeltaSeconds = DeltaSeconds;
 
 	auto flags = fn->FunctionFlags;
 

@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -31,12 +29,14 @@ public:
 	}
 
 
+	void HandleSquadSlotChanged(const struct FName& SquadName, int SlotIndex);
 	void SetState(EFortSupportPerkWidgetState InState);
 	void UpdatePerkWidgets();
 	void UpdateVisibility();
 	void HandlePostDifferentItemToDetailSet();
 	void HandlePostDifferentSquadSlotSetBP();
 	void Construct();
+	void Destruct();
 	void ExecuteUbergraph_SupportHeroSquadBonusesDetailWidget(int EntryPoint);
 };
 

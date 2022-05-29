@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -39,7 +39,7 @@ struct UXpBar_C_ScaledBoostBalance_Params
 // Function XpBar.XpBar_C.GetExperienceToolTipWidget
 struct UXpBar_C_GetExperienceToolTipWidget_Params
 {
-	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 };
 
 // Function XpBar.XpBar_C.Update Xp Bar
@@ -63,6 +63,11 @@ struct UXpBar_C_Account_Info_Changed_Params
 struct UXpBar_C_Xp_Boost_Changed_Params
 {
 	int                                                BoostAmount;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function XpBar.XpBar_C.Destruct
+struct UXpBar_C_Destruct_Params
+{
 };
 
 // Function XpBar.XpBar_C.ExecuteUbergraph_XpBar

@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -41,7 +39,7 @@ public:
 
 	void ContinueTutorial();
 	void CheckContinueTutorial(const struct FFortClientAnnouncementData_Tutorial& TutorialData);
-	ESlateVisibility GetLightboxVisibility(struct FFortClientAnnouncementData_Tutorial* FortClientAnnouncementData_Tutorial);
+	ESlateVisibility GetLightboxVisibility(const struct FFortClientAnnouncementData_Tutorial& FortClientAnnouncementData_Tutorial);
 	void RefreshTextLines();
 	void UpdateTutorialData(const struct FFortClientAnnouncementData_Tutorial& TutorialData);
 	void AddTextLine(const struct FText& Text, bool Transparent);

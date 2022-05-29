@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -63,14 +63,14 @@ void UVinderTech_GliderChute_AnimBP_C::EvaluateGraphExposedInputs_ExecuteUbergra
 }
 
 
-// Function VinderTech_GliderChute_AnimBP.VinderTech_GliderChute_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_GliderChute_AnimBP_AnimGraphNode_SequencePlayer_2133C7F047F09F18A630588EBA7E4D65
+// Function VinderTech_GliderChute_AnimBP.VinderTech_GliderChute_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_GliderChute_AnimBP_AnimGraphNode_BlendSpacePlayer_4393D4E34087BD4856E060AC810EBD43
 // (BlueprintEvent)
 
-void UVinderTech_GliderChute_AnimBP_C::EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_GliderChute_AnimBP_AnimGraphNode_SequencePlayer_2133C7F047F09F18A630588EBA7E4D65()
+void UVinderTech_GliderChute_AnimBP_C::EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_GliderChute_AnimBP_AnimGraphNode_BlendSpacePlayer_4393D4E34087BD4856E060AC810EBD43()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function VinderTech_GliderChute_AnimBP.VinderTech_GliderChute_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_GliderChute_AnimBP_AnimGraphNode_SequencePlayer_2133C7F047F09F18A630588EBA7E4D65");
+	static auto fn = UObject::FindObject<UFunction>("Function VinderTech_GliderChute_AnimBP.VinderTech_GliderChute_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_GliderChute_AnimBP_AnimGraphNode_BlendSpacePlayer_4393D4E34087BD4856E060AC810EBD43");
 
-	UVinderTech_GliderChute_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_GliderChute_AnimBP_AnimGraphNode_SequencePlayer_2133C7F047F09F18A630588EBA7E4D65_Params params;
+	UVinderTech_GliderChute_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_GliderChute_AnimBP_AnimGraphNode_BlendSpacePlayer_4393D4E34087BD4856E060AC810EBD43_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -134,6 +134,23 @@ void UVinderTech_GliderChute_AnimBP_C::BlueprintUpdateAnimation(float* DeltaTime
 }
 
 
+// Function VinderTech_GliderChute_AnimBP.VinderTech_GliderChute_AnimBP_C.AnimNotify_DynamicsOK
+// (BlueprintCallable, BlueprintEvent)
+
+void UVinderTech_GliderChute_AnimBP_C::AnimNotify_DynamicsOK()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function VinderTech_GliderChute_AnimBP.VinderTech_GliderChute_AnimBP_C.AnimNotify_DynamicsOK");
+
+	UVinderTech_GliderChute_AnimBP_C_AnimNotify_DynamicsOK_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function VinderTech_GliderChute_AnimBP.VinderTech_GliderChute_AnimBP_C.ExecuteUbergraph_VinderTech_GliderChute_AnimBP
 // ()
 // Parameters:
@@ -145,6 +162,23 @@ void UVinderTech_GliderChute_AnimBP_C::ExecuteUbergraph_VinderTech_GliderChute_A
 
 	UVinderTech_GliderChute_AnimBP_C_ExecuteUbergraph_VinderTech_GliderChute_AnimBP_Params params;
 	params.EntryPoint = EntryPoint;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function VinderTech_GliderChute_AnimBP.VinderTech_GliderChute_AnimBP_C.DynamicsOK__DelegateSignature
+// (Public, Delegate, BlueprintCallable, BlueprintEvent)
+
+void UVinderTech_GliderChute_AnimBP_C::DynamicsOK__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function VinderTech_GliderChute_AnimBP.VinderTech_GliderChute_AnimBP_C.DynamicsOK__DelegateSignature");
+
+	UVinderTech_GliderChute_AnimBP_C_DynamicsOK__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 

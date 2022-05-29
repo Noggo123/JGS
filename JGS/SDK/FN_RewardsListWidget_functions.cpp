@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,9 +32,9 @@ void URewardsListWidget_C::PresentAllRewards()
 // Function RewardsListWidget.RewardsListWidget_C.CreateRewardWrapper
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UHomeScreenQuestRewardItem_C* Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UHomeScreenQuestRewardItem_C* Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // struct FText                   DisplayName                    (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UFrontEndRewardWrapperWidget_C* OutputPin                      (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// class UFrontEndRewardWrapperWidget_C* OutputPin                      (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void URewardsListWidget_C::CreateRewardWrapper(class UHomeScreenQuestRewardItem_C* Item, const struct FText& DisplayName, class UFrontEndRewardWrapperWidget_C** OutputPin)
 {

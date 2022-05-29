@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,72 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function B_Constructor_BASE.B_Constructor_BASE_C.UpdateAudioCrossfade
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class USoundBase*              Sound                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void AB_Constructor_BASE_C::UpdateAudioCrossfade(class USoundBase* Sound)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function B_Constructor_BASE.B_Constructor_BASE_C.UpdateAudioCrossfade");
+
+	AB_Constructor_BASE_C_UpdateAudioCrossfade_Params params;
+	params.Sound = Sound;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function B_Constructor_BASE.B_Constructor_BASE_C.GetFeelTheBaseTraceLocation
+// (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// struct FTransform              TraceLocation                  (Parm, OutParm, IsPlainOldData)
+
+void AB_Constructor_BASE_C::GetFeelTheBaseTraceLocation(struct FTransform* TraceLocation)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function B_Constructor_BASE.B_Constructor_BASE_C.GetFeelTheBaseTraceLocation");
+
+	AB_Constructor_BASE_C_GetFeelTheBaseTraceLocation_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (TraceLocation != nullptr)
+		*TraceLocation = params.TraceLocation;
+}
+
+
+// Function B_Constructor_BASE.B_Constructor_BASE_C.SpawnResourceWithAmount
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortWorldItemDefinition* ItemDefinition                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            AmountToSpawn                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EFortResourceType> ResourceType                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void AB_Constructor_BASE_C::SpawnResourceWithAmount(class UFortWorldItemDefinition* ItemDefinition, int AmountToSpawn, TEnumAsByte<EFortResourceType> ResourceType)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function B_Constructor_BASE.B_Constructor_BASE_C.SpawnResourceWithAmount");
+
+	AB_Constructor_BASE_C_SpawnResourceWithAmount_Params params;
+	params.ItemDefinition = ItemDefinition;
+	params.AmountToSpawn = AmountToSpawn;
+	params.ResourceType = ResourceType;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function B_Constructor_BASE.B_Constructor_BASE_C.SetHealingMultiplier
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -32,7 +98,7 @@ void AB_Constructor_BASE_C::SetHealingMultiplier()
 // Function B_Constructor_BASE.B_Constructor_BASE_C.SetupTrapEffects
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UAbilitySystemComponent* AbilityComponent               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UAbilitySystemComponent* AbilityComponent               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void AB_Constructor_BASE_C::SetupTrapEffects(class UAbilitySystemComponent* AbilityComponent)
 {
@@ -113,7 +179,7 @@ void AB_Constructor_BASE_C::BaseSelfApplyGameplaySpec(const struct FGameplayEffe
 // Function B_Constructor_BASE.B_Constructor_BASE_C.SetBaseVisualGlow
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UAbilitySystemComponent* AbilitySystemComponent         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UAbilitySystemComponent* AbilitySystemComponent         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void AB_Constructor_BASE_C::SetBaseVisualGlow(class UAbilitySystemComponent* AbilitySystemComponent)
 {
@@ -167,7 +233,7 @@ void AB_Constructor_BASE_C::OnRep_CollectResources()
 // Function B_Constructor_BASE.B_Constructor_BASE_C.BlueprintGetInteractionString
 // (Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// class AFortPawn**              InteractingPawn                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortPawn**              InteractingPawn                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // struct FText                   ReturnValue                    (Parm, OutParm, ReturnParm)
 
 struct FText AB_Constructor_BASE_C::BlueprintGetInteractionString(class AFortPawn** InteractingPawn)
@@ -242,7 +308,7 @@ void AB_Constructor_BASE_C::SpawnResourceForRecycling(class UFortWorldItemDefini
 // Function B_Constructor_BASE.B_Constructor_BASE_C.BlueprintCanInteract
 // (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
-// class AFortPawn**              InteractingPawn                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortPawn**              InteractingPawn                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 bool AB_Constructor_BASE_C::BlueprintCanInteract(class AFortPawn** InteractingPawn)
@@ -299,7 +365,7 @@ void AB_Constructor_BASE_C::RecycleResources()
 // Function B_Constructor_BASE.B_Constructor_BASE_C.SetupHostileEffects
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UAbilitySystemComponent* AbilitySystemComponent         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UAbilitySystemComponent* AbilitySystemComponent         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // TArray<struct FBASEGameplayEffect> HostileEffects                 (Parm, OutParm, ZeroConstructor)
 
 void AB_Constructor_BASE_C::SetupHostileEffects(class UAbilitySystemComponent* AbilitySystemComponent, TArray<struct FBASEGameplayEffect>* HostileEffects)
@@ -323,7 +389,7 @@ void AB_Constructor_BASE_C::SetupHostileEffects(class UAbilitySystemComponent* A
 // Function B_Constructor_BASE.B_Constructor_BASE_C.SetupFriendlyEffects
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UAbilitySystemComponent* AbilitySystemComponent         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UAbilitySystemComponent* AbilitySystemComponent         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // TArray<struct FBASEGameplayEffect> FriendlyEffects                (Parm, OutParm, ZeroConstructor)
 
 void AB_Constructor_BASE_C::SetupFriendlyEffects(class UAbilitySystemComponent* AbilitySystemComponent, TArray<struct FBASEGameplayEffect>* FriendlyEffects)
@@ -347,7 +413,7 @@ void AB_Constructor_BASE_C::SetupFriendlyEffects(class UAbilitySystemComponent* 
 // Function B_Constructor_BASE.B_Constructor_BASE_C.SetupBuildingEffects
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UAbilitySystemComponent* AbilitySystemComponent         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UAbilitySystemComponent* AbilitySystemComponent         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // TArray<struct FBASEGameplayEffect> BuildingEffects                (Parm, OutParm, ZeroConstructor)
 
 void AB_Constructor_BASE_C::SetupBuildingEffects(class UAbilitySystemComponent* AbilitySystemComponent, TArray<struct FBASEGameplayEffect>* BuildingEffects)
@@ -371,7 +437,7 @@ void AB_Constructor_BASE_C::SetupBuildingEffects(class UAbilitySystemComponent* 
 // Function B_Constructor_BASE.B_Constructor_BASE_C.Setup Base Effect Array
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UAbilitySystemComponent* Instigator_Ability_System      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UAbilitySystemComponent* Instigator_Ability_System      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // TArray<struct FBASEGameplayEffect> BASEBuildingEffects            (Parm, OutParm, ZeroConstructor)
 // TArray<struct FBASEGameplayEffect> BASEFriendlyEffects            (Parm, OutParm, ZeroConstructor)
 // TArray<struct FBASEGameplayEffect> BASEHostileEffects             (Parm, OutParm, ZeroConstructor)
@@ -401,7 +467,7 @@ void AB_Constructor_BASE_C::Setup_Base_Effect_Array(class UAbilitySystemComponen
 // Function B_Constructor_BASE.B_Constructor_BASE_C.SetupBaseDefaultValues
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UAbilitySystemComponent* Ability_System_Component       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UAbilitySystemComponent* Ability_System_Component       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // int                            NodesToAffect                  (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void AB_Constructor_BASE_C::SetupBaseDefaultValues(class UAbilitySystemComponent* Ability_System_Component, int* NodesToAffect)
@@ -442,7 +508,7 @@ void AB_Constructor_BASE_C::UserConstructionScript()
 // Function B_Constructor_BASE.B_Constructor_BASE_C.OnPlaced
 // (BlueprintAuthorityOnly, Event, Public, BlueprintEvent)
 // Parameters:
-// class UAbilitySystemComponent** InstigatorAbilitySystemComponent (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UAbilitySystemComponent** InstigatorAbilitySystemComponent (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void AB_Constructor_BASE_C::OnPlaced(class UAbilitySystemComponent** InstigatorAbilitySystemComponent)
 {
@@ -479,9 +545,9 @@ void AB_Constructor_BASE_C::Recycling()
 // Function B_Constructor_BASE.B_Constructor_BASE_C.BndEvt__Sphere_K2Node_ComponentBoundEvent_264_ComponentBeginOverlapSignature__DelegateSignature
 // (HasOutParms, BlueprintEvent)
 // Parameters:
-// class UPrimitiveComponent*     OverlappedComponent            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UPrimitiveComponent*     OverlappedComponent            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // class AActor*                  OtherActor                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UPrimitiveComponent*     OtherComp                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UPrimitiveComponent*     OtherComp                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // int                            OtherBodyIndex                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           bFromSweep                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // struct FHitResult              SweepResult                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
@@ -509,9 +575,9 @@ void AB_Constructor_BASE_C::BndEvt__Sphere_K2Node_ComponentBoundEvent_264_Compon
 // Function B_Constructor_BASE.B_Constructor_BASE_C.BndEvt__Sphere_K2Node_ComponentBoundEvent_267_ComponentEndOverlapSignature__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UPrimitiveComponent*     OverlappedComponent            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UPrimitiveComponent*     OverlappedComponent            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // class AActor*                  OtherActor                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UPrimitiveComponent*     OtherComp                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UPrimitiveComponent*     OtherComp                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // int                            OtherBodyIndex                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
 void AB_Constructor_BASE_C::BndEvt__Sphere_K2Node_ComponentBoundEvent_267_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex)
@@ -556,7 +622,7 @@ void AB_Constructor_BASE_C::AnimateLegs(bool LegsUp)
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
 // class ABuildingSMActor**       BuildingActor                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UStaticMeshComponent**   EffectMeshComp                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UStaticMeshComponent**   EffectMeshComp                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void AB_Constructor_BASE_C::StartBuildingActorVisuals(class ABuildingSMActor** BuildingActor, class UStaticMeshComponent** EffectMeshComp)
 {
@@ -578,7 +644,7 @@ void AB_Constructor_BASE_C::StartBuildingActorVisuals(class ABuildingSMActor** B
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
 // class ABuildingSMActor**       BuildingActor                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UStaticMeshComponent**   EffectMeshComp                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UStaticMeshComponent**   EffectMeshComp                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void AB_Constructor_BASE_C::StopBuildingActorVisuals(class ABuildingSMActor** BuildingActor, class UStaticMeshComponent** EffectMeshComp)
 {
@@ -709,6 +775,91 @@ void AB_Constructor_BASE_C::ApplyTrapEffects()
 	static auto fn = UObject::FindObject<UFunction>("Function B_Constructor_BASE.B_Constructor_BASE_C.ApplyTrapEffects");
 
 	AB_Constructor_BASE_C_ApplyTrapEffects_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function B_Constructor_BASE.B_Constructor_BASE_C.SaveOwner
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class APlayerPawn_Constructor_C* ConstructorPawn                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void AB_Constructor_BASE_C::SaveOwner(class APlayerPawn_Constructor_C* ConstructorPawn)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function B_Constructor_BASE.B_Constructor_BASE_C.SaveOwner");
+
+	AB_Constructor_BASE_C_SaveOwner_Params params;
+	params.ConstructorPawn = ConstructorPawn;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function B_Constructor_BASE.B_Constructor_BASE_C.FeelTheBaseGlow
+// (Net, NetMulticast, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           Stack1                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Stack2                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Stack3                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void AB_Constructor_BASE_C::FeelTheBaseGlow(bool Stack1, bool Stack2, bool Stack3)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function B_Constructor_BASE.B_Constructor_BASE_C.FeelTheBaseGlow");
+
+	AB_Constructor_BASE_C_FeelTheBaseGlow_Params params;
+	params.Stack1 = Stack1;
+	params.Stack2 = Stack2;
+	params.Stack3 = Stack3;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function B_Constructor_BASE.B_Constructor_BASE_C.ResetFeelTheBaseGlow
+// (Net, NetMulticast, BlueprintCallable, BlueprintEvent)
+
+void AB_Constructor_BASE_C::ResetFeelTheBaseGlow()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function B_Constructor_BASE.B_Constructor_BASE_C.ResetFeelTheBaseGlow");
+
+	AB_Constructor_BASE_C_ResetFeelTheBaseGlow_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function B_Constructor_BASE.B_Constructor_BASE_C.BndEvt__P_FeeltheBase_Chargup_K2Node_ComponentBoundEvent_0_ParticleBurstSignature__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// struct FName                   EventName                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          EmitterTime                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            ParticleCount                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void AB_Constructor_BASE_C::BndEvt__P_FeeltheBase_Chargup_K2Node_ComponentBoundEvent_0_ParticleBurstSignature__DelegateSignature(const struct FName& EventName, float EmitterTime, int ParticleCount)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function B_Constructor_BASE.B_Constructor_BASE_C.BndEvt__P_FeeltheBase_Chargup_K2Node_ComponentBoundEvent_0_ParticleBurstSignature__DelegateSignature");
+
+	AB_Constructor_BASE_C_BndEvt__P_FeeltheBase_Chargup_K2Node_ComponentBoundEvent_0_ParticleBurstSignature__DelegateSignature_Params params;
+	params.EventName = EventName;
+	params.EmitterTime = EmitterTime;
+	params.ParticleCount = ParticleCount;
 
 	auto flags = fn->FunctionFlags;
 

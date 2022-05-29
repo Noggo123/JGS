@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,35 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function AudioMixer.SynthComponent.Stop
+struct USynthComponent_Stop_Params
+{
+};
+
+// Function AudioMixer.SynthComponent.Start
+struct USynthComponent_Start_Params
+{
+};
+
+// Function AudioMixer.SynthComponent.SetVolumeMultiplier
+struct USynthComponent_SetVolumeMultiplier_Params
+{
+	float                                              VolumeMultiplier;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AudioMixer.SynthComponent.SetSubmixSend
+struct USynthComponent_SetSubmixSend_Params
+{
+	class USoundSubmix*                                Submix;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              SendLevel;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AudioMixer.SynthComponent.IsPlaying
+struct USynthComponent_IsPlaying_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
 
 // Function AudioMixer.AudioMixerBlueprintLibrary.SetBypassSourceEffectChainEntry
 struct UAudioMixerBlueprintLibrary_SetBypassSourceEffectChainEntry_Params
@@ -90,29 +119,6 @@ struct USubmixEffectReverbPreset_SetSettingsWithReverbEffect_Params
 struct USubmixEffectReverbPreset_SetSettings_Params
 {
 	struct FSubmixEffectReverbSettings                 InSettings;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// Function AudioMixer.SynthComponent.Stop
-struct USynthComponent_Stop_Params
-{
-};
-
-// Function AudioMixer.SynthComponent.Start
-struct USynthComponent_Start_Params
-{
-};
-
-// Function AudioMixer.SynthComponent.SetSubmixSend
-struct USynthComponent_SetSubmixSend_Params
-{
-	class USoundSubmix*                                Submix;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              SendLevel;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function AudioMixer.SynthComponent.IsPlaying
-struct USynthComponent_IsPlaying_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 }

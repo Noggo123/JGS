@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,23 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function PanelButton.PanelButton_C.UpdateInputActionLayout
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UPanelButton_C::UpdateInputActionLayout()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PanelButton.PanelButton_C.UpdateInputActionLayout");
+
+	UPanelButton_C_UpdateInputActionLayout_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function PanelButton.PanelButton_C.UpdateStyle
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)

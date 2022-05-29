@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -64,7 +64,7 @@ struct UMainTabsScreen_C_HandleCardPackStore_Params
 // Function MainTabsScreen.MainTabsScreen_C.HandleMtxStore
 struct UMainTabsScreen_C_HandleMtxStore_Params
 {
-	struct FName                                       Tab_Id;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       Tab_ID;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MainTabsScreen.MainTabsScreen_C.Handle Unclaimed Resources Updated
@@ -168,7 +168,7 @@ struct UMainTabsScreen_C_HandleTabSelected_Params
 struct UMainTabsScreen_C_HandleTabCreated_Params
 {
 	struct FName                                       TabId;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonButton*                               TabButton;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               TabButton;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function MainTabsScreen.MainTabsScreen_C.OnActivated
@@ -180,7 +180,7 @@ struct UMainTabsScreen_C_OnActivated_Params
 struct UMainTabsScreen_C_CustomEvent_Params
 {
 	struct FName                                       TabId;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonButton*                               TabButton;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               TabButton;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function MainTabsScreen.MainTabsScreen_C.Construct
@@ -224,7 +224,7 @@ struct UMainTabsScreen_C_HandleMainTabSelected_Params
 struct UMainTabsScreen_C_HandleMainTabCreated_Params
 {
 	struct FName*                                      TabNameID;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonButton**                              TabButton;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton**                              TabButton;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function MainTabsScreen.MainTabsScreen_C.ExecuteUbergraph_MainTabsScreen

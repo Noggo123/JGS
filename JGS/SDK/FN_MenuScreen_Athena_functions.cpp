@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,6 +20,23 @@ void UMenuScreen_Athena_C::BlueprintBeginPlay()
 	static auto fn = UObject::FindObject<UFunction>("Function MenuScreen_Athena.MenuScreen_Athena_C.BlueprintBeginPlay");
 
 	UMenuScreen_Athena_C_BlueprintBeginPlay_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MenuScreen_Athena.MenuScreen_Athena_C.AnimNotify_LeftB
+// (BlueprintCallable, BlueprintEvent)
+
+void UMenuScreen_Athena_C::AnimNotify_LeftB()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MenuScreen_Athena.MenuScreen_Athena_C.AnimNotify_LeftB");
+
+	UMenuScreen_Athena_C_AnimNotify_LeftB_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -80,23 +97,6 @@ void UMenuScreen_Athena_C::EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScree
 }
 
 
-// Function MenuScreen_Athena.MenuScreen_Athena_C.EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScreen_Athena_AnimGraphNode_LegIK_3BACE47B4A5EF86B449B81BE7045ADA2
-// (BlueprintEvent)
-
-void UMenuScreen_Athena_C::EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScreen_Athena_AnimGraphNode_LegIK_3BACE47B4A5EF86B449B81BE7045ADA2()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MenuScreen_Athena.MenuScreen_Athena_C.EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScreen_Athena_AnimGraphNode_LegIK_3BACE47B4A5EF86B449B81BE7045ADA2");
-
-	UMenuScreen_Athena_C_EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScreen_Athena_AnimGraphNode_LegIK_3BACE47B4A5EF86B449B81BE7045ADA2_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function MenuScreen_Athena.MenuScreen_Athena_C.EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScreen_Athena_AnimGraphNode_BlendListByInt_287AF5964C1BE390191EF89CB53D768D
 // (BlueprintEvent)
 
@@ -139,23 +139,6 @@ void UMenuScreen_Athena_C::EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScree
 	static auto fn = UObject::FindObject<UFunction>("Function MenuScreen_Athena.MenuScreen_Athena_C.EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScreen_Athena_AnimGraphNode_BlendListByEnum_38DE62F34079A9ED5E5B85BBCBAD2C22");
 
 	UMenuScreen_Athena_C_EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScreen_Athena_AnimGraphNode_BlendListByEnum_38DE62F34079A9ED5E5B85BBCBAD2C22_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function MenuScreen_Athena.MenuScreen_Athena_C.AnimNotify_LeftB
-// (BlueprintCallable, BlueprintEvent)
-
-void UMenuScreen_Athena_C::AnimNotify_LeftB()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MenuScreen_Athena.MenuScreen_Athena_C.AnimNotify_LeftB");
-
-	UMenuScreen_Athena_C_AnimNotify_LeftB_Params params;
 
 	auto flags = fn->FunctionFlags;
 

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,6 +37,40 @@ void AMusicManager_C::UserConstructionScript()
 	static auto fn = UObject::FindObject<UFunction>("Function MusicManager.MusicManager_C.UserConstructionScript");
 
 	AMusicManager_C_UserConstructionScript_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MusicManager.MusicManager_C.Gameplay Music Fader__FinishedFunc
+// (BlueprintEvent)
+
+void AMusicManager_C::Gameplay_Music_Fader__FinishedFunc()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MusicManager.MusicManager_C.Gameplay Music Fader__FinishedFunc");
+
+	AMusicManager_C_Gameplay_Music_Fader__FinishedFunc_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MusicManager.MusicManager_C.Gameplay Music Fader__UpdateFunc
+// (BlueprintEvent)
+
+void AMusicManager_C::Gameplay_Music_Fader__UpdateFunc()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MusicManager.MusicManager_C.Gameplay Music Fader__UpdateFunc");
+
+	AMusicManager_C_Gameplay_Music_Fader__UpdateFunc_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -121,14 +155,14 @@ void AMusicManager_C::ReceiveBeginPlay()
 }
 
 
-// Function MusicManager.MusicManager_C.StartMusic
+// Function MusicManager.MusicManager_C.On Music Tick
 // (BlueprintCallable, BlueprintEvent)
 
-void AMusicManager_C::StartMusic()
+void AMusicManager_C::On_Music_Tick()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function MusicManager.MusicManager_C.StartMusic");
+	static auto fn = UObject::FindObject<UFunction>("Function MusicManager.MusicManager_C.On Music Tick");
 
-	AMusicManager_C_StartMusic_Params params;
+	AMusicManager_C_On_Music_Tick_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -138,14 +172,77 @@ void AMusicManager_C::StartMusic()
 }
 
 
-// Function MusicManager.MusicManager_C.StopMusic
-// (BlueprintCallable, BlueprintEvent)
+// Function MusicManager.MusicManager_C.PlayStinger
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortMusicAsset**        NewMusicAsset                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void AMusicManager_C::StopMusic()
+void AMusicManager_C::PlayStinger(class UFortMusicAsset** NewMusicAsset)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function MusicManager.MusicManager_C.StopMusic");
+	static auto fn = UObject::FindObject<UFunction>("Function MusicManager.MusicManager_C.PlayStinger");
 
-	AMusicManager_C_StopMusic_Params params;
+	AMusicManager_C_PlayStinger_Params params;
+	params.NewMusicAsset = NewMusicAsset;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MusicManager.MusicManager_C.Music Fade In
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                          Time                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void AMusicManager_C::Music_Fade_In(float Time)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MusicManager.MusicManager_C.Music Fade In");
+
+	AMusicManager_C_Music_Fade_In_Params params;
+	params.Time = Time;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MusicManager.MusicManager_C.Music Fade Out
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                          Time                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void AMusicManager_C::Music_Fade_Out(float Time)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MusicManager.MusicManager_C.Music Fade Out");
+
+	AMusicManager_C_Music_Fade_Out_Params params;
+	params.Time = Time;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MusicManager.MusicManager_C.On Stinger Completed
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortMusicVoice*         Voice                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void AMusicManager_C::On_Stinger_Completed(class UFortMusicVoice* Voice)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MusicManager.MusicManager_C.On Stinger Completed");
+
+	AMusicManager_C_On_Stinger_Completed_Params params;
+	params.Voice = Voice;
 
 	auto flags = fn->FunctionFlags;
 

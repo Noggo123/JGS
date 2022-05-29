@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass PrivacyWidget.PrivacyWidget_C
-// 0x0150 (0x05C0 - 0x0470)
+// 0x0158 (0x05C8 - 0x0470)
 class UPrivacyWidget_C : public UFortPrivacyBase
 {
 public:
@@ -40,13 +38,14 @@ public:
 	class UBorder*                                     RootBorder;                                               // 0x0500(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
 	class UOverlay*                                    RootOverlay;                                              // 0x0508(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
 	class UCommonTextBlock*                            Title;                                                    // 0x0510(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
-	struct FText                                       PublicHint;                                               // 0x0518(0x0018) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FText                                       FriendsOnlyHint;                                          // 0x0530(0x0018) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FText                                       PrivateHint;                                              // 0x0548(0x0018) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FText                                       FriendsOfFriendsHint;                                     // 0x0560(0x0018) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FText                                       FriendsOfFriendsPrivateHint;                              // 0x0578(0x0018) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FText                                       TencentFriendsHint;                                       // 0x0590(0x0018) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FText                                       TencentPrivateHint;                                       // 0x05A8(0x0018) (Edit, BlueprintVisible, DisableEditOnInstance)
+	class UCommonBorder*                               TouchToCloseZone;                                         // 0x0518(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
+	struct FText                                       PublicHint;                                               // 0x0520(0x0018) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FText                                       FriendsOnlyHint;                                          // 0x0538(0x0018) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FText                                       PrivateHint;                                              // 0x0550(0x0018) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FText                                       FriendsOfFriendsHint;                                     // 0x0568(0x0018) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FText                                       FriendsOfFriendsPrivateHint;                              // 0x0580(0x0018) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FText                                       TencentFriendsHint;                                       // 0x0598(0x0018) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FText                                       TencentPrivateHint;                                       // 0x05B0(0x0018) (Edit, BlueprintVisible, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{
@@ -55,6 +54,7 @@ public:
 	}
 
 
+	struct FEventReply TapToClose(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent);
 	void SetMode();
 	void InitializePrivacyButtons();
 	void Construct();

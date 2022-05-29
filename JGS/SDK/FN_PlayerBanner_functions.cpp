@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,23 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function PlayerBanner.PlayerBanner_C.UnbindDelegates
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UPlayerBanner_C::UnbindDelegates()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerBanner.PlayerBanner_C.UnbindDelegates");
+
+	UPlayerBanner_C_UnbindDelegates_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function PlayerBanner.PlayerBanner_C.SetupSurround
 // (Private, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -308,26 +325,6 @@ void UPlayerBanner_C::OnTeamMemberStateChanged(const struct FFortTeamMemberInfo&
 }
 
 
-// Function PlayerBanner.PlayerBanner_C.PreConstruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UPlayerBanner_C::PreConstruct(bool* IsDesignTime)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerBanner.PlayerBanner_C.PreConstruct");
-
-	UPlayerBanner_C_PreConstruct_Params params;
-	params.IsDesignTime = IsDesignTime;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function PlayerBanner.PlayerBanner_C.Account Info Changed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -339,6 +336,23 @@ void UPlayerBanner_C::Account_Info_Changed(const struct FFortPublicAccountInfo& 
 
 	UPlayerBanner_C_Account_Info_Changed_Params params;
 	params.NewInfo = NewInfo;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerBanner.PlayerBanner_C.Destruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UPlayerBanner_C::Destruct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerBanner.PlayerBanner_C.Destruct");
+
+	UPlayerBanner_C_Destruct_Params params;
 
 	auto flags = fn->FunctionFlags;
 

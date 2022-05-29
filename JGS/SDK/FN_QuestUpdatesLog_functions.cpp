@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -79,7 +79,7 @@ void UQuestUpdatesLog_C::CreateAnnouncementUpdate(const struct FDynamicQuestUpda
 // Function QuestUpdatesLog.QuestUpdatesLog_C.HandleQuestUpdateWidgetFinished
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UQuestUpdateEntry_C*     UpdateWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UQuestUpdateEntry_C*     UpdateWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UQuestUpdatesLog_C::HandleQuestUpdateWidgetFinished(class UQuestUpdateEntry_C* UpdateWidget)
 {
@@ -100,7 +100,7 @@ void UQuestUpdatesLog_C::HandleQuestUpdateWidgetFinished(class UQuestUpdateEntry
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FDynamicQuestUpdateInfo UpdateInfo                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UQuestUpdateEntry_C*     AvailableWIdget                (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// class UQuestUpdateEntry_C*     AvailableWIdget                (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UQuestUpdatesLog_C::GetAvailableQuestUpdateWidget(const struct FDynamicQuestUpdateInfo& UpdateInfo, class UQuestUpdateEntry_C** AvailableWIdget)
 {

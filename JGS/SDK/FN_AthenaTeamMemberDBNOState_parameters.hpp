@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -31,10 +31,9 @@ struct UAthenaTeamMemberDBNOState_C_Set_DBNO_Params
 	bool                                               Is_DBNO;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function AthenaTeamMemberDBNOState.AthenaTeamMemberDBNOState_C.PreConstruct
-struct UAthenaTeamMemberDBNOState_C_PreConstruct_Params
+// Function AthenaTeamMemberDBNOState.AthenaTeamMemberDBNOState_C.Construct
+struct UAthenaTeamMemberDBNOState_C_Construct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaTeamMemberDBNOState.AthenaTeamMemberDBNOState_C.ExecuteUbergraph_AthenaTeamMemberDBNOState

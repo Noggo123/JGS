@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -202,33 +202,18 @@ void UAthenaQuickbarPrimary_C::Minimize()
 
 
 // Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.OnQuickbarContentsChanged
-// (BlueprintCallable, BlueprintEvent)
+// (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // EFortQuickBars*                QuickbarIndex                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TArray<int>*                   ChangedSlots                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
-void UAthenaQuickbarPrimary_C::OnQuickbarContentsChanged(EFortQuickBars* QuickbarIndex)
+void UAthenaQuickbarPrimary_C::OnQuickbarContentsChanged(EFortQuickBars* QuickbarIndex, TArray<int>* ChangedSlots)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.OnQuickbarContentsChanged");
 
 	UAthenaQuickbarPrimary_C_OnQuickbarContentsChanged_Params params;
 	params.QuickbarIndex = QuickbarIndex;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UAthenaQuickbarPrimary_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.Construct");
-
-	UAthenaQuickbarPrimary_C_Construct_Params params;
+	params.ChangedSlots = ChangedSlots;
 
 	auto flags = fn->FunctionFlags;
 
@@ -246,6 +231,23 @@ void UAthenaQuickbarPrimary_C::AnimationFinished()
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.AnimationFinished");
 
 	UAthenaQuickbarPrimary_C_AnimationFinished_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UAthenaQuickbarPrimary_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.Construct");
+
+	UAthenaQuickbarPrimary_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 

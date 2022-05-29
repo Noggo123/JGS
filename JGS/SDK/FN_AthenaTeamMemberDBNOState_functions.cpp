@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -69,17 +69,14 @@ void UAthenaTeamMemberDBNOState_C::Set_DBNO(bool Is_DBNO)
 }
 
 
-// Function AthenaTeamMemberDBNOState.AthenaTeamMemberDBNOState_C.PreConstruct
+// Function AthenaTeamMemberDBNOState.AthenaTeamMemberDBNOState_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaTeamMemberDBNOState_C::PreConstruct(bool* IsDesignTime)
+void UAthenaTeamMemberDBNOState_C::Construct()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaTeamMemberDBNOState.AthenaTeamMemberDBNOState_C.PreConstruct");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaTeamMemberDBNOState.AthenaTeamMemberDBNOState_C.Construct");
 
-	UAthenaTeamMemberDBNOState_C_PreConstruct_Params params;
-	params.IsDesignTime = IsDesignTime;
+	UAthenaTeamMemberDBNOState_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 

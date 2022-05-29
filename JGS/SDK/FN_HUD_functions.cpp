@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,23 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function HUD.HUD_C.InitializeTagVisibilityWidgets
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UHUD_C::InitializeTagVisibilityWidgets()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HUD.HUD_C.InitializeTagVisibilityWidgets");
+
+	UHUD_C_InitializeTagVisibilityWidgets_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function HUD.HUD_C.PrepareMgmtMenu
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -51,7 +68,7 @@ void UHUD_C::OpenSocialMenu()
 // Parameters:
 // struct FGameplayTagContainer   HiddenHUDElementTags           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // struct FGameplayTag            HUDElementTagToCheck           (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UWidget*                 HUDElement                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// class UWidget*                 HUDElement                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
 
 void UHUD_C::CheckHUDElementVisibility(const struct FGameplayTag& HUDElementTagToCheck, struct FGameplayTagContainer* HiddenHUDElementTags, class UWidget** HUDElement)
 {
@@ -119,7 +136,7 @@ void UHUD_C::OnManagementTabSelected(const struct FName& TabName)
 // (Event, Protected, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FContentPushState*      State                          (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 
 class UWidget* UHUD_C::PopContentWidgetInternal(struct FContentPushState* State)
 {
@@ -360,7 +377,7 @@ void UHUD_C::HandleIndicatorModeChanged(bool InidicatorsEnabled)
 // Function HUD.HUD_C.SetCursorModeContent
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UUserWidget*             CustomWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UUserWidget*             CustomWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // struct FName                   ActionName                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
 void UHUD_C::SetCursorModeContent(class UUserWidget* CustomWidget, struct FName* ActionName)
@@ -521,7 +538,7 @@ void UHUD_C::HandleQuickbarSlotFocusSlotChanged(EFortQuickBars Quickbar_Index, i
 // Parameters:
 // bool                           IsEnabled                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // struct FName                   ActionName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UUserWidget*             CursorModeContentCustomWidget  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UUserWidget*             CursorModeContentCustomWidget  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UHUD_C::HandleCursorModeChanged(bool IsEnabled, const struct FName& ActionName, class UUserWidget* CursorModeContentCustomWidget)
 {
@@ -614,23 +631,6 @@ void UHUD_C::QuestsCompleted(TArray<class UFortQuestItem*> Quests)
 }
 
 
-// Function HUD.HUD_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UHUD_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HUD.HUD_C.Construct");
-
-	UHUD_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function HUD.HUD_C.LoadingScreenChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -642,6 +642,23 @@ void UHUD_C::LoadingScreenChanged(bool bVisible)
 
 	UHUD_C_LoadingScreenChanged_Params params;
 	params.bVisible = bVisible;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HUD.HUD_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UHUD_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HUD.HUD_C.Construct");
+
+	UHUD_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -691,7 +708,7 @@ void UHUD_C::EndOfDayRecapEnded()
 // Function HUD.HUD_C.PushContentWidgetInternal
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UWidget**                Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidget**                Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // struct FContentPushState*      State                          (BlueprintVisible, BlueprintReadOnly, Parm)
 
 void UHUD_C::PushContentWidgetInternal(class UWidget** Widget, struct FContentPushState* State)
@@ -789,6 +806,87 @@ void UHUD_C::RequestOpenSocialMenu()
 	static auto fn = UObject::FindObject<UFunction>("Function HUD.HUD_C.RequestOpenSocialMenu");
 
 	UHUD_C_RequestOpenSocialMenu_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HUD.HUD_C.PersonalVehicleModeChanged
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           bEnteredVehicle                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UHUD_C::PersonalVehicleModeChanged(bool bEnteredVehicle)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HUD.HUD_C.PersonalVehicleModeChanged");
+
+	UHUD_C_PersonalVehicleModeChanged_Params params;
+	params.bEnteredVehicle = bEnteredVehicle;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HUD.HUD_C.InputActionHoldStarted
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FName                   InputActionName                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Duration                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UHUD_C::InputActionHoldStarted(const struct FName& InputActionName, float Duration)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HUD.HUD_C.InputActionHoldStarted");
+
+	UHUD_C_InputActionHoldStarted_Params params;
+	params.InputActionName = InputActionName;
+	params.Duration = Duration;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HUD.HUD_C.InputActionHoldStopped
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FName                   InputActionName                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bCompletedSuccessfully         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UHUD_C::InputActionHoldStopped(const struct FName& InputActionName, bool bCompletedSuccessfully)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HUD.HUD_C.InputActionHoldStopped");
+
+	UHUD_C_InputActionHoldStopped_Params params;
+	params.InputActionName = InputActionName;
+	params.bCompletedSuccessfully = bCompletedSuccessfully;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HUD.HUD_C.ShowPersonalVehicleMounting
+// (BlueprintCallable, BlueprintEvent)
+
+void UHUD_C::ShowPersonalVehicleMounting()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HUD.HUD_C.ShowPersonalVehicleMounting");
+
+	UHUD_C_ShowPersonalVehicleMounting_Params params;
 
 	auto flags = fn->FunctionFlags;
 

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,14 +12,34 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function AthenaLobbyPlayerPanelDetails.AthenaLobbyPlayerPanelDetails_C.RefreshBattlePassBoost
+// Function AthenaLobbyPlayerPanelDetails.AthenaLobbyPlayerPanelDetails_C.OnTeamMemberStateChanged
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FFortTeamMemberInfo     ChangedTeamMemberInfo          (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UAthenaLobbyPlayerPanelDetails_C::OnTeamMemberStateChanged(const struct FFortTeamMemberInfo& ChangedTeamMemberInfo)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobbyPlayerPanelDetails.AthenaLobbyPlayerPanelDetails_C.OnTeamMemberStateChanged");
+
+	UAthenaLobbyPlayerPanelDetails_C_OnTeamMemberStateChanged_Params params;
+	params.ChangedTeamMemberInfo = ChangedTeamMemberInfo;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaLobbyPlayerPanelDetails.AthenaLobbyPlayerPanelDetails_C.RefreshBattlePass
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void UAthenaLobbyPlayerPanelDetails_C::RefreshBattlePassBoost()
+void UAthenaLobbyPlayerPanelDetails_C::RefreshBattlePass()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobbyPlayerPanelDetails.AthenaLobbyPlayerPanelDetails_C.RefreshBattlePassBoost");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobbyPlayerPanelDetails.AthenaLobbyPlayerPanelDetails_C.RefreshBattlePass");
 
-	UAthenaLobbyPlayerPanelDetails_C_RefreshBattlePassBoost_Params params;
+	UAthenaLobbyPlayerPanelDetails_C_RefreshBattlePass_Params params;
 
 	auto flags = fn->FunctionFlags;
 

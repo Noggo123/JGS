@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -35,10 +35,10 @@ struct UHeroSquadSlotsView_C_HandleSquadNavigation_Params
 // Function HeroSquadSlotsView.HeroSquadSlotsView_C.CreateAndAddSquadSlotButton
 struct UHeroSquadSlotsView_C_CreateAndAddSquadSlotButton_Params
 {
-	int*                                               SquadSlotIndex;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FHomebaseSquadSlot                          SquadSlotDefinition;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	class UWidget*                                     OutSquadSlotButtonHost;                                   // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-	class UFortSquadSlotSelectorButton*                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	int*                                               SquadSlotIndex;                                           // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FHomebaseSquadSlot*                         SquadSlotDefinition;                                      // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UWidget*                                     OutSquadSlotButtonHost;                                   // (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UFortSquadSlotSelectorButton*                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 };
 
 // Function HeroSquadSlotsView.HeroSquadSlotsView_C.Construct

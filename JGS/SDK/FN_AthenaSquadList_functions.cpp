@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -29,31 +29,14 @@ void UAthenaSquadList_C::ClearSquadMembers()
 }
 
 
-// Function AthenaSquadList.AthenaSquadList_C.HandleSquadMembersChanged
+// Function AthenaSquadList.AthenaSquadList_C.RebuildSquadMembersList
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void UAthenaSquadList_C::HandleSquadMembersChanged()
+void UAthenaSquadList_C::RebuildSquadMembersList()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaSquadList.AthenaSquadList_C.HandleSquadMembersChanged");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaSquadList.AthenaSquadList_C.RebuildSquadMembersList");
 
-	UAthenaSquadList_C_HandleSquadMembersChanged_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaSquadList.AthenaSquadList_C.ClearContents
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaSquadList_C::ClearContents()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaSquadList.AthenaSquadList_C.ClearContents");
-
-	UAthenaSquadList_C_ClearContents_Params params;
+	UAthenaSquadList_C_RebuildSquadMembersList_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -93,23 +76,6 @@ void UAthenaSquadList_C::Construct()
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaSquadList.AthenaSquadList_C.Construct");
 
 	UAthenaSquadList_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaSquadList.AthenaSquadList_C.HandlePartyLeft
-// (BlueprintCallable, BlueprintEvent)
-
-void UAthenaSquadList_C::HandlePartyLeft()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaSquadList.AthenaSquadList_C.HandlePartyLeft");
-
-	UAthenaSquadList_C_HandlePartyLeft_Params params;
 
 	auto flags = fn->FunctionFlags;
 

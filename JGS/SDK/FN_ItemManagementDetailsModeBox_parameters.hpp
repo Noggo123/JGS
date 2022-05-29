@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,39 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.GetStatsTabVisibility
+struct UItemManagementDetailsModeBox_C_GetStatsTabVisibility_Params
+{
+	ESlateVisibility                                   StatsTabVisbility;                                        // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleOpenCustomFilter
+struct UItemManagementDetailsModeBox_C_HandleOpenCustomFilter_Params
+{
+	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RegisterOpenCustomFilter
+struct UItemManagementDetailsModeBox_C_RegisterOpenCustomFilter_Params
+{
+};
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RefreshDestroyAction
+struct UItemManagementDetailsModeBox_C_RefreshDestroyAction_Params
+{
+};
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.UpdateReadOnlyWIFE
+struct UItemManagementDetailsModeBox_C_UpdateReadOnlyWIFE_Params
+{
+};
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.PreferReadOnlyWIFE
+struct UItemManagementDetailsModeBox_C_PreferReadOnlyWIFE_Params
+{
+	bool                                               ReadOnly;                                                 // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleMore
 struct UItemManagementDetailsModeBox_C_HandleMore_Params
@@ -53,8 +86,8 @@ struct UItemManagementDetailsModeBox_C_UnbindEvents_Params
 {
 };
 
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RefreshTransferAction
-struct UItemManagementDetailsModeBox_C_RefreshTransferAction_Params
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RefreshTransferActions
+struct UItemManagementDetailsModeBox_C_RefreshTransferActions_Params
 {
 };
 
@@ -78,6 +111,7 @@ struct UItemManagementDetailsModeBox_C_RegisterInspectUpgrade_Params
 struct UItemManagementDetailsModeBox_C_HandleQuickbarContentsChanged_Params
 {
 	EFortQuickBars                                     QuickbarIndex;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	TArray<int>                                        ChangedSlots;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RegisterLeaveInventory
@@ -134,8 +168,8 @@ struct UItemManagementDetailsModeBox_C_SetItemVisualization_Params
 {
 };
 
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.UpdateConsumeItemButtonState
-struct UItemManagementDetailsModeBox_C_UpdateConsumeItemButtonState_Params
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RefreshConsumeAction
+struct UItemManagementDetailsModeBox_C_RefreshConsumeAction_Params
 {
 };
 
@@ -277,10 +311,17 @@ struct UItemManagementDetailsModeBox_C_DialogResult_475B18A9452A639A04116D83A8B1
 	struct FName                                       ResultName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.DialogResult_4190138B4388B0E2F8396BBD395808D5
+struct UItemManagementDetailsModeBox_C_DialogResult_4190138B4388B0E2F8396BBD395808D5_Params
+{
+	EFortDialogResult                                  Result;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       ResultName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.BndEvt__DetailPanelWidgetSwitcher_K2Node_ComponentBoundEvent_16_OnActiveWidgetChanged__DelegateSignature
 struct UItemManagementDetailsModeBox_C_BndEvt__DetailPanelWidgetSwitcher_K2Node_ComponentBoundEvent_16_OnActiveWidgetChanged__DelegateSignature_Params
 {
-	class UWidget*                                     ActiveWidget;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UWidget*                                     ActiveWidget;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 	int                                                ActiveWidgetIndex;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -298,21 +339,21 @@ struct UItemManagementDetailsModeBox_C_OnActivated_Params
 struct UItemManagementDetailsModeBox_C_BndEvt__DetailPanelTabList_OPI_K2Node_ComponentBoundEvent_4_OnTabButtonCreated__DelegateSignature_Params
 {
 	struct FName                                       TabId;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonButton*                               TabButton;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               TabButton;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.BndEvt__DetailPanelTabList-OP_K2Node_ComponentBoundEvent_15_OnTabButtonCreated__DelegateSignature
 struct UItemManagementDetailsModeBox_C_BndEvt__DetailPanelTabList_OP_K2Node_ComponentBoundEvent_15_OnTabButtonCreated__DelegateSignature_Params
 {
 	struct FName                                       TabId;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonButton*                               TabButton;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               TabButton;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.BndEvt__DetailPanelTabList-OI_K2Node_ComponentBoundEvent_27_OnTabButtonCreated__DelegateSignature
 struct UItemManagementDetailsModeBox_C_BndEvt__DetailPanelTabList_OI_K2Node_ComponentBoundEvent_27_OnTabButtonCreated__DelegateSignature_Params
 {
 	struct FName                                       TabId;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonButton*                               TabButton;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               TabButton;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleConsumeItemProgressChangedBP
@@ -324,7 +365,7 @@ struct UItemManagementDetailsModeBox_C_HandleConsumeItemProgressChangedBP_Params
 struct UItemManagementDetailsModeBox_C_BndEvt__DetailPanelTabList_MSB_K2Node_ComponentBoundEvent_18_OnTabButtonCreated__DelegateSignature_Params
 {
 	struct FName                                       TabId;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonButton*                               TabButton;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               TabButton;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.OnDeactivated
@@ -347,6 +388,12 @@ struct UItemManagementDetailsModeBox_C_OnInputModeChanged_Params
 struct UItemManagementDetailsModeBox_C_OnDestroyItem_Params
 {
 	class UFortItem*                                   Item;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleCraftItemFailed
+struct UItemManagementDetailsModeBox_C_HandleCraftItemFailed_Params
+{
+	EFortCraftFailCause                                FailureCause;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.ExecuteUbergraph_ItemManagementDetailsModeBox

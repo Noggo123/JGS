@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -54,7 +54,7 @@ struct UQuestUpdateEntry_C_IsUpdateActive_Params
 struct UQuestUpdateEntry_C_GetObjectiveWidget_Params
 {
 	class UFortQuestObjectiveInfo*                     QuestObjective;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UQuestObjectiveEntry_C*                      ObjectiveWidget;                                          // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	class UQuestObjectiveEntry_C*                      ObjectiveWidget;                                          // (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function QuestUpdateEntry.QuestUpdateEntry_C.HasUpdateStarted
@@ -128,7 +128,7 @@ struct UQuestUpdateEntry_C_ExecuteUbergraph_QuestUpdateEntry_Params
 // Function QuestUpdateEntry.QuestUpdateEntry_C.AllQuestUpdatesFinished__DelegateSignature
 struct UQuestUpdateEntry_C_AllQuestUpdatesFinished__DelegateSignature_Params
 {
-	class UQuestUpdateEntry_C*                         UpdateWidget;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UQuestUpdateEntry_C*                         UpdateWidget;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 }

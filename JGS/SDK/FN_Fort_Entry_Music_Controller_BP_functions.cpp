@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -329,6 +329,26 @@ void AFort_Entry_Music_Controller_BP_C::Music_Lobby_Athena_FadeIn()
 	static auto fn = UObject::FindObject<UFunction>("Function Fort_Entry_Music_Controller_BP.Fort_Entry_Music_Controller_BP_C.Music_Lobby_Athena_FadeIn");
 
 	AFort_Entry_Music_Controller_BP_C_Music_Lobby_Athena_FadeIn_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Fort_Entry_Music_Controller_BP.Fort_Entry_Music_Controller_BP_C.Change Music
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class USoundBase*              New_Music                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void AFort_Entry_Music_Controller_BP_C::Change_Music(class USoundBase* New_Music)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Fort_Entry_Music_Controller_BP.Fort_Entry_Music_Controller_BP_C.Change Music");
+
+	AFort_Entry_Music_Controller_BP_C_Change_Music_Params params;
+	params.New_Music = New_Music;
 
 	auto flags = fn->FunctionFlags;
 

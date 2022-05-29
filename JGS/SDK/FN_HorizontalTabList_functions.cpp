@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,26 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function HorizontalTabList.HorizontalTabList_C.SetVerticalAlignment
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TEnumAsByte<EVerticalAlignment> FillVertically                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UHorizontalTabList_C::SetVerticalAlignment(TEnumAsByte<EVerticalAlignment> FillVertically)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HorizontalTabList.HorizontalTabList_C.SetVerticalAlignment");
+
+	UHorizontalTabList_C_SetVerticalAlignment_Params params;
+	params.FillVertically = FillVertically;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function HorizontalTabList.HorizontalTabList_C.UpdateGamepadKeyVisibility
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -33,7 +53,7 @@ void UHorizontalTabList_C::UpdateGamepadKeyVisibility()
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FName                   TabNameID                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// class UCommonButton*           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 
 class UCommonButton* UHorizontalTabList_C::Get_Tab_From_Id(const struct FName& TabNameID)
 {
@@ -172,7 +192,7 @@ void UHorizontalTabList_C::CustomEvent_0_1(const struct FName& TabId)
 // (Event, Protected, BlueprintEvent)
 // Parameters:
 // struct FName*                  TabNameID                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton**          TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton**          TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UHorizontalTabList_C::HandleTabCreated(struct FName* TabNameID, class UCommonButton** TabButton)
 {

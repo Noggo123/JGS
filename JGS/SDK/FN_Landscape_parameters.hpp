@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,27 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function Landscape.LandscapeProxy.SetLandscapeMaterialVectorParameterValue
+struct ALandscapeProxy_SetLandscapeMaterialVectorParameterValue_Params
+{
+	struct FName                                       ParameterName;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FLinearColor                                Value;                                                    // (Parm, IsPlainOldData)
+};
+
+// Function Landscape.LandscapeProxy.SetLandscapeMaterialTextureParameterValue
+struct ALandscapeProxy_SetLandscapeMaterialTextureParameterValue_Params
+{
+	struct FName                                       ParameterName;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+	class UTexture*                                    Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Landscape.LandscapeProxy.SetLandscapeMaterialScalarParameterValue
+struct ALandscapeProxy_SetLandscapeMaterialScalarParameterValue_Params
+{
+	struct FName                                       ParameterName;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function Landscape.LandscapeProxy.EditorSetLandscapeMaterial
 struct ALandscapeProxy_EditorSetLandscapeMaterial_Params
@@ -36,10 +57,41 @@ struct ALandscapeProxy_EditorApplySpline_Params
 	class ULandscapeLayerInfoObject*                   PaintLayer;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Landscape.LandscapeProxy.ChangeUseTessellationComponentScreenSizeFalloff
+struct ALandscapeProxy_ChangeUseTessellationComponentScreenSizeFalloff_Params
+{
+	bool                                               InComponentScreenSizeToUseSubSections;                    // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Landscape.LandscapeProxy.ChangeTessellationComponentScreenSizeFalloff
+struct ALandscapeProxy_ChangeTessellationComponentScreenSizeFalloff_Params
+{
+	float                                              InUseTessellationComponentScreenSizeFalloff;              // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Landscape.LandscapeProxy.ChangeTessellationComponentScreenSize
+struct ALandscapeProxy_ChangeTessellationComponentScreenSize_Params
+{
+	float                                              InTessellationComponentScreenSize;                        // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function Landscape.LandscapeProxy.ChangeLODDistanceFactor
 struct ALandscapeProxy_ChangeLODDistanceFactor_Params
 {
 	float                                              InLODDistanceFactor;                                      // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Landscape.LandscapeProxy.ChangeComponentScreenSizeToUseSubSections
+struct ALandscapeProxy_ChangeComponentScreenSizeToUseSubSections_Params
+{
+	float                                              InComponentScreenSizeToUseSubSections;                    // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Landscape.LandscapeComponent.GetMaterialInstanceDynamic
+struct ULandscapeComponent_GetMaterialInstanceDynamic_Params
+{
+	int                                                InIndex;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	class UMaterialInstanceDynamic*                    ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 }

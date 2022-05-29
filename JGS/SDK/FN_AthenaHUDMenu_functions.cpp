@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,53 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function AthenaHUDMenu.AthenaHUDMenu_C.Has Player Died
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           bDied                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// struct FFortPlayerDeathReport  DeathReport                    (Parm, OutParm)
+
+void UAthenaHUDMenu_C::Has_Player_Died(bool* bDied, struct FFortPlayerDeathReport* DeathReport)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUDMenu.AthenaHUDMenu_C.Has Player Died");
+
+	UAthenaHUDMenu_C_Has_Player_Died_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bDied != nullptr)
+		*bDied = params.bDied;
+	if (DeathReport != nullptr)
+		*DeathReport = params.DeathReport;
+}
+
+
+// Function AthenaHUDMenu.AthenaHUDMenu_C.Has Player Or Team Won
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           bWon                           (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaHUDMenu_C::Has_Player_Or_Team_Won(bool* bWon)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUDMenu.AthenaHUDMenu_C.Has Player Or Team Won");
+
+	UAthenaHUDMenu_C_Has_Player_Or_Team_Won_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bWon != nullptr)
+		*bWon = params.bWon;
+}
+
 
 // Function AthenaHUDMenu.AthenaHUDMenu_C.SetViewModel
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -35,7 +82,7 @@ void UAthenaHUDMenu_C::SetViewModel(class UAthenaPlayerViewModel* ViewModel)
 // Function AthenaHUDMenu.AthenaHUDMenu_C.CreateOrShowGameOverScreen
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UAthenaGameOverWidget_C* GameOverScreen                 (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// class UAthenaGameOverWidget_C* GameOverScreen                 (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UAthenaHUDMenu_C::CreateOrShowGameOverScreen(class UAthenaGameOverWidget_C** GameOverScreen)
 {
@@ -74,7 +121,7 @@ void UAthenaHUDMenu_C::Dismiss()
 // Function AthenaHUDMenu.AthenaHUDMenu_C.PopMenuContent
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 
 class UWidget* UAthenaHUDMenu_C::PopMenuContent()
 {
@@ -95,7 +142,7 @@ class UWidget* UAthenaHUDMenu_C::PopMenuContent()
 // Function AthenaHUDMenu.AthenaHUDMenu_C.PushMenuContent
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidget*                 Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidget*                 Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UAthenaHUDMenu_C::PushMenuContent(class UWidget* Widget)
 {
@@ -115,7 +162,7 @@ void UAthenaHUDMenu_C::PushMenuContent(class UWidget* Widget)
 // Function AthenaHUDMenu.AthenaHUDMenu_C.SetCursorModeContent
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UUserWidget*             CustomWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UUserWidget*             CustomWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // struct FName                   ActionName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaHUDMenu_C::SetCursorModeContent(class UUserWidget* CustomWidget, const struct FName& ActionName)
@@ -213,6 +260,23 @@ void UAthenaHUDMenu_C::On_Player_Died(const struct FFortPlayerDeathReport& Death
 
 	UAthenaHUDMenu_C_On_Player_Died_Params params;
 	params.DeathReport = DeathReport;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaHUDMenu.AthenaHUDMenu_C.PostBind_CheckConditions
+// (BlueprintCallable, BlueprintEvent)
+
+void UAthenaHUDMenu_C::PostBind_CheckConditions()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUDMenu.AthenaHUDMenu_C.PostBind_CheckConditions");
+
+	UAthenaHUDMenu_C_PostBind_CheckConditions_Params params;
 
 	auto flags = fn->FunctionFlags;
 

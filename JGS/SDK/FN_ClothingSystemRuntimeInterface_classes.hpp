@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -43,6 +41,25 @@ public:
 		return ptr;
 	}
 
+};
+
+
+// Class ClothingSystemRuntimeInterface.ClothingSimulationInteractor
+// 0x0008 (0x0030 - 0x0028)
+class UClothingSimulationInteractor : public UObject
+{
+public:
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0028(0x0008) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class ClothingSystemRuntimeInterface.ClothingSimulationInteractor");
+		return ptr;
+	}
+
+
+	void PhysicsAssetUpdated();
+	void ClothConfigUpdated();
 };
 
 

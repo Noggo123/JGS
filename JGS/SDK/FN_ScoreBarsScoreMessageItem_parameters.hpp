@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -27,7 +27,7 @@ struct UScoreBarsScoreMessageItem_C_ClearScoreValueWidget_Params
 // Function ScoreBarsScoreMessageItem.ScoreBarsScoreMessageItem_C.GetScoreValueWidget
 struct UScoreBarsScoreMessageItem_C_GetScoreValueWidget_Params
 {
-	class UWidget*                                     Widget;                                                   // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	class UWidget*                                     Widget;                                                   // (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function ScoreBarsScoreMessageItem.ScoreBarsScoreMessageItem_C.Setup
@@ -35,7 +35,7 @@ struct UScoreBarsScoreMessageItem_C_Setup_Params
 {
 	int                                                Base_Delta;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	struct FText                                       Name_Text;                                                // (BlueprintVisible, BlueprintReadOnly, Parm)
-	class UScoreMessageNumber_C*                       In_Score_Widget;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UScoreMessageNumber_C*                       In_Score_Widget;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function ScoreBarsScoreMessageItem.ScoreBarsScoreMessageItem_C.UpdateValues

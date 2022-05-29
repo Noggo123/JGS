@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -640,40 +640,6 @@ void AHBOnboardingFlow_C::OnSuccess_50CD26324B96B121A5B49DA66113AE5D()
 }
 
 
-// Function HBOnboardingFlow.HBOnboardingFlow_C.OnFailure_7D1C261A4BE47E3567B8D2885C9E298B
-// (BlueprintCallable, BlueprintEvent)
-
-void AHBOnboardingFlow_C::OnFailure_7D1C261A4BE47E3567B8D2885C9E298B()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HBOnboardingFlow.HBOnboardingFlow_C.OnFailure_7D1C261A4BE47E3567B8D2885C9E298B");
-
-	AHBOnboardingFlow_C_OnFailure_7D1C261A4BE47E3567B8D2885C9E298B_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HBOnboardingFlow.HBOnboardingFlow_C.OnSuccess_7D1C261A4BE47E3567B8D2885C9E298B
-// (BlueprintCallable, BlueprintEvent)
-
-void AHBOnboardingFlow_C::OnSuccess_7D1C261A4BE47E3567B8D2885C9E298B()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HBOnboardingFlow.HBOnboardingFlow_C.OnSuccess_7D1C261A4BE47E3567B8D2885C9E298B");
-
-	AHBOnboardingFlow_C_OnSuccess_7D1C261A4BE47E3567B8D2885C9E298B_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function HBOnboardingFlow.HBOnboardingFlow_C.OnStateEntered_BB8A89D3479CA430A9243EB07FF8B51D
 // (BlueprintCallable, BlueprintEvent)
 
@@ -682,6 +648,40 @@ void AHBOnboardingFlow_C::OnStateEntered_BB8A89D3479CA430A9243EB07FF8B51D()
 	static auto fn = UObject::FindObject<UFunction>("Function HBOnboardingFlow.HBOnboardingFlow_C.OnStateEntered_BB8A89D3479CA430A9243EB07FF8B51D");
 
 	AHBOnboardingFlow_C_OnStateEntered_BB8A89D3479CA430A9243EB07FF8B51D_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HBOnboardingFlow.HBOnboardingFlow_C.OnFailure_C786FAEA4B655E5031CC7A8B4C8B9DB5
+// (BlueprintCallable, BlueprintEvent)
+
+void AHBOnboardingFlow_C::OnFailure_C786FAEA4B655E5031CC7A8B4C8B9DB5()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HBOnboardingFlow.HBOnboardingFlow_C.OnFailure_C786FAEA4B655E5031CC7A8B4C8B9DB5");
+
+	AHBOnboardingFlow_C_OnFailure_C786FAEA4B655E5031CC7A8B4C8B9DB5_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HBOnboardingFlow.HBOnboardingFlow_C.OnSuccess_C786FAEA4B655E5031CC7A8B4C8B9DB5
+// (BlueprintCallable, BlueprintEvent)
+
+void AHBOnboardingFlow_C::OnSuccess_C786FAEA4B655E5031CC7A8B4C8B9DB5()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HBOnboardingFlow.HBOnboardingFlow_C.OnSuccess_C786FAEA4B655E5031CC7A8B4C8B9DB5");
+
+	AHBOnboardingFlow_C_OnSuccess_C786FAEA4B655E5031CC7A8B4C8B9DB5_Params params;
 
 	auto flags = fn->FunctionFlags;
 

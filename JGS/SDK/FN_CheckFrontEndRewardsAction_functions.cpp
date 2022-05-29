@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,10 +12,61 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
+// Function CheckFrontEndRewardsAction.CheckFrontEndRewardsAction_C.PopulateItemCacheRewards
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ACheckFrontEndRewardsAction_C::PopulateItemCacheRewards()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CheckFrontEndRewardsAction.CheckFrontEndRewardsAction_C.PopulateItemCacheRewards");
+
+	ACheckFrontEndRewardsAction_C_PopulateItemCacheRewards_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CheckFrontEndRewardsAction.CheckFrontEndRewardsAction_C.PopulateNewGiftBoxes
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ACheckFrontEndRewardsAction_C::PopulateNewGiftBoxes()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CheckFrontEndRewardsAction.CheckFrontEndRewardsAction_C.PopulateNewGiftBoxes");
+
+	ACheckFrontEndRewardsAction_C_PopulateNewGiftBoxes_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CheckFrontEndRewardsAction.CheckFrontEndRewardsAction_C.PopulateDifficultyIncreaseRewards
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ACheckFrontEndRewardsAction_C::PopulateDifficultyIncreaseRewards()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CheckFrontEndRewardsAction.CheckFrontEndRewardsAction_C.PopulateDifficultyIncreaseRewards");
+
+	ACheckFrontEndRewardsAction_C_PopulateDifficultyIncreaseRewards_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function CheckFrontEndRewardsAction.CheckFrontEndRewardsAction_C.HandleRewardsIgnored
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFrontEndRewards_Widget_C* RewardsWidget                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFrontEndRewards_Widget_C* RewardsWidget                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void ACheckFrontEndRewardsAction_C::HandleRewardsIgnored(class UFrontEndRewards_Widget_C* RewardsWidget)
 {
@@ -95,7 +146,7 @@ void ACheckFrontEndRewardsAction_C::PopulateMissionAlertRewards()
 // Function CheckFrontEndRewardsAction.CheckFrontEndRewardsAction_C.HandleRewardsClaimError
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFrontEndRewards_Widget_C* RewardsWidget                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFrontEndRewards_Widget_C* RewardsWidget                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void ACheckFrontEndRewardsAction_C::HandleRewardsClaimError(class UFrontEndRewards_Widget_C* RewardsWidget)
 {
@@ -132,7 +183,7 @@ void ACheckFrontEndRewardsAction_C::Clear()
 // Function CheckFrontEndRewardsAction.CheckFrontEndRewardsAction_C.HandleRewardsClaimed
 // (Private, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFrontEndRewards_Widget_C* RewardsWidget                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFrontEndRewards_Widget_C* RewardsWidget                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void ACheckFrontEndRewardsAction_C::HandleRewardsClaimed(class UFrontEndRewards_Widget_C* RewardsWidget)
 {

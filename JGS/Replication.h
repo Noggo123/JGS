@@ -169,7 +169,7 @@ namespace Replication
 			}
 		}
 
-		FreeInternal((__int64)Actors.Data);
+		FreeMemory((void*)Actors.Data);
 		Actors.Data = 0;
 		Actors.Count = 0;
 		Actors.Max = 0;
@@ -177,7 +177,7 @@ namespace Replication
 
 	void ReplicateActors(UNetDriver* NetDriver)
 	{
-		++* (DWORD*)(__int64(NetDriver) + 712);
+		++* (DWORD*)(__int64(NetDriver) + 816);
 
 		auto NumClientsToTick = PrepConnections(NetDriver);
 
@@ -245,6 +245,5 @@ namespace Replication
 		ReplicateActor = decltype(ReplicateActor)(BaseAddress + Offsets::ReplicateActor);
 		CallPreReplication = decltype(CallPreReplication)(BaseAddress + Offsets::CallPreReplication);
 		SendClientAdjustment = decltype(SendClientAdjustment)(BaseAddress + Offsets::SendClientAdjustment);
-		ActorChannelClose = decltype(ActorChannelClose)(BaseAddress + Offsets::ActorChannelClose);
 	}
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -28,6 +28,17 @@ struct AB_Prj_Ranged_GrenadeLauncher_Athena_C_UserConstructionScript_Params
 {
 };
 
+// Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.OnStop
+struct AB_Prj_Ranged_GrenadeLauncher_Athena_C_OnStop_Params
+{
+	struct FHitResult*                                 Hit;                                                      // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
+};
+
+// Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.ReceiveBeginPlay
+struct AB_Prj_Ranged_GrenadeLauncher_Athena_C_ReceiveBeginPlay_Params
+{
+};
+
 // Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.FuseTimerMax
 struct AB_Prj_Ranged_GrenadeLauncher_Athena_C_FuseTimerMax_Params
 {
@@ -40,26 +51,15 @@ struct AB_Prj_Ranged_GrenadeLauncher_Athena_C_OnExploded_Params
 	TArray<struct FHitResult>*                         HitResults;                                               // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
-// Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.ReceiveBeginPlay
-struct AB_Prj_Ranged_GrenadeLauncher_Athena_C_ReceiveBeginPlay_Params
+// Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.OnBounce
+struct AB_Prj_Ranged_GrenadeLauncher_Athena_C_OnBounce_Params
 {
+	struct FHitResult*                                 Hit;                                                      // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
 };
 
 // Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.DelayBeforeExplode_
 struct AB_Prj_Ranged_GrenadeLauncher_Athena_C_DelayBeforeExplode__Params
 {
-};
-
-// Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.OnStop
-struct AB_Prj_Ranged_GrenadeLauncher_Athena_C_OnStop_Params
-{
-	struct FHitResult*                                 Hit;                                                      // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
-};
-
-// Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.OnBounce
-struct AB_Prj_Ranged_GrenadeLauncher_Athena_C_OnBounce_Params
-{
-	struct FHitResult*                                 Hit;                                                      // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
 };
 
 // Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.ExecuteUbergraph_B_Prj_Ranged_GrenadeLauncher_Athena

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -19,6 +19,11 @@ struct UMenuScreen_Athena_C_BlueprintBeginPlay_Params
 {
 };
 
+// Function MenuScreen_Athena.MenuScreen_Athena_C.AnimNotify_LeftB
+struct UMenuScreen_Athena_C_AnimNotify_LeftB_Params
+{
+};
+
 // Function MenuScreen_Athena.MenuScreen_Athena_C.UserFocus
 struct UMenuScreen_Athena_C_UserFocus_Params
 {
@@ -34,11 +39,6 @@ struct UMenuScreen_Athena_C_EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScre
 {
 };
 
-// Function MenuScreen_Athena.MenuScreen_Athena_C.EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScreen_Athena_AnimGraphNode_LegIK_3BACE47B4A5EF86B449B81BE7045ADA2
-struct UMenuScreen_Athena_C_EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScreen_Athena_AnimGraphNode_LegIK_3BACE47B4A5EF86B449B81BE7045ADA2_Params
-{
-};
-
 // Function MenuScreen_Athena.MenuScreen_Athena_C.EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScreen_Athena_AnimGraphNode_BlendListByInt_287AF5964C1BE390191EF89CB53D768D
 struct UMenuScreen_Athena_C_EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScreen_Athena_AnimGraphNode_BlendListByInt_287AF5964C1BE390191EF89CB53D768D_Params
 {
@@ -51,11 +51,6 @@ struct UMenuScreen_Athena_C_EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScre
 
 // Function MenuScreen_Athena.MenuScreen_Athena_C.EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScreen_Athena_AnimGraphNode_BlendListByEnum_38DE62F34079A9ED5E5B85BBCBAD2C22
 struct UMenuScreen_Athena_C_EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScreen_Athena_AnimGraphNode_BlendListByEnum_38DE62F34079A9ED5E5B85BBCBAD2C22_Params
-{
-};
-
-// Function MenuScreen_Athena.MenuScreen_Athena_C.AnimNotify_LeftB
-struct UMenuScreen_Athena_C_AnimNotify_LeftB_Params
 {
 };
 

@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +18,7 @@ class UTabGameOptionsMain_C : public UFortGameOptions
 {
 public:
 	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0258(0x0008) (Transient, DuplicateTransient)
-	class UCommonTextBlock*                            TooltipDisplayReference;                                  // 0x0260(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UCommonTextBlock*                            TooltipDisplayReference;                                  // 0x0260(0x0008) (Edit, BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -30,11 +28,12 @@ public:
 
 
 	void Construct();
-	void UpdateOptionsTab();
 	void UpdatePossibleLanguages();
 	void CenterOnTab();
+	void UpdateOptionsTab();
 	void BndEvt__OptionsListView_K2Node_ComponentBoundEvent_4_OnListViewItemWidgetCreated__DelegateSignature(class UUserWidget* Widget);
 	void Setting_Value_Changed(float Slider_Value);
+	void BndEvt__OptionsListView_K2Node_ComponentBoundEvent_5_OnListViewItemScrolledIntoView__DelegateSignature(class UObject* Item, class UUserWidget* Widget);
 	void ExecuteUbergraph_TabGameOptionsMain(int EntryPoint);
 };
 

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -45,23 +45,6 @@ void UQuickbarPrimary_C::Show_Primary_Quickbar_Rail(bool Show)
 
 	UQuickbarPrimary_C_Show_Primary_Quickbar_Rail_Params params;
 	params.Show = Show;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function QuickbarPrimary.QuickbarPrimary_C.HandleKeybindsChanged
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UQuickbarPrimary_C::HandleKeybindsChanged()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuickbarPrimary.QuickbarPrimary_C.HandleKeybindsChanged");
-
-	UQuickbarPrimary_C_HandleKeybindsChanged_Params params;
 
 	auto flags = fn->FunctionFlags;
 

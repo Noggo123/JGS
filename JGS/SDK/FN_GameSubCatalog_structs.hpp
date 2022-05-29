@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -174,7 +172,7 @@ struct FCatalogGiftInfo
 };
 
 // ScriptStruct GameSubCatalog.CatalogOffer
-// 0x0210
+// 0x0218
 struct FCatalogOffer
 {
 	struct FString                                     OfferId;                                                  // 0x0000(0x0010) (Edit, ZeroConstructor, EditConst)
@@ -201,7 +199,9 @@ struct FCatalogOffer
 	TArray<struct FItemQuantity>                       ItemGrants;                                               // 0x01B8(0x0010) (ZeroConstructor)
 	TArray<struct FCatalogOfferRequirement>            Requirements;                                             // 0x01C8(0x0010) (ZeroConstructor)
 	struct FCatalogGiftInfo                            GiftInfo;                                                 // 0x01D8(0x0028)
-	TArray<struct FString>                             DenyItemTemplateIds;                                      // 0x0200(0x0010) (ZeroConstructor, Deprecated)
+	bool                                               Refundable;                                               // 0x0200(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x7];                                       // 0x0201(0x0007) MISSED OFFSET
+	TArray<struct FString>                             DenyItemTemplateIds;                                      // 0x0208(0x0010) (ZeroConstructor, Deprecated)
 };
 
 // ScriptStruct GameSubCatalog.Storefront

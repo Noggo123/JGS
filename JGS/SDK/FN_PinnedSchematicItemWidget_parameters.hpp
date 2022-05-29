@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -19,7 +19,7 @@ struct UPinnedSchematicItemWidget_C_HandleCursorModeChanged_Params
 {
 	bool                                               CursorModeEnabled;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	struct FName                                       ActionName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UUserWidget*                                 CursorModeContentWidget;                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UUserWidget*                                 CursorModeContentWidget;                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function PinnedSchematicItemWidget.PinnedSchematicItemWidget_C.UnbindDelegates
@@ -77,7 +77,7 @@ struct UPinnedSchematicItemWidget_C_Refresh_Params
 // Function PinnedSchematicItemWidget.PinnedSchematicItemWidget_C.PinButton_Clicked
 struct UPinnedSchematicItemWidget_C_PinButton_Clicked_Params
 {
-	class UFortBaseButton*                             NewParam;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortBaseButton*                             NewParam;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function PinnedSchematicItemWidget.PinnedSchematicItemWidget_C.ExecuteUbergraph_PinnedSchematicItemWidget

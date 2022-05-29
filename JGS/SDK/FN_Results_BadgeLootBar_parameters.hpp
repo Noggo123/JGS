@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -34,13 +34,13 @@ struct UResults_BadgeLootBar_C_SetSkippingToEnd_Params
 // Function Results_BadgeLootBar.Results_BadgeLootBar_C.PlayAnimationCommon
 struct UResults_BadgeLootBar_C_PlayAnimationCommon_Params
 {
-	class UWidgetAnimation*                            Animation;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UWidgetAnimation*                            Animation;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function Results_BadgeLootBar.Results_BadgeLootBar_C.GetBadgePoints
 struct UResults_BadgeLootBar_C_GetBadgePoints_Params
 {
-	class UResults_Badge_C*                            Badge;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UResults_Badge_C*                            Badge;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 	int                                                Points;                                                   // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -79,7 +79,7 @@ struct UResults_BadgeLootBar_C_BndEvt__Anim_LevelUp_K2Node_ComponentBoundEvent_4
 // Function Results_BadgeLootBar.Results_BadgeLootBar_C.Add Badge Points Sequence
 struct UResults_BadgeLootBar_C_Add_Badge_Points_Sequence_Params
 {
-	class UResults_Badge_C*                            Badge;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UResults_Badge_C*                            Badge;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function Results_BadgeLootBar.Results_BadgeLootBar_C.BndEvt__Anim_PostLevelUpIntro_K2Node_ComponentBoundEvent_6_OnWidgetAnimationPlaybackStatusChanged__DelegateSignature

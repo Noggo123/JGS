@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -41,20 +41,20 @@ struct UCinematic_C_SetMoviePlaying_Params
 // Function Cinematic.Cinematic_C.ClearMovieWidget
 struct UCinematic_C_ClearMovieWidget_Params
 {
-	class UFortMovieWidget*                            MovieWidgetToClear;                                       // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+	class UFortMovieWidget*                            MovieWidgetToClear;                                       // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
 };
 
 // Function Cinematic.Cinematic_C.ClearMovieSlot
 struct UCinematic_C_ClearMovieSlot_Params
 {
-	class UPanelWidget*                                MovieSlotToClear;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+	class UPanelWidget*                                MovieSlotToClear;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
 };
 
 // Function Cinematic.Cinematic_C.PopContentWidgetInternal
 struct UCinematic_C_PopContentWidgetInternal_Params
 {
 	struct FContentPushState*                          State;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm)
-	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 };
 
 // Function Cinematic.Cinematic_C.SkipMovie
@@ -71,8 +71,8 @@ struct UCinematic_C_ClearMovie_Params
 struct UCinematic_C_ShowMovie_Params
 {
 	class UMediaSource*                                MediaSource;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UNamedSlot*                                  MovieSlot;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
-	class UMovieWidget_C*                              MovieWidget;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+	class UNamedSlot*                                  MovieSlot;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
+	class UMovieWidget_C*                              MovieWidget;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
 };
 
 // Function Cinematic.Cinematic_C.Construct
@@ -109,7 +109,7 @@ struct UCinematic_C_HandleClientEvent_SkipCinematic_Params
 // Function Cinematic.Cinematic_C.PushContentWidgetInternal
 struct UCinematic_C_PushContentWidgetInternal_Params
 {
-	class UWidget**                                    Widget;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UWidget**                                    Widget;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 	struct FContentPushState*                          State;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 

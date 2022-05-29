@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,21 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
-
-// Function AIModule.AITask_MoveTo.AIMoveTo
-struct UAITask_MoveTo_AIMoveTo_Params
-{
-	class AAIController*                               Controller;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     GoalLocation;                                             // (Parm, IsPlainOldData)
-	class AActor*                                      GoalActor;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              AcceptanceRadius;                                         // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EAIOptionFlag>                         StopOnOverlap;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EAIOptionFlag>                         AcceptPartialPath;                                        // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUsePathfinding;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bLockAILogic;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUseContinuosGoalTracking;                                // (Parm, ZeroConstructor, IsPlainOldData)
-	class UAITask_MoveTo*                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
 
 // Function AIModule.AIController.UseBlackboard
 struct AAIController_UseBlackboard_Params
@@ -235,6 +220,64 @@ struct UAIPerceptionComponent_GetActorsPerception_Params
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
+// Function AIModule.PathFollowingComponent.OnNavDataRegistered
+struct UPathFollowingComponent_OnNavDataRegistered_Params
+{
+	class ANavigationData*                             NavData;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AIModule.PathFollowingComponent.OnActorBump
+struct UPathFollowingComponent_OnActorBump_Params
+{
+	class AActor*                                      SelfActor;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	class AActor*                                      OtherActor;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     NormalImpulse;                                            // (Parm, IsPlainOldData)
+	struct FHitResult                                  Hit;                                                      // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+};
+
+// Function AIModule.PathFollowingComponent.GetPathDestination
+struct UPathFollowingComponent_GetPathDestination_Params
+{
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function AIModule.PathFollowingComponent.GetPathActionType
+struct UPathFollowingComponent_GetPathActionType_Params
+{
+	TEnumAsByte<EPathFollowingAction>                  ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function AIModule.CrowdFollowingComponent.SuspendCrowdSteering
+struct UCrowdFollowingComponent_SuspendCrowdSteering_Params
+{
+	bool                                               bSuspend;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AIModule.AISystem.AILoggingVerbose
+struct UAISystem_AILoggingVerbose_Params
+{
+};
+
+// Function AIModule.AISystem.AIIgnorePlayers
+struct UAISystem_AIIgnorePlayers_Params
+{
+};
+
+// Function AIModule.AITask_MoveTo.AIMoveTo
+struct UAITask_MoveTo_AIMoveTo_Params
+{
+	class AAIController*                               Controller;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     GoalLocation;                                             // (Parm, IsPlainOldData)
+	class AActor*                                      GoalActor;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              AcceptanceRadius;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EAIOptionFlag>                         StopOnOverlap;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EAIOptionFlag>                         AcceptPartialPath;                                        // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUsePathfinding;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bLockAILogic;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUseContinuosGoalTracking;                                // (Parm, ZeroConstructor, IsPlainOldData)
+	class UAITask_MoveTo*                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
 // Function AIModule.AIPerceptionSystem.ReportPerceptionEvent
 struct UAIPerceptionSystem_ReportPerceptionEvent_Params
 {
@@ -270,16 +313,6 @@ struct UAIPerceptionSystem_GetSenseClassForStimulus_Params
 	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FAIStimulus                                 Stimulus;                                                 // (ConstParm, Parm, OutParm, ReferenceParm)
 	class UClass*                                      ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function AIModule.AISystem.AILoggingVerbose
-struct UAISystem_AILoggingVerbose_Params
-{
-};
-
-// Function AIModule.AISystem.AIIgnorePlayers
-struct UAISystem_AIIgnorePlayers_Params
-{
 };
 
 // Function AIModule.BrainComponent.StopLogic
@@ -325,39 +358,6 @@ struct UBehaviorTreeComponent_AddCooldownTagDuration_Params
 	struct FGameplayTag                                CooldownTag;                                              // (Parm)
 	float                                              CooldownDuration;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               bAddToExistingDuration;                                   // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function AIModule.PathFollowingComponent.OnNavDataRegistered
-struct UPathFollowingComponent_OnNavDataRegistered_Params
-{
-	class ANavigationData*                             NavData;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function AIModule.PathFollowingComponent.OnActorBump
-struct UPathFollowingComponent_OnActorBump_Params
-{
-	class AActor*                                      SelfActor;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	class AActor*                                      OtherActor;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     NormalImpulse;                                            // (Parm, IsPlainOldData)
-	struct FHitResult                                  Hit;                                                      // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-};
-
-// Function AIModule.PathFollowingComponent.GetPathDestination
-struct UPathFollowingComponent_GetPathDestination_Params
-{
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function AIModule.PathFollowingComponent.GetPathActionType
-struct UPathFollowingComponent_GetPathActionType_Params
-{
-	TEnumAsByte<EPathFollowingAction>                  ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function AIModule.CrowdFollowingComponent.SuspendCrowdSteering
-struct UCrowdFollowingComponent_SuspendCrowdSteering_Params
-{
-	bool                                               bSuspend;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AIModule.AIAsyncTaskBlueprintProxy.OnMoveCompleted

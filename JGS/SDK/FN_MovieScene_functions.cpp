@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -126,6 +126,27 @@ void UMovieSceneSequencePlayer::SetPlaybackPosition(float NewPlaybackPosition)
 
 	UMovieSceneSequencePlayer_SetPlaybackPosition_Params params;
 	params.NewPlaybackPosition = NewPlaybackPosition;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MovieScene.MovieSceneSequencePlayer.SetDisableCameraCuts
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           bInDisableCameraCuts           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UMovieSceneSequencePlayer::SetDisableCameraCuts(bool bInDisableCameraCuts)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MovieScene.MovieSceneSequencePlayer.SetDisableCameraCuts");
+
+	UMovieSceneSequencePlayer_SetDisableCameraCuts_Params params;
+	params.bInDisableCameraCuts = bInDisableCameraCuts;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -410,6 +431,28 @@ float UMovieSceneSequencePlayer::GetLength()
 	static auto fn = UObject::FindObject<UFunction>("Function MovieScene.MovieSceneSequencePlayer.GetLength");
 
 	UMovieSceneSequencePlayer_GetLength_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function MovieScene.MovieSceneSequencePlayer.GetDisableCameraCuts
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UMovieSceneSequencePlayer::GetDisableCameraCuts()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MovieScene.MovieSceneSequencePlayer.GetDisableCameraCuts");
+
+	UMovieSceneSequencePlayer_GetDisableCameraCuts_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;

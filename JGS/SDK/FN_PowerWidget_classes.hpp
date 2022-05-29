@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -36,7 +34,7 @@ public:
 	float                                              CurrentRating;                                            // 0x02AC(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	struct FLinearColor                                cParty;                                                   // 0x02B0(0x0010) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
 	struct FLinearColor                                cSolo;                                                    // 0x02C0(0x0010) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
-	class UBP_LocalPlayerProfileModal_C*               LocalPlayerWidget;                                        // 0x02D0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UBP_LocalPlayerProfileModal_C*               LocalPlayerWidget;                                        // 0x02D0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
 	struct FScriptMulticastDelegate                    Power_Increased;                                          // 0x02D8(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable)
 	bool                                               Previously_Had_Teammates;                                 // 0x02E8(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData01[0x7];                                       // 0x02E9(0x0007) MISSED OFFSET

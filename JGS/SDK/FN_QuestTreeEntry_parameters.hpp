@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -40,6 +40,12 @@ struct UQuestTreeEntry_C_Set_Quest_Display_Name_Params
 struct UQuestTreeEntry_C_Get_Quest_Item_Def_Params
 {
 	class UFortQuestItemDefinition*                    AsFort_Quest_Item_Definition;                             // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function QuestTreeEntry.QuestTreeEntry_C.Quest Category Have Unseen Quests
+struct UQuestTreeEntry_C_Quest_Category_Have_Unseen_Quests_Params
+{
+	bool                                               HasUnseen;                                                // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function QuestTreeEntry.QuestTreeEntry_C.Update Quest Category Bang State

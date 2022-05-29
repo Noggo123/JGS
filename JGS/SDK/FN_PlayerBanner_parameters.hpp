@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function PlayerBanner.PlayerBanner_C.UnbindDelegates
+struct UPlayerBanner_C_UnbindDelegates_Params
+{
+};
 
 // Function PlayerBanner.PlayerBanner_C.SetupSurround
 struct UPlayerBanner_C_SetupSurround_Params
@@ -102,16 +107,15 @@ struct UPlayerBanner_C_OnTeamMemberStateChanged_Params
 	struct FFortTeamMemberInfo                         TeamMemberInfo;                                           // (BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
-// Function PlayerBanner.PlayerBanner_C.PreConstruct
-struct UPlayerBanner_C_PreConstruct_Params
-{
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function PlayerBanner.PlayerBanner_C.Account Info Changed
 struct UPlayerBanner_C_Account_Info_Changed_Params
 {
 	struct FFortPublicAccountInfo                      NewInfo;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm)
+};
+
+// Function PlayerBanner.PlayerBanner_C.Destruct
+struct UPlayerBanner_C_Destruct_Params
+{
 };
 
 // Function PlayerBanner.PlayerBanner_C.ExecuteUbergraph_PlayerBanner

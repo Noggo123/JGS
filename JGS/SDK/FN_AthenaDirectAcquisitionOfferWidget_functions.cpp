@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -93,6 +93,74 @@ class UObject* UAthenaDirectAcquisitionOfferWidget_C::GetData()
 	fn->FunctionFlags = flags;
 
 	return params.ReturnValue;
+}
+
+
+// Function AthenaDirectAcquisitionOfferWidget.AthenaDirectAcquisitionOfferWidget_C.UpdateBadge
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UAthenaDirectAcquisitionOfferWidget_C::UpdateBadge()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaDirectAcquisitionOfferWidget.AthenaDirectAcquisitionOfferWidget_C.UpdateBadge");
+
+	UAthenaDirectAcquisitionOfferWidget_C_UpdateBadge_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaDirectAcquisitionOfferWidget.AthenaDirectAcquisitionOfferWidget_C.UpdateStyle_Sizing
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UAthenaDirectAcquisitionOfferWidget_C::UpdateStyle_Sizing()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaDirectAcquisitionOfferWidget.AthenaDirectAcquisitionOfferWidget_C.UpdateStyle_Sizing");
+
+	UAthenaDirectAcquisitionOfferWidget_C_UpdateStyle_Sizing_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaDirectAcquisitionOfferWidget.AthenaDirectAcquisitionOfferWidget_C.UpdateStyle_Border
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UAthenaDirectAcquisitionOfferWidget_C::UpdateStyle_Border()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaDirectAcquisitionOfferWidget.AthenaDirectAcquisitionOfferWidget_C.UpdateStyle_Border");
+
+	UAthenaDirectAcquisitionOfferWidget_C_UpdateStyle_Border_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaDirectAcquisitionOfferWidget.AthenaDirectAcquisitionOfferWidget_C.UpdateStyle_MainText
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UAthenaDirectAcquisitionOfferWidget_C::UpdateStyle_MainText()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaDirectAcquisitionOfferWidget.AthenaDirectAcquisitionOfferWidget_C.UpdateStyle_MainText");
+
+	UAthenaDirectAcquisitionOfferWidget_C_UpdateStyle_MainText_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
 }
 
 
@@ -218,7 +286,7 @@ void UAthenaDirectAcquisitionOfferWidget_C::LargeImageLoaded(class UObject* Load
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int                            PriceIndex                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UItemCount_C*            PriceWidget                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UItemCount_C*            PriceWidget                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UAthenaDirectAcquisitionOfferWidget_C::SetupPrice(int PriceIndex, class UItemCount_C* PriceWidget)
 {
@@ -237,7 +305,7 @@ void UAthenaDirectAcquisitionOfferWidget_C::SetupPrice(int PriceIndex, class UIt
 
 
 // Function AthenaDirectAcquisitionOfferWidget.AthenaDirectAcquisitionOfferWidget_C.UpdateStyle
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 
 void UAthenaDirectAcquisitionOfferWidget_C::UpdateStyle()
 {
@@ -561,7 +629,7 @@ void UAthenaDirectAcquisitionOfferWidget_C::OnUpdateStatus()
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                 InData                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonListView*         OwningList                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonListView*         OwningList                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UAthenaDirectAcquisitionOfferWidget_C::SetData(class UObject* InData, class UCommonListView* OwningList)
 {

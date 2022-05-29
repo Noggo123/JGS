@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -63,14 +63,14 @@ void AB_Minigun_Athena_C::BarrelGlow__UpdateFunc()
 }
 
 
-// Function B_Minigun_Athena.B_Minigun_Athena_C.SpinUpAudioVolume__FinishedFunc
+// Function B_Minigun_Athena.B_Minigun_Athena_C.SpinAudioVolumeTimeline__FinishedFunc
 // (BlueprintEvent)
 
-void AB_Minigun_Athena_C::SpinUpAudioVolume__FinishedFunc()
+void AB_Minigun_Athena_C::SpinAudioVolumeTimeline__FinishedFunc()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function B_Minigun_Athena.B_Minigun_Athena_C.SpinUpAudioVolume__FinishedFunc");
+	static auto fn = UObject::FindObject<UFunction>("Function B_Minigun_Athena.B_Minigun_Athena_C.SpinAudioVolumeTimeline__FinishedFunc");
 
-	AB_Minigun_Athena_C_SpinUpAudioVolume__FinishedFunc_Params params;
+	AB_Minigun_Athena_C_SpinAudioVolumeTimeline__FinishedFunc_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -80,14 +80,14 @@ void AB_Minigun_Athena_C::SpinUpAudioVolume__FinishedFunc()
 }
 
 
-// Function B_Minigun_Athena.B_Minigun_Athena_C.SpinUpAudioVolume__UpdateFunc
+// Function B_Minigun_Athena.B_Minigun_Athena_C.SpinAudioVolumeTimeline__UpdateFunc
 // (BlueprintEvent)
 
-void AB_Minigun_Athena_C::SpinUpAudioVolume__UpdateFunc()
+void AB_Minigun_Athena_C::SpinAudioVolumeTimeline__UpdateFunc()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function B_Minigun_Athena.B_Minigun_Athena_C.SpinUpAudioVolume__UpdateFunc");
+	static auto fn = UObject::FindObject<UFunction>("Function B_Minigun_Athena.B_Minigun_Athena_C.SpinAudioVolumeTimeline__UpdateFunc");
 
-	AB_Minigun_Athena_C_SpinUpAudioVolume__UpdateFunc_Params params;
+	AB_Minigun_Athena_C_SpinAudioVolumeTimeline__UpdateFunc_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -209,6 +209,23 @@ void AB_Minigun_Athena_C::StopBarrelGlow()
 }
 
 
+// Function B_Minigun_Athena.B_Minigun_Athena_C.OnAmmoCountChanged
+// (BlueprintCosmetic, Event, Protected, BlueprintEvent)
+
+void AB_Minigun_Athena_C::OnAmmoCountChanged()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function B_Minigun_Athena.B_Minigun_Athena_C.OnAmmoCountChanged");
+
+	AB_Minigun_Athena_C_OnAmmoCountChanged_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function B_Minigun_Athena.B_Minigun_Athena_C.Start Spin Up Audio
 // (BlueprintCallable, BlueprintEvent)
 
@@ -234,6 +251,23 @@ void AB_Minigun_Athena_C::Start_Spin_Down_Audio()
 	static auto fn = UObject::FindObject<UFunction>("Function B_Minigun_Athena.B_Minigun_Athena_C.Start Spin Down Audio");
 
 	AB_Minigun_Athena_C_Start_Spin_Down_Audio_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function B_Minigun_Athena.B_Minigun_Athena_C.OnWeaponAttached
+// (Event, Public, BlueprintEvent)
+
+void AB_Minigun_Athena_C::OnWeaponAttached()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function B_Minigun_Athena.B_Minigun_Athena_C.OnWeaponAttached");
+
+	AB_Minigun_Athena_C_OnWeaponAttached_Params params;
 
 	auto flags = fn->FunctionFlags;
 

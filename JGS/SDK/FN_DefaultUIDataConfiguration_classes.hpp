@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass DefaultUIDataConfiguration.DefaultUIDataConfiguration_C
-// 0x0000 (0x2D98 - 0x2D98)
+// 0x0000 (0x3220 - 0x3220)
 class UDefaultUIDataConfiguration_C : public UFortUIDataConfiguration
 {
 public:

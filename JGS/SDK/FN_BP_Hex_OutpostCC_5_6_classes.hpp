@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Hex_OutpostCC_5_6.BP_Hex_OutpostCC_5_C
-// 0x0000 (0x070C - 0x070C)
+// 0x0000 (0x06CC - 0x06CC)
 class ABP_Hex_OutpostCC_5_C : public ABP_Hex_PARENT_C
 {
 public:

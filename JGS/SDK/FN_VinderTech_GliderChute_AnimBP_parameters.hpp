@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -29,8 +29,8 @@ struct UVinderTech_GliderChute_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergr
 {
 };
 
-// Function VinderTech_GliderChute_AnimBP.VinderTech_GliderChute_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_GliderChute_AnimBP_AnimGraphNode_SequencePlayer_2133C7F047F09F18A630588EBA7E4D65
-struct UVinderTech_GliderChute_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_GliderChute_AnimBP_AnimGraphNode_SequencePlayer_2133C7F047F09F18A630588EBA7E4D65_Params
+// Function VinderTech_GliderChute_AnimBP.VinderTech_GliderChute_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_GliderChute_AnimBP_AnimGraphNode_BlendSpacePlayer_4393D4E34087BD4856E060AC810EBD43
+struct UVinderTech_GliderChute_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_GliderChute_AnimBP_AnimGraphNode_BlendSpacePlayer_4393D4E34087BD4856E060AC810EBD43_Params
 {
 };
 
@@ -50,10 +50,20 @@ struct UVinderTech_GliderChute_AnimBP_C_BlueprintUpdateAnimation_Params
 	float*                                             DeltaTimeX;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function VinderTech_GliderChute_AnimBP.VinderTech_GliderChute_AnimBP_C.AnimNotify_DynamicsOK
+struct UVinderTech_GliderChute_AnimBP_C_AnimNotify_DynamicsOK_Params
+{
+};
+
 // Function VinderTech_GliderChute_AnimBP.VinderTech_GliderChute_AnimBP_C.ExecuteUbergraph_VinderTech_GliderChute_AnimBP
 struct UVinderTech_GliderChute_AnimBP_C_ExecuteUbergraph_VinderTech_GliderChute_AnimBP_Params
 {
 	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function VinderTech_GliderChute_AnimBP.VinderTech_GliderChute_AnimBP_C.DynamicsOK__DelegateSignature
+struct UVinderTech_GliderChute_AnimBP_C_DynamicsOK__DelegateSignature_Params
+{
 };
 
 }

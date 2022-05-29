@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass ScoreBarsWidget.ScoreBarsWidget_C
-// 0x0954 (0x0B8C - 0x0238)
+// 0x0A74 (0x0CAC - 0x0238)
 class UScoreBarsWidget_C : public UFortHUDElementWidget
 {
 public:
@@ -40,21 +38,21 @@ public:
 	bool                                               bShowSideBarIcons;                                        // 0x02CD(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	bool                                               bOnlyShowIconsForTopCategory;                             // 0x02CE(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	bool                                               bOnlyShowBarsWithCountInRange;                            // 0x02CF(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	struct FFortMultiSizeBrush                         CombatCategoryIcon;                                       // 0x02D0(0x02D0) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FFortMultiSizeBrush                         BuildingCategoryIcon;                                     // 0x05A0(0x02D0) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FFortMultiSizeBrush                         UtilityCategoryIcon;                                      // 0x0870(0x02D0) (Edit, BlueprintVisible, DisableEditOnInstance)
-	TEnumAsByte<EFortBrushSize>                        CategoryIconSize;                                         // 0x0B40(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EFortBrushSize>                        BadgeIconSize;                                            // 0x0B41(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x2];                                       // 0x0B42(0x0002) MISSED OFFSET
-	struct FMargin                                     CategoriesMargin;                                         // 0x0B44(0x0010) (Edit, BlueprintVisible)
-	struct FMargin                                     BarsMargin;                                               // 0x0B54(0x0010) (Edit, BlueprintVisible)
-	struct FMargin                                     BarsIconMargin;                                           // 0x0B64(0x0010) (Edit, BlueprintVisible)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x0B74(0x0004) MISSED OFFSET
-	class UFortUIMessageManager*                       MessageManager;                                           // 0x0B78(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	int                                                MaxScoreMessagesDisplayed;                                // 0x0B80(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	bool                                               bDisplayScoreStream;                                      // 0x0B84(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x3];                                       // 0x0B85(0x0003) MISSED OFFSET
-	float                                              BarHeightOverride;                                        // 0x0B88(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	struct FFortMultiSizeBrush                         CombatCategoryIcon;                                       // 0x02D0(0x0330) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FFortMultiSizeBrush                         BuildingCategoryIcon;                                     // 0x0600(0x0330) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FFortMultiSizeBrush                         UtilityCategoryIcon;                                      // 0x0930(0x0330) (Edit, BlueprintVisible, DisableEditOnInstance)
+	TEnumAsByte<EFortBrushSize>                        CategoryIconSize;                                         // 0x0C60(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EFortBrushSize>                        BadgeIconSize;                                            // 0x0C61(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x2];                                       // 0x0C62(0x0002) MISSED OFFSET
+	struct FMargin                                     CategoriesMargin;                                         // 0x0C64(0x0010) (Edit, BlueprintVisible, IsPlainOldData)
+	struct FMargin                                     BarsMargin;                                               // 0x0C74(0x0010) (Edit, BlueprintVisible, IsPlainOldData)
+	struct FMargin                                     BarsIconMargin;                                           // 0x0C84(0x0010) (Edit, BlueprintVisible, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x0C94(0x0004) MISSED OFFSET
+	class UFortUIMessageManager*                       MessageManager;                                           // 0x0C98(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	int                                                MaxScoreMessagesDisplayed;                                // 0x0CA0(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               bDisplayScoreStream;                                      // 0x0CA4(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x3];                                       // 0x0CA5(0x0003) MISSED OFFSET
+	float                                              BarHeightOverride;                                        // 0x0CA8(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

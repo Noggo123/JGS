@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,22 +13,23 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass DefaultSkillNode.DefaultSkillNode_C
-// 0x0149 (0x08F1 - 0x07A8)
+// 0x0151 (0x0979 - 0x0828)
 class UDefaultSkillNode_C : public UFortSkillTreeCanvasNode
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x07A8(0x0008) (Transient, DuplicateTransient)
-	class USpacer*                                     InternalSpacer;                                           // 0x07B0(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
-	class UImage*                                      SelectionPulseEffect;                                     // 0x07B8(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
-	float                                              SelectionGlowPercentage;                                  // 0x07C0(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              HoverGlowPercentage;                                      // 0x07C4(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FTimerHandle                                HoverGlowTimerHandle;                                     // 0x07C8(0x0008) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FTimerHandle                                SelectionGlowTimerHandle;                                 // 0x07D0(0x0008) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSkillTreePageColors                        PageColors;                                               // 0x07D8(0x00C0) (Edit, BlueprintVisible, DisableEditOnInstance)
-	TEnumAsByte<ESkillTreePages>                       Pages;                                                    // 0x0898(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x0899(0x0003) MISSED OFFSET
-	struct FSkillTreeGroupColors                       GroupColors;                                              // 0x089C(0x0054) (Edit, BlueprintVisible, DisableEditOnInstance)
-	TEnumAsByte<ESkillTreeGroups>                      Groups;                                                   // 0x08F0(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0828(0x0008) (Transient, DuplicateTransient)
+	class UImage*                                      GlowOverlay;                                              // 0x0830(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
+	class USpacer*                                     InternalSpacer;                                           // 0x0838(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
+	class UImage*                                      SelectionPulseEffect;                                     // 0x0840(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
+	float                                              SelectionGlowPercentage;                                  // 0x0848(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              HoverGlowPercentage;                                      // 0x084C(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FTimerHandle                                HoverGlowTimerHandle;                                     // 0x0850(0x0008) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FTimerHandle                                SelectionGlowTimerHandle;                                 // 0x0858(0x0008) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSkillTreePageColors                        PageColors;                                               // 0x0860(0x00C0) (Edit, BlueprintVisible, DisableEditOnInstance)
+	TEnumAsByte<ESkillTreePages>                       Pages;                                                    // 0x0920(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0921(0x0003) MISSED OFFSET
+	struct FSkillTreeGroupColors                       GroupColors;                                              // 0x0924(0x0054) (Edit, BlueprintVisible, DisableEditOnInstance)
+	TEnumAsByte<ESkillTreeGroups>                      Groups;                                                   // 0x0978(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,172 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function OnlineSubsystemUtils.OnlineBeaconClient.ClientOnConnected
-// (Final, Net, NetReliable, Native, Event, Private, NetClient)
-
-void AOnlineBeaconClient::ClientOnConnected()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OnlineSubsystemUtils.OnlineBeaconClient.ClientOnConnected");
-
-	AOnlineBeaconClient_ClientOnConnected_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OnlineSubsystemUtils.PartyBeaconClient.ServerUpdateReservationRequest
-// (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
-// Parameters:
-// struct FString                 SessionId                      (Parm, ZeroConstructor)
-// struct FPartyReservation       ReservationUpdate              (ConstParm, Parm, ReferenceParm)
-
-void APartyBeaconClient::ServerUpdateReservationRequest(const struct FString& SessionId, const struct FPartyReservation& ReservationUpdate)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OnlineSubsystemUtils.PartyBeaconClient.ServerUpdateReservationRequest");
-
-	APartyBeaconClient_ServerUpdateReservationRequest_Params params;
-	params.SessionId = SessionId;
-	params.ReservationUpdate = ReservationUpdate;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OnlineSubsystemUtils.PartyBeaconClient.ServerReservationRequest
-// (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
-// Parameters:
-// struct FString                 SessionId                      (Parm, ZeroConstructor)
-// struct FPartyReservation       Reservation                    (ConstParm, Parm, ReferenceParm)
-
-void APartyBeaconClient::ServerReservationRequest(const struct FString& SessionId, const struct FPartyReservation& Reservation)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OnlineSubsystemUtils.PartyBeaconClient.ServerReservationRequest");
-
-	APartyBeaconClient_ServerReservationRequest_Params params;
-	params.SessionId = SessionId;
-	params.Reservation = Reservation;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OnlineSubsystemUtils.PartyBeaconClient.ServerCancelReservationRequest
-// (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
-// Parameters:
-// struct FUniqueNetIdRepl        PartyLeader                    (ConstParm, Parm, ReferenceParm)
-
-void APartyBeaconClient::ServerCancelReservationRequest(const struct FUniqueNetIdRepl& PartyLeader)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OnlineSubsystemUtils.PartyBeaconClient.ServerCancelReservationRequest");
-
-	APartyBeaconClient_ServerCancelReservationRequest_Params params;
-	params.PartyLeader = PartyLeader;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OnlineSubsystemUtils.PartyBeaconClient.ClientSendReservationUpdates
-// (Net, NetReliable, Native, Event, Public, NetClient)
-// Parameters:
-// int                            NumRemainingReservations       (Parm, ZeroConstructor, IsPlainOldData)
-
-void APartyBeaconClient::ClientSendReservationUpdates(int NumRemainingReservations)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OnlineSubsystemUtils.PartyBeaconClient.ClientSendReservationUpdates");
-
-	APartyBeaconClient_ClientSendReservationUpdates_Params params;
-	params.NumRemainingReservations = NumRemainingReservations;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OnlineSubsystemUtils.PartyBeaconClient.ClientSendReservationFull
-// (Net, NetReliable, Native, Event, Public, NetClient)
-
-void APartyBeaconClient::ClientSendReservationFull()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OnlineSubsystemUtils.PartyBeaconClient.ClientSendReservationFull");
-
-	APartyBeaconClient_ClientSendReservationFull_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OnlineSubsystemUtils.PartyBeaconClient.ClientReservationResponse
-// (Net, NetReliable, Native, Event, Public, NetClient)
-// Parameters:
-// TEnumAsByte<EPartyReservationResult> ReservationResponse            (Parm, ZeroConstructor, IsPlainOldData)
-
-void APartyBeaconClient::ClientReservationResponse(TEnumAsByte<EPartyReservationResult> ReservationResponse)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OnlineSubsystemUtils.PartyBeaconClient.ClientReservationResponse");
-
-	APartyBeaconClient_ClientReservationResponse_Params params;
-	params.ReservationResponse = ReservationResponse;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OnlineSubsystemUtils.PartyBeaconClient.ClientCancelReservationResponse
-// (Net, NetReliable, Native, Event, Public, NetClient)
-// Parameters:
-// TEnumAsByte<EPartyReservationResult> ReservationResponse            (Parm, ZeroConstructor, IsPlainOldData)
-
-void APartyBeaconClient::ClientCancelReservationResponse(TEnumAsByte<EPartyReservationResult> ReservationResponse)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OnlineSubsystemUtils.PartyBeaconClient.ClientCancelReservationResponse");
-
-	APartyBeaconClient_ClientCancelReservationResponse_Params params;
-	params.ReservationResponse = ReservationResponse;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function OnlineSubsystemUtils.AchievementBlueprintLibrary.GetCachedAchievementProgress
 // (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
@@ -855,6 +689,172 @@ class ULogoutCallbackProxy* ULogoutCallbackProxy::STATIC_Logout(class UObject* W
 }
 
 
+// Function OnlineSubsystemUtils.OnlineBeaconClient.ClientOnConnected
+// (Final, Net, NetReliable, Native, Event, Private, NetClient)
+
+void AOnlineBeaconClient::ClientOnConnected()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OnlineSubsystemUtils.OnlineBeaconClient.ClientOnConnected");
+
+	AOnlineBeaconClient_ClientOnConnected_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OnlineSubsystemUtils.PartyBeaconClient.ServerUpdateReservationRequest
+// (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
+// Parameters:
+// struct FString                 SessionId                      (Parm, ZeroConstructor)
+// struct FPartyReservation       ReservationUpdate              (ConstParm, Parm, ReferenceParm)
+
+void APartyBeaconClient::ServerUpdateReservationRequest(const struct FString& SessionId, const struct FPartyReservation& ReservationUpdate)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OnlineSubsystemUtils.PartyBeaconClient.ServerUpdateReservationRequest");
+
+	APartyBeaconClient_ServerUpdateReservationRequest_Params params;
+	params.SessionId = SessionId;
+	params.ReservationUpdate = ReservationUpdate;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OnlineSubsystemUtils.PartyBeaconClient.ServerReservationRequest
+// (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
+// Parameters:
+// struct FString                 SessionId                      (Parm, ZeroConstructor)
+// struct FPartyReservation       Reservation                    (ConstParm, Parm, ReferenceParm)
+
+void APartyBeaconClient::ServerReservationRequest(const struct FString& SessionId, const struct FPartyReservation& Reservation)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OnlineSubsystemUtils.PartyBeaconClient.ServerReservationRequest");
+
+	APartyBeaconClient_ServerReservationRequest_Params params;
+	params.SessionId = SessionId;
+	params.Reservation = Reservation;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OnlineSubsystemUtils.PartyBeaconClient.ServerCancelReservationRequest
+// (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
+// Parameters:
+// struct FUniqueNetIdRepl        PartyLeader                    (ConstParm, Parm, ReferenceParm)
+
+void APartyBeaconClient::ServerCancelReservationRequest(const struct FUniqueNetIdRepl& PartyLeader)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OnlineSubsystemUtils.PartyBeaconClient.ServerCancelReservationRequest");
+
+	APartyBeaconClient_ServerCancelReservationRequest_Params params;
+	params.PartyLeader = PartyLeader;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OnlineSubsystemUtils.PartyBeaconClient.ClientSendReservationUpdates
+// (Net, NetReliable, Native, Event, Public, NetClient)
+// Parameters:
+// int                            NumRemainingReservations       (Parm, ZeroConstructor, IsPlainOldData)
+
+void APartyBeaconClient::ClientSendReservationUpdates(int NumRemainingReservations)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OnlineSubsystemUtils.PartyBeaconClient.ClientSendReservationUpdates");
+
+	APartyBeaconClient_ClientSendReservationUpdates_Params params;
+	params.NumRemainingReservations = NumRemainingReservations;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OnlineSubsystemUtils.PartyBeaconClient.ClientSendReservationFull
+// (Net, NetReliable, Native, Event, Public, NetClient)
+
+void APartyBeaconClient::ClientSendReservationFull()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OnlineSubsystemUtils.PartyBeaconClient.ClientSendReservationFull");
+
+	APartyBeaconClient_ClientSendReservationFull_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OnlineSubsystemUtils.PartyBeaconClient.ClientReservationResponse
+// (Net, NetReliable, Native, Event, Public, NetClient)
+// Parameters:
+// TEnumAsByte<EPartyReservationResult> ReservationResponse            (Parm, ZeroConstructor, IsPlainOldData)
+
+void APartyBeaconClient::ClientReservationResponse(TEnumAsByte<EPartyReservationResult> ReservationResponse)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OnlineSubsystemUtils.PartyBeaconClient.ClientReservationResponse");
+
+	APartyBeaconClient_ClientReservationResponse_Params params;
+	params.ReservationResponse = ReservationResponse;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OnlineSubsystemUtils.PartyBeaconClient.ClientCancelReservationResponse
+// (Net, NetReliable, Native, Event, Public, NetClient)
+// Parameters:
+// TEnumAsByte<EPartyReservationResult> ReservationResponse            (Parm, ZeroConstructor, IsPlainOldData)
+
+void APartyBeaconClient::ClientCancelReservationResponse(TEnumAsByte<EPartyReservationResult> ReservationResponse)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OnlineSubsystemUtils.PartyBeaconClient.ClientCancelReservationResponse");
+
+	APartyBeaconClient_ClientCancelReservationResponse_Params params;
+	params.ReservationResponse = ReservationResponse;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function OnlineSubsystemUtils.QuitMatchCallbackProxy.QuitMatch
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -1060,6 +1060,28 @@ void UTurnBasedBlueprintLibrary::STATIC_GetIsMyTurn(class UObject* WorldContextO
 
 	if (bIsMyTurn != nullptr)
 		*bIsMyTurn = params.bIsMyTurn;
+}
+
+
+// Function OnlineSubsystemUtils.VoipListenerSynthComponent.IsIdling
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UVoipListenerSynthComponent::IsIdling()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OnlineSubsystemUtils.VoipListenerSynthComponent.IsIdling");
+
+	UVoipListenerSynthComponent_IsIdling_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
 }
 
 

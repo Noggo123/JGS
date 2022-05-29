@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function LeaveButton.LeaveButton_C.GetDescriptionText
+struct ULeaveButton_C_GetDescriptionText_Params
+{
+	struct FText                                       DescriptionText;                                          // (Parm, OutParm)
+};
 
 // Function LeaveButton.LeaveButton_C.IsInNeighborhood
 struct ULeaveButton_C_IsInNeighborhood_Params
@@ -34,7 +40,7 @@ struct ULeaveButton_C_SetText_Params
 // Function LeaveButton.LeaveButton_C.GetButton
 struct ULeaveButton_C_GetButton_Params
 {
-	class UIconTextButton_C*                           Leave;                                                    // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	class UIconTextButton_C*                           Leave;                                                    // (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function LeaveButton.LeaveButton_C.HasUnsavedQuestProgress
@@ -118,7 +124,7 @@ struct ULeaveButton_C_Construct_Params
 // Function LeaveButton.LeaveButton_C.BndEvt__Leave_K2Node_ComponentBoundEvent_90_CommonButtonClicked__DelegateSignature
 struct ULeaveButton_C_BndEvt__Leave_K2Node_ComponentBoundEvent_90_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function LeaveButton.LeaveButton_C.Destruct
@@ -130,6 +136,12 @@ struct ULeaveButton_C_Destruct_Params
 struct ULeaveButton_C_PreConstruct_Params
 {
 	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function LeaveButton.LeaveButton_C.HandlePlayerStateChanged
+struct ULeaveButton_C_HandlePlayerStateChanged_Params
+{
+	struct FFortTeamMemberInfo                         TeamMemberInfo;                                           // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 };
 
 // Function LeaveButton.LeaveButton_C.ExecuteUbergraph_LeaveButton

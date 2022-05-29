@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,16 +32,16 @@ void UResults_TeleportPadPlayerTop_C::Play_Anim_Intro()
 // Function Results_TeleportPadPlayerTop.Results_TeleportPadPlayerTop_C.Initialize
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        UniqueNetID                    (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FUniqueNetIdRepl        UniqueNetId                    (BlueprintVisible, BlueprintReadOnly, Parm)
 // class UFortUIScoreReport*      ScoreReport                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // int                            ScoreReportIndex               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UResults_TeleportPadPlayerTop_C::Initialize(const struct FUniqueNetIdRepl& UniqueNetID, class UFortUIScoreReport* ScoreReport, int ScoreReportIndex)
+void UResults_TeleportPadPlayerTop_C::Initialize(const struct FUniqueNetIdRepl& UniqueNetId, class UFortUIScoreReport* ScoreReport, int ScoreReportIndex)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Results_TeleportPadPlayerTop.Results_TeleportPadPlayerTop_C.Initialize");
 
 	UResults_TeleportPadPlayerTop_C_Initialize_Params params;
-	params.UniqueNetID = UniqueNetID;
+	params.UniqueNetId = UniqueNetId;
 	params.ScoreReport = ScoreReport;
 	params.ScoreReportIndex = ScoreReportIndex;
 

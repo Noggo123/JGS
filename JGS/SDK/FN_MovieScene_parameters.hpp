@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -48,6 +48,12 @@ struct UMovieSceneSequencePlayer_SetPlaybackRange_Params
 struct UMovieSceneSequencePlayer_SetPlaybackPosition_Params
 {
 	float                                              NewPlaybackPosition;                                      // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function MovieScene.MovieSceneSequencePlayer.SetDisableCameraCuts
+struct UMovieSceneSequencePlayer_SetDisableCameraCuts_Params
+{
+	bool                                               bInDisableCameraCuts;                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MovieScene.MovieSceneSequencePlayer.Scrub
@@ -127,6 +133,12 @@ struct UMovieSceneSequencePlayer_GetPlaybackEnd_Params
 struct UMovieSceneSequencePlayer_GetLength_Params
 {
 	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function MovieScene.MovieSceneSequencePlayer.GetDisableCameraCuts
+struct UMovieSceneSequencePlayer_GetDisableCameraCuts_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function MovieScene.MovieSceneSequencePlayer.GetBoundObjects

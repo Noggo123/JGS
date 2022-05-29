@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function GCNL_GM_Snare.GCNL_GM_Snare_C.OnWhileActiveParticleSystemActivate
 // (Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// class UParticleSystemComponent** WhileActiveParticleSysComponent (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class UParticleSystemComponent** WhileActiveParticleSysComponent (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// struct FGameplayCueParameters* Parameters                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
 void AGCNL_GM_Snare_C::OnWhileActiveParticleSystemActivate(class UParticleSystemComponent** WhileActiveParticleSysComponent, struct FGameplayCueParameters* Parameters)
 {
@@ -24,15 +24,13 @@ void AGCNL_GM_Snare_C::OnWhileActiveParticleSystemActivate(class UParticleSystem
 
 	AGCNL_GM_Snare_C_OnWhileActiveParticleSystemActivate_Params params;
 	params.WhileActiveParticleSysComponent = WhileActiveParticleSysComponent;
+	params.Parameters = Parameters;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (Parameters != nullptr)
-		*Parameters = params.Parameters;
 }
 
 

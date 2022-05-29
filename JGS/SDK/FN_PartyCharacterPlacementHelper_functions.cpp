@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,118 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnPartySuggestionAccept
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            PlayerID                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void APartyCharacterPlacementHelper_C::OnPartySuggestionAccept(int PlayerID)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnPartySuggestionAccept");
+
+	APartyCharacterPlacementHelper_C_OnPartySuggestionAccept_Params params;
+	params.PlayerID = PlayerID;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnPartySuggestionChanged
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            SlotIndex                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortPartySuggestion    FortPartySuggestion            (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void APartyCharacterPlacementHelper_C::OnPartySuggestionChanged(int SlotIndex, struct FFortPartySuggestion* FortPartySuggestion)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnPartySuggestionChanged");
+
+	APartyCharacterPlacementHelper_C_OnPartySuggestionChanged_Params params;
+	params.SlotIndex = SlotIndex;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (FortPartySuggestion != nullptr)
+		*FortPartySuggestion = params.FortPartySuggestion;
+}
+
+
+// Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnPartySuggestionRemoved
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            SlotIndex                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void APartyCharacterPlacementHelper_C::OnPartySuggestionRemoved(int SlotIndex)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnPartySuggestionRemoved");
+
+	APartyCharacterPlacementHelper_C_OnPartySuggestionRemoved_Params params;
+	params.SlotIndex = SlotIndex;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnPartySuggestionUpdated
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            SlotIndex                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortPartySuggestion    FortPartySuggestion            (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void APartyCharacterPlacementHelper_C::OnPartySuggestionUpdated(int SlotIndex, struct FFortPartySuggestion* FortPartySuggestion)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnPartySuggestionUpdated");
+
+	APartyCharacterPlacementHelper_C_OnPartySuggestionUpdated_Params params;
+	params.SlotIndex = SlotIndex;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (FortPartySuggestion != nullptr)
+		*FortPartySuggestion = params.FortPartySuggestion;
+}
+
+
+// Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnPartySuggestionAdded
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            SlotIndex                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortPartySuggestion    FortPartySuggestion            (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void APartyCharacterPlacementHelper_C::OnPartySuggestionAdded(int SlotIndex, struct FFortPartySuggestion* FortPartySuggestion)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnPartySuggestionAdded");
+
+	APartyCharacterPlacementHelper_C_OnPartySuggestionAdded_Params params;
+	params.SlotIndex = SlotIndex;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (FortPartySuggestion != nullptr)
+		*FortPartySuggestion = params.FortPartySuggestion;
+}
+
 
 // Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.Refresh Lights
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -272,7 +384,7 @@ void APartyCharacterPlacementHelper_C::OnFrontEndCameraChanged(EFrontEndCamera N
 
 
 // Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnLobbyStarted
-// (Public, BlueprintCallable, BlueprintEvent)
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
 void APartyCharacterPlacementHelper_C::OnLobbyStarted()
 {
@@ -481,6 +593,23 @@ void APartyCharacterPlacementHelper_C::HandleClientEvent_StoreTabSelected(class 
 }
 
 
+// Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnHotfixApplied
+// (BlueprintCallable, BlueprintEvent)
+
+void APartyCharacterPlacementHelper_C::OnHotfixApplied()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnHotfixApplied");
+
+	APartyCharacterPlacementHelper_C_OnHotfixApplied_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.ExecuteUbergraph_PartyCharacterPlacementHelper
 // (HasDefaults)
 // Parameters:
@@ -501,14 +630,17 @@ void APartyCharacterPlacementHelper_C::ExecuteUbergraph_PartyCharacterPlacementH
 }
 
 
-// Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.NewEventDispatcher_0__DelegateSignature
+// Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.Debug_OnFriendLFGRequest__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void APartyCharacterPlacementHelper_C::NewEventDispatcher_0__DelegateSignature()
+void APartyCharacterPlacementHelper_C::Debug_OnFriendLFGRequest__DelegateSignature(int PlayerIndex)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.NewEventDispatcher_0__DelegateSignature");
+	static auto fn = UObject::FindObject<UFunction>("Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.Debug_OnFriendLFGRequest__DelegateSignature");
 
-	APartyCharacterPlacementHelper_C_NewEventDispatcher_0__DelegateSignature_Params params;
+	APartyCharacterPlacementHelper_C_Debug_OnFriendLFGRequest__DelegateSignature_Params params;
+	params.PlayerIndex = PlayerIndex;
 
 	auto flags = fn->FunctionFlags;
 

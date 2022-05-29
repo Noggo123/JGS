@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,10 +14,14 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function Trap_Floor_Spikes.Trap_Floor_Spikes_C.GetFireLocationAndRotation
-struct ATrap_Floor_Spikes_C_GetFireLocationAndRotation_Params
+// Function Trap_Floor_Spikes.Trap_Floor_Spikes_C.ChangeToNormalMaterial
+struct ATrap_Floor_Spikes_C_ChangeToNormalMaterial_Params
 {
-	struct FTransform                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function Trap_Floor_Spikes.Trap_Floor_Spikes_C. ChangeToFriendlyMaterial
+struct ATrap_Floor_Spikes_C__ChangeToFriendlyMaterial_Params
+{
 };
 
 // Function Trap_Floor_Spikes.Trap_Floor_Spikes_C.MaterialSweepOnSpikes
@@ -103,6 +107,11 @@ struct ATrap_Floor_Spikes_C_OnOutOfDurability_Params
 
 // Function Trap_Floor_Spikes.Trap_Floor_Spikes_C.OnWorldReady
 struct ATrap_Floor_Spikes_C_OnWorldReady_Params
+{
+};
+
+// Function Trap_Floor_Spikes.Trap_Floor_Spikes_C.OnInitTeam
+struct ATrap_Floor_Spikes_C_OnInitTeam_Params
 {
 };
 

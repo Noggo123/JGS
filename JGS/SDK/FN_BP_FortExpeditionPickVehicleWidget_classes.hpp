@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -35,7 +33,7 @@ public:
 
 
 	void Pre_Select_for_Console();
-	void Determine_Available_Expedition_Squads(struct FGameplayTagContainer* RequirementTags);
+	void Determine_Available_Expedition_Squads(const struct FGameplayTagContainer& RequirementTags);
 	void Get_Expedition_Item_Definition(class UFortItem* ItemDef, class UFortExpeditionItemDefinition** AsFort_Expedition_Item_Definition);
 	void Setup_Input_Action_Handlers();
 	void HandleBack(bool* Passthrough);

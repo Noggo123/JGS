@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -34,20 +34,20 @@ struct UAbilitiesPage_C_InitializeAbilityTiles_Params
 // Function AbilitiesPage.AbilitiesPage_C.AddTilesToButtonGroup
 struct UAbilitiesPage_C_AddTilesToButtonGroup_Params
 {
-	class UVerticalBox*                                ButtonContainer;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UVerticalBox*                                ButtonContainer;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function AbilitiesPage.AbilitiesPage_C.HandleSelectedButtonChanged
 struct UAbilitiesPage_C_HandleSelectedButtonChanged_Params
 {
-	class UCommonButton*                               InSelectedButton;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               InSelectedButton;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 	int                                                InSelectedButtonIndex;                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AbilitiesPage.AbilitiesPage_C.OnAbilitySelected
 struct UAbilitiesPage_C_OnAbilitySelected_Params
 {
-	class UCommonButton*                               AbilityButton;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               AbilityButton;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function AbilitiesPage.AbilitiesPage_C.HandleBack
@@ -65,6 +65,7 @@ struct UAbilitiesPage_C_OnActivated_Params
 struct UAbilitiesPage_C_OnQuickbarContentsChanged_Params
 {
 	EFortQuickBars                                     QuickbarIndex;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	TArray<int>                                        ChangedSlots;                                             // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function AbilitiesPage.AbilitiesPage_C.Construct

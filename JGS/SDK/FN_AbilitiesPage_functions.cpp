@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -74,7 +74,7 @@ void UAbilitiesPage_C::InitializeAbilityTiles()
 // Function AbilitiesPage.AbilitiesPage_C.AddTilesToButtonGroup
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UVerticalBox*            ButtonContainer                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UVerticalBox*            ButtonContainer                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UAbilitiesPage_C::AddTilesToButtonGroup(class UVerticalBox* ButtonContainer)
 {
@@ -94,7 +94,7 @@ void UAbilitiesPage_C::AddTilesToButtonGroup(class UVerticalBox* ButtonContainer
 // Function AbilitiesPage.AbilitiesPage_C.HandleSelectedButtonChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonButton*           InSelectedButton               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           InSelectedButton               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // int                            InSelectedButtonIndex          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
 void UAbilitiesPage_C::HandleSelectedButtonChanged(class UCommonButton* InSelectedButton, int InSelectedButtonIndex)
@@ -116,7 +116,7 @@ void UAbilitiesPage_C::HandleSelectedButtonChanged(class UCommonButton* InSelect
 // Function AbilitiesPage.AbilitiesPage_C.OnAbilitySelected
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonButton*           AbilityButton                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           AbilityButton                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UAbilitiesPage_C::OnAbilitySelected(class UCommonButton* AbilityButton)
 {
@@ -173,16 +173,18 @@ void UAbilitiesPage_C::OnActivated()
 
 
 // Function AbilitiesPage.AbilitiesPage_C.OnQuickbarContentsChanged
-// (BlueprintCallable, BlueprintEvent)
+// (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // EFortQuickBars                 QuickbarIndex                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TArray<int>                    ChangedSlots                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
-void UAbilitiesPage_C::OnQuickbarContentsChanged(EFortQuickBars QuickbarIndex)
+void UAbilitiesPage_C::OnQuickbarContentsChanged(EFortQuickBars QuickbarIndex, TArray<int> ChangedSlots)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function AbilitiesPage.AbilitiesPage_C.OnQuickbarContentsChanged");
 
 	UAbilitiesPage_C_OnQuickbarContentsChanged_Params params;
 	params.QuickbarIndex = QuickbarIndex;
+	params.ChangedSlots = ChangedSlots;
 
 	auto flags = fn->FunctionFlags;
 

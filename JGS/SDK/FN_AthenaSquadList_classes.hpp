@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -32,11 +30,9 @@ public:
 
 
 	void ClearSquadMembers();
-	void HandleSquadMembersChanged();
-	void ClearContents();
+	void RebuildSquadMembersList();
 	void AppendSquadMember(class AFortPlayerStateAthena* PlayerState, int PlayerIndex);
 	void Construct();
-	void HandlePartyLeft();
 	void PreConstruct(bool* IsDesignTime);
 	void RolloutAddFriend();
 	void ExecuteUbergraph_AthenaSquadList(int EntryPoint);

@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -40,7 +38,7 @@ public:
 	void Get_Valid_Offers(TArray<struct FCardPackOffer>* Offers);
 	bool Is_Transform_Feature_Unlocked();
 	void HandleCardPackStore(const struct FName& TabId);
-	void HandleMtxStore(const struct FName& Tab_Id);
+	void HandleMtxStore(const struct FName& Tab_ID);
 	void Handle_Unclaimed_Resources_Updated();
 	void Toggle_Unclaimed_Research_Timer(bool Enable);
 	void Determine_Unclaimed_Resources_at_Threshold(bool* Result);

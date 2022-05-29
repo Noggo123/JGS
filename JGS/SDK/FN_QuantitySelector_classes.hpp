@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass QuantitySelector.QuantitySelector_C
-// 0x0850 (0x0C40 - 0x03F0)
+// 0x0960 (0x0D50 - 0x03F0)
 class UQuantitySelector_C : public UFortActivatablePanel
 {
 public:
@@ -35,14 +33,16 @@ public:
 	struct FScriptMulticastDelegate                    OnButtonClickedDispatcher;                                // 0x0450(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable)
 	struct FScriptMulticastDelegate                    OnStackValueChangedDispatcher;                            // 0x0460(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable)
 	class UFortItem*                                   Item;                                                     // 0x0470(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FSliderStyle                                SliderStyle_MouseKeyboard;                                // 0x0478(0x01F0) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSliderStyle                                SliderStyle_XboxOne;                                      // 0x0668(0x01F0) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSliderStyle                                SliderStyle_PS4;                                          // 0x0858(0x01F0) (Edit, BlueprintVisible, DisableEditOnInstance)
-	bool                                               bShowConfirmButton;                                       // 0x0A48(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	bool                                               bShowCancelButton;                                        // 0x0A49(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	bool                                               bAllowZeroQuantity;                                       // 0x0A4A(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x5];                                       // 0x0A4B(0x0005) MISSED OFFSET
-	struct FSliderStyle                                SliderStyle_Touch;                                        // 0x0A50(0x01F0) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSliderStyle                                SliderStyle_MouseKeyboard;                                // 0x0478(0x0230) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSliderStyle                                SliderStyle_XboxOne;                                      // 0x06A8(0x0230) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSliderStyle                                SliderStyle_PS4;                                          // 0x08D8(0x0230) (Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                               bShowConfirmButton;                                       // 0x0B08(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	bool                                               bShowCancelButton;                                        // 0x0B09(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	bool                                               bAllowZeroQuantity;                                       // 0x0B0A(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x5];                                       // 0x0B0B(0x0005) MISSED OFFSET
+	struct FSliderStyle                                SliderStyle_Touch;                                        // 0x0B10(0x0230) (Edit, BlueprintVisible, DisableEditOnInstance)
+	class USoundBase*                                  ConfirmButtonSound;                                       // 0x0D40(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class USoundBase*                                  StorageCancelSound;                                       // 0x0D48(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,74 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function DeathWidget.DeathWidget_C.Show Resurrect & Respawn Anim
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UDeathWidget_C::Show_Resurrect___Respawn_Anim()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DeathWidget.DeathWidget_C.Show Resurrect & Respawn Anim");
+
+	UDeathWidget_C_Show_Resurrect___Respawn_Anim_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DeathWidget.DeathWidget_C.Prompt Out Anim
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UDeathWidget_C::Prompt_Out_Anim()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DeathWidget.DeathWidget_C.Prompt Out Anim");
+
+	UDeathWidget_C_Prompt_Out_Anim_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DeathWidget.DeathWidget_C.Resurrection Prompt Anim
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UDeathWidget_C::Resurrection_Prompt_Anim()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DeathWidget.DeathWidget_C.Resurrection Prompt Anim");
+
+	UDeathWidget_C_Resurrection_Prompt_Anim_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function DeathWidget.DeathWidget_C.YouDied Anim
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UDeathWidget_C::YouDied_Anim()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DeathWidget.DeathWidget_C.YouDied Anim");
+
+	UDeathWidget_C_YouDied_Anim_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function DeathWidget.DeathWidget_C.ShowExtraLivesText
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)

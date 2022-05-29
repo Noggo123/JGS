@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -74,15 +74,16 @@ struct UAthenaQuickbarPrimary_C_Minimize_Params
 struct UAthenaQuickbarPrimary_C_OnQuickbarContentsChanged_Params
 {
 	EFortQuickBars*                                    QuickbarIndex;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.Construct
-struct UAthenaQuickbarPrimary_C_Construct_Params
-{
+	TArray<int>*                                       ChangedSlots;                                             // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.AnimationFinished
 struct UAthenaQuickbarPrimary_C_AnimationFinished_Params
+{
+};
+
+// Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.Construct
+struct UAthenaQuickbarPrimary_C_Construct_Params
 {
 };
 

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,26 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function RewardsListEntry.RewardsListEntry_C.ShowLabel
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           ShowLabel                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void URewardsListEntry_C::ShowLabel(bool ShowLabel)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function RewardsListEntry.RewardsListEntry_C.ShowLabel");
+
+	URewardsListEntry_C_ShowLabel_Params params;
+	params.ShowLabel = ShowLabel;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function RewardsListEntry.RewardsListEntry_C.ConfigForSchematic
 // (BlueprintCallable, BlueprintEvent)

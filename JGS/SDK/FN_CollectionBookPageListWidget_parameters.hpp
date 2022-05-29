@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -68,7 +68,7 @@ struct UCollectionBookPageListWidget_C_OnPageDetailsUpdated_Params
 // Function CollectionBookPageListWidget.CollectionBookPageListWidget_C.OnSelectionChanged
 struct UCollectionBookPageListWidget_C_OnSelectionChanged_Params
 {
-	class UCommonButton*                               ThisButton;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               ThisButton;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 	bool                                               bSelected;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 

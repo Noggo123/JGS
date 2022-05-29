@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -30,7 +28,7 @@ public:
 	struct FDataTableRowHandle                         AbandonExpeditionAction;                                  // 0x0288(0x0010) (Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FDataTableRowHandle                         CollectExpeditionAction;                                  // 0x0298(0x0010) (Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FDataTableRowHandle                         SortInputAction;                                          // 0x02A8(0x0010) (Edit, BlueprintVisible, DisableEditOnInstance)
-	class UBP_FortExpeditionMasterWidget_C*            ParentWidget;                                             // 0x02B8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UBP_FortExpeditionMasterWidget_C*            ParentWidget;                                             // 0x02B8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
 	struct FName                                       CurrentTabId;                                             // 0x02C0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	TArray<class UBP_FortExpeditionIconTabButton_C*>   TabButtons;                                               // 0x02C8(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
 	bool                                               bIgnoreBuildExpeditionAction;                             // 0x02D8(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)

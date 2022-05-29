@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,43 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function ItemTransform.ItemTransform_C.SetAndLogSelectedKey
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortItem*               SelectedItem                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemTransform_C::SetAndLogSelectedKey(class UFortItem* SelectedItem)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemTransform.ItemTransform_C.SetAndLogSelectedKey");
+
+	UItemTransform_C_SetAndLogSelectedKey_Params params;
+	params.SelectedItem = SelectedItem;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemTransform.ItemTransform_C.Handle SubScreen Activated
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UItemTransform_C::Handle_SubScreen_Activated()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemTransform.ItemTransform_C.Handle SubScreen Activated");
+
+	UItemTransform_C_Handle_SubScreen_Activated_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function ItemTransform.ItemTransform_C.HandleClosePicker
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
@@ -88,14 +125,14 @@ void UItemTransform_C::UpdateTransformAction(bool TransformActive)
 }
 
 
-// Function ItemTransform.ItemTransform_C.Handle Transform Activated
+// Function ItemTransform.ItemTransform_C.Handle Slot Screen Activated
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void UItemTransform_C::Handle_Transform_Activated()
+void UItemTransform_C::Handle_Slot_Screen_Activated()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ItemTransform.ItemTransform_C.Handle Transform Activated");
+	static auto fn = UObject::FindObject<UFunction>("Function ItemTransform.ItemTransform_C.Handle Slot Screen Activated");
 
-	UItemTransform_C_Handle_Transform_Activated_Params params;
+	UItemTransform_C_Handle_Slot_Screen_Activated_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -105,14 +142,14 @@ void UItemTransform_C::Handle_Transform_Activated()
 }
 
 
-// Function ItemTransform.ItemTransform_C.Handle Select Key Activated
+// Function ItemTransform.ItemTransform_C.Handle Key Screen Activated
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void UItemTransform_C::Handle_Select_Key_Activated()
+void UItemTransform_C::Handle_Key_Screen_Activated()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ItemTransform.ItemTransform_C.Handle Select Key Activated");
+	static auto fn = UObject::FindObject<UFunction>("Function ItemTransform.ItemTransform_C.Handle Key Screen Activated");
 
-	UItemTransform_C_Handle_Select_Key_Activated_Params params;
+	UItemTransform_C_Handle_Key_Screen_Activated_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -349,23 +386,6 @@ void UItemTransform_C::HandleTransformSucceeded(TArray<struct FFortItemInstanceQ
 }
 
 
-// Function ItemTransform.ItemTransform_C.HandleTransformContinue
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UItemTransform_C::HandleTransformContinue()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemTransform.ItemTransform_C.HandleTransformContinue");
-
-	UItemTransform_C_HandleTransformContinue_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function ItemTransform.ItemTransform_C.OpenResult
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -554,30 +574,10 @@ void UItemTransform_C::OpenItemTransform()
 }
 
 
-// Function ItemTransform.ItemTransform_C.BndEvt__KeyScreen_K2Node_ComponentBoundEvent_6_OnKeySelected__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UFortItem*               Key                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UItemTransform_C::BndEvt__KeyScreen_K2Node_ComponentBoundEvent_6_OnKeySelected__DelegateSignature(class UFortItem* Key)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemTransform.ItemTransform_C.BndEvt__KeyScreen_K2Node_ComponentBoundEvent_6_OnKeySelected__DelegateSignature");
-
-	UItemTransform_C_BndEvt__KeyScreen_K2Node_ComponentBoundEvent_6_OnKeySelected__DelegateSignature_Params params;
-	params.Key = Key;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function ItemTransform.ItemTransform_C.BndEvt__TransformScreenSwitcher_K2Node_ComponentBoundEvent_213_OnActiveWidgetChanged__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UWidget*                 ActiveWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidget*                 ActiveWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // int                            ActiveWidgetIndex              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransform_C::BndEvt__TransformScreenSwitcher_K2Node_ComponentBoundEvent_213_OnActiveWidgetChanged__DelegateSignature(class UWidget* ActiveWidget, int ActiveWidgetIndex)
@@ -641,6 +641,26 @@ void UItemTransform_C::BndEvt__SlotScreen_K2Node_ComponentBoundEvent_598_OnTrans
 
 	UItemTransform_C_BndEvt__SlotScreen_K2Node_ComponentBoundEvent_598_OnTransformButtonUpdated__DelegateSignature_Params params;
 	params.TransformActive = TransformActive;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemTransform.ItemTransform_C.BndEvt__KeyScreen_K2Node_ComponentBoundEvent_6_OnKeySelected__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UFortItem*               Key                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemTransform_C::BndEvt__KeyScreen_K2Node_ComponentBoundEvent_6_OnKeySelected__DelegateSignature(class UFortItem* Key)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemTransform.ItemTransform_C.BndEvt__KeyScreen_K2Node_ComponentBoundEvent_6_OnKeySelected__DelegateSignature");
+
+	UItemTransform_C_BndEvt__KeyScreen_K2Node_ComponentBoundEvent_6_OnKeySelected__DelegateSignature_Params params;
+	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
 

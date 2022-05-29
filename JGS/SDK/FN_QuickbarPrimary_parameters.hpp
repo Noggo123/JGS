@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -24,11 +24,6 @@ struct UQuickbarPrimary_C_HasOneNonHarvestWeapon_Params
 struct UQuickbarPrimary_C_Show_Primary_Quickbar_Rail_Params
 {
 	bool                                               Show;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function QuickbarPrimary.QuickbarPrimary_C.HandleKeybindsChanged
-struct UQuickbarPrimary_C_HandleKeybindsChanged_Params
-{
 };
 
 // Function QuickbarPrimary.QuickbarPrimary_C.Construct

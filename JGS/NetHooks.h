@@ -141,7 +141,7 @@ namespace Beacons
 		auto SpawnPlayActorAddr = BaseAddr + Offsets::SpawnPlayActor;
 		auto TickFlushAddr = BaseAddr + Offsets::TickFlush;
 
-		InitHost = decltype(InitHost)(BaseAddr + Offsets::InitHost);
+		InitHost = decltype(InitHost)(Util::FindPattern("48 8B C4 48 81 EC ? ? ? ? 48 89 58 18 4C 8D 05 ? ? ? ? 48 8B D9 48 89 78 F8 48 8D 48 88 45 33 C9"));
 		TickFlush = decltype(TickFlush)(TickFlushAddr);
 		SpawnPlayActor = decltype(SpawnPlayActor)(SpawnPlayActorAddr);
 
@@ -166,8 +166,8 @@ namespace Beacons
 
 			MH_CreateHook((void*)(TickFlushAddr), TickFlushHook, (void**)(&TickFlush));
 			MH_EnableHook((void*)(TickFlushAddr));
-			MH_CreateHook((void*)(BaseAddr + Offsets::NotifyActorDestroyed), NotifyActorDestroyedHook, (void**)(&NotifyActorDestroyed));
-			MH_EnableHook((void*)(BaseAddr + Offsets::NotifyActorDestroyed));
+			//MH_CreateHook((void*)(BaseAddr + Offsets::NotifyActorDestroyed), NotifyActorDestroyedHook, (void**)(&NotifyActorDestroyed));
+			//MH_EnableHook((void*)(BaseAddr + Offsets::NotifyActorDestroyed));
 
 			LOG("Server is now listening!");
 		}

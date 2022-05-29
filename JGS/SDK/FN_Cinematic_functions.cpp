@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -96,7 +96,7 @@ void UCinematic_C::SetMoviePlaying(bool MoviePlaying)
 // Function Cinematic.Cinematic_C.ClearMovieWidget
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortMovieWidget*        MovieWidgetToClear             (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// class UFortMovieWidget*        MovieWidgetToClear             (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
 
 void UCinematic_C::ClearMovieWidget(class UFortMovieWidget** MovieWidgetToClear)
 {
@@ -118,7 +118,7 @@ void UCinematic_C::ClearMovieWidget(class UFortMovieWidget** MovieWidgetToClear)
 // Function Cinematic.Cinematic_C.ClearMovieSlot
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UPanelWidget*            MovieSlotToClear               (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// class UPanelWidget*            MovieSlotToClear               (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
 
 void UCinematic_C::ClearMovieSlot(class UPanelWidget** MovieSlotToClear)
 {
@@ -141,7 +141,7 @@ void UCinematic_C::ClearMovieSlot(class UPanelWidget** MovieSlotToClear)
 // (Event, Protected, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FContentPushState*      State                          (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 
 class UWidget* UCinematic_C::PopContentWidgetInternal(struct FContentPushState* State)
 {
@@ -198,8 +198,8 @@ void UCinematic_C::ClearMovie()
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UMediaSource*            MediaSource                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UNamedSlot*              MovieSlot                      (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
-// class UMovieWidget_C*          MovieWidget                    (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// class UNamedSlot*              MovieSlot                      (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
+// class UMovieWidget_C*          MovieWidget                    (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
 
 void UCinematic_C::ShowMovie(class UMediaSource* MediaSource, class UNamedSlot** MovieSlot, class UMovieWidget_C** MovieWidget)
 {
@@ -323,7 +323,7 @@ void UCinematic_C::HandleClientEvent_SkipCinematic(class UObject* EventSource, c
 // Function Cinematic.Cinematic_C.PushContentWidgetInternal
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UWidget**                Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidget**                Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // struct FContentPushState*      State                          (BlueprintVisible, BlueprintReadOnly, Parm)
 
 void UCinematic_C::PushContentWidgetInternal(class UWidget** Widget, struct FContentPushState* State)

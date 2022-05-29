@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -132,28 +130,6 @@ public:
 };
 
 
-// Class PhysXVehicles.WheeledVehicleMovementComponent4W
-// 0x0160 (0x0440 - 0x02E0)
-class UWheeledVehicleMovementComponent4W : public UWheeledVehicleMovementComponent
-{
-public:
-	struct FVehicleEngineData                          EngineSetup;                                              // 0x02E0(0x0090) (Edit)
-	struct FVehicleDifferential4WData                  DifferentialSetup;                                        // 0x0370(0x001C) (Edit)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x038C(0x0004) MISSED OFFSET
-	struct FVehicleTransmissionData                    TransmissionSetup;                                        // 0x0390(0x0030) (Edit)
-	struct FRuntimeFloatCurve                          SteeringCurve;                                            // 0x03C0(0x0078) (Edit)
-	float                                              AckermannAccuracy;                                        // 0x0438(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x043C(0x0004) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class PhysXVehicles.WheeledVehicleMovementComponent4W");
-		return ptr;
-	}
-
-};
-
-
 // Class PhysXVehicles.TireConfig
 // 0x0020 (0x0050 - 0x0030)
 class UTireConfig : public UDataAsset
@@ -174,13 +150,13 @@ public:
 
 
 // Class PhysXVehicles.VehicleAnimInstance
-// 0x0540 (0x0910 - 0x03D0)
+// 0x0610 (0x0970 - 0x0360)
 class UVehicleAnimInstance : public UAnimInstance
 {
 public:
-	unsigned char                                      UnknownData00[0x530];                                     // 0x03D0(0x0530) MISSED OFFSET
-	class UWheeledVehicleMovementComponent*            WheeledVehicleMovementComponent;                          // 0x0900(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x8];                                       // 0x0908(0x0008) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x600];                                     // 0x0360(0x0600) MISSED OFFSET
+	class UWheeledVehicleMovementComponent*            WheeledVehicleMovementComponent;                          // 0x0960(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x8];                                       // 0x0968(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -254,16 +230,38 @@ public:
 
 
 // Class PhysXVehicles.WheeledVehicle
-// 0x0010 (0x03D8 - 0x03C8)
+// 0x0010 (0x0388 - 0x0378)
 class AWheeledVehicle : public APawn
 {
 public:
-	class USkeletalMeshComponent*                      Mesh;                                                     // 0x03C8(0x0008) (Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData)
-	class UWheeledVehicleMovementComponent*            VehicleMovement;                                          // 0x03D0(0x0008) (Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData)
+	class USkeletalMeshComponent*                      Mesh;                                                     // 0x0378(0x0008) (Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData)
+	class UWheeledVehicleMovementComponent*            VehicleMovement;                                          // 0x0380(0x0008) (Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindClass("Class PhysXVehicles.WheeledVehicle");
+		return ptr;
+	}
+
+};
+
+
+// Class PhysXVehicles.WheeledVehicleMovementComponent4W
+// 0x0160 (0x0440 - 0x02E0)
+class UWheeledVehicleMovementComponent4W : public UWheeledVehicleMovementComponent
+{
+public:
+	struct FVehicleEngineData                          EngineSetup;                                              // 0x02E0(0x0090) (Edit)
+	struct FVehicleDifferential4WData                  DifferentialSetup;                                        // 0x0370(0x001C) (Edit)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x038C(0x0004) MISSED OFFSET
+	struct FVehicleTransmissionData                    TransmissionSetup;                                        // 0x0390(0x0030) (Edit)
+	struct FRuntimeFloatCurve                          SteeringCurve;                                            // 0x03C0(0x0078) (Edit)
+	float                                              AckermannAccuracy;                                        // 0x0438(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x043C(0x0004) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class PhysXVehicles.WheeledVehicleMovementComponent4W");
 		return ptr;
 	}
 

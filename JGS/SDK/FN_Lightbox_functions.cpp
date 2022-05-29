@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void ULightbox_C::RemoveContent()
 // Function Lightbox.Lightbox_C.AddContent
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonUserWidget*       Content                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonUserWidget*       Content                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void ULightbox_C::AddContent(class UCommonUserWidget* Content)
 {

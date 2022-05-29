@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function AthenaBattlePassTrackerWidget.AthenaBattlePassTrackerWidget_C.UpdateUpsellInfo
+struct UAthenaBattlePassTrackerWidget_C_UpdateUpsellInfo_Params
+{
+};
 
 // Function AthenaBattlePassTrackerWidget.AthenaBattlePassTrackerWidget_C.OnAccountInfoChanged
 struct UAthenaBattlePassTrackerWidget_C_OnAccountInfoChanged_Params

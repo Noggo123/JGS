@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -24,7 +22,7 @@ public:
 	struct FText                                       ConfirmSlotItemTitle;                                     // 0x02B0(0x0018) (Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FText                                       ConfirmSlotItemMessage;                                   // 0x02C8(0x0018) (Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FDataTableRowHandle                         ConfirmInputActionName;                                   // 0x02E0(0x0010) (Edit, BlueprintVisible, DisableEditOnInstance)
-	class UCollectionBookRecycleSlotResultsWidget_C*   RecycleSlotItemWidget;                                    // 0x02F0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UCollectionBookRecycleSlotResultsWidget_C*   RecycleSlotItemWidget;                                    // 0x02F0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

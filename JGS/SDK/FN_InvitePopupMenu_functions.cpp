@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -16,8 +16,9 @@ namespace SDK
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // struct FUniqueNetIdRepl        NetId                          (Parm, OutParm)
+// bool                           bIsConsoleUniqueId             (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UInvitePopupMenu_C::GetNetId(struct FUniqueNetIdRepl* NetId)
+void UInvitePopupMenu_C::GetNetId(struct FUniqueNetIdRepl* NetId, bool* bIsConsoleUniqueId)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function InvitePopupMenu.InvitePopupMenu_C.GetNetId");
 
@@ -31,6 +32,8 @@ void UInvitePopupMenu_C::GetNetId(struct FUniqueNetIdRepl* NetId)
 
 	if (NetId != nullptr)
 		*NetId = params.NetId;
+	if (bIsConsoleUniqueId != nullptr)
+		*bIsConsoleUniqueId = params.bIsConsoleUniqueId;
 }
 
 
@@ -139,7 +142,7 @@ void UInvitePopupMenu_C::CanInviteToParty(bool* CanInviteToParty)
 // Function InvitePopupMenu.InvitePopupMenu_C.BndEvt__InviteToPartyButton_K2Node_ComponentBoundEvent_116_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UInvitePopupMenu_C::BndEvt__InviteToPartyButton_K2Node_ComponentBoundEvent_116_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -159,7 +162,7 @@ void UInvitePopupMenu_C::BndEvt__InviteToPartyButton_K2Node_ComponentBoundEvent_
 // Function InvitePopupMenu.InvitePopupMenu_C.BndEvt__InviteAsFriendButton_K2Node_ComponentBoundEvent_133_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UInvitePopupMenu_C::BndEvt__InviteAsFriendButton_K2Node_ComponentBoundEvent_133_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -179,7 +182,7 @@ void UInvitePopupMenu_C::BndEvt__InviteAsFriendButton_K2Node_ComponentBoundEvent
 // Function InvitePopupMenu.InvitePopupMenu_C.BndEvt__CancelButton_K2Node_ComponentBoundEvent_153_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UInvitePopupMenu_C::BndEvt__CancelButton_K2Node_ComponentBoundEvent_153_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {

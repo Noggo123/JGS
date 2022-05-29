@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,13 +13,13 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass LoginCamera_Blueprint.LoginCamera_Blueprint_C
-// 0x0018 (0x08F8 - 0x08E0)
+// 0x0018 (0x08C8 - 0x08B0)
 class ALoginCamera_Blueprint_C : public AFortCameraBase
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x08E0(0x0008) (Transient, DuplicateTransient)
-	class UStaticMeshComponent*                        StaticMesh;                                               // 0x08E8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UCameraComponent*                            LoginCamera_0_1;                                          // 0x08F0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x08B0(0x0008) (Transient, DuplicateTransient)
+	class UStaticMeshComponent*                        StaticMesh;                                               // 0x08B8(0x0008) (BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UCameraComponent*                            LoginCamera_0_1;                                          // 0x08C0(0x0008) (BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function MiniCraftingIngredientList.MiniCraftingIngredientList_C.AddListEntry
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UFortItemQuantityListEntryBase** ListEntry                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItemQuantityListEntryBase** ListEntry                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UMiniCraftingIngredientList_C::AddListEntry(class UFortItemQuantityListEntryBase** ListEntry)
 {

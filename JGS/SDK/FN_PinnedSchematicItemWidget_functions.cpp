@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,7 @@ namespace SDK
 // Parameters:
 // bool                           CursorModeEnabled              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // struct FName                   ActionName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UUserWidget*             CursorModeContentWidget        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UUserWidget*             CursorModeContentWidget        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UPinnedSchematicItemWidget_C::HandleCursorModeChanged(bool CursorModeEnabled, const struct FName& ActionName, class UUserWidget* CursorModeContentWidget)
 {
@@ -213,7 +213,7 @@ void UPinnedSchematicItemWidget_C::Refresh()
 // Function PinnedSchematicItemWidget.PinnedSchematicItemWidget_C.PinButton_Clicked
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortBaseButton*         NewParam                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortBaseButton*         NewParam                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UPinnedSchematicItemWidget_C::PinButton_Clicked(class UFortBaseButton* NewParam)
 {

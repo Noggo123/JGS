@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -45,7 +45,7 @@ struct UFullPartyMember_C_UpdateStatDisplays_Params
 // Function FullPartyMember.FullPartyMember_C.InitializeConnectedWidget
 struct UFullPartyMember_C_InitializeConnectedWidget_Params
 {
-	class UFullPartyMemberConnected_C*                 ConnectedWidget;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFullPartyMemberConnected_C*                 ConnectedWidget;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function FullPartyMember.FullPartyMember_C.MakeLocalPlayerConfirmActions
@@ -70,7 +70,7 @@ struct UFullPartyMember_C_UpdateLocalPlayerAction_Params
 // Function FullPartyMember.FullPartyMember_C.DuplicateConnectedWidget
 struct UFullPartyMember_C_DuplicateConnectedWidget_Params
 {
-	class UFullPartyMemberConnected_C*                 ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	class UFullPartyMemberConnected_C*                 ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 };
 
 // Function FullPartyMember.FullPartyMember_C.Initialize

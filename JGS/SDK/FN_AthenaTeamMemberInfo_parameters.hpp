@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,17 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function AthenaTeamMemberInfo.AthenaTeamMemberInfo_C.MapPingTimeOut
+struct UAthenaTeamMemberInfo_C_MapPingTimeOut_Params
+{
+};
+
+// Function AthenaTeamMemberInfo.AthenaTeamMemberInfo_C.Mapping
+struct UAthenaTeamMemberInfo_C_Mapping_Params
+{
+	class AFortGameStateAthena*                        AthenaGameState;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function AthenaTeamMemberInfo.AthenaTeamMemberInfo_C.InitSpeakerMaterial
 struct UAthenaTeamMemberInfo_C_InitSpeakerMaterial_Params
@@ -95,7 +106,7 @@ struct UAthenaTeamMemberInfo_C_DisplayAddFriendIfApplicable_Params
 // Function AthenaTeamMemberInfo.AthenaTeamMemberInfo_C.BndEvt__AddFriendButton_K2Node_ComponentBoundEvent_11_CommonButtonClicked__DelegateSignature
 struct UAthenaTeamMemberInfo_C_BndEvt__AddFriendButton_K2Node_ComponentBoundEvent_11_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function AthenaTeamMemberInfo.AthenaTeamMemberInfo_C.Construct
@@ -155,6 +166,17 @@ struct UAthenaTeamMemberInfo_C_DeadStateChanged_Params
 struct UAthenaTeamMemberInfo_C_DisconnectedStateChanged_Params
 {
 	bool*                                              Disconnected;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaTeamMemberInfo.AthenaTeamMemberInfo_C.PlayerPlatformChanged
+struct UAthenaTeamMemberInfo_C_PlayerPlatformChanged_Params
+{
+	struct FString*                                    CurrentPlatform;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+};
+
+// Function AthenaTeamMemberInfo.AthenaTeamMemberInfo_C.MapIndicatorPositionChanged
+struct UAthenaTeamMemberInfo_C_MapIndicatorPositionChanged_Params
+{
 };
 
 // Function AthenaTeamMemberInfo.AthenaTeamMemberInfo_C.ExecuteUbergraph_AthenaTeamMemberInfo

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function ItemCraftingIngredientList.ItemCraftingIngredientList_C.HandleCraftItemFailed
+struct UItemCraftingIngredientList_C_HandleCraftItemFailed_Params
+{
+	EFortCraftFailCause                                FailCause;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function ItemCraftingIngredientList.ItemCraftingIngredientList_C.GetIngredients
 struct UItemCraftingIngredientList_C_GetIngredients_Params
@@ -68,7 +74,7 @@ struct UItemCraftingIngredientList_C_SetItemToRepresent_Params
 // Function ItemCraftingIngredientList.ItemCraftingIngredientList_C.AddListEntry
 struct UItemCraftingIngredientList_C_AddListEntry_Params
 {
-	class UFortItemQuantityListEntryBase**             ListEntry;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItemQuantityListEntryBase**             ListEntry;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function ItemCraftingIngredientList.ItemCraftingIngredientList_C.ExecuteUbergraph_ItemCraftingIngredientList

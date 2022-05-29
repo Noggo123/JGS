@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,7 +23,7 @@ struct UStatsListItemWIdget_C_SetTextAndBorderHighlight_Params
 // Function StatsListItemWIdget.StatsListItemWIdget_C.GetListItemTooltipWidget
 struct UStatsListItemWIdget_C_GetListItemTooltipWidget_Params
 {
-	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 };
 
 // Function StatsListItemWIdget.StatsListItemWIdget_C.SetStatIcon

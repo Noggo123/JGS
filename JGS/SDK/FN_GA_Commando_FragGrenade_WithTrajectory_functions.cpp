@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -130,7 +130,7 @@ void UGA_Commando_FragGrenade_WithTrajectory_C::SpawnLocationAndRotation(struct 
 // Function GA_Commando_FragGrenade_WithTrajectory.GA_Commando_FragGrenade_WithTrajectory_C.SetupAbility
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UAbilitySystemComponent* AbilitySystemComponentRef      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UAbilitySystemComponent* AbilitySystemComponentRef      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UGA_Commando_FragGrenade_WithTrajectory_C::SetupAbility(class UAbilitySystemComponent* AbilitySystemComponentRef)
 {

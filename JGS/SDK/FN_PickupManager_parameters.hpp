@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -34,7 +34,7 @@ struct UPickupManager_C_HandleItemPickedUp_Params
 // Function PickupManager.PickupManager_C.HandleMessageExpired
 struct UPickupManager_C_HandleMessageExpired_Params
 {
-	class UFortUIMessageItemWidget*                    Message_Item;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortUIMessageItemWidget*                    Message_Item;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function PickupManager.PickupManager_C.TryGetNextItem

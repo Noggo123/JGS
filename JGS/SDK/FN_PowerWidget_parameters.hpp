@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,7 +22,7 @@ struct UPowerWidget_C_Check_For_Power_Change_Params
 // Function PowerWidget.PowerWidget_C.GetPowerRatingTooltipWidget
 struct UPowerWidget_C_GetPowerRatingTooltipWidget_Params
 {
-	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 };
 
 // Function PowerWidget.PowerWidget_C.PlayerHasTeammates

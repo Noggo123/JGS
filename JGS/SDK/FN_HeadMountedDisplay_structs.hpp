@@ -1,18 +1,29 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------
 //Enums
 //---------------------------------------------------------------------------
+
+// Enum HeadMountedDisplay.EXRTrackedDeviceType
+enum class EXRTrackedDeviceType : uint8_t
+{
+	HeadMountedDisplay             = 0,
+	Controller                     = 1,
+	TrackingReference              = 2,
+	Other                          = 3,
+	Invalid                        = 4,
+	Any                            = 5,
+	EXRTrackedDeviceType_MAX       = 6
+};
+
 
 // Enum HeadMountedDisplay.ESpectatorScreenMode
 enum class ESpectatorScreenMode : uint8_t
@@ -68,6 +79,19 @@ enum class ETrackingStatus : uint8_t
 };
 
 
+
+//---------------------------------------------------------------------------
+//Script Structs
+//---------------------------------------------------------------------------
+
+// ScriptStruct HeadMountedDisplay.XRDeviceId
+// 0x0010
+struct FXRDeviceId
+{
+	struct FName                                       SystemName;                                               // 0x0000(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	int                                                DeviceID;                                                 // 0x0008(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x000C(0x0004) MISSED OFFSET
+};
 
 }
 

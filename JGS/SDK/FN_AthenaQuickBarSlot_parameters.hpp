@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,27 +14,31 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
+// Function AthenaQuickBarSlot.AthenaQuickBarSlot_C.UpdateJetpackFuelGaugeVisiblity
+struct UAthenaQuickBarSlot_C_UpdateJetpackFuelGaugeVisiblity_Params
+{
+};
+
+// Function AthenaQuickBarSlot.AthenaQuickBarSlot_C.ShowJetpackFuelGauge
+struct UAthenaQuickBarSlot_C_ShowJetpackFuelGauge_Params
+{
+};
+
+// Function AthenaQuickBarSlot.AthenaQuickBarSlot_C.HideJetpackFuelGauge
+struct UAthenaQuickBarSlot_C_HideJetpackFuelGauge_Params
+{
+};
+
 // Function AthenaQuickBarSlot.AthenaQuickBarSlot_C.OnTouchStarted
 struct UAthenaQuickBarSlot_C_OnTouchStarted_Params
 {
 	struct FGeometry*                                  MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	struct FPointerEvent                               InTouchEvent;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FPointerEvent*                              InTouchEvent;                                             // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	struct FEventReply                                 ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
-// Function AthenaQuickBarSlot.AthenaQuickBarSlot_C.UpdateKeyBindingText_SpecialCases
-struct UAthenaQuickBarSlot_C_UpdateKeyBindingText_SpecialCases_Params
-{
-};
-
-// Function AthenaQuickBarSlot.AthenaQuickBarSlot_C.GetKeyBindingAction_Gamepad
-struct UAthenaQuickBarSlot_C_GetKeyBindingAction_Gamepad_Params
-{
-	struct FName                                       KeyBindingAction;                                         // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function AthenaQuickBarSlot.AthenaQuickBarSlot_C.UpdateKeyBindingText
-struct UAthenaQuickBarSlot_C_UpdateKeyBindingText_Params
+// Function AthenaQuickBarSlot.AthenaQuickBarSlot_C.OnRefreshItem
+struct UAthenaQuickBarSlot_C_OnRefreshItem_Params
 {
 };
 

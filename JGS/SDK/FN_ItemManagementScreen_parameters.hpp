@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,28 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function ItemManagementScreen.ItemManagementScreen_C.GetShouldPrioritizeFavorites
+struct UItemManagementScreen_C_GetShouldPrioritizeFavorites_Params
+{
+	bool                                               SortFavoritesSeparately;                                  // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementScreen.ItemManagementScreen_C.TogglePrioritizeFavorites
+struct UItemManagementScreen_C_TogglePrioritizeFavorites_Params
+{
+};
+
+// Function ItemManagementScreen.ItemManagementScreen_C.ToggleTileSize
+struct UItemManagementScreen_C_ToggleTileSize_Params
+{
+};
+
+// Function ItemManagementScreen.ItemManagementScreen_C.GuardActionForReadOnlyWIFE
+struct UItemManagementScreen_C_GuardActionForReadOnlyWIFE_Params
+{
+	bool                                               Proceed;                                                  // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function ItemManagementScreen.ItemManagementScreen_C.SizeScreen
 struct UItemManagementScreen_C_SizeScreen_Params
@@ -151,6 +173,13 @@ struct UItemManagementScreen_C_OnMCPRequestComplete_D020DD864A3EFC9A31973C870762
 {
 };
 
+// Function ItemManagementScreen.ItemManagementScreen_C.DialogResult_CDD8108541BE3E4EA0F093B03D59650F
+struct UItemManagementScreen_C_DialogResult_CDD8108541BE3E4EA0F093B03D59650F_Params
+{
+	EFortDialogResult                                  Result;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       ResultName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function ItemManagementScreen.ItemManagementScreen_C.HandleDifferentItemManagementModeSetBP
 struct UItemManagementScreen_C_HandleDifferentItemManagementModeSetBP_Params
 {
@@ -206,6 +235,12 @@ struct UItemManagementScreen_C_HandleDropItemBP_Params
 struct UItemManagementScreen_C_HandleMulchQuantitySelection_Params
 {
 	class UFortItem**                                  Item;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementScreen.ItemManagementScreen_C.ShowWarningReadOnlyWIFE
+struct UItemManagementScreen_C_ShowWarningReadOnlyWIFE_Params
+{
+	bool                                               Force;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemManagementScreen.ItemManagementScreen_C.ExecuteUbergraph_ItemManagementScreen

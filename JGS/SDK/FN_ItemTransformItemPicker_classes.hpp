@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -46,9 +44,9 @@ public:
 	void RemoveInvalidItems(TArray<class UFortAccountItem*>* UnrefinedItems, TArray<class UFortItem*>* CurrentSacrificeItems, TArray<class UFortAccountItem*>* RefinedItems);
 	void HandleItemSelected(class UFortItem* Item);
 	void SetupItemPicker();
-	void Construct();
 	void PreConstruct(bool* IsDesignTime);
 	void BndEvt__FilterTabList_K2Node_ComponentBoundEvent_0_OnTabSelected__DelegateSignature(const struct FName& TabId);
+	void Construct();
 	void ExecuteUbergraph_ItemTransformItemPicker(int EntryPoint);
 	void OnItemSelected__DelegateSignature(class UFortItem* SelectedItem);
 };

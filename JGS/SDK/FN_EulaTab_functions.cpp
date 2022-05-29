@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,6 +37,28 @@ void UEulaTab_C::Construct()
 	static auto fn = UObject::FindObject<UFunction>("Function EulaTab.EulaTab_C.Construct");
 
 	UEulaTab_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function EulaTab.EulaTab_C.OnEulaDownloadComplete
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           bSuccessful                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   EULAText                       (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UEulaTab_C::OnEulaDownloadComplete(bool bSuccessful, const struct FText& EULAText)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function EulaTab.EulaTab_C.OnEulaDownloadComplete");
+
+	UEulaTab_C_OnEulaDownloadComplete_Params params;
+	params.bSuccessful = bSuccessful;
+	params.EULAText = EULAText;
 
 	auto flags = fn->FunctionFlags;
 

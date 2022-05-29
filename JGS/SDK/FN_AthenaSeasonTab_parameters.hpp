@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,50 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function AthenaSeasonTab.AthenaSeasonTab_C.OnMovieFinished
+struct UAthenaSeasonTab_C_OnMovieFinished_Params
+{
+};
+
+// Function AthenaSeasonTab.AthenaSeasonTab_C.PlaySeasonCinematic
+struct UAthenaSeasonTab_C_PlaySeasonCinematic_Params
+{
+};
+
+// Function AthenaSeasonTab.AthenaSeasonTab_C.Handle_ReplayCinematic
+struct UAthenaSeasonTab_C_Handle_ReplayCinematic_Params
+{
+	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaSeasonTab.AthenaSeasonTab_C.UpdateLevelPageWidgetSwitcherTranslation
+struct UAthenaSeasonTab_C_UpdateLevelPageWidgetSwitcherTranslation_Params
+{
+};
+
+// Function AthenaSeasonTab.AthenaSeasonTab_C.OnUpdateInputType
+struct UAthenaSeasonTab_C_OnUpdateInputType_Params
+{
+	ECommonInputType                                   NewInputType;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaSeasonTab.AthenaSeasonTab_C.OpenPurchaseScreen
+struct UAthenaSeasonTab_C_OpenPurchaseScreen_Params
+{
+};
+
+// Function AthenaSeasonTab.AthenaSeasonTab_C.Handle_GiftBattlePass
+struct UAthenaSeasonTab_C_Handle_GiftBattlePass_Params
+{
+	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaSeasonTab.AthenaSeasonTab_C.Handle_ShowFAQ
+struct UAthenaSeasonTab_C_Handle_ShowFAQ_Params
+{
+	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function AthenaSeasonTab.AthenaSeasonTab_C.SetupViewedItemName
 struct UAthenaSeasonTab_C_SetupViewedItemName_Params
@@ -94,7 +138,7 @@ struct UAthenaSeasonTab_C_OnSeasonPassChanged_Params
 // Function AthenaSeasonTab.AthenaSeasonTab_C.BndEvt__PurchaseSeasonBtn_K2Node_ComponentBoundEvent_61_CommonButtonClicked__DelegateSignature
 struct UAthenaSeasonTab_C_BndEvt__PurchaseSeasonBtn_K2Node_ComponentBoundEvent_61_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function AthenaSeasonTab.AthenaSeasonTab_C.OnLevelsGenerated
@@ -105,13 +149,13 @@ struct UAthenaSeasonTab_C_OnLevelsGenerated_Params
 // Function AthenaSeasonTab.AthenaSeasonTab_C.BndEvt__IconTextButton_0_K2Node_ComponentBoundEvent_45_CommonButtonClicked__DelegateSignature
 struct UAthenaSeasonTab_C_BndEvt__IconTextButton_0_K2Node_ComponentBoundEvent_45_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function AthenaSeasonTab.AthenaSeasonTab_C.BndEvt__PageRightBtn_K2Node_ComponentBoundEvent_84_CommonButtonClicked__DelegateSignature
 struct UAthenaSeasonTab_C_BndEvt__PageRightBtn_K2Node_ComponentBoundEvent_84_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function AthenaSeasonTab.AthenaSeasonTab_C.HandlePageLeft
@@ -127,14 +171,14 @@ struct UAthenaSeasonTab_C_HandlePageRight_Params
 // Function AthenaSeasonTab.AthenaSeasonTab_C.BndEvt__LevelPageWidgetSwitcher_K2Node_ComponentBoundEvent_1_OnActiveWidgetChanged__DelegateSignature
 struct UAthenaSeasonTab_C_BndEvt__LevelPageWidgetSwitcher_K2Node_ComponentBoundEvent_1_OnActiveWidgetChanged__DelegateSignature_Params
 {
-	class UWidget*                                     ActiveWidget;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UWidget*                                     ActiveWidget;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 	int                                                ActiveWidgetIndex;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaSeasonTab.AthenaSeasonTab_C.BndEvt__PurchaseLevelBtn_K2Node_ComponentBoundEvent_40_CommonButtonClicked__DelegateSignature
 struct UAthenaSeasonTab_C_BndEvt__PurchaseLevelBtn_K2Node_ComponentBoundEvent_40_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function AthenaSeasonTab.AthenaSeasonTab_C.NoOffersAvailable
@@ -156,6 +200,41 @@ struct UAthenaSeasonTab_C_ScrollNegative_Params
 struct UAthenaSeasonTab_C_UpdateStoreHasStarsNotification_Params
 {
 	bool*                                              bShowNotification;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaSeasonTab.AthenaSeasonTab_C.SetupInput
+struct UAthenaSeasonTab_C_SetupInput_Params
+{
+};
+
+// Function AthenaSeasonTab.AthenaSeasonTab_C.OnFAQStateChanged
+struct UAthenaSeasonTab_C_OnFAQStateChanged_Params
+{
+	EFortUIFeature                                     ChangedFeature;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	EFortUIFeatureState                                NewState;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	EFortUIFeatureStateReason                          StateReason;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaSeasonTab.AthenaSeasonTab_C.Tick
+struct UAthenaSeasonTab_C_Tick_Params
+{
+	struct FGeometry*                                  MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+	float*                                             InDeltaTime;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaSeasonTab.AthenaSeasonTab_C.BndEvt__SwipePanel_K2Node_ComponentBoundEvent_103_OnFortSwipeEvent__DelegateSignature
+struct UAthenaSeasonTab_C_BndEvt__SwipePanel_K2Node_ComponentBoundEvent_103_OnFortSwipeEvent__DelegateSignature_Params
+{
+};
+
+// Function AthenaSeasonTab.AthenaSeasonTab_C.BndEvt__SwipePanel_K2Node_ComponentBoundEvent_118_OnFortSwipeEvent__DelegateSignature
+struct UAthenaSeasonTab_C_BndEvt__SwipePanel_K2Node_ComponentBoundEvent_118_OnFortSwipeEvent__DelegateSignature_Params
+{
+};
+
+// Function AthenaSeasonTab.AthenaSeasonTab_C.OnNoCurrentSeason
+struct UAthenaSeasonTab_C_OnNoCurrentSeason_Params
+{
 };
 
 // Function AthenaSeasonTab.AthenaSeasonTab_C.ExecuteUbergraph_AthenaSeasonTab

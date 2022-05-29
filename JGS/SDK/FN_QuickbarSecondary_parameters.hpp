@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -48,6 +48,21 @@ struct UQuickbarSecondary_C_HandleInputMethodChanged_Params
 
 // Function QuickbarSecondary.QuickbarSecondary_C.Destruct
 struct UQuickbarSecondary_C_Destruct_Params
+{
+};
+
+// Function QuickbarSecondary.QuickbarSecondary_C.OnPersonalVehicleModeChanged
+struct UQuickbarSecondary_C_OnPersonalVehicleModeChanged_Params
+{
+};
+
+// Function QuickbarSecondary.QuickbarSecondary_C.OnPersonalVehicleMountStarted
+struct UQuickbarSecondary_C_OnPersonalVehicleMountStarted_Params
+{
+};
+
+// Function QuickbarSecondary.QuickbarSecondary_C.OnPersonalVehicleMountStopped
+struct UQuickbarSecondary_C_OnPersonalVehicleMountStopped_Params
 {
 };
 

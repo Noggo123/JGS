@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -197,18 +197,18 @@ struct AHBOnboardingFlow_C_OnSuccess_50CD26324B96B121A5B49DA66113AE5D_Params
 {
 };
 
-// Function HBOnboardingFlow.HBOnboardingFlow_C.OnFailure_7D1C261A4BE47E3567B8D2885C9E298B
-struct AHBOnboardingFlow_C_OnFailure_7D1C261A4BE47E3567B8D2885C9E298B_Params
-{
-};
-
-// Function HBOnboardingFlow.HBOnboardingFlow_C.OnSuccess_7D1C261A4BE47E3567B8D2885C9E298B
-struct AHBOnboardingFlow_C_OnSuccess_7D1C261A4BE47E3567B8D2885C9E298B_Params
-{
-};
-
 // Function HBOnboardingFlow.HBOnboardingFlow_C.OnStateEntered_BB8A89D3479CA430A9243EB07FF8B51D
 struct AHBOnboardingFlow_C_OnStateEntered_BB8A89D3479CA430A9243EB07FF8B51D_Params
+{
+};
+
+// Function HBOnboardingFlow.HBOnboardingFlow_C.OnFailure_C786FAEA4B655E5031CC7A8B4C8B9DB5
+struct AHBOnboardingFlow_C_OnFailure_C786FAEA4B655E5031CC7A8B4C8B9DB5_Params
+{
+};
+
+// Function HBOnboardingFlow.HBOnboardingFlow_C.OnSuccess_C786FAEA4B655E5031CC7A8B4C8B9DB5
+struct AHBOnboardingFlow_C_OnSuccess_C786FAEA4B655E5031CC7A8B4C8B9DB5_Params
 {
 };
 

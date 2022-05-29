@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -71,7 +71,7 @@ void UPickupManager_C::HandleItemPickedUp(class UFortWorldItem* NewItem, int Cou
 // Function PickupManager.PickupManager_C.HandleMessageExpired
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortUIMessageItemWidget* Message_Item                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortUIMessageItemWidget* Message_Item                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UPickupManager_C::HandleMessageExpired(class UFortUIMessageItemWidget* Message_Item)
 {

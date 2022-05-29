@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,18 +14,6 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function QuickbarSlot.QuickbarSlot_C.SetBottomComboSwitcherVisibility
-struct UQuickbarSlot_C_SetBottomComboSwitcherVisibility_Params
-{
-	ESlateVisibility                                   InVisibility;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function QuickbarSlot.QuickbarSlot_C.SetTopComboSwitcherVisibility
-struct UQuickbarSlot_C_SetTopComboSwitcherVisibility_Params
-{
-	ESlateVisibility                                   InVisibility;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function QuickbarSlot.QuickbarSlot_C.InitializeInvalidation
 struct UQuickbarSlot_C_InitializeInvalidation_Params
 {
@@ -33,11 +21,6 @@ struct UQuickbarSlot_C_InitializeInvalidation_Params
 
 // Function QuickbarSlot.QuickbarSlot_C.UpdateItemBoxSize
 struct UQuickbarSlot_C_UpdateItemBoxSize_Params
-{
-};
-
-// Function QuickbarSlot.QuickbarSlot_C.UpdateItemCardsVisibility
-struct UQuickbarSlot_C_UpdateItemCardsVisibility_Params
 {
 };
 
@@ -58,64 +41,6 @@ struct UQuickbarSlot_C_InitializeCooldowns_Params
 {
 };
 
-// Function QuickbarSlot.QuickbarSlot_C.GetKeyBindingAction_Gamepad
-struct UQuickbarSlot_C_GetKeyBindingAction_Gamepad_Params
-{
-	struct FName                                       KeyBindingAction;                                         // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function QuickbarSlot.QuickbarSlot_C.GetKeyBindingAction_Keyboard
-struct UQuickbarSlot_C_GetKeyBindingAction_Keyboard_Params
-{
-	struct FName                                       Key_Binding_Action;                                       // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function QuickbarSlot.QuickbarSlot_C.GetKeyBindingAction
-struct UQuickbarSlot_C_GetKeyBindingAction_Params
-{
-	struct FName                                       KeyBindingAction;                                         // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function QuickbarSlot.QuickbarSlot_C.UpdateKeyBindingVisibility
-struct UQuickbarSlot_C_UpdateKeyBindingVisibility_Params
-{
-};
-
-// Function QuickbarSlot.QuickbarSlot_C.UpdateKeyBindingText
-struct UQuickbarSlot_C_UpdateKeyBindingText_Params
-{
-};
-
-// Function QuickbarSlot.QuickbarSlot_C.Resize
-struct UQuickbarSlot_C_Resize_Params
-{
-	EFortItemCardSize                                  Card_Size;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function QuickbarSlot.QuickbarSlot_C.Maximize
-struct UQuickbarSlot_C_Maximize_Params
-{
-	bool                                               ShouldSkipAnimation;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function QuickbarSlot.QuickbarSlot_C.Minimize
-struct UQuickbarSlot_C_Minimize_Params
-{
-	bool                                               ShouldSkipAnimation;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function QuickbarSlot.QuickbarSlot_C.SetSelected
-struct UQuickbarSlot_C_SetSelected_Params
-{
-	bool                                               Selected;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function QuickbarSlot.QuickbarSlot_C.PreConstruct
-struct UQuickbarSlot_C_PreConstruct_Params
-{
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function QuickbarSlot.QuickbarSlot_C.HandleMaximizeStarted
 struct UQuickbarSlot_C_HandleMaximizeStarted_Params
 {
@@ -123,11 +48,6 @@ struct UQuickbarSlot_C_HandleMaximizeStarted_Params
 
 // Function QuickbarSlot.QuickbarSlot_C.HandleMinimizeFinished
 struct UQuickbarSlot_C_HandleMinimizeFinished_Params
-{
-};
-
-// Function QuickbarSlot.QuickbarSlot_C.RefreshItem
-struct UQuickbarSlot_C_RefreshItem_Params
 {
 };
 
@@ -146,10 +66,34 @@ struct UQuickbarSlot_C_Construct_Params
 {
 };
 
+// Function QuickbarSlot.QuickbarSlot_C.PreConstruct
+struct UQuickbarSlot_C_PreConstruct_Params
+{
+	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function QuickbarSlot.QuickbarSlot_C.SetAnimatedBoxScaleFactor
 struct UQuickbarSlot_C_SetAnimatedBoxScaleFactor_Params
 {
 	float                                              AnimatedBoxScaleFactor;                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function QuickbarSlot.QuickbarSlot_C.MaximizeSlot
+struct UQuickbarSlot_C_MaximizeSlot_Params
+{
+	bool*                                              bShouldSkipAnimation;                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function QuickbarSlot.QuickbarSlot_C.MinimizeSlot
+struct UQuickbarSlot_C_MinimizeSlot_Params
+{
+	bool*                                              bShouldSkipAnimation;                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function QuickbarSlot.QuickbarSlot_C.SetSlotSelected
+struct UQuickbarSlot_C_SetSlotSelected_Params
+{
+	bool*                                              bSelected;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function QuickbarSlot.QuickbarSlot_C.ExecuteUbergraph_QuickbarSlot

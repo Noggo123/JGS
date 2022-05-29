@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -61,7 +61,7 @@ struct AWindManager_C_UpdateWindDeltaCyl_Params
 // Function WindManager.WindManager_C.RemoveWindCylinder
 struct AWindManager_C_RemoveWindCylinder_Params
 {
-	struct FFortWindImpulseCylinder                    WindImpulseCylinder;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FFortWindImpulseCylinder                    WindImpulseCylinder;                                      // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 };
 
 // Function WindManager.WindManager_C.UpdateStormWindCylinder
@@ -75,14 +75,14 @@ struct AWindManager_C_UpdateStormWindCylinder_Params
 struct AWindManager_C_Calculate_Camera_Position_Params
 {
 	float                                              Scale;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class USceneCaptureComponent2D*                    Scene_Capture;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class USceneCaptureComponent2D*                    Scene_Capture;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
 };
 
 // Function WindManager.WindManager_C.SetRenderOnlyAssets
 struct AWindManager_C_SetRenderOnlyAssets_Params
 {
-	class UPrimitiveComponent*                         InComponent;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent*                         InComponent;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function WindManager.WindManager_C.InitializeOrthoSettings
@@ -116,13 +116,14 @@ struct AWindManager_C_ReceiveTick_Params
 // Function WindManager.WindManager_C.Register player for render to texture purposes
 struct AWindManager_C_Register_player_for_render_to_texture_purposes_Params
 {
-	class APlayerPawn_Generic_C*                       Player_Pawn_Generic;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent*                         Effect_Water_Interaction_FX;                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UPrimitiveComponent*                         Gameplay_Wind_INteraction_Effects;                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function WindManager.WindManager_C.AddWindParticleSystemComponent
 struct AWindManager_C_AddWindParticleSystemComponent_Params
 {
-	class UParticleSystemComponent**                   ParticleSystemComponent;                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UParticleSystemComponent**                   ParticleSystemComponent;                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function WindManager.WindManager_C.OnWindImpulseCylinderCreation
@@ -160,7 +161,7 @@ struct AWindManager_C_Play_Water_Splash_Particle_System_At_Location_Params
 // Function WindManager.WindManager_C.Add Wind Component
 struct AWindManager_C_Add_Wind_Component_Params
 {
-	class UPrimitiveComponent*                         InComponent;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent*                         InComponent;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function WindManager.WindManager_C.ReceiveBeginPlay

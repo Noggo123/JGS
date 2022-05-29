@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -198,7 +198,7 @@ void UItemInspectUpgradeCallout_C::Refresh()
 // Function ItemInspectUpgradeCallout.ItemInspectUpgradeCallout_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_257_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UItemInspectUpgradeCallout_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_257_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -218,7 +218,7 @@ void UItemInspectUpgradeCallout_C::BndEvt__IconTextButton_K2Node_ComponentBoundE
 // Function ItemInspectUpgradeCallout.ItemInspectUpgradeCallout_C.BndEvt__EvolveButton_K2Node_ComponentBoundEvent_51_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UItemInspectUpgradeCallout_C::BndEvt__EvolveButton_K2Node_ComponentBoundEvent_51_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -226,6 +226,23 @@ void UItemInspectUpgradeCallout_C::BndEvt__EvolveButton_K2Node_ComponentBoundEve
 
 	UItemInspectUpgradeCallout_C_BndEvt__EvolveButton_K2Node_ComponentBoundEvent_51_CommonButtonClicked__DelegateSignature_Params params;
 	params.Button = Button;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemInspectUpgradeCallout.ItemInspectUpgradeCallout_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UItemInspectUpgradeCallout_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectUpgradeCallout.ItemInspectUpgradeCallout_C.Construct");
+
+	UItemInspectUpgradeCallout_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 

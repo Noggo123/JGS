@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass ProgressModalWidget.ProgressModalWidget_C
-// 0x00C4 (0x04B4 - 0x03F0)
+// 0x00D4 (0x04C4 - 0x03F0)
 class UProgressModalWidget_C : public UFortActivatablePanel
 {
 public:
@@ -24,11 +22,11 @@ public:
 	class UProgressWidget_C*                           ProgressWidget;                                           // 0x0400(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
 	struct FText                                       Title;                                                    // 0x0408(0x0018) (Edit, BlueprintVisible)
 	struct FText                                       Description;                                              // 0x0420(0x0018) (Edit, BlueprintVisible)
-	struct FSlateBrush                                 Icon;                                                     // 0x0438(0x0078) (Edit, BlueprintVisible)
-	bool                                               bIntroOutrEnabled;                                        // 0x04B0(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	bool                                               bAutoInitialize;                                          // 0x04B1(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	bool                                               bFocusSelf;                                               // 0x04B2(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	bool                                               bConsumeAnalogInput;                                      // 0x04B3(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	struct FSlateBrush                                 Icon;                                                     // 0x0438(0x0088) (Edit, BlueprintVisible)
+	bool                                               bIntroOutrEnabled;                                        // 0x04C0(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	bool                                               bAutoInitialize;                                          // 0x04C1(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	bool                                               bFocusSelf;                                               // 0x04C2(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	bool                                               bConsumeAnalogInput;                                      // 0x04C3(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

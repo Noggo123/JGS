@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -26,7 +24,7 @@ public:
 	TArray<struct FText>                               Hover_Texts;                                              // 0x0230(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
 	class UCommonButtonGroup*                          Selector_Buttons;                                         // 0x0240(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	class UClass*                                      Common_Button_Group_Type;                                 // 0x0248(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UCommonTextBlock*                            Tab_Tooltip_Text;                                         // 0x0250(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UCommonTextBlock*                            Tab_Tooltip_Text;                                         // 0x0250(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
 	class UClass*                                      ButtonStyle;                                              // 0x0258(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
@@ -46,7 +44,7 @@ public:
 	void Destruct();
 	void PreConstruct(bool* IsDesignTime);
 	void ExecuteUbergraph_OptionsMenuRowSelector(int EntryPoint);
-	void Selector_Button_Selected__DelegateSignature(int Tab_Id);
+	void Selector_Button_Selected__DelegateSignature(int Tab_ID);
 };
 
 

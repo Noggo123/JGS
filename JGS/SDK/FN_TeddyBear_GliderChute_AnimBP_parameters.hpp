@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -29,11 +29,6 @@ struct UTeddyBear_GliderChute_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergra
 {
 };
 
-// Function TeddyBear_GliderChute_AnimBP.TeddyBear_GliderChute_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_TeddyBear_GliderChute_AnimBP_AnimGraphNode_SequencePlayer_B61792C5413AAA333931119E94040F61
-struct UTeddyBear_GliderChute_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_TeddyBear_GliderChute_AnimBP_AnimGraphNode_SequencePlayer_B61792C5413AAA333931119E94040F61_Params
-{
-};
-
 // Function TeddyBear_GliderChute_AnimBP.TeddyBear_GliderChute_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_TeddyBear_GliderChute_AnimBP_AnimGraphNode_BlendSpacePlayer_8957D07F4189CEB7EEA42EBBAEABA5B7
 struct UTeddyBear_GliderChute_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_TeddyBear_GliderChute_AnimBP_AnimGraphNode_BlendSpacePlayer_8957D07F4189CEB7EEA42EBBAEABA5B7_Params
 {
@@ -48,6 +43,16 @@ struct UTeddyBear_GliderChute_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergra
 struct UTeddyBear_GliderChute_AnimBP_C_BlueprintUpdateAnimation_Params
 {
 	float*                                             DeltaTimeX;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function TeddyBear_GliderChute_AnimBP.TeddyBear_GliderChute_AnimBP_C.AnimNotify_dynamicsOff
+struct UTeddyBear_GliderChute_AnimBP_C_AnimNotify_dynamicsOff_Params
+{
+};
+
+// Function TeddyBear_GliderChute_AnimBP.TeddyBear_GliderChute_AnimBP_C.AnimNotify_dynamicsOn
+struct UTeddyBear_GliderChute_AnimBP_C_AnimNotify_dynamicsOn_Params
+{
 };
 
 // Function TeddyBear_GliderChute_AnimBP.TeddyBear_GliderChute_AnimBP_C.ExecuteUbergraph_TeddyBear_GliderChute_AnimBP

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,36 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function AthenaGameOverWidget.AthenaGameOverWidget_C.Handle_ShowBoss
+struct UAthenaGameOverWidget_C_Handle_ShowBoss_Params
+{
+	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaGameOverWidget.AthenaGameOverWidget_C.Handle_CancelMatchmaking
+struct UAthenaGameOverWidget_C_Handle_CancelMatchmaking_Params
+{
+	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaGameOverWidget.AthenaGameOverWidget_C.Handle_Matchmake
+struct UAthenaGameOverWidget_C_Handle_Matchmake_Params
+{
+	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaGameOverWidget.AthenaGameOverWidget_C.Handle_ToggleMap
+struct UAthenaGameOverWidget_C_Handle_ToggleMap_Params
+{
+	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaGameOverWidget.AthenaGameOverWidget_C.InGameMatchmakingComplete
+struct UAthenaGameOverWidget_C_InGameMatchmakingComplete_Params
+{
+	bool                                               Success;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function AthenaGameOverWidget.AthenaGameOverWidget_C.SetViewModel
 struct UAthenaGameOverWidget_C_SetViewModel_Params
@@ -128,7 +158,7 @@ struct UAthenaGameOverWidget_C_On_Kill_Feed_Updated_Params
 // Function AthenaGameOverWidget.AthenaGameOverWidget_C.BndEvt__OpenShadowPlayHighlights_K2Node_ComponentBoundEvent_188_CommonButtonClicked__DelegateSignature
 struct UAthenaGameOverWidget_C_BndEvt__OpenShadowPlayHighlights_K2Node_ComponentBoundEvent_188_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function AthenaGameOverWidget.AthenaGameOverWidget_C.OnDeactivated
@@ -138,6 +168,11 @@ struct UAthenaGameOverWidget_C_OnDeactivated_Params
 
 // Function AthenaGameOverWidget.AthenaGameOverWidget_C.Destruct
 struct UAthenaGameOverWidget_C_Destruct_Params
+{
+};
+
+// Function AthenaGameOverWidget.AthenaGameOverWidget_C.RequestRefreshInput
+struct UAthenaGameOverWidget_C_RequestRefreshInput_Params
 {
 };
 

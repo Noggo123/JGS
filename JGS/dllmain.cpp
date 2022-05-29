@@ -28,16 +28,16 @@ DWORD WINAPI MainThread(LPVOID)
     LOG("Setting Up!");
 
     auto BaseAddr = Util::BaseAddress();
-    auto GObjectsAddress = BaseAddr + 0x44E5CE0;
-    auto FNameToStringAddress = BaseAddr + 0xC79B10;
-    auto FreeMemoryAddress = BaseAddr + 0xBBCEB0;
+    auto GObjectsAddress = Util::FindPattern("48 8B 05 ? ? ? ? 48 8D 1C C8 81 4B ? ? ? ? ? 49 63 76 30", true, 3);
+    auto FNameToStringAddress = Util::FindPattern("48 89 5C 24 ? 57 48 83 EC 40 83 79 04 00 48 8B DA 48 8B F9");
+    auto FreeMemoryAddress = Util::FindPattern("48 85 C9 74 1D 4C 8B 05 ? ? ? ? 4D 85 C0");
 
     SDK::UObject::GObjects = decltype(SDK::UObject::GObjects)(GObjectsAddress);
     SDK::FNameToString = decltype(SDK::FNameToString)(FNameToStringAddress);
-    SDK::FreeInternal = decltype(SDK::FreeInternal)(FreeMemoryAddress);
+    SDK::FreeMemory = decltype(SDK::FreeMemory)(FreeMemoryAddress);
 
-    Hooks::SpawnActorInternal = decltype(Hooks::SpawnActorInternal)(BaseAddr + Offsets::SpawnActor);
-    Hooks::InternalTryActivateAbility = decltype(Hooks::InternalTryActivateAbility)(BaseAddr + Offsets::InternalTryActivateAbility);
+    //Hooks::SpawnActorInternal = decltype(Hooks::SpawnActorInternal)(BaseAddr + Offsets::SpawnActor);
+    //Hooks::InternalTryActivateAbility = decltype(Hooks::InternalTryActivateAbility)(BaseAddr + Offsets::InternalTryActivateAbility);
 
     auto FortEngine = SDK::UObject::FindObject<UFortEngine>("FortEngine_");
     Globals::FortEngine = FortEngine;

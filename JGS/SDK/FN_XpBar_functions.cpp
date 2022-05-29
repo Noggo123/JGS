@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -86,7 +86,7 @@ int UXpBar_C::ScaledBoostBalance(int AmountToLevel)
 // Function XpBar.XpBar_C.GetExperienceToolTipWidget
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 
 class UWidget* UXpBar_C::GetExperienceToolTipWidget()
 {
@@ -172,6 +172,23 @@ void UXpBar_C::Xp_Boost_Changed(int BoostAmount)
 
 	UXpBar_C_Xp_Boost_Changed_Params params;
 	params.BoostAmount = BoostAmount;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function XpBar.XpBar_C.Destruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UXpBar_C::Destruct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function XpBar.XpBar_C.Destruct");
+
+	UXpBar_C_Destruct_Params params;
 
 	auto flags = fn->FunctionFlags;
 

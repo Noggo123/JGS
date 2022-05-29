@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,7 +37,7 @@ void ABP_Hex_PARENT_C::HasPinnedQuest(bool* Pinned)
 // Function BP_Hex_PARENT.BP_Hex_PARENT_C.HandleUpdatingBannerMesh
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class USceneComponent*         Target                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class USceneComponent*         Target                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // class UFortQuestItemDefinition* CompletedQuest                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // class UMaterialInstanceDynamic* Material_Instance_Dynamic      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -196,19 +196,51 @@ void ABP_Hex_PARENT_C::Timeline_12__UpdateFunc()
 }
 
 
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.HandleTeamPowerChanged
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnLoaded_192496DB41CC2100CC1C729DB594CEF8
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            TeamPower                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            PersonalPower                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 Loaded                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void ABP_Hex_PARENT_C::HandleTeamPowerChanged(int TeamPower, int PersonalPower)
+void ABP_Hex_PARENT_C::OnLoaded_192496DB41CC2100CC1C729DB594CEF8(class UObject* Loaded)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.HandleTeamPowerChanged");
+	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnLoaded_192496DB41CC2100CC1C729DB594CEF8");
 
-	ABP_Hex_PARENT_C_HandleTeamPowerChanged_Params params;
-	params.TeamPower = TeamPower;
-	params.PersonalPower = PersonalPower;
+	ABP_Hex_PARENT_C_OnLoaded_192496DB41CC2100CC1C729DB594CEF8_Params params;
+	params.Loaded = Loaded;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.ForceDefocus
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Hex_PARENT_C::ForceDefocus()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.ForceDefocus");
+
+	ABP_Hex_PARENT_C_ForceDefocus_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.CheckFocus
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Hex_PARENT_C::CheckFocus()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.CheckFocus");
+
+	ABP_Hex_PARENT_C_CheckFocus_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -226,6 +258,147 @@ void ABP_Hex_PARENT_C::FireLightningA()
 	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.FireLightningA");
 
 	ABP_Hex_PARENT_C_FireLightningA_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnMissionDataUpdated
+// (Event, Public, BlueprintEvent)
+
+void ABP_Hex_PARENT_C::OnMissionDataUpdated()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnMissionDataUpdated");
+
+	ABP_Hex_PARENT_C_OnMissionDataUpdated_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnDefocus
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void ABP_Hex_PARENT_C::OnDefocus()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnDefocus");
+
+	ABP_Hex_PARENT_C_OnDefocus_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnFocus
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void ABP_Hex_PARENT_C::OnFocus()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnFocus");
+
+	ABP_Hex_PARENT_C_OnFocus_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnHostDeselect
+// (Event, Public, BlueprintEvent)
+
+void ABP_Hex_PARENT_C::OnHostDeselect()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnHostDeselect");
+
+	ABP_Hex_PARENT_C_OnHostDeselect_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnHostSelect
+// (Event, Public, BlueprintEvent)
+
+void ABP_Hex_PARENT_C::OnHostSelect()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnHostSelect");
+
+	ABP_Hex_PARENT_C_OnHostSelect_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnClientDeselect
+// (Event, Public, BlueprintEvent)
+
+void ABP_Hex_PARENT_C::OnClientDeselect()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnClientDeselect");
+
+	ABP_Hex_PARENT_C_OnClientDeselect_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnClientSelect
+// (Event, Public, BlueprintEvent)
+
+void ABP_Hex_PARENT_C::OnClientSelect()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnClientSelect");
+
+	ABP_Hex_PARENT_C_OnClientSelect_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.HandleTeamPowerChanged
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            TeamPower                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PersonalPower                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void ABP_Hex_PARENT_C::HandleTeamPowerChanged(int TeamPower, int PersonalPower)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.HandleTeamPowerChanged");
+
+	ABP_Hex_PARENT_C_HandleTeamPowerChanged_Params params;
+	params.TeamPower = TeamPower;
+	params.PersonalPower = PersonalPower;
 
 	auto flags = fn->FunctionFlags;
 
@@ -308,40 +481,6 @@ void ABP_Hex_PARENT_C::CheckIfQuestShouldBePinned()
 }
 
 
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.CheckFocus
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Hex_PARENT_C::CheckFocus()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.CheckFocus");
-
-	ABP_Hex_PARENT_C_CheckFocus_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.ForceDefocus
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Hex_PARENT_C::ForceDefocus()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.ForceDefocus");
-
-	ABP_Hex_PARENT_C_ForceDefocus_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function BP_Hex_PARENT.BP_Hex_PARENT_C.CheckForPinnedInLevel
 // (BlueprintCallable, BlueprintEvent)
 
@@ -350,23 +489,6 @@ void ABP_Hex_PARENT_C::CheckForPinnedInLevel()
 	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.CheckForPinnedInLevel");
 
 	ABP_Hex_PARENT_C_CheckForPinnedInLevel_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnMissionDataUpdated
-// (Event, Public, BlueprintEvent)
-
-void ABP_Hex_PARENT_C::OnMissionDataUpdated()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnMissionDataUpdated");
-
-	ABP_Hex_PARENT_C_OnMissionDataUpdated_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -393,57 +515,6 @@ void ABP_Hex_PARENT_C::RetryTileInitialized()
 }
 
 
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnDefocus
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void ABP_Hex_PARENT_C::OnDefocus()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnDefocus");
-
-	ABP_Hex_PARENT_C_OnDefocus_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnFocus
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void ABP_Hex_PARENT_C::OnFocus()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnFocus");
-
-	ABP_Hex_PARENT_C_OnFocus_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnHostDeselect
-// (Event, Public, BlueprintEvent)
-
-void ABP_Hex_PARENT_C::OnHostDeselect()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnHostDeselect");
-
-	ABP_Hex_PARENT_C_OnHostDeselect_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function BP_Hex_PARENT.BP_Hex_PARENT_C.SetMissionPowerLevelDependencies
 // (BlueprintCallable, BlueprintEvent)
 
@@ -452,57 +523,6 @@ void ABP_Hex_PARENT_C::SetMissionPowerLevelDependencies()
 	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.SetMissionPowerLevelDependencies");
 
 	ABP_Hex_PARENT_C_SetMissionPowerLevelDependencies_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnHostSelect
-// (Event, Public, BlueprintEvent)
-
-void ABP_Hex_PARENT_C::OnHostSelect()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnHostSelect");
-
-	ABP_Hex_PARENT_C_OnHostSelect_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnClientDeselect
-// (Event, Public, BlueprintEvent)
-
-void ABP_Hex_PARENT_C::OnClientDeselect()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnClientDeselect");
-
-	ABP_Hex_PARENT_C_OnClientDeselect_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnClientSelect
-// (Event, Public, BlueprintEvent)
-
-void ABP_Hex_PARENT_C::OnClientSelect()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnClientSelect");
-
-	ABP_Hex_PARENT_C_OnClientSelect_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -593,6 +613,28 @@ void ABP_Hex_PARENT_C::Unpause_Updates()
 	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.Unpause Updates");
 
 	ABP_Hex_PARENT_C_Unpause_Updates_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.AsyncUpdateBanner
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UMaterialInstanceDynamic* Material_Instance_Dynamic      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FUniqueNetIdRepl        Unique_Net_Id                  (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void ABP_Hex_PARENT_C::AsyncUpdateBanner(class UMaterialInstanceDynamic* Material_Instance_Dynamic, const struct FUniqueNetIdRepl& Unique_Net_Id)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.AsyncUpdateBanner");
+
+	ABP_Hex_PARENT_C_AsyncUpdateBanner_Params params;
+	params.Material_Instance_Dynamic = Material_Instance_Dynamic;
+	params.Unique_Net_Id = Unique_Net_Id;
 
 	auto flags = fn->FunctionFlags;
 

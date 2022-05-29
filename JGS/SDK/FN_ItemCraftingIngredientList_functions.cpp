@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,26 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function ItemCraftingIngredientList.ItemCraftingIngredientList_C.HandleCraftItemFailed
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EFortCraftFailCause            FailCause                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemCraftingIngredientList_C::HandleCraftItemFailed(EFortCraftFailCause FailCause)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemCraftingIngredientList.ItemCraftingIngredientList_C.HandleCraftItemFailed");
+
+	UItemCraftingIngredientList_C_HandleCraftItemFailed_Params params;
+	params.FailCause = FailCause;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function ItemCraftingIngredientList.ItemCraftingIngredientList_C.GetIngredients
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -186,7 +206,7 @@ void UItemCraftingIngredientList_C::SetItemToRepresent(class UFortItem* Item)
 // Function ItemCraftingIngredientList.ItemCraftingIngredientList_C.AddListEntry
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UFortItemQuantityListEntryBase** ListEntry                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItemQuantityListEntryBase** ListEntry                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UItemCraftingIngredientList_C::AddListEntry(class UFortItemQuantityListEntryBase** ListEntry)
 {

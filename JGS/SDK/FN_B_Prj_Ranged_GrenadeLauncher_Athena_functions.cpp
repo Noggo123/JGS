@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -60,6 +60,43 @@ void AB_Prj_Ranged_GrenadeLauncher_Athena_C::UserConstructionScript()
 }
 
 
+// Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.OnStop
+// (Event, Public, HasOutParms, BlueprintEvent)
+// Parameters:
+// struct FHitResult*             Hit                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
+
+void AB_Prj_Ranged_GrenadeLauncher_Athena_C::OnStop(struct FHitResult* Hit)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.OnStop");
+
+	AB_Prj_Ranged_GrenadeLauncher_Athena_C_OnStop_Params params;
+	params.Hit = Hit;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void AB_Prj_Ranged_GrenadeLauncher_Athena_C::ReceiveBeginPlay()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.ReceiveBeginPlay");
+
+	AB_Prj_Ranged_GrenadeLauncher_Athena_C_ReceiveBeginPlay_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.FuseTimerMax
 // (BlueprintCallable, BlueprintEvent)
 
@@ -99,14 +136,17 @@ void AB_Prj_Ranged_GrenadeLauncher_Athena_C::OnExploded(TArray<class AActor*>* H
 }
 
 
-// Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.OnBounce
+// (Event, Public, HasOutParms, BlueprintEvent)
+// Parameters:
+// struct FHitResult*             Hit                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
 
-void AB_Prj_Ranged_GrenadeLauncher_Athena_C::ReceiveBeginPlay()
+void AB_Prj_Ranged_GrenadeLauncher_Athena_C::OnBounce(struct FHitResult* Hit)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.ReceiveBeginPlay");
+	static auto fn = UObject::FindObject<UFunction>("Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.OnBounce");
 
-	AB_Prj_Ranged_GrenadeLauncher_Athena_C_ReceiveBeginPlay_Params params;
+	AB_Prj_Ranged_GrenadeLauncher_Athena_C_OnBounce_Params params;
+	params.Hit = Hit;
 
 	auto flags = fn->FunctionFlags;
 
@@ -124,46 +164,6 @@ void AB_Prj_Ranged_GrenadeLauncher_Athena_C::DelayBeforeExplode_()
 	static auto fn = UObject::FindObject<UFunction>("Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.DelayBeforeExplode_");
 
 	AB_Prj_Ranged_GrenadeLauncher_Athena_C_DelayBeforeExplode__Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.OnStop
-// (Event, Public, HasOutParms, BlueprintEvent)
-// Parameters:
-// struct FHitResult*             Hit                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
-
-void AB_Prj_Ranged_GrenadeLauncher_Athena_C::OnStop(struct FHitResult* Hit)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.OnStop");
-
-	AB_Prj_Ranged_GrenadeLauncher_Athena_C_OnStop_Params params;
-	params.Hit = Hit;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.OnBounce
-// (Event, Public, HasOutParms, BlueprintEvent)
-// Parameters:
-// struct FHitResult*             Hit                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
-
-void AB_Prj_Ranged_GrenadeLauncher_Athena_C::OnBounce(struct FHitResult* Hit)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function B_Prj_Ranged_GrenadeLauncher_Athena.B_Prj_Ranged_GrenadeLauncher_Athena_C.OnBounce");
-
-	AB_Prj_Ranged_GrenadeLauncher_Athena_C_OnBounce_Params params;
-	params.Hit = Hit;
 
 	auto flags = fn->FunctionFlags;
 

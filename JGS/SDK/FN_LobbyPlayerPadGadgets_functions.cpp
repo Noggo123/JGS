@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -53,7 +53,7 @@ void ULobbyPlayerPadGadgets_C::OnInputClicked()
 // (BlueprintCosmetic, Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent           MouseEvent                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FPointerEvent*          MouseEvent                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // struct FEventReply             ReturnValue                    (Parm, OutParm, ReturnParm)
 
 struct FEventReply ULobbyPlayerPadGadgets_C::OnMouseButtonDown(struct FGeometry* MyGeometry, struct FPointerEvent* MouseEvent)
@@ -62,15 +62,13 @@ struct FEventReply ULobbyPlayerPadGadgets_C::OnMouseButtonDown(struct FGeometry*
 
 	ULobbyPlayerPadGadgets_C_OnMouseButtonDown_Params params;
 	params.MyGeometry = MyGeometry;
+	params.MouseEvent = MouseEvent;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (MouseEvent != nullptr)
-		*MouseEvent = params.MouseEvent;
 
 	return params.ReturnValue;
 }

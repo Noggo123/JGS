@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass BP_FortExpeditionBuildSquadWidget.BP_FortExpeditionBuildSquadWidget_C
-// 0x02A8 (0x06C8 - 0x0420)
+// 0x02B8 (0x06D8 - 0x0420)
 class UBP_FortExpeditionBuildSquadWidget_C : public UFortExpeditionBuildSquadWidget
 {
 public:
@@ -50,22 +48,22 @@ public:
 	struct FDataTableRowHandle                         CloseAction;                                              // 0x0518(0x0010) (Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FDataTableRowHandle                         StartExpeditionAction;                                    // 0x0528(0x0010) (Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FHomebaseSquad                              Current_Squad_Info;                                       // 0x0538(0x0088) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateBrush                                 NoVehicleBrush;                                           // 0x05C0(0x0078) (Edit, BlueprintVisible, DisableEditOnInstance)
-	class UClass*                                      Expedition_Pick_Vehicle_Class;                            // 0x0638(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FName                                       CancelInputActionName;                                    // 0x0640(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	int                                                SelectedSlot;                                             // 0x0648(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x064C(0x0004) MISSED OFFSET
-	class UInfoWindow_C*                               RewardInfoWindow;                                         // 0x0650(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FFortDialogExternalLatentActionHandle       WaitingForDialogHandle;                                   // 0x0658(0x0004) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FLinearColor                                BuffColor;                                                // 0x065C(0x0010) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
-	struct FLinearColor                                DebuffColor;                                              // 0x066C(0x0010) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x067C(0x0004) MISSED OFFSET
-	struct FDataTableRowHandle                         PurchaseSlotAction;                                       // 0x0680(0x0010) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FDataTableRowHandle                         InspectAction;                                            // 0x0690(0x0010) (Edit, BlueprintVisible, DisableEditOnInstance)
-	class UFortItem*                                   InspectItem;                                              // 0x06A0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UBP_ExpeditionSquadSlotsView_C*              CachedExpeditionSquadSlotsView;                           // 0x06A8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class USquadSlotItemPicker_C*                      CachedExpeditionSquadSlotPicker;                          // 0x06B0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FDataTableRowHandle                         SortPickerAction;                                         // 0x06B8(0x0010) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateBrush                                 NoVehicleBrush;                                           // 0x05C0(0x0088) (Edit, BlueprintVisible, DisableEditOnInstance)
+	class UClass*                                      Expedition_Pick_Vehicle_Class;                            // 0x0648(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FName                                       CancelInputActionName;                                    // 0x0650(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	int                                                SelectedSlot;                                             // 0x0658(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x065C(0x0004) MISSED OFFSET
+	class UInfoWindow_C*                               RewardInfoWindow;                                         // 0x0660(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
+	struct FFortDialogExternalLatentActionHandle       WaitingForDialogHandle;                                   // 0x0668(0x0004) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FLinearColor                                BuffColor;                                                // 0x066C(0x0010) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
+	struct FLinearColor                                DebuffColor;                                              // 0x067C(0x0010) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x068C(0x0004) MISSED OFFSET
+	struct FDataTableRowHandle                         PurchaseSlotAction;                                       // 0x0690(0x0010) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FDataTableRowHandle                         InspectAction;                                            // 0x06A0(0x0010) (Edit, BlueprintVisible, DisableEditOnInstance)
+	class UFortItem*                                   InspectItem;                                              // 0x06B0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UBP_ExpeditionSquadSlotsView_C*              CachedExpeditionSquadSlotsView;                           // 0x06B8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
+	class USquadSlotItemPicker_C*                      CachedExpeditionSquadSlotPicker;                          // 0x06C0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
+	struct FDataTableRowHandle                         SortPickerAction;                                         // 0x06C8(0x0010) (Edit, BlueprintVisible, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{

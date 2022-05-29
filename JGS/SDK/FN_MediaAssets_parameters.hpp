@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -565,6 +565,13 @@ struct UMediaPlaylist_Add_Params
 struct UMediaSoundComponent_SetMediaPlayer_Params
 {
 	class UMediaPlayer*                                NewMediaPlayer;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function MediaAssets.MediaSoundComponent.BP_GetAttenuationSettingsToApply
+struct UMediaSoundComponent_BP_GetAttenuationSettingsToApply_Params
+{
+	struct FSoundAttenuationSettings                   OutAttenuationSettings;                                   // (Parm, OutParm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function MediaAssets.MediaTexture.SetMediaPlayer

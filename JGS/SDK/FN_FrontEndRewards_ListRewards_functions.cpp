@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -396,7 +396,7 @@ void UFrontEndRewards_ListRewards_C::SelectCard(int InNewIndex)
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.SetCardSelected
 // (Private, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class URewards_ItemCard_C*     Card                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class URewards_ItemCard_C*     Card                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UFrontEndRewards_ListRewards_C::SetCardSelected(class URewards_ItemCard_C* Card)
 {
@@ -416,7 +416,7 @@ void UFrontEndRewards_ListRewards_C::SetCardSelected(class URewards_ItemCard_C* 
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.HandleCardClicked
 // (Private, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class URewards_ItemCard_C*     Card                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class URewards_ItemCard_C*     Card                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UFrontEndRewards_ListRewards_C::HandleCardClicked(class URewards_ItemCard_C* Card)
 {
@@ -453,7 +453,7 @@ void UFrontEndRewards_ListRewards_C::ClearCards()
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.PlayCardSlide
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class URewards_ItemCard_C*     RewardsItemCard                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class URewards_ItemCard_C*     RewardsItemCard                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // float                          StaggerDelay                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_ListRewards_C::PlayCardSlide(class URewards_ItemCard_C* RewardsItemCard, float StaggerDelay)
@@ -492,7 +492,7 @@ void UFrontEndRewards_ListRewards_C::SetItemDescription()
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.SetCardAlignment
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidget*                 CardWidget                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidget*                 CardWidget                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // int                            SelectionIndex                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_ListRewards_C::SetCardAlignment(class UWidget* CardWidget, int SelectionIndex)
@@ -531,7 +531,7 @@ void UFrontEndRewards_ListRewards_C::SelectPreviousCard()
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.HandleLastSlideAnimFinished
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class URewards_ItemCard_C*     RewardsItemCard                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class URewards_ItemCard_C*     RewardsItemCard                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UFrontEndRewards_ListRewards_C::HandleLastSlideAnimFinished(class URewards_ItemCard_C* RewardsItemCard)
 {
@@ -612,7 +612,7 @@ void UFrontEndRewards_ListRewards_C::SelectNextCard()
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.AddCard
 // (Private, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class URewards_ItemCard_C*     Card                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class URewards_ItemCard_C*     Card                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UFrontEndRewards_ListRewards_C::AddCard(class URewards_ItemCard_C* Card)
 {

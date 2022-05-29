@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function OptionsMenuRowSelector.OptionsMenuRowSelector_C.Button Hovered
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button_Hovered                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button_Hovered                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UOptionsMenuRowSelector_C::Button_Hovered(class UCommonButton* Button_Hovered)
 {
@@ -76,7 +76,7 @@ void UOptionsMenuRowSelector_C::Update_Row_Selector(int Tab_Number)
 // TArray<struct FText>           Buttons                        (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 // TArray<struct FText>           Hover_Texts                    (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 // bool                           Require_Selection              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonTextBlock*        Tab_Tooltip                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonTextBlock*        Tab_Tooltip                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 void UOptionsMenuRowSelector_C::Initialize_Row_Selector(const struct FText& Row_Text, bool Require_Selection, class UCommonTextBlock* Tab_Tooltip, TArray<struct FText>* Buttons, TArray<struct FText>* Hover_Texts)
 {
@@ -120,7 +120,7 @@ void UOptionsMenuRowSelector_C::Construct()
 // Function OptionsMenuRowSelector.OptionsMenuRowSelector_C.OnSelectedButtonChanged_Event_0_1
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonButton*           AssociatedButton               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           AssociatedButton               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // int                            ButtonIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenuRowSelector_C::OnSelectedButtonChanged_Event_0_1(class UCommonButton* AssociatedButton, int ButtonIndex)
@@ -219,14 +219,14 @@ void UOptionsMenuRowSelector_C::ExecuteUbergraph_OptionsMenuRowSelector(int Entr
 // Function OptionsMenuRowSelector.OptionsMenuRowSelector_C.Selector Button Selected__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Tab_Id                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Tab_ID                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UOptionsMenuRowSelector_C::Selector_Button_Selected__DelegateSignature(int Tab_Id)
+void UOptionsMenuRowSelector_C::Selector_Button_Selected__DelegateSignature(int Tab_ID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuRowSelector.OptionsMenuRowSelector_C.Selector Button Selected__DelegateSignature");
 
 	UOptionsMenuRowSelector_C_Selector_Button_Selected__DelegateSignature_Params params;
-	params.Tab_Id = Tab_Id;
+	params.Tab_ID = Tab_ID;
 
 	auto flags = fn->FunctionFlags;
 

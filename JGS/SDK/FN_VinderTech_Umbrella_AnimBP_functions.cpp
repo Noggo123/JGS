@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -54,40 +54,6 @@ void UVinderTech_Umbrella_AnimBP_C::EvaluateGraphExposedInputs_ExecuteUbergraph_
 	static auto fn = UObject::FindObject<UFunction>("Function VinderTech_Umbrella_AnimBP.VinderTech_Umbrella_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_Umbrella_AnimBP_AnimGraphNode_TransitionResult_F81EA3C344FA6DFC7A5EA1B792B511A5");
 
 	UVinderTech_Umbrella_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_Umbrella_AnimBP_AnimGraphNode_TransitionResult_F81EA3C344FA6DFC7A5EA1B792B511A5_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function VinderTech_Umbrella_AnimBP.VinderTech_Umbrella_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_Umbrella_AnimBP_AnimGraphNode_SequencePlayer_FB121E7E466BDC2AEC2334AABA7B7973
-// (BlueprintEvent)
-
-void UVinderTech_Umbrella_AnimBP_C::EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_Umbrella_AnimBP_AnimGraphNode_SequencePlayer_FB121E7E466BDC2AEC2334AABA7B7973()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function VinderTech_Umbrella_AnimBP.VinderTech_Umbrella_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_Umbrella_AnimBP_AnimGraphNode_SequencePlayer_FB121E7E466BDC2AEC2334AABA7B7973");
-
-	UVinderTech_Umbrella_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_Umbrella_AnimBP_AnimGraphNode_SequencePlayer_FB121E7E466BDC2AEC2334AABA7B7973_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function VinderTech_Umbrella_AnimBP.VinderTech_Umbrella_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_Umbrella_AnimBP_AnimGraphNode_SequencePlayer_CAD550DB43A0B090364489A1ED4F53F6
-// (BlueprintEvent)
-
-void UVinderTech_Umbrella_AnimBP_C::EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_Umbrella_AnimBP_AnimGraphNode_SequencePlayer_CAD550DB43A0B090364489A1ED4F53F6()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function VinderTech_Umbrella_AnimBP.VinderTech_Umbrella_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_Umbrella_AnimBP_AnimGraphNode_SequencePlayer_CAD550DB43A0B090364489A1ED4F53F6");
-
-	UVinderTech_Umbrella_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_Umbrella_AnimBP_AnimGraphNode_SequencePlayer_CAD550DB43A0B090364489A1ED4F53F6_Params params;
 
 	auto flags = fn->FunctionFlags;
 

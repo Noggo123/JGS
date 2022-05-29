@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (4.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass TextStyle-Base-XXS-B-Red.TextStyle-Base-XXS-B-Red_C
-// 0x0000 (0x00C0 - 0x00C0)
+// 0x0000 (0x00B8 - 0x00B8)
 class UTextStyle_Base_XXS_B_Red_C : public UTextStyle_BaseParent_C
 {
 public:
