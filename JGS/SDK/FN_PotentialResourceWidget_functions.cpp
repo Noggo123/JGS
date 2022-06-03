@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function PotentialResourceWidget.PotentialResourceWidget_C.ShowPotentialResource
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               PotentialResource              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bWeakpointDamage               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               PotentialResource              (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bWeakpointDamage               (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPotentialResourceWidget_C::ShowPotentialResource(class UFortItem* PotentialResource, bool bWeakpointDamage)
 {
@@ -54,7 +54,7 @@ void UPotentialResourceWidget_C::SetupFont()
 // Function PotentialResourceWidget.PotentialResourceWidget_C.GetResourceCountAsText
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UFortItem*               Resource                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Resource                       (Parm, ZeroConstructor, IsPlainOldData)
 // struct FText                   Result                         (Parm, OutParm)
 
 void UPotentialResourceWidget_C::GetResourceCountAsText(class UFortItem* Resource, struct FText* Result)
@@ -129,7 +129,7 @@ void UPotentialResourceWidget_C::HandleTranslateAndFadeUpFinished()
 // Function PotentialResourceWidget.PotentialResourceWidget_C.ExecuteUbergraph_PotentialResourceWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPotentialResourceWidget_C::ExecuteUbergraph_PotentialResourceWidget(int EntryPoint)
 {

@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,20 +12,17 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasOrigin
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Function GameplayAbilities.GameplayAbility.SetShouldBlockOtherAbilities
+// (Native, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
-// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// bool                           bShouldBlockAbilities          (Parm, ZeroConstructor, IsPlainOldData)
 
-bool UAbilitySystemBlueprintLibrary::STATIC_TargetDataHasOrigin(const struct FGameplayAbilityTargetDataHandle& TargetData, int Index)
+void UGameplayAbility::SetShouldBlockOtherAbilities(bool bShouldBlockAbilities)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasOrigin");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.SetShouldBlockOtherAbilities");
 
-	UAbilitySystemBlueprintLibrary_TargetDataHasOrigin_Params params;
-	params.TargetData = TargetData;
-	params.Index = Index;
+	UGameplayAbility_SetShouldBlockOtherAbilities_Params params;
+	params.bShouldBlockAbilities = bShouldBlockAbilities;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -33,25 +30,20 @@ bool UAbilitySystemBlueprintLibrary::STATIC_TargetDataHasOrigin(const struct FGa
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasHitResult
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Function GameplayAbilities.GameplayAbility.SetCanBeCanceled
+// (Native, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle HitResult                      (ConstParm, Parm, OutParm, ReferenceParm)
-// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// bool                           bCanBeCanceled                 (Parm, ZeroConstructor, IsPlainOldData)
 
-bool UAbilitySystemBlueprintLibrary::STATIC_TargetDataHasHitResult(const struct FGameplayAbilityTargetDataHandle& HitResult, int Index)
+void UGameplayAbility::SetCanBeCanceled(bool bCanBeCanceled)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasHitResult");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.SetCanBeCanceled");
 
-	UAbilitySystemBlueprintLibrary_TargetDataHasHitResult_Params params;
-	params.HitResult = HitResult;
-	params.Index = Index;
+	UGameplayAbility_SetCanBeCanceled_Params params;
+	params.bCanBeCanceled = bCanBeCanceled;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -59,152 +51,20 @@ bool UAbilitySystemBlueprintLibrary::STATIC_TargetDataHasHitResult(const struct 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasEndPoint
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Function GameplayAbilities.GameplayAbility.SendGameplayEvent
+// (Native, Protected, BlueprintCallable)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
-// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UAbilitySystemBlueprintLibrary::STATIC_TargetDataHasEndPoint(const struct FGameplayAbilityTargetDataHandle& TargetData, int Index)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasEndPoint");
-
-	UAbilitySystemBlueprintLibrary_TargetDataHasEndPoint_Params params;
-	params.TargetData = TargetData;
-	params.Index = Index;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasActor
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
-// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UAbilitySystemBlueprintLibrary::STATIC_TargetDataHasActor(const struct FGameplayAbilityTargetDataHandle& TargetData, int Index)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasActor");
-
-	UAbilitySystemBlueprintLibrary_TargetDataHasActor_Params params;
-	params.TargetData = TargetData;
-	params.Index = Index;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.SetStackCountToMax
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
-// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_SetStackCountToMax(const struct FGameplayEffectSpecHandle& SpecHandle)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.SetStackCountToMax");
-
-	UAbilitySystemBlueprintLibrary_SetStackCountToMax_Params params;
-	params.SpecHandle = SpecHandle;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.SetStackCount
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
-// int                            StackCount                     (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_SetStackCount(const struct FGameplayEffectSpecHandle& SpecHandle, int StackCount)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.SetStackCount");
-
-	UAbilitySystemBlueprintLibrary_SetStackCount_Params params;
-	params.SpecHandle = SpecHandle;
-	params.StackCount = StackCount;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.SetDuration
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
-// float                          Duration                       (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_SetDuration(const struct FGameplayEffectSpecHandle& SpecHandle, float Duration)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.SetDuration");
-
-	UAbilitySystemBlueprintLibrary_SetDuration_Params params;
-	params.SpecHandle = SpecHandle;
-	params.Duration = Duration;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.SendGameplayEventToActor
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class AActor*                  Actor                          (Parm, ZeroConstructor, IsPlainOldData)
 // struct FGameplayTag            EventTag                       (Parm)
 // struct FGameplayEventData      Payload                        (Parm)
 
-void UAbilitySystemBlueprintLibrary::STATIC_SendGameplayEventToActor(class AActor* Actor, const struct FGameplayTag& EventTag, const struct FGameplayEventData& Payload)
+void UGameplayAbility::SendGameplayEvent(const struct FGameplayTag& EventTag, const struct FGameplayEventData& Payload)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.SendGameplayEventToActor");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.SendGameplayEvent");
 
-	UAbilitySystemBlueprintLibrary_SendGameplayEventToActor_Params params;
-	params.Actor = Actor;
+	UGameplayAbility_SendGameplayEvent_Params params;
 	params.EventTag = EventTag;
 	params.Payload = Payload;
 
@@ -217,20 +77,101 @@ void UAbilitySystemBlueprintLibrary::STATIC_SendGameplayEventToActor(class AActo
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.NotEqual_GameplayAttributeGameplayAttribute
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FGameplayAttribute      AttributeA                     (Parm)
-// struct FGameplayAttribute      AttributeB                     (Parm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// Function GameplayAbilities.GameplayAbility.RemoveGrantedByEffect
+// (Final, Native, Public, BlueprintCallable)
 
-bool UAbilitySystemBlueprintLibrary::STATIC_NotEqual_GameplayAttributeGameplayAttribute(const struct FGameplayAttribute& AttributeA, const struct FGameplayAttribute& AttributeB)
+void UGameplayAbility::RemoveGrantedByEffect()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.NotEqual_GameplayAttributeGameplayAttribute");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.RemoveGrantedByEffect");
 
-	UAbilitySystemBlueprintLibrary_NotEqual_GameplayAttributeGameplayAttribute_Params params;
-	params.AttributeA = AttributeA;
-	params.AttributeB = AttributeB;
+	UGameplayAbility_RemoveGrantedByEffect_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.MontageStop
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// float                          OverrideBlendOutTime           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UGameplayAbility::MontageStop(float OverrideBlendOutTime)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.MontageStop");
+
+	UGameplayAbility_MontageStop_Params params;
+	params.OverrideBlendOutTime = OverrideBlendOutTime;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.MontageSetNextSectionName
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// struct FName                   FromSectionName                (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ToSectionName                  (Parm, ZeroConstructor, IsPlainOldData)
+
+void UGameplayAbility::MontageSetNextSectionName(const struct FName& FromSectionName, const struct FName& ToSectionName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.MontageSetNextSectionName");
+
+	UGameplayAbility_MontageSetNextSectionName_Params params;
+	params.FromSectionName = FromSectionName;
+	params.ToSectionName = ToSectionName;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.MontageJumpToSection
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// struct FName                   SectionName                    (Parm, ZeroConstructor, IsPlainOldData)
+
+void UGameplayAbility::MontageJumpToSection(const struct FName& SectionName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.MontageJumpToSection");
+
+	UGameplayAbility_MontageJumpToSection_Params params;
+	params.SectionName = SectionName;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.MakeTargetLocationInfoFromOwnerSkeletalMeshComponent
+// (Final, Native, Protected, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FName                   SocketName                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayAbilityTargetingLocationInfo ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGameplayAbilityTargetingLocationInfo UGameplayAbility::MakeTargetLocationInfoFromOwnerSkeletalMeshComponent(const struct FName& SocketName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.MakeTargetLocationInfoFromOwnerSkeletalMeshComponent");
+
+	UGameplayAbility_MakeTargetLocationInfoFromOwnerSkeletalMeshComponent_Params params;
+	params.SocketName = SocketName;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -243,24 +184,42 @@ bool UAbilitySystemBlueprintLibrary::STATIC_NotEqual_GameplayAttributeGameplayAt
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.MakeSpecHandle
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Function GameplayAbilities.GameplayAbility.MakeTargetLocationInfoFromOwnerActor
+// (Final, Native, Protected, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UGameplayEffect*         InGameplayEffect               (Parm, ZeroConstructor, IsPlainOldData)
-// class AActor*                  InInstigator                   (Parm, ZeroConstructor, IsPlainOldData)
-// class AActor*                  InEffectCauser                 (Parm, ZeroConstructor, IsPlainOldData)
-// float                          InLevel                        (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayAbilityTargetingLocationInfo ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGameplayAbilityTargetingLocationInfo UGameplayAbility::MakeTargetLocationInfoFromOwnerActor()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.MakeTargetLocationInfoFromOwnerActor");
+
+	UGameplayAbility_MakeTargetLocationInfoFromOwnerActor_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.MakeOutgoingGameplayEffectSpec
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UClass*                  GameplayEffectClass            (Parm, ZeroConstructor, IsPlainOldData)
+// float                          Level                          (Parm, ZeroConstructor, IsPlainOldData)
 // struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
 
-struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_MakeSpecHandle(class UGameplayEffect* InGameplayEffect, class AActor* InInstigator, class AActor* InEffectCauser, float InLevel)
+struct FGameplayEffectSpecHandle UGameplayAbility::MakeOutgoingGameplayEffectSpec(class UClass* GameplayEffectClass, float Level)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.MakeSpecHandle");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.MakeOutgoingGameplayEffectSpec");
 
-	UAbilitySystemBlueprintLibrary_MakeSpecHandle_Params params;
-	params.InGameplayEffect = InGameplayEffect;
-	params.InInstigator = InInstigator;
-	params.InEffectCauser = InEffectCauser;
-	params.InLevel = InLevel;
+	UGameplayAbility_MakeOutgoingGameplayEffectSpec_Params params;
+	params.GameplayEffectClass = GameplayEffectClass;
+	params.Level = Level;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -273,47 +232,22 @@ struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_MakeSpec
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.MakeFilterHandle
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Function GameplayAbilities.GameplayAbility.K2_ShouldAbilityRespondToEvent
+// (Event, Protected, BlueprintEvent, Const)
 // Parameters:
-// struct FGameplayTargetDataFilter Filter                         (Parm)
-// class AActor*                  FilterActor                    (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayTargetDataFilterHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayTargetDataFilterHandle UAbilitySystemBlueprintLibrary::STATIC_MakeFilterHandle(const struct FGameplayTargetDataFilter& Filter, class AActor* FilterActor)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.MakeFilterHandle");
-
-	UAbilitySystemBlueprintLibrary_MakeFilterHandle_Params params;
-	params.Filter = Filter;
-	params.FilterActor = FilterActor;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.IsValid
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FGameplayAttribute      Attribute                      (Parm)
+// struct FGameplayAbilityActorInfo ActorInfo                      (Parm)
+// struct FGameplayEventData      Payload                        (Parm)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UAbilitySystemBlueprintLibrary::STATIC_IsValid(const struct FGameplayAttribute& Attribute)
+bool UGameplayAbility::K2_ShouldAbilityRespondToEvent(const struct FGameplayAbilityActorInfo& ActorInfo, const struct FGameplayEventData& Payload)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.IsValid");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_ShouldAbilityRespondToEvent");
 
-	UAbilitySystemBlueprintLibrary_IsValid_Params params;
-	params.Attribute = Attribute;
+	UGameplayAbility_K2_ShouldAbilityRespondToEvent_Params params;
+	params.ActorInfo = ActorInfo;
+	params.Payload = Payload;
 
 	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -323,18 +257,137 @@ bool UAbilitySystemBlueprintLibrary::STATIC_IsValid(const struct FGameplayAttrib
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.IsInstigatorLocallyControlledPlayer
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Function GameplayAbilities.GameplayAbility.K2_RemoveGameplayCue
+// (Native, Protected, BlueprintCallable)
 // Parameters:
-// struct FGameplayCueParameters  Parameters                     (Parm)
+// struct FGameplayTag            GameplayCueTag                 (Parm)
+
+void UGameplayAbility::K2_RemoveGameplayCue(const struct FGameplayTag& GameplayCueTag)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_RemoveGameplayCue");
+
+	UGameplayAbility_K2_RemoveGameplayCue_Params params;
+	params.GameplayCueTag = GameplayCueTag;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.K2_OnEndAbility
+// (Event, Protected, BlueprintEvent)
+
+void UGameplayAbility::K2_OnEndAbility()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_OnEndAbility");
+
+	UGameplayAbility_K2_OnEndAbility_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.K2_ExecuteGameplayCueWithParams
+// (Native, Protected, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FGameplayTag            GameplayCueTag                 (Parm)
+// struct FGameplayCueParameters  GameplayCueParameters          (ConstParm, Parm, OutParm, ReferenceParm)
+
+void UGameplayAbility::K2_ExecuteGameplayCueWithParams(const struct FGameplayTag& GameplayCueTag, const struct FGameplayCueParameters& GameplayCueParameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_ExecuteGameplayCueWithParams");
+
+	UGameplayAbility_K2_ExecuteGameplayCueWithParams_Params params;
+	params.GameplayCueTag = GameplayCueTag;
+	params.GameplayCueParameters = GameplayCueParameters;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.K2_ExecuteGameplayCue
+// (Native, Protected, BlueprintCallable)
+// Parameters:
+// struct FGameplayTag            GameplayCueTag                 (Parm)
+// struct FGameplayEffectContextHandle Context                        (Parm)
+
+void UGameplayAbility::K2_ExecuteGameplayCue(const struct FGameplayTag& GameplayCueTag, const struct FGameplayEffectContextHandle& Context)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_ExecuteGameplayCue");
+
+	UGameplayAbility_K2_ExecuteGameplayCue_Params params;
+	params.GameplayCueTag = GameplayCueTag;
+	params.Context = Context;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.K2_EndAbility
+// (Native, Protected, BlueprintCallable)
+
+void UGameplayAbility::K2_EndAbility()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_EndAbility");
+
+	UGameplayAbility_K2_EndAbility_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.K2_CommitExecute
+// (Event, Public, BlueprintEvent)
+
+void UGameplayAbility::K2_CommitExecute()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_CommitExecute");
+
+	UGameplayAbility_K2_CommitExecute_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.K2_CommitAbilityCost
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           BroadcastCommitEvent           (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UAbilitySystemBlueprintLibrary::STATIC_IsInstigatorLocallyControlledPlayer(const struct FGameplayCueParameters& Parameters)
+bool UGameplayAbility::K2_CommitAbilityCost(bool BroadcastCommitEvent)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.IsInstigatorLocallyControlledPlayer");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_CommitAbilityCost");
 
-	UAbilitySystemBlueprintLibrary_IsInstigatorLocallyControlledPlayer_Params params;
-	params.Parameters = Parameters;
+	UGameplayAbility_K2_CommitAbilityCost_Params params;
+	params.BroadcastCommitEvent = BroadcastCommitEvent;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -347,18 +400,20 @@ bool UAbilitySystemBlueprintLibrary::STATIC_IsInstigatorLocallyControlledPlayer(
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.IsInstigatorLocallyControlled
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Function GameplayAbilities.GameplayAbility.K2_CommitAbilityCooldown
+// (Native, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayCueParameters  Parameters                     (Parm)
+// bool                           BroadcastCommitEvent           (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ForceCooldown                  (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UAbilitySystemBlueprintLibrary::STATIC_IsInstigatorLocallyControlled(const struct FGameplayCueParameters& Parameters)
+bool UGameplayAbility::K2_CommitAbilityCooldown(bool BroadcastCommitEvent, bool ForceCooldown)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.IsInstigatorLocallyControlled");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_CommitAbilityCooldown");
 
-	UAbilitySystemBlueprintLibrary_IsInstigatorLocallyControlled_Params params;
-	params.Parameters = Parameters;
+	UGameplayAbility_K2_CommitAbilityCooldown_Params params;
+	params.BroadcastCommitEvent = BroadcastCommitEvent;
+	params.ForceCooldown = ForceCooldown;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -371,18 +426,16 @@ bool UAbilitySystemBlueprintLibrary::STATIC_IsInstigatorLocallyControlled(const 
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.HasHitResult
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Function GameplayAbilities.GameplayAbility.K2_CommitAbility
+// (Native, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayCueParameters  Parameters                     (Parm)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UAbilitySystemBlueprintLibrary::STATIC_HasHitResult(const struct FGameplayCueParameters& Parameters)
+bool UGameplayAbility::K2_CommitAbility()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.HasHitResult");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_CommitAbility");
 
-	UAbilitySystemBlueprintLibrary_HasHitResult_Params params;
-	params.Parameters = Parameters;
+	UGameplayAbility_K2_CommitAbility_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -395,20 +448,91 @@ bool UAbilitySystemBlueprintLibrary::STATIC_HasHitResult(const struct FGameplayC
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetTargetDataOrigin
-// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure)
+// Function GameplayAbilities.GameplayAbility.K2_CheckAbilityCost
+// (Native, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
-// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
-// struct FTransform              ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-struct FTransform UAbilitySystemBlueprintLibrary::STATIC_GetTargetDataOrigin(const struct FGameplayAbilityTargetDataHandle& TargetData, int Index)
+bool UGameplayAbility::K2_CheckAbilityCost()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetTargetDataOrigin");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_CheckAbilityCost");
 
-	UAbilitySystemBlueprintLibrary_GetTargetDataOrigin_Params params;
+	UGameplayAbility_K2_CheckAbilityCost_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.K2_CheckAbilityCooldown
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UGameplayAbility::K2_CheckAbilityCooldown()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_CheckAbilityCooldown");
+
+	UGameplayAbility_K2_CheckAbilityCooldown_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.K2_CanActivateAbility
+// (Event, Protected, HasOutParms, BlueprintEvent, Const)
+// Parameters:
+// struct FGameplayAbilityActorInfo ActorInfo                      (Parm)
+// struct FGameplayTagContainer   RelevantTags                   (Parm, OutParm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UGameplayAbility::K2_CanActivateAbility(const struct FGameplayAbilityActorInfo& ActorInfo, struct FGameplayTagContainer* RelevantTags)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_CanActivateAbility");
+
+	UGameplayAbility_K2_CanActivateAbility_Params params;
+	params.ActorInfo = ActorInfo;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (RelevantTags != nullptr)
+		*RelevantTags = params.RelevantTags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.K2_ApplyGameplayEffectSpecToTarget
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// struct FGameplayEffectSpecHandle EffectSpecHandle               (ConstParm, Parm)
+// struct FGameplayAbilityTargetDataHandle TargetData                     (Parm)
+// TArray<struct FActiveGameplayEffectHandle> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
+
+TArray<struct FActiveGameplayEffectHandle> UGameplayAbility::K2_ApplyGameplayEffectSpecToTarget(const struct FGameplayEffectSpecHandle& EffectSpecHandle, const struct FGameplayAbilityTargetDataHandle& TargetData)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_ApplyGameplayEffectSpecToTarget");
+
+	UGameplayAbility_K2_ApplyGameplayEffectSpecToTarget_Params params;
+	params.EffectSpecHandle = EffectSpecHandle;
 	params.TargetData = TargetData;
-	params.Index = Index;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -421,20 +545,18 @@ struct FTransform UAbilitySystemBlueprintLibrary::STATIC_GetTargetDataOrigin(con
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetTargetDataEndPointTransform
-// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure)
+// Function GameplayAbilities.GameplayAbility.K2_ApplyGameplayEffectSpecToOwner
+// (Final, Native, Protected, BlueprintCallable)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
-// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
-// struct FTransform              ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
+// struct FGameplayEffectSpecHandle EffectSpecHandle               (ConstParm, Parm)
+// struct FActiveGameplayEffectHandle ReturnValue                    (Parm, OutParm, ReturnParm)
 
-struct FTransform UAbilitySystemBlueprintLibrary::STATIC_GetTargetDataEndPointTransform(const struct FGameplayAbilityTargetDataHandle& TargetData, int Index)
+struct FActiveGameplayEffectHandle UGameplayAbility::K2_ApplyGameplayEffectSpecToOwner(const struct FGameplayEffectSpecHandle& EffectSpecHandle)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetTargetDataEndPointTransform");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_ApplyGameplayEffectSpecToOwner");
 
-	UAbilitySystemBlueprintLibrary_GetTargetDataEndPointTransform_Params params;
-	params.TargetData = TargetData;
-	params.Index = Index;
+	UGameplayAbility_K2_ApplyGameplayEffectSpecToOwner_Params params;
+	params.EffectSpecHandle = EffectSpecHandle;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -447,20 +569,21 @@ struct FTransform UAbilitySystemBlueprintLibrary::STATIC_GetTargetDataEndPointTr
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetTargetDataEndPoint
-// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure)
+// Function GameplayAbilities.GameplayAbility.K2_AddGameplayCueWithParams
+// (Native, Protected, HasOutParms, BlueprintCallable)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
-// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
-// struct FVector                 ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
+// struct FGameplayTag            GameplayCueTag                 (Parm)
+// struct FGameplayCueParameters  GameplayCueParameter           (ConstParm, Parm, OutParm, ReferenceParm)
+// bool                           bRemoveOnAbilityEnd            (Parm, ZeroConstructor, IsPlainOldData)
 
-struct FVector UAbilitySystemBlueprintLibrary::STATIC_GetTargetDataEndPoint(const struct FGameplayAbilityTargetDataHandle& TargetData, int Index)
+void UGameplayAbility::K2_AddGameplayCueWithParams(const struct FGameplayTag& GameplayCueTag, const struct FGameplayCueParameters& GameplayCueParameter, bool bRemoveOnAbilityEnd)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetTargetDataEndPoint");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_AddGameplayCueWithParams");
 
-	UAbilitySystemBlueprintLibrary_GetTargetDataEndPoint_Params params;
-	params.TargetData = TargetData;
-	params.Index = Index;
+	UGameplayAbility_K2_AddGameplayCueWithParams_Params params;
+	params.GameplayCueTag = GameplayCueTag;
+	params.GameplayCueParameter = GameplayCueParameter;
+	params.bRemoveOnAbilityEnd = bRemoveOnAbilityEnd;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -468,23 +591,24 @@ struct FVector UAbilitySystemBlueprintLibrary::STATIC_GetTargetDataEndPoint(cons
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetOrigin
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
+// Function GameplayAbilities.GameplayAbility.K2_AddGameplayCue
+// (Native, Protected, BlueprintCallable)
 // Parameters:
-// struct FGameplayCueParameters  Parameters                     (Parm)
-// struct FVector                 ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
+// struct FGameplayTag            GameplayCueTag                 (Parm)
+// struct FGameplayEffectContextHandle Context                        (Parm)
+// bool                           bRemoveOnAbilityEnd            (Parm, ZeroConstructor, IsPlainOldData)
 
-struct FVector UAbilitySystemBlueprintLibrary::STATIC_GetOrigin(const struct FGameplayCueParameters& Parameters)
+void UGameplayAbility::K2_AddGameplayCue(const struct FGameplayTag& GameplayCueTag, const struct FGameplayEffectContextHandle& Context, bool bRemoveOnAbilityEnd)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetOrigin");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_AddGameplayCue");
 
-	UAbilitySystemBlueprintLibrary_GetOrigin_Params params;
-	params.Parameters = Parameters;
+	UGameplayAbility_K2_AddGameplayCue_Params params;
+	params.GameplayCueTag = GameplayCueTag;
+	params.Context = Context;
+	params.bRemoveOnAbilityEnd = bRemoveOnAbilityEnd;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -492,49 +616,74 @@ struct FVector UAbilitySystemBlueprintLibrary::STATIC_GetOrigin(const struct FGa
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetModifiedAttributeMagnitude
-// (Final, Native, Static, Public, BlueprintCallable)
+// Function GameplayAbilities.GameplayAbility.K2_ActivateAbilityFromEvent
+// (Event, Protected, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
-// struct FGameplayAttribute      Attribute                      (Parm)
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// struct FGameplayEventData      EventData                      (ConstParm, Parm, OutParm, ReferenceParm)
 
-float UAbilitySystemBlueprintLibrary::STATIC_GetModifiedAttributeMagnitude(const struct FGameplayEffectSpecHandle& SpecHandle, const struct FGameplayAttribute& Attribute)
+void UGameplayAbility::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetModifiedAttributeMagnitude");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_ActivateAbilityFromEvent");
 
-	UAbilitySystemBlueprintLibrary_GetModifiedAttributeMagnitude_Params params;
-	params.SpecHandle = SpecHandle;
-	params.Attribute = Attribute;
+	UGameplayAbility_K2_ActivateAbilityFromEvent_Params params;
+	params.EventData = EventData;
 
 	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetInstigatorTransform
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FGameplayCueParameters  Parameters                     (Parm)
-// struct FTransform              ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
+// Function GameplayAbilities.GameplayAbility.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
 
-struct FTransform UAbilitySystemBlueprintLibrary::STATIC_GetInstigatorTransform(const struct FGameplayCueParameters& Parameters)
+void UGameplayAbility::K2_ActivateAbility()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetInstigatorTransform");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_ActivateAbility");
 
-	UAbilitySystemBlueprintLibrary_GetInstigatorTransform_Params params;
-	params.Parameters = Parameters;
+	UGameplayAbility_K2_ActivateAbility_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.InvalidateClientPredictionKey
+// (Final, Native, Public, BlueprintCallable, Const)
+
+void UGameplayAbility::InvalidateClientPredictionKey()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.InvalidateClientPredictionKey");
+
+	UGameplayAbility_InvalidateClientPredictionKey_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.GetOwningComponentFromActorInfo
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class USkeletalMeshComponent*  ReturnValue                    (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+
+class USkeletalMeshComponent* UGameplayAbility::GetOwningComponentFromActorInfo()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.GetOwningComponentFromActorInfo");
+
+	UGameplayAbility_GetOwningComponentFromActorInfo_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -547,18 +696,16 @@ struct FTransform UAbilitySystemBlueprintLibrary::STATIC_GetInstigatorTransform(
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetInstigatorActor
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Function GameplayAbilities.GameplayAbility.GetOwningActorFromActorInfo
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayCueParameters  Parameters                     (Parm)
 // class AActor*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-class AActor* UAbilitySystemBlueprintLibrary::STATIC_GetInstigatorActor(const struct FGameplayCueParameters& Parameters)
+class AActor* UGameplayAbility::GetOwningActorFromActorInfo()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetInstigatorActor");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.GetOwningActorFromActorInfo");
 
-	UAbilitySystemBlueprintLibrary_GetInstigatorActor_Params params;
-	params.Parameters = Parameters;
+	UGameplayAbility_GetOwningActorFromActorInfo_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -571,251 +718,16 @@ class AActor* UAbilitySystemBlueprintLibrary::STATIC_GetInstigatorActor(const st
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetHitResultFromTargetData
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Function GameplayAbilities.GameplayAbility.GetGrantedByEffectContext
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle HitResult                      (ConstParm, Parm, OutParm, ReferenceParm)
-// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
-// struct FHitResult              ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
-
-struct FHitResult UAbilitySystemBlueprintLibrary::STATIC_GetHitResultFromTargetData(const struct FGameplayAbilityTargetDataHandle& HitResult, int Index)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetHitResultFromTargetData");
-
-	UAbilitySystemBlueprintLibrary_GetHitResultFromTargetData_Params params;
-	params.HitResult = HitResult;
-	params.Index = Index;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetHitResult
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FGameplayCueParameters  Parameters                     (Parm)
-// struct FHitResult              ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
-
-struct FHitResult UAbilitySystemBlueprintLibrary::STATIC_GetHitResult(const struct FGameplayCueParameters& Parameters)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetHitResult");
-
-	UAbilitySystemBlueprintLibrary_GetHitResult_Params params;
-	params.Parameters = Parameters;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetGameplayCueEndLocationAndNormal
-// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class AActor*                  TargetActor                    (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (Parm)
-// struct FVector                 Location                       (Parm, OutParm, IsPlainOldData)
-// struct FVector                 Normal                         (Parm, OutParm, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UAbilitySystemBlueprintLibrary::STATIC_GetGameplayCueEndLocationAndNormal(class AActor* TargetActor, const struct FGameplayCueParameters& Parameters, struct FVector* Location, struct FVector* Normal)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetGameplayCueEndLocationAndNormal");
-
-	UAbilitySystemBlueprintLibrary_GetGameplayCueEndLocationAndNormal_Params params;
-	params.TargetActor = TargetActor;
-	params.Parameters = Parameters;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Location != nullptr)
-		*Location = params.Location;
-	if (Normal != nullptr)
-		*Normal = params.Normal;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetGameplayCueDirection
-// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class AActor*                  TargetActor                    (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (Parm)
-// struct FVector                 Direction                      (Parm, OutParm, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UAbilitySystemBlueprintLibrary::STATIC_GetGameplayCueDirection(class AActor* TargetActor, const struct FGameplayCueParameters& Parameters, struct FVector* Direction)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetGameplayCueDirection");
-
-	UAbilitySystemBlueprintLibrary_GetGameplayCueDirection_Params params;
-	params.TargetActor = TargetActor;
-	params.Parameters = Parameters;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Direction != nullptr)
-		*Direction = params.Direction;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttributeFromAbilitySystemComponent
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class UAbilitySystemComponent* AbilitySystem                  (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// struct FGameplayAttribute      Attribute                      (Parm)
-// bool                           bSuccessfullyFoundAttribute    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-float UAbilitySystemBlueprintLibrary::STATIC_GetFloatAttributeFromAbilitySystemComponent(class UAbilitySystemComponent* AbilitySystem, const struct FGameplayAttribute& Attribute, bool* bSuccessfullyFoundAttribute)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttributeFromAbilitySystemComponent");
-
-	UAbilitySystemBlueprintLibrary_GetFloatAttributeFromAbilitySystemComponent_Params params;
-	params.AbilitySystem = AbilitySystem;
-	params.Attribute = Attribute;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (bSuccessfullyFoundAttribute != nullptr)
-		*bSuccessfullyFoundAttribute = params.bSuccessfullyFoundAttribute;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttributeBaseFromAbilitySystemComponent
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class UAbilitySystemComponent* AbilitySystemComponent         (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// struct FGameplayAttribute      Attribute                      (Parm)
-// bool                           bSuccessfullyFoundAttribute    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-float UAbilitySystemBlueprintLibrary::STATIC_GetFloatAttributeBaseFromAbilitySystemComponent(class UAbilitySystemComponent* AbilitySystemComponent, const struct FGameplayAttribute& Attribute, bool* bSuccessfullyFoundAttribute)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttributeBaseFromAbilitySystemComponent");
-
-	UAbilitySystemBlueprintLibrary_GetFloatAttributeBaseFromAbilitySystemComponent_Params params;
-	params.AbilitySystemComponent = AbilitySystemComponent;
-	params.Attribute = Attribute;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (bSuccessfullyFoundAttribute != nullptr)
-		*bSuccessfullyFoundAttribute = params.bSuccessfullyFoundAttribute;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttributeBase
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class AActor*                  Actor                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayAttribute      Attribute                      (Parm)
-// bool                           bSuccessfullyFoundAttribute    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-float UAbilitySystemBlueprintLibrary::STATIC_GetFloatAttributeBase(class AActor* Actor, const struct FGameplayAttribute& Attribute, bool* bSuccessfullyFoundAttribute)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttributeBase");
-
-	UAbilitySystemBlueprintLibrary_GetFloatAttributeBase_Params params;
-	params.Actor = Actor;
-	params.Attribute = Attribute;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (bSuccessfullyFoundAttribute != nullptr)
-		*bSuccessfullyFoundAttribute = params.bSuccessfullyFoundAttribute;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttribute
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class AActor*                  Actor                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayAttribute      Attribute                      (Parm)
-// bool                           bSuccessfullyFoundAttribute    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-float UAbilitySystemBlueprintLibrary::STATIC_GetFloatAttribute(class AActor* Actor, const struct FGameplayAttribute& Attribute, bool* bSuccessfullyFoundAttribute)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttribute");
-
-	UAbilitySystemBlueprintLibrary_GetFloatAttribute_Params params;
-	params.Actor = Actor;
-	params.Attribute = Attribute;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (bSuccessfullyFoundAttribute != nullptr)
-		*bSuccessfullyFoundAttribute = params.bSuccessfullyFoundAttribute;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetEffectContext
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
 // struct FGameplayEffectContextHandle ReturnValue                    (Parm, OutParm, ReturnParm)
 
-struct FGameplayEffectContextHandle UAbilitySystemBlueprintLibrary::STATIC_GetEffectContext(const struct FGameplayEffectSpecHandle& SpecHandle)
+struct FGameplayEffectContextHandle UGameplayAbility::GetGrantedByEffectContext()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetEffectContext");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.GetGrantedByEffectContext");
 
-	UAbilitySystemBlueprintLibrary_GetEffectContext_Params params;
-	params.SpecHandle = SpecHandle;
+	UGameplayAbility_GetGrantedByEffectContext_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -828,578 +740,16 @@ struct FGameplayEffectContextHandle UAbilitySystemBlueprintLibrary::STATIC_GetEf
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetDataCountFromTargetData
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Function GameplayAbilities.GameplayAbility.GetCurrentSourceObject
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
-// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-int UAbilitySystemBlueprintLibrary::STATIC_GetDataCountFromTargetData(const struct FGameplayAbilityTargetDataHandle& TargetData)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetDataCountFromTargetData");
-
-	UAbilitySystemBlueprintLibrary_GetDataCountFromTargetData_Params params;
-	params.TargetData = TargetData;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetAllLinkedGameplayEffectSpecHandles
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
-// TArray<struct FGameplayEffectSpecHandle> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
-
-TArray<struct FGameplayEffectSpecHandle> UAbilitySystemBlueprintLibrary::STATIC_GetAllLinkedGameplayEffectSpecHandles(const struct FGameplayEffectSpecHandle& SpecHandle)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetAllLinkedGameplayEffectSpecHandles");
-
-	UAbilitySystemBlueprintLibrary_GetAllLinkedGameplayEffectSpecHandles_Params params;
-	params.SpecHandle = SpecHandle;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActorsFromTargetData
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
-// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
-// TArray<class AActor*>          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
-
-TArray<class AActor*> UAbilitySystemBlueprintLibrary::STATIC_GetActorsFromTargetData(const struct FGameplayAbilityTargetDataHandle& TargetData, int Index)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActorsFromTargetData");
-
-	UAbilitySystemBlueprintLibrary_GetActorsFromTargetData_Params params;
-	params.TargetData = TargetData;
-	params.Index = Index;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActorCount
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FGameplayCueParameters  Parameters                     (Parm)
-// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-int UAbilitySystemBlueprintLibrary::STATIC_GetActorCount(const struct FGameplayCueParameters& Parameters)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActorCount");
-
-	UAbilitySystemBlueprintLibrary_GetActorCount_Params params;
-	params.Parameters = Parameters;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActorByIndex
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FGameplayCueParameters  Parameters                     (Parm)
-// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
-// class AActor*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class AActor* UAbilitySystemBlueprintLibrary::STATIC_GetActorByIndex(const struct FGameplayCueParameters& Parameters, int Index)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActorByIndex");
-
-	UAbilitySystemBlueprintLibrary_GetActorByIndex_Params params;
-	params.Parameters = Parameters;
-	params.Index = Index;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectTotalDuration
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// struct FActiveGameplayEffectHandle ActiveHandle                   (Parm)
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-float UAbilitySystemBlueprintLibrary::STATIC_GetActiveGameplayEffectTotalDuration(const struct FActiveGameplayEffectHandle& ActiveHandle)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectTotalDuration");
-
-	UAbilitySystemBlueprintLibrary_GetActiveGameplayEffectTotalDuration_Params params;
-	params.ActiveHandle = ActiveHandle;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectStartTime
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// struct FActiveGameplayEffectHandle ActiveHandle                   (Parm)
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-float UAbilitySystemBlueprintLibrary::STATIC_GetActiveGameplayEffectStartTime(const struct FActiveGameplayEffectHandle& ActiveHandle)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectStartTime");
-
-	UAbilitySystemBlueprintLibrary_GetActiveGameplayEffectStartTime_Params params;
-	params.ActiveHandle = ActiveHandle;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectStackLimitCount
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// struct FActiveGameplayEffectHandle ActiveHandle                   (Parm)
-// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-int UAbilitySystemBlueprintLibrary::STATIC_GetActiveGameplayEffectStackLimitCount(const struct FActiveGameplayEffectHandle& ActiveHandle)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectStackLimitCount");
-
-	UAbilitySystemBlueprintLibrary_GetActiveGameplayEffectStackLimitCount_Params params;
-	params.ActiveHandle = ActiveHandle;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectStackCount
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// struct FActiveGameplayEffectHandle ActiveHandle                   (Parm)
-// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-int UAbilitySystemBlueprintLibrary::STATIC_GetActiveGameplayEffectStackCount(const struct FActiveGameplayEffectHandle& ActiveHandle)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectStackCount");
-
-	UAbilitySystemBlueprintLibrary_GetActiveGameplayEffectStackCount_Params params;
-	params.ActiveHandle = ActiveHandle;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectRemainingDuration
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UObject*                 WorldContextObject             (Parm, ZeroConstructor, IsPlainOldData)
-// struct FActiveGameplayEffectHandle ActiveHandle                   (Parm)
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-float UAbilitySystemBlueprintLibrary::STATIC_GetActiveGameplayEffectRemainingDuration(class UObject* WorldContextObject, const struct FActiveGameplayEffectHandle& ActiveHandle)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectRemainingDuration");
-
-	UAbilitySystemBlueprintLibrary_GetActiveGameplayEffectRemainingDuration_Params params;
-	params.WorldContextObject = WorldContextObject;
-	params.ActiveHandle = ActiveHandle;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectExpectedEndTime
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// struct FActiveGameplayEffectHandle ActiveHandle                   (Parm)
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-float UAbilitySystemBlueprintLibrary::STATIC_GetActiveGameplayEffectExpectedEndTime(const struct FActiveGameplayEffectHandle& ActiveHandle)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectExpectedEndTime");
-
-	UAbilitySystemBlueprintLibrary_GetActiveGameplayEffectExpectedEndTime_Params params;
-	params.ActiveHandle = ActiveHandle;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectDebugString
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FActiveGameplayEffectHandle ActiveHandle                   (Parm)
-// struct FString                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
-
-struct FString UAbilitySystemBlueprintLibrary::STATIC_GetActiveGameplayEffectDebugString(const struct FActiveGameplayEffectHandle& ActiveHandle)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectDebugString");
-
-	UAbilitySystemBlueprintLibrary_GetActiveGameplayEffectDebugString_Params params;
-	params.ActiveHandle = ActiveHandle;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetAbilitySystemComponent
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class AActor*                  Actor                          (Parm, ZeroConstructor, IsPlainOldData)
-// class UAbilitySystemComponent* ReturnValue                    (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
-
-class UAbilitySystemComponent* UAbilitySystemBlueprintLibrary::STATIC_GetAbilitySystemComponent(class AActor* Actor)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetAbilitySystemComponent");
-
-	UAbilitySystemBlueprintLibrary_GetAbilitySystemComponent_Params params;
-	params.Actor = Actor;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.ForwardGameplayCueToTarget
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// TScriptInterface<class UGameplayCueInterface> TargetCueInterface             (Parm, ZeroConstructor, IsPlainOldData)
-// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (Parm)
-
-void UAbilitySystemBlueprintLibrary::STATIC_ForwardGameplayCueToTarget(const TScriptInterface<class UGameplayCueInterface>& TargetCueInterface, TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.ForwardGameplayCueToTarget");
-
-	UAbilitySystemBlueprintLibrary_ForwardGameplayCueToTarget_Params params;
-	params.TargetCueInterface = TargetCueInterface;
-	params.EventType = EventType;
-	params.Parameters = Parameters;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.FilterTargetData
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetDataHandle               (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FGameplayTargetDataFilterHandle ActorFilterClass               (Parm)
-// struct FGameplayAbilityTargetDataHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayAbilityTargetDataHandle UAbilitySystemBlueprintLibrary::STATIC_FilterTargetData(const struct FGameplayAbilityTargetDataHandle& TargetDataHandle, const struct FGameplayTargetDataFilterHandle& ActorFilterClass)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.FilterTargetData");
-
-	UAbilitySystemBlueprintLibrary_FilterTargetData_Params params;
-	params.TargetDataHandle = TargetDataHandle;
-	params.ActorFilterClass = ActorFilterClass;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EvaluateAttributeValueWithTagsAndBase
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class UAbilitySystemComponent* AbilitySystem                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// struct FGameplayAttribute      Attribute                      (Parm)
-// struct FGameplayTagContainer   SourceTags                     (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FGameplayTagContainer   TargetTags                     (ConstParm, Parm, OutParm, ReferenceParm)
-// float                          BaseValue                      (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bSuccess                       (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-float UAbilitySystemBlueprintLibrary::STATIC_EvaluateAttributeValueWithTagsAndBase(class UAbilitySystemComponent* AbilitySystem, const struct FGameplayAttribute& Attribute, const struct FGameplayTagContainer& SourceTags, const struct FGameplayTagContainer& TargetTags, float BaseValue, bool* bSuccess)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EvaluateAttributeValueWithTagsAndBase");
-
-	UAbilitySystemBlueprintLibrary_EvaluateAttributeValueWithTagsAndBase_Params params;
-	params.AbilitySystem = AbilitySystem;
-	params.Attribute = Attribute;
-	params.SourceTags = SourceTags;
-	params.TargetTags = TargetTags;
-	params.BaseValue = BaseValue;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (bSuccess != nullptr)
-		*bSuccess = params.bSuccess;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EvaluateAttributeValueWithTags
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class UAbilitySystemComponent* AbilitySystem                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// struct FGameplayAttribute      Attribute                      (Parm)
-// struct FGameplayTagContainer   SourceTags                     (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FGameplayTagContainer   TargetTags                     (ConstParm, Parm, OutParm, ReferenceParm)
-// bool                           bSuccess                       (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-float UAbilitySystemBlueprintLibrary::STATIC_EvaluateAttributeValueWithTags(class UAbilitySystemComponent* AbilitySystem, const struct FGameplayAttribute& Attribute, const struct FGameplayTagContainer& SourceTags, const struct FGameplayTagContainer& TargetTags, bool* bSuccess)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EvaluateAttributeValueWithTags");
-
-	UAbilitySystemBlueprintLibrary_EvaluateAttributeValueWithTags_Params params;
-	params.AbilitySystem = AbilitySystem;
-	params.Attribute = Attribute;
-	params.SourceTags = SourceTags;
-	params.TargetTags = TargetTags;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (bSuccess != nullptr)
-		*bSuccess = params.bSuccess;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EqualEqual_GameplayAttributeGameplayAttribute
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FGameplayAttribute      AttributeA                     (Parm)
-// struct FGameplayAttribute      AttributeB                     (Parm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UAbilitySystemBlueprintLibrary::STATIC_EqualEqual_GameplayAttributeGameplayAttribute(const struct FGameplayAttribute& AttributeA, const struct FGameplayAttribute& AttributeB)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EqualEqual_GameplayAttributeGameplayAttribute");
-
-	UAbilitySystemBlueprintLibrary_EqualEqual_GameplayAttributeGameplayAttribute_Params params;
-	params.AttributeA = AttributeA;
-	params.AttributeB = AttributeB;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextSetOrigin
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FGameplayEffectContextHandle EffectContext                  (Parm)
-// struct FVector                 Origin                         (Parm, IsPlainOldData)
-
-void UAbilitySystemBlueprintLibrary::STATIC_EffectContextSetOrigin(const struct FGameplayEffectContextHandle& EffectContext, const struct FVector& Origin)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextSetOrigin");
-
-	UAbilitySystemBlueprintLibrary_EffectContextSetOrigin_Params params;
-	params.EffectContext = EffectContext;
-	params.Origin = Origin;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextIsValid
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FGameplayEffectContextHandle EffectContext                  (Parm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UAbilitySystemBlueprintLibrary::STATIC_EffectContextIsValid(const struct FGameplayEffectContextHandle& EffectContext)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextIsValid");
-
-	UAbilitySystemBlueprintLibrary_EffectContextIsValid_Params params;
-	params.EffectContext = EffectContext;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextIsInstigatorLocallyControlled
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FGameplayEffectContextHandle EffectContext                  (Parm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UAbilitySystemBlueprintLibrary::STATIC_EffectContextIsInstigatorLocallyControlled(const struct FGameplayEffectContextHandle& EffectContext)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextIsInstigatorLocallyControlled");
-
-	UAbilitySystemBlueprintLibrary_EffectContextIsInstigatorLocallyControlled_Params params;
-	params.EffectContext = EffectContext;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextHasHitResult
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FGameplayEffectContextHandle EffectContext                  (Parm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UAbilitySystemBlueprintLibrary::STATIC_EffectContextHasHitResult(const struct FGameplayEffectContextHandle& EffectContext)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextHasHitResult");
-
-	UAbilitySystemBlueprintLibrary_EffectContextHasHitResult_Params params;
-	params.EffectContext = EffectContext;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetSourceObject
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FGameplayEffectContextHandle EffectContext                  (Parm)
 // class UObject*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-class UObject* UAbilitySystemBlueprintLibrary::STATIC_EffectContextGetSourceObject(const struct FGameplayEffectContextHandle& EffectContext)
+class UObject* UGameplayAbility::GetCurrentSourceObject()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetSourceObject");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.GetCurrentSourceObject");
 
-	UAbilitySystemBlueprintLibrary_EffectContextGetSourceObject_Params params;
-	params.EffectContext = EffectContext;
+	UGameplayAbility_GetCurrentSourceObject_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -1412,18 +762,84 @@ class UObject* UAbilitySystemBlueprintLibrary::STATIC_EffectContextGetSourceObje
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetOriginalInstigatorActor
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Function GameplayAbilities.GameplayAbility.GetCurrentMontage
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayEffectContextHandle EffectContext                  (Parm)
+// class UAnimMontage*            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class UAnimMontage* UGameplayAbility::GetCurrentMontage()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.GetCurrentMontage");
+
+	UGameplayAbility_GetCurrentMontage_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.GetCoolDownTimeRemaining
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UGameplayAbility::GetCoolDownTimeRemaining()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.GetCoolDownTimeRemaining");
+
+	UGameplayAbility_GetCoolDownTimeRemaining_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.GetContextFromOwner
+// (Native, Protected, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FGameplayAbilityTargetDataHandle OptionalTargetData             (Parm)
+// struct FGameplayEffectContextHandle ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGameplayEffectContextHandle UGameplayAbility::GetContextFromOwner(const struct FGameplayAbilityTargetDataHandle& OptionalTargetData)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.GetContextFromOwner");
+
+	UGameplayAbility_GetContextFromOwner_Params params;
+	params.OptionalTargetData = OptionalTargetData;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.GetAvatarActorFromActorInfo
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
 // class AActor*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-class AActor* UAbilitySystemBlueprintLibrary::STATIC_EffectContextGetOriginalInstigatorActor(const struct FGameplayEffectContextHandle& EffectContext)
+class AActor* UGameplayAbility::GetAvatarActorFromActorInfo()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetOriginalInstigatorActor");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.GetAvatarActorFromActorInfo");
 
-	UAbilitySystemBlueprintLibrary_EffectContextGetOriginalInstigatorActor_Params params;
-	params.EffectContext = EffectContext;
+	UGameplayAbility_GetAvatarActorFromActorInfo_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -1436,18 +852,16 @@ class AActor* UAbilitySystemBlueprintLibrary::STATIC_EffectContextGetOriginalIns
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetOrigin
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
+// Function GameplayAbilities.GameplayAbility.GetActorInfo
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayEffectContextHandle EffectContext                  (Parm)
-// struct FVector                 ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
+// struct FGameplayAbilityActorInfo ReturnValue                    (Parm, OutParm, ReturnParm)
 
-struct FVector UAbilitySystemBlueprintLibrary::STATIC_EffectContextGetOrigin(const struct FGameplayEffectContextHandle& EffectContext)
+struct FGameplayAbilityActorInfo UGameplayAbility::GetActorInfo()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetOrigin");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.GetActorInfo");
 
-	UAbilitySystemBlueprintLibrary_EffectContextGetOrigin_Params params;
-	params.EffectContext = EffectContext;
+	UGameplayAbility_GetActorInfo_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -1460,18 +874,16 @@ struct FVector UAbilitySystemBlueprintLibrary::STATIC_EffectContextGetOrigin(con
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetInstigatorActor
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Function GameplayAbilities.GameplayAbility.GetAbilityLevel
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayEffectContextHandle EffectContext                  (Parm)
-// class AActor*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-class AActor* UAbilitySystemBlueprintLibrary::STATIC_EffectContextGetInstigatorActor(const struct FGameplayEffectContextHandle& EffectContext)
+int UGameplayAbility::GetAbilityLevel()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetInstigatorActor");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.GetAbilityLevel");
 
-	UAbilitySystemBlueprintLibrary_EffectContextGetInstigatorActor_Params params;
-	params.EffectContext = EffectContext;
+	UGameplayAbility_GetAbilityLevel_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -1484,69 +896,17 @@ class AActor* UAbilitySystemBlueprintLibrary::STATIC_EffectContextGetInstigatorA
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetHitResult
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Function GameplayAbilities.GameplayAbility.EndTaskByInstanceName
+// (Final, Native, Protected, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectContextHandle EffectContext                  (Parm)
-// struct FHitResult              ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
+// struct FName                   InstanceName                   (Parm, ZeroConstructor, IsPlainOldData)
 
-struct FHitResult UAbilitySystemBlueprintLibrary::STATIC_EffectContextGetHitResult(const struct FGameplayEffectContextHandle& EffectContext)
+void UGameplayAbility::EndTaskByInstanceName(const struct FName& InstanceName)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetHitResult");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.EndTaskByInstanceName");
 
-	UAbilitySystemBlueprintLibrary_EffectContextGetHitResult_Params params;
-	params.EffectContext = EffectContext;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetEffectCauser
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FGameplayEffectContextHandle EffectContext                  (Parm)
-// class AActor*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class AActor* UAbilitySystemBlueprintLibrary::STATIC_EffectContextGetEffectCauser(const struct FGameplayEffectContextHandle& EffectContext)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetEffectCauser");
-
-	UAbilitySystemBlueprintLibrary_EffectContextGetEffectCauser_Params params;
-	params.EffectContext = EffectContext;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextAddHitResult
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// struct FGameplayEffectContextHandle EffectContext                  (Parm)
-// struct FHitResult              HitResult                      (Parm, IsPlainOldData)
-// bool                           bReset                         (Parm, ZeroConstructor, IsPlainOldData)
-
-void UAbilitySystemBlueprintLibrary::STATIC_EffectContextAddHitResult(const struct FGameplayEffectContextHandle& EffectContext, const struct FHitResult& HitResult, bool bReset)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextAddHitResult");
-
-	UAbilitySystemBlueprintLibrary_EffectContextAddHitResult_Params params;
-	params.EffectContext = EffectContext;
-	params.HitResult = HitResult;
-	params.bReset = bReset;
+	UGameplayAbility_EndTaskByInstanceName_Params params;
+	params.InstanceName = InstanceName;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -1557,22 +917,158 @@ void UAbilitySystemBlueprintLibrary::STATIC_EffectContextAddHitResult(const stru
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.DoesTargetDataContainActor
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Function GameplayAbilities.GameplayAbility.EndAbilityState
+// (Final, Native, Protected, BlueprintCallable)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
-// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
-// class AActor*                  Actor                          (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// struct FName                   OptionalStateNameToEnd         (Parm, ZeroConstructor, IsPlainOldData)
 
-bool UAbilitySystemBlueprintLibrary::STATIC_DoesTargetDataContainActor(const struct FGameplayAbilityTargetDataHandle& TargetData, int Index, class AActor* Actor)
+void UGameplayAbility::EndAbilityState(const struct FName& OptionalStateNameToEnd)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.DoesTargetDataContainActor");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.EndAbilityState");
 
-	UAbilitySystemBlueprintLibrary_DoesTargetDataContainActor_Params params;
+	UGameplayAbility_EndAbilityState_Params params;
+	params.OptionalStateNameToEnd = OptionalStateNameToEnd;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.ConfirmTaskByInstanceName
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// struct FName                   InstanceName                   (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bEndTask                       (Parm, ZeroConstructor, IsPlainOldData)
+
+void UGameplayAbility::ConfirmTaskByInstanceName(const struct FName& InstanceName, bool bEndTask)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.ConfirmTaskByInstanceName");
+
+	UGameplayAbility_ConfirmTaskByInstanceName_Params params;
+	params.InstanceName = InstanceName;
+	params.bEndTask = bEndTask;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.CancelTaskByInstanceName
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// struct FName                   InstanceName                   (Parm, ZeroConstructor, IsPlainOldData)
+
+void UGameplayAbility::CancelTaskByInstanceName(const struct FName& InstanceName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.CancelTaskByInstanceName");
+
+	UGameplayAbility_CancelTaskByInstanceName_Params params;
+	params.InstanceName = InstanceName;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.BP_RemoveGameplayEffectFromOwnerWithHandle
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// struct FActiveGameplayEffectHandle Handle                         (Parm)
+// int                            StacksToRemove                 (Parm, ZeroConstructor, IsPlainOldData)
+
+void UGameplayAbility::BP_RemoveGameplayEffectFromOwnerWithHandle(const struct FActiveGameplayEffectHandle& Handle, int StacksToRemove)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.BP_RemoveGameplayEffectFromOwnerWithHandle");
+
+	UGameplayAbility_BP_RemoveGameplayEffectFromOwnerWithHandle_Params params;
+	params.Handle = Handle;
+	params.StacksToRemove = StacksToRemove;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.BP_RemoveGameplayEffectFromOwnerWithGrantedTags
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// struct FGameplayTagContainer   WithGrantedTags                (Parm)
+// int                            StacksToRemove                 (Parm, ZeroConstructor, IsPlainOldData)
+
+void UGameplayAbility::BP_RemoveGameplayEffectFromOwnerWithGrantedTags(const struct FGameplayTagContainer& WithGrantedTags, int StacksToRemove)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.BP_RemoveGameplayEffectFromOwnerWithGrantedTags");
+
+	UGameplayAbility_BP_RemoveGameplayEffectFromOwnerWithGrantedTags_Params params;
+	params.WithGrantedTags = WithGrantedTags;
+	params.StacksToRemove = StacksToRemove;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.BP_RemoveGameplayEffectFromOwnerWithAssetTags
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// struct FGameplayTagContainer   WithAssetTags                  (Parm)
+// int                            StacksToRemove                 (Parm, ZeroConstructor, IsPlainOldData)
+
+void UGameplayAbility::BP_RemoveGameplayEffectFromOwnerWithAssetTags(const struct FGameplayTagContainer& WithAssetTags, int StacksToRemove)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.BP_RemoveGameplayEffectFromOwnerWithAssetTags");
+
+	UGameplayAbility_BP_RemoveGameplayEffectFromOwnerWithAssetTags_Params params;
+	params.WithAssetTags = WithAssetTags;
+	params.StacksToRemove = StacksToRemove;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbility.BP_ApplyGameplayEffectToTarget
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// struct FGameplayAbilityTargetDataHandle TargetData                     (Parm)
+// class UClass*                  GameplayEffectClass            (Parm, ZeroConstructor, IsPlainOldData)
+// int                            GameplayEffectLevel            (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Stacks                         (Parm, ZeroConstructor, IsPlainOldData)
+// TArray<struct FActiveGameplayEffectHandle> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
+
+TArray<struct FActiveGameplayEffectHandle> UGameplayAbility::BP_ApplyGameplayEffectToTarget(const struct FGameplayAbilityTargetDataHandle& TargetData, class UClass* GameplayEffectClass, int GameplayEffectLevel, int Stacks)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.BP_ApplyGameplayEffectToTarget");
+
+	UGameplayAbility_BP_ApplyGameplayEffectToTarget_Params params;
 	params.TargetData = TargetData;
-	params.Index = Index;
-	params.Actor = Actor;
+	params.GameplayEffectClass = GameplayEffectClass;
+	params.GameplayEffectLevel = GameplayEffectLevel;
+	params.Stacks = Stacks;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -1585,391 +1081,22 @@ bool UAbilitySystemBlueprintLibrary::STATIC_DoesTargetDataContainActor(const str
 }
 
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.DoesGameplayCueMeetTagRequirements
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Function GameplayAbilities.GameplayAbility.BP_ApplyGameplayEffectToOwner
+// (Final, Native, Protected, BlueprintCallable)
 // Parameters:
-// struct FGameplayCueParameters  Parameters                     (Parm)
-// struct FGameplayTagRequirements SourceTagReqs                  (Parm, OutParm, ReferenceParm)
-// struct FGameplayTagRequirements TargetTagReqs                  (Parm, OutParm, ReferenceParm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// class UClass*                  GameplayEffectClass            (Parm, ZeroConstructor, IsPlainOldData)
+// int                            GameplayEffectLevel            (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Stacks                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FActiveGameplayEffectHandle ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UAbilitySystemBlueprintLibrary::STATIC_DoesGameplayCueMeetTagRequirements(const struct FGameplayCueParameters& Parameters, struct FGameplayTagRequirements* SourceTagReqs, struct FGameplayTagRequirements* TargetTagReqs)
+struct FActiveGameplayEffectHandle UGameplayAbility::BP_ApplyGameplayEffectToOwner(class UClass* GameplayEffectClass, int GameplayEffectLevel, int Stacks)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.DoesGameplayCueMeetTagRequirements");
-
-	UAbilitySystemBlueprintLibrary_DoesGameplayCueMeetTagRequirements_Params params;
-	params.Parameters = Parameters;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (SourceTagReqs != nullptr)
-		*SourceTagReqs = params.SourceTagReqs;
-	if (TargetTagReqs != nullptr)
-		*TargetTagReqs = params.TargetTagReqs;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.CloneSpecHandle
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class AActor*                  InNewInstigator                (Parm, ZeroConstructor, IsPlainOldData)
-// class AActor*                  InEffectCauser                 (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayEffectSpecHandle GameplayEffectSpecHandle_Clone (Parm)
-// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_CloneSpecHandle(class AActor* InNewInstigator, class AActor* InEffectCauser, const struct FGameplayEffectSpecHandle& GameplayEffectSpecHandle_Clone)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.CloneSpecHandle");
-
-	UAbilitySystemBlueprintLibrary_CloneSpecHandle_Params params;
-	params.InNewInstigator = InNewInstigator;
-	params.InEffectCauser = InEffectCauser;
-	params.GameplayEffectSpecHandle_Clone = GameplayEffectSpecHandle_Clone;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AssignTagSetByCallerMagnitude
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
-// struct FGameplayTag            DataTag                        (Parm)
-// float                          Magnitude                      (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_AssignTagSetByCallerMagnitude(const struct FGameplayEffectSpecHandle& SpecHandle, const struct FGameplayTag& DataTag, float Magnitude)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AssignTagSetByCallerMagnitude");
-
-	UAbilitySystemBlueprintLibrary_AssignTagSetByCallerMagnitude_Params params;
-	params.SpecHandle = SpecHandle;
-	params.DataTag = DataTag;
-	params.Magnitude = Magnitude;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AssignSetByCallerMagnitude
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
-// struct FName                   DataName                       (Parm, ZeroConstructor, IsPlainOldData)
-// float                          Magnitude                      (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_AssignSetByCallerMagnitude(const struct FGameplayEffectSpecHandle& SpecHandle, const struct FName& DataName, float Magnitude)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AssignSetByCallerMagnitude");
-
-	UAbilitySystemBlueprintLibrary_AssignSetByCallerMagnitude_Params params;
-	params.SpecHandle = SpecHandle;
-	params.DataName = DataName;
-	params.Magnitude = Magnitude;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AppendTargetDataHandle
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
-// Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetHandle                   (Parm)
-// struct FGameplayAbilityTargetDataHandle HandleToAdd                    (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FGameplayAbilityTargetDataHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayAbilityTargetDataHandle UAbilitySystemBlueprintLibrary::STATIC_AppendTargetDataHandle(const struct FGameplayAbilityTargetDataHandle& TargetHandle, const struct FGameplayAbilityTargetDataHandle& HandleToAdd)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AppendTargetDataHandle");
-
-	UAbilitySystemBlueprintLibrary_AppendTargetDataHandle_Params params;
-	params.TargetHandle = TargetHandle;
-	params.HandleToAdd = HandleToAdd;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddLinkedGameplayEffectSpec
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
-// struct FGameplayEffectSpecHandle LinkedGameplayEffectSpec       (Parm)
-// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_AddLinkedGameplayEffectSpec(const struct FGameplayEffectSpecHandle& SpecHandle, const struct FGameplayEffectSpecHandle& LinkedGameplayEffectSpec)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddLinkedGameplayEffectSpec");
-
-	UAbilitySystemBlueprintLibrary_AddLinkedGameplayEffectSpec_Params params;
-	params.SpecHandle = SpecHandle;
-	params.LinkedGameplayEffectSpec = LinkedGameplayEffectSpec;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddLinkedGameplayEffect
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
-// class UClass*                  LinkedGameplayEffect           (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_AddLinkedGameplayEffect(const struct FGameplayEffectSpecHandle& SpecHandle, class UClass* LinkedGameplayEffect)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddLinkedGameplayEffect");
-
-	UAbilitySystemBlueprintLibrary_AddLinkedGameplayEffect_Params params;
-	params.SpecHandle = SpecHandle;
-	params.LinkedGameplayEffect = LinkedGameplayEffect;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddGrantedTags
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
-// struct FGameplayTagContainer   NewGameplayTags                (Parm)
-// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_AddGrantedTags(const struct FGameplayEffectSpecHandle& SpecHandle, const struct FGameplayTagContainer& NewGameplayTags)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddGrantedTags");
-
-	UAbilitySystemBlueprintLibrary_AddGrantedTags_Params params;
-	params.SpecHandle = SpecHandle;
-	params.NewGameplayTags = NewGameplayTags;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddGrantedTag
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
-// struct FGameplayTag            NewGameplayTag                 (Parm)
-// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_AddGrantedTag(const struct FGameplayEffectSpecHandle& SpecHandle, const struct FGameplayTag& NewGameplayTag)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddGrantedTag");
-
-	UAbilitySystemBlueprintLibrary_AddGrantedTag_Params params;
-	params.SpecHandle = SpecHandle;
-	params.NewGameplayTag = NewGameplayTag;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddAssetTags
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
-// struct FGameplayTagContainer   NewGameplayTags                (Parm)
-// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_AddAssetTags(const struct FGameplayEffectSpecHandle& SpecHandle, const struct FGameplayTagContainer& NewGameplayTags)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddAssetTags");
-
-	UAbilitySystemBlueprintLibrary_AddAssetTags_Params params;
-	params.SpecHandle = SpecHandle;
-	params.NewGameplayTags = NewGameplayTags;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddAssetTag
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
-// struct FGameplayTag            NewGameplayTag                 (Parm)
-// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_AddAssetTag(const struct FGameplayEffectSpecHandle& SpecHandle, const struct FGameplayTag& NewGameplayTag)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddAssetTag");
-
-	UAbilitySystemBlueprintLibrary_AddAssetTag_Params params;
-	params.SpecHandle = SpecHandle;
-	params.NewGameplayTag = NewGameplayTag;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromLocations
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FGameplayAbilityTargetingLocationInfo SourceLocation                 (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FGameplayAbilityTargetingLocationInfo TargetLocation                 (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FGameplayAbilityTargetDataHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayAbilityTargetDataHandle UAbilitySystemBlueprintLibrary::STATIC_AbilityTargetDataFromLocations(const struct FGameplayAbilityTargetingLocationInfo& SourceLocation, const struct FGameplayAbilityTargetingLocationInfo& TargetLocation)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromLocations");
-
-	UAbilitySystemBlueprintLibrary_AbilityTargetDataFromLocations_Params params;
-	params.SourceLocation = SourceLocation;
-	params.TargetLocation = TargetLocation;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromHitResult
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FHitResult              HitResult                      (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-// struct FGameplayAbilityTargetDataHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayAbilityTargetDataHandle UAbilitySystemBlueprintLibrary::STATIC_AbilityTargetDataFromHitResult(const struct FHitResult& HitResult)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromHitResult");
-
-	UAbilitySystemBlueprintLibrary_AbilityTargetDataFromHitResult_Params params;
-	params.HitResult = HitResult;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromActorArray
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
-// Parameters:
-// TArray<class AActor*>          ActorArray                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// bool                           OneTargetPerHandle             (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayAbilityTargetDataHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayAbilityTargetDataHandle UAbilitySystemBlueprintLibrary::STATIC_AbilityTargetDataFromActorArray(TArray<class AActor*> ActorArray, bool OneTargetPerHandle)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromActorArray");
-
-	UAbilitySystemBlueprintLibrary_AbilityTargetDataFromActorArray_Params params;
-	params.ActorArray = ActorArray;
-	params.OneTargetPerHandle = OneTargetPerHandle;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromActor
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class AActor*                  Actor                          (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayAbilityTargetDataHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayAbilityTargetDataHandle UAbilitySystemBlueprintLibrary::STATIC_AbilityTargetDataFromActor(class AActor* Actor)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromActor");
-
-	UAbilitySystemBlueprintLibrary_AbilityTargetDataFromActor_Params params;
-	params.Actor = Actor;
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.BP_ApplyGameplayEffectToOwner");
+
+	UGameplayAbility_BP_ApplyGameplayEffectToOwner_Params params;
+	params.GameplayEffectClass = GameplayEffectClass;
+	params.GameplayEffectLevel = GameplayEffectLevel;
+	params.Stacks = Stacks;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3178,30 +2305,6 @@ int UAbilitySystemComponent::GetGameplayEffectCount(class UClass* SourceGameplay
 }
 
 
-// Function GameplayAbilities.AbilitySystemComponent.GetActiveEffects
-// (Final, Native, Public, HasOutParms, BlueprintCallable, Const)
-// Parameters:
-// struct FGameplayEffectQuery    Query                          (ConstParm, Parm, OutParm, ReferenceParm)
-// TArray<struct FActiveGameplayEffectHandle> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
-
-TArray<struct FActiveGameplayEffectHandle> UAbilitySystemComponent::GetActiveEffects(const struct FGameplayEffectQuery& Query)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemComponent.GetActiveEffects");
-
-	UAbilitySystemComponent_GetActiveEffects_Params params;
-	params.Query = Query;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
 // Function GameplayAbilities.AbilitySystemComponent.ClientTryActivateAbility
 // (Net, NetReliable, Native, Event, Protected, NetClient)
 // Parameters:
@@ -3573,6 +2676,2206 @@ void UAbilitySystemGlobals::ToggleIgnoreAbilitySystemCooldowns()
 }
 
 
+// Function GameplayAbilities.GameplayCueNotify_Actor.WhileActive
+// (Native, Event, Public, HasOutParms, BlueprintEvent)
+// Parameters:
+// class AActor*                  MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool AGameplayCueNotify_Actor::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Actor.WhileActive");
+
+	AGameplayCueNotify_Actor_WhileActive_Params params;
+	params.MyTarget = MyTarget;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.GameplayCueNotify_Actor.OnRemove
+// (Native, Event, Public, HasOutParms, BlueprintEvent)
+// Parameters:
+// class AActor*                  MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool AGameplayCueNotify_Actor::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Actor.OnRemove");
+
+	AGameplayCueNotify_Actor_OnRemove_Params params;
+	params.MyTarget = MyTarget;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.GameplayCueNotify_Actor.OnOwnerDestroyed
+// (Native, Public)
+// Parameters:
+// class AActor*                  DestroyedActor                 (Parm, ZeroConstructor, IsPlainOldData)
+
+void AGameplayCueNotify_Actor::OnOwnerDestroyed(class AActor* DestroyedActor)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Actor.OnOwnerDestroyed");
+
+	AGameplayCueNotify_Actor_OnOwnerDestroyed_Params params;
+	params.DestroyedActor = DestroyedActor;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayCueNotify_Actor.OnExecute
+// (Native, Event, Public, HasOutParms, BlueprintEvent)
+// Parameters:
+// class AActor*                  MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool AGameplayCueNotify_Actor::OnExecute(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Actor.OnExecute");
+
+	AGameplayCueNotify_Actor_OnExecute_Params params;
+	params.MyTarget = MyTarget;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.GameplayCueNotify_Actor.OnActive
+// (Native, Event, Public, HasOutParms, BlueprintEvent)
+// Parameters:
+// class AActor*                  MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool AGameplayCueNotify_Actor::OnActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Actor.OnActive");
+
+	AGameplayCueNotify_Actor_OnActive_Params params;
+	params.MyTarget = MyTarget;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.GameplayCueNotify_Actor.K2_HandleGameplayCue
+// (Event, Public, HasOutParms, BlueprintEvent)
+// Parameters:
+// class AActor*                  MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
+
+void AGameplayCueNotify_Actor::K2_HandleGameplayCue(class AActor* MyTarget, TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Actor.K2_HandleGameplayCue");
+
+	AGameplayCueNotify_Actor_K2_HandleGameplayCue_Params params;
+	params.MyTarget = MyTarget;
+	params.EventType = EventType;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayCueNotify_Actor.K2_EndGameplayCue
+// (Native, Public, BlueprintCallable)
+
+void AGameplayCueNotify_Actor::K2_EndGameplayCue()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Actor.K2_EndGameplayCue");
+
+	AGameplayCueNotify_Actor_K2_EndGameplayCue_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayCueNotify_Static.WhileActive
+// (Native, Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// class AActor*                  MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UGameplayCueNotify_Static::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Static.WhileActive");
+
+	UGameplayCueNotify_Static_WhileActive_Params params;
+	params.MyTarget = MyTarget;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.GameplayCueNotify_Static.OnRemove
+// (Native, Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// class AActor*                  MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UGameplayCueNotify_Static::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Static.OnRemove");
+
+	UGameplayCueNotify_Static_OnRemove_Params params;
+	params.MyTarget = MyTarget;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.GameplayCueNotify_Static.OnExecute
+// (Native, Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// class AActor*                  MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UGameplayCueNotify_Static::OnExecute(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Static.OnExecute");
+
+	UGameplayCueNotify_Static_OnExecute_Params params;
+	params.MyTarget = MyTarget;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.GameplayCueNotify_Static.OnActive
+// (Native, Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// class AActor*                  MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UGameplayCueNotify_Static::OnActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Static.OnActive");
+
+	UGameplayCueNotify_Static_OnActive_Params params;
+	params.MyTarget = MyTarget;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.GameplayCueNotify_Static.K2_HandleGameplayCue
+// (Event, Public, HasOutParms, BlueprintEvent, Const)
+// Parameters:
+// class AActor*                  MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
+
+void UGameplayCueNotify_Static::K2_HandleGameplayCue(class AActor* MyTarget, TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Static.K2_HandleGameplayCue");
+
+	UGameplayCueNotify_Static_K2_HandleGameplayCue_Params params;
+	params.MyTarget = MyTarget;
+	params.EventType = EventType;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayEffectExecutionCalculation.Execute
+// (Native, Event, Public, HasOutParms, BlueprintEvent, Const)
+// Parameters:
+// struct FGameplayEffectCustomExecutionParameters ExecutionParams                (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FGameplayEffectCustomExecutionOutput OutExecutionOutput             (Parm, OutParm)
+
+void UGameplayEffectExecutionCalculation::Execute(const struct FGameplayEffectCustomExecutionParameters& ExecutionParams, struct FGameplayEffectCustomExecutionOutput* OutExecutionOutput)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayEffectExecutionCalculation.Execute");
+
+	UGameplayEffectExecutionCalculation_Execute_Params params;
+	params.ExecutionParams = ExecutionParams;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (OutExecutionOutput != nullptr)
+		*OutExecutionOutput = params.OutExecutionOutput;
+}
+
+
+// Function GameplayAbilities.GameplayModMagnitudeCalculation.CalculateBaseMagnitude
+// (Native, Event, Public, HasOutParms, BlueprintEvent, Const)
+// Parameters:
+// struct FGameplayEffectSpec     Spec                           (ConstParm, Parm, OutParm, ReferenceParm)
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UGameplayModMagnitudeCalculation::CalculateBaseMagnitude(const struct FGameplayEffectSpec& Spec)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayModMagnitudeCalculation.CalculateBaseMagnitude");
+
+	UGameplayModMagnitudeCalculation_CalculateBaseMagnitude_Params params;
+	params.Spec = Spec;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.GameplayCueInterface.ForwardGameplayCueToParent
+// (BlueprintCosmetic, Native, Public, BlueprintCallable)
+
+void UGameplayCueInterface::ForwardGameplayCueToParent()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueInterface.ForwardGameplayCueToParent");
+
+	UGameplayCueInterface_ForwardGameplayCueToParent_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayCueInterface.BlueprintCustomHandler
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Parameters:
+// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (Parm)
+
+void UGameplayCueInterface::BlueprintCustomHandler(TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueInterface.BlueprintCustomHandler");
+
+	UGameplayCueInterface_BlueprintCustomHandler_Params params;
+	params.EventType = EventType;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasOrigin
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UAbilitySystemBlueprintLibrary::STATIC_TargetDataHasOrigin(const struct FGameplayAbilityTargetDataHandle& TargetData, int Index)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasOrigin");
+
+	UAbilitySystemBlueprintLibrary_TargetDataHasOrigin_Params params;
+	params.TargetData = TargetData;
+	params.Index = Index;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasHitResult
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayAbilityTargetDataHandle HitResult                      (ConstParm, Parm, OutParm, ReferenceParm)
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UAbilitySystemBlueprintLibrary::STATIC_TargetDataHasHitResult(const struct FGameplayAbilityTargetDataHandle& HitResult, int Index)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasHitResult");
+
+	UAbilitySystemBlueprintLibrary_TargetDataHasHitResult_Params params;
+	params.HitResult = HitResult;
+	params.Index = Index;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasEndPoint
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UAbilitySystemBlueprintLibrary::STATIC_TargetDataHasEndPoint(const struct FGameplayAbilityTargetDataHandle& TargetData, int Index)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasEndPoint");
+
+	UAbilitySystemBlueprintLibrary_TargetDataHasEndPoint_Params params;
+	params.TargetData = TargetData;
+	params.Index = Index;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasActor
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UAbilitySystemBlueprintLibrary::STATIC_TargetDataHasActor(const struct FGameplayAbilityTargetDataHandle& TargetData, int Index)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasActor");
+
+	UAbilitySystemBlueprintLibrary_TargetDataHasActor_Params params;
+	params.TargetData = TargetData;
+	params.Index = Index;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.SetStackCountToMax
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
+// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_SetStackCountToMax(const struct FGameplayEffectSpecHandle& SpecHandle)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.SetStackCountToMax");
+
+	UAbilitySystemBlueprintLibrary_SetStackCountToMax_Params params;
+	params.SpecHandle = SpecHandle;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.SetStackCount
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
+// int                            StackCount                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_SetStackCount(const struct FGameplayEffectSpecHandle& SpecHandle, int StackCount)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.SetStackCount");
+
+	UAbilitySystemBlueprintLibrary_SetStackCount_Params params;
+	params.SpecHandle = SpecHandle;
+	params.StackCount = StackCount;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.SetDuration
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
+// float                          Duration                       (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_SetDuration(const struct FGameplayEffectSpecHandle& SpecHandle, float Duration)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.SetDuration");
+
+	UAbilitySystemBlueprintLibrary_SetDuration_Params params;
+	params.SpecHandle = SpecHandle;
+	params.Duration = Duration;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.SendGameplayEventToActor
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                  Actor                          (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayTag            EventTag                       (Parm)
+// struct FGameplayEventData      Payload                        (Parm)
+
+void UAbilitySystemBlueprintLibrary::STATIC_SendGameplayEventToActor(class AActor* Actor, const struct FGameplayTag& EventTag, const struct FGameplayEventData& Payload)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.SendGameplayEventToActor");
+
+	UAbilitySystemBlueprintLibrary_SendGameplayEventToActor_Params params;
+	params.Actor = Actor;
+	params.EventTag = EventTag;
+	params.Payload = Payload;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.NotEqual_GameplayAttributeGameplayAttribute
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayAttribute      AttributeA                     (Parm)
+// struct FGameplayAttribute      AttributeB                     (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UAbilitySystemBlueprintLibrary::STATIC_NotEqual_GameplayAttributeGameplayAttribute(const struct FGameplayAttribute& AttributeA, const struct FGameplayAttribute& AttributeB)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.NotEqual_GameplayAttributeGameplayAttribute");
+
+	UAbilitySystemBlueprintLibrary_NotEqual_GameplayAttributeGameplayAttribute_Params params;
+	params.AttributeA = AttributeA;
+	params.AttributeB = AttributeB;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.MakeSpecHandle
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UGameplayEffect*         InGameplayEffect               (Parm, ZeroConstructor, IsPlainOldData)
+// class AActor*                  InInstigator                   (Parm, ZeroConstructor, IsPlainOldData)
+// class AActor*                  InEffectCauser                 (Parm, ZeroConstructor, IsPlainOldData)
+// float                          InLevel                        (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_MakeSpecHandle(class UGameplayEffect* InGameplayEffect, class AActor* InInstigator, class AActor* InEffectCauser, float InLevel)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.MakeSpecHandle");
+
+	UAbilitySystemBlueprintLibrary_MakeSpecHandle_Params params;
+	params.InGameplayEffect = InGameplayEffect;
+	params.InInstigator = InInstigator;
+	params.InEffectCauser = InEffectCauser;
+	params.InLevel = InLevel;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.MakeFilterHandle
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayTargetDataFilter Filter                         (Parm)
+// class AActor*                  FilterActor                    (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayTargetDataFilterHandle ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGameplayTargetDataFilterHandle UAbilitySystemBlueprintLibrary::STATIC_MakeFilterHandle(const struct FGameplayTargetDataFilter& Filter, class AActor* FilterActor)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.MakeFilterHandle");
+
+	UAbilitySystemBlueprintLibrary_MakeFilterHandle_Params params;
+	params.Filter = Filter;
+	params.FilterActor = FilterActor;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.IsValid
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayAttribute      Attribute                      (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UAbilitySystemBlueprintLibrary::STATIC_IsValid(const struct FGameplayAttribute& Attribute)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.IsValid");
+
+	UAbilitySystemBlueprintLibrary_IsValid_Params params;
+	params.Attribute = Attribute;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.IsInstigatorLocallyControlledPlayer
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayCueParameters  Parameters                     (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UAbilitySystemBlueprintLibrary::STATIC_IsInstigatorLocallyControlledPlayer(const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.IsInstigatorLocallyControlledPlayer");
+
+	UAbilitySystemBlueprintLibrary_IsInstigatorLocallyControlledPlayer_Params params;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.IsInstigatorLocallyControlled
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayCueParameters  Parameters                     (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UAbilitySystemBlueprintLibrary::STATIC_IsInstigatorLocallyControlled(const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.IsInstigatorLocallyControlled");
+
+	UAbilitySystemBlueprintLibrary_IsInstigatorLocallyControlled_Params params;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.HasHitResult
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayCueParameters  Parameters                     (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UAbilitySystemBlueprintLibrary::STATIC_HasHitResult(const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.HasHitResult");
+
+	UAbilitySystemBlueprintLibrary_HasHitResult_Params params;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetTargetDataOrigin
+// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
+// struct FTransform              ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
+
+struct FTransform UAbilitySystemBlueprintLibrary::STATIC_GetTargetDataOrigin(const struct FGameplayAbilityTargetDataHandle& TargetData, int Index)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetTargetDataOrigin");
+
+	UAbilitySystemBlueprintLibrary_GetTargetDataOrigin_Params params;
+	params.TargetData = TargetData;
+	params.Index = Index;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetTargetDataEndPointTransform
+// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
+// struct FTransform              ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
+
+struct FTransform UAbilitySystemBlueprintLibrary::STATIC_GetTargetDataEndPointTransform(const struct FGameplayAbilityTargetDataHandle& TargetData, int Index)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetTargetDataEndPointTransform");
+
+	UAbilitySystemBlueprintLibrary_GetTargetDataEndPointTransform_Params params;
+	params.TargetData = TargetData;
+	params.Index = Index;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetTargetDataEndPoint
+// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector                 ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
+
+struct FVector UAbilitySystemBlueprintLibrary::STATIC_GetTargetDataEndPoint(const struct FGameplayAbilityTargetDataHandle& TargetData, int Index)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetTargetDataEndPoint");
+
+	UAbilitySystemBlueprintLibrary_GetTargetDataEndPoint_Params params;
+	params.TargetData = TargetData;
+	params.Index = Index;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetOrigin
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayCueParameters  Parameters                     (Parm)
+// struct FVector                 ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
+
+struct FVector UAbilitySystemBlueprintLibrary::STATIC_GetOrigin(const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetOrigin");
+
+	UAbilitySystemBlueprintLibrary_GetOrigin_Params params;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetModifiedAttributeMagnitude
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
+// struct FGameplayAttribute      Attribute                      (Parm)
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UAbilitySystemBlueprintLibrary::STATIC_GetModifiedAttributeMagnitude(const struct FGameplayEffectSpecHandle& SpecHandle, const struct FGameplayAttribute& Attribute)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetModifiedAttributeMagnitude");
+
+	UAbilitySystemBlueprintLibrary_GetModifiedAttributeMagnitude_Params params;
+	params.SpecHandle = SpecHandle;
+	params.Attribute = Attribute;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetInstigatorTransform
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayCueParameters  Parameters                     (Parm)
+// struct FTransform              ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
+
+struct FTransform UAbilitySystemBlueprintLibrary::STATIC_GetInstigatorTransform(const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetInstigatorTransform");
+
+	UAbilitySystemBlueprintLibrary_GetInstigatorTransform_Params params;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetInstigatorActor
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayCueParameters  Parameters                     (Parm)
+// class AActor*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class AActor* UAbilitySystemBlueprintLibrary::STATIC_GetInstigatorActor(const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetInstigatorActor");
+
+	UAbilitySystemBlueprintLibrary_GetInstigatorActor_Params params;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetHitResultFromTargetData
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayAbilityTargetDataHandle HitResult                      (ConstParm, Parm, OutParm, ReferenceParm)
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
+// struct FHitResult              ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
+
+struct FHitResult UAbilitySystemBlueprintLibrary::STATIC_GetHitResultFromTargetData(const struct FGameplayAbilityTargetDataHandle& HitResult, int Index)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetHitResultFromTargetData");
+
+	UAbilitySystemBlueprintLibrary_GetHitResultFromTargetData_Params params;
+	params.HitResult = HitResult;
+	params.Index = Index;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetHitResult
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayCueParameters  Parameters                     (Parm)
+// struct FHitResult              ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
+
+struct FHitResult UAbilitySystemBlueprintLibrary::STATIC_GetHitResult(const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetHitResult");
+
+	UAbilitySystemBlueprintLibrary_GetHitResult_Params params;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetGameplayCueEndLocationAndNormal
+// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class AActor*                  TargetActor                    (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (Parm)
+// struct FVector                 Location                       (Parm, OutParm, IsPlainOldData)
+// struct FVector                 Normal                         (Parm, OutParm, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UAbilitySystemBlueprintLibrary::STATIC_GetGameplayCueEndLocationAndNormal(class AActor* TargetActor, const struct FGameplayCueParameters& Parameters, struct FVector* Location, struct FVector* Normal)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetGameplayCueEndLocationAndNormal");
+
+	UAbilitySystemBlueprintLibrary_GetGameplayCueEndLocationAndNormal_Params params;
+	params.TargetActor = TargetActor;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Location != nullptr)
+		*Location = params.Location;
+	if (Normal != nullptr)
+		*Normal = params.Normal;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetGameplayCueDirection
+// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class AActor*                  TargetActor                    (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (Parm)
+// struct FVector                 Direction                      (Parm, OutParm, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UAbilitySystemBlueprintLibrary::STATIC_GetGameplayCueDirection(class AActor* TargetActor, const struct FGameplayCueParameters& Parameters, struct FVector* Direction)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetGameplayCueDirection");
+
+	UAbilitySystemBlueprintLibrary_GetGameplayCueDirection_Params params;
+	params.TargetActor = TargetActor;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Direction != nullptr)
+		*Direction = params.Direction;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttributeFromAbilitySystemComponent
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UAbilitySystemComponent* AbilitySystem                  (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// struct FGameplayAttribute      Attribute                      (Parm)
+// bool                           bSuccessfullyFoundAttribute    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UAbilitySystemBlueprintLibrary::STATIC_GetFloatAttributeFromAbilitySystemComponent(class UAbilitySystemComponent* AbilitySystem, const struct FGameplayAttribute& Attribute, bool* bSuccessfullyFoundAttribute)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttributeFromAbilitySystemComponent");
+
+	UAbilitySystemBlueprintLibrary_GetFloatAttributeFromAbilitySystemComponent_Params params;
+	params.AbilitySystem = AbilitySystem;
+	params.Attribute = Attribute;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bSuccessfullyFoundAttribute != nullptr)
+		*bSuccessfullyFoundAttribute = params.bSuccessfullyFoundAttribute;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttributeBaseFromAbilitySystemComponent
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UAbilitySystemComponent* AbilitySystemComponent         (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// struct FGameplayAttribute      Attribute                      (Parm)
+// bool                           bSuccessfullyFoundAttribute    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UAbilitySystemBlueprintLibrary::STATIC_GetFloatAttributeBaseFromAbilitySystemComponent(class UAbilitySystemComponent* AbilitySystemComponent, const struct FGameplayAttribute& Attribute, bool* bSuccessfullyFoundAttribute)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttributeBaseFromAbilitySystemComponent");
+
+	UAbilitySystemBlueprintLibrary_GetFloatAttributeBaseFromAbilitySystemComponent_Params params;
+	params.AbilitySystemComponent = AbilitySystemComponent;
+	params.Attribute = Attribute;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bSuccessfullyFoundAttribute != nullptr)
+		*bSuccessfullyFoundAttribute = params.bSuccessfullyFoundAttribute;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttributeBase
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class AActor*                  Actor                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayAttribute      Attribute                      (Parm)
+// bool                           bSuccessfullyFoundAttribute    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UAbilitySystemBlueprintLibrary::STATIC_GetFloatAttributeBase(class AActor* Actor, const struct FGameplayAttribute& Attribute, bool* bSuccessfullyFoundAttribute)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttributeBase");
+
+	UAbilitySystemBlueprintLibrary_GetFloatAttributeBase_Params params;
+	params.Actor = Actor;
+	params.Attribute = Attribute;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bSuccessfullyFoundAttribute != nullptr)
+		*bSuccessfullyFoundAttribute = params.bSuccessfullyFoundAttribute;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttribute
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class AActor*                  Actor                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayAttribute      Attribute                      (Parm)
+// bool                           bSuccessfullyFoundAttribute    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UAbilitySystemBlueprintLibrary::STATIC_GetFloatAttribute(class AActor* Actor, const struct FGameplayAttribute& Attribute, bool* bSuccessfullyFoundAttribute)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttribute");
+
+	UAbilitySystemBlueprintLibrary_GetFloatAttribute_Params params;
+	params.Actor = Actor;
+	params.Attribute = Attribute;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bSuccessfullyFoundAttribute != nullptr)
+		*bSuccessfullyFoundAttribute = params.bSuccessfullyFoundAttribute;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetEffectContext
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
+// struct FGameplayEffectContextHandle ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGameplayEffectContextHandle UAbilitySystemBlueprintLibrary::STATIC_GetEffectContext(const struct FGameplayEffectSpecHandle& SpecHandle)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetEffectContext");
+
+	UAbilitySystemBlueprintLibrary_GetEffectContext_Params params;
+	params.SpecHandle = SpecHandle;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetDataCountFromTargetData
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UAbilitySystemBlueprintLibrary::STATIC_GetDataCountFromTargetData(const struct FGameplayAbilityTargetDataHandle& TargetData)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetDataCountFromTargetData");
+
+	UAbilitySystemBlueprintLibrary_GetDataCountFromTargetData_Params params;
+	params.TargetData = TargetData;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetAllLinkedGameplayEffectSpecHandles
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
+// TArray<struct FGameplayEffectSpecHandle> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
+
+TArray<struct FGameplayEffectSpecHandle> UAbilitySystemBlueprintLibrary::STATIC_GetAllLinkedGameplayEffectSpecHandles(const struct FGameplayEffectSpecHandle& SpecHandle)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetAllLinkedGameplayEffectSpecHandles");
+
+	UAbilitySystemBlueprintLibrary_GetAllLinkedGameplayEffectSpecHandles_Params params;
+	params.SpecHandle = SpecHandle;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActorsFromTargetData
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
+// TArray<class AActor*>          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
+
+TArray<class AActor*> UAbilitySystemBlueprintLibrary::STATIC_GetActorsFromTargetData(const struct FGameplayAbilityTargetDataHandle& TargetData, int Index)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActorsFromTargetData");
+
+	UAbilitySystemBlueprintLibrary_GetActorsFromTargetData_Params params;
+	params.TargetData = TargetData;
+	params.Index = Index;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActorCount
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayCueParameters  Parameters                     (Parm)
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UAbilitySystemBlueprintLibrary::STATIC_GetActorCount(const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActorCount");
+
+	UAbilitySystemBlueprintLibrary_GetActorCount_Params params;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActorByIndex
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayCueParameters  Parameters                     (Parm)
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
+// class AActor*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class AActor* UAbilitySystemBlueprintLibrary::STATIC_GetActorByIndex(const struct FGameplayCueParameters& Parameters, int Index)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActorByIndex");
+
+	UAbilitySystemBlueprintLibrary_GetActorByIndex_Params params;
+	params.Parameters = Parameters;
+	params.Index = Index;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectStackLimitCount
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// struct FActiveGameplayEffectHandle ActiveHandle                   (Parm)
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UAbilitySystemBlueprintLibrary::STATIC_GetActiveGameplayEffectStackLimitCount(const struct FActiveGameplayEffectHandle& ActiveHandle)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectStackLimitCount");
+
+	UAbilitySystemBlueprintLibrary_GetActiveGameplayEffectStackLimitCount_Params params;
+	params.ActiveHandle = ActiveHandle;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectStackCount
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// struct FActiveGameplayEffectHandle ActiveHandle                   (Parm)
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UAbilitySystemBlueprintLibrary::STATIC_GetActiveGameplayEffectStackCount(const struct FActiveGameplayEffectHandle& ActiveHandle)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectStackCount");
+
+	UAbilitySystemBlueprintLibrary_GetActiveGameplayEffectStackCount_Params params;
+	params.ActiveHandle = ActiveHandle;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectDebugString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FActiveGameplayEffectHandle ActiveHandle                   (Parm)
+// struct FString                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
+
+struct FString UAbilitySystemBlueprintLibrary::STATIC_GetActiveGameplayEffectDebugString(const struct FActiveGameplayEffectHandle& ActiveHandle)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectDebugString");
+
+	UAbilitySystemBlueprintLibrary_GetActiveGameplayEffectDebugString_Params params;
+	params.ActiveHandle = ActiveHandle;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetAbilitySystemComponent
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class AActor*                  Actor                          (Parm, ZeroConstructor, IsPlainOldData)
+// class UAbilitySystemComponent* ReturnValue                    (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+
+class UAbilitySystemComponent* UAbilitySystemBlueprintLibrary::STATIC_GetAbilitySystemComponent(class AActor* Actor)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetAbilitySystemComponent");
+
+	UAbilitySystemBlueprintLibrary_GetAbilitySystemComponent_Params params;
+	params.Actor = Actor;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.ForwardGameplayCueToTarget
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TScriptInterface<class UGameplayCueInterface> TargetCueInterface             (Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (Parm)
+
+void UAbilitySystemBlueprintLibrary::STATIC_ForwardGameplayCueToTarget(const TScriptInterface<class UGameplayCueInterface>& TargetCueInterface, TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.ForwardGameplayCueToTarget");
+
+	UAbilitySystemBlueprintLibrary_ForwardGameplayCueToTarget_Params params;
+	params.TargetCueInterface = TargetCueInterface;
+	params.EventType = EventType;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.FilterTargetData
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayAbilityTargetDataHandle TargetDataHandle               (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FGameplayTargetDataFilterHandle ActorFilterClass               (Parm)
+// struct FGameplayAbilityTargetDataHandle ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGameplayAbilityTargetDataHandle UAbilitySystemBlueprintLibrary::STATIC_FilterTargetData(const struct FGameplayAbilityTargetDataHandle& TargetDataHandle, const struct FGameplayTargetDataFilterHandle& ActorFilterClass)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.FilterTargetData");
+
+	UAbilitySystemBlueprintLibrary_FilterTargetData_Params params;
+	params.TargetDataHandle = TargetDataHandle;
+	params.ActorFilterClass = ActorFilterClass;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EvaluateAttributeValueWithTagsAndBase
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UAbilitySystemComponent* AbilitySystem                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// struct FGameplayAttribute      Attribute                      (Parm)
+// struct FGameplayTagContainer   SourceTags                     (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FGameplayTagContainer   TargetTags                     (ConstParm, Parm, OutParm, ReferenceParm)
+// float                          BaseValue                      (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bSuccess                       (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UAbilitySystemBlueprintLibrary::STATIC_EvaluateAttributeValueWithTagsAndBase(class UAbilitySystemComponent* AbilitySystem, const struct FGameplayAttribute& Attribute, const struct FGameplayTagContainer& SourceTags, const struct FGameplayTagContainer& TargetTags, float BaseValue, bool* bSuccess)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EvaluateAttributeValueWithTagsAndBase");
+
+	UAbilitySystemBlueprintLibrary_EvaluateAttributeValueWithTagsAndBase_Params params;
+	params.AbilitySystem = AbilitySystem;
+	params.Attribute = Attribute;
+	params.SourceTags = SourceTags;
+	params.TargetTags = TargetTags;
+	params.BaseValue = BaseValue;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bSuccess != nullptr)
+		*bSuccess = params.bSuccess;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EvaluateAttributeValueWithTags
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UAbilitySystemComponent* AbilitySystem                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// struct FGameplayAttribute      Attribute                      (Parm)
+// struct FGameplayTagContainer   SourceTags                     (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FGameplayTagContainer   TargetTags                     (ConstParm, Parm, OutParm, ReferenceParm)
+// bool                           bSuccess                       (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UAbilitySystemBlueprintLibrary::STATIC_EvaluateAttributeValueWithTags(class UAbilitySystemComponent* AbilitySystem, const struct FGameplayAttribute& Attribute, const struct FGameplayTagContainer& SourceTags, const struct FGameplayTagContainer& TargetTags, bool* bSuccess)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EvaluateAttributeValueWithTags");
+
+	UAbilitySystemBlueprintLibrary_EvaluateAttributeValueWithTags_Params params;
+	params.AbilitySystem = AbilitySystem;
+	params.Attribute = Attribute;
+	params.SourceTags = SourceTags;
+	params.TargetTags = TargetTags;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bSuccess != nullptr)
+		*bSuccess = params.bSuccess;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EqualEqual_GameplayAttributeGameplayAttribute
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayAttribute      AttributeA                     (Parm)
+// struct FGameplayAttribute      AttributeB                     (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UAbilitySystemBlueprintLibrary::STATIC_EqualEqual_GameplayAttributeGameplayAttribute(const struct FGameplayAttribute& AttributeA, const struct FGameplayAttribute& AttributeB)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EqualEqual_GameplayAttributeGameplayAttribute");
+
+	UAbilitySystemBlueprintLibrary_EqualEqual_GameplayAttributeGameplayAttribute_Params params;
+	params.AttributeA = AttributeA;
+	params.AttributeB = AttributeB;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextSetOrigin
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FGameplayEffectContextHandle EffectContext                  (Parm)
+// struct FVector                 Origin                         (Parm, IsPlainOldData)
+
+void UAbilitySystemBlueprintLibrary::STATIC_EffectContextSetOrigin(const struct FGameplayEffectContextHandle& EffectContext, const struct FVector& Origin)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextSetOrigin");
+
+	UAbilitySystemBlueprintLibrary_EffectContextSetOrigin_Params params;
+	params.EffectContext = EffectContext;
+	params.Origin = Origin;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextIsValid
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayEffectContextHandle EffectContext                  (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UAbilitySystemBlueprintLibrary::STATIC_EffectContextIsValid(const struct FGameplayEffectContextHandle& EffectContext)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextIsValid");
+
+	UAbilitySystemBlueprintLibrary_EffectContextIsValid_Params params;
+	params.EffectContext = EffectContext;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextIsInstigatorLocallyControlled
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayEffectContextHandle EffectContext                  (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UAbilitySystemBlueprintLibrary::STATIC_EffectContextIsInstigatorLocallyControlled(const struct FGameplayEffectContextHandle& EffectContext)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextIsInstigatorLocallyControlled");
+
+	UAbilitySystemBlueprintLibrary_EffectContextIsInstigatorLocallyControlled_Params params;
+	params.EffectContext = EffectContext;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextHasHitResult
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayEffectContextHandle EffectContext                  (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UAbilitySystemBlueprintLibrary::STATIC_EffectContextHasHitResult(const struct FGameplayEffectContextHandle& EffectContext)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextHasHitResult");
+
+	UAbilitySystemBlueprintLibrary_EffectContextHasHitResult_Params params;
+	params.EffectContext = EffectContext;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetSourceObject
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayEffectContextHandle EffectContext                  (Parm)
+// class UObject*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class UObject* UAbilitySystemBlueprintLibrary::STATIC_EffectContextGetSourceObject(const struct FGameplayEffectContextHandle& EffectContext)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetSourceObject");
+
+	UAbilitySystemBlueprintLibrary_EffectContextGetSourceObject_Params params;
+	params.EffectContext = EffectContext;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetOriginalInstigatorActor
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayEffectContextHandle EffectContext                  (Parm)
+// class AActor*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class AActor* UAbilitySystemBlueprintLibrary::STATIC_EffectContextGetOriginalInstigatorActor(const struct FGameplayEffectContextHandle& EffectContext)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetOriginalInstigatorActor");
+
+	UAbilitySystemBlueprintLibrary_EffectContextGetOriginalInstigatorActor_Params params;
+	params.EffectContext = EffectContext;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetOrigin
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayEffectContextHandle EffectContext                  (Parm)
+// struct FVector                 ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
+
+struct FVector UAbilitySystemBlueprintLibrary::STATIC_EffectContextGetOrigin(const struct FGameplayEffectContextHandle& EffectContext)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetOrigin");
+
+	UAbilitySystemBlueprintLibrary_EffectContextGetOrigin_Params params;
+	params.EffectContext = EffectContext;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetInstigatorActor
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayEffectContextHandle EffectContext                  (Parm)
+// class AActor*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class AActor* UAbilitySystemBlueprintLibrary::STATIC_EffectContextGetInstigatorActor(const struct FGameplayEffectContextHandle& EffectContext)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetInstigatorActor");
+
+	UAbilitySystemBlueprintLibrary_EffectContextGetInstigatorActor_Params params;
+	params.EffectContext = EffectContext;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetHitResult
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayEffectContextHandle EffectContext                  (Parm)
+// struct FHitResult              ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
+
+struct FHitResult UAbilitySystemBlueprintLibrary::STATIC_EffectContextGetHitResult(const struct FGameplayEffectContextHandle& EffectContext)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetHitResult");
+
+	UAbilitySystemBlueprintLibrary_EffectContextGetHitResult_Params params;
+	params.EffectContext = EffectContext;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetEffectCauser
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayEffectContextHandle EffectContext                  (Parm)
+// class AActor*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class AActor* UAbilitySystemBlueprintLibrary::STATIC_EffectContextGetEffectCauser(const struct FGameplayEffectContextHandle& EffectContext)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetEffectCauser");
+
+	UAbilitySystemBlueprintLibrary_EffectContextGetEffectCauser_Params params;
+	params.EffectContext = EffectContext;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextAddHitResult
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// struct FGameplayEffectContextHandle EffectContext                  (Parm)
+// struct FHitResult              HitResult                      (Parm, IsPlainOldData)
+// bool                           bReset                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void UAbilitySystemBlueprintLibrary::STATIC_EffectContextAddHitResult(const struct FGameplayEffectContextHandle& EffectContext, const struct FHitResult& HitResult, bool bReset)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextAddHitResult");
+
+	UAbilitySystemBlueprintLibrary_EffectContextAddHitResult_Params params;
+	params.EffectContext = EffectContext;
+	params.HitResult = HitResult;
+	params.bReset = bReset;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.DoesTargetDataContainActor
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
+// class AActor*                  Actor                          (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UAbilitySystemBlueprintLibrary::STATIC_DoesTargetDataContainActor(const struct FGameplayAbilityTargetDataHandle& TargetData, int Index, class AActor* Actor)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.DoesTargetDataContainActor");
+
+	UAbilitySystemBlueprintLibrary_DoesTargetDataContainActor_Params params;
+	params.TargetData = TargetData;
+	params.Index = Index;
+	params.Actor = Actor;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.DoesGameplayCueMeetTagRequirements
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayCueParameters  Parameters                     (Parm)
+// struct FGameplayTagRequirements SourceTagReqs                  (Parm, OutParm, ReferenceParm)
+// struct FGameplayTagRequirements TargetTagReqs                  (Parm, OutParm, ReferenceParm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UAbilitySystemBlueprintLibrary::STATIC_DoesGameplayCueMeetTagRequirements(const struct FGameplayCueParameters& Parameters, struct FGameplayTagRequirements* SourceTagReqs, struct FGameplayTagRequirements* TargetTagReqs)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.DoesGameplayCueMeetTagRequirements");
+
+	UAbilitySystemBlueprintLibrary_DoesGameplayCueMeetTagRequirements_Params params;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (SourceTagReqs != nullptr)
+		*SourceTagReqs = params.SourceTagReqs;
+	if (TargetTagReqs != nullptr)
+		*TargetTagReqs = params.TargetTagReqs;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AssignSetByCallerMagnitude
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
+// struct FName                   DataName                       (Parm, ZeroConstructor, IsPlainOldData)
+// float                          Magnitude                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_AssignSetByCallerMagnitude(const struct FGameplayEffectSpecHandle& SpecHandle, const struct FName& DataName, float Magnitude)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AssignSetByCallerMagnitude");
+
+	UAbilitySystemBlueprintLibrary_AssignSetByCallerMagnitude_Params params;
+	params.SpecHandle = SpecHandle;
+	params.DataName = DataName;
+	params.Magnitude = Magnitude;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AppendTargetDataHandle
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FGameplayAbilityTargetDataHandle TargetHandle                   (Parm)
+// struct FGameplayAbilityTargetDataHandle HandleToAdd                    (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FGameplayAbilityTargetDataHandle ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGameplayAbilityTargetDataHandle UAbilitySystemBlueprintLibrary::STATIC_AppendTargetDataHandle(const struct FGameplayAbilityTargetDataHandle& TargetHandle, const struct FGameplayAbilityTargetDataHandle& HandleToAdd)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AppendTargetDataHandle");
+
+	UAbilitySystemBlueprintLibrary_AppendTargetDataHandle_Params params;
+	params.TargetHandle = TargetHandle;
+	params.HandleToAdd = HandleToAdd;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddLinkedGameplayEffectSpec
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
+// struct FGameplayEffectSpecHandle LinkedGameplayEffectSpec       (Parm)
+// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_AddLinkedGameplayEffectSpec(const struct FGameplayEffectSpecHandle& SpecHandle, const struct FGameplayEffectSpecHandle& LinkedGameplayEffectSpec)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddLinkedGameplayEffectSpec");
+
+	UAbilitySystemBlueprintLibrary_AddLinkedGameplayEffectSpec_Params params;
+	params.SpecHandle = SpecHandle;
+	params.LinkedGameplayEffectSpec = LinkedGameplayEffectSpec;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddLinkedGameplayEffect
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
+// class UClass*                  LinkedGameplayEffect           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_AddLinkedGameplayEffect(const struct FGameplayEffectSpecHandle& SpecHandle, class UClass* LinkedGameplayEffect)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddLinkedGameplayEffect");
+
+	UAbilitySystemBlueprintLibrary_AddLinkedGameplayEffect_Params params;
+	params.SpecHandle = SpecHandle;
+	params.LinkedGameplayEffect = LinkedGameplayEffect;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddGrantedTags
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
+// struct FGameplayTagContainer   NewGameplayTags                (Parm)
+// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_AddGrantedTags(const struct FGameplayEffectSpecHandle& SpecHandle, const struct FGameplayTagContainer& NewGameplayTags)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddGrantedTags");
+
+	UAbilitySystemBlueprintLibrary_AddGrantedTags_Params params;
+	params.SpecHandle = SpecHandle;
+	params.NewGameplayTags = NewGameplayTags;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddGrantedTag
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
+// struct FGameplayTag            NewGameplayTag                 (Parm)
+// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_AddGrantedTag(const struct FGameplayEffectSpecHandle& SpecHandle, const struct FGameplayTag& NewGameplayTag)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddGrantedTag");
+
+	UAbilitySystemBlueprintLibrary_AddGrantedTag_Params params;
+	params.SpecHandle = SpecHandle;
+	params.NewGameplayTag = NewGameplayTag;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddAssetTags
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
+// struct FGameplayTagContainer   NewGameplayTags                (Parm)
+// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_AddAssetTags(const struct FGameplayEffectSpecHandle& SpecHandle, const struct FGameplayTagContainer& NewGameplayTags)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddAssetTags");
+
+	UAbilitySystemBlueprintLibrary_AddAssetTags_Params params;
+	params.SpecHandle = SpecHandle;
+	params.NewGameplayTags = NewGameplayTags;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddAssetTag
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// struct FGameplayEffectSpecHandle SpecHandle                     (Parm)
+// struct FGameplayTag            NewGameplayTag                 (Parm)
+// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::STATIC_AddAssetTag(const struct FGameplayEffectSpecHandle& SpecHandle, const struct FGameplayTag& NewGameplayTag)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddAssetTag");
+
+	UAbilitySystemBlueprintLibrary_AddAssetTag_Params params;
+	params.SpecHandle = SpecHandle;
+	params.NewGameplayTag = NewGameplayTag;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromLocations
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FGameplayAbilityTargetingLocationInfo SourceLocation                 (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FGameplayAbilityTargetingLocationInfo TargetLocation                 (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FGameplayAbilityTargetDataHandle ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGameplayAbilityTargetDataHandle UAbilitySystemBlueprintLibrary::STATIC_AbilityTargetDataFromLocations(const struct FGameplayAbilityTargetingLocationInfo& SourceLocation, const struct FGameplayAbilityTargetingLocationInfo& TargetLocation)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromLocations");
+
+	UAbilitySystemBlueprintLibrary_AbilityTargetDataFromLocations_Params params;
+	params.SourceLocation = SourceLocation;
+	params.TargetLocation = TargetLocation;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromHitResult
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FHitResult              HitResult                      (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+// struct FGameplayAbilityTargetDataHandle ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGameplayAbilityTargetDataHandle UAbilitySystemBlueprintLibrary::STATIC_AbilityTargetDataFromHitResult(const struct FHitResult& HitResult)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromHitResult");
+
+	UAbilitySystemBlueprintLibrary_AbilityTargetDataFromHitResult_Params params;
+	params.HitResult = HitResult;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromActorArray
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// TArray<class AActor*>          ActorArray                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// bool                           OneTargetPerHandle             (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayAbilityTargetDataHandle ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGameplayAbilityTargetDataHandle UAbilitySystemBlueprintLibrary::STATIC_AbilityTargetDataFromActorArray(TArray<class AActor*> ActorArray, bool OneTargetPerHandle)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromActorArray");
+
+	UAbilitySystemBlueprintLibrary_AbilityTargetDataFromActorArray_Params params;
+	params.ActorArray = ActorArray;
+	params.OneTargetPerHandle = OneTargetPerHandle;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromActor
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class AActor*                  Actor                          (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayAbilityTargetDataHandle ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGameplayAbilityTargetDataHandle UAbilitySystemBlueprintLibrary::STATIC_AbilityTargetDataFromActor(class AActor* Actor)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromActor");
+
+	UAbilitySystemBlueprintLibrary_AbilityTargetDataFromActor_Params params;
+	params.Actor = Actor;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
 // Function GameplayAbilities.AbilityTask_ApplyRootMotionConstantForce.ApplyRootMotionConstantForce
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -3702,29 +5005,6 @@ class UAbilityTask_ApplyRootMotionJumpForce* UAbilityTask_ApplyRootMotionJumpFor
 }
 
 
-// Function GameplayAbilities.AbilityTask_ApplyRootMotionMoveToActorForce.OnTargetActorSwapped
-// (Final, Native, Public)
-// Parameters:
-// class AActor*                  OriginalTarget                 (Parm, ZeroConstructor, IsPlainOldData)
-// class AActor*                  NewTarget                      (Parm, ZeroConstructor, IsPlainOldData)
-
-void UAbilityTask_ApplyRootMotionMoveToActorForce::OnTargetActorSwapped(class AActor* OriginalTarget, class AActor* NewTarget)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilityTask_ApplyRootMotionMoveToActorForce.OnTargetActorSwapped");
-
-	UAbilityTask_ApplyRootMotionMoveToActorForce_OnTargetActorSwapped_Params params;
-	params.OriginalTarget = OriginalTarget;
-	params.NewTarget = NewTarget;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function GameplayAbilities.AbilityTask_ApplyRootMotionMoveToActorForce.OnRep_TargetLocation
 // (Final, Native, Protected)
 
@@ -3740,66 +5020,6 @@ void UAbilityTask_ApplyRootMotionMoveToActorForce::OnRep_TargetLocation()
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.AbilityTask_ApplyRootMotionMoveToActorForce.ApplyRootMotionMoveToTargetDataActorForce
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// class UGameplayAbility*        OwningAbility                  (Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   TaskInstanceName               (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayAbilityTargetDataHandle TargetDataHandle               (Parm)
-// int                            TargetDataIndex                (Parm, ZeroConstructor, IsPlainOldData)
-// int                            TargetActorIndex               (Parm, ZeroConstructor, IsPlainOldData)
-// struct FVector                 TargetLocationOffset           (Parm, IsPlainOldData)
-// ERootMotionMoveToActorTargetOffsetType OffsetAlignment                (Parm, ZeroConstructor, IsPlainOldData)
-// float                          Duration                       (Parm, ZeroConstructor, IsPlainOldData)
-// class UCurveFloat*             TargetLerpSpeedHorizontal      (Parm, ZeroConstructor, IsPlainOldData)
-// class UCurveFloat*             TargetLerpSpeedVertical        (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bSetNewMovementMode            (Parm, ZeroConstructor, IsPlainOldData)
-// TEnumAsByte<EMovementMode>     MovementMode                   (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bRestrictSpeedToExpected       (Parm, ZeroConstructor, IsPlainOldData)
-// class UCurveVector*            PathOffsetCurve                (Parm, ZeroConstructor, IsPlainOldData)
-// class UCurveFloat*             TimeMappingCurve               (Parm, ZeroConstructor, IsPlainOldData)
-// ERootMotionFinishVelocityMode  VelocityOnFinishMode           (Parm, ZeroConstructor, IsPlainOldData)
-// struct FVector                 SetVelocityOnFinish            (Parm, IsPlainOldData)
-// float                          ClampVelocityOnFinish          (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bDisableDestinationReachedInterrupt (Parm, ZeroConstructor, IsPlainOldData)
-// class UAbilityTask_ApplyRootMotionMoveToActorForce* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UAbilityTask_ApplyRootMotionMoveToActorForce* UAbilityTask_ApplyRootMotionMoveToActorForce::STATIC_ApplyRootMotionMoveToTargetDataActorForce(class UGameplayAbility* OwningAbility, const struct FName& TaskInstanceName, const struct FGameplayAbilityTargetDataHandle& TargetDataHandle, int TargetDataIndex, int TargetActorIndex, const struct FVector& TargetLocationOffset, ERootMotionMoveToActorTargetOffsetType OffsetAlignment, float Duration, class UCurveFloat* TargetLerpSpeedHorizontal, class UCurveFloat* TargetLerpSpeedVertical, bool bSetNewMovementMode, TEnumAsByte<EMovementMode> MovementMode, bool bRestrictSpeedToExpected, class UCurveVector* PathOffsetCurve, class UCurveFloat* TimeMappingCurve, ERootMotionFinishVelocityMode VelocityOnFinishMode, const struct FVector& SetVelocityOnFinish, float ClampVelocityOnFinish, bool bDisableDestinationReachedInterrupt)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilityTask_ApplyRootMotionMoveToActorForce.ApplyRootMotionMoveToTargetDataActorForce");
-
-	UAbilityTask_ApplyRootMotionMoveToActorForce_ApplyRootMotionMoveToTargetDataActorForce_Params params;
-	params.OwningAbility = OwningAbility;
-	params.TaskInstanceName = TaskInstanceName;
-	params.TargetDataHandle = TargetDataHandle;
-	params.TargetDataIndex = TargetDataIndex;
-	params.TargetActorIndex = TargetActorIndex;
-	params.TargetLocationOffset = TargetLocationOffset;
-	params.OffsetAlignment = OffsetAlignment;
-	params.Duration = Duration;
-	params.TargetLerpSpeedHorizontal = TargetLerpSpeedHorizontal;
-	params.TargetLerpSpeedVertical = TargetLerpSpeedVertical;
-	params.bSetNewMovementMode = bSetNewMovementMode;
-	params.MovementMode = MovementMode;
-	params.bRestrictSpeedToExpected = bRestrictSpeedToExpected;
-	params.PathOffsetCurve = PathOffsetCurve;
-	params.TimeMappingCurve = TimeMappingCurve;
-	params.VelocityOnFinishMode = VelocityOnFinishMode;
-	params.SetVelocityOnFinish = SetVelocityOnFinish;
-	params.ClampVelocityOnFinish = ClampVelocityOnFinish;
-	params.bDisableDestinationReachedInterrupt = bDisableDestinationReachedInterrupt;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
@@ -4278,6 +5498,164 @@ class UAbilityTask_StartAbilityState* UAbilityTask_StartAbilityState::STATIC_Sta
 }
 
 
+// Function GameplayAbilities.GameplayAbilityWorldReticle.SetReticleMaterialParamVector
+// (Event, Public, HasDefaults, BlueprintEvent)
+// Parameters:
+// struct FName                   ParamName                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector                 Value                          (Parm, IsPlainOldData)
+
+void AGameplayAbilityWorldReticle::SetReticleMaterialParamVector(const struct FName& ParamName, const struct FVector& Value)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbilityWorldReticle.SetReticleMaterialParamVector");
+
+	AGameplayAbilityWorldReticle_SetReticleMaterialParamVector_Params params;
+	params.ParamName = ParamName;
+	params.Value = Value;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbilityWorldReticle.SetReticleMaterialParamFloat
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// struct FName                   ParamName                      (Parm, ZeroConstructor, IsPlainOldData)
+// float                          Value                          (Parm, ZeroConstructor, IsPlainOldData)
+
+void AGameplayAbilityWorldReticle::SetReticleMaterialParamFloat(const struct FName& ParamName, float Value)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbilityWorldReticle.SetReticleMaterialParamFloat");
+
+	AGameplayAbilityWorldReticle_SetReticleMaterialParamFloat_Params params;
+	params.ParamName = ParamName;
+	params.Value = Value;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbilityWorldReticle.OnValidTargetChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                           bNewValue                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void AGameplayAbilityWorldReticle::OnValidTargetChanged(bool bNewValue)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbilityWorldReticle.OnValidTargetChanged");
+
+	AGameplayAbilityWorldReticle_OnValidTargetChanged_Params params;
+	params.bNewValue = bNewValue;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbilityWorldReticle.OnTargetingAnActor
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                           bNewValue                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void AGameplayAbilityWorldReticle::OnTargetingAnActor(bool bNewValue)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbilityWorldReticle.OnTargetingAnActor");
+
+	AGameplayAbilityWorldReticle_OnTargetingAnActor_Params params;
+	params.bNewValue = bNewValue;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbilityWorldReticle.OnParametersInitialized
+// (Event, Public, BlueprintEvent)
+
+void AGameplayAbilityWorldReticle::OnParametersInitialized()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbilityWorldReticle.OnParametersInitialized");
+
+	AGameplayAbilityWorldReticle_OnParametersInitialized_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbilityWorldReticle.FaceTowardSource
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           bFaceIn2D                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void AGameplayAbilityWorldReticle::FaceTowardSource(bool bFaceIn2D)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbilityWorldReticle.FaceTowardSource");
+
+	AGameplayAbilityWorldReticle_FaceTowardSource_Params params;
+	params.bFaceIn2D = bFaceIn2D;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbilityTargetActor.ConfirmTargeting
+// (Native, Public)
+
+void AGameplayAbilityTargetActor::ConfirmTargeting()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbilityTargetActor.ConfirmTargeting");
+
+	AGameplayAbilityTargetActor_ConfirmTargeting_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GameplayAbilities.GameplayAbilityTargetActor.CancelTargeting
+// (Native, Public)
+
+void AGameplayAbilityTargetActor::CancelTargeting()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbilityTargetActor.CancelTargeting");
+
+	AGameplayAbilityTargetActor_CancelTargeting_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function GameplayAbilities.AbilityTask_VisualizeTargeting.VisualizeTargetingUsingActor
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -4421,36 +5799,6 @@ class UAbilityTask_WaitAbilityActivate* UAbilityTask_WaitAbilityActivate::STATIC
 }
 
 
-// Function GameplayAbilities.AbilityTask_WaitAbilityActivate.WaitForAbilityActivate_Query
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UGameplayAbility*        OwningAbility                  (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayTagQuery       Query                          (Parm)
-// bool                           IncludeTriggeredAbilities      (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           TriggerOnce                    (Parm, ZeroConstructor, IsPlainOldData)
-// class UAbilityTask_WaitAbilityActivate* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UAbilityTask_WaitAbilityActivate* UAbilityTask_WaitAbilityActivate::STATIC_WaitForAbilityActivate_Query(class UGameplayAbility* OwningAbility, const struct FGameplayTagQuery& Query, bool IncludeTriggeredAbilities, bool TriggerOnce)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilityTask_WaitAbilityActivate.WaitForAbilityActivate_Query");
-
-	UAbilityTask_WaitAbilityActivate_WaitForAbilityActivate_Query_Params params;
-	params.OwningAbility = OwningAbility;
-	params.Query = Query;
-	params.IncludeTriggeredAbilities = IncludeTriggeredAbilities;
-	params.TriggerOnce = TriggerOnce;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
 // Function GameplayAbilities.AbilityTask_WaitAbilityActivate.WaitForAbilityActivate
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -4501,34 +5849,6 @@ void UAbilityTask_WaitAbilityActivate::OnAbilityActivate(class UGameplayAbility*
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.AbilityTask_WaitAbilityCommit.WaitForAbilityCommit_Query
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UGameplayAbility*        OwningAbility                  (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayTagQuery       Query                          (Parm)
-// bool                           TriggerOnce                    (Parm, ZeroConstructor, IsPlainOldData)
-// class UAbilityTask_WaitAbilityCommit* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UAbilityTask_WaitAbilityCommit* UAbilityTask_WaitAbilityCommit::STATIC_WaitForAbilityCommit_Query(class UGameplayAbility* OwningAbility, const struct FGameplayTagQuery& Query, bool TriggerOnce)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilityTask_WaitAbilityCommit.WaitForAbilityCommit_Query");
-
-	UAbilityTask_WaitAbilityCommit_WaitForAbilityCommit_Query_Params params;
-	params.OwningAbility = OwningAbility;
-	params.Query = Query;
-	params.TriggerOnce = TriggerOnce;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
@@ -4593,10 +5913,9 @@ void UAbilityTask_WaitAbilityCommit::OnAbilityCommit(class UGameplayAbility* Act
 // TEnumAsByte<EWaitAttributeChangeComparison> InComparisonType               (Parm, ZeroConstructor, IsPlainOldData)
 // float                          InComparisonValue              (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           TriggerOnce                    (Parm, ZeroConstructor, IsPlainOldData)
-// class AActor*                  OptionalExternalOwner          (Parm, ZeroConstructor, IsPlainOldData)
 // class UAbilityTask_WaitAttributeChange* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-class UAbilityTask_WaitAttributeChange* UAbilityTask_WaitAttributeChange::STATIC_WaitForAttributeChangeWithComparison(class UGameplayAbility* OwningAbility, const struct FGameplayAttribute& InAttribute, const struct FGameplayTag& InWithTag, const struct FGameplayTag& InWithoutTag, TEnumAsByte<EWaitAttributeChangeComparison> InComparisonType, float InComparisonValue, bool TriggerOnce, class AActor* OptionalExternalOwner)
+class UAbilityTask_WaitAttributeChange* UAbilityTask_WaitAttributeChange::STATIC_WaitForAttributeChangeWithComparison(class UGameplayAbility* OwningAbility, const struct FGameplayAttribute& InAttribute, const struct FGameplayTag& InWithTag, const struct FGameplayTag& InWithoutTag, TEnumAsByte<EWaitAttributeChangeComparison> InComparisonType, float InComparisonValue, bool TriggerOnce)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilityTask_WaitAttributeChange.WaitForAttributeChangeWithComparison");
 
@@ -4608,7 +5927,6 @@ class UAbilityTask_WaitAttributeChange* UAbilityTask_WaitAttributeChange::STATIC
 	params.InComparisonType = InComparisonType;
 	params.InComparisonValue = InComparisonValue;
 	params.TriggerOnce = TriggerOnce;
-	params.OptionalExternalOwner = OptionalExternalOwner;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -4629,10 +5947,9 @@ class UAbilityTask_WaitAttributeChange* UAbilityTask_WaitAttributeChange::STATIC
 // struct FGameplayTag            WithSrcTag                     (Parm)
 // struct FGameplayTag            WithoutSrcTag                  (Parm)
 // bool                           TriggerOnce                    (Parm, ZeroConstructor, IsPlainOldData)
-// class AActor*                  OptionalExternalOwner          (Parm, ZeroConstructor, IsPlainOldData)
 // class UAbilityTask_WaitAttributeChange* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-class UAbilityTask_WaitAttributeChange* UAbilityTask_WaitAttributeChange::STATIC_WaitForAttributeChange(class UGameplayAbility* OwningAbility, const struct FGameplayAttribute& Attribute, const struct FGameplayTag& WithSrcTag, const struct FGameplayTag& WithoutSrcTag, bool TriggerOnce, class AActor* OptionalExternalOwner)
+class UAbilityTask_WaitAttributeChange* UAbilityTask_WaitAttributeChange::STATIC_WaitForAttributeChange(class UGameplayAbility* OwningAbility, const struct FGameplayAttribute& Attribute, const struct FGameplayTag& WithSrcTag, const struct FGameplayTag& WithoutSrcTag, bool TriggerOnce)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilityTask_WaitAttributeChange.WaitForAttributeChange");
 
@@ -4642,7 +5959,6 @@ class UAbilityTask_WaitAttributeChange* UAbilityTask_WaitAttributeChange::STATIC
 	params.WithSrcTag = WithSrcTag;
 	params.WithoutSrcTag = WithoutSrcTag;
 	params.TriggerOnce = TriggerOnce;
-	params.OptionalExternalOwner = OptionalExternalOwner;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -4664,10 +5980,9 @@ class UAbilityTask_WaitAttributeChange* UAbilityTask_WaitAttributeChange::STATIC
 // TEnumAsByte<EWaitAttributeChangeComparison> ComparisonType                 (Parm, ZeroConstructor, IsPlainOldData)
 // float                          ComparisonValue                (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           bTriggerOnce                   (Parm, ZeroConstructor, IsPlainOldData)
-// class AActor*                  OptionalExternalOwner          (Parm, ZeroConstructor, IsPlainOldData)
 // class UAbilityTask_WaitAttributeChangeRatioThreshold* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-class UAbilityTask_WaitAttributeChangeRatioThreshold* UAbilityTask_WaitAttributeChangeRatioThreshold::STATIC_WaitForAttributeChangeRatioThreshold(class UGameplayAbility* OwningAbility, const struct FGameplayAttribute& AttributeNumerator, const struct FGameplayAttribute& AttributeDenominator, TEnumAsByte<EWaitAttributeChangeComparison> ComparisonType, float ComparisonValue, bool bTriggerOnce, class AActor* OptionalExternalOwner)
+class UAbilityTask_WaitAttributeChangeRatioThreshold* UAbilityTask_WaitAttributeChangeRatioThreshold::STATIC_WaitForAttributeChangeRatioThreshold(class UGameplayAbility* OwningAbility, const struct FGameplayAttribute& AttributeNumerator, const struct FGameplayAttribute& AttributeDenominator, TEnumAsByte<EWaitAttributeChangeComparison> ComparisonType, float ComparisonValue, bool bTriggerOnce)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilityTask_WaitAttributeChangeRatioThreshold.WaitForAttributeChangeRatioThreshold");
 
@@ -4678,7 +5993,6 @@ class UAbilityTask_WaitAttributeChangeRatioThreshold* UAbilityTask_WaitAttribute
 	params.ComparisonType = ComparisonType;
 	params.ComparisonValue = ComparisonValue;
 	params.bTriggerOnce = bTriggerOnce;
-	params.OptionalExternalOwner = OptionalExternalOwner;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -4699,10 +6013,9 @@ class UAbilityTask_WaitAttributeChangeRatioThreshold* UAbilityTask_WaitAttribute
 // TEnumAsByte<EWaitAttributeChangeComparison> ComparisonType                 (Parm, ZeroConstructor, IsPlainOldData)
 // float                          ComparisonValue                (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           bTriggerOnce                   (Parm, ZeroConstructor, IsPlainOldData)
-// class AActor*                  OptionalExternalOwner          (Parm, ZeroConstructor, IsPlainOldData)
 // class UAbilityTask_WaitAttributeChangeThreshold* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-class UAbilityTask_WaitAttributeChangeThreshold* UAbilityTask_WaitAttributeChangeThreshold::STATIC_WaitForAttributeChangeThreshold(class UGameplayAbility* OwningAbility, const struct FGameplayAttribute& Attribute, TEnumAsByte<EWaitAttributeChangeComparison> ComparisonType, float ComparisonValue, bool bTriggerOnce, class AActor* OptionalExternalOwner)
+class UAbilityTask_WaitAttributeChangeThreshold* UAbilityTask_WaitAttributeChangeThreshold::STATIC_WaitForAttributeChangeThreshold(class UGameplayAbility* OwningAbility, const struct FGameplayAttribute& Attribute, TEnumAsByte<EWaitAttributeChangeComparison> ComparisonType, float ComparisonValue, bool bTriggerOnce)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilityTask_WaitAttributeChangeThreshold.WaitForAttributeChangeThreshold");
 
@@ -4712,7 +6025,6 @@ class UAbilityTask_WaitAttributeChangeThreshold* UAbilityTask_WaitAttributeChang
 	params.ComparisonType = ComparisonType;
 	params.ComparisonValue = ComparisonValue;
 	params.bTriggerOnce = bTriggerOnce;
-	params.OptionalExternalOwner = OptionalExternalOwner;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -4977,42 +6289,6 @@ void UAbilityTask_WaitGameplayEffectApplied::OnApplyGameplayEffectCallback(class
 }
 
 
-// Function GameplayAbilities.AbilityTask_WaitGameplayEffectApplied_Self.WaitGameplayEffectAppliedToSelf_Query
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UGameplayAbility*        OwningAbility                  (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayTargetDataFilterHandle SourceFilter                   (ConstParm, Parm)
-// struct FGameplayTagQuery       SourceTagQuery                 (Parm)
-// struct FGameplayTagQuery       TargetTagQuery                 (Parm)
-// bool                           TriggerOnce                    (Parm, ZeroConstructor, IsPlainOldData)
-// class AActor*                  OptionalExternalOwner          (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ListenForPeriodicEffect        (Parm, ZeroConstructor, IsPlainOldData)
-// class UAbilityTask_WaitGameplayEffectApplied_Self* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UAbilityTask_WaitGameplayEffectApplied_Self* UAbilityTask_WaitGameplayEffectApplied_Self::STATIC_WaitGameplayEffectAppliedToSelf_Query(class UGameplayAbility* OwningAbility, const struct FGameplayTargetDataFilterHandle& SourceFilter, const struct FGameplayTagQuery& SourceTagQuery, const struct FGameplayTagQuery& TargetTagQuery, bool TriggerOnce, class AActor* OptionalExternalOwner, bool ListenForPeriodicEffect)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilityTask_WaitGameplayEffectApplied_Self.WaitGameplayEffectAppliedToSelf_Query");
-
-	UAbilityTask_WaitGameplayEffectApplied_Self_WaitGameplayEffectAppliedToSelf_Query_Params params;
-	params.OwningAbility = OwningAbility;
-	params.SourceFilter = SourceFilter;
-	params.SourceTagQuery = SourceTagQuery;
-	params.TargetTagQuery = TargetTagQuery;
-	params.TriggerOnce = TriggerOnce;
-	params.OptionalExternalOwner = OptionalExternalOwner;
-	params.ListenForPeriodicEffect = ListenForPeriodicEffect;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
 // Function GameplayAbilities.AbilityTask_WaitGameplayEffectApplied_Self.WaitGameplayEffectAppliedToSelf
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -5034,42 +6310,6 @@ class UAbilityTask_WaitGameplayEffectApplied_Self* UAbilityTask_WaitGameplayEffe
 	params.SourceFilter = SourceFilter;
 	params.SourceTagRequirements = SourceTagRequirements;
 	params.TargetTagRequirements = TargetTagRequirements;
-	params.TriggerOnce = TriggerOnce;
-	params.OptionalExternalOwner = OptionalExternalOwner;
-	params.ListenForPeriodicEffect = ListenForPeriodicEffect;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilityTask_WaitGameplayEffectApplied_Target.WaitGameplayEffectAppliedToTarget_Query
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UGameplayAbility*        OwningAbility                  (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayTargetDataFilterHandle SourceFilter                   (ConstParm, Parm)
-// struct FGameplayTagQuery       SourceTagQuery                 (Parm)
-// struct FGameplayTagQuery       TargetTagQuery                 (Parm)
-// bool                           TriggerOnce                    (Parm, ZeroConstructor, IsPlainOldData)
-// class AActor*                  OptionalExternalOwner          (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ListenForPeriodicEffect        (Parm, ZeroConstructor, IsPlainOldData)
-// class UAbilityTask_WaitGameplayEffectApplied_Target* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UAbilityTask_WaitGameplayEffectApplied_Target* UAbilityTask_WaitGameplayEffectApplied_Target::STATIC_WaitGameplayEffectAppliedToTarget_Query(class UGameplayAbility* OwningAbility, const struct FGameplayTargetDataFilterHandle& SourceFilter, const struct FGameplayTagQuery& SourceTagQuery, const struct FGameplayTagQuery& TargetTagQuery, bool TriggerOnce, class AActor* OptionalExternalOwner, bool ListenForPeriodicEffect)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilityTask_WaitGameplayEffectApplied_Target.WaitGameplayEffectAppliedToTarget_Query");
-
-	UAbilityTask_WaitGameplayEffectApplied_Target_WaitGameplayEffectAppliedToTarget_Query_Params params;
-	params.OwningAbility = OwningAbility;
-	params.SourceFilter = SourceFilter;
-	params.SourceTagQuery = SourceTagQuery;
-	params.TargetTagQuery = TargetTagQuery;
 	params.TriggerOnce = TriggerOnce;
 	params.OptionalExternalOwner = OptionalExternalOwner;
 	params.ListenForPeriodicEffect = ListenForPeriodicEffect;
@@ -5180,16 +6420,13 @@ class UAbilityTask_WaitGameplayEffectRemoved* UAbilityTask_WaitGameplayEffectRem
 
 
 // Function GameplayAbilities.AbilityTask_WaitGameplayEffectRemoved.OnGameplayEffectRemoved
-// (Final, Native, Public, HasOutParms)
-// Parameters:
-// struct FGameplayEffectRemovalInfo InGameplayEffectRemovalInfo    (ConstParm, Parm, OutParm, ReferenceParm)
+// (Final, Native, Public)
 
-void UAbilityTask_WaitGameplayEffectRemoved::OnGameplayEffectRemoved(const struct FGameplayEffectRemovalInfo& InGameplayEffectRemovalInfo)
+void UAbilityTask_WaitGameplayEffectRemoved::OnGameplayEffectRemoved()
 {
 	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.AbilityTask_WaitGameplayEffectRemoved.OnGameplayEffectRemoved");
 
 	UAbilityTask_WaitGameplayEffectRemoved_OnGameplayEffectRemoved_Params params;
-	params.InGameplayEffectRemovalInfo = InGameplayEffectRemovalInfo;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -5780,1617 +7017,6 @@ class UAbilityTask_WaitVelocityChange* UAbilityTask_WaitVelocityChange::STATIC_C
 }
 
 
-// Function GameplayAbilities.GameplayAbility.SetShouldBlockOtherAbilities
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// bool                           bShouldBlockAbilities          (Parm, ZeroConstructor, IsPlainOldData)
-
-void UGameplayAbility::SetShouldBlockOtherAbilities(bool bShouldBlockAbilities)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.SetShouldBlockOtherAbilities");
-
-	UGameplayAbility_SetShouldBlockOtherAbilities_Params params;
-	params.bShouldBlockAbilities = bShouldBlockAbilities;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.SetCanBeCanceled
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// bool                           bCanBeCanceled                 (Parm, ZeroConstructor, IsPlainOldData)
-
-void UGameplayAbility::SetCanBeCanceled(bool bCanBeCanceled)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.SetCanBeCanceled");
-
-	UGameplayAbility_SetCanBeCanceled_Params params;
-	params.bCanBeCanceled = bCanBeCanceled;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.SendGameplayEvent
-// (Native, Protected, BlueprintCallable)
-// Parameters:
-// struct FGameplayTag            EventTag                       (Parm)
-// struct FGameplayEventData      Payload                        (Parm)
-
-void UGameplayAbility::SendGameplayEvent(const struct FGameplayTag& EventTag, const struct FGameplayEventData& Payload)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.SendGameplayEvent");
-
-	UGameplayAbility_SendGameplayEvent_Params params;
-	params.EventTag = EventTag;
-	params.Payload = Payload;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.RemoveGrantedByEffect
-// (Final, Native, Public, BlueprintCallable)
-
-void UGameplayAbility::RemoveGrantedByEffect()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.RemoveGrantedByEffect");
-
-	UGameplayAbility_RemoveGrantedByEffect_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.MontageStop
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// float                          OverrideBlendOutTime           (Parm, ZeroConstructor, IsPlainOldData)
-
-void UGameplayAbility::MontageStop(float OverrideBlendOutTime)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.MontageStop");
-
-	UGameplayAbility_MontageStop_Params params;
-	params.OverrideBlendOutTime = OverrideBlendOutTime;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.MontageSetNextSectionName
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// struct FName                   FromSectionName                (Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ToSectionName                  (Parm, ZeroConstructor, IsPlainOldData)
-
-void UGameplayAbility::MontageSetNextSectionName(const struct FName& FromSectionName, const struct FName& ToSectionName)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.MontageSetNextSectionName");
-
-	UGameplayAbility_MontageSetNextSectionName_Params params;
-	params.FromSectionName = FromSectionName;
-	params.ToSectionName = ToSectionName;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.MontageJumpToSection
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// struct FName                   SectionName                    (Parm, ZeroConstructor, IsPlainOldData)
-
-void UGameplayAbility::MontageJumpToSection(const struct FName& SectionName)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.MontageJumpToSection");
-
-	UGameplayAbility_MontageJumpToSection_Params params;
-	params.SectionName = SectionName;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.MakeTargetLocationInfoFromOwnerSkeletalMeshComponent
-// (Final, Native, Protected, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FName                   SocketName                     (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayAbilityTargetingLocationInfo ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayAbilityTargetingLocationInfo UGameplayAbility::MakeTargetLocationInfoFromOwnerSkeletalMeshComponent(const struct FName& SocketName)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.MakeTargetLocationInfoFromOwnerSkeletalMeshComponent");
-
-	UGameplayAbility_MakeTargetLocationInfoFromOwnerSkeletalMeshComponent_Params params;
-	params.SocketName = SocketName;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.MakeTargetLocationInfoFromOwnerActor
-// (Final, Native, Protected, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FGameplayAbilityTargetingLocationInfo ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayAbilityTargetingLocationInfo UGameplayAbility::MakeTargetLocationInfoFromOwnerActor()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.MakeTargetLocationInfoFromOwnerActor");
-
-	UGameplayAbility_MakeTargetLocationInfoFromOwnerActor_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.MakeOutgoingGameplayEffectSpec
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UClass*                  GameplayEffectClass            (Parm, ZeroConstructor, IsPlainOldData)
-// float                          Level                          (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayEffectSpecHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayEffectSpecHandle UGameplayAbility::MakeOutgoingGameplayEffectSpec(class UClass* GameplayEffectClass, float Level)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.MakeOutgoingGameplayEffectSpec");
-
-	UGameplayAbility_MakeOutgoingGameplayEffectSpec_Params params;
-	params.GameplayEffectClass = GameplayEffectClass;
-	params.Level = Level;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.K2_ShouldAbilityRespondToEvent
-// (Event, Protected, BlueprintEvent, Const)
-// Parameters:
-// struct FGameplayAbilityActorInfo ActorInfo                      (Parm)
-// struct FGameplayEventData      Payload                        (Parm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UGameplayAbility::K2_ShouldAbilityRespondToEvent(const struct FGameplayAbilityActorInfo& ActorInfo, const struct FGameplayEventData& Payload)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_ShouldAbilityRespondToEvent");
-
-	UGameplayAbility_K2_ShouldAbilityRespondToEvent_Params params;
-	params.ActorInfo = ActorInfo;
-	params.Payload = Payload;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.K2_RemoveGameplayCue
-// (Native, Protected, BlueprintCallable)
-// Parameters:
-// struct FGameplayTag            GameplayCueTag                 (Parm)
-
-void UGameplayAbility::K2_RemoveGameplayCue(const struct FGameplayTag& GameplayCueTag)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_RemoveGameplayCue");
-
-	UGameplayAbility_K2_RemoveGameplayCue_Params params;
-	params.GameplayCueTag = GameplayCueTag;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.K2_OnEndAbility
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                           bWasCancelled                  (Parm, ZeroConstructor, IsPlainOldData)
-
-void UGameplayAbility::K2_OnEndAbility(bool bWasCancelled)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_OnEndAbility");
-
-	UGameplayAbility_K2_OnEndAbility_Params params;
-	params.bWasCancelled = bWasCancelled;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.K2_ExecuteGameplayCueWithParams
-// (Native, Protected, HasOutParms, BlueprintCallable)
-// Parameters:
-// struct FGameplayTag            GameplayCueTag                 (Parm)
-// struct FGameplayCueParameters  GameplayCueParameters          (ConstParm, Parm, OutParm, ReferenceParm)
-
-void UGameplayAbility::K2_ExecuteGameplayCueWithParams(const struct FGameplayTag& GameplayCueTag, const struct FGameplayCueParameters& GameplayCueParameters)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_ExecuteGameplayCueWithParams");
-
-	UGameplayAbility_K2_ExecuteGameplayCueWithParams_Params params;
-	params.GameplayCueTag = GameplayCueTag;
-	params.GameplayCueParameters = GameplayCueParameters;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.K2_ExecuteGameplayCue
-// (Native, Protected, BlueprintCallable)
-// Parameters:
-// struct FGameplayTag            GameplayCueTag                 (Parm)
-// struct FGameplayEffectContextHandle Context                        (Parm)
-
-void UGameplayAbility::K2_ExecuteGameplayCue(const struct FGameplayTag& GameplayCueTag, const struct FGameplayEffectContextHandle& Context)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_ExecuteGameplayCue");
-
-	UGameplayAbility_K2_ExecuteGameplayCue_Params params;
-	params.GameplayCueTag = GameplayCueTag;
-	params.Context = Context;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.K2_EndAbility
-// (Native, Protected, BlueprintCallable)
-
-void UGameplayAbility::K2_EndAbility()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_EndAbility");
-
-	UGameplayAbility_K2_EndAbility_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.K2_CommitExecute
-// (Event, Public, BlueprintEvent)
-
-void UGameplayAbility::K2_CommitExecute()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_CommitExecute");
-
-	UGameplayAbility_K2_CommitExecute_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.K2_CommitAbilityCost
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// bool                           BroadcastCommitEvent           (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UGameplayAbility::K2_CommitAbilityCost(bool BroadcastCommitEvent)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_CommitAbilityCost");
-
-	UGameplayAbility_K2_CommitAbilityCost_Params params;
-	params.BroadcastCommitEvent = BroadcastCommitEvent;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.K2_CommitAbilityCooldown
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// bool                           BroadcastCommitEvent           (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ForceCooldown                  (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UGameplayAbility::K2_CommitAbilityCooldown(bool BroadcastCommitEvent, bool ForceCooldown)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_CommitAbilityCooldown");
-
-	UGameplayAbility_K2_CommitAbilityCooldown_Params params;
-	params.BroadcastCommitEvent = BroadcastCommitEvent;
-	params.ForceCooldown = ForceCooldown;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.K2_CommitAbility
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UGameplayAbility::K2_CommitAbility()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_CommitAbility");
-
-	UGameplayAbility_K2_CommitAbility_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.K2_CheckAbilityCost
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UGameplayAbility::K2_CheckAbilityCost()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_CheckAbilityCost");
-
-	UGameplayAbility_K2_CheckAbilityCost_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.K2_CheckAbilityCooldown
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UGameplayAbility::K2_CheckAbilityCooldown()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_CheckAbilityCooldown");
-
-	UGameplayAbility_K2_CheckAbilityCooldown_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.K2_CancelAbility
-// (Final, Native, Public, BlueprintCallable)
-
-void UGameplayAbility::K2_CancelAbility()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_CancelAbility");
-
-	UGameplayAbility_K2_CancelAbility_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.K2_CanActivateAbility
-// (Event, Protected, HasOutParms, BlueprintEvent, Const)
-// Parameters:
-// struct FGameplayAbilityActorInfo ActorInfo                      (Parm)
-// struct FGameplayTagContainer   RelevantTags                   (Parm, OutParm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UGameplayAbility::K2_CanActivateAbility(const struct FGameplayAbilityActorInfo& ActorInfo, struct FGameplayTagContainer* RelevantTags)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_CanActivateAbility");
-
-	UGameplayAbility_K2_CanActivateAbility_Params params;
-	params.ActorInfo = ActorInfo;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (RelevantTags != nullptr)
-		*RelevantTags = params.RelevantTags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.K2_ApplyGameplayEffectSpecToTarget
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// struct FGameplayEffectSpecHandle EffectSpecHandle               (ConstParm, Parm)
-// struct FGameplayAbilityTargetDataHandle TargetData                     (Parm)
-// TArray<struct FActiveGameplayEffectHandle> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
-
-TArray<struct FActiveGameplayEffectHandle> UGameplayAbility::K2_ApplyGameplayEffectSpecToTarget(const struct FGameplayEffectSpecHandle& EffectSpecHandle, const struct FGameplayAbilityTargetDataHandle& TargetData)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_ApplyGameplayEffectSpecToTarget");
-
-	UGameplayAbility_K2_ApplyGameplayEffectSpecToTarget_Params params;
-	params.EffectSpecHandle = EffectSpecHandle;
-	params.TargetData = TargetData;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.K2_ApplyGameplayEffectSpecToOwner
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// struct FGameplayEffectSpecHandle EffectSpecHandle               (ConstParm, Parm)
-// struct FActiveGameplayEffectHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FActiveGameplayEffectHandle UGameplayAbility::K2_ApplyGameplayEffectSpecToOwner(const struct FGameplayEffectSpecHandle& EffectSpecHandle)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_ApplyGameplayEffectSpecToOwner");
-
-	UGameplayAbility_K2_ApplyGameplayEffectSpecToOwner_Params params;
-	params.EffectSpecHandle = EffectSpecHandle;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.K2_AddGameplayCueWithParams
-// (Native, Protected, HasOutParms, BlueprintCallable)
-// Parameters:
-// struct FGameplayTag            GameplayCueTag                 (Parm)
-// struct FGameplayCueParameters  GameplayCueParameter           (ConstParm, Parm, OutParm, ReferenceParm)
-// bool                           bRemoveOnAbilityEnd            (Parm, ZeroConstructor, IsPlainOldData)
-
-void UGameplayAbility::K2_AddGameplayCueWithParams(const struct FGameplayTag& GameplayCueTag, const struct FGameplayCueParameters& GameplayCueParameter, bool bRemoveOnAbilityEnd)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_AddGameplayCueWithParams");
-
-	UGameplayAbility_K2_AddGameplayCueWithParams_Params params;
-	params.GameplayCueTag = GameplayCueTag;
-	params.GameplayCueParameter = GameplayCueParameter;
-	params.bRemoveOnAbilityEnd = bRemoveOnAbilityEnd;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.K2_AddGameplayCue
-// (Native, Protected, BlueprintCallable)
-// Parameters:
-// struct FGameplayTag            GameplayCueTag                 (Parm)
-// struct FGameplayEffectContextHandle Context                        (Parm)
-// bool                           bRemoveOnAbilityEnd            (Parm, ZeroConstructor, IsPlainOldData)
-
-void UGameplayAbility::K2_AddGameplayCue(const struct FGameplayTag& GameplayCueTag, const struct FGameplayEffectContextHandle& Context, bool bRemoveOnAbilityEnd)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_AddGameplayCue");
-
-	UGameplayAbility_K2_AddGameplayCue_Params params;
-	params.GameplayCueTag = GameplayCueTag;
-	params.Context = Context;
-	params.bRemoveOnAbilityEnd = bRemoveOnAbilityEnd;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.K2_ActivateAbilityFromEvent
-// (Event, Protected, HasOutParms, BlueprintEvent)
-// Parameters:
-// struct FGameplayEventData      EventData                      (ConstParm, Parm, OutParm, ReferenceParm)
-
-void UGameplayAbility::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_ActivateAbilityFromEvent");
-
-	UGameplayAbility_K2_ActivateAbilityFromEvent_Params params;
-	params.EventData = EventData;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
-
-void UGameplayAbility::K2_ActivateAbility()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.K2_ActivateAbility");
-
-	UGameplayAbility_K2_ActivateAbility_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.InvalidateClientPredictionKey
-// (Final, Native, Public, BlueprintCallable, Const)
-
-void UGameplayAbility::InvalidateClientPredictionKey()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.InvalidateClientPredictionKey");
-
-	UGameplayAbility_InvalidateClientPredictionKey_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.GetOwningComponentFromActorInfo
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class USkeletalMeshComponent*  ReturnValue                    (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
-
-class USkeletalMeshComponent* UGameplayAbility::GetOwningComponentFromActorInfo()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.GetOwningComponentFromActorInfo");
-
-	UGameplayAbility_GetOwningComponentFromActorInfo_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.GetOwningActorFromActorInfo
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class AActor*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class AActor* UGameplayAbility::GetOwningActorFromActorInfo()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.GetOwningActorFromActorInfo");
-
-	UGameplayAbility_GetOwningActorFromActorInfo_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.GetGrantedByEffectContext
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FGameplayEffectContextHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayEffectContextHandle UGameplayAbility::GetGrantedByEffectContext()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.GetGrantedByEffectContext");
-
-	UGameplayAbility_GetGrantedByEffectContext_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.GetCurrentSourceObject
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UObject*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UObject* UGameplayAbility::GetCurrentSourceObject()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.GetCurrentSourceObject");
-
-	UGameplayAbility_GetCurrentSourceObject_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.GetCurrentMontage
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UAnimMontage*            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UAnimMontage* UGameplayAbility::GetCurrentMontage()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.GetCurrentMontage");
-
-	UGameplayAbility_GetCurrentMontage_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.GetCooldownTimeRemaining
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-float UGameplayAbility::GetCooldownTimeRemaining()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.GetCooldownTimeRemaining");
-
-	UGameplayAbility_GetCooldownTimeRemaining_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.GetContextFromOwner
-// (Native, Protected, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FGameplayAbilityTargetDataHandle OptionalTargetData             (Parm)
-// struct FGameplayEffectContextHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayEffectContextHandle UGameplayAbility::GetContextFromOwner(const struct FGameplayAbilityTargetDataHandle& OptionalTargetData)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.GetContextFromOwner");
-
-	UGameplayAbility_GetContextFromOwner_Params params;
-	params.OptionalTargetData = OptionalTargetData;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.GetAvatarActorFromActorInfo
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class AActor*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class AActor* UGameplayAbility::GetAvatarActorFromActorInfo()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.GetAvatarActorFromActorInfo");
-
-	UGameplayAbility_GetAvatarActorFromActorInfo_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.GetActorInfo
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FGameplayAbilityActorInfo ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FGameplayAbilityActorInfo UGameplayAbility::GetActorInfo()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.GetActorInfo");
-
-	UGameplayAbility_GetActorInfo_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.GetAbilityLevel
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-int UGameplayAbility::GetAbilityLevel()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.GetAbilityLevel");
-
-	UGameplayAbility_GetAbilityLevel_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.EndTaskByInstanceName
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// struct FName                   InstanceName                   (Parm, ZeroConstructor, IsPlainOldData)
-
-void UGameplayAbility::EndTaskByInstanceName(const struct FName& InstanceName)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.EndTaskByInstanceName");
-
-	UGameplayAbility_EndTaskByInstanceName_Params params;
-	params.InstanceName = InstanceName;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.EndAbilityState
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// struct FName                   OptionalStateNameToEnd         (Parm, ZeroConstructor, IsPlainOldData)
-
-void UGameplayAbility::EndAbilityState(const struct FName& OptionalStateNameToEnd)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.EndAbilityState");
-
-	UGameplayAbility_EndAbilityState_Params params;
-	params.OptionalStateNameToEnd = OptionalStateNameToEnd;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.ConfirmTaskByInstanceName
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// struct FName                   InstanceName                   (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bEndTask                       (Parm, ZeroConstructor, IsPlainOldData)
-
-void UGameplayAbility::ConfirmTaskByInstanceName(const struct FName& InstanceName, bool bEndTask)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.ConfirmTaskByInstanceName");
-
-	UGameplayAbility_ConfirmTaskByInstanceName_Params params;
-	params.InstanceName = InstanceName;
-	params.bEndTask = bEndTask;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.CancelTaskByInstanceName
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// struct FName                   InstanceName                   (Parm, ZeroConstructor, IsPlainOldData)
-
-void UGameplayAbility::CancelTaskByInstanceName(const struct FName& InstanceName)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.CancelTaskByInstanceName");
-
-	UGameplayAbility_CancelTaskByInstanceName_Params params;
-	params.InstanceName = InstanceName;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.BP_RemoveGameplayEffectFromOwnerWithHandle
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// struct FActiveGameplayEffectHandle Handle                         (Parm)
-// int                            StacksToRemove                 (Parm, ZeroConstructor, IsPlainOldData)
-
-void UGameplayAbility::BP_RemoveGameplayEffectFromOwnerWithHandle(const struct FActiveGameplayEffectHandle& Handle, int StacksToRemove)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.BP_RemoveGameplayEffectFromOwnerWithHandle");
-
-	UGameplayAbility_BP_RemoveGameplayEffectFromOwnerWithHandle_Params params;
-	params.Handle = Handle;
-	params.StacksToRemove = StacksToRemove;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.BP_RemoveGameplayEffectFromOwnerWithGrantedTags
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// struct FGameplayTagContainer   WithGrantedTags                (Parm)
-// int                            StacksToRemove                 (Parm, ZeroConstructor, IsPlainOldData)
-
-void UGameplayAbility::BP_RemoveGameplayEffectFromOwnerWithGrantedTags(const struct FGameplayTagContainer& WithGrantedTags, int StacksToRemove)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.BP_RemoveGameplayEffectFromOwnerWithGrantedTags");
-
-	UGameplayAbility_BP_RemoveGameplayEffectFromOwnerWithGrantedTags_Params params;
-	params.WithGrantedTags = WithGrantedTags;
-	params.StacksToRemove = StacksToRemove;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.BP_RemoveGameplayEffectFromOwnerWithAssetTags
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// struct FGameplayTagContainer   WithAssetTags                  (Parm)
-// int                            StacksToRemove                 (Parm, ZeroConstructor, IsPlainOldData)
-
-void UGameplayAbility::BP_RemoveGameplayEffectFromOwnerWithAssetTags(const struct FGameplayTagContainer& WithAssetTags, int StacksToRemove)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.BP_RemoveGameplayEffectFromOwnerWithAssetTags");
-
-	UGameplayAbility_BP_RemoveGameplayEffectFromOwnerWithAssetTags_Params params;
-	params.WithAssetTags = WithAssetTags;
-	params.StacksToRemove = StacksToRemove;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.BP_ApplyGameplayEffectToTarget
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                     (Parm)
-// class UClass*                  GameplayEffectClass            (Parm, ZeroConstructor, IsPlainOldData)
-// int                            GameplayEffectLevel            (Parm, ZeroConstructor, IsPlainOldData)
-// int                            Stacks                         (Parm, ZeroConstructor, IsPlainOldData)
-// TArray<struct FActiveGameplayEffectHandle> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
-
-TArray<struct FActiveGameplayEffectHandle> UGameplayAbility::BP_ApplyGameplayEffectToTarget(const struct FGameplayAbilityTargetDataHandle& TargetData, class UClass* GameplayEffectClass, int GameplayEffectLevel, int Stacks)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.BP_ApplyGameplayEffectToTarget");
-
-	UGameplayAbility_BP_ApplyGameplayEffectToTarget_Params params;
-	params.TargetData = TargetData;
-	params.GameplayEffectClass = GameplayEffectClass;
-	params.GameplayEffectLevel = GameplayEffectLevel;
-	params.Stacks = Stacks;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbility.BP_ApplyGameplayEffectToOwner
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// class UClass*                  GameplayEffectClass            (Parm, ZeroConstructor, IsPlainOldData)
-// int                            GameplayEffectLevel            (Parm, ZeroConstructor, IsPlainOldData)
-// int                            Stacks                         (Parm, ZeroConstructor, IsPlainOldData)
-// struct FActiveGameplayEffectHandle ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FActiveGameplayEffectHandle UGameplayAbility::BP_ApplyGameplayEffectToOwner(class UClass* GameplayEffectClass, int GameplayEffectLevel, int Stacks)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbility.BP_ApplyGameplayEffectToOwner");
-
-	UGameplayAbility_BP_ApplyGameplayEffectToOwner_Params params;
-	params.GameplayEffectClass = GameplayEffectClass;
-	params.GameplayEffectLevel = GameplayEffectLevel;
-	params.Stacks = Stacks;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayAbilityTargetActor.ConfirmTargeting
-// (Native, Public)
-
-void AGameplayAbilityTargetActor::ConfirmTargeting()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbilityTargetActor.ConfirmTargeting");
-
-	AGameplayAbilityTargetActor_ConfirmTargeting_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbilityTargetActor.CancelTargeting
-// (Native, Public)
-
-void AGameplayAbilityTargetActor::CancelTargeting()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbilityTargetActor.CancelTargeting");
-
-	AGameplayAbilityTargetActor_CancelTargeting_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbilityWorldReticle.SetReticleMaterialParamVector
-// (Event, Public, HasDefaults, BlueprintEvent)
-// Parameters:
-// struct FName                   ParamName                      (Parm, ZeroConstructor, IsPlainOldData)
-// struct FVector                 Value                          (Parm, IsPlainOldData)
-
-void AGameplayAbilityWorldReticle::SetReticleMaterialParamVector(const struct FName& ParamName, const struct FVector& Value)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbilityWorldReticle.SetReticleMaterialParamVector");
-
-	AGameplayAbilityWorldReticle_SetReticleMaterialParamVector_Params params;
-	params.ParamName = ParamName;
-	params.Value = Value;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbilityWorldReticle.SetReticleMaterialParamFloat
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// struct FName                   ParamName                      (Parm, ZeroConstructor, IsPlainOldData)
-// float                          Value                          (Parm, ZeroConstructor, IsPlainOldData)
-
-void AGameplayAbilityWorldReticle::SetReticleMaterialParamFloat(const struct FName& ParamName, float Value)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbilityWorldReticle.SetReticleMaterialParamFloat");
-
-	AGameplayAbilityWorldReticle_SetReticleMaterialParamFloat_Params params;
-	params.ParamName = ParamName;
-	params.Value = Value;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbilityWorldReticle.OnValidTargetChanged
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                           bNewValue                      (Parm, ZeroConstructor, IsPlainOldData)
-
-void AGameplayAbilityWorldReticle::OnValidTargetChanged(bool bNewValue)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbilityWorldReticle.OnValidTargetChanged");
-
-	AGameplayAbilityWorldReticle_OnValidTargetChanged_Params params;
-	params.bNewValue = bNewValue;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbilityWorldReticle.OnTargetingAnActor
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                           bNewValue                      (Parm, ZeroConstructor, IsPlainOldData)
-
-void AGameplayAbilityWorldReticle::OnTargetingAnActor(bool bNewValue)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbilityWorldReticle.OnTargetingAnActor");
-
-	AGameplayAbilityWorldReticle_OnTargetingAnActor_Params params;
-	params.bNewValue = bNewValue;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbilityWorldReticle.OnParametersInitialized
-// (Event, Public, BlueprintEvent)
-
-void AGameplayAbilityWorldReticle::OnParametersInitialized()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbilityWorldReticle.OnParametersInitialized");
-
-	AGameplayAbilityWorldReticle_OnParametersInitialized_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayAbilityWorldReticle.FaceTowardSource
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                           bFaceIn2D                      (Parm, ZeroConstructor, IsPlainOldData)
-
-void AGameplayAbilityWorldReticle::FaceTowardSource(bool bFaceIn2D)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayAbilityWorldReticle.FaceTowardSource");
-
-	AGameplayAbilityWorldReticle_FaceTowardSource_Params params;
-	params.bFaceIn2D = bFaceIn2D;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayCueInterface.ForwardGameplayCueToParent
-// (BlueprintCosmetic, Native, Public, BlueprintCallable)
-
-void UGameplayCueInterface::ForwardGameplayCueToParent()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueInterface.ForwardGameplayCueToParent");
-
-	UGameplayCueInterface_ForwardGameplayCueToParent_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayCueInterface.BlueprintCustomHandler
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (Parm)
-
-void UGameplayCueInterface::BlueprintCustomHandler(TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueInterface.BlueprintCustomHandler");
-
-	UGameplayCueInterface_BlueprintCustomHandler_Params params;
-	params.EventType = EventType;
-	params.Parameters = Parameters;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayCueNotify_Actor.WhileActive
-// (Native, Event, Public, HasOutParms, BlueprintEvent)
-// Parameters:
-// class AActor*                  MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool AGameplayCueNotify_Actor::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Actor.WhileActive");
-
-	AGameplayCueNotify_Actor_WhileActive_Params params;
-	params.MyTarget = MyTarget;
-	params.Parameters = Parameters;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayCueNotify_Actor.OnRemove
-// (Native, Event, Public, HasOutParms, BlueprintEvent)
-// Parameters:
-// class AActor*                  MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool AGameplayCueNotify_Actor::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Actor.OnRemove");
-
-	AGameplayCueNotify_Actor_OnRemove_Params params;
-	params.MyTarget = MyTarget;
-	params.Parameters = Parameters;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayCueNotify_Actor.OnOwnerDestroyed
-// (Native, Public)
-// Parameters:
-// class AActor*                  DestroyedActor                 (Parm, ZeroConstructor, IsPlainOldData)
-
-void AGameplayCueNotify_Actor::OnOwnerDestroyed(class AActor* DestroyedActor)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Actor.OnOwnerDestroyed");
-
-	AGameplayCueNotify_Actor_OnOwnerDestroyed_Params params;
-	params.DestroyedActor = DestroyedActor;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayCueNotify_Actor.OnExecute
-// (Native, Event, Public, HasOutParms, BlueprintEvent)
-// Parameters:
-// class AActor*                  MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool AGameplayCueNotify_Actor::OnExecute(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Actor.OnExecute");
-
-	AGameplayCueNotify_Actor_OnExecute_Params params;
-	params.MyTarget = MyTarget;
-	params.Parameters = Parameters;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayCueNotify_Actor.OnActive
-// (Native, Event, Public, HasOutParms, BlueprintEvent)
-// Parameters:
-// class AActor*                  MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool AGameplayCueNotify_Actor::OnActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Actor.OnActive");
-
-	AGameplayCueNotify_Actor_OnActive_Params params;
-	params.MyTarget = MyTarget;
-	params.Parameters = Parameters;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayCueNotify_Actor.K2_HandleGameplayCue
-// (Event, Public, HasOutParms, BlueprintEvent)
-// Parameters:
-// class AActor*                  MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
-// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
-
-void AGameplayCueNotify_Actor::K2_HandleGameplayCue(class AActor* MyTarget, TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Actor.K2_HandleGameplayCue");
-
-	AGameplayCueNotify_Actor_K2_HandleGameplayCue_Params params;
-	params.MyTarget = MyTarget;
-	params.EventType = EventType;
-	params.Parameters = Parameters;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayCueNotify_Actor.K2_EndGameplayCue
-// (Native, Public, BlueprintCallable)
-
-void AGameplayCueNotify_Actor::K2_EndGameplayCue()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Actor.K2_EndGameplayCue");
-
-	AGameplayCueNotify_Actor_K2_EndGameplayCue_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GameplayAbilities.GameplayCueNotify_Static.WhileActive
-// (Native, Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// class AActor*                  MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UGameplayCueNotify_Static::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Static.WhileActive");
-
-	UGameplayCueNotify_Static_WhileActive_Params params;
-	params.MyTarget = MyTarget;
-	params.Parameters = Parameters;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayCueNotify_Static.OnRemove
-// (Native, Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// class AActor*                  MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UGameplayCueNotify_Static::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Static.OnRemove");
-
-	UGameplayCueNotify_Static_OnRemove_Params params;
-	params.MyTarget = MyTarget;
-	params.Parameters = Parameters;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayCueNotify_Static.OnExecute
-// (Native, Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// class AActor*                  MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UGameplayCueNotify_Static::OnExecute(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Static.OnExecute");
-
-	UGameplayCueNotify_Static_OnExecute_Params params;
-	params.MyTarget = MyTarget;
-	params.Parameters = Parameters;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayCueNotify_Static.OnActive
-// (Native, Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// class AActor*                  MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UGameplayCueNotify_Static::OnActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Static.OnActive");
-
-	UGameplayCueNotify_Static_OnActive_Params params;
-	params.MyTarget = MyTarget;
-	params.Parameters = Parameters;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayCueNotify_Static.K2_HandleGameplayCue
-// (Event, Public, HasOutParms, BlueprintEvent, Const)
-// Parameters:
-// class AActor*                  MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
-// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
-
-void UGameplayCueNotify_Static::K2_HandleGameplayCue(class AActor* MyTarget, TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayCueNotify_Static.K2_HandleGameplayCue");
-
-	UGameplayCueNotify_Static_K2_HandleGameplayCue_Params params;
-	params.MyTarget = MyTarget;
-	params.EventType = EventType;
-	params.Parameters = Parameters;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function GameplayAbilities.GameplayEffectCustomApplicationRequirement.CanApplyGameplayEffect
 // (Native, Event, Public, HasOutParms, BlueprintEvent, Const)
 // Parameters:
@@ -7419,64 +7045,15 @@ bool UGameplayEffectCustomApplicationRequirement::CanApplyGameplayEffect(class U
 }
 
 
-// Function GameplayAbilities.GameplayEffectExecutionCalculation.Execute
-// (Native, Event, Public, HasOutParms, BlueprintEvent, Const)
-// Parameters:
-// struct FGameplayEffectCustomExecutionParameters ExecutionParams                (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FGameplayEffectCustomExecutionOutput OutExecutionOutput             (Parm, OutParm)
-
-void UGameplayEffectExecutionCalculation::Execute(const struct FGameplayEffectCustomExecutionParameters& ExecutionParams, struct FGameplayEffectCustomExecutionOutput* OutExecutionOutput)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayEffectExecutionCalculation.Execute");
-
-	UGameplayEffectExecutionCalculation_Execute_Params params;
-	params.ExecutionParams = ExecutionParams;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (OutExecutionOutput != nullptr)
-		*OutExecutionOutput = params.OutExecutionOutput;
-}
-
-
-// Function GameplayAbilities.GameplayModMagnitudeCalculation.CalculateBaseMagnitude
-// (Native, Event, Public, HasOutParms, BlueprintEvent, Const)
-// Parameters:
-// struct FGameplayEffectSpec     Spec                           (ConstParm, Parm, OutParm, ReferenceParm)
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-float UGameplayModMagnitudeCalculation::CalculateBaseMagnitude(const struct FGameplayEffectSpec& Spec)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayModMagnitudeCalculation.CalculateBaseMagnitude");
-
-	UGameplayModMagnitudeCalculation_CalculateBaseMagnitude_Params params;
-	params.Spec = Spec;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
 // Function GameplayAbilities.GameplayTagReponseTable.TagResponseEvent
 // (Final, Native, Protected)
 // Parameters:
 // struct FGameplayTag            Tag                            (ConstParm, Parm)
 // int                            NewCount                       (Parm, ZeroConstructor, IsPlainOldData)
 // class UAbilitySystemComponent* ASC                            (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// int                            idx                            (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Idx                            (Parm, ZeroConstructor, IsPlainOldData)
 
-void UGameplayTagReponseTable::TagResponseEvent(const struct FGameplayTag& Tag, int NewCount, class UAbilitySystemComponent* ASC, int idx)
+void UGameplayTagReponseTable::TagResponseEvent(const struct FGameplayTag& Tag, int NewCount, class UAbilitySystemComponent* ASC, int Idx)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function GameplayAbilities.GameplayTagReponseTable.TagResponseEvent");
 
@@ -7484,7 +7061,7 @@ void UGameplayTagReponseTable::TagResponseEvent(const struct FGameplayTag& Tag, 
 	params.Tag = Tag;
 	params.NewCount = NewCount;
 	params.ASC = ASC;
-	params.idx = idx;
+	params.Idx = Idx;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;

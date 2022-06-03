@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UBP_Soldier_Minigun_C::EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Soldi
 // Function BP_Soldier_Minigun.BP_Soldier_Minigun_C.BlueprintUpdateAnimation
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float*                         DeltaTimeX                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float*                         DeltaTimeX                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_Soldier_Minigun_C::BlueprintUpdateAnimation(float* DeltaTimeX)
 {
@@ -52,7 +52,7 @@ void UBP_Soldier_Minigun_C::BlueprintUpdateAnimation(float* DeltaTimeX)
 // Function BP_Soldier_Minigun.BP_Soldier_Minigun_C.ExecuteUbergraph_BP_Soldier_Minigun
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_Soldier_Minigun_C::ExecuteUbergraph_BP_Soldier_Minigun(int EntryPoint)
 {

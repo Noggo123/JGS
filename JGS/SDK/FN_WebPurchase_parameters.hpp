@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -33,8 +33,8 @@ struct UWebPurchase_C_Dismiss_Params
 // Function WebPurchase.WebPurchase_C.Display
 struct UWebPurchase_C_Display_Params
 {
-	class UWidget*                                     WebWidget;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	struct FString                                     AttemptedMTXOfferId;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	class UWidget*                                     WebWidget;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FString                                     AttemptedMTXOfferId;                                      // (Parm, ZeroConstructor)
 };
 
 // Function WebPurchase.WebPurchase_C.OnActivated
@@ -45,7 +45,7 @@ struct UWebPurchase_C_OnActivated_Params
 // Function WebPurchase.WebPurchase_C.ExecuteUbergraph_WebPurchase
 struct UWebPurchase_C_ExecuteUbergraph_WebPurchase_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

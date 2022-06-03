@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,11 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass ItemManagementModeDetailsPanel.ItemManagementModeDetailsPanel_C
-// 0x0008 (0x0248 - 0x0240)
+// 0x0008 (0x0270 - 0x0268)
 class UItemManagementModeDetailsPanel_C : public UFortItemManagementModeDetailsPanel
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0240(0x0008) (Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0268(0x0008) (Transient, DuplicateTransient)
 
 	static UClass* StaticClass()
 	{

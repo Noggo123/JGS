@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,34 +12,35 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.Navigate to Button
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.GetSlotFromIndex
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// int                            Index                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UItemTransformSlotEntry_C* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-void UItemTransformSlotScreen_C::Navigate_to_Button(int Index)
+class UItemTransformSlotEntry_C* UItemTransformSlotScreen_C::GetSlotFromIndex()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.Navigate to Button");
+	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.GetSlotFromIndex");
 
-	UItemTransformSlotScreen_C_Navigate_to_Button_Params params;
-	params.Index = Index;
+	UItemTransformSlotScreen_C_GetSlotFromIndex_Params params;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
 }
 
 
-// Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.NavigateToSelectedItem
+// Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.NavigateToFirstItem
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void UItemTransformSlotScreen_C::NavigateToSelectedItem()
+void UItemTransformSlotScreen_C::NavigateToFirstItem()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.NavigateToSelectedItem");
+	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.NavigateToFirstItem");
 
-	UItemTransformSlotScreen_C_NavigateToSelectedItem_Params params;
+	UItemTransformSlotScreen_C_NavigateToFirstItem_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -52,12 +53,11 @@ void UItemTransformSlotScreen_C::NavigateToSelectedItem()
 // Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.Get Transform Data
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               SelectedKey                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 // TArray<class UFortItem*>       SacrificeItems                 (Parm, OutParm, ZeroConstructor)
 // int                            CurrentSacrificePoints         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 // int                            CurrentTier                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemTransformSlotScreen_C::Get_Transform_Data(class UFortItem** SelectedKey, TArray<class UFortItem*>* SacrificeItems, int* CurrentSacrificePoints, int* CurrentTier)
+void UItemTransformSlotScreen_C::Get_Transform_Data(TArray<class UFortItem*>* SacrificeItems, int* CurrentSacrificePoints, int* CurrentTier)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.Get Transform Data");
 
@@ -69,8 +69,6 @@ void UItemTransformSlotScreen_C::Get_Transform_Data(class UFortItem** SelectedKe
 
 	fn->FunctionFlags = flags;
 
-	if (SelectedKey != nullptr)
-		*SelectedKey = params.SelectedKey;
 	if (SacrificeItems != nullptr)
 		*SacrificeItems = params.SacrificeItems;
 	if (CurrentSacrificePoints != nullptr)
@@ -150,12 +148,100 @@ void UItemTransformSlotScreen_C::OpenItemPicker()
 
 // Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.OpenSlotScreen
 // (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortItem*               Key                            (Parm, ZeroConstructor, IsPlainOldData)
 
-void UItemTransformSlotScreen_C::OpenSlotScreen()
+void UItemTransformSlotScreen_C::OpenSlotScreen(class UFortItem* Key)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.OpenSlotScreen");
 
 	UItemTransformSlotScreen_C_OpenSlotScreen_Params params;
+	params.Key = Key;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__Slot1_K2Node_ComponentBoundEvent_1_OnSlotChosen__DelegateSignature
+// (BlueprintEvent)
+
+void UItemTransformSlotScreen_C::BndEvt__Slot1_K2Node_ComponentBoundEvent_1_OnSlotChosen__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__Slot1_K2Node_ComponentBoundEvent_1_OnSlotChosen__DelegateSignature");
+
+	UItemTransformSlotScreen_C_BndEvt__Slot1_K2Node_ComponentBoundEvent_1_OnSlotChosen__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__Slot2_K2Node_ComponentBoundEvent_2_OnSlotChosen__DelegateSignature
+// (BlueprintEvent)
+
+void UItemTransformSlotScreen_C::BndEvt__Slot2_K2Node_ComponentBoundEvent_2_OnSlotChosen__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__Slot2_K2Node_ComponentBoundEvent_2_OnSlotChosen__DelegateSignature");
+
+	UItemTransformSlotScreen_C_BndEvt__Slot2_K2Node_ComponentBoundEvent_2_OnSlotChosen__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__Slot3_K2Node_ComponentBoundEvent_3_OnSlotChosen__DelegateSignature
+// (BlueprintEvent)
+
+void UItemTransformSlotScreen_C::BndEvt__Slot3_K2Node_ComponentBoundEvent_3_OnSlotChosen__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__Slot3_K2Node_ComponentBoundEvent_3_OnSlotChosen__DelegateSignature");
+
+	UItemTransformSlotScreen_C_BndEvt__Slot3_K2Node_ComponentBoundEvent_3_OnSlotChosen__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__Slot4_K2Node_ComponentBoundEvent_4_OnSlotChosen__DelegateSignature
+// (BlueprintEvent)
+
+void UItemTransformSlotScreen_C::BndEvt__Slot4_K2Node_ComponentBoundEvent_4_OnSlotChosen__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__Slot4_K2Node_ComponentBoundEvent_4_OnSlotChosen__DelegateSignature");
+
+	UItemTransformSlotScreen_C_BndEvt__Slot4_K2Node_ComponentBoundEvent_4_OnSlotChosen__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__Slot5_K2Node_ComponentBoundEvent_5_OnSlotChosen__DelegateSignature
+// (BlueprintEvent)
+
+void UItemTransformSlotScreen_C::BndEvt__Slot5_K2Node_ComponentBoundEvent_5_OnSlotChosen__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__Slot5_K2Node_ComponentBoundEvent_5_OnSlotChosen__DelegateSignature");
+
+	UItemTransformSlotScreen_C_BndEvt__Slot5_K2Node_ComponentBoundEvent_5_OnSlotChosen__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -168,7 +254,7 @@ void UItemTransformSlotScreen_C::OpenSlotScreen()
 // Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__ItemTransformItemPicker_K2Node_ComponentBoundEvent_0_OnItemSelected__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UFortItem*               SelectedItem                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               SelectedItem                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformSlotScreen_C::BndEvt__ItemTransformItemPicker_K2Node_ComponentBoundEvent_0_OnItemSelected__DelegateSignature(class UFortItem* SelectedItem)
 {
@@ -205,8 +291,8 @@ void UItemTransformSlotScreen_C::Construct()
 // Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__ItemTransformResultInfo_K2Node_ComponentBoundEvent_2_OnTransformConfirmed__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// int                            SacrificePoints                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            CurrentTier                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            SacrificePoints                (Parm, ZeroConstructor, IsPlainOldData)
+// int                            CurrentTier                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformSlotScreen_C::BndEvt__ItemTransformResultInfo_K2Node_ComponentBoundEvent_2_OnTransformConfirmed__DelegateSignature(int SacrificePoints, int CurrentTier)
 {
@@ -227,7 +313,7 @@ void UItemTransformSlotScreen_C::BndEvt__ItemTransformResultInfo_K2Node_Componen
 // Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__ItemTransformResultInfo_K2Node_ComponentBoundEvent_225_OnUpdateSacrificeInfo__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// bool                           TransformActive                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           TransformActive                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformSlotScreen_C::BndEvt__ItemTransformResultInfo_K2Node_ComponentBoundEvent_225_OnUpdateSacrificeInfo__DelegateSignature(bool TransformActive)
 {
@@ -244,19 +330,14 @@ void UItemTransformSlotScreen_C::BndEvt__ItemTransformResultInfo_K2Node_Componen
 }
 
 
-// Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.HandleSlotButton_Clicked
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UCommonButton*           AssociatedButton               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// int                            ButtonIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__Slot1_K2Node_ComponentBoundEvent_774_OnSlotSelected__DelegateSignature
+// (BlueprintEvent)
 
-void UItemTransformSlotScreen_C::HandleSlotButton_Clicked(class UCommonButton* AssociatedButton, int ButtonIndex)
+void UItemTransformSlotScreen_C::BndEvt__Slot1_K2Node_ComponentBoundEvent_774_OnSlotSelected__DelegateSignature()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.HandleSlotButton_Clicked");
+	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__Slot1_K2Node_ComponentBoundEvent_774_OnSlotSelected__DelegateSignature");
 
-	UItemTransformSlotScreen_C_HandleSlotButton_Clicked_Params params;
-	params.AssociatedButton = AssociatedButton;
-	params.ButtonIndex = ButtonIndex;
+	UItemTransformSlotScreen_C_BndEvt__Slot1_K2Node_ComponentBoundEvent_774_OnSlotSelected__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -266,19 +347,65 @@ void UItemTransformSlotScreen_C::HandleSlotButton_Clicked(class UCommonButton* A
 }
 
 
-// Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.HandleSlotButton_DoubleClicked
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UCommonButton*           AssociatedButton               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// int                            ButtonIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__Slot2_K2Node_ComponentBoundEvent_784_OnSlotSelected__DelegateSignature
+// (BlueprintEvent)
 
-void UItemTransformSlotScreen_C::HandleSlotButton_DoubleClicked(class UCommonButton* AssociatedButton, int ButtonIndex)
+void UItemTransformSlotScreen_C::BndEvt__Slot2_K2Node_ComponentBoundEvent_784_OnSlotSelected__DelegateSignature()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.HandleSlotButton_DoubleClicked");
+	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__Slot2_K2Node_ComponentBoundEvent_784_OnSlotSelected__DelegateSignature");
 
-	UItemTransformSlotScreen_C_HandleSlotButton_DoubleClicked_Params params;
-	params.AssociatedButton = AssociatedButton;
-	params.ButtonIndex = ButtonIndex;
+	UItemTransformSlotScreen_C_BndEvt__Slot2_K2Node_ComponentBoundEvent_784_OnSlotSelected__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__Slot3_K2Node_ComponentBoundEvent_795_OnSlotSelected__DelegateSignature
+// (BlueprintEvent)
+
+void UItemTransformSlotScreen_C::BndEvt__Slot3_K2Node_ComponentBoundEvent_795_OnSlotSelected__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__Slot3_K2Node_ComponentBoundEvent_795_OnSlotSelected__DelegateSignature");
+
+	UItemTransformSlotScreen_C_BndEvt__Slot3_K2Node_ComponentBoundEvent_795_OnSlotSelected__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__Slot4_K2Node_ComponentBoundEvent_807_OnSlotSelected__DelegateSignature
+// (BlueprintEvent)
+
+void UItemTransformSlotScreen_C::BndEvt__Slot4_K2Node_ComponentBoundEvent_807_OnSlotSelected__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__Slot4_K2Node_ComponentBoundEvent_807_OnSlotSelected__DelegateSignature");
+
+	UItemTransformSlotScreen_C_BndEvt__Slot4_K2Node_ComponentBoundEvent_807_OnSlotSelected__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__Slot5_K2Node_ComponentBoundEvent_820_OnSlotSelected__DelegateSignature
+// (BlueprintEvent)
+
+void UItemTransformSlotScreen_C::BndEvt__Slot5_K2Node_ComponentBoundEvent_820_OnSlotSelected__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.BndEvt__Slot5_K2Node_ComponentBoundEvent_820_OnSlotSelected__DelegateSignature");
+
+	UItemTransformSlotScreen_C_BndEvt__Slot5_K2Node_ComponentBoundEvent_820_OnSlotSelected__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -291,7 +418,7 @@ void UItemTransformSlotScreen_C::HandleSlotButton_DoubleClicked(class UCommonBut
 // Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.ExecuteUbergraph_ItemTransformSlotScreen
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformSlotScreen_C::ExecuteUbergraph_ItemTransformSlotScreen(int EntryPoint)
 {
@@ -345,7 +472,7 @@ void UItemTransformSlotScreen_C::OnItemPickerClosed__DelegateSignature()
 // Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.OnTransformButtonUpdated__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           TransformActive                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           TransformActive                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformSlotScreen_C::OnTransformButtonUpdated__DelegateSignature(bool TransformActive)
 {
@@ -365,9 +492,9 @@ void UItemTransformSlotScreen_C::OnTransformButtonUpdated__DelegateSignature(boo
 // Function ItemTransformSlotScreen.ItemTransformSlotScreen_C.OnTransformConfirmed__DelegateSignature
 // (Public, Delegate, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UFortItem*>       ItemsToSacrifice               (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// int                            SacrificePoints                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            CurrentTier                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TArray<class UFortItem*>       ItemsToSacrifice               (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// int                            SacrificePoints                (Parm, ZeroConstructor, IsPlainOldData)
+// int                            CurrentTier                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformSlotScreen_C::OnTransformConfirmed__DelegateSignature(int SacrificePoints, int CurrentTier, TArray<class UFortItem*>* ItemsToSacrifice)
 {

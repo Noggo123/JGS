@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -29,7 +29,7 @@ struct ACheckExpeditionRewardsAction_C_Is_FrontEndRewards_Running_Params
 // Function CheckExpeditionRewardsAction.CheckExpeditionRewardsAction_C.HandleRewardsClaimError
 struct ACheckExpeditionRewardsAction_C_HandleRewardsClaimError_Params
 {
-	class UFrontEndRewards_Widget_C*                   RewardsWidget;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UFrontEndRewards_Widget_C*                   RewardsWidget;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function CheckExpeditionRewardsAction.CheckExpeditionRewardsAction_C.Clear
@@ -40,7 +40,7 @@ struct ACheckExpeditionRewardsAction_C_Clear_Params
 // Function CheckExpeditionRewardsAction.CheckExpeditionRewardsAction_C.HandleRewardsClaimed
 struct ACheckExpeditionRewardsAction_C_HandleRewardsClaimed_Params
 {
-	class UFrontEndRewards_Widget_C*                   RewardsWidget;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UFrontEndRewards_Widget_C*                   RewardsWidget;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function CheckExpeditionRewardsAction.CheckExpeditionRewardsAction_C.PopulateExpeditionRewards
@@ -82,7 +82,7 @@ struct ACheckExpeditionRewardsAction_C_UserConstructionScript_Params
 // Function CheckExpeditionRewardsAction.CheckExpeditionRewardsAction_C.Execute
 struct ACheckExpeditionRewardsAction_C_Execute_Params
 {
-	struct FFortScriptedActionParams*                  Params;                                                   // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FFortScriptedActionParams*                  Params;                                                   // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function CheckExpeditionRewardsAction.CheckExpeditionRewardsAction_C.Handle Rewards Running
@@ -93,7 +93,7 @@ struct ACheckExpeditionRewardsAction_C_Handle_Rewards_Running_Params
 // Function CheckExpeditionRewardsAction.CheckExpeditionRewardsAction_C.ExecuteUbergraph_CheckExpeditionRewardsAction
 struct ACheckExpeditionRewardsAction_C_ExecuteUbergraph_CheckExpeditionRewardsAction_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass GA_DefaultPlayer_ApplyKnockback.GA_DefaultPlayer_ApplyKnockback_C
-// 0x0000 (0x0BA0 - 0x0BA0)
+// 0x0000 (0x0B19 - 0x0B19)
 class UGA_DefaultPlayer_ApplyKnockback_C : public UGAB_GenericApplyKnockback_C
 {
 public:

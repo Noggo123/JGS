@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass Frontend_BG_Main.Frontend_BG_Main_C
-// 0x0000 (0x0330 - 0x0330)
+// 0x0000 (0x03A0 - 0x03A0)
 class AFrontend_BG_Main_C : public AFortLevelScriptActor
 {
 public:

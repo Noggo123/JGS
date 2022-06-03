@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void ATODM_Disabled_C::UserConstructionScript()
 // Function TODM_Disabled.TODM_Disabled_C.DisableLightAndFog
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool*                          Enable                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          Enable                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void ATODM_Disabled_C::DisableLightAndFog(bool* Enable)
 {
@@ -69,7 +69,7 @@ void ATODM_Disabled_C::ReceiveBeginPlay()
 // Function TODM_Disabled.TODM_Disabled_C.ExecuteUbergraph_TODM_Disabled
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ATODM_Disabled_C::ExecuteUbergraph_TODM_Disabled(int EntryPoint)
 {

@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,7 +49,7 @@ void UScoreBarsScoreMessageItem_C::ClearScoreValueWidget()
 // Function ScoreBarsScoreMessageItem.ScoreBarsScoreMessageItem_C.GetScoreValueWidget
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UWidget*                 Widget                         (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UWidget*                 Widget                         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UScoreBarsScoreMessageItem_C::GetScoreValueWidget(class UWidget** Widget)
 {
@@ -71,9 +71,9 @@ void UScoreBarsScoreMessageItem_C::GetScoreValueWidget(class UWidget** Widget)
 // Function ScoreBarsScoreMessageItem.ScoreBarsScoreMessageItem_C.Setup
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Base_Delta                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   Name_Text                      (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UScoreMessageNumber_C*   In_Score_Widget                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// int                            Base_Delta                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Name_Text                      (Parm)
+// class UScoreMessageNumber_C*   In_Score_Widget                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UScoreBarsScoreMessageItem_C::Setup(int Base_Delta, const struct FText& Name_Text, class UScoreMessageNumber_C* In_Score_Widget)
 {
@@ -112,7 +112,7 @@ void UScoreBarsScoreMessageItem_C::UpdateValues()
 // Function ScoreBarsScoreMessageItem.ScoreBarsScoreMessageItem_C.OnStackSizeChanged
 // (Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int*                           OldStackSize                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           OldStackSize                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UScoreBarsScoreMessageItem_C::OnStackSizeChanged(int* OldStackSize)
 {
@@ -149,7 +149,7 @@ void UScoreBarsScoreMessageItem_C::OnBeginRemove()
 // Function ScoreBarsScoreMessageItem.ScoreBarsScoreMessageItem_C.ExecuteUbergraph_ScoreBarsScoreMessageItem
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UScoreBarsScoreMessageItem_C::ExecuteUbergraph_ScoreBarsScoreMessageItem(int EntryPoint)
 {

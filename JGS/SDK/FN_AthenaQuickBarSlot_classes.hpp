@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,12 +13,10 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass AthenaQuickBarSlot.AthenaQuickBarSlot_C
-// 0x0009 (0x0378 - 0x036F)
+// 0x0000 (0x0378 - 0x0378)
 class UAthenaQuickBarSlot_C : public UQuickbarSlot_C
 {
 public:
-	unsigned char                                      UnknownData00[0x1];                                       // 0x036F(0x0001) MISSED OFFSET
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0370(0x0008) (Transient, DuplicateTransient)
 
 	static UClass* StaticClass()
 	{
@@ -27,12 +25,7 @@ public:
 	}
 
 
-	void UpdateJetpackFuelGaugeVisiblity();
-	void ShowJetpackFuelGauge();
-	void HideJetpackFuelGauge();
-	struct FEventReply OnTouchStarted(struct FGeometry* MyGeometry, struct FPointerEvent* InTouchEvent);
-	void OnRefreshItem();
-	void ExecuteUbergraph_AthenaQuickBarSlot(int EntryPoint);
+	void GetKeyBindingAction_Gamepad(struct FName* KeyBindingAction);
 };
 
 

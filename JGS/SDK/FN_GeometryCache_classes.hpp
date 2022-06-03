@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,11 +32,11 @@ public:
 
 
 // Class GeometryCache.GeometryCacheActor
-// 0x0008 (0x0320 - 0x0318)
+// 0x0008 (0x0390 - 0x0388)
 class AGeometryCacheActor : public AActor
 {
 public:
-	class UGeometryCacheComponent*                     GeometryCacheComponent;                                   // 0x0318(0x0008) (Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData)
+	class UGeometryCacheComponent*                     GeometryCacheComponent;                                   // 0x0388(0x0008) (Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -50,18 +50,18 @@ public:
 
 
 // Class GeometryCache.GeometryCacheComponent
-// 0x0070 (0x06E0 - 0x0670)
+// 0x0070 (0x07F0 - 0x0780)
 class UGeometryCacheComponent : public UMeshComponent
 {
 public:
-	bool                                               bRunning;                                                 // 0x0670(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	bool                                               bLooping;                                                 // 0x0671(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x2];                                       // 0x0672(0x0002) MISSED OFFSET
-	float                                              StartTimeOffset;                                          // 0x0674(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              PlaybackSpeed;                                            // 0x0678(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	int                                                NumTracks;                                                // 0x067C(0x0004) (Edit, ZeroConstructor, EditConst, IsPlainOldData)
-	float                                              ElapsedTime;                                              // 0x0680(0x0004) (Edit, ZeroConstructor, EditConst, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x5C];                                      // 0x0684(0x005C) MISSED OFFSET
+	bool                                               bRunning;                                                 // 0x0780(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	bool                                               bLooping;                                                 // 0x0781(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x2];                                       // 0x0782(0x0002) MISSED OFFSET
+	float                                              StartTimeOffset;                                          // 0x0784(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	float                                              PlaybackSpeed;                                            // 0x0788(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	int                                                NumTracks;                                                // 0x078C(0x0004) (Edit, ZeroConstructor, EditConst, IsPlainOldData)
+	float                                              ElapsedTime;                                              // 0x0790(0x0004) (Edit, ZeroConstructor, EditConst, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x5C];                                      // 0x0794(0x005C) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -71,7 +71,6 @@ public:
 
 
 	void Stop();
-	void SetStartTimeOffset(float NewStartTimeOffset);
 	void SetPlaybackSpeed(float NewPlaybackSpeed);
 	void SetLooping(bool bNewLooping);
 	bool SetGeometryCache(class UGeometryCache* NewGeomCache);
@@ -83,7 +82,6 @@ public:
 	bool IsPlayingReversed();
 	bool IsPlaying();
 	bool IsLooping();
-	float GetStartTimeOffset();
 	float GetPlaybackSpeed();
 };
 

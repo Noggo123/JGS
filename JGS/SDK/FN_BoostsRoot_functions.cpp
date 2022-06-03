@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,29 +12,12 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function BoostsRoot.BoostsRoot_C.SetAccountBoostsTabHiddenState
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UBoostsRoot_C::SetAccountBoostsTabHiddenState()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BoostsRoot.BoostsRoot_C.SetAccountBoostsTabHiddenState");
-
-	UBoostsRoot_C_SetAccountBoostsTabHiddenState_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function BoostsRoot.BoostsRoot_C.HandleStore
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UBoostsRoot_C::HandleStore(bool* Passthrough)
+void UBoostsRoot_C::HandleStore(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function BoostsRoot.BoostsRoot_C.HandleStore");
 
@@ -46,15 +29,15 @@ void UBoostsRoot_C::HandleStore(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function BoostsRoot.BoostsRoot_C.HandleCursorModeChanging
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           IsEnabled                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IsEnabled                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBoostsRoot_C::HandleCursorModeChanging(bool IsEnabled)
 {
@@ -91,9 +74,9 @@ void UBoostsRoot_C::Set_Input_Action_Handlers()
 // Function BoostsRoot.BoostsRoot_C.HandleBack
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UBoostsRoot_C::HandleBack(bool* Passthrough)
+void UBoostsRoot_C::HandleBack(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function BoostsRoot.BoostsRoot_C.HandleBack");
 
@@ -105,8 +88,8 @@ void UBoostsRoot_C::HandleBack(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -164,8 +147,8 @@ void UBoostsRoot_C::OnActivated()
 // Function BoostsRoot.BoostsRoot_C.BndEvt__SettingsTabs_K2Node_ComponentBoundEvent_95_OnTabButtonCreated__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBoostsRoot_C::BndEvt__SettingsTabs_K2Node_ComponentBoundEvent_95_OnTabButtonCreated__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton)
 {
@@ -186,8 +169,8 @@ void UBoostsRoot_C::BndEvt__SettingsTabs_K2Node_ComponentBoundEvent_95_OnTabButt
 // Function BoostsRoot.BoostsRoot_C.BndEvt__CurrentTabSwitcher_K2Node_ComponentBoundEvent_29_OnActiveWidgetChanged__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UWidget*                 ActiveWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// int                            ActiveWidgetIndex              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidget*                 ActiveWidget                   (Parm, ZeroConstructor, IsPlainOldData)
+// int                            ActiveWidgetIndex              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBoostsRoot_C::BndEvt__CurrentTabSwitcher_K2Node_ComponentBoundEvent_29_OnActiveWidgetChanged__DelegateSignature(class UWidget* ActiveWidget, int ActiveWidgetIndex)
 {
@@ -205,27 +188,10 @@ void UBoostsRoot_C::BndEvt__CurrentTabSwitcher_K2Node_ComponentBoundEvent_29_OnA
 }
 
 
-// Function BoostsRoot.BoostsRoot_C.OnDeactivated
-// (Event, Protected, BlueprintEvent)
-
-void UBoostsRoot_C::OnDeactivated()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BoostsRoot.BoostsRoot_C.OnDeactivated");
-
-	UBoostsRoot_C_OnDeactivated_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function BoostsRoot.BoostsRoot_C.ExecuteUbergraph_BoostsRoot
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBoostsRoot_C::ExecuteUbergraph_BoostsRoot(int EntryPoint)
 {

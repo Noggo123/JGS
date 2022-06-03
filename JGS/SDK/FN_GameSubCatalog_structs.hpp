@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -41,7 +41,8 @@ enum class ECatalogSaleType : uint8_t
 	PercentOff                     = 3,
 	PercentOn                      = 4,
 	Strikethrough                  = 5,
-	MAX                            = 6
+	MAX                            = 6,
+	ECatalogSaleType_MAX           = 7
 };
 
 
@@ -56,7 +57,8 @@ enum class EAppStore : uint8_t
 	KindleStore                    = 5,
 	PlayStationStore               = 6,
 	XboxLiveStore                  = 7,
-	MAX                            = 8
+	MAX                            = 8,
+	EAppStore_MAX                  = 9
 };
 
 
@@ -67,7 +69,8 @@ enum class EStoreCurrencyType : uint8_t
 	MtxCurrency                    = 1,
 	GameItem                       = 2,
 	Other                          = 3,
-	MAX                            = 4
+	MAX                            = 4,
+	EStoreCurrencyType_MAX         = 5
 };
 
 
@@ -113,7 +116,7 @@ struct FItemQuantity
 	struct FString                                     TemplateId;                                               // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
 	int                                                Quantity;                                                 // 0x0010(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0014(0x0004) MISSED OFFSET
-	struct FJsonObjectWrapper                          Attributes;                                               // 0x0018(0x0020) (Edit)
+	struct FJsonObjectWrapper                          Attributes;                                               // 0x0018(0x0020) (Edit, BlueprintVisible, BlueprintReadOnly)
 };
 
 // ScriptStruct GameSubCatalog.CatalogDynamicBundleItem
@@ -161,47 +164,31 @@ struct FCatalogOfferRequirement
 	struct FString                                     RequiredId;                                               // 0x0008(0x0010) (ZeroConstructor)
 };
 
-// ScriptStruct GameSubCatalog.CatalogGiftInfo
-// 0x0028
-struct FCatalogGiftInfo
-{
-	bool                                               bIsEnabled;                                               // 0x0000(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0001(0x0007) MISSED OFFSET
-	struct FString                                     ForcedGiftBoxTemplateId;                                  // 0x0008(0x0010) (ZeroConstructor)
-	TArray<struct FCatalogOfferRequirement>            PurchaseRequirements;                                     // 0x0018(0x0010) (ZeroConstructor)
-};
-
 // ScriptStruct GameSubCatalog.CatalogOffer
-// 0x0218
+// 0x01D0
 struct FCatalogOffer
 {
 	struct FString                                     OfferId;                                                  // 0x0000(0x0010) (Edit, ZeroConstructor, EditConst)
-	struct FString                                     DevName;                                                  // 0x0010(0x0010) (Edit, ZeroConstructor)
-	TArray<struct FCatalogKeyValue>                    MetaInfo;                                                 // 0x0020(0x0010) (Edit, ZeroConstructor)
-	ECatalogOfferType                                  OfferType;                                                // 0x0030(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0031(0x0007) MISSED OFFSET
-	TArray<struct FCatalogItemPrice>                   Prices;                                                   // 0x0038(0x0010) (Edit, ZeroConstructor)
-	struct FCatalogDynamicBundle                       DynamicBundleInfo;                                        // 0x0048(0x0030) (Edit)
-	int                                                DailyLimit;                                               // 0x0078(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	int                                                WeeklyLimit;                                              // 0x007C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	int                                                MonthlyLimit;                                             // 0x0080(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x0084(0x0004) MISSED OFFSET
-	TArray<struct FString>                             Categories;                                               // 0x0088(0x0010) (Edit, ZeroConstructor)
-	struct FString                                     CatalogGroup;                                             // 0x0098(0x0010) (Edit, ZeroConstructor)
-	int                                                CatalogGroupPriority;                                     // 0x00A8(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	int                                                SortPriority;                                             // 0x00AC(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FText                                       Title;                                                    // 0x00B0(0x0018) (Edit)
-	struct FText                                       ShortDescription;                                         // 0x00C8(0x0018) (Edit)
-	struct FText                                       Description;                                              // 0x00E0(0x0018) (Edit)
-	struct FString                                     AppStoreId[0x8];                                          // 0x00F8(0x0010) (Edit, ZeroConstructor)
-	struct FCatalogMetaAssetInfo                       MetaAssetInfo;                                            // 0x0178(0x0030)
-	struct FString                                     DisplayAssetPath;                                         // 0x01A8(0x0010) (ZeroConstructor)
-	TArray<struct FItemQuantity>                       ItemGrants;                                               // 0x01B8(0x0010) (ZeroConstructor)
-	TArray<struct FCatalogOfferRequirement>            Requirements;                                             // 0x01C8(0x0010) (ZeroConstructor)
-	struct FCatalogGiftInfo                            GiftInfo;                                                 // 0x01D8(0x0028)
-	bool                                               Refundable;                                               // 0x0200(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x7];                                       // 0x0201(0x0007) MISSED OFFSET
-	TArray<struct FString>                             DenyItemTemplateIds;                                      // 0x0208(0x0010) (ZeroConstructor, Deprecated)
+	TArray<struct FCatalogKeyValue>                    MetaInfo;                                                 // 0x0010(0x0010) (Edit, ZeroConstructor)
+	ECatalogOfferType                                  OfferType;                                                // 0x0020(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0021(0x0007) MISSED OFFSET
+	TArray<struct FCatalogItemPrice>                   Prices;                                                   // 0x0028(0x0010) (Edit, ZeroConstructor)
+	struct FCatalogDynamicBundle                       DynamicBundleInfo;                                        // 0x0038(0x0030) (Edit)
+	int                                                DailyLimit;                                               // 0x0068(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	int                                                WeeklyLimit;                                              // 0x006C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	TArray<struct FString>                             Categories;                                               // 0x0070(0x0010) (Edit, ZeroConstructor)
+	struct FString                                     CatalogGroup;                                             // 0x0080(0x0010) (Edit, ZeroConstructor)
+	int                                                CatalogGroupPriority;                                     // 0x0090(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	int                                                SortPriority;                                             // 0x0094(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FText                                       Title;                                                    // 0x0098(0x0018) (Edit)
+	struct FText                                       ShortDescription;                                         // 0x00B0(0x0018) (Edit)
+	struct FText                                       Description;                                              // 0x00C8(0x0018) (Edit)
+	struct FString                                     AppStoreId[0x8];                                          // 0x00E0(0x0010) (Edit, ZeroConstructor)
+	struct FCatalogMetaAssetInfo                       MetaAssetInfo;                                            // 0x0160(0x0030)
+	struct FString                                     DisplayAssetPath;                                         // 0x0190(0x0010) (ZeroConstructor)
+	TArray<struct FItemQuantity>                       ItemGrants;                                               // 0x01A0(0x0010) (ZeroConstructor)
+	TArray<struct FCatalogOfferRequirement>            Requirements;                                             // 0x01B0(0x0010) (ZeroConstructor)
+	TArray<struct FString>                             DenyItemTemplateIds;                                      // 0x01C0(0x0010) (ZeroConstructor, Deprecated)
 };
 
 // ScriptStruct GameSubCatalog.Storefront
@@ -233,24 +220,8 @@ struct FCatalogItemSalePrice
 	struct FDateTime                                   EndTime;                                                  // 0x0010(0x0008) (Edit)
 };
 
-// ScriptStruct GameSubCatalog.CatalogPurchaseInfoGift
-// 0x0070
-struct FCatalogPurchaseInfoGift
-{
-	struct FString                                     OfferId;                                                  // 0x0000(0x0010) (ZeroConstructor)
-	TEnumAsByte<EStoreCurrencyType>                    Currency;                                                 // 0x0010(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0011(0x0007) MISSED OFFSET
-	struct FString                                     CurrencySubType;                                          // 0x0018(0x0010) (ZeroConstructor)
-	int                                                ExpectedTotalPrice;                                       // 0x0028(0x0004) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x002C(0x0004) MISSED OFFSET
-	struct FString                                     GameContext;                                              // 0x0030(0x0010) (ZeroConstructor)
-	TArray<struct FString>                             ReceiverAccountIds;                                       // 0x0040(0x0010) (ZeroConstructor)
-	struct FString                                     GiftWrapTemplateId;                                       // 0x0050(0x0010) (ZeroConstructor)
-	struct FString                                     PersonalMessage;                                          // 0x0060(0x0010) (ZeroConstructor)
-};
-
 // ScriptStruct GameSubCatalog.CatalogPurchaseInfo
-// 0x0040
+// 0x0030
 struct FCatalogPurchaseInfo
 {
 	struct FString                                     OfferId;                                                  // 0x0000(0x0010) (ZeroConstructor)
@@ -258,9 +229,8 @@ struct FCatalogPurchaseInfo
 	TEnumAsByte<EStoreCurrencyType>                    Currency;                                                 // 0x0014(0x0001) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x3];                                       // 0x0015(0x0003) MISSED OFFSET
 	struct FString                                     CurrencySubType;                                          // 0x0018(0x0010) (ZeroConstructor)
-	int                                                ExpectedTotalPrice;                                       // 0x0028(0x0004) (ZeroConstructor, IsPlainOldData)
+	int                                                ExpectedPrice;                                            // 0x0028(0x0004) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData01[0x4];                                       // 0x002C(0x0004) MISSED OFFSET
-	struct FString                                     GameContext;                                              // 0x0030(0x0010) (ZeroConstructor)
 };
 
 // ScriptStruct GameSubCatalog.CatalogReceiptInfo

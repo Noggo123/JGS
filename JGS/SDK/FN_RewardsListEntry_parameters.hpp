@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,12 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
-
-// Function RewardsListEntry.RewardsListEntry_C.ShowLabel
-struct URewardsListEntry_C_ShowLabel_Params
-{
-	bool                                               ShowLabel;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
 
 // Function RewardsListEntry.RewardsListEntry_C.ConfigForSchematic
 struct URewardsListEntry_C_ConfigForSchematic_Params
@@ -48,7 +42,7 @@ struct URewardsListEntry_C_ConfigForPeople_Params
 // Function RewardsListEntry.RewardsListEntry_C.ExecuteUbergraph_RewardsListEntry
 struct URewardsListEntry_C_ExecuteUbergraph_RewardsListEntry_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

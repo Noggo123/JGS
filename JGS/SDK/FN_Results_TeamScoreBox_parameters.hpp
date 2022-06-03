@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,9 +37,9 @@ struct UResults_TeamScoreBox_C_FlashTextType_Params
 // Function Results_TeamScoreBox.Results_TeamScoreBox_C.Initialize
 struct UResults_TeamScoreBox_C_Initialize_Params
 {
-	TEnumAsByte<EFortUIScoreType>                      ScoreType;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int                                                Score;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	float                                              PlayRate;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EFortUIScoreType>                      ScoreType;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Score;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              PlayRate;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeamScoreBox.Results_TeamScoreBox_C.InitializeScoreType
@@ -70,7 +70,7 @@ struct UResults_TeamScoreBox_C_BndEvt__Anim_Intro_K2Node_ComponentBoundEvent_0_O
 // Function Results_TeamScoreBox.Results_TeamScoreBox_C.PreConstruct
 struct UResults_TeamScoreBox_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeamScoreBox.Results_TeamScoreBox_C.Text Count Up Finished
@@ -96,14 +96,14 @@ struct UResults_TeamScoreBox_C_Stop_Count_Down_Absorption_Params
 // Function Results_TeamScoreBox.Results_TeamScoreBox_C.BndEvt__TextScore_K2Node_ComponentBoundEvent_0_OnInterpolationEnded__DelegateSignature
 struct UResults_TeamScoreBox_C_BndEvt__TextScore_K2Node_ComponentBoundEvent_0_OnInterpolationEnded__DelegateSignature_Params
 {
-	class UCommonNumericTextBlock*                     NumericTextBlock;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	bool                                               HadCompleted;                                             // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonNumericTextBlock*                     NumericTextBlock;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               HadCompleted;                                             // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeamScoreBox.Results_TeamScoreBox_C.ExecuteUbergraph_Results_TeamScoreBox
 struct UResults_TeamScoreBox_C_ExecuteUbergraph_Results_TeamScoreBox_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeamScoreBox.Results_TeamScoreBox_C.IntroFinished__DelegateSignature

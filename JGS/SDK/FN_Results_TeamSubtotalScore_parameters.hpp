@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,13 +22,13 @@ struct UResults_TeamSubtotalScore_C_UpdateBackground_Params
 // Function Results_TeamSubtotalScore.Results_TeamSubtotalScore_C.SetScore
 struct UResults_TeamSubtotalScore_C_SetScore_Params
 {
-	int                                                Score;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Score;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeamSubtotalScore.Results_TeamSubtotalScore_C.PreConstruct
 struct UResults_TeamSubtotalScore_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeamSubtotalScore.Results_TeamSubtotalScore_C.Construct
@@ -39,7 +39,7 @@ struct UResults_TeamSubtotalScore_C_Construct_Params
 // Function Results_TeamSubtotalScore.Results_TeamSubtotalScore_C.ExecuteUbergraph_Results_TeamSubtotalScore
 struct UResults_TeamSubtotalScore_C_ExecuteUbergraph_Results_TeamSubtotalScore_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

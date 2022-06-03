@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -117,8 +117,8 @@ void ABP_VictoryDrone_C::ReceiveBeginPlay()
 // Function BP_VictoryDrone.BP_VictoryDrone_C.OnSpawnOutAnimEnded
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UAnimMontage*            Montage                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bInterrupted                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UAnimMontage*            Montage                        (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bInterrupted                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void ABP_VictoryDrone_C::OnSpawnOutAnimEnded(class UAnimMontage* Montage, bool bInterrupted)
 {
@@ -139,7 +139,7 @@ void ABP_VictoryDrone_C::OnSpawnOutAnimEnded(class UAnimMontage* Montage, bool b
 // Function BP_VictoryDrone.BP_VictoryDrone_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float*                         DeltaSeconds                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float*                         DeltaSeconds                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void ABP_VictoryDrone_C::ReceiveTick(float* DeltaSeconds)
 {
@@ -159,7 +159,7 @@ void ABP_VictoryDrone_C::ReceiveTick(float* DeltaSeconds)
 // Function BP_VictoryDrone.BP_VictoryDrone_C.ExecuteUbergraph_BP_VictoryDrone
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ABP_VictoryDrone_C::ExecuteUbergraph_BP_VictoryDrone(int EntryPoint)
 {
@@ -179,7 +179,7 @@ void ABP_VictoryDrone_C::ExecuteUbergraph_BP_VictoryDrone(int EntryPoint)
 // Function BP_VictoryDrone.BP_VictoryDrone_C.SpawnOutAnimEndedDispatcher__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ABP_VictoryDrone_C*      Drone                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class ABP_VictoryDrone_C*      Drone                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void ABP_VictoryDrone_C::SpawnOutAnimEndedDispatcher__DelegateSignature(class ABP_VictoryDrone_C* Drone)
 {

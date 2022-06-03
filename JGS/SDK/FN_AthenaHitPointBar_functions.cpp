@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,30 +12,10 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function AthenaHitPointBar.AthenaHitPointBar_C.SetSize
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           UseLargeSize                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaHitPointBar_C::SetSize(bool UseLargeSize)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaHitPointBar.AthenaHitPointBar_C.SetSize");
-
-	UAthenaHitPointBar_C_SetSize_Params params;
-	params.UseLargeSize = UseLargeSize;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function AthenaHitPointBar.AthenaHitPointBar_C.UpdateDBNOState
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bIsDBNO                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bIsDBNO                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaHitPointBar_C::UpdateDBNOState(bool bIsDBNO)
 {
@@ -60,6 +40,40 @@ void UAthenaHitPointBar_C::UpdateHealthType()
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaHitPointBar.AthenaHitPointBar_C.UpdateHealthType");
 
 	UAthenaHitPointBar_C_UpdateHealthType_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaHitPointBar.AthenaHitPointBar_C.UpdateVolatileForUpdate
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UAthenaHitPointBar_C::UpdateVolatileForUpdate()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaHitPointBar.AthenaHitPointBar_C.UpdateVolatileForUpdate");
+
+	UAthenaHitPointBar_C_UpdateVolatileForUpdate_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaHitPointBar.AthenaHitPointBar_C.Update
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UAthenaHitPointBar_C::Update()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaHitPointBar.AthenaHitPointBar_C.Update");
+
+	UAthenaHitPointBar_C_Update_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -103,8 +117,28 @@ void UAthenaHitPointBar_C::Initialize_Bar()
 }
 
 
-// Function AthenaHitPointBar.AthenaHitPointBar_C.Update Fill Bar
+// Function AthenaHitPointBar.AthenaHitPointBar_C.UpdateCurrentValueWithoutReason
 // (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                          Current                        (Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaHitPointBar_C::UpdateCurrentValueWithoutReason(float Current)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaHitPointBar.AthenaHitPointBar_C.UpdateCurrentValueWithoutReason");
+
+	UAthenaHitPointBar_C_UpdateCurrentValueWithoutReason_Params params;
+	params.Current = Current;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaHitPointBar.AthenaHitPointBar_C.Update Fill Bar
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
 void UAthenaHitPointBar_C::Update_Fill_Bar()
 {
@@ -122,12 +156,17 @@ void UAthenaHitPointBar_C::Update_Fill_Bar()
 
 // Function AthenaHitPointBar.AthenaHitPointBar_C.UpdateCurrentValue
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                          Current                        (Parm, ZeroConstructor, IsPlainOldData)
+// EFortHitPointModificationReason Reason                         (Parm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaHitPointBar_C::UpdateCurrentValue()
+void UAthenaHitPointBar_C::UpdateCurrentValue(float Current, EFortHitPointModificationReason Reason)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaHitPointBar.AthenaHitPointBar_C.UpdateCurrentValue");
 
 	UAthenaHitPointBar_C_UpdateCurrentValue_Params params;
+	params.Current = Current;
+	params.Reason = Reason;
 
 	auto flags = fn->FunctionFlags;
 
@@ -139,12 +178,15 @@ void UAthenaHitPointBar_C::UpdateCurrentValue()
 
 // Function AthenaHitPointBar.AthenaHitPointBar_C.UpdateMaxValue
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                          Max                            (Parm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaHitPointBar_C::UpdateMaxValue()
+void UAthenaHitPointBar_C::UpdateMaxValue(float Max)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaHitPointBar.AthenaHitPointBar_C.UpdateMaxValue");
 
 	UAthenaHitPointBar_C_UpdateMaxValue_Params params;
+	params.Max = Max;
 
 	auto flags = fn->FunctionFlags;
 
@@ -157,7 +199,7 @@ void UAthenaHitPointBar_C::UpdateMaxValue()
 // Function AthenaHitPointBar.AthenaHitPointBar_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaHitPointBar_C::PreConstruct(bool* IsDesignTime)
 {
@@ -174,17 +216,14 @@ void UAthenaHitPointBar_C::PreConstruct(bool* IsDesignTime)
 }
 
 
-// Function AthenaHitPointBar.AthenaHitPointBar_C.OnMaxValueChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// float*                         Value                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// Function AthenaHitPointBar.AthenaHitPointBar_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void UAthenaHitPointBar_C::OnMaxValueChanged(float* Value)
+void UAthenaHitPointBar_C::Construct()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaHitPointBar.AthenaHitPointBar_C.OnMaxValueChanged");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaHitPointBar.AthenaHitPointBar_C.Construct");
 
-	UAthenaHitPointBar_C_OnMaxValueChanged_Params params;
-	params.Value = Value;
+	UAthenaHitPointBar_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -194,56 +233,19 @@ void UAthenaHitPointBar_C::OnMaxValueChanged(float* Value)
 }
 
 
-// Function AthenaHitPointBar.AthenaHitPointBar_C.OnValueChangedWithReason
-// (Event, Protected, BlueprintEvent)
+// Function AthenaHitPointBar.AthenaHitPointBar_C.Tick
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// float*                         Value                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortHitPointModificationReason* Reason                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// float*                         InDeltaTime                    (Parm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaHitPointBar_C::OnValueChangedWithReason(float* Value, EFortHitPointModificationReason* Reason)
+void UAthenaHitPointBar_C::Tick(struct FGeometry* MyGeometry, float* InDeltaTime)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaHitPointBar.AthenaHitPointBar_C.OnValueChangedWithReason");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaHitPointBar.AthenaHitPointBar_C.Tick");
 
-	UAthenaHitPointBar_C_OnValueChangedWithReason_Params params;
-	params.Value = Value;
-	params.Reason = Reason;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaHitPointBar.AthenaHitPointBar_C.OnDBNOStateChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool*                          IsDBNO                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaHitPointBar_C::OnDBNOStateChanged(bool* IsDBNO)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaHitPointBar.AthenaHitPointBar_C.OnDBNOStateChanged");
-
-	UAthenaHitPointBar_C_OnDBNOStateChanged_Params params;
-	params.IsDBNO = IsDBNO;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaHitPointBar.AthenaHitPointBar_C.OnDeltaChanged
-// (Event, Protected, BlueprintEvent)
-
-void UAthenaHitPointBar_C::OnDeltaChanged()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaHitPointBar.AthenaHitPointBar_C.OnDeltaChanged");
-
-	UAthenaHitPointBar_C_OnDeltaChanged_Params params;
+	UAthenaHitPointBar_C_Tick_Params params;
+	params.MyGeometry = MyGeometry;
+	params.InDeltaTime = InDeltaTime;
 
 	auto flags = fn->FunctionFlags;
 
@@ -254,9 +256,9 @@ void UAthenaHitPointBar_C::OnDeltaChanged()
 
 
 // Function AthenaHitPointBar.AthenaHitPointBar_C.ExecuteUbergraph_AthenaHitPointBar
-// ()
+// (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaHitPointBar_C::ExecuteUbergraph_AthenaHitPointBar(int EntryPoint)
 {

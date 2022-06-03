@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,7 +22,7 @@ struct UAthenaLobbyPlayerPanel_C_Cancel_Params
 // Function AthenaLobbyPlayerPanel.AthenaLobbyPlayerPanel_C.OnTeamMemberStateChanged
 struct UAthenaLobbyPlayerPanel_C_OnTeamMemberStateChanged_Params
 {
-	struct FFortTeamMemberInfo                         TeamMemberInfo;                                           // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FFortTeamMemberInfo                         TeamMemberInfo;                                           // (Parm)
 };
 
 // Function AthenaLobbyPlayerPanel.AthenaLobbyPlayerPanel_C.InitializeContextEvents
@@ -43,23 +43,12 @@ struct UAthenaLobbyPlayerPanel_C_Refresh_Params
 // Function AthenaLobbyPlayerPanel.AthenaLobbyPlayerPanel_C.SetTeamMemberInfo
 struct UAthenaLobbyPlayerPanel_C_SetTeamMemberInfo_Params
 {
-	struct FFortTeamMemberInfo                         TeamMemberInfo;                                           // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FFortTeamMemberInfo                         TeamMemberInfo;                                           // (Parm)
 };
 
 // Function AthenaLobbyPlayerPanel.AthenaLobbyPlayerPanel_C.Initialize
 struct UAthenaLobbyPlayerPanel_C_Initialize_Params
 {
-};
-
-// Function AthenaLobbyPlayerPanel.AthenaLobbyPlayerPanel_C.Construct
-struct UAthenaLobbyPlayerPanel_C_Construct_Params
-{
-};
-
-// Function AthenaLobbyPlayerPanel.AthenaLobbyPlayerPanel_C.ExecuteUbergraph_AthenaLobbyPlayerPanel
-struct UAthenaLobbyPlayerPanel_C_ExecuteUbergraph_AthenaLobbyPlayerPanel_Params
-{
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaLobbyPlayerPanel.AthenaLobbyPlayerPanel_C.OnClosed__DelegateSignature

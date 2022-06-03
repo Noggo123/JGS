@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,6 +20,26 @@ void UKeybindWidget_C::ShowHoldBackPlate()
 	static auto fn = UObject::FindObject<UFunction>("Function KeybindWidget.KeybindWidget_C.ShowHoldBackPlate");
 
 	UKeybindWidget_C_ShowHoldBackPlate_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function KeybindWidget.KeybindWidget_C.SetOpacity
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                          InOpacity                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void UKeybindWidget_C::SetOpacity(float InOpacity)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function KeybindWidget.KeybindWidget_C.SetOpacity");
+
+	UKeybindWidget_C_SetOpacity_Params params;
+	params.InOpacity = InOpacity;
 
 	auto flags = fn->FunctionFlags;
 
@@ -54,7 +74,7 @@ void UKeybindWidget_C::Get_Bound_Action(struct FName* Action)
 // Function KeybindWidget.KeybindWidget_C.Set Brush Size
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EFortBrushSize>    Brush_Size                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EFortBrushSize>    Brush_Size                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UKeybindWidget_C::Set_Brush_Size(TEnumAsByte<EFortBrushSize> Brush_Size)
 {
@@ -93,14 +113,14 @@ void UKeybindWidget_C::Get_Brush_Size(TEnumAsByte<EFortBrushSize>* Brush_Size)
 }
 
 
-// Function KeybindWidget.KeybindWidget_C.UpdateFrameSize
-// (BlueprintCallable, BlueprintEvent)
+// Function KeybindWidget.KeybindWidget_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void UKeybindWidget_C::UpdateFrameSize()
+void UKeybindWidget_C::Construct()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function KeybindWidget.KeybindWidget_C.UpdateFrameSize");
+	static auto fn = UObject::FindObject<UFunction>("Function KeybindWidget.KeybindWidget_C.Construct");
 
-	UKeybindWidget_C_UpdateFrameSize_Params params;
+	UKeybindWidget_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -127,44 +147,10 @@ void UKeybindWidget_C::Update()
 }
 
 
-// Function KeybindWidget.KeybindWidget_C.Destruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UKeybindWidget_C::Destruct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function KeybindWidget.KeybindWidget_C.Destruct");
-
-	UKeybindWidget_C_Destruct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function KeybindWidget.KeybindWidget_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UKeybindWidget_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function KeybindWidget.KeybindWidget_C.Construct");
-
-	UKeybindWidget_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function KeybindWidget.KeybindWidget_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UKeybindWidget_C::PreConstruct(bool* IsDesignTime)
 {
@@ -181,10 +167,27 @@ void UKeybindWidget_C::PreConstruct(bool* IsDesignTime)
 }
 
 
+// Function KeybindWidget.KeybindWidget_C.UpdateFrameSize
+// (BlueprintCallable, BlueprintEvent)
+
+void UKeybindWidget_C::UpdateFrameSize()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function KeybindWidget.KeybindWidget_C.UpdateFrameSize");
+
+	UKeybindWidget_C_UpdateFrameSize_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function KeybindWidget.KeybindWidget_C.ExecuteUbergraph_KeybindWidget
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UKeybindWidget_C::ExecuteUbergraph_KeybindWidget(int EntryPoint)
 {

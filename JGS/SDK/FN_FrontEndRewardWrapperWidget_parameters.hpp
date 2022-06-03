@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,8 +22,8 @@ struct UFrontEndRewardWrapperWidget_C_IntroAnimation_Params
 // Function FrontEndRewardWrapperWidget.FrontEndRewardWrapperWidget_C.AddToWrapper
 struct UFrontEndRewardWrapperWidget_C_AddToWrapper_Params
 {
-	class UWidget*                                     Widget;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	struct FText                                       DisplayName;                                              // (BlueprintVisible, BlueprintReadOnly, Parm)
+	class UWidget*                                     Widget;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FText                                       DisplayName;                                              // (Parm)
 };
 
 // Function FrontEndRewardWrapperWidget.FrontEndRewardWrapperWidget_C.Construct
@@ -39,7 +39,7 @@ struct UFrontEndRewardWrapperWidget_C_Go_Trigger_Params
 // Function FrontEndRewardWrapperWidget.FrontEndRewardWrapperWidget_C.ExecuteUbergraph_FrontEndRewardWrapperWidget
 struct UFrontEndRewardWrapperWidget_C_ExecuteUbergraph_FrontEndRewardWrapperWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function FrontEndRewardWrapperWidget.FrontEndRewardWrapperWidget_C.EventDispatcher_Go_Trigger__DelegateSignature

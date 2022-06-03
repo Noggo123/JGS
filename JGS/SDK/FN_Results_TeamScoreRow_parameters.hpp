@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,8 +32,8 @@ struct UResults_TeamScoreRow_C_SetSkippingToEnd_Params
 // Function Results_TeamScoreRow.Results_TeamScoreRow_C.Initialize
 struct UResults_TeamScoreRow_C_Initialize_Params
 {
-	class UFortUIScoreReport*                          InScoreReport;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	float                                              PlayRate;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortUIScoreReport*                          InScoreReport;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              PlayRate;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeamScoreRow.Results_TeamScoreRow_C.Intro Sequence
@@ -79,7 +79,7 @@ struct UResults_TeamScoreRow_C_Stop_Count_Down_Absorption_Params
 // Function Results_TeamScoreRow.Results_TeamScoreRow_C.ExecuteUbergraph_Results_TeamScoreRow
 struct UResults_TeamScoreRow_C_ExecuteUbergraph_Results_TeamScoreRow_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeamScoreRow.Results_TeamScoreRow_C.CountDownFinished__DelegateSignature

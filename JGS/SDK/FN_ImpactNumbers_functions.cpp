@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,9 +15,9 @@ namespace SDK
 // Function ImpactNumbers.ImpactNumbers_C.Set Material Pararmeters
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortDamageNumberInfo   NewDamageHitInfoStruct         (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FTransform              CameraTransform                (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FVector                 NumberLocation                 (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+// struct FFortDamageNumberInfo   NewDamageHitInfoStruct         (Parm, OutParm, ReferenceParm)
+// struct FTransform              CameraTransform                (Parm, IsPlainOldData)
+// struct FVector                 NumberLocation                 (Parm, IsPlainOldData)
 
 void AImpactNumbers_C::Set_Material_Pararmeters(const struct FTransform& CameraTransform, const struct FVector& NumberLocation, struct FFortDamageNumberInfo* NewDamageHitInfoStruct)
 {
@@ -41,7 +41,7 @@ void AImpactNumbers_C::Set_Material_Pararmeters(const struct FTransform& CameraT
 // Function ImpactNumbers.ImpactNumbers_C.init a new number set
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortDamageNumberInfo   NewDamageHitInfoStruct         (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortDamageNumberInfo   NewDamageHitInfoStruct         (Parm, OutParm, ReferenceParm)
 // struct FTransform              OutCameraTransform             (Parm, OutParm, IsPlainOldData)
 // struct FVector                 OutNumberLocation              (Parm, OutParm, IsPlainOldData)
 
@@ -86,7 +86,7 @@ void AImpactNumbers_C::UserConstructionScript()
 // Function ImpactNumbers.ImpactNumbers_C.OnNewDamageNumber
 // (Event, Protected, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortDamageNumberInfo*  NewDamageNumberInfo            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortDamageNumberInfo*  NewDamageNumberInfo            (ConstParm, Parm, OutParm, ReferenceParm)
 
 void AImpactNumbers_C::OnNewDamageNumber(struct FFortDamageNumberInfo* NewDamageNumberInfo)
 {
@@ -106,7 +106,7 @@ void AImpactNumbers_C::OnNewDamageNumber(struct FFortDamageNumberInfo* NewDamage
 // Function ImpactNumbers.ImpactNumbers_C.ExecuteUbergraph_ImpactNumbers
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AImpactNumbers_C::ExecuteUbergraph_ImpactNumbers(int EntryPoint)
 {

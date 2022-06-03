@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,7 +49,7 @@ void UResults_StatsSubtypeBox_C::Construct()
 // Function Results_StatsSubtypeBox.Results_StatsSubtypeBox_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_StatsSubtypeBox_C::PreConstruct(bool* IsDesignTime)
 {
@@ -69,7 +69,7 @@ void UResults_StatsSubtypeBox_C::PreConstruct(bool* IsDesignTime)
 // Function Results_StatsSubtypeBox.Results_StatsSubtypeBox_C.ExecuteUbergraph_Results_StatsSubtypeBox
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_StatsSubtypeBox_C::ExecuteUbergraph_Results_StatsSubtypeBox(int EntryPoint)
 {

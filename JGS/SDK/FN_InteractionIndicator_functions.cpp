@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UInteractionIndicator_C::UpdateKeybinds()
 // Function InteractionIndicator.InteractionIndicator_C.ShowDefenderBeaconWidget
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ABuildingTrapDefender*   BuildingTrap                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class ABuildingTrapDefender*   BuildingTrap                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UInteractionIndicator_C::ShowDefenderBeaconWidget(class ABuildingTrapDefender* BuildingTrap)
 {
@@ -40,6 +40,26 @@ void UInteractionIndicator_C::ShowDefenderBeaconWidget(class ABuildingTrapDefend
 
 	UInteractionIndicator_C_ShowDefenderBeaconWidget_Params params;
 	params.BuildingTrap = BuildingTrap;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InteractionIndicator.InteractionIndicator_C.HandleInteractionUpdated
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortInteractContextInfo* Interaction                    (Parm, ZeroConstructor, IsPlainOldData)
+
+void UInteractionIndicator_C::HandleInteractionUpdated(class UFortInteractContextInfo* Interaction)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function InteractionIndicator.InteractionIndicator_C.HandleInteractionUpdated");
+
+	UInteractionIndicator_C_HandleInteractionUpdated_Params params;
+	params.Interaction = Interaction;
 
 	auto flags = fn->FunctionFlags;
 
@@ -69,7 +89,7 @@ void UInteractionIndicator_C::ShowBasicInteractionWidget()
 // Function InteractionIndicator.InteractionIndicator_C.ShowPickupWidget
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortPickup*             Pickup                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortPickup*             Pickup                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UInteractionIndicator_C::ShowPickupWidget(class AFortPickup* Pickup)
 {
@@ -89,7 +109,7 @@ void UInteractionIndicator_C::ShowPickupWidget(class AFortPickup* Pickup)
 // Function InteractionIndicator.InteractionIndicator_C.HandleInteractionChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortInteractContextInfo* Interaction                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortInteractContextInfo* Interaction                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UInteractionIndicator_C::HandleInteractionChanged(class UFortInteractContextInfo* Interaction)
 {
@@ -143,7 +163,7 @@ void UInteractionIndicator_C::Destruct()
 // Function InteractionIndicator.InteractionIndicator_C.ExecuteUbergraph_InteractionIndicator
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UInteractionIndicator_C::ExecuteUbergraph_InteractionIndicator(int EntryPoint)
 {

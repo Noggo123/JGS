@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,12 +23,6 @@ struct AGeometryCacheActor_GetGeometryCacheComponent_Params
 // Function GeometryCache.GeometryCacheComponent.Stop
 struct UGeometryCacheComponent_Stop_Params
 {
-};
-
-// Function GeometryCache.GeometryCacheComponent.SetStartTimeOffset
-struct UGeometryCacheComponent_SetStartTimeOffset_Params
-{
-	float                                              NewStartTimeOffset;                                       // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function GeometryCache.GeometryCacheComponent.SetPlaybackSpeed
@@ -91,12 +85,6 @@ struct UGeometryCacheComponent_IsPlaying_Params
 struct UGeometryCacheComponent_IsLooping_Params
 {
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GeometryCache.GeometryCacheComponent.GetStartTimeOffset
-struct UGeometryCacheComponent_GetStartTimeOffset_Params
-{
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function GeometryCache.GeometryCacheComponent.GetPlaybackSpeed

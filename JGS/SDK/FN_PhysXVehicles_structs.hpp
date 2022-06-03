@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,16 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Enums
 //---------------------------------------------------------------------------
-
-// Enum PhysXVehicles.EWheelSweepType
-enum class EWheelSweepType : uint8_t
-{
-	SimpleAndComplex               = 0,
-	Simple                         = 1,
-	Complex                        = 2,
-	EWheelSweepType_MAX            = 3
-};
-
 
 // Enum PhysXVehicles.EVehicleDifferential4W
 enum class EVehicleDifferential4W : uint8_t
@@ -68,15 +58,6 @@ struct FVehicleInputRate
 {
 	float                                              RiseRate;                                                 // 0x0000(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	float                                              FallRate;                                                 // 0x0004(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-};
-
-// ScriptStruct PhysXVehicles.TireConfigMaterialFriction
-// 0x0010
-struct FTireConfigMaterialFriction
-{
-	class UPhysicalMaterial*                           PhysicalMaterial;                                         // 0x0000(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              FrictionScale;                                            // 0x0008(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x000C(0x0004) MISSED OFFSET
 };
 
 // ScriptStruct PhysXVehicles.VehicleEngineData
@@ -131,18 +112,27 @@ struct FVehicleTransmissionData
 	unsigned char                                      UnknownData01[0x4];                                       // 0x002C(0x0004) MISSED OFFSET
 };
 
-// ScriptStruct PhysXVehicles.AnimNode_WheelHandler
-// 0x0018 (0x0130 - 0x0118)
-struct FAnimNode_WheelHandler : public FAnimNode_SkeletalControlBase
+// ScriptStruct PhysXVehicles.TireConfigMaterialFriction
+// 0x0010
+struct FTireConfigMaterialFriction
 {
-	unsigned char                                      UnknownData00[0x18];                                      // 0x0118(0x0018) MISSED OFFSET
+	class UPhysicalMaterial*                           PhysicalMaterial;                                         // 0x0000(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              FrictionScale;                                            // 0x0008(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x000C(0x0004) MISSED OFFSET
 };
 
 // ScriptStruct PhysXVehicles.VehicleAnimInstanceProxy
-// 0x0010 (0x05F0 - 0x05E0)
+// 0x0010 (0x0470 - 0x0460)
 struct FVehicleAnimInstanceProxy : public FAnimInstanceProxy
 {
-	unsigned char                                      UnknownData00[0x10];                                      // 0x05E0(0x0010) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x10];                                      // 0x0460(0x0010) MISSED OFFSET
+};
+
+// ScriptStruct PhysXVehicles.AnimNode_WheelHandler
+// 0x0018 (0x0088 - 0x0070)
+struct FAnimNode_WheelHandler : public FAnimNode_SkeletalControlBase
+{
+	unsigned char                                      UnknownData00[0x18];                                      // 0x0070(0x0018) MISSED OFFSET
 };
 
 }

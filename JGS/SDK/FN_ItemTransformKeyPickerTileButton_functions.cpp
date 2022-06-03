@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -55,14 +55,14 @@ struct FGameplayTagContainer UItemTransformKeyPickerTileButton_C::Get_Transform_
 }
 
 
-// Function ItemTransformKeyPickerTileButton.ItemTransformKeyPickerTileButton_C.Mark Item As Seen
+// Function ItemTransformKeyPickerTileButton.ItemTransformKeyPickerTileButton_C.Mark Item as Seen
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void UItemTransformKeyPickerTileButton_C::Mark_Item_As_Seen()
+void UItemTransformKeyPickerTileButton_C::Mark_Item_as_Seen()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformKeyPickerTileButton.ItemTransformKeyPickerTileButton_C.Mark Item As Seen");
+	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformKeyPickerTileButton.ItemTransformKeyPickerTileButton_C.Mark Item as Seen");
 
-	UItemTransformKeyPickerTileButton_C_Mark_Item_As_Seen_Params params;
+	UItemTransformKeyPickerTileButton_C_Mark_Item_as_Seen_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -136,8 +136,8 @@ void UItemTransformKeyPickerTileButton_C::Update_Bang_State()
 // Function ItemTransformKeyPickerTileButton.ItemTransformKeyPickerTileButton_C.SetData
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject**                InData                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonListView**        OwningList                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UObject**                InData                         (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonListView**        OwningList                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformKeyPickerTileButton_C::SetData(class UObject** InData, class UCommonListView** OwningList)
 {
@@ -192,7 +192,7 @@ void UItemTransformKeyPickerTileButton_C::OnHovered()
 // Function ItemTransformKeyPickerTileButton.ItemTransformKeyPickerTileButton_C.ExecuteUbergraph_ItemTransformKeyPickerTileButton
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformKeyPickerTileButton_C::ExecuteUbergraph_ItemTransformKeyPickerTileButton(int EntryPoint)
 {

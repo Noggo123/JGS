@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,67 +14,48 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.UpdateJetpackFuelGaugeWidget
-struct UAthenaInventoryEquipSlot_C_UpdateJetpackFuelGaugeWidget_Params
+// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.IsSelected
+struct UAthenaInventoryEquipSlot_C_IsSelected_Params
 {
-	class UFortItem*                                   ItemInSlot;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Selected;                                                 // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.IsFocusOfDrop
-struct UAthenaInventoryEquipSlot_C_IsFocusOfDrop_Params
+// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnFocusReceived
+struct UAthenaInventoryEquipSlot_C_OnFocusReceived_Params
 {
-	bool                                               IsDragHovered;                                            // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.CanEquipFortItem
-struct UAthenaInventoryEquipSlot_C_CanEquipFortItem_Params
-{
-	class UObject*                                     Object;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnDragOver
-struct UAthenaInventoryEquipSlot_C_OnDragOver_Params
-{
-	struct FGeometry*                                  MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	struct FPointerEvent*                              PointerEvent;                                             // (BlueprintVisible, BlueprintReadOnly, Parm)
-	class UDragDropOperation**                         Operation;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnPreviewMouseButtonDown
-struct UAthenaInventoryEquipSlot_C_OnPreviewMouseButtonDown_Params
-{
-	struct FGeometry*                                  MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	struct FPointerEvent*                              MouseEvent;                                               // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FGeometry*                                  MyGeometry;                                               // (Parm, IsPlainOldData)
+	struct FFocusEvent*                                InFocusEvent;                                             // (Parm)
 	struct FEventReply                                 ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.IsDraggingEquipableItem
-struct UAthenaInventoryEquipSlot_C_IsDraggingEquipableItem_Params
+// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.SetSelected
+struct UAthenaInventoryEquipSlot_C_SetSelected_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.TryAndShowDropTarget
-struct UAthenaInventoryEquipSlot_C_TryAndShowDropTarget_Params
-{
+	bool                                               Selected;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnDragDetected
 struct UAthenaInventoryEquipSlot_C_OnDragDetected_Params
 {
-	struct FGeometry*                                  MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	struct FPointerEvent*                              PointerEvent;                                             // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FGeometry*                                  MyGeometry;                                               // (Parm, IsPlainOldData)
+	struct FPointerEvent*                              PointerEvent;                                             // (ConstParm, Parm, OutParm, ReferenceParm)
 	class UDragDropOperation*                          Operation;                                                // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnMouseButtonDown
+struct UAthenaInventoryEquipSlot_C_OnMouseButtonDown_Params
+{
+	struct FGeometry*                                  MyGeometry;                                               // (Parm, IsPlainOldData)
+	struct FPointerEvent*                              MouseEvent;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	struct FEventReply                                 ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnDrop
 struct UAthenaInventoryEquipSlot_C_OnDrop_Params
 {
-	struct FGeometry*                                  MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	struct FPointerEvent*                              PointerEvent;                                             // (BlueprintVisible, BlueprintReadOnly, Parm)
-	class UDragDropOperation**                         Operation;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FGeometry*                                  MyGeometry;                                               // (Parm, IsPlainOldData)
+	struct FPointerEvent*                              PointerEvent;                                             // (Parm)
+	class UDragDropOperation**                         Operation;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
@@ -88,63 +69,41 @@ struct UAthenaInventoryEquipSlot_C_Construct_Params
 {
 };
 
+// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnFocusLost
+struct UAthenaInventoryEquipSlot_C_OnFocusLost_Params
+{
+	struct FFocusEvent*                                InFocusEvent;                                             // (Parm)
+};
+
+// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.BndEvt__InputActionWidget_K2Node_ComponentBoundEvent_6_OnInputMethodChanged__DelegateSignature
+struct UAthenaInventoryEquipSlot_C_BndEvt__InputActionWidget_K2Node_ComponentBoundEvent_6_OnInputMethodChanged__DelegateSignature_Params
+{
+	bool                                               bUsingGamepad;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.Tick
 struct UAthenaInventoryEquipSlot_C_Tick_Params
 {
-	struct FGeometry*                                  MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	float*                                             InDeltaTime;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FGeometry*                                  MyGeometry;                                               // (Parm, IsPlainOldData)
+	float*                                             InDeltaTime;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnQuickbarContentsChanged_Event_0_1
 struct UAthenaInventoryEquipSlot_C_OnQuickbarContentsChanged_Event_0_1_Params
 {
-	EFortQuickBars                                     QuickbarIndex;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	TArray<int>                                        ChangedSlots;                                             // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-};
-
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnClicked
-struct UAthenaInventoryEquipSlot_C_OnClicked_Params
-{
-};
-
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnAddedToFocusPath
-struct UAthenaInventoryEquipSlot_C_OnAddedToFocusPath_Params
-{
-	struct FFocusEvent*                                InFocusEvent;                                             // (BlueprintVisible, BlueprintReadOnly, Parm)
-};
-
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnSelected
-struct UAthenaInventoryEquipSlot_C_OnSelected_Params
-{
-};
-
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnDeselected
-struct UAthenaInventoryEquipSlot_C_OnDeselected_Params
-{
-};
-
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnDoubleClicked
-struct UAthenaInventoryEquipSlot_C_OnDoubleClicked_Params
-{
-};
-
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnInventoryItemSelected_Event_0_1
-struct UAthenaInventoryEquipSlot_C_OnInventoryItemSelected_Event_0_1_Params
-{
-	class UFortItem*                                   Item;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnDragLeave
-struct UAthenaInventoryEquipSlot_C_OnDragLeave_Params
-{
-	struct FPointerEvent*                              PointerEvent;                                             // (BlueprintVisible, BlueprintReadOnly, Parm)
-	class UDragDropOperation**                         Operation;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	EFortQuickBars                                     QuickbarIndex;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.ExecuteUbergraph_AthenaInventoryEquipSlot
 struct UAthenaInventoryEquipSlot_C_ExecuteUbergraph_AthenaInventoryEquipSlot_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnEquipRequested__DelegateSignature
+struct UAthenaInventoryEquipSlot_C_OnEquipRequested__DelegateSignature_Params
+{
+	int                                                SlotIndex;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

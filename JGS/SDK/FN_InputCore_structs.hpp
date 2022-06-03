@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -25,9 +25,7 @@ enum class ETouchIndex : uint8_t
 	Touch8                         = 7,
 	Touch9                         = 8,
 	Touch10                        = 9,
-	CursorPointerIndex             = 10,
-	MAX_TOUCHES                    = 11,
-	ETouchIndex_MAX                = 12
+	ETouchIndex_MAX                = 10
 };
 
 
@@ -58,22 +56,19 @@ enum class EControllerHand : uint8_t
 {
 	Left                           = 0,
 	Right                          = 1,
-	AnyHand                        = 2,
-	Pad                            = 3,
-	ExternalCamera                 = 4,
-	Gun                            = 5,
-	Special_1                      = 6,
-	Special_2                      = 7,
-	Special_3                      = 8,
-	Special_4                      = 9,
-	Special_5                      = 10,
-	Special_6                      = 11,
-	Special_7                      = 12,
-	Special_8                      = 13,
-	Special_9                      = 14,
-	Special_10                     = 15,
-	Special_11                     = 16,
-	EControllerHand_MAX            = 17
+	Pad                            = 2,
+	ExternalCamera                 = 3,
+	Gun                            = 4,
+	Special_1                      = 5,
+	Special_2                      = 6,
+	Special_3                      = 7,
+	Special_4                      = 8,
+	Special_5                      = 9,
+	Special_6                      = 10,
+	Special_7                      = 11,
+	Special_8                      = 12,
+	Special_9                      = 13,
+	EControllerHand_MAX            = 14
 };
 
 

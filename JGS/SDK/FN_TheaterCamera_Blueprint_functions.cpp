@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,43 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.ZoomCameraWithHeldGamepadInput
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ATheaterCamera_Blueprint_C::ZoomCameraWithHeldGamepadInput()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.ZoomCameraWithHeldGamepadInput");
-
-	ATheaterCamera_Blueprint_C_ZoomCameraWithHeldGamepadInput_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.SetSuspendInput
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           SuspendInput                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void ATheaterCamera_Blueprint_C::SetSuspendInput(bool SuspendInput)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.SetSuspendInput");
-
-	ATheaterCamera_Blueprint_C_SetSuspendInput_Params params;
-	params.SuspendInput = SuspendInput;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.IsInputSuspended
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
@@ -73,7 +36,7 @@ bool ATheaterCamera_Blueprint_C::IsInputSuspended()
 // Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.NewFunction_0_1
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                  self2                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AActor*                  self2                          (Parm, ZeroConstructor, IsPlainOldData)
 // struct FVector2D               ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
 
 struct FVector2D ATheaterCamera_Blueprint_C::NewFunction_0_1(class AActor* self2)
@@ -96,8 +59,8 @@ struct FVector2D ATheaterCamera_Blueprint_C::NewFunction_0_1(class AActor* self2
 // Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.PanCamera
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          DeltaX                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          DeltaY                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          DeltaX                         (Parm, ZeroConstructor, IsPlainOldData)
+// float                          DeltaY                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void ATheaterCamera_Blueprint_C::PanCamera(float DeltaX, float DeltaY)
 {
@@ -118,7 +81,7 @@ void ATheaterCamera_Blueprint_C::PanCamera(float DeltaX, float DeltaY)
 // Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.HandleTheaterSelected
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FString                 TheaterId                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// struct FString                 TheaterId                      (Parm, ZeroConstructor)
 
 void ATheaterCamera_Blueprint_C::HandleTheaterSelected(const struct FString& TheaterId)
 {
@@ -138,7 +101,7 @@ void ATheaterCamera_Blueprint_C::HandleTheaterSelected(const struct FString& The
 // Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.ZoomCameraStep
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Forward                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Forward                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void ATheaterCamera_Blueprint_C::ZoomCameraStep(bool Forward)
 {
@@ -308,16 +271,16 @@ void ATheaterCamera_Blueprint_C::DEBUGFOVA__UpdateFunc()
 }
 
 
-// Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.InpActEvt_MouseScrollUp_K2Node_InputKeyEvent_1_2
+// Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.InpActEvt_MouseScrollUp_K2Node_InputKeyEvent_7_8
 // (BlueprintEvent)
 // Parameters:
-// struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FKey                    Key                            (Parm)
 
-void ATheaterCamera_Blueprint_C::InpActEvt_MouseScrollUp_K2Node_InputKeyEvent_1_2(const struct FKey& Key)
+void ATheaterCamera_Blueprint_C::InpActEvt_MouseScrollUp_K2Node_InputKeyEvent_7_8(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.InpActEvt_MouseScrollUp_K2Node_InputKeyEvent_1_2");
+	static auto fn = UObject::FindObject<UFunction>("Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.InpActEvt_MouseScrollUp_K2Node_InputKeyEvent_7_8");
 
-	ATheaterCamera_Blueprint_C_InpActEvt_MouseScrollUp_K2Node_InputKeyEvent_1_2_Params params;
+	ATheaterCamera_Blueprint_C_InpActEvt_MouseScrollUp_K2Node_InputKeyEvent_7_8_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -328,16 +291,56 @@ void ATheaterCamera_Blueprint_C::InpActEvt_MouseScrollUp_K2Node_InputKeyEvent_1_
 }
 
 
-// Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.InpActEvt_MouseScrollDown_K2Node_InputKeyEvent_0_1
+// Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.InpActEvt_MouseScrollDown_K2Node_InputKeyEvent_6_7
 // (BlueprintEvent)
 // Parameters:
-// struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FKey                    Key                            (Parm)
 
-void ATheaterCamera_Blueprint_C::InpActEvt_MouseScrollDown_K2Node_InputKeyEvent_0_1(const struct FKey& Key)
+void ATheaterCamera_Blueprint_C::InpActEvt_MouseScrollDown_K2Node_InputKeyEvent_6_7(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.InpActEvt_MouseScrollDown_K2Node_InputKeyEvent_0_1");
+	static auto fn = UObject::FindObject<UFunction>("Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.InpActEvt_MouseScrollDown_K2Node_InputKeyEvent_6_7");
 
-	ATheaterCamera_Blueprint_C_InpActEvt_MouseScrollDown_K2Node_InputKeyEvent_0_1_Params params;
+	ATheaterCamera_Blueprint_C_InpActEvt_MouseScrollDown_K2Node_InputKeyEvent_6_7_Params params;
+	params.Key = Key;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.InpActEvt_Gamepad_LeftTrigger_K2Node_InputKeyEvent_5_6
+// (BlueprintEvent)
+// Parameters:
+// struct FKey                    Key                            (Parm)
+
+void ATheaterCamera_Blueprint_C::InpActEvt_Gamepad_LeftTrigger_K2Node_InputKeyEvent_5_6(const struct FKey& Key)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.InpActEvt_Gamepad_LeftTrigger_K2Node_InputKeyEvent_5_6");
+
+	ATheaterCamera_Blueprint_C_InpActEvt_Gamepad_LeftTrigger_K2Node_InputKeyEvent_5_6_Params params;
+	params.Key = Key;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_4_5
+// (BlueprintEvent)
+// Parameters:
+// struct FKey                    Key                            (Parm)
+
+void ATheaterCamera_Blueprint_C::InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_4_5(const struct FKey& Key)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_4_5");
+
+	ATheaterCamera_Blueprint_C_InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_4_5_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -385,7 +388,7 @@ void ATheaterCamera_Blueprint_C::OnDeactivated()
 // Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.SetTileFocus
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class AFortTheaterMapTile**    TargetTile                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortTheaterMapTile**    TargetTile                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ATheaterCamera_Blueprint_C::SetTileFocus(class AFortTheaterMapTile** TargetTile)
 {
@@ -405,7 +408,7 @@ void ATheaterCamera_Blueprint_C::SetTileFocus(class AFortTheaterMapTile** Target
 // Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float*                         DeltaSeconds                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float*                         DeltaSeconds                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void ATheaterCamera_Blueprint_C::ReceiveTick(float* DeltaSeconds)
 {
@@ -476,7 +479,7 @@ void ATheaterCamera_Blueprint_C::StopFocusTimeline()
 // Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.ForceTileFocus
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                 HexWorldLoc                    (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+// struct FVector                 HexWorldLoc                    (Parm, IsPlainOldData)
 
 void ATheaterCamera_Blueprint_C::ForceTileFocus(const struct FVector& HexWorldLoc)
 {
@@ -564,7 +567,7 @@ void ATheaterCamera_Blueprint_C::PinnedPing()
 // Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.ExecuteUbergraph_TheaterCamera_Blueprint
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ATheaterCamera_Blueprint_C::ExecuteUbergraph_TheaterCamera_Blueprint(int EntryPoint)
 {

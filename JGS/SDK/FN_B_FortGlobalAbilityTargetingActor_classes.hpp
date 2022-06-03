@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass B_FortGlobalAbilityTargetingActor.B_FortGlobalAbilityTargetingActor_C
-// 0x0000 (0x0318 - 0x0318)
+// 0x0000 (0x0388 - 0x0388)
 class AB_FortGlobalAbilityTargetingActor_C : public AFortGlobalAbilityTargetingActor
 {
 public:

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,13 +17,13 @@ namespace SDK
 // Function LobbyTimer.LobbyTimer_C.Handle Lobby Timer Updated
 struct ULobbyTimer_C_Handle_Lobby_Timer_Updated_Params
 {
-	int                                                Seconds_Remaining;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Seconds_Remaining;                                        // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function LobbyTimer.LobbyTimer_C.Handle Show Lobby Timer
 struct ULobbyTimer_C_Handle_Show_Lobby_Timer_Params
 {
-	bool                                               Show;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Show;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function LobbyTimer.LobbyTimer_C.Bind Delegates
@@ -34,7 +34,7 @@ struct ULobbyTimer_C_Bind_Delegates_Params
 // Function LobbyTimer.LobbyTimer_C.Show Lobby Timer
 struct ULobbyTimer_C_Show_Lobby_Timer_Params
 {
-	bool                                               Show;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Show;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function LobbyTimer.LobbyTimer_C.Handle Lobby Disconnected
@@ -55,7 +55,7 @@ struct ULobbyTimer_C_Construct_Params
 // Function LobbyTimer.LobbyTimer_C.ExecuteUbergraph_LobbyTimer
 struct ULobbyTimer_C_ExecuteUbergraph_LobbyTimer_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

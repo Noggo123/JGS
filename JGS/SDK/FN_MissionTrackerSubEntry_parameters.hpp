@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -28,8 +28,8 @@ struct UMissionTrackerSubEntry_C_CreateCompletionAnnouncement_Params
 // Function MissionTrackerSubEntry.MissionTrackerSubEntry_C.HandleMissionUIEvent
 struct UMissionTrackerSubEntry_C_HandleMissionUIEvent_Params
 {
-	class AFortMissionState*                           MissionElement;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayTagContainer                       EventTags;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class AFortMissionState*                           MissionElement;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayTagContainer                       EventTags;                                                // (Parm, OutParm, ReferenceParm)
 };
 
 // Function MissionTrackerSubEntry.MissionTrackerSubEntry_C.DrawAttention
@@ -55,8 +55,8 @@ struct UMissionTrackerSubEntry_C_ShowObjectiveWidget_Params
 // Function MissionTrackerSubEntry.MissionTrackerSubEntry_C.HanldeObjectiveVisiblityOverrideChanged
 struct UMissionTrackerSubEntry_C_HanldeObjectiveVisiblityOverrideChanged_Params
 {
-	class AFortObjectiveBase*                          Objective;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	EFortMissionVisibilityOverride                     New_Visibility_Override;                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AFortObjectiveBase*                          Objective;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	EFortMissionVisibilityOverride                     New_Visibility_Override;                                  // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MissionTrackerSubEntry.MissionTrackerSubEntry_C.CreateObjectiveContentWidget
@@ -67,7 +67,7 @@ struct UMissionTrackerSubEntry_C_CreateObjectiveContentWidget_Params
 // Function MissionTrackerSubEntry.MissionTrackerSubEntry_C.StartEndingAnimations
 struct UMissionTrackerSubEntry_C_StartEndingAnimations_Params
 {
-	class UWidgetAnimation*                            Animation;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UWidgetAnimation*                            Animation;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MissionTrackerSubEntry.MissionTrackerSubEntry_C.HideObjectiveWidget
@@ -78,27 +78,27 @@ struct UMissionTrackerSubEntry_C_HideObjectiveWidget_Params
 // Function MissionTrackerSubEntry.MissionTrackerSubEntry_C.HandleUpdate
 struct UMissionTrackerSubEntry_C_HandleUpdate_Params
 {
-	class AFortMissionState*                           Objective;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AFortMissionState*                           Objective;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MissionTrackerSubEntry.MissionTrackerSubEntry_C.HandleObjectiveVisibilityChanged
 struct UMissionTrackerSubEntry_C_HandleObjectiveVisibilityChanged_Params
 {
-	class AFortObjectiveBase*                          Objective;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               NewVisibility;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AFortObjectiveBase*                          Objective;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               NewVisibility;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MissionTrackerSubEntry.MissionTrackerSubEntry_C.HandleObjectiveStatusChanged
 struct UMissionTrackerSubEntry_C_HandleObjectiveStatusChanged_Params
 {
-	class AFortObjectiveBase*                          Objective;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	EFortObjectiveStatus                               NewStatus;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AFortObjectiveBase*                          Objective;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	EFortObjectiveStatus                               NewStatus;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MissionTrackerSubEntry.MissionTrackerSubEntry_C.Setup
 struct UMissionTrackerSubEntry_C_Setup_Params
 {
-	class AFortObjectiveBase*                          Objective;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AFortObjectiveBase*                          Objective;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MissionTrackerSubEntry.MissionTrackerSubEntry_C.OnObjectiveSet
@@ -114,7 +114,7 @@ struct UMissionTrackerSubEntry_C_OnHiddenByHeightConstraintChanged_Params
 // Function MissionTrackerSubEntry.MissionTrackerSubEntry_C.ExecuteUbergraph_MissionTrackerSubEntry
 struct UMissionTrackerSubEntry_C_ExecuteUbergraph_MissionTrackerSubEntry_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MissionTrackerSubEntry.MissionTrackerSubEntry_C.WidgetVisibilityChanged__DelegateSignature

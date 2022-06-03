@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function PopupCenterMessageWidget.PopupCenterMessageWidget_C.OnModalDisplayed
 // (BlueprintCosmetic, Event, Protected, BlueprintEvent)
 // Parameters:
-// ECenterPopupMessageStateEnum*  NewState                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonActivatablePanel** ModalPopup                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// ECenterPopupMessageStateEnum*  NewState                       (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonActivatablePanel** ModalPopup                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPopupCenterMessageWidget_C::OnModalDisplayed(ECenterPopupMessageStateEnum* NewState, class UCommonActivatablePanel** ModalPopup)
 {
@@ -88,7 +88,7 @@ void UPopupCenterMessageWidget_C::Destruct()
 // Function PopupCenterMessageWidget.PopupCenterMessageWidget_C.ExecuteUbergraph_PopupCenterMessageWidget
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPopupCenterMessageWidget_C::ExecuteUbergraph_PopupCenterMessageWidget(int EntryPoint)
 {

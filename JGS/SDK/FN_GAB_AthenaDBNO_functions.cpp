@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,7 +37,7 @@ void UGAB_AthenaDBNO_C::GetInitialHealAmount(float* Health)
 // Function GAB_AthenaDBNO.GAB_AthenaDBNO_C.InitializeDeathHitDirection
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData      EventHitData                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FGameplayEventData      EventHitData                   (Parm)
 
 void UGAB_AthenaDBNO_C::InitializeDeathHitDirection(const struct FGameplayEventData& EventHitData)
 {
@@ -156,47 +156,10 @@ void UGAB_AthenaDBNO_C::OnStateEnded_C85094F843D5075FE4872C95AFC5D6B6()
 }
 
 
-// Function GAB_AthenaDBNO.GAB_AthenaDBNO_C.OnFinish_4C169D40441E45B462D83CBBA67F6E45
-// (BlueprintCallable, BlueprintEvent)
-
-void UGAB_AthenaDBNO_C::OnFinish_4C169D40441E45B462D83CBBA67F6E45()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GAB_AthenaDBNO.GAB_AthenaDBNO_C.OnFinish_4C169D40441E45B462D83CBBA67F6E45");
-
-	UGAB_AthenaDBNO_C_OnFinish_4C169D40441E45B462D83CBBA67F6E45_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GAB_AthenaDBNO.GAB_AthenaDBNO_C.K2_OnEndAbility
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool*                          bWasCancelled                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UGAB_AthenaDBNO_C::K2_OnEndAbility(bool* bWasCancelled)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GAB_AthenaDBNO.GAB_AthenaDBNO_C.K2_OnEndAbility");
-
-	UGAB_AthenaDBNO_C_K2_OnEndAbility_Params params;
-	params.bWasCancelled = bWasCancelled;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function GAB_AthenaDBNO.GAB_AthenaDBNO_C.K2_ActivateAbilityFromEvent
 // (Event, Protected, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData*     EventData                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGameplayEventData*     EventData                      (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UGAB_AthenaDBNO_C::K2_ActivateAbilityFromEvent(struct FGameplayEventData* EventData)
 {
@@ -213,10 +176,27 @@ void UGAB_AthenaDBNO_C::K2_ActivateAbilityFromEvent(struct FGameplayEventData* E
 }
 
 
+// Function GAB_AthenaDBNO.GAB_AthenaDBNO_C.K2_OnEndAbility
+// (Event, Protected, BlueprintEvent)
+
+void UGAB_AthenaDBNO_C::K2_OnEndAbility()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GAB_AthenaDBNO.GAB_AthenaDBNO_C.K2_OnEndAbility");
+
+	UGAB_AthenaDBNO_C_K2_OnEndAbility_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function GAB_AthenaDBNO.GAB_AthenaDBNO_C.ExecuteUbergraph_GAB_AthenaDBNO
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UGAB_AthenaDBNO_C::ExecuteUbergraph_GAB_AthenaDBNO(int EntryPoint)
 {

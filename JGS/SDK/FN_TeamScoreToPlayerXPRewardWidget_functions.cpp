@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,14 +15,14 @@ namespace SDK
 // Function TeamScoreToPlayerXPRewardWidget.TeamScoreToPlayerXPRewardWidget_C.Initialize
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortUIXpInfo           XPInfo                         (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortUIXpInfo           XPinfo                         (Parm)
 
-void UTeamScoreToPlayerXPRewardWidget_C::Initialize(const struct FFortUIXpInfo& XPInfo)
+void UTeamScoreToPlayerXPRewardWidget_C::Initialize(const struct FFortUIXpInfo& XPinfo)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function TeamScoreToPlayerXPRewardWidget.TeamScoreToPlayerXPRewardWidget_C.Initialize");
 
 	UTeamScoreToPlayerXPRewardWidget_C_Initialize_Params params;
-	params.XPInfo = XPInfo;
+	params.XPinfo = XPinfo;
 
 	auto flags = fn->FunctionFlags;
 
@@ -35,7 +35,7 @@ void UTeamScoreToPlayerXPRewardWidget_C::Initialize(const struct FFortUIXpInfo& 
 // Function TeamScoreToPlayerXPRewardWidget.TeamScoreToPlayerXPRewardWidget_C.Update XP LERP
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          LERP_Factor                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          LERP_Factor                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTeamScoreToPlayerXPRewardWidget_C::Update_XP_LERP(float LERP_Factor)
 {
@@ -89,7 +89,7 @@ void UTeamScoreToPlayerXPRewardWidget_C::Construct()
 // Function TeamScoreToPlayerXPRewardWidget.TeamScoreToPlayerXPRewardWidget_C.ExecuteUbergraph_TeamScoreToPlayerXPRewardWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTeamScoreToPlayerXPRewardWidget_C::ExecuteUbergraph_TeamScoreToPlayerXPRewardWidget(int EntryPoint)
 {

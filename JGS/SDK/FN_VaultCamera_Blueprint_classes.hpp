@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,15 +13,15 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass VaultCamera_Blueprint.VaultCamera_Blueprint_C
-// 0x0020 (0x08D0 - 0x08B0)
+// 0x0020 (0x08E0 - 0x08C0)
 class AVaultCamera_Blueprint_C : public AFortCameraBase
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x08B0(0x0008) (Transient, DuplicateTransient)
-	class AFortPlayerPawn*                             CachedPawn;                                               // 0x08B8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData)
-	bool                                               MouseDown;                                                // 0x08C0(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x08C1(0x0007) MISSED OFFSET
-	class AVaultCamera_Blueprint_C*                    VaultActor;                                               // 0x08C8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x08C0(0x0008) (Transient, DuplicateTransient)
+	class AFortPlayerPawn*                             CachedPawn;                                               // 0x08C8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData)
+	bool                                               MouseDown;                                                // 0x08D0(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x08D1(0x0007) MISSED OFFSET
+	class AVaultCamera_Blueprint_C*                    VaultActor;                                               // 0x08D8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -31,8 +31,13 @@ public:
 
 
 	void UserConstructionScript();
-	void OnDeactivated();
+	void InpActEvt_RightMouseButton_K2Node_InputKeyEvent_7_8(const struct FKey& Key);
+	void InpActEvt_RightMouseButton_K2Node_InputKeyEvent_6_7(const struct FKey& Key);
+	void InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_5_6(const struct FKey& Key);
+	void InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_4_5(const struct FKey& Key);
+	void ReceiveTick(float* DeltaSeconds);
 	void OnActivated();
+	void OnDeactivated();
 	void ExecuteUbergraph_VaultCamera_Blueprint(int EntryPoint);
 };
 

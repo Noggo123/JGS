@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UHeroSquadSlotsView_C::UndarkenAllSlots()
 // Function HeroSquadSlotsView.HeroSquadSlotsView_C.HighlightSlotByIndex
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Index                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHeroSquadSlotsView_C::HighlightSlotByIndex(int Index)
 {
@@ -52,8 +52,8 @@ void UHeroSquadSlotsView_C::HighlightSlotByIndex(int Index)
 // Function HeroSquadSlotsView.HeroSquadSlotsView_C.HandleSquadNavigation
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   SquadId                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            SlotIndex                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   SquadId                        (Parm, ZeroConstructor, IsPlainOldData)
+// int                            SlotIndex                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHeroSquadSlotsView_C::HandleSquadNavigation(const struct FName& SquadId, int SlotIndex)
 {
@@ -74,10 +74,10 @@ void UHeroSquadSlotsView_C::HandleSquadNavigation(const struct FName& SquadId, i
 // Function HeroSquadSlotsView.HeroSquadSlotsView_C.CreateAndAddSquadSlotButton
 // (Event, Protected, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int*                           SquadSlotIndex                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FHomebaseSquadSlot*     SquadSlotDefinition            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// class UWidget*                 OutSquadSlotButtonHost         (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// class UFortSquadSlotSelectorButton* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+// int*                           SquadSlotIndex                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// struct FHomebaseSquadSlot*     SquadSlotDefinition            (ConstParm, Parm, OutParm, ReferenceParm)
+// class UWidget*                 OutSquadSlotButtonHost         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// class UFortSquadSlotSelectorButton* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 class UFortSquadSlotSelectorButton* UHeroSquadSlotsView_C::CreateAndAddSquadSlotButton(int* SquadSlotIndex, struct FHomebaseSquadSlot* SquadSlotDefinition, class UWidget** OutSquadSlotButtonHost)
 {
@@ -120,7 +120,7 @@ void UHeroSquadSlotsView_C::Construct()
 // Function HeroSquadSlotsView.HeroSquadSlotsView_C.ExecuteUbergraph_HeroSquadSlotsView
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHeroSquadSlotsView_C::ExecuteUbergraph_HeroSquadSlotsView(int EntryPoint)
 {

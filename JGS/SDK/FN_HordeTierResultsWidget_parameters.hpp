@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -35,7 +35,7 @@ struct UHordeTierResultsWidget_C_ChooseMediaToUse_Params
 // Function HordeTierResultsWidget.HordeTierResultsWidget_C.Initialize
 struct UHordeTierResultsWidget_C_Initialize_Params
 {
-	EFortCompletionResult                              Result;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	EFortCompletionResult                              Result;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function HordeTierResultsWidget.HordeTierResultsWidget_C.InitializeMovie

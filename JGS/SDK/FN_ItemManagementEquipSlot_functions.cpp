@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,8 +37,8 @@ void UItemManagementEquipSlot_C::IsSelected(bool* Selected)
 // Function ItemManagementEquipSlot.ItemManagementEquipSlot_C.OnFocusReceived
 // (BlueprintCosmetic, Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FFocusEvent*            InFocusEvent                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// struct FFocusEvent*            InFocusEvent                   (Parm)
 // struct FEventReply             ReturnValue                    (Parm, OutParm, ReturnParm)
 
 struct FEventReply UItemManagementEquipSlot_C::OnFocusReceived(struct FGeometry* MyGeometry, struct FFocusEvent* InFocusEvent)
@@ -62,7 +62,7 @@ struct FEventReply UItemManagementEquipSlot_C::OnFocusReceived(struct FGeometry*
 // Function ItemManagementEquipSlot.ItemManagementEquipSlot_C.SetSelected
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Selected                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Selected                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementEquipSlot_C::SetSelected(bool Selected)
 {
@@ -82,8 +82,8 @@ void UItemManagementEquipSlot_C::SetSelected(bool Selected)
 // Function ItemManagementEquipSlot.ItemManagementEquipSlot_C.OnDragDetected
 // (BlueprintCosmetic, Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent*          PointerEvent                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// struct FPointerEvent*          PointerEvent                   (ConstParm, Parm, OutParm, ReferenceParm)
 // class UDragDropOperation*      Operation                      (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementEquipSlot_C::OnDragDetected(struct FGeometry* MyGeometry, struct FPointerEvent* PointerEvent, class UDragDropOperation** Operation)
@@ -108,8 +108,8 @@ void UItemManagementEquipSlot_C::OnDragDetected(struct FGeometry* MyGeometry, st
 // Function ItemManagementEquipSlot.ItemManagementEquipSlot_C.OnMouseButtonDown
 // (BlueprintCosmetic, Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent*          MouseEvent                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// struct FPointerEvent*          MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
 // struct FEventReply             ReturnValue                    (Parm, OutParm, ReturnParm)
 
 struct FEventReply UItemManagementEquipSlot_C::OnMouseButtonDown(struct FGeometry* MyGeometry, struct FPointerEvent* MouseEvent)
@@ -133,9 +133,9 @@ struct FEventReply UItemManagementEquipSlot_C::OnMouseButtonDown(struct FGeometr
 // Function ItemManagementEquipSlot.ItemManagementEquipSlot_C.OnDrop
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent*          PointerEvent                   (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UDragDropOperation**     Operation                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// struct FPointerEvent*          PointerEvent                   (Parm)
+// class UDragDropOperation**     Operation                      (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 bool UItemManagementEquipSlot_C::OnDrop(struct FGeometry* MyGeometry, struct FPointerEvent* PointerEvent, class UDragDropOperation** Operation)
@@ -194,7 +194,7 @@ void UItemManagementEquipSlot_C::Construct()
 // Function ItemManagementEquipSlot.ItemManagementEquipSlot_C.OnFocusLost
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// struct FFocusEvent*            InFocusEvent                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFocusEvent*            InFocusEvent                   (Parm)
 
 void UItemManagementEquipSlot_C::OnFocusLost(struct FFocusEvent* InFocusEvent)
 {
@@ -214,7 +214,7 @@ void UItemManagementEquipSlot_C::OnFocusLost(struct FFocusEvent* InFocusEvent)
 // Function ItemManagementEquipSlot.ItemManagementEquipSlot_C.BndEvt__InputActionWidget_K2Node_ComponentBoundEvent_6_OnInputMethodChanged__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// bool                           bUsingGamepad                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bUsingGamepad                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementEquipSlot_C::BndEvt__InputActionWidget_K2Node_ComponentBoundEvent_6_OnInputMethodChanged__DelegateSignature(bool bUsingGamepad)
 {
@@ -234,8 +234,8 @@ void UItemManagementEquipSlot_C::BndEvt__InputActionWidget_K2Node_ComponentBound
 // Function ItemManagementEquipSlot.ItemManagementEquipSlot_C.OnDragCancelled
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FPointerEvent*          PointerEvent                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// class UDragDropOperation**     Operation                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FPointerEvent*          PointerEvent                   (ConstParm, Parm, OutParm, ReferenceParm)
+// class UDragDropOperation**     Operation                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementEquipSlot_C::OnDragCancelled(struct FPointerEvent* PointerEvent, class UDragDropOperation** Operation)
 {
@@ -256,7 +256,7 @@ void UItemManagementEquipSlot_C::OnDragCancelled(struct FPointerEvent* PointerEv
 // Function ItemManagementEquipSlot.ItemManagementEquipSlot_C.ExecuteUbergraph_ItemManagementEquipSlot
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementEquipSlot_C::ExecuteUbergraph_ItemManagementEquipSlot(int EntryPoint)
 {

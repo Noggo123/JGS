@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UT3_Main_C::Construct()
 // Function T3_Main.T3_Main_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UT3_Main_C::PreConstruct(bool* IsDesignTime)
 {
@@ -52,7 +52,7 @@ void UT3_Main_C::PreConstruct(bool* IsDesignTime)
 // Function T3_Main.T3_Main_C.ExecuteUbergraph_T3_Main
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UT3_Main_C::ExecuteUbergraph_T3_Main(int EntryPoint)
 {

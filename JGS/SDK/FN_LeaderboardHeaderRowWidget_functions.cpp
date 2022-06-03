@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function LeaderboardHeaderRowWidget.LeaderboardHeaderRowWidget_C.SetStatNameText
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Text                           (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   Text                           (Parm)
 
 void ULeaderboardHeaderRowWidget_C::SetStatNameText(const struct FText& Text)
 {
@@ -52,7 +52,7 @@ void ULeaderboardHeaderRowWidget_C::Construct()
 // Function LeaderboardHeaderRowWidget.LeaderboardHeaderRowWidget_C.ExecuteUbergraph_LeaderboardHeaderRowWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULeaderboardHeaderRowWidget_C::ExecuteUbergraph_LeaderboardHeaderRowWidget(int EntryPoint)
 {

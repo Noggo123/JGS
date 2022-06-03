@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,8 +32,8 @@ void USquadSlotItemPickerTileButton_C::UpdateOverlays()
 // Function SquadSlotItemPickerTileButton.SquadSlotItemPickerTileButton_C.SetData
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject**                InData                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonListView**        OwningList                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UObject**                InData                         (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonListView**        OwningList                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void USquadSlotItemPickerTileButton_C::SetData(class UObject** InData, class UCommonListView** OwningList)
 {
@@ -54,7 +54,7 @@ void USquadSlotItemPickerTileButton_C::SetData(class UObject** InData, class UCo
 // Function SquadSlotItemPickerTileButton.SquadSlotItemPickerTileButton_C.HandleItemSlottedToDifferentSquad
 // (Event, Protected, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FHomebaseSquadSlotId*   SquadSlotId                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FHomebaseSquadSlotId*   SquadSlotId                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void USquadSlotItemPickerTileButton_C::HandleItemSlottedToDifferentSquad(struct FHomebaseSquadSlotId* SquadSlotId)
 {
@@ -91,7 +91,7 @@ void USquadSlotItemPickerTileButton_C::HandleSlottingRestrictionReasonsChanged()
 // Function SquadSlotItemPickerTileButton.SquadSlotItemPickerTileButton_C.ExecuteUbergraph_SquadSlotItemPickerTileButton
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void USquadSlotItemPickerTileButton_C::ExecuteUbergraph_SquadSlotItemPickerTileButton(int EntryPoint)
 {

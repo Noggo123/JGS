@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,57 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function RewardsIcon.RewardsIcon_C.PopulateFromItemCacheData
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void URewardsIcon_C::PopulateFromItemCacheData()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function RewardsIcon.RewardsIcon_C.PopulateFromItemCacheData");
-
-	URewardsIcon_C_PopulateFromItemCacheData_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function RewardsIcon.RewardsIcon_C.PopulateFromGiftBoxData
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void URewardsIcon_C::PopulateFromGiftBoxData()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function RewardsIcon.RewardsIcon_C.PopulateFromGiftBoxData");
-
-	URewardsIcon_C_PopulateFromGiftBoxData_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function RewardsIcon.RewardsIcon_C.PopulateFromDifficultyIncreaseRewards
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void URewardsIcon_C::PopulateFromDifficultyIncreaseRewards()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function RewardsIcon.RewardsIcon_C.PopulateFromDifficultyIncreaseRewards");
-
-	URewardsIcon_C_PopulateFromDifficultyIncreaseRewards_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function RewardsIcon.RewardsIcon_C.PopulateFromMissionAlertRewards
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -134,25 +83,23 @@ void URewardsIcon_C::PlayShowAnimation()
 // Function RewardsIcon.RewardsIcon_C.On_ImageIcon_MouseButtonDown_0_1
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry               MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent           MouseEvent                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGeometry               MyGeometry                     (Parm, IsPlainOldData)
+// struct FPointerEvent           MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
 // struct FEventReply             ReturnValue                    (Parm, OutParm, ReturnParm)
 
-struct FEventReply URewardsIcon_C::On_ImageIcon_MouseButtonDown_0_1(const struct FGeometry& MyGeometry, struct FPointerEvent* MouseEvent)
+struct FEventReply URewardsIcon_C::On_ImageIcon_MouseButtonDown_0_1(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function RewardsIcon.RewardsIcon_C.On_ImageIcon_MouseButtonDown_0_1");
 
 	URewardsIcon_C_On_ImageIcon_MouseButtonDown_0_1_Params params;
 	params.MyGeometry = MyGeometry;
+	params.MouseEvent = MouseEvent;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (MouseEvent != nullptr)
-		*MouseEvent = params.MouseEvent;
 
 	return params.ReturnValue;
 }
@@ -307,7 +254,7 @@ void URewardsIcon_C::GetScale(float* Scale)
 // Function RewardsIcon.RewardsIcon_C.SetScale
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          Scale                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Scale                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewardsIcon_C::SetScale(float Scale)
 {
@@ -327,7 +274,7 @@ void URewardsIcon_C::SetScale(float Scale)
 // Function RewardsIcon.RewardsIcon_C.PopulateFromLootLevel
 // (Private, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            LootLevel                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            LootLevel                      (Parm, ZeroConstructor, IsPlainOldData)
 // class UTexture2D*              Texture                        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void URewardsIcon_C::PopulateFromLootLevel(int LootLevel, class UTexture2D** Texture)
@@ -351,7 +298,7 @@ void URewardsIcon_C::PopulateFromLootLevel(int LootLevel, class UTexture2D** Tex
 // Function RewardsIcon.RewardsIcon_C.PlaySlideAnimation
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          TargetTranslation              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          TargetTranslation              (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewardsIcon_C::PlaySlideAnimation(float TargetTranslation)
 {
@@ -439,7 +386,7 @@ void URewardsIcon_C::HandleHideAnimationFinished()
 // Function RewardsIcon.RewardsIcon_C.PopulateFromReward
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortRewardNotificationData* InRewardItem                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortRewardNotificationData* InRewardItem                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewardsIcon_C::PopulateFromReward(class UFortRewardNotificationData* InRewardItem)
 {
@@ -510,7 +457,7 @@ void URewardsIcon_C::Construct()
 // Function RewardsIcon.RewardsIcon_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewardsIcon_C::PreConstruct(bool* IsDesignTime)
 {
@@ -530,7 +477,7 @@ void URewardsIcon_C::PreConstruct(bool* IsDesignTime)
 // Function RewardsIcon.RewardsIcon_C.whiteFadeOut
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          Percent                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Percent                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewardsIcon_C::whiteFadeOut(float Percent)
 {
@@ -547,50 +494,10 @@ void URewardsIcon_C::whiteFadeOut(float Percent)
 }
 
 
-// Function RewardsIcon.RewardsIcon_C.BndEvt__LoadGuard_K2Node_ComponentBoundEvent_2_OnLoadingStateChanged__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// bool                           bIsLoading                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void URewardsIcon_C::BndEvt__LoadGuard_K2Node_ComponentBoundEvent_2_OnLoadingStateChanged__DelegateSignature(bool bIsLoading)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function RewardsIcon.RewardsIcon_C.BndEvt__LoadGuard_K2Node_ComponentBoundEvent_2_OnLoadingStateChanged__DelegateSignature");
-
-	URewardsIcon_C_BndEvt__LoadGuard_K2Node_ComponentBoundEvent_2_OnLoadingStateChanged__DelegateSignature_Params params;
-	params.bIsLoading = bIsLoading;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function RewardsIcon.RewardsIcon_C.OnAssetLoaded
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UObject*                 Object                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void URewardsIcon_C::OnAssetLoaded(class UObject* Object)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function RewardsIcon.RewardsIcon_C.OnAssetLoaded");
-
-	URewardsIcon_C_OnAssetLoaded_Params params;
-	params.Object = Object;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function RewardsIcon.RewardsIcon_C.ExecuteUbergraph_RewardsIcon
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewardsIcon_C::ExecuteUbergraph_RewardsIcon(int EntryPoint)
 {
@@ -627,7 +534,7 @@ void URewardsIcon_C::OnImageClicked__DelegateSignature()
 // Function RewardsIcon.RewardsIcon_C.OnMaterializeAnimationFinished__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class URewardsIcon_C*          Icon                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class URewardsIcon_C*          Icon                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewardsIcon_C::OnMaterializeAnimationFinished__DelegateSignature(class URewardsIcon_C* Icon)
 {
@@ -647,7 +554,7 @@ void URewardsIcon_C::OnMaterializeAnimationFinished__DelegateSignature(class URe
 // Function RewardsIcon.RewardsIcon_C.OnDisperseAnimationFinished__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class URewardsIcon_C*          Icon                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class URewardsIcon_C*          Icon                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewardsIcon_C::OnDisperseAnimationFinished__DelegateSignature(class URewardsIcon_C* Icon)
 {
@@ -667,7 +574,7 @@ void URewardsIcon_C::OnDisperseAnimationFinished__DelegateSignature(class URewar
 // Function RewardsIcon.RewardsIcon_C.OnSlideAnimationFinished__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class URewardsIcon_C*          Icon                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class URewardsIcon_C*          Icon                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewardsIcon_C::OnSlideAnimationFinished__DelegateSignature(class URewardsIcon_C* Icon)
 {

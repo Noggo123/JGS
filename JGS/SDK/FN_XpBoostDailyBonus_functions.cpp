@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,28 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function XpBoostDailyBonus.XpBoostDailyBonus_C.Get Current Boost
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            Boost_Amount                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UXpBoostDailyBonus_C::Get_Current_Boost(int* Boost_Amount)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function XpBoostDailyBonus.XpBoostDailyBonus_C.Get Current Boost");
+
+	UXpBoostDailyBonus_C_Get_Current_Boost_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Boost_Amount != nullptr)
+		*Boost_Amount = params.Boost_Amount;
+}
+
 
 // Function XpBoostDailyBonus.XpBoostDailyBonus_C.Update Daily Bonus
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -29,17 +51,14 @@ void UXpBoostDailyBonus_C::Update_Daily_Bonus()
 }
 
 
-// Function XpBoostDailyBonus.XpBoostDailyBonus_C.OnPlayerInfoChanged
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// struct FFortTeamMemberInfo*    NewInfo                        (BlueprintVisible, BlueprintReadOnly, Parm)
+// Function XpBoostDailyBonus.XpBoostDailyBonus_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void UXpBoostDailyBonus_C::OnPlayerInfoChanged(struct FFortTeamMemberInfo* NewInfo)
+void UXpBoostDailyBonus_C::Construct()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function XpBoostDailyBonus.XpBoostDailyBonus_C.OnPlayerInfoChanged");
+	static auto fn = UObject::FindObject<UFunction>("Function XpBoostDailyBonus.XpBoostDailyBonus_C.Construct");
 
-	UXpBoostDailyBonus_C_OnPlayerInfoChanged_Params params;
-	params.NewInfo = NewInfo;
+	UXpBoostDailyBonus_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -50,9 +69,9 @@ void UXpBoostDailyBonus_C::OnPlayerInfoChanged(struct FFortTeamMemberInfo* NewIn
 
 
 // Function XpBoostDailyBonus.XpBoostDailyBonus_C.ExecuteUbergraph_XpBoostDailyBonus
-// (HasDefaults)
+// ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UXpBoostDailyBonus_C::ExecuteUbergraph_XpBoostDailyBonus(int EntryPoint)
 {
@@ -60,23 +79,6 @@ void UXpBoostDailyBonus_C::ExecuteUbergraph_XpBoostDailyBonus(int EntryPoint)
 
 	UXpBoostDailyBonus_C_ExecuteUbergraph_XpBoostDailyBonus_Params params;
 	params.EntryPoint = EntryPoint;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function XpBoostDailyBonus.XpBoostDailyBonus_C.Boost Amount Changed__DelegateSignature
-// (Public, Delegate, BlueprintCallable, BlueprintEvent)
-
-void UXpBoostDailyBonus_C::Boost_Amount_Changed__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function XpBoostDailyBonus.XpBoostDailyBonus_C.Boost Amount Changed__DelegateSignature");
-
-	UXpBoostDailyBonus_C_Boost_Amount_Changed__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 

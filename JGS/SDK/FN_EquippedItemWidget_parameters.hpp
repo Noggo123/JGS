@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,7 @@ namespace SDK
 // Function EquippedItemWidget.EquippedItemWidget_C.GetCurrentAmmoText
 struct UEquippedItemWidget_C_GetCurrentAmmoText_Params
 {
-	int                                                CurrentAmmoCount;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                CurrentAmmoCount;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FText                                       CurrentAmmoText;                                          // (Parm, OutParm)
 };
 
@@ -29,14 +29,19 @@ struct UEquippedItemWidget_C_UpdateResourceCount_Params
 // Function EquippedItemWidget.EquippedItemWidget_C.UpdateCurrentAmmo
 struct UEquippedItemWidget_C_UpdateCurrentAmmo_Params
 {
-	int                                                LocalCount;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int                                                LocalRemaining;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                LocalCount;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                LocalRemaining;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function EquippedItemWidget.EquippedItemWidget_C.UpdateAmmoCapacity
+struct UEquippedItemWidget_C_UpdateAmmoCapacity_Params
+{
 };
 
 // Function EquippedItemWidget.EquippedItemWidget_C.UpdateWidgetColor
 struct UEquippedItemWidget_C_UpdateWidgetColor_Params
 {
-	bool                                               HasAmmo;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               HasAmmo;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function EquippedItemWidget.EquippedItemWidget_C.UpdateVisibility
@@ -62,15 +67,15 @@ struct UEquippedItemWidget_C_Construct_Params
 // Function EquippedItemWidget.EquippedItemWidget_C.OnWeaponEquipped
 struct UEquippedItemWidget_C_OnWeaponEquipped_Params
 {
-	class AFortWeapon*                                 NewWeapon;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class AFortWeapon*                                 PrevWeapon;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AFortWeapon*                                 NewWeapon;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	class AFortWeapon*                                 PrevWeapon;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function EquippedItemWidget.EquippedItemWidget_C.OnLocalAmmoChanged
 struct UEquippedItemWidget_C_OnLocalAmmoChanged_Params
 {
-	int                                                LocalCount;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int                                                LocalRemaining;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                LocalCount;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                LocalRemaining;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function EquippedItemWidget.EquippedItemWidget_C.OnWorldItemsChanged
@@ -86,7 +91,7 @@ struct UEquippedItemWidget_C_OnBuildingMaterialCycled_Params
 // Function EquippedItemWidget.EquippedItemWidget_C.ExecuteUbergraph_EquippedItemWidget
 struct UEquippedItemWidget_C_ExecuteUbergraph_EquippedItemWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -150,7 +150,7 @@ void UItemEntry_C::Private_OnExpanderArrowShiftClicked()
 // Function ItemEntry.ItemEntry_C.RegisterOnClicked
 // (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FScriptDelegate         Callback                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// struct FScriptDelegate         Callback                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UItemEntry_C::RegisterOnClicked(const struct FScriptDelegate& Callback)
 {
@@ -170,7 +170,7 @@ void UItemEntry_C::RegisterOnClicked(const struct FScriptDelegate& Callback)
 // Function ItemEntry.ItemEntry_C.SetExpanded
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bExpanded                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bExpanded                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemEntry_C::SetExpanded(bool bExpanded)
 {
@@ -190,7 +190,7 @@ void UItemEntry_C::SetExpanded(bool bExpanded)
 // Function ItemEntry.ItemEntry_C.SetIndexInList
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            InIndexInList                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            InIndexInList                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemEntry_C::SetIndexInList(int InIndexInList)
 {
@@ -210,7 +210,7 @@ void UItemEntry_C::SetIndexInList(int InIndexInList)
 // Function ItemEntry.ItemEntry_C.SetSelected
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bSelected                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bSelected                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemEntry_C::SetSelected(bool bSelected)
 {
@@ -264,8 +264,8 @@ void UItemEntry_C::Reset()
 // Function ItemEntry.ItemEntry_C.SetData
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 InData                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonListView*         OwningList                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UObject*                 InData                         (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonListView*         OwningList                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemEntry_C::SetData(class UObject* InData, class UCommonListView* OwningList)
 {
@@ -303,7 +303,7 @@ void UItemEntry_C::Construct()
 // Function ItemEntry.ItemEntry_C.ExecuteUbergraph_ItemEntry
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemEntry_C::ExecuteUbergraph_ItemEntry(int EntryPoint)
 {
@@ -323,7 +323,7 @@ void UItemEntry_C::ExecuteUbergraph_ItemEntry(int EntryPoint)
 // Function ItemEntry.ItemEntry_C.Entry Selected__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItemDefinition*     Items_Definition               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItemDefinition*     Items_Definition               (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemEntry_C::Entry_Selected__DelegateSignature(class UFortItemDefinition* Items_Definition)
 {

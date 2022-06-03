@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,36 +12,16 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.UpdateJetpackFuelGaugeWidget
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UFortItem*               ItemInSlot                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaInventoryEquipSlot_C::UpdateJetpackFuelGaugeWidget(class UFortItem* ItemInSlot)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.UpdateJetpackFuelGaugeWidget");
-
-	UAthenaInventoryEquipSlot_C_UpdateJetpackFuelGaugeWidget_Params params;
-	params.ItemInSlot = ItemInSlot;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.IsFocusOfDrop
+// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.IsSelected
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           IsDragHovered                  (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           Selected                       (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaInventoryEquipSlot_C::IsFocusOfDrop(bool* IsDragHovered)
+void UAthenaInventoryEquipSlot_C::IsSelected(bool* Selected)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.IsFocusOfDrop");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.IsSelected");
 
-	UAthenaInventoryEquipSlot_C_IsFocusOfDrop_Params params;
+	UAthenaInventoryEquipSlot_C_IsSelected_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -49,75 +29,25 @@ void UAthenaInventoryEquipSlot_C::IsFocusOfDrop(bool* IsDragHovered)
 
 	fn->FunctionFlags = flags;
 
-	if (IsDragHovered != nullptr)
-		*IsDragHovered = params.IsDragHovered;
+	if (Selected != nullptr)
+		*Selected = params.Selected;
 }
 
 
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.CanEquipFortItem
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UObject*                 Object                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UAthenaInventoryEquipSlot_C::CanEquipFortItem(class UObject* Object)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.CanEquipFortItem");
-
-	UAthenaInventoryEquipSlot_C_CanEquipFortItem_Params params;
-	params.Object = Object;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnDragOver
-// (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent*          PointerEvent                   (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UDragDropOperation**     Operation                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UAthenaInventoryEquipSlot_C::OnDragOver(struct FGeometry* MyGeometry, struct FPointerEvent* PointerEvent, class UDragDropOperation** Operation)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnDragOver");
-
-	UAthenaInventoryEquipSlot_C_OnDragOver_Params params;
-	params.MyGeometry = MyGeometry;
-	params.PointerEvent = PointerEvent;
-	params.Operation = Operation;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnPreviewMouseButtonDown
+// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnFocusReceived
 // (BlueprintCosmetic, Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent*          MouseEvent                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// struct FFocusEvent*            InFocusEvent                   (Parm)
 // struct FEventReply             ReturnValue                    (Parm, OutParm, ReturnParm)
 
-struct FEventReply UAthenaInventoryEquipSlot_C::OnPreviewMouseButtonDown(struct FGeometry* MyGeometry, struct FPointerEvent* MouseEvent)
+struct FEventReply UAthenaInventoryEquipSlot_C::OnFocusReceived(struct FGeometry* MyGeometry, struct FFocusEvent* InFocusEvent)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnPreviewMouseButtonDown");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnFocusReceived");
 
-	UAthenaInventoryEquipSlot_C_OnPreviewMouseButtonDown_Params params;
+	UAthenaInventoryEquipSlot_C_OnFocusReceived_Params params;
 	params.MyGeometry = MyGeometry;
-	params.MouseEvent = MouseEvent;
+	params.InFocusEvent = InFocusEvent;
 
 	auto flags = fn->FunctionFlags;
 
@@ -129,35 +59,17 @@ struct FEventReply UAthenaInventoryEquipSlot_C::OnPreviewMouseButtonDown(struct 
 }
 
 
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.IsDraggingEquipableItem
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UAthenaInventoryEquipSlot_C::IsDraggingEquipableItem()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.IsDraggingEquipableItem");
-
-	UAthenaInventoryEquipSlot_C_IsDraggingEquipableItem_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.TryAndShowDropTarget
+// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.SetSelected
 // (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           Selected                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaInventoryEquipSlot_C::TryAndShowDropTarget()
+void UAthenaInventoryEquipSlot_C::SetSelected(bool Selected)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.TryAndShowDropTarget");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.SetSelected");
 
-	UAthenaInventoryEquipSlot_C_TryAndShowDropTarget_Params params;
+	UAthenaInventoryEquipSlot_C_SetSelected_Params params;
+	params.Selected = Selected;
 
 	auto flags = fn->FunctionFlags;
 
@@ -170,8 +82,8 @@ void UAthenaInventoryEquipSlot_C::TryAndShowDropTarget()
 // Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnDragDetected
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent*          PointerEvent                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// struct FPointerEvent*          PointerEvent                   (ConstParm, Parm, OutParm, ReferenceParm)
 // class UDragDropOperation*      Operation                      (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaInventoryEquipSlot_C::OnDragDetected(struct FGeometry* MyGeometry, struct FPointerEvent* PointerEvent, class UDragDropOperation** Operation)
@@ -193,12 +105,37 @@ void UAthenaInventoryEquipSlot_C::OnDragDetected(struct FGeometry* MyGeometry, s
 }
 
 
+// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnMouseButtonDown
+// (BlueprintCosmetic, Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// struct FPointerEvent*          MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FEventReply             ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FEventReply UAthenaInventoryEquipSlot_C::OnMouseButtonDown(struct FGeometry* MyGeometry, struct FPointerEvent* MouseEvent)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnMouseButtonDown");
+
+	UAthenaInventoryEquipSlot_C_OnMouseButtonDown_Params params;
+	params.MyGeometry = MyGeometry;
+	params.MouseEvent = MouseEvent;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
 // Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnDrop
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent*          PointerEvent                   (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UDragDropOperation**     Operation                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// struct FPointerEvent*          PointerEvent                   (Parm)
+// class UDragDropOperation**     Operation                      (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 bool UAthenaInventoryEquipSlot_C::OnDrop(struct FGeometry* MyGeometry, struct FPointerEvent* PointerEvent, class UDragDropOperation** Operation)
@@ -254,11 +191,51 @@ void UAthenaInventoryEquipSlot_C::Construct()
 }
 
 
+// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnFocusLost
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Parameters:
+// struct FFocusEvent*            InFocusEvent                   (Parm)
+
+void UAthenaInventoryEquipSlot_C::OnFocusLost(struct FFocusEvent* InFocusEvent)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnFocusLost");
+
+	UAthenaInventoryEquipSlot_C_OnFocusLost_Params params;
+	params.InFocusEvent = InFocusEvent;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.BndEvt__InputActionWidget_K2Node_ComponentBoundEvent_6_OnInputMethodChanged__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// bool                           bUsingGamepad                  (Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaInventoryEquipSlot_C::BndEvt__InputActionWidget_K2Node_ComponentBoundEvent_6_OnInputMethodChanged__DelegateSignature(bool bUsingGamepad)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.BndEvt__InputActionWidget_K2Node_ComponentBoundEvent_6_OnInputMethodChanged__DelegateSignature");
+
+	UAthenaInventoryEquipSlot_C_BndEvt__InputActionWidget_K2Node_ComponentBoundEvent_6_OnInputMethodChanged__DelegateSignature_Params params;
+	params.bUsingGamepad = bUsingGamepad;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// float*                         InDeltaTime                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// float*                         InDeltaTime                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaInventoryEquipSlot_C::Tick(struct FGeometry* MyGeometry, float* InDeltaTime)
 {
@@ -277,148 +254,16 @@ void UAthenaInventoryEquipSlot_C::Tick(struct FGeometry* MyGeometry, float* InDe
 
 
 // Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnQuickbarContentsChanged_Event_0_1
-// (HasOutParms, BlueprintCallable, BlueprintEvent)
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortQuickBars                 QuickbarIndex                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// TArray<int>                    ChangedSlots                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// EFortQuickBars                 QuickbarIndex                  (Parm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaInventoryEquipSlot_C::OnQuickbarContentsChanged_Event_0_1(EFortQuickBars QuickbarIndex, TArray<int> ChangedSlots)
+void UAthenaInventoryEquipSlot_C::OnQuickbarContentsChanged_Event_0_1(EFortQuickBars QuickbarIndex)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnQuickbarContentsChanged_Event_0_1");
 
 	UAthenaInventoryEquipSlot_C_OnQuickbarContentsChanged_Event_0_1_Params params;
 	params.QuickbarIndex = QuickbarIndex;
-	params.ChangedSlots = ChangedSlots;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnClicked
-// (Event, Protected, BlueprintEvent)
-
-void UAthenaInventoryEquipSlot_C::OnClicked()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnClicked");
-
-	UAthenaInventoryEquipSlot_C_OnClicked_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnAddedToFocusPath
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// struct FFocusEvent*            InFocusEvent                   (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UAthenaInventoryEquipSlot_C::OnAddedToFocusPath(struct FFocusEvent* InFocusEvent)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnAddedToFocusPath");
-
-	UAthenaInventoryEquipSlot_C_OnAddedToFocusPath_Params params;
-	params.InFocusEvent = InFocusEvent;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnSelected
-// (Event, Protected, BlueprintEvent)
-
-void UAthenaInventoryEquipSlot_C::OnSelected()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnSelected");
-
-	UAthenaInventoryEquipSlot_C_OnSelected_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnDeselected
-// (Event, Protected, BlueprintEvent)
-
-void UAthenaInventoryEquipSlot_C::OnDeselected()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnDeselected");
-
-	UAthenaInventoryEquipSlot_C_OnDeselected_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnDoubleClicked
-// (Event, Protected, BlueprintEvent)
-
-void UAthenaInventoryEquipSlot_C::OnDoubleClicked()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnDoubleClicked");
-
-	UAthenaInventoryEquipSlot_C_OnDoubleClicked_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnInventoryItemSelected_Event_0_1
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaInventoryEquipSlot_C::OnInventoryItemSelected_Event_0_1(class UFortItem* Item)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnInventoryItemSelected_Event_0_1");
-
-	UAthenaInventoryEquipSlot_C_OnInventoryItemSelected_Event_0_1_Params params;
-	params.Item = Item;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnDragLeave
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// struct FPointerEvent*          PointerEvent                   (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UDragDropOperation**     Operation                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaInventoryEquipSlot_C::OnDragLeave(struct FPointerEvent* PointerEvent, class UDragDropOperation** Operation)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnDragLeave");
-
-	UAthenaInventoryEquipSlot_C_OnDragLeave_Params params;
-	params.PointerEvent = PointerEvent;
-	params.Operation = Operation;
 
 	auto flags = fn->FunctionFlags;
 
@@ -431,7 +276,7 @@ void UAthenaInventoryEquipSlot_C::OnDragLeave(struct FPointerEvent* PointerEvent
 // Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.ExecuteUbergraph_AthenaInventoryEquipSlot
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaInventoryEquipSlot_C::ExecuteUbergraph_AthenaInventoryEquipSlot(int EntryPoint)
 {
@@ -439,6 +284,26 @@ void UAthenaInventoryEquipSlot_C::ExecuteUbergraph_AthenaInventoryEquipSlot(int 
 
 	UAthenaInventoryEquipSlot_C_ExecuteUbergraph_AthenaInventoryEquipSlot_Params params;
 	params.EntryPoint = EntryPoint;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnEquipRequested__DelegateSignature
+// (Public, Delegate, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            SlotIndex                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaInventoryEquipSlot_C::OnEquipRequested__DelegateSignature(int SlotIndex)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnEquipRequested__DelegateSignature");
+
+	UAthenaInventoryEquipSlot_C_OnEquipRequested__DelegateSignature_Params params;
+	params.SlotIndex = SlotIndex;
 
 	auto flags = fn->FunctionFlags;
 

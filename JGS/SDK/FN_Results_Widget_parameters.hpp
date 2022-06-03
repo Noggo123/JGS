@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,12 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
-
-// Function Results_Widget.Results_Widget_C.ShouldDisplayEndOfZoneCinematic
-struct UResults_Widget_C_ShouldDisplayEndOfZoneCinematic_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
 
 // Function Results_Widget.Results_Widget_C.UseVideos
 struct UResults_Widget_C_UseVideos_Params
@@ -45,8 +39,8 @@ struct UResults_Widget_C_OnInputSkip_Params
 // Function Results_Widget.Results_Widget_C.LogAnalytics
 struct UResults_Widget_C_LogAnalytics_Params
 {
-	struct FString                                     ScreenName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-	bool                                               bSkipped;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FString                                     ScreenName;                                               // (Parm, ZeroConstructor)
+	bool                                               bSkipped;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_Widget.Results_Widget_C.PlayMissionResultSound
@@ -57,7 +51,7 @@ struct UResults_Widget_C_PlayMissionResultSound_Params
 // Function Results_Widget.Results_Widget_C.Toggle Top Level Tab Controls
 struct UResults_Widget_C_Toggle_Top_Level_Tab_Controls_Params
 {
-	bool                                               Show;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Show;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_Widget.Results_Widget_C.SpawnResultsMusic
@@ -68,7 +62,7 @@ struct UResults_Widget_C_SpawnResultsMusic_Params
 // Function Results_Widget.Results_Widget_C.Toggle Chat
 struct UResults_Widget_C_Toggle_Chat_Params
 {
-	bool                                               Show;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Show;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_Widget.Results_Widget_C.Initialize Video
@@ -94,15 +88,15 @@ struct UResults_Widget_C_Teleport_Scene_Sequence_Params
 // Function Results_Widget.Results_Widget_C.BndEvt__ResultsTeleportPad_K2Node_ComponentBoundEvent_7_OnAddFriendClicked__DelegateSignature
 struct UResults_Widget_C_BndEvt__ResultsTeleportPad_K2Node_ComponentBoundEvent_7_OnAddFriendClicked__DelegateSignature_Params
 {
-	struct FUniqueNetIdRepl                            TargetId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
-	struct FString                                     TargetName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	struct FUniqueNetIdRepl                            TargetId;                                                 // (Parm)
+	struct FString                                     TargetName;                                               // (Parm, ZeroConstructor)
 };
 
 // Function Results_Widget.Results_Widget_C.BndEvt__ResultsTeleportPad_K2Node_ComponentBoundEvent_8_OnUpVoteClicked__DelegateSignature
 struct UResults_Widget_C_BndEvt__ResultsTeleportPad_K2Node_ComponentBoundEvent_8_OnUpVoteClicked__DelegateSignature_Params
 {
-	struct FUniqueNetIdRepl                            TargetId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
-	struct FString                                     TargetName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	struct FUniqueNetIdRepl                            TargetId;                                                 // (Parm)
+	struct FString                                     TargetName;                                               // (Parm, ZeroConstructor)
 };
 
 // Function Results_Widget.Results_Widget_C.BndEvt__ResultsTeleportPad_K2Node_ComponentBoundEvent_5_OnMissionStatsClicked__DelegateSignature
@@ -203,9 +197,9 @@ struct UResults_Widget_C_Construct_Params
 // Function Results_Widget.Results_Widget_C.HandleClientEvent_PlayerLeftEvent
 struct UResults_Widget_C_HandleClientEvent_PlayerLeftEvent_Params
 {
-	class UObject*                                     EventSource;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UObject*                                     EventFocus;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FFortClientEvent                            ClientEvent;                                              // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UObject*                                     EventSource;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	class UObject*                                     EventFocus;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FFortClientEvent                            ClientEvent;                                              // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function Results_Widget.Results_Widget_C.Wait for Replication
@@ -226,7 +220,7 @@ struct UResults_Widget_C_OnActivated_Params
 // Function Results_Widget.Results_Widget_C.ExecuteUbergraph_Results_Widget
 struct UResults_Widget_C_ExecuteUbergraph_Results_Widget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

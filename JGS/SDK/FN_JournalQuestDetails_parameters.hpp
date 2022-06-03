@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -35,7 +35,7 @@ struct UJournalQuestDetails_C_Get_Quest_Item_Def_Params
 // Function JournalQuestDetails.JournalQuestDetails_C.Set Quest Display Name
 struct UJournalQuestDetails_C_Set_Quest_Display_Name_Params
 {
-	struct FText                                       InText;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FText                                       InText;                                                   // (Parm)
 };
 
 // Function JournalQuestDetails.JournalQuestDetails_C.IsQuestAudioPlaying
@@ -47,9 +47,9 @@ struct UJournalQuestDetails_C_IsQuestAudioPlaying_Params
 // Function JournalQuestDetails.JournalQuestDetails_C.StartConversation
 struct UJournalQuestDetails_C_StartConversation_Params
 {
-	class UFortConversation*                           Conversation;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UFortQuestItem*                              QuestItem;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               IsOutro_;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortConversation*                           Conversation;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	class UFortQuestItem*                              QuestItem;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               IsOutro_;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function JournalQuestDetails.JournalQuestDetails_C.StopConversation
@@ -60,7 +60,6 @@ struct UJournalQuestDetails_C_StopConversation_Params
 // Function JournalQuestDetails.JournalQuestDetails_C.AbandonQuest
 struct UJournalQuestDetails_C_AbandonQuest_Params
 {
-	class UFortQuestItem*                              QuestToAbandon;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               questAbandoned_;                                          // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -87,10 +86,10 @@ struct UJournalQuestDetails_C_HandleOnEndSpokenDialog_Params
 // Function JournalQuestDetails.JournalQuestDetails_C.HandleOnBeginSpokenDialog
 struct UJournalQuestDetails_C_HandleOnBeginSpokenDialog_Params
 {
-	class UTexture2D*                                  Image;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FText                                       Title;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm)
-	struct FText                                       Subtitle;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
-	EFortAnnouncementDisplayPreference                 DisplayPreference;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UTexture2D*                                  Image;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FText                                       Title;                                                    // (Parm)
+	struct FText                                       Subtitle;                                                 // (Parm)
+	EFortAnnouncementDisplayPreference                 DisplayPreference;                                        // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function JournalQuestDetails.JournalQuestDetails_C.Setup
@@ -111,7 +110,7 @@ struct UJournalQuestDetails_C_HandleCurrentQuestChangedBP_Params
 // Function JournalQuestDetails.JournalQuestDetails_C.ExecuteUbergraph_JournalQuestDetails
 struct UJournalQuestDetails_C_ExecuteUbergraph_JournalQuestDetails_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function JournalQuestDetails.JournalQuestDetails_C.OnSpokenDialogEnded__DelegateSignature

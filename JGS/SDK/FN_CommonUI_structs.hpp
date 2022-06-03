@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,37 +12,26 @@ namespace SDK
 //Enums
 //---------------------------------------------------------------------------
 
-// Enum CommonUI.ECommonNumericType
-enum class ECommonNumericType : uint8_t
+// Enum CommonUI.ECommonInputType
+enum class ECommonInputType : uint8_t
 {
-	Number                         = 0,
-	Percentage                     = 1,
-	Seconds                        = 2,
-	Distance                       = 3,
-	ECommonNumericType_MAX         = 4
+	MouseAndKeyboard               = 0,
+	XboxOneController              = 1,
+	PS4Controller                  = 2,
+	Touch                          = 3,
+	Count                          = 4,
+	ECommonInputType_MAX           = 5
 };
 
 
-// Enum CommonUI.EDynamicBoxType
-enum class EDynamicBoxType : uint8_t
+// Enum CommonUI.EInputActionState
+enum class EInputActionState : uint8_t
 {
-	Horizontal                     = 0,
-	Vertical                       = 1,
-	Wrap                           = 2,
-	Overlay                        = 3,
-	EDynamicBoxType_MAX            = 4
-};
-
-
-// Enum CommonUI.EOperation
-enum class EOperation : uint8_t
-{
-	Intro                          = 0,
-	Outro                          = 1,
-	Push                           = 2,
-	Pop                            = 3,
-	Invalid                        = 4,
-	EOperation_MAX                 = 5
+	Enabled                        = 0,
+	Disabled                       = 1,
+	Hidden                         = 2,
+	HiddenAndDisabled              = 3,
+	EInputActionState_MAX          = 4
 };
 
 
@@ -74,14 +63,15 @@ enum class ECommonPlatformType : uint8_t
 };
 
 
-// Enum CommonUI.EInputActionState
-enum class EInputActionState : uint8_t
+// Enum CommonUI.EOperation
+enum class EOperation : uint8_t
 {
-	Enabled                        = 0,
-	Disabled                       = 1,
-	Hidden                         = 2,
-	HiddenAndDisabled              = 3,
-	EInputActionState_MAX          = 4
+	Intro                          = 0,
+	Outro                          = 1,
+	Push                           = 2,
+	Pop                            = 3,
+	Invalid                        = 4,
+	EOperation_MAX                 = 5
 };
 
 
@@ -115,26 +105,23 @@ enum class ECommonSwitcherTransition : uint8_t
 //Script Structs
 //---------------------------------------------------------------------------
 
+// ScriptStruct CommonUI.CommonRegisteredTabInfo
+// 0x0018
+struct FCommonRegisteredTabInfo
+{
+	int                                                TabIndex;                                                 // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET
+	class UCommonButton*                               TabButton;                                                // 0x0008(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UWidget*                                     ContentInstance;                                          // 0x0010(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+};
+
 // ScriptStruct CommonUI.CommonInputActionHandlerData
-// 0x0020
+// 0x0018
 struct FCommonInputActionHandlerData
 {
 	struct FDataTableRowHandle                         InputActionRow;                                           // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
 	EInputActionState                                  State;                                                    // 0x0010(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0xF];                                       // 0x0011(0x000F) MISSED OFFSET
-};
-
-// ScriptStruct CommonUI.Operation
-// 0x0018
-struct FOperation
-{
-	EOperation                                         Operation;                                                // 0x0000(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0001(0x0007) MISSED OFFSET
-	class UCommonActivatablePanel*                     Panel;                                                    // 0x0008(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	bool                                               bIntroPanel;                                              // 0x0010(0x0001) (ZeroConstructor, IsPlainOldData)
-	bool                                               bActivatePanel;                                           // 0x0011(0x0001) (ZeroConstructor, IsPlainOldData)
-	bool                                               bOutroPanelBelow;                                         // 0x0012(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x5];                                       // 0x0013(0x0005) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0011(0x0007) MISSED OFFSET
 };
 
 // ScriptStruct CommonUI.CommonNumberFormattingOptions
@@ -150,54 +137,45 @@ struct FCommonNumberFormattingOptions
 	int                                                MaximumFractionalDigits;                                  // 0x0010(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 };
 
-// ScriptStruct CommonUI.CommonRegisteredTabInfo
+// ScriptStruct CommonUI.Operation
 // 0x0018
-struct FCommonRegisteredTabInfo
+struct FOperation
 {
-	int                                                TabIndex;                                                 // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET
-	class UCommonButton*                               TabButton;                                                // 0x0008(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	class UWidget*                                     ContentInstance;                                          // 0x0010(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	EOperation                                         Operation;                                                // 0x0000(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0001(0x0007) MISSED OFFSET
+	class UCommonActivatablePanel*                     Panel;                                                    // 0x0008(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	bool                                               bIntroPanel;                                              // 0x0010(0x0001) (ZeroConstructor, IsPlainOldData)
+	bool                                               bOutroPanelBelow;                                         // 0x0011(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x6];                                       // 0x0012(0x0006) MISSED OFFSET
 };
 
 // ScriptStruct CommonUI.CommonInputKeyDisplayData
-// 0x02A8
+// 0x0240
 struct FCommonInputKeyDisplayData
 {
-	struct FSlateBrush                                 KeyboardSpecificBrush;                                    // 0x0000(0x0088) (Edit)
-	struct FSlateBrush                                 GamepadSpecificBrushes[0x3];                              // 0x0088(0x0088) (Edit)
-	struct FSlateBrush                                 TouchSpecificBrush;                                       // 0x0220(0x0088) (Edit)
+	struct FSlateBrush                                 PlatformSpecificBrush[0x4];                               // 0x0000(0x0090) (Edit)
 };
 
 // ScriptStruct CommonUI.CommonInputKeyDisplayConfiguration
-// 0x02C0
+// 0x0258
 struct FCommonInputKeyDisplayConfiguration
 {
 	struct FKey                                        Key;                                                      // 0x0000(0x0018) (Edit)
-	struct FCommonInputKeyDisplayData                  Value;                                                    // 0x0018(0x02A8) (Edit)
-};
-
-// ScriptStruct CommonUI.CommonInputTypeInfo
-// 0x00A8
-struct FCommonInputTypeInfo
-{
-	struct FKey                                        Key;                                                      // 0x0000(0x0018) (Edit)
-	EInputActionState                                  OverrrideState;                                           // 0x0018(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	bool                                               bActionRequiresHold;                                      // 0x0019(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x2];                                       // 0x001A(0x0002) MISSED OFFSET
-	float                                              HoldTime;                                                 // 0x001C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FSlateBrush                                 OverrideBrush;                                            // 0x0020(0x0088) (Edit)
+	struct FCommonInputKeyDisplayData                  Value;                                                    // 0x0018(0x0240) (Edit)
 };
 
 // ScriptStruct CommonUI.CommonInputActionData
-// 0x0378 (0x0380 - 0x0008)
+// 0x02C8 (0x02D0 - 0x0008)
 struct FCommonInputActionData : public FTableRowBase
 {
 	struct FText                                       DisplayName;                                              // 0x0008(0x0018) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FText                                       HoldDisplayName;                                          // 0x0020(0x0018) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FCommonInputTypeInfo                        KeyboardInputTypeInfo;                                    // 0x0038(0x00A8) (Edit)
-	struct FCommonInputTypeInfo                        GamepadInputTypeInfos[0x3];                               // 0x00E0(0x00A8) (Edit)
-	struct FCommonInputTypeInfo                        TouchInputTypeInfo;                                       // 0x02D8(0x00A8) (Edit)
+	struct FKey                                        PlatformSpecificKeys[0x4];                                // 0x0020(0x0018) (Edit)
+	EInputActionState                                  OverrrideStateForInputType[0x4];                          // 0x0080(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0084(0x0004) MISSED OFFSET
+	struct FSlateBrush                                 InputTypeOverrideBrush[0x4];                              // 0x0088(0x0090) (Edit)
+	bool                                               bActionRequiresHold;                                      // 0x02C8(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x3];                                       // 0x02C9(0x0003) MISSED OFFSET
+	float                                              HoldTime;                                                 // 0x02CC(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 };
 
 }

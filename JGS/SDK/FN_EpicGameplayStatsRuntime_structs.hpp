@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -18,7 +18,8 @@ enum class EEpicLeaderboardUpdateFunction : uint8_t
 	Min                            = 0,
 	Max                            = 1,
 	Sum                            = 2,
-	MostRecent                     = 3
+	MostRecent                     = 3,
+	EEpicLeaderboardUpdateFunction_MAX = 4
 };
 
 
@@ -62,6 +63,13 @@ struct FManagedGameplayTagDataTableItem
 	class UDataTable*                                  DataTable;                                                // 0x0008(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 };
 
+// ScriptStruct EpicGameplayStatsRuntime.TagTableManagerHelper
+// 0x0001
+struct FTagTableManagerHelper
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
 // ScriptStruct EpicGameplayStatsRuntime.GameplayStatMetadataTableRow
 // 0x0088 (0x0090 - 0x0008)
 struct FGameplayStatMetadataTableRow : public FTableRowBase
@@ -78,13 +86,6 @@ struct FGameplayStatMetadataTableRow : public FTableRowBase
 	bool                                               bShowInFrontEnd;                                          // 0x0049(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData01[0x6];                                       // 0x004A(0x0006) MISSED OFFSET
 	struct FGameplayTagReferenceHelper                 ReferenceHelper;                                          // 0x0050(0x0040) (Edit)
-};
-
-// ScriptStruct EpicGameplayStatsRuntime.TagTableManagerHelper
-// 0x0001
-struct FTagTableManagerHelper
-{
-	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 };
 
 }

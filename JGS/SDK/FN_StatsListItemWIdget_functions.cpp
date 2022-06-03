@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,30 +12,10 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function StatsListItemWIdget.StatsListItemWIdget_C.SetTextAndBorderHighlight
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           bHightlight                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UStatsListItemWIdget_C::SetTextAndBorderHighlight(bool bHightlight)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StatsListItemWIdget.StatsListItemWIdget_C.SetTextAndBorderHighlight");
-
-	UStatsListItemWIdget_C_SetTextAndBorderHighlight_Params params;
-	params.bHightlight = bHightlight;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function StatsListItemWIdget.StatsListItemWIdget_C.GetListItemTooltipWidget
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 class UWidget* UStatsListItemWIdget_C::GetListItemTooltipWidget()
 {
@@ -56,7 +36,7 @@ class UWidget* UStatsListItemWIdget_C::GetListItemTooltipWidget()
 // Function StatsListItemWIdget.StatsListItemWIdget_C.SetStatIcon
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSlateBrush             NewParam                       (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FSlateBrush             NewParam                       (Parm)
 
 void UStatsListItemWIdget_C::SetStatIcon(const struct FSlateBrush& NewParam)
 {
@@ -76,7 +56,7 @@ void UStatsListItemWIdget_C::SetStatIcon(const struct FSlateBrush& NewParam)
 // Function StatsListItemWIdget.StatsListItemWIdget_C.UpdateBuffArrows
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortDisplayAttribute   CurrentAttribute               (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortDisplayAttribute   CurrentAttribute               (Parm)
 
 void UStatsListItemWIdget_C::UpdateBuffArrows(const struct FFortDisplayAttribute& CurrentAttribute)
 {
@@ -96,7 +76,7 @@ void UStatsListItemWIdget_C::UpdateBuffArrows(const struct FFortDisplayAttribute
 // Function StatsListItemWIdget.StatsListItemWIdget_C.UpdateBasicPairLabel
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortDisplayAttribute   CurrentAttribute               (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortDisplayAttribute   CurrentAttribute               (Parm)
 
 void UStatsListItemWIdget_C::UpdateBasicPairLabel(const struct FFortDisplayAttribute& CurrentAttribute)
 {
@@ -116,7 +96,7 @@ void UStatsListItemWIdget_C::UpdateBasicPairLabel(const struct FFortDisplayAttri
 // Function StatsListItemWIdget.StatsListItemWIdget_C.UpdateValueText
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortDisplayAttribute   CurrentAttribute               (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortDisplayAttribute   CurrentAttribute               (Parm)
 
 void UStatsListItemWIdget_C::UpdateValueText(const struct FFortDisplayAttribute& CurrentAttribute)
 {
@@ -136,7 +116,7 @@ void UStatsListItemWIdget_C::UpdateValueText(const struct FFortDisplayAttribute&
 // Function StatsListItemWIdget.StatsListItemWIdget_C.UpdateType
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortDisplayAttribute   CurrentAttribute               (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortDisplayAttribute   CurrentAttribute               (Parm)
 
 void UStatsListItemWIdget_C::UpdateType(const struct FFortDisplayAttribute& CurrentAttribute)
 {
@@ -156,7 +136,7 @@ void UStatsListItemWIdget_C::UpdateType(const struct FFortDisplayAttribute& Curr
 // Function StatsListItemWIdget.StatsListItemWIdget_C.UpdateColors
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortDisplayAttribute   CurrentAttribute               (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortDisplayAttribute   CurrentAttribute               (Parm)
 
 void UStatsListItemWIdget_C::UpdateColors(const struct FFortDisplayAttribute& CurrentAttribute)
 {
@@ -190,10 +170,61 @@ void UStatsListItemWIdget_C::Update()
 }
 
 
+// Function StatsListItemWIdget.StatsListItemWIdget_C.DisplayAttributeChanged
+// (Event, Public, BlueprintEvent)
+
+void UStatsListItemWIdget_C::DisplayAttributeChanged()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function StatsListItemWIdget.StatsListItemWIdget_C.DisplayAttributeChanged");
+
+	UStatsListItemWIdget_C_DisplayAttributeChanged_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function StatsListItemWIdget.StatsListItemWIdget_C.PreviewStarted
+// (Event, Public, BlueprintEvent)
+
+void UStatsListItemWIdget_C::PreviewStarted()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function StatsListItemWIdget.StatsListItemWIdget_C.PreviewStarted");
+
+	UStatsListItemWIdget_C_PreviewStarted_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function StatsListItemWIdget.StatsListItemWIdget_C.PreviewEnded
+// (Event, Public, BlueprintEvent)
+
+void UStatsListItemWIdget_C::PreviewEnded()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function StatsListItemWIdget.StatsListItemWIdget_C.PreviewEnded");
+
+	UStatsListItemWIdget_C_PreviewEnded_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function StatsListItemWIdget.StatsListItemWIdget_C.ValueChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float*                         Delta                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float*                         Delta                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UStatsListItemWIdget_C::ValueChanged(float* Delta)
 {
@@ -227,61 +258,10 @@ void UStatsListItemWIdget_C::Construct()
 }
 
 
-// Function StatsListItemWIdget.StatsListItemWIdget_C.PreviewEnded
-// (Event, Public, BlueprintEvent)
-
-void UStatsListItemWIdget_C::PreviewEnded()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StatsListItemWIdget.StatsListItemWIdget_C.PreviewEnded");
-
-	UStatsListItemWIdget_C_PreviewEnded_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function StatsListItemWIdget.StatsListItemWIdget_C.PreviewStarted
-// (Event, Public, BlueprintEvent)
-
-void UStatsListItemWIdget_C::PreviewStarted()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StatsListItemWIdget.StatsListItemWIdget_C.PreviewStarted");
-
-	UStatsListItemWIdget_C_PreviewStarted_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function StatsListItemWIdget.StatsListItemWIdget_C.DisplayAttributeChanged
-// (Event, Public, BlueprintEvent)
-
-void UStatsListItemWIdget_C::DisplayAttributeChanged()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StatsListItemWIdget.StatsListItemWIdget_C.DisplayAttributeChanged");
-
-	UStatsListItemWIdget_C_DisplayAttributeChanged_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function StatsListItemWIdget.StatsListItemWIdget_C.ExecuteUbergraph_StatsListItemWIdget
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UStatsListItemWIdget_C::ExecuteUbergraph_StatsListItemWIdget(int EntryPoint)
 {

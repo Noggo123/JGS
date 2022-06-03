@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function ItemTransformRequiredItems.ItemTransformRequiredItems_C.UpdateItems
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               TransformKey                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            SacrificePoints                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               TransformKey                   (Parm, ZeroConstructor, IsPlainOldData)
+// int                            SacrificePoints                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformRequiredItems_C::UpdateItems(class UFortItem* TransformKey, int SacrificePoints)
 {

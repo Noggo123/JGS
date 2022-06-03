@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass v2_PlayerCameraModeTargetingScope.v2_PlayerCameraModeTargetingScope_C
-// 0x0000 (0x0128 - 0x0128)
+// 0x0000 (0x0110 - 0x0110)
 class Uv2_PlayerCameraModeTargetingScope_C : public Uv2_PlayerCameraModeRanged_C
 {
 public:

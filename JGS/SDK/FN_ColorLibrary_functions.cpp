@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function ColorLibrary.ColorLibrary_C.Get HarvestWeakPoint Color
 // (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FColorStylesheet        Stylesheet                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FColorStylesheet        Stylesheet                     (Parm)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            StyleSheetOut                  (Parm, OutParm, IsPlainOldData)
 
 void UColorLibrary_C::STATIC_Get_HarvestWeakPoint_Color(const struct FColorStylesheet& Stylesheet, class UObject* __WorldContext, struct FLinearColor* StyleSheetOut)
@@ -39,16 +39,16 @@ void UColorLibrary_C::STATIC_Get_HarvestWeakPoint_Color(const struct FColorStyle
 
 
 // Function ColorLibrary.ColorLibrary_C.Get Base & Buff Colors
-// (Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// EFortStatValueDisplayType      Display_Type                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortBuffState                 Buff_State                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FColorStylesheet        Stylesheet                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortStatValueDisplayType      Display_Type                   (Parm, ZeroConstructor, IsPlainOldData)
+// EFortBuffState                 Buff_State                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FColorStylesheet        Stylesheet                     (Parm)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            Base                           (Parm, OutParm, IsPlainOldData)
-// struct FLinearColor            Buff                           (Parm, OutParm, IsPlainOldData)
+// struct FLinearColor            buff                           (Parm, OutParm, IsPlainOldData)
 
-void UColorLibrary_C::STATIC_Get_Base___Buff_Colors(EFortStatValueDisplayType Display_Type, EFortBuffState Buff_State, const struct FColorStylesheet& Stylesheet, class UObject* __WorldContext, struct FLinearColor* Base, struct FLinearColor* Buff)
+void UColorLibrary_C::STATIC_Get_Base___Buff_Colors(EFortStatValueDisplayType Display_Type, EFortBuffState Buff_State, const struct FColorStylesheet& Stylesheet, class UObject* __WorldContext, struct FLinearColor* Base, struct FLinearColor* buff)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ColorLibrary.ColorLibrary_C.Get Base & Buff Colors");
 
@@ -66,16 +66,16 @@ void UColorLibrary_C::STATIC_Get_Base___Buff_Colors(EFortStatValueDisplayType Di
 
 	if (Base != nullptr)
 		*Base = params.Base;
-	if (Buff != nullptr)
-		*Buff = params.Buff;
+	if (buff != nullptr)
+		*buff = params.buff;
 }
 
 
 // Function ColorLibrary.ColorLibrary_C.Get Bolt Elemental Color
 // (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FColorStylesheet        Stylesheet                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FColorStylesheet        Stylesheet                     (Parm)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            Color                          (Parm, OutParm, IsPlainOldData)
 
 void UColorLibrary_C::STATIC_Get_Bolt_Elemental_Color(const struct FColorStylesheet& Stylesheet, class UObject* __WorldContext, struct FLinearColor* Color)
@@ -100,8 +100,8 @@ void UColorLibrary_C::STATIC_Get_Bolt_Elemental_Color(const struct FColorStylesh
 // Function ColorLibrary.ColorLibrary_C.Get Ice Elemental Color
 // (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FColorStylesheet        Stylesheet                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FColorStylesheet        Stylesheet                     (Parm)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            Color                          (Parm, OutParm, IsPlainOldData)
 
 void UColorLibrary_C::STATIC_Get_Ice_Elemental_Color(const struct FColorStylesheet& Stylesheet, class UObject* __WorldContext, struct FLinearColor* Color)
@@ -126,8 +126,8 @@ void UColorLibrary_C::STATIC_Get_Ice_Elemental_Color(const struct FColorStyleshe
 // Function ColorLibrary.ColorLibrary_C.Get Fire Elemental Color
 // (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FColorStylesheet        Stylesheet                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FColorStylesheet        Stylesheet                     (Parm)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            Color                          (Parm, OutParm, IsPlainOldData)
 
 void UColorLibrary_C::STATIC_Get_Fire_Elemental_Color(const struct FColorStylesheet& Stylesheet, class UObject* __WorldContext, struct FLinearColor* Color)
@@ -152,8 +152,8 @@ void UColorLibrary_C::STATIC_Get_Fire_Elemental_Color(const struct FColorStylesh
 // Function ColorLibrary.ColorLibrary_C.Get Unique Color
 // (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FColorStylesheet        Stylesheet                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FColorStylesheet        Stylesheet                     (Parm)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            Color                          (Parm, OutParm, IsPlainOldData)
 
 void UColorLibrary_C::STATIC_Get_Unique_Color(const struct FColorStylesheet& Stylesheet, class UObject* __WorldContext, struct FLinearColor* Color)
@@ -178,8 +178,8 @@ void UColorLibrary_C::STATIC_Get_Unique_Color(const struct FColorStylesheet& Sty
 // Function ColorLibrary.ColorLibrary_C.Get Debuff Color
 // (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FColorStylesheet        Stylesheet                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FColorStylesheet        Stylesheet                     (Parm)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            Color                          (Parm, OutParm, IsPlainOldData)
 
 void UColorLibrary_C::STATIC_Get_Debuff_Color(const struct FColorStylesheet& Stylesheet, class UObject* __WorldContext, struct FLinearColor* Color)
@@ -204,8 +204,8 @@ void UColorLibrary_C::STATIC_Get_Debuff_Color(const struct FColorStylesheet& Sty
 // Function ColorLibrary.ColorLibrary_C.Get Buff Color
 // (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FColorStylesheet        Stylesheet                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FColorStylesheet        Stylesheet                     (Parm)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            Color                          (Parm, OutParm, IsPlainOldData)
 
 void UColorLibrary_C::STATIC_Get_Buff_Color(const struct FColorStylesheet& Stylesheet, class UObject* __WorldContext, struct FLinearColor* Color)

@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function ActiveModifiersPanelContent.ActiveModifiersPanelContent_C.Init
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UFortGameplayModifierItemDefinition*> inModifiers                    (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UFortGameplayModifierItemDefinition*> inModifiers                    (Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UActiveModifiersPanelContent_C::Init(TArray<class UFortGameplayModifierItemDefinition*>* inModifiers)
 {
@@ -31,6 +31,43 @@ void UActiveModifiersPanelContent_C::Init(TArray<class UFortGameplayModifierItem
 
 	if (inModifiers != nullptr)
 		*inModifiers = params.inModifiers;
+}
+
+
+// Function ActiveModifiersPanelContent.ActiveModifiersPanelContent_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UActiveModifiersPanelContent_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ActiveModifiersPanelContent.ActiveModifiersPanelContent_C.Construct");
+
+	UActiveModifiersPanelContent_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ActiveModifiersPanelContent.ActiveModifiersPanelContent_C.ExecuteUbergraph_ActiveModifiersPanelContent
+// ()
+// Parameters:
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
+
+void UActiveModifiersPanelContent_C::ExecuteUbergraph_ActiveModifiersPanelContent(int EntryPoint)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ActiveModifiersPanelContent.ActiveModifiersPanelContent_C.ExecuteUbergraph_ActiveModifiersPanelContent");
+
+	UActiveModifiersPanelContent_C_ExecuteUbergraph_ActiveModifiersPanelContent_Params params;
+	params.EntryPoint = EntryPoint;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
 }
 
 

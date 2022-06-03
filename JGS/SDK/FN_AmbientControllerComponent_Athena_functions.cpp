@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function AmbientControllerComponent_Athena.AmbientControllerComponent_Athena_C.SetTargetLPFFreq
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          Target                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Target                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAmbientControllerComponent_Athena_C::SetTargetLPFFreq(float Target)
 {
@@ -35,7 +35,7 @@ void UAmbientControllerComponent_Athena_C::SetTargetLPFFreq(float Target)
 // Function AmbientControllerComponent_Athena.AmbientControllerComponent_Athena_C.SetIndoorMixEnabled
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Enabled                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Enabled                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAmbientControllerComponent_Athena_C::SetIndoorMixEnabled(bool Enabled)
 {
@@ -55,8 +55,8 @@ void UAmbientControllerComponent_Athena_C::SetIndoorMixEnabled(bool Enabled)
 // Function AmbientControllerComponent_Athena.AmbientControllerComponent_Athena_C.Trace
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                 Start                          (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FVector                 Direction                      (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+// struct FVector                 Start                          (ConstParm, Parm, IsPlainOldData)
+// struct FVector                 Direction                      (Parm, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 bool UAmbientControllerComponent_Athena_C::Trace(const struct FVector& Start, const struct FVector& Direction)
@@ -80,7 +80,7 @@ bool UAmbientControllerComponent_Athena_C::Trace(const struct FVector& Start, co
 // Function AmbientControllerComponent_Athena.AmbientControllerComponent_Athena_C.Crossfade
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class USoundBase*              NewSound                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class USoundBase*              NewSound                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAmbientControllerComponent_Athena_C::Crossfade(class USoundBase* NewSound)
 {
@@ -134,7 +134,7 @@ void UAmbientControllerComponent_Athena_C::ReceiveBeginPlay()
 // Function AmbientControllerComponent_Athena.AmbientControllerComponent_Athena_C.ReceiveEndPlay
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EEndPlayReason>*   EndPlayReason                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EEndPlayReason>*   EndPlayReason                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAmbientControllerComponent_Athena_C::ReceiveEndPlay(TEnumAsByte<EEndPlayReason>* EndPlayReason)
 {
@@ -188,9 +188,9 @@ void UAmbientControllerComponent_Athena_C::Evaluate_Inside_State()
 // Function AmbientControllerComponent_Athena.AmbientControllerComponent_Athena_C.On Day Phase Change
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EFortDayPhase>     CurrentDayPhase                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// TEnumAsByte<EFortDayPhase>     PreviousDayPhase               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bAtCreation                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EFortDayPhase>     CurrentDayPhase                (Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EFortDayPhase>     PreviousDayPhase               (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bAtCreation                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAmbientControllerComponent_Athena_C::On_Day_Phase_Change(TEnumAsByte<EFortDayPhase> CurrentDayPhase, TEnumAsByte<EFortDayPhase> PreviousDayPhase, bool bAtCreation)
 {
@@ -212,7 +212,7 @@ void UAmbientControllerComponent_Athena_C::On_Day_Phase_Change(TEnumAsByte<EFort
 // Function AmbientControllerComponent_Athena.AmbientControllerComponent_Athena_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float*                         DeltaSeconds                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float*                         DeltaSeconds                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAmbientControllerComponent_Athena_C::ReceiveTick(float* DeltaSeconds)
 {
@@ -232,7 +232,7 @@ void UAmbientControllerComponent_Athena_C::ReceiveTick(float* DeltaSeconds)
 // Function AmbientControllerComponent_Athena.AmbientControllerComponent_Athena_C.On Game Phase Change
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EAthenaGamePhase               GamePhase                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EAthenaGamePhase               GamePhase                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAmbientControllerComponent_Athena_C::On_Game_Phase_Change(EAthenaGamePhase GamePhase)
 {
@@ -252,7 +252,7 @@ void UAmbientControllerComponent_Athena_C::On_Game_Phase_Change(EAthenaGamePhase
 // Function AmbientControllerComponent_Athena.AmbientControllerComponent_Athena_C.On Game Phase Step Change
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EAthenaGamePhaseStep           GamePhaseStep                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EAthenaGamePhaseStep           GamePhaseStep                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAmbientControllerComponent_Athena_C::On_Game_Phase_Step_Change(EAthenaGamePhaseStep GamePhaseStep)
 {
@@ -272,7 +272,7 @@ void UAmbientControllerComponent_Athena_C::On_Game_Phase_Step_Change(EAthenaGame
 // Function AmbientControllerComponent_Athena.AmbientControllerComponent_Athena_C.Set Storm Amb Layer Enabled
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Enabled                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Enabled                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAmbientControllerComponent_Athena_C::Set_Storm_Amb_Layer_Enabled(bool Enabled)
 {
@@ -292,7 +292,7 @@ void UAmbientControllerComponent_Athena_C::Set_Storm_Amb_Layer_Enabled(bool Enab
 // Function AmbientControllerComponent_Athena.AmbientControllerComponent_Athena_C.ExecuteUbergraph_AmbientControllerComponent_Athena
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAmbientControllerComponent_Athena_C::ExecuteUbergraph_AmbientControllerComponent_Athena(int EntryPoint)
 {

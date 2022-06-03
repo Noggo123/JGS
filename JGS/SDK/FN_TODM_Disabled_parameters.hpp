@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,7 +22,7 @@ struct ATODM_Disabled_C_UserConstructionScript_Params
 // Function TODM_Disabled.TODM_Disabled_C.DisableLightAndFog
 struct ATODM_Disabled_C_DisableLightAndFog_Params
 {
-	bool*                                              Enable;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              Enable;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TODM_Disabled.TODM_Disabled_C.ReceiveBeginPlay
@@ -33,7 +33,7 @@ struct ATODM_Disabled_C_ReceiveBeginPlay_Params
 // Function TODM_Disabled.TODM_Disabled_C.ExecuteUbergraph_TODM_Disabled
 struct ATODM_Disabled_C_ExecuteUbergraph_TODM_Disabled_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

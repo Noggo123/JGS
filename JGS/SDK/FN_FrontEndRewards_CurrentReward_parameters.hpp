@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -107,7 +107,7 @@ struct UFrontEndRewards_CurrentReward_C_fadeIconToWhite_Params
 // Function FrontEndRewards_CurrentReward.FrontEndRewards_CurrentReward_C.ExecuteUbergraph_FrontEndRewards_CurrentReward
 struct UFrontEndRewards_CurrentReward_C_ExecuteUbergraph_FrontEndRewards_CurrentReward_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function FrontEndRewards_CurrentReward.FrontEndRewards_CurrentReward_C.OnOpenAnimationFinished__DelegateSignature

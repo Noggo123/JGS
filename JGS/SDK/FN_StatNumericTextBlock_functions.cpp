@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function StatNumericTextBlock.StatNumericTextBlock_C.SetComparisonState
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortBuffState                 Buff_State                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortBuffState                 Buff_State                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UStatNumericTextBlock_C::SetComparisonState(EFortBuffState Buff_State)
 {
@@ -69,7 +69,7 @@ void UStatNumericTextBlock_C::Construct()
 // Function StatNumericTextBlock.StatNumericTextBlock_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UStatNumericTextBlock_C::PreConstruct(bool* IsDesignTime)
 {
@@ -89,7 +89,7 @@ void UStatNumericTextBlock_C::PreConstruct(bool* IsDesignTime)
 // Function StatNumericTextBlock.StatNumericTextBlock_C.ExecuteUbergraph_StatNumericTextBlock
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UStatNumericTextBlock_C::ExecuteUbergraph_StatNumericTextBlock(int EntryPoint)
 {

@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -31,15 +31,12 @@ void UTabInputOptions_C::NewFunction_0_1()
 
 // Function TabInputOptions.TabInputOptions_C.Set Input Enabled
 // (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           Enabled                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UTabInputOptions_C::Set_Input_Enabled(bool Enabled)
+void UTabInputOptions_C::Set_Input_Enabled()
 {
 	static auto fn = UObject::FindObject<UFunction>("Function TabInputOptions.TabInputOptions_C.Set Input Enabled");
 
 	UTabInputOptions_C_Set_Input_Enabled_Params params;
-	params.Enabled = Enabled;
 
 	auto flags = fn->FunctionFlags;
 
@@ -52,7 +49,7 @@ void UTabInputOptions_C::Set_Input_Enabled(bool Enabled)
 // Function TabInputOptions.TabInputOptions_C.Overlay Key Pressed
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FKey                    NewKey                         (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FKey                    NewKey                         (Parm)
 
 void UTabInputOptions_C::Overlay_Key_Pressed(const struct FKey& NewKey)
 {
@@ -60,124 +57,6 @@ void UTabInputOptions_C::Overlay_Key_Pressed(const struct FKey& NewKey)
 
 	UTabInputOptions_C_Overlay_Key_Pressed_Params params;
 	params.NewKey = NewKey;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function TabInputOptions.TabInputOptions_C.CenterOnTab
-// (Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UTabInputOptions_C::CenterOnTab()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TabInputOptions.TabInputOptions_C.CenterOnTab");
-
-	UTabInputOptions_C_CenterOnTab_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function TabInputOptions.TabInputOptions_C.BndEvt__InputCommonListView_K2Node_ComponentBoundEvent_14_OnListViewItemWidgetCreated__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UUserWidget*             Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UTabInputOptions_C::BndEvt__InputCommonListView_K2Node_ComponentBoundEvent_14_OnListViewItemWidgetCreated__DelegateSignature(class UUserWidget* Widget)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TabInputOptions.TabInputOptions_C.BndEvt__InputCommonListView_K2Node_ComponentBoundEvent_14_OnListViewItemWidgetCreated__DelegateSignature");
-
-	UTabInputOptions_C_BndEvt__InputCommonListView_K2Node_ComponentBoundEvent_14_OnListViewItemWidgetCreated__DelegateSignature_Params params;
-	params.Widget = Widget;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function TabInputOptions.TabInputOptions_C.HandleUsingGamepadChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// ECommonInputType*              bNewInputType                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UTabInputOptions_C::HandleUsingGamepadChanged(ECommonInputType* bNewInputType)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TabInputOptions.TabInputOptions_C.HandleUsingGamepadChanged");
-
-	UTabInputOptions_C_HandleUsingGamepadChanged_Params params;
-	params.bNewInputType = bNewInputType;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function TabInputOptions.TabInputOptions_C.UnbindClicked
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int                            Number_in_List                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UOptionsMenuInput_C*     Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UTabInputOptions_C::UnbindClicked(int Number_in_List, class UOptionsMenuInput_C* Widget)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TabInputOptions.TabInputOptions_C.UnbindClicked");
-
-	UTabInputOptions_C_UnbindClicked_Params params;
-	params.Number_in_List = Number_in_List;
-	params.Widget = Widget;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function TabInputOptions.TabInputOptions_C.ClearAndConstructKeybindList
-// (BlueprintCallable, BlueprintEvent)
-
-void UTabInputOptions_C::ClearAndConstructKeybindList()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TabInputOptions.TabInputOptions_C.ClearAndConstructKeybindList");
-
-	UTabInputOptions_C_ClearAndConstructKeybindList_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function TabInputOptions.TabInputOptions_C.Input Clicked
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int                            Number_in_List                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           Is_Primary_Button              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UTabInputOptions_C::Input_Clicked(int Number_in_List, bool Is_Primary_Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TabInputOptions.TabInputOptions_C.Input Clicked");
-
-	UTabInputOptions_C_Input_Clicked_Params params;
-	params.Number_in_List = Number_in_List;
-	params.Is_Primary_Button = Is_Primary_Button;
 
 	auto flags = fn->FunctionFlags;
 
@@ -204,6 +83,45 @@ void UTabInputOptions_C::Construct()
 }
 
 
+// Function TabInputOptions.TabInputOptions_C.Input Clicked
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            Number_in_List                 (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Is_Primary_Button              (Parm, ZeroConstructor, IsPlainOldData)
+
+void UTabInputOptions_C::Input_Clicked(int Number_in_List, bool Is_Primary_Button)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function TabInputOptions.TabInputOptions_C.Input Clicked");
+
+	UTabInputOptions_C_Input_Clicked_Params params;
+	params.Number_in_List = Number_in_List;
+	params.Is_Primary_Button = Is_Primary_Button;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function TabInputOptions.TabInputOptions_C.CenterOnTab
+// (Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UTabInputOptions_C::CenterOnTab()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function TabInputOptions.TabInputOptions_C.CenterOnTab");
+
+	UTabInputOptions_C_CenterOnTab_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function TabInputOptions.TabInputOptions_C.UpdateOptionsTab
 // (Event, Protected, BlueprintCallable, BlueprintEvent)
 
@@ -221,10 +139,70 @@ void UTabInputOptions_C::UpdateOptionsTab()
 }
 
 
+// Function TabInputOptions.TabInputOptions_C.BndEvt__InputCommonListView_K2Node_ComponentBoundEvent_14_OnListViewItemWidgetCreated__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UUserWidget*             Widget                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void UTabInputOptions_C::BndEvt__InputCommonListView_K2Node_ComponentBoundEvent_14_OnListViewItemWidgetCreated__DelegateSignature(class UUserWidget* Widget)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function TabInputOptions.TabInputOptions_C.BndEvt__InputCommonListView_K2Node_ComponentBoundEvent_14_OnListViewItemWidgetCreated__DelegateSignature");
+
+	UTabInputOptions_C_BndEvt__InputCommonListView_K2Node_ComponentBoundEvent_14_OnListViewItemWidgetCreated__DelegateSignature_Params params;
+	params.Widget = Widget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function TabInputOptions.TabInputOptions_C.HandleUsingGamepadChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool*                          bUsingGamepad                  (Parm, ZeroConstructor, IsPlainOldData)
+
+void UTabInputOptions_C::HandleUsingGamepadChanged(bool* bUsingGamepad)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function TabInputOptions.TabInputOptions_C.HandleUsingGamepadChanged");
+
+	UTabInputOptions_C_HandleUsingGamepadChanged_Params params;
+	params.bUsingGamepad = bUsingGamepad;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function TabInputOptions.TabInputOptions_C.UnbindClicked
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            Number_in_List                 (Parm, ZeroConstructor, IsPlainOldData)
+
+void UTabInputOptions_C::UnbindClicked(int Number_in_List)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function TabInputOptions.TabInputOptions_C.UnbindClicked");
+
+	UTabInputOptions_C_UnbindClicked_Params params;
+	params.Number_in_List = Number_in_List;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function TabInputOptions.TabInputOptions_C.ExecuteUbergraph_TabInputOptions
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTabInputOptions_C::ExecuteUbergraph_TabInputOptions(int EntryPoint)
 {
@@ -244,7 +222,7 @@ void UTabInputOptions_C::ExecuteUbergraph_TabInputOptions(int EntryPoint)
 // Function TabInputOptions.TabInputOptions_C.Gamepad Changed__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Gamepad_Enabled                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Gamepad_Enabled                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTabInputOptions_C::Gamepad_Changed__DelegateSignature(bool Gamepad_Enabled)
 {
@@ -281,8 +259,8 @@ void UTabInputOptions_C::Disable_Overlay__DelegateSignature()
 // Function TabInputOptions.TabInputOptions_C.Enable Overlay__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Accept_Input                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   Overlay_Text                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// bool                           Accept_Input                   (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Overlay_Text                   (Parm)
 
 void UTabInputOptions_C::Enable_Overlay__DelegateSignature(bool Accept_Input, const struct FText& Overlay_Text)
 {

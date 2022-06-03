@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function MgmtTabsScreen.MgmtTabsScreen_C.HandleMgmtMenuTabChangeRequested
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   TabName                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabName                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMgmtTabsScreen_C::HandleMgmtMenuTabChangeRequested(const struct FName& TabName)
 {
@@ -52,9 +52,9 @@ void UMgmtTabsScreen_C::HandleDamageReceived()
 // Function MgmtTabsScreen.MgmtTabsScreen_C.HandleCursorModeChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           IsEnabled                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ActionName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UUserWidget*             CursorModeContentCustomWidget  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// bool                           IsEnabled                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ActionName                     (Parm, ZeroConstructor, IsPlainOldData)
+// class UUserWidget*             CursorModeContentCustomWidget  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMgmtTabsScreen_C::HandleCursorModeChanged(bool IsEnabled, const struct FName& ActionName, class UUserWidget* CursorModeContentCustomWidget)
 {
@@ -93,8 +93,8 @@ void UMgmtTabsScreen_C::OnActivated()
 // Function MgmtTabsScreen.MgmtTabsScreen_C.BndEvt__TopTabList_K2Node_ComponentBoundEvent_0_OnTabButtonCreated__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMgmtTabsScreen_C::BndEvt__TopTabList_K2Node_ComponentBoundEvent_0_OnTabButtonCreated__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton)
 {
@@ -149,18 +149,16 @@ void UMgmtTabsScreen_C::Destruct()
 // Function MgmtTabsScreen.MgmtTabsScreen_C.HandleShowQuests
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortUIFeature                 ChangedFeature                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortUIFeatureState            NewState                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortUIFeatureStateReason      StateReason                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortUIFeature                 ChangedFeature                 (Parm, ZeroConstructor, IsPlainOldData)
+// EFortUIFeatureState            NewState                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void UMgmtTabsScreen_C::HandleShowQuests(EFortUIFeature ChangedFeature, EFortUIFeatureState NewState, EFortUIFeatureStateReason StateReason)
+void UMgmtTabsScreen_C::HandleShowQuests(EFortUIFeature ChangedFeature, EFortUIFeatureState NewState)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function MgmtTabsScreen.MgmtTabsScreen_C.HandleShowQuests");
 
 	UMgmtTabsScreen_C_HandleShowQuests_Params params;
 	params.ChangedFeature = ChangedFeature;
 	params.NewState = NewState;
-	params.StateReason = StateReason;
 
 	auto flags = fn->FunctionFlags;
 
@@ -173,18 +171,16 @@ void UMgmtTabsScreen_C::HandleShowQuests(EFortUIFeature ChangedFeature, EFortUIF
 // Function MgmtTabsScreen.MgmtTabsScreen_C.HandleShowObjectives
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortUIFeature                 ChangedFeature                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortUIFeatureState            NewState                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortUIFeatureStateReason      StateReason                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortUIFeature                 ChangedFeature                 (Parm, ZeroConstructor, IsPlainOldData)
+// EFortUIFeatureState            NewState                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void UMgmtTabsScreen_C::HandleShowObjectives(EFortUIFeature ChangedFeature, EFortUIFeatureState NewState, EFortUIFeatureStateReason StateReason)
+void UMgmtTabsScreen_C::HandleShowObjectives(EFortUIFeature ChangedFeature, EFortUIFeatureState NewState)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function MgmtTabsScreen.MgmtTabsScreen_C.HandleShowObjectives");
 
 	UMgmtTabsScreen_C_HandleShowObjectives_Params params;
 	params.ChangedFeature = ChangedFeature;
 	params.NewState = NewState;
-	params.StateReason = StateReason;
 
 	auto flags = fn->FunctionFlags;
 
@@ -197,7 +193,7 @@ void UMgmtTabsScreen_C::HandleShowObjectives(EFortUIFeature ChangedFeature, EFor
 // Function MgmtTabsScreen.MgmtTabsScreen_C.ExecuteUbergraph_MgmtTabsScreen
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMgmtTabsScreen_C::ExecuteUbergraph_MgmtTabsScreen(int EntryPoint)
 {

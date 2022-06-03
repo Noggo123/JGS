@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,9 +15,9 @@ namespace SDK
 std::string UObject::GetName()
 {
 	std::string name(Name.ToString());
-	if (Name.Number > 0)
+	if (Name.DisplayIndex > 0)
 	{
-		name += '_' + std::to_string(Name.Number);
+		name += '_' + std::to_string(Name.DisplayIndex);
 	}
 
 	auto pos = name.rfind('/');

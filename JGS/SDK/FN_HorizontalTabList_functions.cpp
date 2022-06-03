@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,48 +12,11 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function HorizontalTabList.HorizontalTabList_C.SetVerticalAlignment
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TEnumAsByte<EVerticalAlignment> FillVertically                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UHorizontalTabList_C::SetVerticalAlignment(TEnumAsByte<EVerticalAlignment> FillVertically)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HorizontalTabList.HorizontalTabList_C.SetVerticalAlignment");
-
-	UHorizontalTabList_C_SetVerticalAlignment_Params params;
-	params.FillVertically = FillVertically;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HorizontalTabList.HorizontalTabList_C.UpdateGamepadKeyVisibility
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UHorizontalTabList_C::UpdateGamepadKeyVisibility()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HorizontalTabList.HorizontalTabList_C.UpdateGamepadKeyVisibility");
-
-	UHorizontalTabList_C_UpdateGamepadKeyVisibility_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function HorizontalTabList.HorizontalTabList_C.Get Tab From Id
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   TabNameID                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+// struct FName                   TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 class UCommonButton* UHorizontalTabList_C::Get_Tab_From_Id(const struct FName& TabNameID)
 {
@@ -75,8 +38,8 @@ class UCommonButton* UHorizontalTabList_C::Get_Tab_From_Id(const struct FName& T
 // Function HorizontalTabList.HorizontalTabList_C.ChangeInputBindings
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FDataTableRowHandle     NextBinding                    (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FDataTableRowHandle     PreviousBinding                (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FDataTableRowHandle     NextBinding                    (Parm)
+// struct FDataTableRowHandle     PreviousBinding                (Parm)
 
 void UHorizontalTabList_C::ChangeInputBindings(const struct FDataTableRowHandle& NextBinding, const struct FDataTableRowHandle& PreviousBinding)
 {
@@ -114,7 +77,7 @@ void UHorizontalTabList_C::Construct()
 // Function HorizontalTabList.HorizontalTabList_C.Handle OnInputMethodChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bUsingGamepad                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bUsingGamepad                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHorizontalTabList_C::Handle_OnInputMethodChanged(bool bUsingGamepad)
 {
@@ -134,7 +97,7 @@ void UHorizontalTabList_C::Handle_OnInputMethodChanged(bool bUsingGamepad)
 // Function HorizontalTabList.HorizontalTabList_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHorizontalTabList_C::PreConstruct(bool* IsDesignTime)
 {
@@ -168,31 +131,11 @@ void UHorizontalTabList_C::Previous_Visibility()
 }
 
 
-// Function HorizontalTabList.HorizontalTabList_C.CustomEvent_0_1
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UHorizontalTabList_C::CustomEvent_0_1(const struct FName& TabId)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HorizontalTabList.HorizontalTabList_C.CustomEvent_0_1");
-
-	UHorizontalTabList_C_CustomEvent_0_1_Params params;
-	params.TabId = TabId;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function HorizontalTabList.HorizontalTabList_C.HandleTabCreated
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// struct FName*                  TabNameID                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton**          TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// struct FName*                  TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton**          TabButton                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHorizontalTabList_C::HandleTabCreated(struct FName* TabNameID, class UCommonButton** TabButton)
 {
@@ -210,10 +153,30 @@ void UHorizontalTabList_C::HandleTabCreated(struct FName* TabNameID, class UComm
 }
 
 
-// Function HorizontalTabList.HorizontalTabList_C.ExecuteUbergraph_HorizontalTabList
-// (HasDefaults)
+// Function HorizontalTabList.HorizontalTabList_C.CustomEvent_0_1
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
+
+void UHorizontalTabList_C::CustomEvent_0_1(const struct FName& TabId)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HorizontalTabList.HorizontalTabList_C.CustomEvent_0_1");
+
+	UHorizontalTabList_C_CustomEvent_0_1_Params params;
+	params.TabId = TabId;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HorizontalTabList.HorizontalTabList_C.ExecuteUbergraph_HorizontalTabList
+// ()
+// Parameters:
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHorizontalTabList_C::ExecuteUbergraph_HorizontalTabList(int EntryPoint)
 {

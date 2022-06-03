@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -34,7 +34,7 @@ struct UStoreItemCardFront_C_Draw_Card_Params
 // Function StoreItemCardFront.StoreItemCardFront_C.Initialize_Card
 struct UStoreItemCardFront_C_Initialize_Card_Params
 {
-	struct FCard                                       inCard;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FCard                                       inCard;                                                   // (Parm)
 };
 
 // Function StoreItemCardFront.StoreItemCardFront_C.Construct
@@ -45,19 +45,19 @@ struct UStoreItemCardFront_C_Construct_Params
 // Function StoreItemCardFront.StoreItemCardFront_C.OnFortStoreStateChanged
 struct UStoreItemCardFront_C_OnFortStoreStateChanged_Params
 {
-	EFortStoreState                                    NewStoreState;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	EFortStoreState                                    NewStoreState;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StoreItemCardFront.StoreItemCardFront_C.InitFromObject
 struct UStoreItemCardFront_C_InitFromObject_Params
 {
-	class UObject*                                     InitObject;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UObject*                                     InitObject;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StoreItemCardFront.StoreItemCardFront_C.ExecuteUbergraph_StoreItemCardFront
 struct UStoreItemCardFront_C_ExecuteUbergraph_StoreItemCardFront_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

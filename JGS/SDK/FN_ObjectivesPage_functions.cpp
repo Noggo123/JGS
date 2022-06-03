@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,7 +37,7 @@ void UObjectivesPage_C::MissionHasModifiers(bool* MissionHasModifiers)
 // Function ObjectivesPage.ObjectivesPage_C.ConfigureModifiersView
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           ShowModifiers                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ShowModifiers                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UObjectivesPage_C::ConfigureModifiersView(bool ShowModifiers)
 {
@@ -57,9 +57,9 @@ void UObjectivesPage_C::ConfigureModifiersView(bool ShowModifiers)
 // Function ObjectivesPage.ObjectivesPage_C.HandleInventory
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UObjectivesPage_C::HandleInventory(bool* Passthrough)
+void UObjectivesPage_C::HandleInventory(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ObjectivesPage.ObjectivesPage_C.HandleInventory");
 
@@ -71,16 +71,16 @@ void UObjectivesPage_C::HandleInventory(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function ObjectivesPage.ObjectivesPage_C.HandleSelectedButtonChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonButton*           InButton                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// int                            InButtonIndex                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           InButton                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            InButtonIndex                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UObjectivesPage_C::HandleSelectedButtonChanged(class UCommonButton* InButton, int InButtonIndex)
 {
@@ -101,9 +101,9 @@ void UObjectivesPage_C::HandleSelectedButtonChanged(class UCommonButton* InButto
 // Function ObjectivesPage.ObjectivesPage_C.HandleBack
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UObjectivesPage_C::HandleBack(bool* Passthrough)
+void UObjectivesPage_C::HandleBack(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ObjectivesPage.ObjectivesPage_C.HandleBack");
 
@@ -115,8 +115,8 @@ void UObjectivesPage_C::HandleBack(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -174,7 +174,7 @@ void UObjectivesPage_C::Destruct()
 // Function ObjectivesPage.ObjectivesPage_C.OnActiveGameplayModifiersChanged_Event_0_1
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UFortGameplayModifierItemDefinition*> AppliedModifiers               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UFortGameplayModifierItemDefinition*> AppliedModifiers               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UObjectivesPage_C::OnActiveGameplayModifiersChanged_Event_0_1(TArray<class UFortGameplayModifierItemDefinition*> AppliedModifiers)
 {
@@ -194,7 +194,7 @@ void UObjectivesPage_C::OnActiveGameplayModifiersChanged_Event_0_1(TArray<class 
 // Function ObjectivesPage.ObjectivesPage_C.ExecuteUbergraph_ObjectivesPage
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UObjectivesPage_C::ExecuteUbergraph_ObjectivesPage(int EntryPoint)
 {

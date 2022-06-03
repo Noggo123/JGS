@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,450 +12,10 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function ItemInspectScreen.ItemInspectScreen_C.GetItemActionSwitcherVisibility
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// ESlateVisibility               Return_Value                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UItemInspectScreen_C::GetItemActionSwitcherVisibility(ESlateVisibility* Return_Value)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.GetItemActionSwitcherVisibility");
-
-	UItemInspectScreen_C_GetItemActionSwitcherVisibility_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Return_Value != nullptr)
-		*Return_Value = params.Return_Value;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.GetUpgradeItemInputActionState
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// EInputActionState              Return_Value                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UItemInspectScreen_C::GetUpgradeItemInputActionState(EInputActionState* Return_Value)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.GetUpgradeItemInputActionState");
-
-	UItemInspectScreen_C_GetUpgradeItemInputActionState_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Return_Value != nullptr)
-		*Return_Value = params.Return_Value;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.GetPerkModifyVisibility
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// ESlateVisibility               Return_Value                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UItemInspectScreen_C::GetPerkModifyVisibility(ESlateVisibility* Return_Value)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.GetPerkModifyVisibility");
-
-	UItemInspectScreen_C_GetPerkModifyVisibility_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Return_Value != nullptr)
-		*Return_Value = params.Return_Value;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.SetOverviewActionsInputState
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EInputActionState              State                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UItemInspectScreen_C::SetOverviewActionsInputState(EInputActionState State)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.SetOverviewActionsInputState");
-
-	UItemInspectScreen_C_SetOverviewActionsInputState_Params params;
-	params.State = State;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.GetLevelUpVisibility
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// ESlateVisibility               Return_Value                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UItemInspectScreen_C::GetLevelUpVisibility(ESlateVisibility* Return_Value)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.GetLevelUpVisibility");
-
-	UItemInspectScreen_C_GetLevelUpVisibility_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Return_Value != nullptr)
-		*Return_Value = params.Return_Value;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.HandleSchematicUpgradeOptions
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           bPassThrough                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UItemInspectScreen_C::HandleSchematicUpgradeOptions(bool* bPassThrough)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.HandleSchematicUpgradeOptions");
-
-	UItemInspectScreen_C_HandleSchematicUpgradeOptions_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (bPassThrough != nullptr)
-		*bPassThrough = params.bPassThrough;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.UpdateInspectionMode
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UItemInspectScreen_C::UpdateInspectionMode()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.UpdateInspectionMode");
-
-	UItemInspectScreen_C_UpdateInspectionMode_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.GetWindowTitleBarVisibility
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// ESlateVisibility               ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-ESlateVisibility UItemInspectScreen_C::GetWindowTitleBarVisibility()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.GetWindowTitleBarVisibility");
-
-	UItemInspectScreen_C_GetWindowTitleBarVisibility_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.UnbindDelegates
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UItemInspectScreen_C::UnbindDelegates()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.UnbindDelegates");
-
-	UItemInspectScreen_C_UnbindDelegates_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.BindDelegates
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UItemInspectScreen_C::BindDelegates()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.BindDelegates");
-
-	UItemInspectScreen_C_BindDelegates_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.GetWidgetForFramingViewedItem
-// (Event, Protected, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
-
-class UWidget* UItemInspectScreen_C::GetWidgetForFramingViewedItem()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.GetWidgetForFramingViewedItem");
-
-	UItemInspectScreen_C_GetWidgetForFramingViewedItem_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.RefreshItemViewHandlerStates
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UItemInspectScreen_C::RefreshItemViewHandlerStates()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.RefreshItemViewHandlerStates");
-
-	UItemInspectScreen_C_RefreshItemViewHandlerStates_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.Setup Evolution Selection for Comparisons
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            RecipeIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UItemInspectScreen_C::Setup_Evolution_Selection_for_Comparisons(class UFortItem* Item, int RecipeIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.Setup Evolution Selection for Comparisons");
-
-	UItemInspectScreen_C_Setup_Evolution_Selection_for_Comparisons_Params params;
-	params.Item = Item;
-	params.RecipeIndex = RecipeIndex;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.GetUpgradeRarityVisibility
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// ESlateVisibility               ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-ESlateVisibility UItemInspectScreen_C::GetUpgradeRarityVisibility()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.GetUpgradeRarityVisibility");
-
-	UItemInspectScreen_C_GetUpgradeRarityVisibility_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.GetFavoriteInputState
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// EInputActionState              ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-EInputActionState UItemInspectScreen_C::GetFavoriteInputState()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.GetFavoriteInputState");
-
-	UItemInspectScreen_C_GetFavoriteInputState_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.GetEvolutionVisibility
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// ESlateVisibility               ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-ESlateVisibility UItemInspectScreen_C::GetEvolutionVisibility()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.GetEvolutionVisibility");
-
-	UItemInspectScreen_C_GetEvolutionVisibility_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.GetViewInputState
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// EInputActionState              ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-EInputActionState UItemInspectScreen_C::GetViewInputState()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.GetViewInputState");
-
-	UItemInspectScreen_C_GetViewInputState_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.SetAllInputActionStates
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EInputActionState              InputActionState               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UItemInspectScreen_C::SetAllInputActionStates(EInputActionState InputActionState)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.SetAllInputActionStates");
-
-	UItemInspectScreen_C_SetAllInputActionStates_Params params;
-	params.InputActionState = InputActionState;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.HandleUpgradeItemRarity
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UItemInspectScreen_C::HandleUpgradeItemRarity()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.HandleUpgradeItemRarity");
-
-	UItemInspectScreen_C_HandleUpgradeItemRarity_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.RefreshExtraDetailsTabs
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UItemInspectScreen_C::RefreshExtraDetailsTabs()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.RefreshExtraDetailsTabs");
-
-	UItemInspectScreen_C_RefreshExtraDetailsTabs_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.OnItemCycleChangedItem
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UFortItem*               NewItemToRepresent             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UItemInspectScreen_C::OnItemCycleChangedItem(class UFortItem* NewItemToRepresent)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.OnItemCycleChangedItem");
-
-	UItemInspectScreen_C_OnItemCycleChangedItem_Params params;
-	params.NewItemToRepresent = NewItemToRepresent;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.SetInspectModeForChildPanels
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EFortItemInspectionMode        NewInspectMode                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UItemInspectScreen_C::SetInspectModeForChildPanels(EFortItemInspectionMode NewInspectMode)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.SetInspectModeForChildPanels");
-
-	UItemInspectScreen_C_SetInspectModeForChildPanels_Params params;
-	params.NewInspectMode = NewInspectMode;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function ItemInspectScreen.ItemInspectScreen_C.SetTabButtonStyle
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 Object                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 Object                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemInspectScreen_C::SetTabButtonStyle(class UObject* Object)
 {
@@ -475,7 +35,7 @@ void UItemInspectScreen_C::SetTabButtonStyle(class UObject* Object)
 // Function ItemInspectScreen.ItemInspectScreen_C.ShowPreviewHeader
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           ShowPreviewLabel               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ShowPreviewLabel               (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemInspectScreen_C::ShowPreviewHeader(bool ShowPreviewLabel)
 {
@@ -489,6 +49,28 @@ void UItemInspectScreen_C::ShowPreviewHeader(bool ShowPreviewLabel)
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemInspectScreen.ItemInspectScreen_C.Handle3DView
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UItemInspectScreen_C::Handle3DView(bool* PassThrough)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.Handle3DView");
+
+	UItemInspectScreen_C_Handle3DView_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -529,7 +111,7 @@ void UItemInspectScreen_C::RefreshActionHandlers()
 // Function ItemInspectScreen.ItemInspectScreen_C.HandleEvolutionComplete
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FFortItemInstanceQuantityPair> ResultingItems                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<struct FFortItemInstanceQuantityPair> ResultingItems                 (Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UItemInspectScreen_C::HandleEvolutionComplete(TArray<struct FFortItemInstanceQuantityPair>* ResultingItems)
 {
@@ -568,7 +150,7 @@ void UItemInspectScreen_C::RefreshOnUpgrade()
 // Function ItemInspectScreen.ItemInspectScreen_C.HandleCursorModeChanging
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           IsEnabled                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IsEnabled                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemInspectScreen_C::HandleCursorModeChanging(bool IsEnabled)
 {
@@ -576,6 +158,36 @@ void UItemInspectScreen_C::HandleCursorModeChanging(bool IsEnabled)
 
 	UItemInspectScreen_C_HandleCursorModeChanging_Params params;
 	params.IsEnabled = IsEnabled;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemInspectScreen.ItemInspectScreen_C.OpenItemInspect (Function)
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortItem*               ItemToInspect                  (Parm, ZeroConstructor, IsPlainOldData)
+// EFortItemInspectionMode        Mode                           (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ShouldAllowUpgrading           (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ShouldAllowEvolution           (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ShouldAllowFavoriting          (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ShouldShowPreviewDisplay       (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemInspectScreen_C::OpenItemInspect__Function_(class UFortItem* ItemToInspect, EFortItemInspectionMode Mode, bool ShouldAllowUpgrading, bool ShouldAllowEvolution, bool ShouldAllowFavoriting, bool ShouldShowPreviewDisplay)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.OpenItemInspect (Function)");
+
+	UItemInspectScreen_C_OpenItemInspect__Function__Params params;
+	params.ItemToInspect = ItemToInspect;
+	params.Mode = Mode;
+	params.ShouldAllowUpgrading = ShouldAllowUpgrading;
+	params.ShouldAllowEvolution = ShouldAllowEvolution;
+	params.ShouldAllowFavoriting = ShouldAllowFavoriting;
+	params.ShouldShowPreviewDisplay = ShouldShowPreviewDisplay;
 
 	auto flags = fn->FunctionFlags;
 
@@ -644,8 +256,8 @@ void UItemInspectScreen_C::GetFirstEvolutionOption(class UFortItem** EvolutionIt
 // Function ItemInspectScreen.ItemInspectScreen_C.HandleEvolutionChoiceSelected
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            RecipeIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+// int                            RecipeIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemInspectScreen_C::HandleEvolutionChoiceSelected(class UFortItem* Item, int RecipeIndex)
 {
@@ -666,7 +278,7 @@ void UItemInspectScreen_C::HandleEvolutionChoiceSelected(class UFortItem* Item, 
 // Function ItemInspectScreen.ItemInspectScreen_C.HandleEvolutionChoiceUnhovered
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemInspectScreen_C::HandleEvolutionChoiceUnhovered(class UFortItem* Item)
 {
@@ -686,7 +298,7 @@ void UItemInspectScreen_C::HandleEvolutionChoiceUnhovered(class UFortItem* Item)
 // Function ItemInspectScreen.ItemInspectScreen_C.HandleEvolutionChoiceHovered
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemInspectScreen_C::HandleEvolutionChoiceHovered(class UFortItem* Item)
 {
@@ -703,10 +315,32 @@ void UItemInspectScreen_C::HandleEvolutionChoiceHovered(class UFortItem* Item)
 }
 
 
-// Function ItemInspectScreen.ItemInspectScreen_C.HandleUpgrade
+// Function ItemInspectScreen.ItemInspectScreen_C.SetInspectMode
 // (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EFortItemInspectionMode        NewInspectMode                 (Parm, ZeroConstructor, IsPlainOldData)
 
-void UItemInspectScreen_C::HandleUpgrade()
+void UItemInspectScreen_C::SetInspectMode(EFortItemInspectionMode NewInspectMode)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.SetInspectMode");
+
+	UItemInspectScreen_C_SetInspectMode_Params params;
+	params.NewInspectMode = NewInspectMode;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemInspectScreen.ItemInspectScreen_C.HandleUpgrade
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UItemInspectScreen_C::HandleUpgrade(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.HandleUpgrade");
 
@@ -717,13 +351,18 @@ void UItemInspectScreen_C::HandleUpgrade()
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function ItemInspectScreen.ItemInspectScreen_C.HandleEvolution
-// (Public, BlueprintCallable, BlueprintEvent)
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemInspectScreen_C::HandleEvolution()
+void UItemInspectScreen_C::HandleEvolution(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.HandleEvolution");
 
@@ -734,15 +373,18 @@ void UItemInspectScreen_C::HandleEvolution()
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function ItemInspectScreen.ItemInspectScreen_C.HandleView
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemInspectScreen_C::HandleView(bool* Passthrough)
+void UItemInspectScreen_C::HandleView(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.HandleView");
 
@@ -754,17 +396,17 @@ void UItemInspectScreen_C::HandleView(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function ItemInspectScreen.ItemInspectScreen_C.HandleFavorite
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemInspectScreen_C::HandleFavorite(bool* Passthrough)
+void UItemInspectScreen_C::HandleFavorite(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.HandleFavorite");
 
@@ -776,17 +418,17 @@ void UItemInspectScreen_C::HandleFavorite(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function ItemInspectScreen.ItemInspectScreen_C.HandleBack
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemInspectScreen_C::HandleBack(bool* Passthrough)
+void UItemInspectScreen_C::HandleBack(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.HandleBack");
 
@@ -798,8 +440,28 @@ void UItemInspectScreen_C::HandleBack(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
+}
+
+
+// Function ItemInspectScreen.ItemInspectScreen_C.SetItemToRepresent
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemInspectScreen_C::SetItemToRepresent(class UFortItem* Item)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.SetItemToRepresent");
+
+	UItemInspectScreen_C_SetItemToRepresent_Params params;
+	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
 }
 
 
@@ -837,11 +499,143 @@ void UItemInspectScreen_C::BndEvt__ItemInspectEvolutionConfirmation_K2Node_Compo
 }
 
 
+// Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_1_OnUpgradeCancel__DelegateSignature
+// (BlueprintEvent)
+
+void UItemInspectScreen_C::BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_1_OnUpgradeCancel__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_1_OnUpgradeCancel__DelegateSignature");
+
+	UItemInspectScreen_C_BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_1_OnUpgradeCancel__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_0_OnUpgradeConfirm__DelegateSignature
+// (BlueprintEvent)
+
+void UItemInspectScreen_C::BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_0_OnUpgradeConfirm__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_0_OnUpgradeConfirm__DelegateSignature");
+
+	UItemInspectScreen_C_BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_0_OnUpgradeConfirm__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__InspectedItem_K2Node_ComponentBoundEvent_9_FortOnItemChangedDelegate__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// bool                           bItemChanged                   (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bAmmoChanged                   (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bIngredientsChanged            (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemInspectScreen_C::BndEvt__InspectedItem_K2Node_ComponentBoundEvent_9_FortOnItemChangedDelegate__DelegateSignature(bool bItemChanged, bool bAmmoChanged, bool bIngredientsChanged)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__InspectedItem_K2Node_ComponentBoundEvent_9_FortOnItemChangedDelegate__DelegateSignature");
+
+	UItemInspectScreen_C_BndEvt__InspectedItem_K2Node_ComponentBoundEvent_9_FortOnItemChangedDelegate__DelegateSignature_Params params;
+	params.bItemChanged = bItemChanged;
+	params.bAmmoChanged = bAmmoChanged;
+	params.bIngredientsChanged = bIngredientsChanged;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__InspectedItem_K2Node_ComponentBoundEvent_10_FortOnItemDestroyedDelegate__DelegateSignature
+// (BlueprintEvent)
+
+void UItemInspectScreen_C::BndEvt__InspectedItem_K2Node_ComponentBoundEvent_10_FortOnItemDestroyedDelegate__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__InspectedItem_K2Node_ComponentBoundEvent_10_FortOnItemDestroyedDelegate__DelegateSignature");
+
+	UItemInspectScreen_C_BndEvt__InspectedItem_K2Node_ComponentBoundEvent_10_FortOnItemDestroyedDelegate__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemInspectScreen.ItemInspectScreen_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UItemInspectScreen_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.Construct");
+
+	UItemInspectScreen_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__ItemInspectEvolutionConfirmation_K2Node_ComponentBoundEvent_0_OnEvolutionOptionHovered__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemInspectScreen_C::BndEvt__ItemInspectEvolutionConfirmation_K2Node_ComponentBoundEvent_0_OnEvolutionOptionHovered__DelegateSignature(class UFortItem* Item)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__ItemInspectEvolutionConfirmation_K2Node_ComponentBoundEvent_0_OnEvolutionOptionHovered__DelegateSignature");
+
+	UItemInspectScreen_C_BndEvt__ItemInspectEvolutionConfirmation_K2Node_ComponentBoundEvent_0_OnEvolutionOptionHovered__DelegateSignature_Params params;
+	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__ItemInspectEvolutionConfirmation_K2Node_ComponentBoundEvent_1_OnEvolutionOptionUnhovered__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemInspectScreen_C::BndEvt__ItemInspectEvolutionConfirmation_K2Node_ComponentBoundEvent_1_OnEvolutionOptionUnhovered__DelegateSignature(class UFortItem* Item)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__ItemInspectEvolutionConfirmation_K2Node_ComponentBoundEvent_1_OnEvolutionOptionUnhovered__DelegateSignature");
+
+	UItemInspectScreen_C_BndEvt__ItemInspectEvolutionConfirmation_K2Node_ComponentBoundEvent_1_OnEvolutionOptionUnhovered__DelegateSignature_Params params;
+	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__ItemInspectEvolutionConfirmation_K2Node_ComponentBoundEvent_2_OnEvolutionOptionSelected__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            RecipeIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+// int                            RecipeIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemInspectScreen_C::BndEvt__ItemInspectEvolutionConfirmation_K2Node_ComponentBoundEvent_2_OnEvolutionOptionSelected__DelegateSignature(class UFortItem* Item, int RecipeIndex)
 {
@@ -893,6 +687,36 @@ void UItemInspectScreen_C::OnActivated()
 }
 
 
+// Function ItemInspectScreen.ItemInspectScreen_C.OpenItemInspect
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortItem**              ItemToInspect                  (Parm, ZeroConstructor, IsPlainOldData)
+// EFortItemInspectionMode*       Mode                           (Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          ShouldAllowUpgrading           (Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          ShouldAllowEvolution           (Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          ShouldAllowFavorite            (Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsTemporaryItem                (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemInspectScreen_C::OpenItemInspect(class UFortItem** ItemToInspect, EFortItemInspectionMode* Mode, bool* ShouldAllowUpgrading, bool* ShouldAllowEvolution, bool* ShouldAllowFavorite, bool* IsTemporaryItem)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.OpenItemInspect");
+
+	UItemInspectScreen_C_OpenItemInspect_Params params;
+	params.ItemToInspect = ItemToInspect;
+	params.Mode = Mode;
+	params.ShouldAllowUpgrading = ShouldAllowUpgrading;
+	params.ShouldAllowEvolution = ShouldAllowEvolution;
+	params.ShouldAllowFavorite = ShouldAllowFavorite;
+	params.IsTemporaryItem = IsTemporaryItem;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function ItemInspectScreen.ItemInspectScreen_C.Destruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
@@ -930,8 +754,8 @@ void UItemInspectScreen_C::OnDeactivated()
 // Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__DetailPanelTabList-PC_K2Node_ComponentBoundEvent_385_OnTabButtonCreated__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemInspectScreen_C::BndEvt__DetailPanelTabList_PC_K2Node_ComponentBoundEvent_385_OnTabButtonCreated__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton)
 {
@@ -949,205 +773,10 @@ void UItemInspectScreen_C::BndEvt__DetailPanelTabList_PC_K2Node_ComponentBoundEv
 }
 
 
-// Function ItemInspectScreen.ItemInspectScreen_C.OnInputModeChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool*                          bUsingGamepad                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UItemInspectScreen_C::OnInputModeChanged(bool* bUsingGamepad)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.OnInputModeChanged");
-
-	UItemInspectScreen_C_OnInputModeChanged_Params params;
-	params.bUsingGamepad = bUsingGamepad;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__ItemInspectEvolveRarityConfirmation_K2Node_ComponentBoundEvent_34_OnEvolutionConfirm__DelegateSignature
-// (BlueprintEvent)
-
-void UItemInspectScreen_C::BndEvt__ItemInspectEvolveRarityConfirmation_K2Node_ComponentBoundEvent_34_OnEvolutionConfirm__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__ItemInspectEvolveRarityConfirmation_K2Node_ComponentBoundEvent_34_OnEvolutionConfirm__DelegateSignature");
-
-	UItemInspectScreen_C_BndEvt__ItemInspectEvolveRarityConfirmation_K2Node_ComponentBoundEvent_34_OnEvolutionConfirm__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_1_OnUpgradeCancel__DelegateSignature
-// (BlueprintEvent)
-
-void UItemInspectScreen_C::BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_1_OnUpgradeCancel__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_1_OnUpgradeCancel__DelegateSignature");
-
-	UItemInspectScreen_C_BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_1_OnUpgradeCancel__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__ItemInspectEvolveRarityConfirmation_K2Node_ComponentBoundEvent_2_OnEvolutionOptionSelected__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            RecipeIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UItemInspectScreen_C::BndEvt__ItemInspectEvolveRarityConfirmation_K2Node_ComponentBoundEvent_2_OnEvolutionOptionSelected__DelegateSignature(class UFortItem* Item, int RecipeIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__ItemInspectEvolveRarityConfirmation_K2Node_ComponentBoundEvent_2_OnEvolutionOptionSelected__DelegateSignature");
-
-	UItemInspectScreen_C_BndEvt__ItemInspectEvolveRarityConfirmation_K2Node_ComponentBoundEvent_2_OnEvolutionOptionSelected__DelegateSignature_Params params;
-	params.Item = Item;
-	params.RecipeIndex = RecipeIndex;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_0_OnUpgradeConfirm__DelegateSignature
-// (BlueprintEvent)
-
-void UItemInspectScreen_C::BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_0_OnUpgradeConfirm__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_0_OnUpgradeConfirm__DelegateSignature");
-
-	UItemInspectScreen_C_BndEvt__ItemInspectUpgradeConfirmation_K2Node_ComponentBoundEvent_0_OnUpgradeConfirm__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.HandleIsPreviewingChanged
-// (Event, Protected, BlueprintEvent)
-
-void UItemInspectScreen_C::HandleIsPreviewingChanged()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.HandleIsPreviewingChanged");
-
-	UItemInspectScreen_C_HandleIsPreviewingChanged_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.HandleDifferentItemToInspectSetBP
-// (Event, Protected, BlueprintEvent)
-
-void UItemInspectScreen_C::HandleDifferentItemToInspectSetBP()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.HandleDifferentItemToInspectSetBP");
-
-	UItemInspectScreen_C_HandleDifferentItemToInspectSetBP_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.HandleDifferentInspectionModeSetBP
-// (Event, Protected, BlueprintEvent)
-
-void UItemInspectScreen_C::HandleDifferentInspectionModeSetBP()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.HandleDifferentInspectionModeSetBP");
-
-	UItemInspectScreen_C_HandleDifferentInspectionModeSetBP_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.HandleItemToInspectChangedBP
-// (Event, Protected, BlueprintEvent)
-
-void UItemInspectScreen_C::HandleItemToInspectChangedBP()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.HandleItemToInspectChangedBP");
-
-	UItemInspectScreen_C_HandleItemToInspectChangedBP_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.HandleItemToInspectDestroyedBP
-// (Event, Protected, BlueprintEvent)
-
-void UItemInspectScreen_C::HandleItemToInspectDestroyedBP()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.HandleItemToInspectDestroyedBP");
-
-	UItemInspectScreen_C_HandleItemToInspectDestroyedBP_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemInspectScreen.ItemInspectScreen_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UItemInspectScreen_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectScreen.ItemInspectScreen_C.Construct");
-
-	UItemInspectScreen_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function ItemInspectScreen.ItemInspectScreen_C.ExecuteUbergraph_ItemInspectScreen
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemInspectScreen_C::ExecuteUbergraph_ItemInspectScreen(int EntryPoint)
 {

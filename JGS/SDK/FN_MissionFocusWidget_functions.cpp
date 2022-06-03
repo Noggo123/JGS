@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UMissionFocusWidget_C::UpdateVisibility()
 // Function MissionFocusWidget.MissionFocusWidget_C.HandleFocusedMission
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortMission*            FocusedMission                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortMission*            FocusedMission                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMissionFocusWidget_C::HandleFocusedMission(class AFortMission* FocusedMission)
 {
@@ -52,7 +52,7 @@ void UMissionFocusWidget_C::HandleFocusedMission(class AFortMission* FocusedMiss
 // Function MissionFocusWidget.MissionFocusWidget_C.HandleTimerComponentChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortMissionTimerComponent* TimerComponent                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UFortMissionTimerComponent* TimerComponent                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMissionFocusWidget_C::HandleTimerComponentChanged(class UFortMissionTimerComponent* TimerComponent)
 {
@@ -106,7 +106,7 @@ void UMissionFocusWidget_C::Construct()
 // Function MissionFocusWidget.MissionFocusWidget_C.ExecuteUbergraph_MissionFocusWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMissionFocusWidget_C::ExecuteUbergraph_MissionFocusWidget(int EntryPoint)
 {

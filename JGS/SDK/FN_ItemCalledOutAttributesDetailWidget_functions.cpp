@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,23 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function ItemCalledOutAttributesDetailWidget.ItemCalledOutAttributesDetailWidget_C.Clear Stats
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UItemCalledOutAttributesDetailWidget_C::Clear_Stats()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemCalledOutAttributesDetailWidget.ItemCalledOutAttributesDetailWidget_C.Clear Stats");
-
-	UItemCalledOutAttributesDetailWidget_C_Clear_Stats_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function ItemCalledOutAttributesDetailWidget.ItemCalledOutAttributesDetailWidget_C.UpdateStats
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -47,7 +30,7 @@ void UItemCalledOutAttributesDetailWidget_C::UpdateStats()
 
 
 // Function ItemCalledOutAttributesDetailWidget.ItemCalledOutAttributesDetailWidget_C.GetDisplayAttributesToCallOut
-// (Private, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Private, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // TArray<struct FFortDisplayAttribute> Attributes                     (Parm, OutParm, ZeroConstructor)
 
@@ -85,27 +68,10 @@ void UItemCalledOutAttributesDetailWidget_C::HandlePostDifferentItemToDetailSet(
 }
 
 
-// Function ItemCalledOutAttributesDetailWidget.ItemCalledOutAttributesDetailWidget_C.HandleItemToDetailChangedBP
-// (Event, Protected, BlueprintEvent)
-
-void UItemCalledOutAttributesDetailWidget_C::HandleItemToDetailChangedBP()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemCalledOutAttributesDetailWidget.ItemCalledOutAttributesDetailWidget_C.HandleItemToDetailChangedBP");
-
-	UItemCalledOutAttributesDetailWidget_C_HandleItemToDetailChangedBP_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function ItemCalledOutAttributesDetailWidget.ItemCalledOutAttributesDetailWidget_C.ExecuteUbergraph_ItemCalledOutAttributesDetailWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemCalledOutAttributesDetailWidget_C::ExecuteUbergraph_ItemCalledOutAttributesDetailWidget(int EntryPoint)
 {

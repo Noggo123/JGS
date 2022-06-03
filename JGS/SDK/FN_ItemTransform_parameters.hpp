@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,21 +14,10 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function ItemTransform.ItemTransform_C.SetAndLogSelectedKey
-struct UItemTransform_C_SetAndLogSelectedKey_Params
-{
-	class UFortItem*                                   SelectedItem;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function ItemTransform.ItemTransform_C.Handle SubScreen Activated
-struct UItemTransform_C_Handle_SubScreen_Activated_Params
-{
-};
-
 // Function ItemTransform.ItemTransform_C.HandleClosePicker
 struct UItemTransform_C_HandleClosePicker_Params
 {
-	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               PassThrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemTransform.ItemTransform_C.OnItemPickerOpened
@@ -44,16 +33,16 @@ struct UItemTransform_C_OnItemPickerClosed_Params
 // Function ItemTransform.ItemTransform_C.UpdateTransformAction
 struct UItemTransform_C_UpdateTransformAction_Params
 {
-	bool                                               TransformActive;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               TransformActive;                                          // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function ItemTransform.ItemTransform_C.Handle Slot Screen Activated
-struct UItemTransform_C_Handle_Slot_Screen_Activated_Params
+// Function ItemTransform.ItemTransform_C.Handle Transform Activated
+struct UItemTransform_C_Handle_Transform_Activated_Params
 {
 };
 
-// Function ItemTransform.ItemTransform_C.Handle Key Screen Activated
-struct UItemTransform_C_Handle_Key_Screen_Activated_Params
+// Function ItemTransform.ItemTransform_C.Handle Select Key Activated
+struct UItemTransform_C_Handle_Select_Key_Activated_Params
 {
 };
 
@@ -95,13 +84,13 @@ struct UItemTransform_C_ShowSelectKeyAction_Params
 // Function ItemTransform.ItemTransform_C.HandleSelectKeyAction
 struct UItemTransform_C_HandleSelectKeyAction_Params
 {
-	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               PassThrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemTransform.ItemTransform_C.HandleTransformAction
 struct UItemTransform_C_HandleTransformAction_Params
 {
-	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               PassThrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemTransform.ItemTransform_C.ResetItemTransform
@@ -112,21 +101,26 @@ struct UItemTransform_C_ResetItemTransform_Params
 // Function ItemTransform.ItemTransform_C.HandleTransformFailed
 struct UItemTransform_C_HandleTransformFailed_Params
 {
-	struct FText                                       ErrorMessage;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FText                                       ErrorMessage;                                             // (Parm, OutParm, ReferenceParm)
 };
 
 // Function ItemTransform.ItemTransform_C.HandleTransformSucceeded
 struct UItemTransform_C_HandleTransformSucceeded_Params
 {
-	TArray<struct FFortItemInstanceQuantityPair>       RewardedItems;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-	TArray<struct FFortItemInstanceQuantityPair>       SacrificedItems;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<struct FFortItemInstanceQuantityPair>       RewardedItems;                                            // (Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<struct FFortItemInstanceQuantityPair>       SacrificedItems;                                          // (Parm, OutParm, ZeroConstructor, ReferenceParm)
+};
+
+// Function ItemTransform.ItemTransform_C.HandleTransformContinue
+struct UItemTransform_C_HandleTransformContinue_Params
+{
 };
 
 // Function ItemTransform.ItemTransform_C.OpenResult
 struct UItemTransform_C_OpenResult_Params
 {
-	TArray<struct FFortItemInstanceQuantityPair>       RewardItems;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-	TArray<struct FFortItemInstanceQuantityPair>       SacrificeItems;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<struct FFortItemInstanceQuantityPair>       RewardItems;                                              // (Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<struct FFortItemInstanceQuantityPair>       SacrificeItems;                                           // (Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function ItemTransform.ItemTransform_C.HandleTransformConfirm
@@ -147,13 +141,13 @@ struct UItemTransform_C_OpenConfirmation_Params
 // Function ItemTransform.ItemTransform_C.HandleSelect
 struct UItemTransform_C_HandleSelect_Params
 {
-	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               PassThrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemTransform.ItemTransform_C.HandleBack
 struct UItemTransform_C_HandleBack_Params
 {
-	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               PassThrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemTransform.ItemTransform_C.SetupActionHandlers
@@ -176,11 +170,17 @@ struct UItemTransform_C_OpenItemTransform_Params
 {
 };
 
+// Function ItemTransform.ItemTransform_C.BndEvt__KeyScreen_K2Node_ComponentBoundEvent_6_OnKeySelected__DelegateSignature
+struct UItemTransform_C_BndEvt__KeyScreen_K2Node_ComponentBoundEvent_6_OnKeySelected__DelegateSignature_Params
+{
+	class UFortItem*                                   Key;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function ItemTransform.ItemTransform_C.BndEvt__TransformScreenSwitcher_K2Node_ComponentBoundEvent_213_OnActiveWidgetChanged__DelegateSignature
 struct UItemTransform_C_BndEvt__TransformScreenSwitcher_K2Node_ComponentBoundEvent_213_OnActiveWidgetChanged__DelegateSignature_Params
 {
-	class UWidget*                                     ActiveWidget;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	int                                                ActiveWidgetIndex;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UWidget*                                     ActiveWidget;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                ActiveWidgetIndex;                                        // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemTransform.ItemTransform_C.OnActivated
@@ -196,13 +196,7 @@ struct UItemTransform_C_BndEvt__KeyScreen_K2Node_ComponentBoundEvent_513_OnKeyCo
 // Function ItemTransform.ItemTransform_C.BndEvt__SlotScreen_K2Node_ComponentBoundEvent_598_OnTransformButtonUpdated__DelegateSignature
 struct UItemTransform_C_BndEvt__SlotScreen_K2Node_ComponentBoundEvent_598_OnTransformButtonUpdated__DelegateSignature_Params
 {
-	bool                                               TransformActive;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function ItemTransform.ItemTransform_C.BndEvt__KeyScreen_K2Node_ComponentBoundEvent_6_OnKeySelected__DelegateSignature
-struct UItemTransform_C_BndEvt__KeyScreen_K2Node_ComponentBoundEvent_6_OnKeySelected__DelegateSignature_Params
-{
-	class UFortItem*                                   Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               TransformActive;                                          // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemTransform.ItemTransform_C.Construct
@@ -210,15 +204,10 @@ struct UItemTransform_C_Construct_Params
 {
 };
 
-// Function ItemTransform.ItemTransform_C.OnRequestCloseItemPicker
-struct UItemTransform_C_OnRequestCloseItemPicker_Params
-{
-};
-
 // Function ItemTransform.ItemTransform_C.ExecuteUbergraph_ItemTransform
 struct UItemTransform_C_ExecuteUbergraph_ItemTransform_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

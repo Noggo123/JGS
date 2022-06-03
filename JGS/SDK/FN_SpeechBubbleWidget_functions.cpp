@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function SpeechBubbleWidget.SpeechBubbleWidget_C.InitFromObject
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 InitObject                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 InitObject                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void USpeechBubbleWidget_C::InitFromObject(class UObject* InitObject)
 {
@@ -35,7 +35,7 @@ void USpeechBubbleWidget_C::InitFromObject(class UObject* InitObject)
 // Function SpeechBubbleWidget.SpeechBubbleWidget_C.ExecuteUbergraph_SpeechBubbleWidget
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void USpeechBubbleWidget_C::ExecuteUbergraph_SpeechBubbleWidget(int EntryPoint)
 {

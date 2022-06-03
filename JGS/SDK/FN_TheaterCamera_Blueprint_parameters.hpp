@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,17 +14,6 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.ZoomCameraWithHeldGamepadInput
-struct ATheaterCamera_Blueprint_C_ZoomCameraWithHeldGamepadInput_Params
-{
-};
-
-// Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.SetSuspendInput
-struct ATheaterCamera_Blueprint_C_SetSuspendInput_Params
-{
-	bool                                               SuspendInput;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.IsInputSuspended
 struct ATheaterCamera_Blueprint_C_IsInputSuspended_Params
 {
@@ -34,27 +23,27 @@ struct ATheaterCamera_Blueprint_C_IsInputSuspended_Params
 // Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.NewFunction_0_1
 struct ATheaterCamera_Blueprint_C_NewFunction_0_1_Params
 {
-	class AActor*                                      self2;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AActor*                                      self2;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FVector2D                                   ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
 };
 
 // Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.PanCamera
 struct ATheaterCamera_Blueprint_C_PanCamera_Params
 {
-	float                                              DeltaX;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	float                                              DeltaY;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              DeltaX;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              DeltaY;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.HandleTheaterSelected
 struct ATheaterCamera_Blueprint_C_HandleTheaterSelected_Params
 {
-	struct FString                                     TheaterId;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	struct FString                                     TheaterId;                                                // (Parm, ZeroConstructor)
 };
 
 // Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.ZoomCameraStep
 struct ATheaterCamera_Blueprint_C_ZoomCameraStep_Params
 {
-	bool                                               Forward;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Forward;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.UserConstructionScript
@@ -102,16 +91,28 @@ struct ATheaterCamera_Blueprint_C_DEBUGFOVA__UpdateFunc_Params
 {
 };
 
-// Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.InpActEvt_MouseScrollUp_K2Node_InputKeyEvent_1_2
-struct ATheaterCamera_Blueprint_C_InpActEvt_MouseScrollUp_K2Node_InputKeyEvent_1_2_Params
+// Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.InpActEvt_MouseScrollUp_K2Node_InputKeyEvent_7_8
+struct ATheaterCamera_Blueprint_C_InpActEvt_MouseScrollUp_K2Node_InputKeyEvent_7_8_Params
 {
-	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FKey                                        Key;                                                      // (Parm)
 };
 
-// Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.InpActEvt_MouseScrollDown_K2Node_InputKeyEvent_0_1
-struct ATheaterCamera_Blueprint_C_InpActEvt_MouseScrollDown_K2Node_InputKeyEvent_0_1_Params
+// Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.InpActEvt_MouseScrollDown_K2Node_InputKeyEvent_6_7
+struct ATheaterCamera_Blueprint_C_InpActEvt_MouseScrollDown_K2Node_InputKeyEvent_6_7_Params
 {
-	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FKey                                        Key;                                                      // (Parm)
+};
+
+// Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.InpActEvt_Gamepad_LeftTrigger_K2Node_InputKeyEvent_5_6
+struct ATheaterCamera_Blueprint_C_InpActEvt_Gamepad_LeftTrigger_K2Node_InputKeyEvent_5_6_Params
+{
+	struct FKey                                        Key;                                                      // (Parm)
+};
+
+// Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_4_5
+struct ATheaterCamera_Blueprint_C_InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_4_5_Params
+{
+	struct FKey                                        Key;                                                      // (Parm)
 };
 
 // Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.OnActivated
@@ -127,13 +128,13 @@ struct ATheaterCamera_Blueprint_C_OnDeactivated_Params
 // Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.SetTileFocus
 struct ATheaterCamera_Blueprint_C_SetTileFocus_Params
 {
-	class AFortTheaterMapTile**                        TargetTile;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AFortTheaterMapTile**                        TargetTile;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.ReceiveTick
 struct ATheaterCamera_Blueprint_C_ReceiveTick_Params
 {
-	float*                                             DeltaSeconds;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float*                                             DeltaSeconds;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.OnDragBegin
@@ -154,7 +155,7 @@ struct ATheaterCamera_Blueprint_C_StopFocusTimeline_Params
 // Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.ForceTileFocus
 struct ATheaterCamera_Blueprint_C_ForceTileFocus_Params
 {
-	struct FVector                                     HexWorldLoc;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+	struct FVector                                     HexWorldLoc;                                              // (Parm, IsPlainOldData)
 };
 
 // Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.PingFromHex
@@ -180,7 +181,7 @@ struct ATheaterCamera_Blueprint_C_PinnedPing_Params
 // Function TheaterCamera_Blueprint.TheaterCamera_Blueprint_C.ExecuteUbergraph_TheaterCamera_Blueprint
 struct ATheaterCamera_Blueprint_C_ExecuteUbergraph_TheaterCamera_Blueprint_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

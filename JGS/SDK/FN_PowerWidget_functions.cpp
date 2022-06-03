@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UPowerWidget_C::Check_For_Power_Change()
 // Function PowerWidget.PowerWidget_C.GetPowerRatingTooltipWidget
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 class UWidget* UPowerWidget_C::GetPowerRatingTooltipWidget()
 {
@@ -89,11 +89,11 @@ void UPowerWidget_C::Debug()
 
 
 // Function PowerWidget.PowerWidget_C.SetState
-// (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UPowerWidget_C::SetState(bool* Passthrough)
+void UPowerWidget_C::SetState(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PowerWidget.PowerWidget_C.SetState");
 
@@ -105,19 +105,19 @@ void UPowerWidget_C::SetState(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
-// Function PowerWidget.PowerWidget_C.UpdateProgress
+// Function PowerWidget.PowerWidget_C.Update Rating
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void UPowerWidget_C::UpdateProgress()
+void UPowerWidget_C::Update_Rating()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PowerWidget.PowerWidget_C.UpdateProgress");
+	static auto fn = UObject::FindObject<UFunction>("Function PowerWidget.PowerWidget_C.Update Rating");
 
-	UPowerWidget_C_UpdateProgress_Params params;
+	UPowerWidget_C_Update_Rating_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -128,53 +128,16 @@ void UPowerWidget_C::UpdateProgress()
 
 
 // Function PowerWidget.PowerWidget_C.Update Rating Value
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            New_Rating_Value               (Parm, ZeroConstructor, IsPlainOldData)
 
-void UPowerWidget_C::Update_Rating_Value()
+void UPowerWidget_C::Update_Rating_Value(int New_Rating_Value)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PowerWidget.PowerWidget_C.Update Rating Value");
 
 	UPowerWidget_C_Update_Rating_Value_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PowerWidget.PowerWidget_C.OnPlayerInfoChanged
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// struct FFortTeamMemberInfo*    NewInfo                        (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UPowerWidget_C::OnPlayerInfoChanged(struct FFortTeamMemberInfo* NewInfo)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PowerWidget.PowerWidget_C.OnPlayerInfoChanged");
-
-	UPowerWidget_C_OnPlayerInfoChanged_Params params;
-	params.NewInfo = NewInfo;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PowerWidget.PowerWidget_C.PreConstruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UPowerWidget_C::PreConstruct(bool* IsDesignTime)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PowerWidget.PowerWidget_C.PreConstruct");
-
-	UPowerWidget_C_PreConstruct_Params params;
-	params.IsDesignTime = IsDesignTime;
+	params.New_Rating_Value = New_Rating_Value;
 
 	auto flags = fn->FunctionFlags;
 
@@ -201,10 +164,30 @@ void UPowerWidget_C::Construct()
 }
 
 
+// Function PowerWidget.PowerWidget_C.OnPlayerInfoChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// struct FFortTeamMemberInfo*    NewInfo                        (Parm)
+
+void UPowerWidget_C::OnPlayerInfoChanged(struct FFortTeamMemberInfo* NewInfo)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PowerWidget.PowerWidget_C.OnPlayerInfoChanged");
+
+	UPowerWidget_C_OnPlayerInfoChanged_Params params;
+	params.NewInfo = NewInfo;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function PowerWidget.PowerWidget_C.ExecuteUbergraph_PowerWidget
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPowerWidget_C::ExecuteUbergraph_PowerWidget(int EntryPoint)
 {

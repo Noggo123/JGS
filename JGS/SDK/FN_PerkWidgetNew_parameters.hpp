@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,26 +14,21 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function PerkWidgetNew.PerkWidgetNew_C.UpdatePerk
-struct UPerkWidgetNew_C_UpdatePerk_Params
-{
-};
-
 // Function PerkWidgetNew.PerkWidgetNew_C.Get_OverlayAbilityPerk_ToolTipWidget
 struct UPerkWidgetNew_C_Get_OverlayAbilityPerk_ToolTipWidget_Params
 {
-	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function PerkWidgetNew.PerkWidgetNew_C.InitializeSettings
 struct UPerkWidgetNew_C_InitializeSettings_Params
 {
-	bool                                               bIncludeName;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bIncludeDescription;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EFortBrushSize>                        IconSize;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bUseLargeFormatName;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FFortUIPerk                                 Perk;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm)
-	bool                                               ShowMouseTooltips;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bIncludeName;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bIncludeDescription;                                      // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EFortBrushSize>                        IconSize;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUseLargeFormatName;                                      // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FFortUIPerk                                 Perk;                                                     // (Parm)
+	bool                                               ShowMouseTooltips;                                        // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function PerkWidgetNew.PerkWidgetNew_C.HighlightBadge
@@ -98,19 +93,18 @@ struct UPerkWidgetNew_C_InitializeBasicPerk_Params
 // Function PerkWidgetNew.PerkWidgetNew_C.PreConstruct
 struct UPerkWidgetNew_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function PerkWidgetNew.PerkWidgetNew_C.OnCombinedTooltipDescriptionReady
-struct UPerkWidgetNew_C_OnCombinedTooltipDescriptionReady_Params
+// Function PerkWidgetNew.PerkWidgetNew_C.Construct
+struct UPerkWidgetNew_C_Construct_Params
 {
-	struct FText*                                      Description;                                              // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 };
 
 // Function PerkWidgetNew.PerkWidgetNew_C.ExecuteUbergraph_PerkWidgetNew
 struct UPerkWidgetNew_C_ExecuteUbergraph_PerkWidgetNew_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

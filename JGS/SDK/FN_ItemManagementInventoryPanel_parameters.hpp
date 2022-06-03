@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,29 +14,42 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.UpdateStorageTextVisbility
-struct UItemManagementInventoryPanel_C_UpdateStorageTextVisbility_Params
-{
-};
-
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.PrepOpeningInventory
 struct UItemManagementInventoryPanel_C_PrepOpeningInventory_Params
 {
-	struct FName                                       ActionName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       ActionName;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.SelectTrapByItem
 struct UItemManagementInventoryPanel_C_SelectTrapByItem_Params
 {
-	class UFortItem*                                   Item;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               Success;                                                  // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.SelectTrapByTag
 struct UItemManagementInventoryPanel_C_SelectTrapByTag_Params
 {
-	struct FGameplayTag                                Tag;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FGameplayTag                                Tag;                                                      // (Parm)
 	bool                                               Success;                                                  // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.HandleMulchQuantityCallback
+struct UItemManagementInventoryPanel_C_HandleMulchQuantityCallback_Params
+{
+	int                                                Quantity;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.DestroyMulchQuantitySelector
+struct UItemManagementInventoryPanel_C_DestroyMulchQuantitySelector_Params
+{
+};
+
+// Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.CreateMulchQuantitySelector
+struct UItemManagementInventoryPanel_C_CreateMulchQuantitySelector_Params
+{
+	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.HideEquipSlotDragTargets
@@ -98,7 +111,7 @@ struct UItemManagementInventoryPanel_C_HandleDifferentSortTypeSetBP_Params
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.BndEvt__SortTypeButton_K2Node_ComponentBoundEvent_36_CommonButtonClicked__DelegateSignature
 struct UItemManagementInventoryPanel_C_BndEvt__SortTypeButton_K2Node_ComponentBoundEvent_36_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.HandleDifferentItemManagementModeSetBP
@@ -124,8 +137,8 @@ struct UItemManagementInventoryPanel_C_Destruct_Params
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.BndEvt__CraftingTileView_K2Node_ComponentBoundEvent_126_OnListViewItemSelected__DelegateSignature
 struct UItemManagementInventoryPanel_C_BndEvt__CraftingTileView_K2Node_ComponentBoundEvent_126_OnListViewItemSelected__DelegateSignature_Params
 {
-	class UObject*                                     Item;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bIsSelected;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UObject*                                     Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bIsSelected;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.HandleDifferentFrontendInventoryFilterSetBP
@@ -136,27 +149,33 @@ struct UItemManagementInventoryPanel_C_HandleDifferentFrontendInventoryFilterSet
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.HandleQuickBarChangedBP
 struct UItemManagementInventoryPanel_C_HandleQuickBarChangedBP_Params
 {
-	EFortQuickBars*                                    QuickBarType;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	EFortQuickBars*                                    QuickBarType;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.HandleMulchQuantitySelection
+struct UItemManagementInventoryPanel_C_HandleMulchQuantitySelection_Params
+{
+	class UFortItem**                                  Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.BndEvt__SortTypeButtonWorldItems_K2Node_ComponentBoundEvent_282_CommonButtonClicked__DelegateSignature
 struct UItemManagementInventoryPanel_C_BndEvt__SortTypeButtonWorldItems_K2Node_ComponentBoundEvent_282_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.HandleCursorModeChangedBP
 struct UItemManagementInventoryPanel_C_HandleCursorModeChangedBP_Params
 {
-	bool*                                              bCursorModeEnabled;                                       // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FName*                                      ActionName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UUserWidget**                                CursorModeContentWidget;                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	bool*                                              bCursorModeEnabled;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FName*                                      ActionName;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	class UUserWidget**                                CursorModeContentWidget;                                  // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.ExecuteUbergraph_ItemManagementInventoryPanel
 struct UItemManagementInventoryPanel_C_ExecuteUbergraph_ItemManagementInventoryPanel_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

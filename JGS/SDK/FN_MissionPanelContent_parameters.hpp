@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,8 +17,8 @@ namespace SDK
 // Function MissionPanelContent.MissionPanelContent_C.Setup Mission Rewards
 struct UMissionPanelContent_C_Setup_Mission_Rewards_Params
 {
-	TArray<class UFortItem*>                           Array;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-	TEnumAsByte<ERewardListEntryType>                  RewardType;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	TArray<class UFortItem*>                           Array;                                                    // (Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TEnumAsByte<ERewardListEntryType>                  RewardType;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MissionPanelContent.MissionPanelContent_C.UpdateOverviewObjectives
@@ -44,7 +44,7 @@ struct UMissionPanelContent_C_Construct_Params
 // Function MissionPanelContent.MissionPanelContent_C.ExecuteUbergraph_MissionPanelContent
 struct UMissionPanelContent_C_ExecuteUbergraph_MissionPanelContent_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

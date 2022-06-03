@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,63 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function StorePinataMaster_BP.StorePinataMaster_BP_C.SwitchLightingLOW
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           Visibility                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void AStorePinataMaster_BP_C::SwitchLightingLOW(bool Visibility)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.SwitchLightingLOW");
-
-	AStorePinataMaster_BP_C_SwitchLightingLOW_Params params;
-	params.Visibility = Visibility;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function StorePinataMaster_BP.StorePinataMaster_BP_C.SwitchLightingPC
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           Visibility                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void AStorePinataMaster_BP_C::SwitchLightingPC(bool Visibility)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.SwitchLightingPC");
-
-	AStorePinataMaster_BP_C_SwitchLightingPC_Params params;
-	params.Visibility = Visibility;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function StorePinataMaster_BP.StorePinataMaster_BP_C.ChooseRandomWeapon
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void AStorePinataMaster_BP_C::ChooseRandomWeapon()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.ChooseRandomWeapon");
-
-	AStorePinataMaster_BP_C_ChooseRandomWeapon_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function StorePinataMaster_BP.StorePinataMaster_BP_C.PackPersonalitySounds
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -111,6 +54,91 @@ void AStorePinataMaster_BP_C::UserConstructionScript()
 	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.UserConstructionScript");
 
 	AStorePinataMaster_BP_C_UserConstructionScript_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-WeaponCharge__FinishedFunc
+// (BlueprintEvent)
+
+void AStorePinataMaster_BP_C::TL_WeaponCharge__FinishedFunc()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-WeaponCharge__FinishedFunc");
+
+	AStorePinataMaster_BP_C_TL_WeaponCharge__FinishedFunc_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-WeaponCharge__UpdateFunc
+// (BlueprintEvent)
+
+void AStorePinataMaster_BP_C::TL_WeaponCharge__UpdateFunc()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-WeaponCharge__UpdateFunc");
+
+	AStorePinataMaster_BP_C_TL_WeaponCharge__UpdateFunc_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-Upgrade2__FinishedFunc
+// (BlueprintEvent)
+
+void AStorePinataMaster_BP_C::TL_Upgrade2__FinishedFunc()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-Upgrade2__FinishedFunc");
+
+	AStorePinataMaster_BP_C_TL_Upgrade2__FinishedFunc_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-Upgrade2__UpdateFunc
+// (BlueprintEvent)
+
+void AStorePinataMaster_BP_C::TL_Upgrade2__UpdateFunc()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-Upgrade2__UpdateFunc");
+
+	AStorePinataMaster_BP_C_TL_Upgrade2__UpdateFunc_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-Upgrade2__TasslesDropOff2__EventFunc
+// (BlueprintEvent)
+
+void AStorePinataMaster_BP_C::TL_Upgrade2__TasslesDropOff2__EventFunc()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-Upgrade2__TasslesDropOff2__EventFunc");
+
+	AStorePinataMaster_BP_C_TL_Upgrade2__TasslesDropOff2__EventFunc_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -179,40 +207,6 @@ void AStorePinataMaster_BP_C::TL_UndarkenBG__UpdateFunc()
 	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-UndarkenBG__UpdateFunc");
 
 	AStorePinataMaster_BP_C_TL_UndarkenBG__UpdateFunc_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-WeaponCharge__FinishedFunc
-// (BlueprintEvent)
-
-void AStorePinataMaster_BP_C::TL_WeaponCharge__FinishedFunc()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-WeaponCharge__FinishedFunc");
-
-	AStorePinataMaster_BP_C_TL_WeaponCharge__FinishedFunc_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-WeaponCharge__UpdateFunc
-// (BlueprintEvent)
-
-void AStorePinataMaster_BP_C::TL_WeaponCharge__UpdateFunc()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-WeaponCharge__UpdateFunc");
-
-	AStorePinataMaster_BP_C_TL_WeaponCharge__UpdateFunc_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -358,14 +352,14 @@ void AStorePinataMaster_BP_C::TL_CardCough__UpdateFunc()
 }
 
 
-// Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-Upgrade2__FinishedFunc
+// Function StorePinataMaster_BP.StorePinataMaster_BP_C.Timeline_0__FinishedFunc
 // (BlueprintEvent)
 
-void AStorePinataMaster_BP_C::TL_Upgrade2__FinishedFunc()
+void AStorePinataMaster_BP_C::Timeline_0__FinishedFunc()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-Upgrade2__FinishedFunc");
+	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.Timeline_0__FinishedFunc");
 
-	AStorePinataMaster_BP_C_TL_Upgrade2__FinishedFunc_Params params;
+	AStorePinataMaster_BP_C_Timeline_0__FinishedFunc_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -375,65 +369,14 @@ void AStorePinataMaster_BP_C::TL_Upgrade2__FinishedFunc()
 }
 
 
-// Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-Upgrade2__UpdateFunc
+// Function StorePinataMaster_BP.StorePinataMaster_BP_C.Timeline_0__UpdateFunc
 // (BlueprintEvent)
 
-void AStorePinataMaster_BP_C::TL_Upgrade2__UpdateFunc()
+void AStorePinataMaster_BP_C::Timeline_0__UpdateFunc()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-Upgrade2__UpdateFunc");
+	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.Timeline_0__UpdateFunc");
 
-	AStorePinataMaster_BP_C_TL_Upgrade2__UpdateFunc_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-Upgrade2__TasslesDropOff2__EventFunc
-// (BlueprintEvent)
-
-void AStorePinataMaster_BP_C::TL_Upgrade2__TasslesDropOff2__EventFunc()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-Upgrade2__TasslesDropOff2__EventFunc");
-
-	AStorePinataMaster_BP_C_TL_Upgrade2__TasslesDropOff2__EventFunc_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL_PhaseBFade__FinishedFunc
-// (BlueprintEvent)
-
-void AStorePinataMaster_BP_C::TL_PhaseBFade__FinishedFunc()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL_PhaseBFade__FinishedFunc");
-
-	AStorePinataMaster_BP_C_TL_PhaseBFade__FinishedFunc_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL_PhaseBFade__UpdateFunc
-// (BlueprintEvent)
-
-void AStorePinataMaster_BP_C::TL_PhaseBFade__UpdateFunc()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL_PhaseBFade__UpdateFunc");
-
-	AStorePinataMaster_BP_C_TL_PhaseBFade__UpdateFunc_Params params;
+	AStorePinataMaster_BP_C_Timeline_0__UpdateFunc_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -596,6 +539,40 @@ void AStorePinataMaster_BP_C::TL_Attack__EventTrackHit__EventFunc()
 }
 
 
+// Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-EquipWeapon__FinishedFunc
+// (BlueprintEvent)
+
+void AStorePinataMaster_BP_C::TL_EquipWeapon__FinishedFunc()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-EquipWeapon__FinishedFunc");
+
+	AStorePinataMaster_BP_C_TL_EquipWeapon__FinishedFunc_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-EquipWeapon__UpdateFunc
+// (BlueprintEvent)
+
+void AStorePinataMaster_BP_C::TL_EquipWeapon__UpdateFunc()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-EquipWeapon__UpdateFunc");
+
+	AStorePinataMaster_BP_C_TL_EquipWeapon__UpdateFunc_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-SuspiciousEyes__FinishedFunc
 // (BlueprintEvent)
 
@@ -655,40 +632,6 @@ void AStorePinataMaster_BP_C::TL_PupilContracts__UpdateFunc()
 	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-PupilContracts__UpdateFunc");
 
 	AStorePinataMaster_BP_C_TL_PupilContracts__UpdateFunc_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-EquipWeapon__FinishedFunc
-// (BlueprintEvent)
-
-void AStorePinataMaster_BP_C::TL_EquipWeapon__FinishedFunc()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-EquipWeapon__FinishedFunc");
-
-	AStorePinataMaster_BP_C_TL_EquipWeapon__FinishedFunc_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-EquipWeapon__UpdateFunc
-// (BlueprintEvent)
-
-void AStorePinataMaster_BP_C::TL_EquipWeapon__UpdateFunc()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.TL-EquipWeapon__UpdateFunc");
-
-	AStorePinataMaster_BP_C_TL_EquipWeapon__UpdateFunc_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -783,16 +726,16 @@ void AStorePinataMaster_BP_C::TL_Upgrade3__TasslesDropOff2__EventFunc()
 }
 
 
-// Function StorePinataMaster_BP.StorePinataMaster_BP_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_3_4
+// Function StorePinataMaster_BP.StorePinataMaster_BP_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_7_8
 // (BlueprintEvent)
 // Parameters:
-// struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FKey                    Key                            (Parm)
 
-void AStorePinataMaster_BP_C::InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_3_4(const struct FKey& Key)
+void AStorePinataMaster_BP_C::InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_7_8(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_3_4");
+	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_7_8");
 
-	AStorePinataMaster_BP_C_InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_3_4_Params params;
+	AStorePinataMaster_BP_C_InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_7_8_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -803,16 +746,16 @@ void AStorePinataMaster_BP_C::InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_3_4
 }
 
 
-// Function StorePinataMaster_BP.StorePinataMaster_BP_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_2_3
+// Function StorePinataMaster_BP.StorePinataMaster_BP_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_6_7
 // (BlueprintEvent)
 // Parameters:
-// struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FKey                    Key                            (Parm)
 
-void AStorePinataMaster_BP_C::InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_2_3(const struct FKey& Key)
+void AStorePinataMaster_BP_C::InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_6_7(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_2_3");
+	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_6_7");
 
-	AStorePinataMaster_BP_C_InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_2_3_Params params;
+	AStorePinataMaster_BP_C_InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_6_7_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -823,16 +766,16 @@ void AStorePinataMaster_BP_C::InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_2_3
 }
 
 
-// Function StorePinataMaster_BP.StorePinataMaster_BP_C.InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_1_2
+// Function StorePinataMaster_BP.StorePinataMaster_BP_C.InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_5_6
 // (BlueprintEvent)
 // Parameters:
-// struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FKey                    Key                            (Parm)
 
-void AStorePinataMaster_BP_C::InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_1_2(const struct FKey& Key)
+void AStorePinataMaster_BP_C::InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_5_6(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_1_2");
+	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_5_6");
 
-	AStorePinataMaster_BP_C_InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_1_2_Params params;
+	AStorePinataMaster_BP_C_InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_5_6_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -843,16 +786,16 @@ void AStorePinataMaster_BP_C::InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEven
 }
 
 
-// Function StorePinataMaster_BP.StorePinataMaster_BP_C.InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_0_1
+// Function StorePinataMaster_BP.StorePinataMaster_BP_C.InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_4_5
 // (BlueprintEvent)
 // Parameters:
-// struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FKey                    Key                            (Parm)
 
-void AStorePinataMaster_BP_C::InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_0_1(const struct FKey& Key)
+void AStorePinataMaster_BP_C::InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_4_5(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_0_1");
+	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_4_5");
 
-	AStorePinataMaster_BP_C_InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_0_1_Params params;
+	AStorePinataMaster_BP_C_InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_4_5_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -866,8 +809,8 @@ void AStorePinataMaster_BP_C::InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEven
 // Function StorePinataMaster_BP.StorePinataMaster_BP_C.InpTchEvt_Released
 // (BlueprintEvent)
 // Parameters:
-// TEnumAsByte<ETouchIndex>       FingerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FVector                 Location                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+// TEnumAsByte<ETouchIndex>       FingerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector                 Location                       (Parm, IsPlainOldData)
 
 void AStorePinataMaster_BP_C::InpTchEvt_Released(TEnumAsByte<ETouchIndex> FingerIndex, const struct FVector& Location)
 {
@@ -888,8 +831,8 @@ void AStorePinataMaster_BP_C::InpTchEvt_Released(TEnumAsByte<ETouchIndex> Finger
 // Function StorePinataMaster_BP.StorePinataMaster_BP_C.InpTchEvt_Pressed
 // (BlueprintEvent)
 // Parameters:
-// TEnumAsByte<ETouchIndex>       FingerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FVector                 Location                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+// TEnumAsByte<ETouchIndex>       FingerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector                 Location                       (Parm, IsPlainOldData)
 
 void AStorePinataMaster_BP_C::InpTchEvt_Pressed(TEnumAsByte<ETouchIndex> FingerIndex, const struct FVector& Location)
 {
@@ -910,7 +853,7 @@ void AStorePinataMaster_BP_C::InpTchEvt_Pressed(TEnumAsByte<ETouchIndex> FingerI
 // Function StorePinataMaster_BP.StorePinataMaster_BP_C.OnLoaded_34AE763040BC26E1AD2CE4842CE48F91
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UClass*                  Loaded                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UClass*                  Loaded                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void AStorePinataMaster_BP_C::OnLoaded_34AE763040BC26E1AD2CE4842CE48F91(class UClass* Loaded)
 {
@@ -918,40 +861,6 @@ void AStorePinataMaster_BP_C::OnLoaded_34AE763040BC26E1AD2CE4842CE48F91(class UC
 
 	AStorePinataMaster_BP_C_OnLoaded_34AE763040BC26E1AD2CE4842CE48F91_Params params;
 	params.Loaded = Loaded;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function StorePinataMaster_BP.StorePinataMaster_BP_C.CardPackStoreStart
-// (BlueprintCallable, BlueprintEvent)
-
-void AStorePinataMaster_BP_C::CardPackStoreStart()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.CardPackStoreStart");
-
-	AStorePinataMaster_BP_C_CardPackStoreStart_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function StorePinataMaster_BP.StorePinataMaster_BP_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void AStorePinataMaster_BP_C::ReceiveBeginPlay()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.ReceiveBeginPlay");
-
-	AStorePinataMaster_BP_C_ReceiveBeginPlay_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -986,6 +895,40 @@ void AStorePinataMaster_BP_C::OpenPinata()
 	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.OpenPinata");
 
 	AStorePinataMaster_BP_C_OpenPinata_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function StorePinataMaster_BP.StorePinataMaster_BP_C.CardPackStoreStart
+// (BlueprintCallable, BlueprintEvent)
+
+void AStorePinataMaster_BP_C::CardPackStoreStart()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.CardPackStoreStart");
+
+	AStorePinataMaster_BP_C_CardPackStoreStart_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function StorePinataMaster_BP.StorePinataMaster_BP_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void AStorePinataMaster_BP_C::ReceiveBeginPlay()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.ReceiveBeginPlay");
+
+	AStorePinataMaster_BP_C_ReceiveBeginPlay_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -1046,10 +989,44 @@ void AStorePinataMaster_BP_C::StartPackOpen()
 }
 
 
+// Function StorePinataMaster_BP.StorePinataMaster_BP_C.CameraTransitionComplete
+// (BlueprintCallable, BlueprintEvent)
+
+void AStorePinataMaster_BP_C::CameraTransitionComplete()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.CameraTransitionComplete");
+
+	AStorePinataMaster_BP_C_CameraTransitionComplete_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function StorePinataMaster_BP.StorePinataMaster_BP_C.CameraResetComplete
+// (BlueprintCallable, BlueprintEvent)
+
+void AStorePinataMaster_BP_C::CameraResetComplete()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.CameraResetComplete");
+
+	AStorePinataMaster_BP_C_CameraResetComplete_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function StorePinataMaster_BP.StorePinataMaster_BP_C.OnStoreStateChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortStoreState                NewStoreState                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortStoreState                NewStoreState                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void AStorePinataMaster_BP_C::OnStoreStateChanged(EFortStoreState NewStoreState)
 {
@@ -1057,6 +1034,23 @@ void AStorePinataMaster_BP_C::OnStoreStateChanged(EFortStoreState NewStoreState)
 
 	AStorePinataMaster_BP_C_OnStoreStateChanged_Params params;
 	params.NewStoreState = NewStoreState;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function StorePinataMaster_BP.StorePinataMaster_BP_C.InitiatePinata
+// (BlueprintCallable, BlueprintEvent)
+
+void AStorePinataMaster_BP_C::InitiatePinata()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.InitiatePinata");
+
+	AStorePinataMaster_BP_C_InitiatePinata_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -1074,6 +1068,26 @@ void AStorePinataMaster_BP_C::ExitCardPackStore()
 	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.ExitCardPackStore");
 
 	AStorePinataMaster_BP_C_ExitCardPackStore_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function StorePinataMaster_BP.StorePinataMaster_BP_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float*                         DeltaSeconds                   (Parm, ZeroConstructor, IsPlainOldData)
+
+void AStorePinataMaster_BP_C::ReceiveTick(float* DeltaSeconds)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.ReceiveTick");
+
+	AStorePinataMaster_BP_C_ReceiveTick_Params params;
+	params.DeltaSeconds = DeltaSeconds;
 
 	auto flags = fn->FunctionFlags;
 
@@ -1117,26 +1131,6 @@ void AStorePinataMaster_BP_C::Stop_SwingingEyeAnim()
 }
 
 
-// Function StorePinataMaster_BP.StorePinataMaster_BP_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float*                         DeltaSeconds                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void AStorePinataMaster_BP_C::ReceiveTick(float* DeltaSeconds)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.ReceiveTick");
-
-	AStorePinataMaster_BP_C_ReceiveTick_Params params;
-	params.DeltaSeconds = DeltaSeconds;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function StorePinataMaster_BP.StorePinataMaster_BP_C.SpawnCandy
 // (BlueprintCallable, BlueprintEvent)
 
@@ -1154,61 +1148,10 @@ void AStorePinataMaster_BP_C::SpawnCandy()
 }
 
 
-// Function StorePinataMaster_BP.StorePinataMaster_BP_C.InitiatePinata
-// (BlueprintCallable, BlueprintEvent)
-
-void AStorePinataMaster_BP_C::InitiatePinata()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.InitiatePinata");
-
-	AStorePinataMaster_BP_C_InitiatePinata_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function StorePinataMaster_BP.StorePinataMaster_BP_C.CameraResetComplete
-// (BlueprintCallable, BlueprintEvent)
-
-void AStorePinataMaster_BP_C::CameraResetComplete()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.CameraResetComplete");
-
-	AStorePinataMaster_BP_C_CameraResetComplete_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function StorePinataMaster_BP.StorePinataMaster_BP_C.CameraTransitionComplete
-// (BlueprintCallable, BlueprintEvent)
-
-void AStorePinataMaster_BP_C::CameraTransitionComplete()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StorePinataMaster_BP.StorePinataMaster_BP_C.CameraTransitionComplete");
-
-	AStorePinataMaster_BP_C_CameraTransitionComplete_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function StorePinataMaster_BP.StorePinataMaster_BP_C.ExecuteUbergraph_StorePinataMaster_BP
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AStorePinataMaster_BP_C::ExecuteUbergraph_StorePinataMaster_BP(int EntryPoint)
 {

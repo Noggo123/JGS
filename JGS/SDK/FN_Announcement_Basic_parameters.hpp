@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,7 @@ namespace SDK
 // Function Announcement_Basic.Announcement_Basic_C.UpdateWidgetData
 struct UAnnouncement_Basic_C_UpdateWidgetData_Params
 {
-	class AFortClientAnnouncement**                    Announcement;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AFortClientAnnouncement**                    Announcement;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Announcement_Basic.Announcement_Basic_C.Construct
@@ -28,13 +28,13 @@ struct UAnnouncement_Basic_C_Construct_Params
 // Function Announcement_Basic.Announcement_Basic_C.AnnouncementStopped
 struct UAnnouncement_Basic_C_AnnouncementStopped_Params
 {
-	class AFortClientAnnouncement**                    Announcement;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AFortClientAnnouncement**                    Announcement;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Announcement_Basic.Announcement_Basic_C.ExecuteUbergraph_Announcement_Basic
 struct UAnnouncement_Basic_C_ExecuteUbergraph_Announcement_Basic_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

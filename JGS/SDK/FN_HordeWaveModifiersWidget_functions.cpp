@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,8 +32,8 @@ void UHordeWaveModifiersWidget_C::PresentNextModifier()
 // Function HordeWaveModifiersWidget.HordeWaveModifiersWidget_C.OnModifiersAdded
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UFortGameplayModifierItemDefinition*> Modifiers                      (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// bool                           StartPresentationImmediately   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TArray<class UFortGameplayModifierItemDefinition*> Modifiers                      (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// bool                           StartPresentationImmediately   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHordeWaveModifiersWidget_C::OnModifiersAdded(bool StartPresentationImmediately, TArray<class UFortGameplayModifierItemDefinition*>* Modifiers)
 {

@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function MicIndicator.MicIndicator_C.OnPlayerTalkingChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool*                          bIsTalking                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          bIsTalking                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMicIndicator_C::OnPlayerTalkingChanged(bool* bIsTalking)
 {
@@ -35,7 +35,7 @@ void UMicIndicator_C::OnPlayerTalkingChanged(bool* bIsTalking)
 // Function MicIndicator.MicIndicator_C.OnPlayerMuted
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool*                          bIsMuted                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          bIsMuted                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMicIndicator_C::OnPlayerMuted(bool* bIsMuted)
 {
@@ -55,7 +55,7 @@ void UMicIndicator_C::OnPlayerMuted(bool* bIsMuted)
 // Function MicIndicator.MicIndicator_C.ExecuteUbergraph_MicIndicator
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMicIndicator_C::ExecuteUbergraph_MicIndicator(int EntryPoint)
 {

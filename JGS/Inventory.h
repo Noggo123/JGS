@@ -2,12 +2,63 @@
 
 #include <map>
 
-namespace Inventory
+struct QuickBarsPointer
 {
-    void AddDefaultQuickBarItems(AFortPlayerController* PC)
+    unsigned char pad[0x1C48];
+    AFortQuickBars* QuickBars;
+};
+
+struct InventoryPointer
+{
+    unsigned char pad[0x1E78];
+    AFortInventory* WorldInventory;
+};
+
+struct BuildPreviewPointer
+{
+    unsigned char pad[0x1948];
+    ABuildingPlayerPrimitivePreview* BuildPreviewMarker;
+};
+
+struct CurrentBuildableClassPointer
+{
+    unsigned char pad[0x1B00];
+    UClass* CurrentBuildableClass;
+};
+
+class Inventory
+{
+public:
+    static inline std::map<AFortPlayerController*, Inventory*> InventoryMap;
+
+    AFortPlayerController* PC;
+
+    ABuildingPlayerPrimitivePreview* BuildPreviewWall;
+    ABuildingPlayerPrimitivePreview* BuildPreviewFloor;
+    ABuildingPlayerPrimitivePreview* BuildPreviewStair;
+    ABuildingPlayerPrimitivePreview* BuildPreviewRoof;
+
+    FGuid WallGuid;
+    FGuid FloorGuid;
+    FGuid StairGuid;
+    FGuid RoofGuid;
+
+    UClass* WallBuildClass;
+    UClass* FloorBuildClass;
+    UClass* StairBuildClass;
+    UClass* RoofBuildClass;
+
+    FString BuildingMat;
+
+    void Init(AFortPlayerController* InPC)
     {
-        auto QuickBars = PC->QuickBars;
-        auto FortInventory = PC->WorldInventory;
+        PC = InPC;
+    }
+
+    void AddDefaultQuickBarItems()
+    {
+        auto QuickBars = reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars;
+        auto FortInventory = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory;
 
         auto PickaxeDef = UObject::FindObject<UFortWeaponItemDefinition>("FortWeaponMeleeItemDefinition WID_Harvest_Pickaxe_Athena_C_T01.WID_Harvest_Pickaxe_Athena_C_T01");
         auto EditToolDef = SDK::UObject::FindObject<SDK::UFortEditToolItemDefinition>("FortEditToolItemDefinition EditTool.EditTool");
@@ -46,20 +97,20 @@ namespace Inventory
         FortInventory->Inventory.ReplicatedEntries.Add(RoofWorldBuildItem->ItemEntry);
         FortInventory->Inventory.ItemInstances.Add(RoofWorldBuildItem);
         QuickBars->ServerAddItemInternal(RoofWorldBuildItem->GetItemGuid(), SDK::EFortQuickBars::Secondary, 3);
+
+        WallGuid = WallWorldBuildItem->GetItemGuid();
+        FloorGuid = FloorWorldBuildItem->GetItemGuid();
+        StairGuid = StairWorldBuildItem->GetItemGuid();
+        RoofGuid = RoofWorldBuildItem->GetItemGuid();
     }
 
-    void SetupInventory(AFortPlayerController* PC)
+    void SetupInventory()
     {
         std::map<UFortItemDefinition*, int> ItemsToAddMap;
 
-        auto NewInventory = (AFortInventory*)(Util::SpawnActor(AFortInventory::StaticClass(), {}, {}));
-        NewInventory->InventoryType = EFortInventoryType::World;
-        NewInventory->SetOwner(PC);
-        PC->WorldInventory = NewInventory;
-
         auto NewQuickBars = (AFortQuickBars*)Util::SpawnActor(AFortQuickBars::StaticClass(), {}, {});
         NewQuickBars->SetOwner(PC);
-        PC->QuickBars = NewQuickBars;
+        reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars = NewQuickBars;
         PC->OnRep_QuickBar();
 
 		auto pWood = UObject::FindObject<UFortItemDefinition>("FortResourceItemDefinition WoodItemData.WoodItemData");
@@ -79,20 +130,20 @@ namespace Inventory
         ItemsToAddMap.insert_or_assign(pLight, 999);
         ItemsToAddMap.insert_or_assign(pHeavy, 999);
 
-        auto FortInventory = PC->WorldInventory;
-        auto QuickBars = PC->QuickBars;
+        auto FortInventory = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory;
+        auto QuickBars = reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars;
         
-        QuickBars->ServerEnableSlot(EFortQuickBars::Primary, 0);
-        QuickBars->ServerEnableSlot(EFortQuickBars::Primary, 1);
-        QuickBars->ServerEnableSlot(EFortQuickBars::Primary, 2);
-        QuickBars->ServerEnableSlot(EFortQuickBars::Primary, 3);
-        QuickBars->ServerEnableSlot(EFortQuickBars::Primary, 4);
-        QuickBars->ServerEnableSlot(EFortQuickBars::Secondary, 0);
-        QuickBars->ServerEnableSlot(EFortQuickBars::Secondary, 1);
-        QuickBars->ServerEnableSlot(EFortQuickBars::Secondary, 2);
-        QuickBars->ServerEnableSlot(EFortQuickBars::Secondary, 3);
+        QuickBars->EnableSlot(EFortQuickBars::Primary, 0);
+        QuickBars->EnableSlot(EFortQuickBars::Primary, 1);
+        QuickBars->EnableSlot(EFortQuickBars::Primary, 2);
+        QuickBars->EnableSlot(EFortQuickBars::Primary, 3);
+        QuickBars->EnableSlot(EFortQuickBars::Primary, 4);
+        QuickBars->EnableSlot(EFortQuickBars::Secondary, 0);
+        QuickBars->EnableSlot(EFortQuickBars::Secondary, 1);
+        QuickBars->EnableSlot(EFortQuickBars::Secondary, 2);
+        QuickBars->EnableSlot(EFortQuickBars::Secondary, 3);
 
-        AddDefaultQuickBarItems(PC);
+        AddDefaultQuickBarItems();
 
         for (auto Item : ItemsToAddMap)
         {
@@ -107,17 +158,57 @@ namespace Inventory
             }
         }
 
+        WallBuildClass = APBWA_W1_Solid_C::StaticClass();
+        FloorBuildClass = APBWA_W1_Floor_C::StaticClass();
+        StairBuildClass = APBWA_W1_StairW_C::StaticClass();
+        RoofBuildClass = APBWA_W1_RoofC_C::StaticClass();
+
         ItemsToAddMap.empty();
         ItemsToAddMap.clear();
 	}
 
-	void UpdateInventory(AFortPlayerController* PC)
+	void UpdateInventory()
 	{
-        PC->WorldInventory->Inventory.MarkArrayDirty();
+        reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.MarkArrayDirty();
 
-        PC->WorldInventory->HandleInventoryLocalUpdate();
+        reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->HandleInventoryLocalUpdate();
         PC->HandleWorldInventoryLocalUpdate();
-        PC->QuickBars->OnRep_PrimaryQuickBar();
-        PC->QuickBars->OnRep_SecondaryQuickBar();
+        reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars->OnRep_PrimaryQuickBar();
+        reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars->OnRep_SecondaryQuickBar();
 	}
+
+    void ExecuteInventoryItem(FGuid InGuid)
+    {
+        auto ItemInstances = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ItemInstances;
+
+        for (int i = 0; i < ItemInstances.Num(); i++)
+        {
+            auto ItemInstance = ItemInstances[i];
+
+            if (Util::AreGuidsTheSame(ItemInstance->GetItemGuid(), InGuid))
+            {
+                if (PC->Pawn)
+                    ((AFortPlayerPawn*)PC->Pawn)->EquipWeaponDefinition((UFortWeaponItemDefinition*)ItemInstance->GetItemDefinitionBP(), InGuid);
+            }
+        }
+    }
+};
+
+static Inventory* FindInventory(AFortPlayerController* PC)
+{
+    for (auto Inv : Inventory::InventoryMap)
+    {
+        if (Inv.first == PC)
+            return Inv.second;
+    }
+
+    return nullptr;
+}
+
+static Inventory* CreateInventoryForPlayerController(AFortPlayerController* PC)
+{
+    Inventory* NewInv = new Inventory;
+    NewInv->Init(PC);
+    Inventory::InventoryMap.insert_or_assign(PC, NewInv);
+    return NewInv;
 }

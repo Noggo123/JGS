@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,8 +32,8 @@ struct UResults_TeamScore_C_SkipToFinalState_Params
 // Function Results_TeamScore.Results_TeamScore_C.Initialize
 struct UResults_TeamScore_C_Initialize_Params
 {
-	class UFortUIScoreReport*                          ScoreReport;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UResults_TeamTotalScore_C*                   TeamTotalScore;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UFortUIScoreReport*                          ScoreReport;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	class UResults_TeamTotalScore_C*                   TeamTotalScore;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeamScore.Results_TeamScore_C.Intro Sequence
@@ -84,7 +84,7 @@ struct UResults_TeamScore_C_Skip_Params
 // Function Results_TeamScore.Results_TeamScore_C.BndEvt__ButtonContinue_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature
 struct UResults_TeamScore_C_BndEvt__ButtonContinue_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeamScore.Results_TeamScore_C.BndEvt__Anim_ContinueButtonIntro_K2Node_ComponentBoundEvent_0_OnWidgetAnimationPlaybackStatusChanged__DelegateSignature
@@ -95,7 +95,7 @@ struct UResults_TeamScore_C_BndEvt__Anim_ContinueButtonIntro_K2Node_ComponentBou
 // Function Results_TeamScore.Results_TeamScore_C.ExecuteUbergraph_Results_TeamScore
 struct UResults_TeamScore_C_ExecuteUbergraph_Results_TeamScore_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeamScore.Results_TeamScore_C.Finished__DelegateSignature

@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,10 +32,10 @@ void UTalkingHeadWidget_C::HandleTalkingHeadEnd()
 // Function TalkingHeadWidget.TalkingHeadWidget_C.HandleTalkingHeadBegin
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UTexture2D*              Image                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   Title                          (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FText                   Subtitle                       (BlueprintVisible, BlueprintReadOnly, Parm)
-// EFortAnnouncementDisplayPreference DisplayPreference              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture2D*              Image                          (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Title                          (Parm)
+// struct FText                   Subtitle                       (Parm)
+// EFortAnnouncementDisplayPreference DisplayPreference              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTalkingHeadWidget_C::HandleTalkingHeadBegin(class UTexture2D* Image, const struct FText& Title, const struct FText& Subtitle, EFortAnnouncementDisplayPreference DisplayPreference)
 {
@@ -58,7 +58,7 @@ void UTalkingHeadWidget_C::HandleTalkingHeadBegin(class UTexture2D* Image, const
 // Function TalkingHeadWidget.TalkingHeadWidget_C.SetTalkingHeadSubtitle
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Subtitle                       (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   Subtitle                       (Parm)
 
 void UTalkingHeadWidget_C::SetTalkingHeadSubtitle(const struct FText& Subtitle)
 {
@@ -78,7 +78,7 @@ void UTalkingHeadWidget_C::SetTalkingHeadSubtitle(const struct FText& Subtitle)
 // Function TalkingHeadWidget.TalkingHeadWidget_C.SetTalkingHeadName
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Title                          (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   Title                          (Parm)
 
 void UTalkingHeadWidget_C::SetTalkingHeadName(const struct FText& Title)
 {
@@ -98,7 +98,7 @@ void UTalkingHeadWidget_C::SetTalkingHeadName(const struct FText& Title)
 // Function TalkingHeadWidget.TalkingHeadWidget_C.SetTalkingHeadImage
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UTexture2D*              Icon                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture2D*              Icon                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTalkingHeadWidget_C::SetTalkingHeadImage(class UTexture2D* Icon)
 {
@@ -135,7 +135,7 @@ void UTalkingHeadWidget_C::Construct()
 // Function TalkingHeadWidget.TalkingHeadWidget_C.ExecuteUbergraph_TalkingHeadWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTalkingHeadWidget_C::ExecuteUbergraph_TalkingHeadWidget(int EntryPoint)
 {

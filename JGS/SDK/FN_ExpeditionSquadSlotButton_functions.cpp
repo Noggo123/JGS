@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,23 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.Send to Skill Tree
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UExpeditionSquadSlotButton_C::Send_to_Skill_Tree()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.Send to Skill Tree");
+
+	UExpeditionSquadSlotButton_C_Send_to_Skill_Tree_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.Get Squad Data
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -43,7 +60,7 @@ void UExpeditionSquadSlotButton_C::Get_Squad_Data(struct FName* OutSquadId, int*
 // Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UExpeditionSquadSlotButton_C::PreConstruct(bool* IsDesignTime)
 {
@@ -51,6 +68,23 @@ void UExpeditionSquadSlotButton_C::PreConstruct(bool* IsDesignTime)
 
 	UExpeditionSquadSlotButton_C_PreConstruct_Params params;
 	params.IsDesignTime = IsDesignTime;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.OnClicked
+// (Event, Protected, BlueprintEvent)
+
+void UExpeditionSquadSlotButton_C::OnClicked()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.OnClicked");
+
+	UExpeditionSquadSlotButton_C_OnClicked_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -94,6 +128,23 @@ void UExpeditionSquadSlotButton_C::HandlePostDifferentSquadSlotSetBP()
 }
 
 
+// Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.OnDoubleClicked
+// (Event, Protected, BlueprintEvent)
+
+void UExpeditionSquadSlotButton_C::OnDoubleClicked()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.OnDoubleClicked");
+
+	UExpeditionSquadSlotButton_C_OnDoubleClicked_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.OnSelected
 // (Event, Protected, BlueprintEvent)
 
@@ -111,84 +162,10 @@ void UExpeditionSquadSlotButton_C::OnSelected()
 }
 
 
-// Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.BndEvt__PopupMenuAnchor_K2Node_ComponentBoundEvent_3_OnMenuOpenChangedEvent__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// bool                           bIsOpen                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UExpeditionSquadSlotButton_C::BndEvt__PopupMenuAnchor_K2Node_ComponentBoundEvent_3_OnMenuOpenChangedEvent__DelegateSignature(bool bIsOpen)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.BndEvt__PopupMenuAnchor_K2Node_ComponentBoundEvent_3_OnMenuOpenChangedEvent__DelegateSignature");
-
-	UExpeditionSquadSlotButton_C_BndEvt__PopupMenuAnchor_K2Node_ComponentBoundEvent_3_OnMenuOpenChangedEvent__DelegateSignature_Params params;
-	params.bIsOpen = bIsOpen;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UExpeditionSquadSlotButton_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.Construct");
-
-	UExpeditionSquadSlotButton_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.Destruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UExpeditionSquadSlotButton_C::Destruct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.Destruct");
-
-	UExpeditionSquadSlotButton_C_Destruct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.Open Squad Slot
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int                            SquadSlotIndex                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UExpeditionSquadSlotButton_C::Open_Squad_Slot(int SquadSlotIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.Open Squad Slot");
-
-	UExpeditionSquadSlotButton_C_Open_Squad_Slot_Params params;
-	params.SquadSlotIndex = SquadSlotIndex;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.ExecuteUbergraph_ExpeditionSquadSlotButton
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UExpeditionSquadSlotButton_C::ExecuteUbergraph_ExpeditionSquadSlotButton(int EntryPoint)
 {
@@ -225,7 +202,7 @@ void UExpeditionSquadSlotButton_C::OnSquadSlotOpened__DelegateSignature()
 // Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.OnSquadSlotUpdated__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UExpeditionSquadSlotButton_C::OnSquadSlotUpdated__DelegateSignature(class UFortItem* Item)
 {
@@ -245,7 +222,7 @@ void UExpeditionSquadSlotButton_C::OnSquadSlotUpdated__DelegateSignature(class U
 // Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.OnSquadSlotSelected__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            SquadSlotIndex                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            SquadSlotIndex                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UExpeditionSquadSlotButton_C::OnSquadSlotSelected__DelegateSignature(int SquadSlotIndex)
 {

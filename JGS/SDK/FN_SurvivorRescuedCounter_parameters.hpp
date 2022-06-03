@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,7 @@ namespace SDK
 // Function SurvivorRescuedCounter.SurvivorRescuedCounter_C.UpdateSurvivorsRescued
 struct USurvivorRescuedCounter_C_UpdateSurvivorsRescued_Params
 {
-	int                                                SurvivorsRescued;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                SurvivorsRescued;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function SurvivorRescuedCounter.SurvivorRescuedCounter_C.Construct
@@ -28,7 +28,7 @@ struct USurvivorRescuedCounter_C_Construct_Params
 // Function SurvivorRescuedCounter.SurvivorRescuedCounter_C.ExecuteUbergraph_SurvivorRescuedCounter
 struct USurvivorRescuedCounter_C_ExecuteUbergraph_SurvivorRescuedCounter_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

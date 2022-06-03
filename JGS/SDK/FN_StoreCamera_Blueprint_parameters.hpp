@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -62,7 +62,7 @@ struct AStoreCamera_Blueprint_C_ResetCamera_Params
 // Function StoreCamera_Blueprint.StoreCamera_Blueprint_C.DarkenBGVisibility
 struct AStoreCamera_Blueprint_C_DarkenBGVisibility_Params
 {
-	bool                                               Enable;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Enable;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StoreCamera_Blueprint.StoreCamera_Blueprint_C.ChoicePackFOV-Out
@@ -78,7 +78,7 @@ struct AStoreCamera_Blueprint_C_ChoicePackFOV_In_Params
 // Function StoreCamera_Blueprint.StoreCamera_Blueprint_C.ExecuteUbergraph_StoreCamera_Blueprint
 struct AStoreCamera_Blueprint_C_ExecuteUbergraph_StoreCamera_Blueprint_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

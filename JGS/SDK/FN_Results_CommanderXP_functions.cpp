@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UResults_CommanderXP_C::Focus()
 // Function Results_CommanderXP.Results_CommanderXP_C.PlayAnimationCommon
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*        Animation                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UWidgetAnimation*        Animation                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_CommanderXP_C::PlayAnimationCommon(class UWidgetAnimation* Animation)
 {
@@ -103,7 +103,7 @@ void UResults_CommanderXP_C::UpdatePointsText()
 // Function Results_CommanderXP.Results_CommanderXP_C.UpdatePointsForLevel
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Level                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Level                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_CommanderXP_C::UpdatePointsForLevel(int Level)
 {
@@ -123,8 +123,8 @@ void UResults_CommanderXP_C::UpdatePointsForLevel(int Level)
 // Function Results_CommanderXP.Results_CommanderXP_C.Initialize
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortUIScoreReport*      InScoreReport                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UResults_TeamTotalScore_C* TeamTotalScore                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UFortUIScoreReport*      InScoreReport                  (Parm, ZeroConstructor, IsPlainOldData)
+// class UResults_TeamTotalScore_C* TeamTotalScore                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_CommanderXP_C::Initialize(class UFortUIScoreReport* InScoreReport, class UResults_TeamTotalScore_C* TeamTotalScore)
 {
@@ -145,7 +145,7 @@ void UResults_CommanderXP_C::Initialize(class UFortUIScoreReport* InScoreReport,
 // Function Results_CommanderXP.Results_CommanderXP_C.BndEvt__Results_CommanderXPBar_K2Node_ComponentBoundEvent_1_LeveledUp__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// int                            NewLevel                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            NewLevel                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_CommanderXP_C::BndEvt__Results_CommanderXPBar_K2Node_ComponentBoundEvent_1_LeveledUp__DelegateSignature(int NewLevel)
 {
@@ -403,7 +403,7 @@ void UResults_CommanderXP_C::Skip()
 // Function Results_CommanderXP.Results_CommanderXP_C.BndEvt__ButtonContinue_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_CommanderXP_C::BndEvt__ButtonContinue_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -440,7 +440,7 @@ void UResults_CommanderXP_C::BndEvt__Anim_ContinueButtonIntro_K2Node_ComponentBo
 // Function Results_CommanderXP.Results_CommanderXP_C.ExecuteUbergraph_Results_CommanderXP
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_CommanderXP_C::ExecuteUbergraph_Results_CommanderXP(int EntryPoint)
 {

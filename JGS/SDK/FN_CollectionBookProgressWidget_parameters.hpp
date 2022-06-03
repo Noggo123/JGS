@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,19 +17,19 @@ namespace SDK
 // Function CollectionBookProgressWidget.CollectionBookProgressWidget_C.OnCollectionBookLevelProgressionChanged
 struct UCollectionBookProgressWidget_C_OnCollectionBookLevelProgressionChanged_Params
 {
-	float*                                             NewCompletionPct;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float*                                             NewCompletionPct;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function CollectionBookProgressWidget.CollectionBookProgressWidget_C.OnCollectionBookPreviewXPChange
 struct UCollectionBookProgressWidget_C_OnCollectionBookPreviewXPChange_Params
 {
-	float*                                             PreviewCompletionPct;                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float*                                             PreviewCompletionPct;                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function CollectionBookProgressWidget.CollectionBookProgressWidget_C.ExecuteUbergraph_CollectionBookProgressWidget
 struct UCollectionBookProgressWidget_C_ExecuteUbergraph_CollectionBookProgressWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

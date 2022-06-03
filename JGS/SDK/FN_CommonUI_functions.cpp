@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,134 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function CommonUI.CommonActionWidget.SetInputAction
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FDataTableRowHandle     InputActionRow                 (Parm)
-
-void UCommonActionWidget::SetInputAction(const struct FDataTableRowHandle& InputActionRow)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonActionWidget.SetInputAction");
-
-	UCommonActionWidget_SetInputAction_Params params;
-	params.InputActionRow = InputActionRow;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonActionWidget.SetIconRimBrush
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FSlateBrush             InIconRimBrush                 (Parm)
-
-void UCommonActionWidget::SetIconRimBrush(const struct FSlateBrush& InIconRimBrush)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonActionWidget.SetIconRimBrush");
-
-	UCommonActionWidget_SetIconRimBrush_Params params;
-	params.InIconRimBrush = InIconRimBrush;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// DelegateFunction CommonUI.CommonActionWidget.OnInputMethodChanged__DelegateSignature
-// (MulticastDelegate, Public, Delegate)
-// Parameters:
-// bool                           bUsingGamepad                  (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonActionWidget::OnInputMethodChanged__DelegateSignature(bool bUsingGamepad)
-{
-	static auto fn = UObject::FindObject<UFunction>("DelegateFunction CommonUI.CommonActionWidget.OnInputMethodChanged__DelegateSignature");
-
-	UCommonActionWidget_OnInputMethodChanged__DelegateSignature_Params params;
-	params.bUsingGamepad = bUsingGamepad;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonActionWidget.IsHeldAction
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UCommonActionWidget::IsHeldAction()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonActionWidget.IsHeldAction");
-
-	UCommonActionWidget_IsHeldAction_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonActionWidget.GetIcon
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FSlateBrush             ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FSlateBrush UCommonActionWidget::GetIcon()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonActionWidget.GetIcon");
-
-	UCommonActionWidget_GetIcon_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonActionWidget.GetDisplayText
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FText                   ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FText UCommonActionWidget::GetDisplayText()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonActionWidget.GetDisplayText");
-
-	UCommonActionWidget_GetDisplayText_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
 
 // Function CommonUI.CommonUserWidget.SetConsumePointerInput
 // (Final, Native, Public, BlueprintCallable)
@@ -161,23 +33,483 @@ void UCommonUserWidget::SetConsumePointerInput(bool bInConsumePointerInput)
 }
 
 
-// Function CommonUI.CommonActivatablePanel.SetInputActionHandlerWithProgressPopupMenu
+// Function CommonUI.CommonTabListWidget.SetTabEnabled
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FDataTableRowHandle     InputActionRow                 (Parm)
-// struct FScriptDelegate         CommitedEvent                  (Parm, ZeroConstructor)
-// struct FScriptDelegate         ProgressEvent                  (Parm, ZeroConstructor)
-// class UCommonPopupMenu*        PopupMenu                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// struct FName                   TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bEnable                        (Parm, ZeroConstructor, IsPlainOldData)
 
-void UCommonActivatablePanel::SetInputActionHandlerWithProgressPopupMenu(const struct FDataTableRowHandle& InputActionRow, const struct FScriptDelegate& CommitedEvent, const struct FScriptDelegate& ProgressEvent, class UCommonPopupMenu* PopupMenu)
+void UCommonTabListWidget::SetTabEnabled(const struct FName& TabNameID, bool bEnable)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonActivatablePanel.SetInputActionHandlerWithProgressPopupMenu");
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.SetTabEnabled");
 
-	UCommonActivatablePanel_SetInputActionHandlerWithProgressPopupMenu_Params params;
-	params.InputActionRow = InputActionRow;
-	params.CommitedEvent = CommitedEvent;
-	params.ProgressEvent = ProgressEvent;
-	params.PopupMenu = PopupMenu;
+	UCommonTabListWidget_SetTabEnabled_Params params;
+	params.TabNameID = TabNameID;
+	params.bEnable = bEnable;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonTabListWidget.SetListeningForInput
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           bShouldListen                  (Parm, ZeroConstructor, IsPlainOldData)
+
+void UCommonTabListWidget::SetListeningForInput(bool bShouldListen)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.SetListeningForInput");
+
+	UCommonTabListWidget_SetListeningForInput_Params params;
+	params.bShouldListen = bShouldListen;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonTabListWidget.SetLinkedSwitcher
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UCommonWidgetSwitcher*   CommonSwitcher                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void UCommonTabListWidget::SetLinkedSwitcher(class UCommonWidgetSwitcher* CommonSwitcher)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.SetLinkedSwitcher");
+
+	UCommonTabListWidget_SetLinkedSwitcher_Params params;
+	params.CommonSwitcher = CommonSwitcher;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonTabListWidget.SelectTabByID
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FName                   TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bSuppressClickFeedback         (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UCommonTabListWidget::SelectTabByID(const struct FName& TabNameID, bool bSuppressClickFeedback)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.SelectTabByID");
+
+	UCommonTabListWidget_SelectTabByID_Params params;
+	params.TabNameID = TabNameID;
+	params.bSuppressClickFeedback = bSuppressClickFeedback;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonTabListWidget.RemoveTab
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FName                   TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UCommonTabListWidget::RemoveTab(const struct FName& TabNameID)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.RemoveTab");
+
+	UCommonTabListWidget_RemoveTab_Params params;
+	params.TabNameID = TabNameID;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonTabListWidget.RemoveAllTabs
+// (Final, Native, Public, BlueprintCallable)
+
+void UCommonTabListWidget::RemoveAllTabs()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.RemoveAllTabs");
+
+	UCommonTabListWidget_RemoveAllTabs_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonTabListWidget.RegisterTab
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FName                   TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
+// class UClass*                  ButtonWidgetType               (Parm, ZeroConstructor, IsPlainOldData)
+// class UWidget*                 ContentWidget                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UCommonTabListWidget::RegisterTab(const struct FName& TabNameID, class UClass* ButtonWidgetType, class UWidget* ContentWidget)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.RegisterTab");
+
+	UCommonTabListWidget_RegisterTab_Params params;
+	params.TabNameID = TabNameID;
+	params.ButtonWidgetType = ButtonWidgetType;
+	params.ContentWidget = ContentWidget;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// DelegateFunction CommonUI.CommonTabListWidget.OnTabSelected__DelegateSignature
+// (MulticastDelegate, Public, Delegate)
+// Parameters:
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
+
+void UCommonTabListWidget::OnTabSelected__DelegateSignature(const struct FName& TabId)
+{
+	static auto fn = UObject::FindObject<UFunction>("DelegateFunction CommonUI.CommonTabListWidget.OnTabSelected__DelegateSignature");
+
+	UCommonTabListWidget_OnTabSelected__DelegateSignature_Params params;
+	params.TabId = TabId;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// DelegateFunction CommonUI.CommonTabListWidget.OnTabButtonRemoved__DelegateSignature
+// (MulticastDelegate, Public, Delegate)
+// Parameters:
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void UCommonTabListWidget::OnTabButtonRemoved__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton)
+{
+	static auto fn = UObject::FindObject<UFunction>("DelegateFunction CommonUI.CommonTabListWidget.OnTabButtonRemoved__DelegateSignature");
+
+	UCommonTabListWidget_OnTabButtonRemoved__DelegateSignature_Params params;
+	params.TabId = TabId;
+	params.TabButton = TabButton;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// DelegateFunction CommonUI.CommonTabListWidget.OnTabButtonCreated__DelegateSignature
+// (MulticastDelegate, Public, Delegate)
+// Parameters:
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void UCommonTabListWidget::OnTabButtonCreated__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton)
+{
+	static auto fn = UObject::FindObject<UFunction>("DelegateFunction CommonUI.CommonTabListWidget.OnTabButtonCreated__DelegateSignature");
+
+	UCommonTabListWidget_OnTabButtonCreated__DelegateSignature_Params params;
+	params.TabId = TabId;
+	params.TabButton = TabButton;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonTabListWidget.HandleTabRemoved
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// struct FName                   TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void UCommonTabListWidget::HandleTabRemoved(const struct FName& TabNameID, class UCommonButton* TabButton)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.HandleTabRemoved");
+
+	UCommonTabListWidget_HandleTabRemoved_Params params;
+	params.TabNameID = TabNameID;
+	params.TabButton = TabButton;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonTabListWidget.HandleTabCreated
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// struct FName                   TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void UCommonTabListWidget::HandleTabCreated(const struct FName& TabNameID, class UCommonButton* TabButton)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.HandleTabCreated");
+
+	UCommonTabListWidget_HandleTabCreated_Params params;
+	params.TabNameID = TabNameID;
+	params.TabButton = TabButton;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonTabListWidget.HandleTabButtonSelected
+// (Final, Native, Private)
+// Parameters:
+// class UCommonButton*           SelectedTabButton              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// int                            ButtonIndex                    (Parm, ZeroConstructor, IsPlainOldData)
+
+void UCommonTabListWidget::HandleTabButtonSelected(class UCommonButton* SelectedTabButton, int ButtonIndex)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.HandleTabButtonSelected");
+
+	UCommonTabListWidget_HandleTabButtonSelected_Params params;
+	params.SelectedTabButton = SelectedTabButton;
+	params.ButtonIndex = ButtonIndex;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonTabListWidget.HandlePreviousTabInputAction
+// (Final, Native, Private, HasOutParms)
+// Parameters:
+// bool                           bPassThrough                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UCommonTabListWidget::HandlePreviousTabInputAction(bool* bPassThrough)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.HandlePreviousTabInputAction");
+
+	UCommonTabListWidget_HandlePreviousTabInputAction_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bPassThrough != nullptr)
+		*bPassThrough = params.bPassThrough;
+}
+
+
+// Function CommonUI.CommonTabListWidget.HandlePreLinkedSwitcherChanged_BP
+// (Event, Protected, BlueprintEvent)
+
+void UCommonTabListWidget::HandlePreLinkedSwitcherChanged_BP()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.HandlePreLinkedSwitcherChanged_BP");
+
+	UCommonTabListWidget_HandlePreLinkedSwitcherChanged_BP_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonTabListWidget.HandlePostLinkedSwitcherChanged_BP
+// (Event, Protected, BlueprintEvent)
+
+void UCommonTabListWidget::HandlePostLinkedSwitcherChanged_BP()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.HandlePostLinkedSwitcherChanged_BP");
+
+	UCommonTabListWidget_HandlePostLinkedSwitcherChanged_BP_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonTabListWidget.HandleNextTabInputAction
+// (Final, Native, Private, HasOutParms)
+// Parameters:
+// bool                           bPassThrough                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UCommonTabListWidget::HandleNextTabInputAction(bool* bPassThrough)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.HandleNextTabInputAction");
+
+	UCommonTabListWidget_HandleNextTabInputAction_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bPassThrough != nullptr)
+		*bPassThrough = params.bPassThrough;
+}
+
+
+// Function CommonUI.CommonTabListWidget.GetTabCount
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UCommonTabListWidget::GetTabCount()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.GetTabCount");
+
+	UCommonTabListWidget_GetTabCount_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonTabListWidget.GetTabButtonByID
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// struct FName                   TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           ReturnValue                    (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+
+class UCommonButton* UCommonTabListWidget::GetTabButtonByID(const struct FName& TabNameID)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.GetTabButtonByID");
+
+	UCommonTabListWidget_GetTabButtonByID_Params params;
+	params.TabNameID = TabNameID;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonTabListWidget.GetLinkedSwitcher
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UCommonWidgetSwitcher*   ReturnValue                    (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+
+class UCommonWidgetSwitcher* UCommonTabListWidget::GetLinkedSwitcher()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.GetLinkedSwitcher");
+
+	UCommonTabListWidget_GetLinkedSwitcher_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonTabListWidget.GetActiveTab
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FName                   ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+struct FName UCommonTabListWidget::GetActiveTab()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.GetActiveTab");
+
+	UCommonTabListWidget_GetActiveTab_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonTabListWidget.DisableTabWithReason
+// (Final, Native, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FName                   TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Reason                         (ConstParm, Parm, OutParm, ReferenceParm)
+
+void UCommonTabListWidget::DisableTabWithReason(const struct FName& TabNameID, const struct FText& Reason)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.DisableTabWithReason");
+
+	UCommonTabListWidget_DisableTabWithReason_Params params;
+	params.TabNameID = TabNameID;
+	params.Reason = Reason;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -203,31 +535,6 @@ void UCommonActivatablePanel::SetInputActionHandlerWithProgress(const struct FDa
 	params.InputActionRow = InputActionRow;
 	params.CommitedEvent = CommitedEvent;
 	params.ProgressEvent = ProgressEvent;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonActivatablePanel.SetInputActionHandlerWithPopupMenu
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FDataTableRowHandle     InputActionRow                 (Parm)
-// struct FScriptDelegate         CommitedEvent                  (Parm, ZeroConstructor)
-// class UCommonPopupMenu*        PopupMenu                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UCommonActivatablePanel::SetInputActionHandlerWithPopupMenu(const struct FDataTableRowHandle& InputActionRow, const struct FScriptDelegate& CommitedEvent, class UCommonPopupMenu* PopupMenu)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonActivatablePanel.SetInputActionHandlerWithPopupMenu");
-
-	UCommonActivatablePanel_SetInputActionHandlerWithPopupMenu_Params params;
-	params.InputActionRow = InputActionRow;
-	params.CommitedEvent = CommitedEvent;
-	params.PopupMenu = PopupMenu;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -401,7 +708,7 @@ void UCommonActivatablePanel::RemoveAllInputActionHandlers()
 
 
 // Function CommonUI.CommonActivatablePanel.PopPanel
-// (Native, Public, BlueprintCallable)
+// (Final, Native, Public, BlueprintCallable)
 
 void UCommonActivatablePanel::PopPanel()
 {
@@ -697,35 +1004,6 @@ void UCommonActivatablePanel::AddInputActionNoHandler(class UDataTable* DataTabl
 }
 
 
-// Function CommonUI.CommonActivatablePanel.AddInputActionHandlerWithProgressPopup
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UDataTable*              DataTable                      (Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   RowName                        (Parm, ZeroConstructor, IsPlainOldData)
-// struct FScriptDelegate         CommitedEvent                  (Parm, ZeroConstructor)
-// struct FScriptDelegate         ProgressEvent                  (Parm, ZeroConstructor)
-// class UCommonPopupMenu*        PopupMenu                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UCommonActivatablePanel::AddInputActionHandlerWithProgressPopup(class UDataTable* DataTable, const struct FName& RowName, const struct FScriptDelegate& CommitedEvent, const struct FScriptDelegate& ProgressEvent, class UCommonPopupMenu* PopupMenu)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonActivatablePanel.AddInputActionHandlerWithProgressPopup");
-
-	UCommonActivatablePanel_AddInputActionHandlerWithProgressPopup_Params params;
-	params.DataTable = DataTable;
-	params.RowName = RowName;
-	params.CommitedEvent = CommitedEvent;
-	params.ProgressEvent = ProgressEvent;
-	params.PopupMenu = PopupMenu;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function CommonUI.CommonActivatablePanel.AddInputActionHandlerWithProgress
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -743,33 +1021,6 @@ void UCommonActivatablePanel::AddInputActionHandlerWithProgress(class UDataTable
 	params.RowName = RowName;
 	params.CommitedEvent = CommitedEvent;
 	params.ProgressEvent = ProgressEvent;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonActivatablePanel.AddInputActionHandlerWithPopup
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UDataTable*              DataTable                      (Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   RowName                        (Parm, ZeroConstructor, IsPlainOldData)
-// struct FScriptDelegate         CommitedEvent                  (Parm, ZeroConstructor)
-// class UCommonPopupMenu*        PopupMenu                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UCommonActivatablePanel::AddInputActionHandlerWithPopup(class UDataTable* DataTable, const struct FName& RowName, const struct FScriptDelegate& CommitedEvent, class UCommonPopupMenu* PopupMenu)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonActivatablePanel.AddInputActionHandlerWithPopup");
-
-	UCommonActivatablePanel_AddInputActionHandlerWithPopup_Params params;
-	params.DataTable = DataTable;
-	params.RowName = RowName;
-	params.CommitedEvent = CommitedEvent;
-	params.PopupMenu = PopupMenu;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -802,390 +1053,6 @@ void UCommonActivatablePanel::AddInputActionHandler(class UDataTable* DataTable,
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonBorderStyle.GetBackgroundBrush
-// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FSlateBrush             Brush                          (Parm, OutParm)
-
-void UCommonBorderStyle::GetBackgroundBrush(struct FSlateBrush* Brush)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonBorderStyle.GetBackgroundBrush");
-
-	UCommonBorderStyle_GetBackgroundBrush_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Brush != nullptr)
-		*Brush = params.Brush;
-}
-
-
-// Function CommonUI.CommonBorder.SetStyle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UClass*                  InStyle                        (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonBorder::SetStyle(class UClass* InStyle)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonBorder.SetStyle");
-
-	UCommonBorder_SetStyle_Params params;
-	params.InStyle = InStyle;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonButtonStyle.GetSelectedTextStyle
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UCommonTextStyle*        ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UCommonTextStyle* UCommonButtonStyle::GetSelectedTextStyle()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetSelectedTextStyle");
-
-	UCommonButtonStyle_GetSelectedTextStyle_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonButtonStyle.GetSelectedPressedBrush
-// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FSlateBrush             Brush                          (Parm, OutParm)
-
-void UCommonButtonStyle::GetSelectedPressedBrush(struct FSlateBrush* Brush)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetSelectedPressedBrush");
-
-	UCommonButtonStyle_GetSelectedPressedBrush_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Brush != nullptr)
-		*Brush = params.Brush;
-}
-
-
-// Function CommonUI.CommonButtonStyle.GetSelectedHoveredTextStyle
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UCommonTextStyle*        ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UCommonTextStyle* UCommonButtonStyle::GetSelectedHoveredTextStyle()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetSelectedHoveredTextStyle");
-
-	UCommonButtonStyle_GetSelectedHoveredTextStyle_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonButtonStyle.GetSelectedHoveredBrush
-// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FSlateBrush             Brush                          (Parm, OutParm)
-
-void UCommonButtonStyle::GetSelectedHoveredBrush(struct FSlateBrush* Brush)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetSelectedHoveredBrush");
-
-	UCommonButtonStyle_GetSelectedHoveredBrush_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Brush != nullptr)
-		*Brush = params.Brush;
-}
-
-
-// Function CommonUI.CommonButtonStyle.GetSelectedBaseBrush
-// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FSlateBrush             Brush                          (Parm, OutParm)
-
-void UCommonButtonStyle::GetSelectedBaseBrush(struct FSlateBrush* Brush)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetSelectedBaseBrush");
-
-	UCommonButtonStyle_GetSelectedBaseBrush_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Brush != nullptr)
-		*Brush = params.Brush;
-}
-
-
-// Function CommonUI.CommonButtonStyle.GetNormalTextStyle
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UCommonTextStyle*        ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UCommonTextStyle* UCommonButtonStyle::GetNormalTextStyle()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetNormalTextStyle");
-
-	UCommonButtonStyle_GetNormalTextStyle_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonButtonStyle.GetNormalPressedBrush
-// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FSlateBrush             Brush                          (Parm, OutParm)
-
-void UCommonButtonStyle::GetNormalPressedBrush(struct FSlateBrush* Brush)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetNormalPressedBrush");
-
-	UCommonButtonStyle_GetNormalPressedBrush_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Brush != nullptr)
-		*Brush = params.Brush;
-}
-
-
-// Function CommonUI.CommonButtonStyle.GetNormalHoveredTextStyle
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UCommonTextStyle*        ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UCommonTextStyle* UCommonButtonStyle::GetNormalHoveredTextStyle()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetNormalHoveredTextStyle");
-
-	UCommonButtonStyle_GetNormalHoveredTextStyle_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonButtonStyle.GetNormalHoveredBrush
-// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FSlateBrush             Brush                          (Parm, OutParm)
-
-void UCommonButtonStyle::GetNormalHoveredBrush(struct FSlateBrush* Brush)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetNormalHoveredBrush");
-
-	UCommonButtonStyle_GetNormalHoveredBrush_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Brush != nullptr)
-		*Brush = params.Brush;
-}
-
-
-// Function CommonUI.CommonButtonStyle.GetNormalBaseBrush
-// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FSlateBrush             Brush                          (Parm, OutParm)
-
-void UCommonButtonStyle::GetNormalBaseBrush(struct FSlateBrush* Brush)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetNormalBaseBrush");
-
-	UCommonButtonStyle_GetNormalBaseBrush_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Brush != nullptr)
-		*Brush = params.Brush;
-}
-
-
-// Function CommonUI.CommonButtonStyle.GetMaterialBrush
-// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FSlateBrush             Brush                          (Parm, OutParm)
-
-void UCommonButtonStyle::GetMaterialBrush(struct FSlateBrush* Brush)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetMaterialBrush");
-
-	UCommonButtonStyle_GetMaterialBrush_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Brush != nullptr)
-		*Brush = params.Brush;
-}
-
-
-// Function CommonUI.CommonButtonStyle.GetDisabledTextStyle
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UCommonTextStyle*        ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UCommonTextStyle* UCommonButtonStyle::GetDisabledTextStyle()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetDisabledTextStyle");
-
-	UCommonButtonStyle_GetDisabledTextStyle_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonButtonStyle.GetDisabledBrush
-// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FSlateBrush             Brush                          (Parm, OutParm)
-
-void UCommonButtonStyle::GetDisabledBrush(struct FSlateBrush* Brush)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetDisabledBrush");
-
-	UCommonButtonStyle_GetDisabledBrush_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Brush != nullptr)
-		*Brush = params.Brush;
-}
-
-
-// Function CommonUI.CommonButtonStyle.GetCustomPadding
-// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FMargin                 OutCustomPadding               (Parm, OutParm, IsPlainOldData)
-
-void UCommonButtonStyle::GetCustomPadding(struct FMargin* OutCustomPadding)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetCustomPadding");
-
-	UCommonButtonStyle_GetCustomPadding_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (OutCustomPadding != nullptr)
-		*OutCustomPadding = params.OutCustomPadding;
-}
-
-
-// Function CommonUI.CommonButtonStyle.GetButtonPadding
-// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FMargin                 OutButtonPadding               (Parm, OutParm, IsPlainOldData)
-
-void UCommonButtonStyle::GetButtonPadding(struct FMargin* OutButtonPadding)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetButtonPadding");
-
-	UCommonButtonStyle_GetButtonPadding_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (OutButtonPadding != nullptr)
-		*OutButtonPadding = params.OutButtonPadding;
 }
 
 
@@ -1411,27 +1278,6 @@ void UCommonButton::SetInputActionProgressMaterial(const struct FSlateBrush& InP
 }
 
 
-// Function CommonUI.CommonButton.SetClickMethod
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TEnumAsByte<EButtonClickMethod> InClickMethod                  (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonButton::SetClickMethod(TEnumAsByte<EButtonClickMethod> InClickMethod)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButton.SetClickMethod");
-
-	UCommonButton_SetClickMethod_Params params;
-	params.InClickMethod = InClickMethod;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function CommonUI.CommonButton.OnUnhovered
 // (Event, Protected, BlueprintEvent)
 
@@ -1489,14 +1335,14 @@ void UCommonButton::OnSelected()
 // Function CommonUI.CommonButton.OnInputMethodChanged
 // (Native, Protected)
 // Parameters:
-// ECommonInputType               CurrentInputType               (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bUsingGamepad                  (Parm, ZeroConstructor, IsPlainOldData)
 
-void UCommonButton::OnInputMethodChanged(ECommonInputType CurrentInputType)
+void UCommonButton::OnInputMethodChanged(bool bUsingGamepad)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButton.OnInputMethodChanged");
 
 	UCommonButton_OnInputMethodChanged_Params params;
-	params.CurrentInputType = CurrentInputType;
+	params.bUsingGamepad = bUsingGamepad;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -1809,42 +1655,6 @@ void UCommonButton::HandleFocusReceived()
 }
 
 
-// Function CommonUI.CommonButton.HandleButtonReleased
-// (Final, Native, Protected)
-
-void UCommonButton::HandleButtonReleased()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButton.HandleButtonReleased");
-
-	UCommonButton_HandleButtonReleased_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonButton.HandleButtonPressed
-// (Final, Native, Protected)
-
-void UCommonButton::HandleButtonPressed()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButton.HandleButtonPressed");
-
-	UCommonButton_HandleButtonPressed_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function CommonUI.CommonButton.HandleButtonDoubleClicked
 // (Final, Native, Protected)
 
@@ -2042,7 +1852,7 @@ class UCommonTextStyle* UCommonButton::GetCurrentTextStyle()
 // Function CommonUI.CommonButton.GetCurrentCustomPadding
 // (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FMargin                 OutCustomPadding               (Parm, OutParm, IsPlainOldData)
+// struct FMargin                 OutCustomPadding               (Parm, OutParm)
 
 void UCommonButton::GetCurrentCustomPadding(struct FMargin* OutCustomPadding)
 {
@@ -2065,7 +1875,7 @@ void UCommonButton::GetCurrentCustomPadding(struct FMargin* OutCustomPadding)
 // Function CommonUI.CommonButton.GetCurrentButtonPadding
 // (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FMargin                 OutButtonPadding               (Parm, OutParm, IsPlainOldData)
+// struct FMargin                 OutButtonPadding               (Parm, OutParm)
 
 void UCommonButton::GetCurrentButtonPadding(struct FMargin* OutButtonPadding)
 {
@@ -2085,6 +1895,24 @@ void UCommonButton::GetCurrentButtonPadding(struct FMargin* OutButtonPadding)
 }
 
 
+// Function CommonUI.CommonButton.EnableButton
+// (Final, Native, Public, BlueprintCallable)
+
+void UCommonButton::EnableButton()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButton.EnableButton");
+
+	UCommonButton_EnableButton_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function CommonUI.CommonButton.DisableButtonWithReason
 // (Final, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
@@ -2096,6 +1924,24 @@ void UCommonButton::DisableButtonWithReason(const struct FText& DisabledReason)
 
 	UCommonButton_DisableButtonWithReason_Params params;
 	params.DisabledReason = DisabledReason;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonButton.DisableButton
+// (Final, Native, Public, BlueprintCallable)
+
+void UCommonButton::DisableButton()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButton.DisableButton");
+
+	UCommonButton_DisableButton_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -2589,61 +2435,17 @@ void UCommonTextBlock::ResetScrollState()
 }
 
 
-// Function CommonUI.CommonDateTimeTextBlock.SetTimespanValue
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FTimespan               InTimespan                     (ConstParm, Parm)
-
-void UCommonDateTimeTextBlock::SetTimespanValue(const struct FTimespan& InTimespan)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonDateTimeTextBlock.SetTimespanValue");
-
-	UCommonDateTimeTextBlock_SetTimespanValue_Params params;
-	params.InTimespan = InTimespan;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonDateTimeTextBlock.SetDateTimeValue
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FDateTime               InDateTime                     (ConstParm, Parm)
-// bool                           bShowAsCountdown               (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonDateTimeTextBlock::SetDateTimeValue(const struct FDateTime& InDateTime, bool bShowAsCountdown)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonDateTimeTextBlock.SetDateTimeValue");
-
-	UCommonDateTimeTextBlock_SetDateTimeValue_Params params;
-	params.InDateTime = InDateTime;
-	params.bShowAsCountdown = bShowAsCountdown;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonDateTimeTextBlock.SetCountDownCompletionText
+// Function CommonUI.CommonNumericTextBlock.SetCurrentValue
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FText                   InCompletionText               (ConstParm, Parm)
+// float                          NewValue                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
-void UCommonDateTimeTextBlock::SetCountDownCompletionText(const struct FText& InCompletionText)
+void UCommonNumericTextBlock::SetCurrentValue(float NewValue)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonDateTimeTextBlock.SetCountDownCompletionText");
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonNumericTextBlock.SetCurrentValue");
 
-	UCommonDateTimeTextBlock_SetCountDownCompletionText_Params params;
-	params.InCompletionText = InCompletionText;
+	UCommonNumericTextBlock_SetCurrentValue_Params params;
+	params.NewValue = NewValue;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -2654,42 +2456,41 @@ void UCommonDateTimeTextBlock::SetCountDownCompletionText(const struct FText& In
 }
 
 
-// Function CommonUI.CommonDateTimeTextBlock.GetDateTime
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// DelegateFunction CommonUI.CommonNumericTextBlock.OnOutro__DelegateSignature
+// (MulticastDelegate, Public, Delegate)
 // Parameters:
-// struct FDateTime               ReturnValue                    (Parm, OutParm, ReturnParm)
+// class UCommonNumericTextBlock* NumericTextBlock               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
-struct FDateTime UCommonDateTimeTextBlock::GetDateTime()
+void UCommonNumericTextBlock::OnOutro__DelegateSignature(class UCommonNumericTextBlock* NumericTextBlock)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonDateTimeTextBlock.GetDateTime");
+	static auto fn = UObject::FindObject<UFunction>("DelegateFunction CommonUI.CommonNumericTextBlock.OnOutro__DelegateSignature");
 
-	UCommonDateTimeTextBlock_GetDateTime_Params params;
+	UCommonNumericTextBlock_OnOutro__DelegateSignature_Params params;
+	params.NumericTextBlock = NumericTextBlock;
 
 	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
-// Function CommonUI.CommonDynamicEntryBox.SetEntrySpacing
-// (Final, Native, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// DelegateFunction CommonUI.CommonNumericTextBlock.OnInterpolationEnded__DelegateSignature
+// (MulticastDelegate, Public, Delegate)
 // Parameters:
-// struct FVector2D               InEntrySpacing                 (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+// class UCommonNumericTextBlock* NumericTextBlock               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// bool                           HadCompleted                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
-void UCommonDynamicEntryBox::SetEntrySpacing(const struct FVector2D& InEntrySpacing)
+void UCommonNumericTextBlock::OnInterpolationEnded__DelegateSignature(class UCommonNumericTextBlock* NumericTextBlock, bool HadCompleted)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonDynamicEntryBox.SetEntrySpacing");
+	static auto fn = UObject::FindObject<UFunction>("DelegateFunction CommonUI.CommonNumericTextBlock.OnInterpolationEnded__DelegateSignature");
 
-	UCommonDynamicEntryBox_SetEntrySpacing_Params params;
-	params.InEntrySpacing = InEntrySpacing;
+	UCommonNumericTextBlock_OnInterpolationEnded__DelegateSignature_Params params;
+	params.NumericTextBlock = NumericTextBlock;
+	params.HadCompleted = HadCompleted;
 
 	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -2697,285 +2498,16 @@ void UCommonDynamicEntryBox::SetEntrySpacing(const struct FVector2D& InEntrySpac
 }
 
 
-// Function CommonUI.CommonDynamicEntryBox.Reset
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                           bDeleteWidgets                 (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonDynamicEntryBox::Reset(bool bDeleteWidgets)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonDynamicEntryBox.Reset");
-
-	UCommonDynamicEntryBox_Reset_Params params;
-	params.bDeleteWidgets = bDeleteWidgets;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonDynamicEntryBox.RemoveEntry
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UUserWidget*             EntryWidget                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UCommonDynamicEntryBox::RemoveEntry(class UUserWidget* EntryWidget)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonDynamicEntryBox.RemoveEntry");
-
-	UCommonDynamicEntryBox_RemoveEntry_Params params;
-	params.EntryWidget = EntryWidget;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonDynamicEntryBox.GetNumEntries
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-int UCommonDynamicEntryBox::GetNumEntries()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonDynamicEntryBox.GetNumEntries");
-
-	UCommonDynamicEntryBox_GetNumEntries_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonDynamicEntryBox.GetAllEntries
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<class UUserWidget*>     ReturnValue                    (ConstParm, ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm)
-
-TArray<class UUserWidget*> UCommonDynamicEntryBox::GetAllEntries()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonDynamicEntryBox.GetAllEntries");
-
-	UCommonDynamicEntryBox_GetAllEntries_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonInputManager.SuspendStartingOperationProcessing
-// (Final, Native, Public, BlueprintCallable)
-
-void UCommonInputManager::SuspendStartingOperationProcessing()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputManager.SuspendStartingOperationProcessing");
-
-	UCommonInputManager_SuspendStartingOperationProcessing_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonInputManager.StopListeningForExistingHeldAction
-// (Final, Native, Public, HasOutParms, BlueprintCallable)
-// Parameters:
-// struct FDataTableRowHandle     InputActionDataRow             (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FScriptDelegate         CompleteEvent                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// struct FScriptDelegate         ProgressEvent                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UCommonInputManager::StopListeningForExistingHeldAction(const struct FDataTableRowHandle& InputActionDataRow, const struct FScriptDelegate& CompleteEvent, const struct FScriptDelegate& ProgressEvent)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputManager.StopListeningForExistingHeldAction");
-
-	UCommonInputManager_StopListeningForExistingHeldAction_Params params;
-	params.InputActionDataRow = InputActionDataRow;
-	params.CompleteEvent = CompleteEvent;
-	params.ProgressEvent = ProgressEvent;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonInputManager.StartListeningForExistingHeldAction
-// (Final, Native, Public, HasOutParms, BlueprintCallable)
-// Parameters:
-// struct FDataTableRowHandle     InputActionDataRow             (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FScriptDelegate         CompleteEvent                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// struct FScriptDelegate         ProgressEvent                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UCommonInputManager::StartListeningForExistingHeldAction(const struct FDataTableRowHandle& InputActionDataRow, const struct FScriptDelegate& CompleteEvent, const struct FScriptDelegate& ProgressEvent)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputManager.StartListeningForExistingHeldAction");
-
-	UCommonInputManager_StartListeningForExistingHeldAction_Params params;
-	params.InputActionDataRow = InputActionDataRow;
-	params.CompleteEvent = CompleteEvent;
-	params.ProgressEvent = ProgressEvent;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonInputManager.SetGlobalInputHandlerPriorityFilter
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int                            InFilterPriority               (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonInputManager::SetGlobalInputHandlerPriorityFilter(int InFilterPriority)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputManager.SetGlobalInputHandlerPriorityFilter");
-
-	UCommonInputManager_SetGlobalInputHandlerPriorityFilter_Params params;
-	params.InFilterPriority = InFilterPriority;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonInputManager.ResumeStartingOperationProcessing
-// (Final, Native, Public, BlueprintCallable)
-
-void UCommonInputManager::ResumeStartingOperationProcessing()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputManager.ResumeStartingOperationProcessing");
-
-	UCommonInputManager_ResumeStartingOperationProcessing_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonInputManager.PushActivatablePanel
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UCommonActivatablePanel* ActivatablePanel               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// bool                           bIntroPanel                    (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bOutroPanelBelow               (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonInputManager::PushActivatablePanel(class UCommonActivatablePanel* ActivatablePanel, bool bIntroPanel, bool bOutroPanelBelow)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputManager.PushActivatablePanel");
-
-	UCommonInputManager_PushActivatablePanel_Params params;
-	params.ActivatablePanel = ActivatablePanel;
-	params.bIntroPanel = bIntroPanel;
-	params.bOutroPanelBelow = bOutroPanelBelow;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonInputManager.PopActivatablePanel
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UCommonActivatablePanel* ActivatablePanel               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UCommonInputManager::PopActivatablePanel(class UCommonActivatablePanel* ActivatablePanel)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputManager.PopActivatablePanel");
-
-	UCommonInputManager_PopActivatablePanel_Params params;
-	params.ActivatablePanel = ActivatablePanel;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonInputManager.IsPanelOnStack
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UCommonActivatablePanel* InPanel                        (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UCommonInputManager::IsPanelOnStack(class UCommonActivatablePanel* InPanel)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputManager.IsPanelOnStack");
-
-	UCommonInputManager_IsPanelOnStack_Params params;
-	params.InPanel = InPanel;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonInputManager.IsInputSuspended
+// Function CommonUI.CommonNumericTextBlock.IsInterpolatingNumericValue
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UCommonInputManager::IsInputSuspended()
+bool UCommonNumericTextBlock::IsInterpolatingNumericValue()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputManager.IsInputSuspended");
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonNumericTextBlock.IsInterpolatingNumericValue");
 
-	UCommonInputManager_IsInputSuspended_Params params;
+	UCommonNumericTextBlock_IsInterpolatingNumericValue_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -2988,407 +2520,43 @@ bool UCommonInputManager::IsInputSuspended()
 }
 
 
-// Function CommonUI.CommonInputManager.GetGlobalInputHandlerPriorityFilter
+// Function CommonUI.CommonNumericTextBlock.InterpolateToValue
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                          TargetValue                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// float                          MaximumInterpolationDuration   (Parm, ZeroConstructor, IsPlainOldData)
+// float                          MinimumChangeRate              (Parm, ZeroConstructor, IsPlainOldData)
+// float                          OutroOffset                    (Parm, ZeroConstructor, IsPlainOldData)
+
+void UCommonNumericTextBlock::InterpolateToValue(float TargetValue, float MaximumInterpolationDuration, float MinimumChangeRate, float OutroOffset)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonNumericTextBlock.InterpolateToValue");
+
+	UCommonNumericTextBlock_InterpolateToValue_Params params;
+	params.TargetValue = TargetValue;
+	params.MaximumInterpolationDuration = MaximumInterpolationDuration;
+	params.MinimumChangeRate = MinimumChangeRate;
+	params.OutroOffset = OutroOffset;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonNumericTextBlock.GetTargetValue
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UCommonInputManager::GetGlobalInputHandlerPriorityFilter()
+float UCommonNumericTextBlock::GetTargetValue()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputManager.GetGlobalInputHandlerPriorityFilter");
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonNumericTextBlock.GetTargetValue");
 
-	UCommonInputManager_GetGlobalInputHandlerPriorityFilter_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonInputManager.GetAvailableInputActions
-// (Final, Native, Public, HasOutParms, BlueprintCallable)
-// Parameters:
-// TArray<struct FCommonInputActionHandlerData> AvailableInputActions          (Parm, OutParm, ZeroConstructor)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UCommonInputManager::GetAvailableInputActions(TArray<struct FCommonInputActionHandlerData>* AvailableInputActions)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputManager.GetAvailableInputActions");
-
-	UCommonInputManager_GetAvailableInputActions_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (AvailableInputActions != nullptr)
-		*AvailableInputActions = params.AvailableInputActions;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonInputReflector.OnButtonAdded
-// (Event, Public, HasOutParms, BlueprintEvent)
-// Parameters:
-// class UCommonButton*           AddedButton                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// struct FCommonInputActionHandlerData Data                           (ConstParm, Parm, OutParm, ReferenceParm)
-
-void UCommonInputReflector::OnButtonAdded(class UCommonButton* AddedButton, const struct FCommonInputActionHandlerData& Data)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputReflector.OnButtonAdded");
-
-	UCommonInputReflector_OnButtonAdded_Params params;
-	params.AddedButton = AddedButton;
-	params.Data = Data;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonLazyImage.ShowDefaultImage
-// (Native, Event, Protected, BlueprintEvent)
-
-void UCommonLazyImage::ShowDefaultImage()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonLazyImage.ShowDefaultImage");
-
-	UCommonLazyImage_ShowDefaultImage_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonLazyImage.SetBrushFromLazyTexture
-// (Final, Native, Public, HasOutParms, BlueprintCallable)
-// Parameters:
-// bool                           bMatchSize                     (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonLazyImage::SetBrushFromLazyTexture(bool bMatchSize)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonLazyImage.SetBrushFromLazyTexture");
-
-	UCommonLazyImage_SetBrushFromLazyTexture_Params params;
-	params.bMatchSize = bMatchSize;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonLazyImage.SetBrushFromLazyMaterial
-// (Final, Native, Public, HasOutParms, BlueprintCallable)
-
-void UCommonLazyImage::SetBrushFromLazyMaterial()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonLazyImage.SetBrushFromLazyMaterial");
-
-	UCommonLazyImage_SetBrushFromLazyMaterial_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonLazyImage.SetBrushFromLazyDisplayAsset
-// (Final, Native, Public, HasOutParms, BlueprintCallable)
-// Parameters:
-// bool                           bMatchTextureSize              (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonLazyImage::SetBrushFromLazyDisplayAsset(bool bMatchTextureSize)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonLazyImage.SetBrushFromLazyDisplayAsset");
-
-	UCommonLazyImage_SetBrushFromLazyDisplayAsset_Params params;
-	params.bMatchTextureSize = bMatchTextureSize;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonLazyImage.IsLoading
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UCommonLazyImage::IsLoading()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonLazyImage.IsLoading");
-
-	UCommonLazyImage_IsLoading_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonLazyImage.ForwardLoadingStateChanged
-// (Final, Native, Private)
-// Parameters:
-// bool                           bIsLoading                     (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonLazyImage::ForwardLoadingStateChanged(bool bIsLoading)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonLazyImage.ForwardLoadingStateChanged");
-
-	UCommonLazyImage_ForwardLoadingStateChanged_Params params;
-	params.bIsLoading = bIsLoading;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonPoolableWidgetInterface.OnReleaseToPool
-// (Native, Event, Protected, BlueprintEvent)
-
-void UCommonPoolableWidgetInterface::OnReleaseToPool()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonPoolableWidgetInterface.OnReleaseToPool");
-
-	UCommonPoolableWidgetInterface_OnReleaseToPool_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonPoolableWidgetInterface.OnAcquireFromPool
-// (Native, Event, Protected, BlueprintEvent)
-
-void UCommonPoolableWidgetInterface::OnAcquireFromPool()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonPoolableWidgetInterface.OnAcquireFromPool");
-
-	UCommonPoolableWidgetInterface_OnAcquireFromPool_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonListItem.ToggleExpansion
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-
-void UCommonListItem::ToggleExpansion()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonListItem.ToggleExpansion");
-
-	UCommonListItem_ToggleExpansion_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonListItem.SetSelected
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           bSelected                      (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonListItem::SetSelected(bool bSelected)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonListItem.SetSelected");
-
-	UCommonListItem_SetSelected_Params params;
-	params.bSelected = bSelected;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonListItem.SetIndexInList
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int                            InIndexInList                  (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonListItem::SetIndexInList(int InIndexInList)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonListItem.SetIndexInList");
-
-	UCommonListItem_SetIndexInList_Params params;
-	params.InIndexInList = InIndexInList;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonListItem.SetExpanded
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           bExpanded                      (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonListItem::SetExpanded(bool bExpanded)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonListItem.SetExpanded");
-
-	UCommonListItem_SetExpanded_Params params;
-	params.bExpanded = bExpanded;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonListItem.RegisterOnClicked
-// (Native, Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FScriptDelegate         Callback                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
-
-void UCommonListItem::RegisterOnClicked(const struct FScriptDelegate& Callback)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonListItem.RegisterOnClicked");
-
-	UCommonListItem_RegisterOnClicked_Params params;
-	params.Callback = Callback;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonListItem.Private_OnExpanderArrowShiftClicked
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-
-void UCommonListItem::Private_OnExpanderArrowShiftClicked()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonListItem.Private_OnExpanderArrowShiftClicked");
-
-	UCommonListItem_Private_OnExpanderArrowShiftClicked_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonListItem.IsItemExpanded
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UCommonListItem::IsItemExpanded()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonListItem.IsItemExpanded");
-
-	UCommonListItem_IsItemExpanded_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonListItem.GetIndentLevel
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-int UCommonListItem::GetIndentLevel()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonListItem.GetIndentLevel");
-
-	UCommonListItem_GetIndentLevel_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonListItem.DoesItemHaveChildren
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-int UCommonListItem::DoesItemHaveChildren()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonListItem.DoesItemHaveChildren");
-
-	UCommonListItem_DoesItemHaveChildren_Params params;
+	UCommonNumericTextBlock_GetTargetValue_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -3540,7 +2708,7 @@ void UCommonListView::SetItemHeight(float NewHeight)
 // Function CommonUI.CommonListView.SetDesiredItemPadding
 // (Final, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
-// struct FMargin                 DesiredPadding                 (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+// struct FMargin                 DesiredPadding                 (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UCommonListView::SetDesiredItemPadding(const struct FMargin& DesiredPadding)
 {
@@ -3951,24 +3119,6 @@ void UCommonListView::Clear()
 }
 
 
-// Function CommonUI.CommonListView.CancelScrollIntoView
-// (Final, Native, Public, BlueprintCallable)
-
-void UCommonListView::CancelScrollIntoView()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonListView.CancelScrollIntoView");
-
-	UCommonListView_CancelScrollIntoView_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function CommonUI.CommonListView.AddItem
 // (Final, Native, Public, BlueprintCallable, Const)
 // Parameters:
@@ -3987,6 +3137,758 @@ void UCommonListView::AddItem(class UObject* Item)
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonTileView.SetItemWidth
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                          NewWidth                       (Parm, ZeroConstructor, IsPlainOldData)
+
+void UCommonTileView::SetItemWidth(float NewWidth)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTileView.SetItemWidth");
+
+	UCommonTileView_SetItemWidth_Params params;
+	params.NewWidth = NewWidth;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonActionWidget.SetInputAction
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FDataTableRowHandle     InputActionRow                 (Parm)
+
+void UCommonActionWidget::SetInputAction(const struct FDataTableRowHandle& InputActionRow)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonActionWidget.SetInputAction");
+
+	UCommonActionWidget_SetInputAction_Params params;
+	params.InputActionRow = InputActionRow;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// DelegateFunction CommonUI.CommonActionWidget.OnInputMethodChanged__DelegateSignature
+// (MulticastDelegate, Public, Delegate)
+// Parameters:
+// bool                           bUsingGamepad                  (Parm, ZeroConstructor, IsPlainOldData)
+
+void UCommonActionWidget::OnInputMethodChanged__DelegateSignature(bool bUsingGamepad)
+{
+	static auto fn = UObject::FindObject<UFunction>("DelegateFunction CommonUI.CommonActionWidget.OnInputMethodChanged__DelegateSignature");
+
+	UCommonActionWidget_OnInputMethodChanged__DelegateSignature_Params params;
+	params.bUsingGamepad = bUsingGamepad;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonActionWidget.IsHeldAction
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UCommonActionWidget::IsHeldAction()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonActionWidget.IsHeldAction");
+
+	UCommonActionWidget_IsHeldAction_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonActionWidget.GetIcon
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FSlateBrush             ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FSlateBrush UCommonActionWidget::GetIcon()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonActionWidget.GetIcon");
+
+	UCommonActionWidget_GetIcon_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonActionWidget.GetDisplayText
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FText                   ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FText UCommonActionWidget::GetDisplayText()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonActionWidget.GetDisplayText");
+
+	UCommonActionWidget_GetDisplayText_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonBorderStyle.GetBackgroundBrush
+// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FSlateBrush             Brush                          (Parm, OutParm)
+
+void UCommonBorderStyle::GetBackgroundBrush(struct FSlateBrush* Brush)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonBorderStyle.GetBackgroundBrush");
+
+	UCommonBorderStyle_GetBackgroundBrush_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Brush != nullptr)
+		*Brush = params.Brush;
+}
+
+
+// Function CommonUI.CommonBorder.SetStyle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UClass*                  InStyle                        (Parm, ZeroConstructor, IsPlainOldData)
+
+void UCommonBorder::SetStyle(class UClass* InStyle)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonBorder.SetStyle");
+
+	UCommonBorder_SetStyle_Params params;
+	params.InStyle = InStyle;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonButtonStyle.GetSelectedTextStyle
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UCommonTextStyle*        ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class UCommonTextStyle* UCommonButtonStyle::GetSelectedTextStyle()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetSelectedTextStyle");
+
+	UCommonButtonStyle_GetSelectedTextStyle_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonButtonStyle.GetSelectedPressedBrush
+// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FSlateBrush             Brush                          (Parm, OutParm)
+
+void UCommonButtonStyle::GetSelectedPressedBrush(struct FSlateBrush* Brush)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetSelectedPressedBrush");
+
+	UCommonButtonStyle_GetSelectedPressedBrush_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Brush != nullptr)
+		*Brush = params.Brush;
+}
+
+
+// Function CommonUI.CommonButtonStyle.GetSelectedHoveredTextStyle
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UCommonTextStyle*        ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class UCommonTextStyle* UCommonButtonStyle::GetSelectedHoveredTextStyle()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetSelectedHoveredTextStyle");
+
+	UCommonButtonStyle_GetSelectedHoveredTextStyle_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonButtonStyle.GetSelectedHoveredBrush
+// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FSlateBrush             Brush                          (Parm, OutParm)
+
+void UCommonButtonStyle::GetSelectedHoveredBrush(struct FSlateBrush* Brush)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetSelectedHoveredBrush");
+
+	UCommonButtonStyle_GetSelectedHoveredBrush_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Brush != nullptr)
+		*Brush = params.Brush;
+}
+
+
+// Function CommonUI.CommonButtonStyle.GetSelectedBaseBrush
+// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FSlateBrush             Brush                          (Parm, OutParm)
+
+void UCommonButtonStyle::GetSelectedBaseBrush(struct FSlateBrush* Brush)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetSelectedBaseBrush");
+
+	UCommonButtonStyle_GetSelectedBaseBrush_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Brush != nullptr)
+		*Brush = params.Brush;
+}
+
+
+// Function CommonUI.CommonButtonStyle.GetNormalTextStyle
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UCommonTextStyle*        ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class UCommonTextStyle* UCommonButtonStyle::GetNormalTextStyle()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetNormalTextStyle");
+
+	UCommonButtonStyle_GetNormalTextStyle_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonButtonStyle.GetNormalPressedBrush
+// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FSlateBrush             Brush                          (Parm, OutParm)
+
+void UCommonButtonStyle::GetNormalPressedBrush(struct FSlateBrush* Brush)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetNormalPressedBrush");
+
+	UCommonButtonStyle_GetNormalPressedBrush_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Brush != nullptr)
+		*Brush = params.Brush;
+}
+
+
+// Function CommonUI.CommonButtonStyle.GetNormalHoveredTextStyle
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UCommonTextStyle*        ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class UCommonTextStyle* UCommonButtonStyle::GetNormalHoveredTextStyle()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetNormalHoveredTextStyle");
+
+	UCommonButtonStyle_GetNormalHoveredTextStyle_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonButtonStyle.GetNormalHoveredBrush
+// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FSlateBrush             Brush                          (Parm, OutParm)
+
+void UCommonButtonStyle::GetNormalHoveredBrush(struct FSlateBrush* Brush)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetNormalHoveredBrush");
+
+	UCommonButtonStyle_GetNormalHoveredBrush_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Brush != nullptr)
+		*Brush = params.Brush;
+}
+
+
+// Function CommonUI.CommonButtonStyle.GetNormalBaseBrush
+// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FSlateBrush             Brush                          (Parm, OutParm)
+
+void UCommonButtonStyle::GetNormalBaseBrush(struct FSlateBrush* Brush)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetNormalBaseBrush");
+
+	UCommonButtonStyle_GetNormalBaseBrush_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Brush != nullptr)
+		*Brush = params.Brush;
+}
+
+
+// Function CommonUI.CommonButtonStyle.GetMaterialBrush
+// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FSlateBrush             Brush                          (Parm, OutParm)
+
+void UCommonButtonStyle::GetMaterialBrush(struct FSlateBrush* Brush)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetMaterialBrush");
+
+	UCommonButtonStyle_GetMaterialBrush_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Brush != nullptr)
+		*Brush = params.Brush;
+}
+
+
+// Function CommonUI.CommonButtonStyle.GetDisabledTextStyle
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UCommonTextStyle*        ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class UCommonTextStyle* UCommonButtonStyle::GetDisabledTextStyle()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetDisabledTextStyle");
+
+	UCommonButtonStyle_GetDisabledTextStyle_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonButtonStyle.GetDisabledBrush
+// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FSlateBrush             Brush                          (Parm, OutParm)
+
+void UCommonButtonStyle::GetDisabledBrush(struct FSlateBrush* Brush)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetDisabledBrush");
+
+	UCommonButtonStyle_GetDisabledBrush_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Brush != nullptr)
+		*Brush = params.Brush;
+}
+
+
+// Function CommonUI.CommonButtonStyle.GetCustomPadding
+// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FMargin                 OutCustomPadding               (Parm, OutParm)
+
+void UCommonButtonStyle::GetCustomPadding(struct FMargin* OutCustomPadding)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetCustomPadding");
+
+	UCommonButtonStyle_GetCustomPadding_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (OutCustomPadding != nullptr)
+		*OutCustomPadding = params.OutCustomPadding;
+}
+
+
+// Function CommonUI.CommonButtonStyle.GetButtonPadding
+// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FMargin                 OutButtonPadding               (Parm, OutParm)
+
+void UCommonButtonStyle::GetButtonPadding(struct FMargin* OutButtonPadding)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonButtonStyle.GetButtonPadding");
+
+	UCommonButtonStyle_GetButtonPadding_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (OutButtonPadding != nullptr)
+		*OutButtonPadding = params.OutButtonPadding;
+}
+
+
+// DelegateFunction CommonUI.CommonCustomNavigation.OnCustomNavigationEvent__DelegateSignature
+// (Public, Delegate)
+// Parameters:
+// EUINavigation                  NavigationType                 (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UCommonCustomNavigation::OnCustomNavigationEvent__DelegateSignature(EUINavigation NavigationType)
+{
+	static auto fn = UObject::FindObject<UFunction>("DelegateFunction CommonUI.CommonCustomNavigation.OnCustomNavigationEvent__DelegateSignature");
+
+	UCommonCustomNavigation_OnCustomNavigationEvent__DelegateSignature_Params params;
+	params.NavigationType = NavigationType;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonInputManager.StopListeningForExistingHeldAction
+// (Final, Native, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FDataTableRowHandle     InputActionDataRow             (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FScriptDelegate         CompleteEvent                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// struct FScriptDelegate         ProgressEvent                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UCommonInputManager::StopListeningForExistingHeldAction(const struct FDataTableRowHandle& InputActionDataRow, const struct FScriptDelegate& CompleteEvent, const struct FScriptDelegate& ProgressEvent)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputManager.StopListeningForExistingHeldAction");
+
+	UCommonInputManager_StopListeningForExistingHeldAction_Params params;
+	params.InputActionDataRow = InputActionDataRow;
+	params.CompleteEvent = CompleteEvent;
+	params.ProgressEvent = ProgressEvent;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonInputManager.StartListeningForExistingHeldAction
+// (Final, Native, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FDataTableRowHandle     InputActionDataRow             (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FScriptDelegate         CompleteEvent                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// struct FScriptDelegate         ProgressEvent                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UCommonInputManager::StartListeningForExistingHeldAction(const struct FDataTableRowHandle& InputActionDataRow, const struct FScriptDelegate& CompleteEvent, const struct FScriptDelegate& ProgressEvent)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputManager.StartListeningForExistingHeldAction");
+
+	UCommonInputManager_StartListeningForExistingHeldAction_Params params;
+	params.InputActionDataRow = InputActionDataRow;
+	params.CompleteEvent = CompleteEvent;
+	params.ProgressEvent = ProgressEvent;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonInputManager.SetGlobalInputHandlerPriorityFilter
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int                            InFilterPriority               (Parm, ZeroConstructor, IsPlainOldData)
+
+void UCommonInputManager::SetGlobalInputHandlerPriorityFilter(int InFilterPriority)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputManager.SetGlobalInputHandlerPriorityFilter");
+
+	UCommonInputManager_SetGlobalInputHandlerPriorityFilter_Params params;
+	params.InFilterPriority = InFilterPriority;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonInputManager.PushActivatablePanel
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UCommonActivatablePanel* ActivatablePanel               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// bool                           bIntroPanel                    (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bOutroPanelBelow               (Parm, ZeroConstructor, IsPlainOldData)
+
+void UCommonInputManager::PushActivatablePanel(class UCommonActivatablePanel* ActivatablePanel, bool bIntroPanel, bool bOutroPanelBelow)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputManager.PushActivatablePanel");
+
+	UCommonInputManager_PushActivatablePanel_Params params;
+	params.ActivatablePanel = ActivatablePanel;
+	params.bIntroPanel = bIntroPanel;
+	params.bOutroPanelBelow = bOutroPanelBelow;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonInputManager.PopActivatablePanel
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UCommonActivatablePanel* ActivatablePanel               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void UCommonInputManager::PopActivatablePanel(class UCommonActivatablePanel* ActivatablePanel)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputManager.PopActivatablePanel");
+
+	UCommonInputManager_PopActivatablePanel_Params params;
+	params.ActivatablePanel = ActivatablePanel;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonInputManager.IsPanelOnStack
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UCommonActivatablePanel* InPanel                        (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UCommonInputManager::IsPanelOnStack(class UCommonActivatablePanel* InPanel)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputManager.IsPanelOnStack");
+
+	UCommonInputManager_IsPanelOnStack_Params params;
+	params.InPanel = InPanel;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonInputManager.IsInputSuspended
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UCommonInputManager::IsInputSuspended()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputManager.IsInputSuspended");
+
+	UCommonInputManager_IsInputSuspended_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonInputManager.GetGlobalInputHandlerPriorityFilter
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UCommonInputManager::GetGlobalInputHandlerPriorityFilter()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputManager.GetGlobalInputHandlerPriorityFilter");
+
+	UCommonInputManager_GetGlobalInputHandlerPriorityFilter_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonInputManager.GetAvailableInputActions
+// (Final, Native, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// TArray<struct FCommonInputActionHandlerData> AvailableInputActions          (Parm, OutParm, ZeroConstructor)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UCommonInputManager::GetAvailableInputActions(TArray<struct FCommonInputActionHandlerData>* AvailableInputActions)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputManager.GetAvailableInputActions");
+
+	UCommonInputManager_GetAvailableInputActions_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (AvailableInputActions != nullptr)
+		*AvailableInputActions = params.AvailableInputActions;
+
+	return params.ReturnValue;
 }
 
 
@@ -4077,13 +3979,15 @@ bool UCommonLoadGuard::IsLoading()
 // Function CommonUI.CommonLoadGuard.BP_GuardAndLoadAsset
 // (Final, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
+// TAssetPtr<class UObject>       InLazyAsset                    (ConstParm, Parm, OutParm, ReferenceParm)
 // struct FScriptDelegate         OnAssetLoaded                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
-void UCommonLoadGuard::BP_GuardAndLoadAsset(const struct FScriptDelegate& OnAssetLoaded)
+void UCommonLoadGuard::BP_GuardAndLoadAsset(TAssetPtr<class UObject> InLazyAsset, const struct FScriptDelegate& OnAssetLoaded)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonLoadGuard.BP_GuardAndLoadAsset");
 
 	UCommonLoadGuard_BP_GuardAndLoadAsset_Params params;
+	params.InLazyAsset = InLazyAsset;
 	params.OnAssetLoaded = OnAssetLoaded;
 
 	auto flags = fn->FunctionFlags;
@@ -4095,17 +3999,14 @@ void UCommonLoadGuard::BP_GuardAndLoadAsset(const struct FScriptDelegate& OnAsse
 }
 
 
-// Function CommonUI.CommonNumericTextBlock.SetNumericType
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// ECommonNumericType             InNumericType                  (Parm, ZeroConstructor, IsPlainOldData)
+// Function CommonUI.CommonLazyImage.ShowDefaultImage
+// (Native, Event, Protected, BlueprintEvent)
 
-void UCommonNumericTextBlock::SetNumericType(ECommonNumericType InNumericType)
+void UCommonLazyImage::ShowDefaultImage()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonNumericTextBlock.SetNumericType");
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonLazyImage.ShowDefaultImage");
 
-	UCommonNumericTextBlock_SetNumericType_Params params;
-	params.InNumericType = InNumericType;
+	UCommonLazyImage_ShowDefaultImage_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -4116,17 +4017,19 @@ void UCommonNumericTextBlock::SetNumericType(ECommonNumericType InNumericType)
 }
 
 
-// Function CommonUI.CommonNumericTextBlock.SetCurrentValue
-// (Final, Native, Public, BlueprintCallable)
+// Function CommonUI.CommonLazyImage.SetBrushFromLazyTexture
+// (Final, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
-// float                          NewValue                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// TAssetPtr<class UTexture2D>    LazyTexture                    (ConstParm, Parm, OutParm, ReferenceParm)
+// bool                           bMatchSize                     (Parm, ZeroConstructor, IsPlainOldData)
 
-void UCommonNumericTextBlock::SetCurrentValue(float NewValue)
+void UCommonLazyImage::SetBrushFromLazyTexture(TAssetPtr<class UTexture2D> LazyTexture, bool bMatchSize)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonNumericTextBlock.SetCurrentValue");
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonLazyImage.SetBrushFromLazyTexture");
 
-	UCommonNumericTextBlock_SetCurrentValue_Params params;
-	params.NewValue = NewValue;
+	UCommonLazyImage_SetBrushFromLazyTexture_Params params;
+	params.LazyTexture = LazyTexture;
+	params.bMatchSize = bMatchSize;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -4137,19 +4040,20 @@ void UCommonNumericTextBlock::SetCurrentValue(float NewValue)
 }
 
 
-// DelegateFunction CommonUI.CommonNumericTextBlock.OnOutro__DelegateSignature
-// (MulticastDelegate, Public, Delegate)
+// Function CommonUI.CommonLazyImage.SetBrushFromLazyMaterial
+// (Final, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
-// class UCommonNumericTextBlock* NumericTextBlock               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// TAssetPtr<class UMaterialInterface> LazyMaterial                   (ConstParm, Parm, OutParm, ReferenceParm)
 
-void UCommonNumericTextBlock::OnOutro__DelegateSignature(class UCommonNumericTextBlock* NumericTextBlock)
+void UCommonLazyImage::SetBrushFromLazyMaterial(TAssetPtr<class UMaterialInterface> LazyMaterial)
 {
-	static auto fn = UObject::FindObject<UFunction>("DelegateFunction CommonUI.CommonNumericTextBlock.OnOutro__DelegateSignature");
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonLazyImage.SetBrushFromLazyMaterial");
 
-	UCommonNumericTextBlock_OnOutro__DelegateSignature_Params params;
-	params.NumericTextBlock = NumericTextBlock;
+	UCommonLazyImage_SetBrushFromLazyMaterial_Params params;
+	params.LazyMaterial = LazyMaterial;
 
 	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -4157,21 +4061,22 @@ void UCommonNumericTextBlock::OnOutro__DelegateSignature(class UCommonNumericTex
 }
 
 
-// DelegateFunction CommonUI.CommonNumericTextBlock.OnInterpolationEnded__DelegateSignature
-// (MulticastDelegate, Public, Delegate)
+// Function CommonUI.CommonLazyImage.SetBrushFromLazyDisplayAsset
+// (Final, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
-// class UCommonNumericTextBlock* NumericTextBlock               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// bool                           HadCompleted                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// TAssetPtr<class UObject>       LazyObject                     (ConstParm, Parm, OutParm, ReferenceParm)
+// bool                           bMatchTextureSize              (Parm, ZeroConstructor, IsPlainOldData)
 
-void UCommonNumericTextBlock::OnInterpolationEnded__DelegateSignature(class UCommonNumericTextBlock* NumericTextBlock, bool HadCompleted)
+void UCommonLazyImage::SetBrushFromLazyDisplayAsset(TAssetPtr<class UObject> LazyObject, bool bMatchTextureSize)
 {
-	static auto fn = UObject::FindObject<UFunction>("DelegateFunction CommonUI.CommonNumericTextBlock.OnInterpolationEnded__DelegateSignature");
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonLazyImage.SetBrushFromLazyDisplayAsset");
 
-	UCommonNumericTextBlock_OnInterpolationEnded__DelegateSignature_Params params;
-	params.NumericTextBlock = NumericTextBlock;
-	params.HadCompleted = HadCompleted;
+	UCommonLazyImage_SetBrushFromLazyDisplayAsset_Params params;
+	params.LazyObject = LazyObject;
+	params.bMatchTextureSize = bMatchTextureSize;
 
 	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -4179,16 +4084,16 @@ void UCommonNumericTextBlock::OnInterpolationEnded__DelegateSignature(class UCom
 }
 
 
-// Function CommonUI.CommonNumericTextBlock.IsInterpolatingNumericValue
+// Function CommonUI.CommonLazyImage.IsLoading
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UCommonNumericTextBlock::IsInterpolatingNumericValue()
+bool UCommonLazyImage::IsLoading()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonNumericTextBlock.IsInterpolatingNumericValue");
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonLazyImage.IsLoading");
 
-	UCommonNumericTextBlock_IsInterpolatingNumericValue_Params params;
+	UCommonLazyImage_IsLoading_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -4201,23 +4106,17 @@ bool UCommonNumericTextBlock::IsInterpolatingNumericValue()
 }
 
 
-// Function CommonUI.CommonNumericTextBlock.InterpolateToValue
-// (Final, Native, Public, BlueprintCallable)
+// Function CommonUI.CommonLazyImage.ForwardLoadingStateChanged
+// (Final, Native, Private)
 // Parameters:
-// float                          TargetValue                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-// float                          MaximumInterpolationDuration   (Parm, ZeroConstructor, IsPlainOldData)
-// float                          MinimumChangeRate              (Parm, ZeroConstructor, IsPlainOldData)
-// float                          OutroOffset                    (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bIsLoading                     (Parm, ZeroConstructor, IsPlainOldData)
 
-void UCommonNumericTextBlock::InterpolateToValue(float TargetValue, float MaximumInterpolationDuration, float MinimumChangeRate, float OutroOffset)
+void UCommonLazyImage::ForwardLoadingStateChanged(bool bIsLoading)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonNumericTextBlock.InterpolateToValue");
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonLazyImage.ForwardLoadingStateChanged");
 
-	UCommonNumericTextBlock_InterpolateToValue_Params params;
-	params.TargetValue = TargetValue;
-	params.MaximumInterpolationDuration = MaximumInterpolationDuration;
-	params.MinimumChangeRate = MinimumChangeRate;
-	params.OutroOffset = OutroOffset;
+	UCommonLazyImage_ForwardLoadingStateChanged_Params params;
+	params.bIsLoading = bIsLoading;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -4228,16 +4127,299 @@ void UCommonNumericTextBlock::InterpolateToValue(float TargetValue, float Maximu
 }
 
 
-// Function CommonUI.CommonNumericTextBlock.GetTargetValue
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function CommonUI.CommonTreeView.SetSelection
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// class UObject*                 InItem                         (Parm, ZeroConstructor, IsPlainOldData)
 
-float UCommonNumericTextBlock::GetTargetValue()
+void UCommonTreeView::SetSelection(class UObject* InItem)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonNumericTextBlock.GetTargetValue");
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTreeView.SetSelection");
 
-	UCommonNumericTextBlock_GetTargetValue_Params params;
+	UCommonTreeView_SetSelection_Params params;
+	params.InItem = InItem;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonTreeView.SetItemExpansion
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                 Item                           (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           InShouldExpandItem             (Parm, ZeroConstructor, IsPlainOldData)
+
+void UCommonTreeView::SetItemExpansion(class UObject* Item, bool InShouldExpandItem)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTreeView.SetItemExpansion");
+
+	UCommonTreeView_SetItemExpansion_Params params;
+	params.Item = Item;
+	params.InShouldExpandItem = InShouldExpandItem;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonTreeView.RequestRefresh
+// (Final, Native, Public, BlueprintCallable)
+
+void UCommonTreeView::RequestRefresh()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTreeView.RequestRefresh");
+
+	UCommonTreeView_RequestRefresh_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonTreeView.DynamicHandleItemClickedCommonButton
+// (Final, Native, Private)
+// Parameters:
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void UCommonTreeView::DynamicHandleItemClickedCommonButton(class UCommonButton* Button)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTreeView.DynamicHandleItemClickedCommonButton");
+
+	UCommonTreeView_DynamicHandleItemClickedCommonButton_Params params;
+	params.Button = Button;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonPoolableWidgetInterface.OnReleaseToPool
+// (Native, Event, Protected, BlueprintEvent)
+
+void UCommonPoolableWidgetInterface::OnReleaseToPool()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonPoolableWidgetInterface.OnReleaseToPool");
+
+	UCommonPoolableWidgetInterface_OnReleaseToPool_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonPoolableWidgetInterface.OnAcquireFromPool
+// (Native, Event, Protected, BlueprintEvent)
+
+void UCommonPoolableWidgetInterface::OnAcquireFromPool()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonPoolableWidgetInterface.OnAcquireFromPool");
+
+	UCommonPoolableWidgetInterface_OnAcquireFromPool_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonListItem.ToggleExpansion
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void UCommonListItem::ToggleExpansion()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonListItem.ToggleExpansion");
+
+	UCommonListItem_ToggleExpansion_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonListItem.SetSelected
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           bSelected                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void UCommonListItem::SetSelected(bool bSelected)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonListItem.SetSelected");
+
+	UCommonListItem_SetSelected_Params params;
+	params.bSelected = bSelected;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonListItem.SetIndexInList
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            InIndexInList                  (Parm, ZeroConstructor, IsPlainOldData)
+
+void UCommonListItem::SetIndexInList(int InIndexInList)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonListItem.SetIndexInList");
+
+	UCommonListItem_SetIndexInList_Params params;
+	params.InIndexInList = InIndexInList;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonListItem.SetExpanded
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           bExpanded                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void UCommonListItem::SetExpanded(bool bExpanded)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonListItem.SetExpanded");
+
+	UCommonListItem_SetExpanded_Params params;
+	params.bExpanded = bExpanded;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonListItem.RegisterOnClicked
+// (Native, Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FScriptDelegate         Callback                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+
+void UCommonListItem::RegisterOnClicked(const struct FScriptDelegate& Callback)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonListItem.RegisterOnClicked");
+
+	UCommonListItem_RegisterOnClicked_Params params;
+	params.Callback = Callback;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonListItem.Private_OnExpanderArrowShiftClicked
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void UCommonListItem::Private_OnExpanderArrowShiftClicked()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonListItem.Private_OnExpanderArrowShiftClicked");
+
+	UCommonListItem_Private_OnExpanderArrowShiftClicked_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonListItem.IsItemExpanded
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UCommonListItem::IsItemExpanded()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonListItem.IsItemExpanded");
+
+	UCommonListItem_IsItemExpanded_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonListItem.GetIndentLevel
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UCommonListItem::GetIndentLevel()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonListItem.GetIndentLevel");
+
+	UCommonListItem_GetIndentLevel_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonListItem.DoesItemHaveChildren
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UCommonListItem::DoesItemHaveChildren()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonListItem.DoesItemHaveChildren");
+
+	UCommonListItem_DoesItemHaveChildren_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -4313,846 +4495,6 @@ class UObject* UCommonObjectListItem::GetData()
 }
 
 
-// Function CommonUI.CommonPopupButton.GetMenuAnchorWidget
-// (Final, Native, Private)
-// Parameters:
-// class UWidget*                 ReturnValue                    (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
-
-class UWidget* UCommonPopupButton::GetMenuAnchorWidget()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonPopupButton.GetMenuAnchorWidget");
-
-	UCommonPopupButton_GetMenuAnchorWidget_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonPopupMenu.SetOwningMenuAnchor
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UMenuAnchor*             MenuAnchor                     (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UCommonPopupMenu::SetOwningMenuAnchor(class UMenuAnchor* MenuAnchor)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonPopupMenu.SetOwningMenuAnchor");
-
-	UCommonPopupMenu_SetOwningMenuAnchor_Params params;
-	params.MenuAnchor = MenuAnchor;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonPopupMenu.SetContextProvider
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UObject*                 ContextProvidingObject         (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonPopupMenu::SetContextProvider(class UObject* ContextProvidingObject)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonPopupMenu.SetContextProvider");
-
-	UCommonPopupMenu_SetContextProvider_Params params;
-	params.ContextProvidingObject = ContextProvidingObject;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonPopupMenu.RequestClose
-// (Final, Native, Protected, BlueprintCallable)
-
-void UCommonPopupMenu::RequestClose()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonPopupMenu.RequestClose");
-
-	UCommonPopupMenu_RequestClose_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonPopupMenu.OnIsOpenChanged
-// (Final, Native, Protected)
-// Parameters:
-// bool                           IsOpen                         (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonPopupMenu::OnIsOpenChanged(bool IsOpen)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonPopupMenu.OnIsOpenChanged");
-
-	UCommonPopupMenu_OnIsOpenChanged_Params params;
-	params.IsOpen = IsOpen;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonPopupMenu.HandlePreDifferentContextProviderSet
-// (Native, Event, Protected, BlueprintEvent)
-
-void UCommonPopupMenu::HandlePreDifferentContextProviderSet()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonPopupMenu.HandlePreDifferentContextProviderSet");
-
-	UCommonPopupMenu_HandlePreDifferentContextProviderSet_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonPopupMenu.HandlePostDifferentContextProviderSet
-// (Native, Event, Protected, BlueprintEvent)
-
-void UCommonPopupMenu::HandlePostDifferentContextProviderSet()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonPopupMenu.HandlePostDifferentContextProviderSet");
-
-	UCommonPopupMenu_HandlePostDifferentContextProviderSet_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonRotator.ShiftTextRight
-// (Final, Native, Public, BlueprintCallable)
-
-void UCommonRotator::ShiftTextRight()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonRotator.ShiftTextRight");
-
-	UCommonRotator_ShiftTextRight_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonRotator.ShiftTextLeft
-// (Final, Native, Public, BlueprintCallable)
-
-void UCommonRotator::ShiftTextLeft()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonRotator.ShiftTextLeft");
-
-	UCommonRotator_ShiftTextLeft_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonRotator.SetSelectedItem
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int                            InValue                        (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonRotator::SetSelectedItem(int InValue)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonRotator.SetSelectedItem");
-
-	UCommonRotator_SetSelectedItem_Params params;
-	params.InValue = InValue;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonRotator.PopulateTextLabels
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TArray<struct FText>           Labels                         (Parm, ZeroConstructor)
-
-void UCommonRotator::PopulateTextLabels(TArray<struct FText> Labels)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonRotator.PopulateTextLabels");
-
-	UCommonRotator_PopulateTextLabels_Params params;
-	params.Labels = Labels;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonRotator.GetSelectedText
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FText                   ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FText UCommonRotator::GetSelectedText()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonRotator.GetSelectedText");
-
-	UCommonRotator_GetSelectedText_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonRotator.GetSelectedIndex
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-int UCommonRotator::GetSelectedIndex()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonRotator.GetSelectedIndex");
-
-	UCommonRotator_GetSelectedIndex_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonTabListWidget.SetTabVisibility
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FName                   TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
-// ESlateVisibility               NewVisibility                  (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonTabListWidget::SetTabVisibility(const struct FName& TabNameID, ESlateVisibility NewVisibility)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.SetTabVisibility");
-
-	UCommonTabListWidget_SetTabVisibility_Params params;
-	params.TabNameID = TabNameID;
-	params.NewVisibility = NewVisibility;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonTabListWidget.SetTabInteractionEnabled
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FName                   TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bEnable                        (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonTabListWidget::SetTabInteractionEnabled(const struct FName& TabNameID, bool bEnable)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.SetTabInteractionEnabled");
-
-	UCommonTabListWidget_SetTabInteractionEnabled_Params params;
-	params.TabNameID = TabNameID;
-	params.bEnable = bEnable;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonTabListWidget.SetTabEnabled
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FName                   TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bEnable                        (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonTabListWidget::SetTabEnabled(const struct FName& TabNameID, bool bEnable)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.SetTabEnabled");
-
-	UCommonTabListWidget_SetTabEnabled_Params params;
-	params.TabNameID = TabNameID;
-	params.bEnable = bEnable;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonTabListWidget.SetListeningForInput
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                           bShouldListen                  (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonTabListWidget::SetListeningForInput(bool bShouldListen)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.SetListeningForInput");
-
-	UCommonTabListWidget_SetListeningForInput_Params params;
-	params.bShouldListen = bShouldListen;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonTabListWidget.SetLinkedSwitcher
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UCommonWidgetSwitcher*   CommonSwitcher                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UCommonTabListWidget::SetLinkedSwitcher(class UCommonWidgetSwitcher* CommonSwitcher)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.SetLinkedSwitcher");
-
-	UCommonTabListWidget_SetLinkedSwitcher_Params params;
-	params.CommonSwitcher = CommonSwitcher;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonTabListWidget.SelectTabByID
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FName                   TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bSuppressClickFeedback         (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UCommonTabListWidget::SelectTabByID(const struct FName& TabNameID, bool bSuppressClickFeedback)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.SelectTabByID");
-
-	UCommonTabListWidget_SelectTabByID_Params params;
-	params.TabNameID = TabNameID;
-	params.bSuppressClickFeedback = bSuppressClickFeedback;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonTabListWidget.RemoveTab
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FName                   TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UCommonTabListWidget::RemoveTab(const struct FName& TabNameID)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.RemoveTab");
-
-	UCommonTabListWidget_RemoveTab_Params params;
-	params.TabNameID = TabNameID;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonTabListWidget.RemoveAllTabs
-// (Final, Native, Public, BlueprintCallable)
-
-void UCommonTabListWidget::RemoveAllTabs()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.RemoveAllTabs");
-
-	UCommonTabListWidget_RemoveAllTabs_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonTabListWidget.RegisterTab
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FName                   TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
-// class UClass*                  ButtonWidgetType               (Parm, ZeroConstructor, IsPlainOldData)
-// class UWidget*                 ContentWidget                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UCommonTabListWidget::RegisterTab(const struct FName& TabNameID, class UClass* ButtonWidgetType, class UWidget* ContentWidget)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.RegisterTab");
-
-	UCommonTabListWidget_RegisterTab_Params params;
-	params.TabNameID = TabNameID;
-	params.ButtonWidgetType = ButtonWidgetType;
-	params.ContentWidget = ContentWidget;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// DelegateFunction CommonUI.CommonTabListWidget.OnTabSelected__DelegateSignature
-// (MulticastDelegate, Public, Delegate)
-// Parameters:
-// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonTabListWidget::OnTabSelected__DelegateSignature(const struct FName& TabId)
-{
-	static auto fn = UObject::FindObject<UFunction>("DelegateFunction CommonUI.CommonTabListWidget.OnTabSelected__DelegateSignature");
-
-	UCommonTabListWidget_OnTabSelected__DelegateSignature_Params params;
-	params.TabId = TabId;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// DelegateFunction CommonUI.CommonTabListWidget.OnTabButtonRemoved__DelegateSignature
-// (MulticastDelegate, Public, Delegate)
-// Parameters:
-// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UCommonTabListWidget::OnTabButtonRemoved__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton)
-{
-	static auto fn = UObject::FindObject<UFunction>("DelegateFunction CommonUI.CommonTabListWidget.OnTabButtonRemoved__DelegateSignature");
-
-	UCommonTabListWidget_OnTabButtonRemoved__DelegateSignature_Params params;
-	params.TabId = TabId;
-	params.TabButton = TabButton;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// DelegateFunction CommonUI.CommonTabListWidget.OnTabButtonCreated__DelegateSignature
-// (MulticastDelegate, Public, Delegate)
-// Parameters:
-// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UCommonTabListWidget::OnTabButtonCreated__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton)
-{
-	static auto fn = UObject::FindObject<UFunction>("DelegateFunction CommonUI.CommonTabListWidget.OnTabButtonCreated__DelegateSignature");
-
-	UCommonTabListWidget_OnTabButtonCreated__DelegateSignature_Params params;
-	params.TabId = TabId;
-	params.TabButton = TabButton;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonTabListWidget.HandleTabRemoved
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// struct FName                   TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UCommonTabListWidget::HandleTabRemoved(const struct FName& TabNameID, class UCommonButton* TabButton)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.HandleTabRemoved");
-
-	UCommonTabListWidget_HandleTabRemoved_Params params;
-	params.TabNameID = TabNameID;
-	params.TabButton = TabButton;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonTabListWidget.HandleTabCreated
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// struct FName                   TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UCommonTabListWidget::HandleTabCreated(const struct FName& TabNameID, class UCommonButton* TabButton)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.HandleTabCreated");
-
-	UCommonTabListWidget_HandleTabCreated_Params params;
-	params.TabNameID = TabNameID;
-	params.TabButton = TabButton;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonTabListWidget.HandleTabButtonSelected
-// (Final, Native, Private)
-// Parameters:
-// class UCommonButton*           SelectedTabButton              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// int                            ButtonIndex                    (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonTabListWidget::HandleTabButtonSelected(class UCommonButton* SelectedTabButton, int ButtonIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.HandleTabButtonSelected");
-
-	UCommonTabListWidget_HandleTabButtonSelected_Params params;
-	params.SelectedTabButton = SelectedTabButton;
-	params.ButtonIndex = ButtonIndex;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonTabListWidget.HandlePreviousTabInputAction
-// (Final, Native, Private, HasOutParms)
-// Parameters:
-// bool                           bPassThrough                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UCommonTabListWidget::HandlePreviousTabInputAction(bool* bPassThrough)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.HandlePreviousTabInputAction");
-
-	UCommonTabListWidget_HandlePreviousTabInputAction_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (bPassThrough != nullptr)
-		*bPassThrough = params.bPassThrough;
-}
-
-
-// Function CommonUI.CommonTabListWidget.HandlePreLinkedSwitcherChanged_BP
-// (Event, Protected, BlueprintEvent)
-
-void UCommonTabListWidget::HandlePreLinkedSwitcherChanged_BP()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.HandlePreLinkedSwitcherChanged_BP");
-
-	UCommonTabListWidget_HandlePreLinkedSwitcherChanged_BP_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonTabListWidget.HandlePostLinkedSwitcherChanged_BP
-// (Event, Protected, BlueprintEvent)
-
-void UCommonTabListWidget::HandlePostLinkedSwitcherChanged_BP()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.HandlePostLinkedSwitcherChanged_BP");
-
-	UCommonTabListWidget_HandlePostLinkedSwitcherChanged_BP_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonTabListWidget.HandleNextTabInputAction
-// (Final, Native, Private, HasOutParms)
-// Parameters:
-// bool                           bPassThrough                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UCommonTabListWidget::HandleNextTabInputAction(bool* bPassThrough)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.HandleNextTabInputAction");
-
-	UCommonTabListWidget_HandleNextTabInputAction_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (bPassThrough != nullptr)
-		*bPassThrough = params.bPassThrough;
-}
-
-
-// Function CommonUI.CommonTabListWidget.GetTabIdAtIndex
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-struct FName UCommonTabListWidget::GetTabIdAtIndex(int Index)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.GetTabIdAtIndex");
-
-	UCommonTabListWidget_GetTabIdAtIndex_Params params;
-	params.Index = Index;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonTabListWidget.GetTabCount
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-int UCommonTabListWidget::GetTabCount()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.GetTabCount");
-
-	UCommonTabListWidget_GetTabCount_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonTabListWidget.GetTabButtonByID
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// struct FName                   TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           ReturnValue                    (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
-
-class UCommonButton* UCommonTabListWidget::GetTabButtonByID(const struct FName& TabNameID)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.GetTabButtonByID");
-
-	UCommonTabListWidget_GetTabButtonByID_Params params;
-	params.TabNameID = TabNameID;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonTabListWidget.GetSelectedTabId
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FName                   ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-struct FName UCommonTabListWidget::GetSelectedTabId()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.GetSelectedTabId");
-
-	UCommonTabListWidget_GetSelectedTabId_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonTabListWidget.GetLinkedSwitcher
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UCommonWidgetSwitcher*   ReturnValue                    (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
-
-class UCommonWidgetSwitcher* UCommonTabListWidget::GetLinkedSwitcher()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.GetLinkedSwitcher");
-
-	UCommonTabListWidget_GetLinkedSwitcher_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonTabListWidget.GetActiveTab
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FName                   ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-struct FName UCommonTabListWidget::GetActiveTab()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.GetActiveTab");
-
-	UCommonTabListWidget_GetActiveTab_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonTabListWidget.DisableTabWithReason
-// (Final, Native, Public, HasOutParms, BlueprintCallable)
-// Parameters:
-// struct FName                   TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   Reason                         (ConstParm, Parm, OutParm, ReferenceParm)
-
-void UCommonTabListWidget::DisableTabWithReason(const struct FName& TabNameID, const struct FText& Reason)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTabListWidget.DisableTabWithReason");
-
-	UCommonTabListWidget_DisableTabWithReason_Params params;
-	params.TabNameID = TabNameID;
-	params.Reason = Reason;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function CommonUI.CommonTextStyle.GetShadowOffset
 // (Final, Native, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -5202,7 +4544,7 @@ void UCommonTextStyle::GetShadowColor(struct FLinearColor* OutColor)
 // Function CommonUI.CommonTextStyle.GetMargin
 // (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FMargin                 OutMargin                      (Parm, OutParm, IsPlainOldData)
+// struct FMargin                 OutMargin                      (Parm, OutParm)
 
 void UCommonTextStyle::GetMargin(struct FMargin* OutMargin)
 {
@@ -5290,17 +4632,17 @@ void UCommonTextStyle::GetColor(struct FLinearColor* OutColor)
 }
 
 
-// Function CommonUI.CommonTileView.SetItemWidth
+// Function CommonUI.CommonUIContext.SetGamepadInputType
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                          NewWidth                       (Parm, ZeroConstructor, IsPlainOldData)
+// ECommonInputType               InGamepadInputType             (Parm, ZeroConstructor, IsPlainOldData)
 
-void UCommonTileView::SetItemWidth(float NewWidth)
+void UCommonUIContext::SetGamepadInputType(ECommonInputType InGamepadInputType)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTileView.SetItemWidth");
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonUIContext.SetGamepadInputType");
 
-	UCommonTileView_SetItemWidth_Params params;
-	params.NewWidth = NewWidth;
+	UCommonUIContext_SetGamepadInputType_Params params;
+	params.InGamepadInputType = InGamepadInputType;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -5311,19 +4653,16 @@ void UCommonTileView::SetItemWidth(float NewWidth)
 }
 
 
-// Function CommonUI.CommonTreeView.SetSelection
-// (Final, Native, Public, BlueprintCallable)
+// Function CommonUI.CommonUIContext.IsUsingTouch
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class UObject*                 InItem                         (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bScrollFromTop                 (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-void UCommonTreeView::SetSelection(class UObject* InItem, bool bScrollFromTop)
+bool UCommonUIContext::IsUsingTouch()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTreeView.SetSelection");
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonUIContext.IsUsingTouch");
 
-	UCommonTreeView_SetSelection_Params params;
-	params.InItem = InItem;
-	params.bScrollFromTop = bScrollFromTop;
+	UCommonUIContext_IsUsingTouch_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -5331,22 +4670,21 @@ void UCommonTreeView::SetSelection(class UObject* InItem, bool bScrollFromTop)
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
 }
 
 
-// Function CommonUI.CommonTreeView.SetItemExpansion
-// (Final, Native, Public, BlueprintCallable)
+// Function CommonUI.CommonUIContext.IsUsingPointerInput
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class UObject*                 Item                           (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           InShouldExpandItem             (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-void UCommonTreeView::SetItemExpansion(class UObject* Item, bool InShouldExpandItem)
+bool UCommonUIContext::IsUsingPointerInput()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTreeView.SetItemExpansion");
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonUIContext.IsUsingPointerInput");
 
-	UCommonTreeView_SetItemExpansion_Params params;
-	params.Item = Item;
-	params.InShouldExpandItem = InShouldExpandItem;
+	UCommonUIContext_IsUsingPointerInput_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -5354,20 +4692,21 @@ void UCommonTreeView::SetItemExpansion(class UObject* Item, bool InShouldExpandI
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
 }
 
 
-// Function CommonUI.CommonTreeView.SetAllExpansion
-// (Final, Native, Public, BlueprintCallable)
+// Function CommonUI.CommonUIContext.IsUsingGamepad
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// bool                           InShouldExpandItem             (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-void UCommonTreeView::SetAllExpansion(bool InShouldExpandItem)
+bool UCommonUIContext::IsUsingGamepad()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTreeView.SetAllExpansion");
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonUIContext.IsUsingGamepad");
 
-	UCommonTreeView_SetAllExpansion_Params params;
-	params.InShouldExpandItem = InShouldExpandItem;
+	UCommonUIContext_IsUsingGamepad_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -5375,45 +4714,8 @@ void UCommonTreeView::SetAllExpansion(bool InShouldExpandItem)
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-}
 
-
-// Function CommonUI.CommonTreeView.RequestRefresh
-// (Final, Native, Public, BlueprintCallable)
-
-void UCommonTreeView::RequestRefresh()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTreeView.RequestRefresh");
-
-	UCommonTreeView_RequestRefresh_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonTreeView.DynamicHandleItemClickedCommonButton
-// (Final, Native, Private)
-// Parameters:
-// class UCommonButton*           Button                         (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UCommonTreeView::DynamicHandleItemClickedCommonButton(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonTreeView.DynamicHandleItemClickedCommonButton");
-
-	UCommonTreeView_DynamicHandleItemClickedCommonButton_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
+	return params.ReturnValue;
 }
 
 
@@ -5484,17 +4786,37 @@ class UCommonInputManager* UCommonUIContext::GetInputManager()
 // Parameters:
 // struct FDataTableRowHandle     InputActionRowHandle           (ConstParm, Parm, OutParm, ReferenceParm)
 // ECommonInputType               InputType                      (Parm, ZeroConstructor, IsPlainOldData)
-// ECommonGamepadType             GamepadType                    (Parm, ZeroConstructor, IsPlainOldData)
 // struct FSlateBrush             ReturnValue                    (Parm, OutParm, ReturnParm)
 
-struct FSlateBrush UCommonUIContext::GetInputActionButtonIcon(const struct FDataTableRowHandle& InputActionRowHandle, ECommonInputType InputType, ECommonGamepadType GamepadType)
+struct FSlateBrush UCommonUIContext::GetInputActionButtonIcon(const struct FDataTableRowHandle& InputActionRowHandle, ECommonInputType InputType)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonUIContext.GetInputActionButtonIcon");
 
 	UCommonUIContext_GetInputActionButtonIcon_Params params;
 	params.InputActionRowHandle = InputActionRowHandle;
 	params.InputType = InputType;
-	params.GamepadType = GamepadType;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonUIContext.GetCurrentInputType
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// ECommonInputType               ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+ECommonInputType UCommonUIContext::GetCurrentInputType()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonUIContext.GetCurrentInputType");
+
+	UCommonUIContext_GetCurrentInputType_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -5533,56 +4855,17 @@ class UWidget* UCommonUILibrary::STATIC_FindParentWidgetOfType(class UWidget* St
 }
 
 
-// Function CommonUI.CommonWidgetCarousel.SetActiveWidgetIndex
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonWidgetCarousel::SetActiveWidgetIndex(int Index)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonWidgetCarousel.SetActiveWidgetIndex");
-
-	UCommonWidgetCarousel_SetActiveWidgetIndex_Params params;
-	params.Index = Index;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonWidgetCarousel.SetActiveWidget
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// class UWidget*                 Widget                         (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UCommonWidgetCarousel::SetActiveWidget(class UWidget* Widget)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonWidgetCarousel.SetActiveWidget");
-
-	UCommonWidgetCarousel_SetActiveWidget_Params params;
-	params.Widget = Widget;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonWidgetCarousel.PreviousPage
+// Function CommonUI.CommonRotator.ShiftTextRight
 // (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
-void UCommonWidgetCarousel::PreviousPage()
+void UCommonRotator::ShiftTextRight(class UCommonButton* Button)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonWidgetCarousel.PreviousPage");
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonRotator.ShiftTextRight");
 
-	UCommonWidgetCarousel_PreviousPage_Params params;
+	UCommonRotator_ShiftTextRight_Params params;
+	params.Button = Button;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -5593,14 +4876,17 @@ void UCommonWidgetCarousel::PreviousPage()
 }
 
 
-// Function CommonUI.CommonWidgetCarousel.NextPage
+// Function CommonUI.CommonRotator.ShiftTextLeft
 // (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
-void UCommonWidgetCarousel::NextPage()
+void UCommonRotator::ShiftTextLeft(class UCommonButton* Button)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonWidgetCarousel.NextPage");
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonRotator.ShiftTextLeft");
 
-	UCommonWidgetCarousel_NextPage_Params params;
+	UCommonRotator_ShiftTextLeft_Params params;
+	params.Button = Button;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -5611,18 +4897,58 @@ void UCommonWidgetCarousel::NextPage()
 }
 
 
-// Function CommonUI.CommonWidgetCarousel.GetWidgetAtIndex
+// Function CommonUI.CommonRotator.SetSelectedItem
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int                            InValue                        (Parm, ZeroConstructor, IsPlainOldData)
+
+void UCommonRotator::SetSelectedItem(int InValue)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonRotator.SetSelectedItem");
+
+	UCommonRotator_SetSelectedItem_Params params;
+	params.InValue = InValue;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonRotator.PopulateTextLabels
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TArray<struct FText>           Labels                         (Parm, ZeroConstructor)
+
+void UCommonRotator::PopulateTextLabels(TArray<struct FText> Labels)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonRotator.PopulateTextLabels");
+
+	UCommonRotator_PopulateTextLabels_Params params;
+	params.Labels = Labels;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonRotator.GetSelectedText
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
-// class UWidget*                 ReturnValue                    (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+// struct FText                   ReturnValue                    (Parm, OutParm, ReturnParm)
 
-class UWidget* UCommonWidgetCarousel::GetWidgetAtIndex(int Index)
+struct FText UCommonRotator::GetSelectedText()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonWidgetCarousel.GetWidgetAtIndex");
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonRotator.GetSelectedText");
 
-	UCommonWidgetCarousel_GetWidgetAtIndex_Params params;
-	params.Index = Index;
+	UCommonRotator_GetSelectedText_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -5635,39 +4961,21 @@ class UWidget* UCommonWidgetCarousel::GetWidgetAtIndex(int Index)
 }
 
 
-// Function CommonUI.CommonWidgetCarousel.GetActiveWidgetIndex
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function CommonUI.CommonInputReflector.OnButtonAdded
+// (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// class UCommonButton*           AddedButton                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// struct FCommonInputActionHandlerData Data                           (ConstParm, Parm, OutParm, ReferenceParm)
 
-int UCommonWidgetCarousel::GetActiveWidgetIndex()
+void UCommonInputReflector::OnButtonAdded(class UCommonButton* AddedButton, const struct FCommonInputActionHandlerData& Data)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonWidgetCarousel.GetActiveWidgetIndex");
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputReflector.OnButtonAdded");
 
-	UCommonWidgetCarousel_GetActiveWidgetIndex_Params params;
+	UCommonInputReflector_OnButtonAdded_Params params;
+	params.AddedButton = AddedButton;
+	params.Data = Data;
 
 	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function CommonUI.CommonWidgetCarousel.EndAutoScrolling
-// (Final, Native, Public, BlueprintCallable)
-
-void UCommonWidgetCarousel::EndAutoScrolling()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonWidgetCarousel.EndAutoScrolling");
-
-	UCommonWidgetCarousel_EndAutoScrolling_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -5675,45 +4983,16 @@ void UCommonWidgetCarousel::EndAutoScrolling()
 }
 
 
-// Function CommonUI.CommonWidgetCarousel.BeginAutoScrolling
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                          ScrollInterval                 (Parm, ZeroConstructor, IsPlainOldData)
+// Function CommonUI.CommonInputReflector.ClearButtons
+// (Event, Public, BlueprintEvent)
 
-void UCommonWidgetCarousel::BeginAutoScrolling(float ScrollInterval)
+void UCommonInputReflector::ClearButtons()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonWidgetCarousel.BeginAutoScrolling");
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonInputReflector.ClearButtons");
 
-	UCommonWidgetCarousel_BeginAutoScrolling_Params params;
-	params.ScrollInterval = ScrollInterval;
+	UCommonInputReflector_ClearButtons_Params params;
 
 	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CommonUI.CommonWidgetSwitcher.SetTransitionParams
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// ECommonSwitcherTransition      NewTransitionType              (Parm, ZeroConstructor, IsPlainOldData)
-// ETransitionCurve               NewTransitionCurveType         (Parm, ZeroConstructor, IsPlainOldData)
-// float                          NewTransitionDuration          (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCommonWidgetSwitcher::SetTransitionParams(ECommonSwitcherTransition NewTransitionType, ETransitionCurve NewTransitionCurveType, float NewTransitionDuration)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonWidgetSwitcher.SetTransitionParams");
-
-	UCommonWidgetSwitcher_SetTransitionParams_Params params;
-	params.NewTransitionType = NewTransitionType;
-	params.NewTransitionCurveType = NewTransitionCurveType;
-	params.NewTransitionDuration = NewTransitionDuration;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -5888,6 +5167,169 @@ void UCommonWidgetSwitcher::ActivateNextWidget(bool bCanWrap)
 }
 
 
+// Function CommonUI.CommonWidgetCarousel.SetActiveWidgetIndex
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
+
+void UCommonWidgetCarousel::SetActiveWidgetIndex(int Index)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonWidgetCarousel.SetActiveWidgetIndex");
+
+	UCommonWidgetCarousel_SetActiveWidgetIndex_Params params;
+	params.Index = Index;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonWidgetCarousel.SetActiveWidget
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class UWidget*                 Widget                         (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void UCommonWidgetCarousel::SetActiveWidget(class UWidget* Widget)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonWidgetCarousel.SetActiveWidget");
+
+	UCommonWidgetCarousel_SetActiveWidget_Params params;
+	params.Widget = Widget;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonWidgetCarousel.PreviousPage
+// (Final, Native, Public, BlueprintCallable)
+
+void UCommonWidgetCarousel::PreviousPage()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonWidgetCarousel.PreviousPage");
+
+	UCommonWidgetCarousel_PreviousPage_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonWidgetCarousel.NextPage
+// (Final, Native, Public, BlueprintCallable)
+
+void UCommonWidgetCarousel::NextPage()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonWidgetCarousel.NextPage");
+
+	UCommonWidgetCarousel_NextPage_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonWidgetCarousel.GetWidgetAtIndex
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
+// class UWidget*                 ReturnValue                    (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+
+class UWidget* UCommonWidgetCarousel::GetWidgetAtIndex(int Index)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonWidgetCarousel.GetWidgetAtIndex");
+
+	UCommonWidgetCarousel_GetWidgetAtIndex_Params params;
+	params.Index = Index;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonWidgetCarousel.GetActiveWidgetIndex
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UCommonWidgetCarousel::GetActiveWidgetIndex()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonWidgetCarousel.GetActiveWidgetIndex");
+
+	UCommonWidgetCarousel_GetActiveWidgetIndex_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CommonUI.CommonWidgetCarousel.EndAutoScrolling
+// (Final, Native, Public, BlueprintCallable)
+
+void UCommonWidgetCarousel::EndAutoScrolling()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonWidgetCarousel.EndAutoScrolling");
+
+	UCommonWidgetCarousel_EndAutoScrolling_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CommonUI.CommonWidgetCarousel.BeginAutoScrolling
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                          ScrollInterval                 (Parm, ZeroConstructor, IsPlainOldData)
+
+void UCommonWidgetCarousel::BeginAutoScrolling(float ScrollInterval)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonWidgetCarousel.BeginAutoScrolling");
+
+	UCommonWidgetCarousel_BeginAutoScrolling_Params params;
+	params.ScrollInterval = ScrollInterval;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function CommonUI.CommonWidgetStack.PushWidget
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -5909,16 +5351,16 @@ void UCommonWidgetStack::PushWidget(class UWidget* InWidget)
 }
 
 
-// Function CommonUI.CommonWidgetStack.PopWidget
+// Function CommonUI.CommonWidgetStack.PopWigdet
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class UWidget*                 ReturnValue                    (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 
-class UWidget* UCommonWidgetStack::PopWidget()
+class UWidget* UCommonWidgetStack::PopWigdet()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonWidgetStack.PopWidget");
+	static auto fn = UObject::FindObject<UFunction>("Function CommonUI.CommonWidgetStack.PopWigdet");
 
-	UCommonWidgetStack_PopWidget_Params params;
+	UCommonWidgetStack_PopWigdet_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;

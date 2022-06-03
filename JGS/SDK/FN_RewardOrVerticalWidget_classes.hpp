@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass RewardOrVerticalWidget.RewardOrVerticalWidget_C
-// 0x0000 (0x0820 - 0x0820)
+// 0x0000 (0x08C0 - 0x08C0)
 class URewardOrVerticalWidget_C : public UFortRewardInfoButton
 {
 public:

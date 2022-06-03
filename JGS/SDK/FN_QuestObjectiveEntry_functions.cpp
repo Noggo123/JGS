@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,8 +32,8 @@ void UQuestObjectiveEntry_C::PlayAppearAnimation()
 // Function QuestObjectiveEntry.QuestObjectiveEntry_C.Update
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortQuestObjectiveInfo* Objective                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            AchievedCount                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortQuestObjectiveInfo* Objective                      (Parm, ZeroConstructor, IsPlainOldData)
+// int                            AchievedCount                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestObjectiveEntry_C::Update(class UFortQuestObjectiveInfo* Objective, int AchievedCount)
 {
@@ -54,8 +54,8 @@ void UQuestObjectiveEntry_C::Update(class UFortQuestObjectiveInfo* Objective, in
 // Function QuestObjectiveEntry.QuestObjectiveEntry_C.UpdateProgress
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortQuestObjectiveInfo* Objective                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            AchievedCount                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortQuestObjectiveInfo* Objective                      (Parm, ZeroConstructor, IsPlainOldData)
+// int                            AchievedCount                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestObjectiveEntry_C::UpdateProgress(class UFortQuestObjectiveInfo* Objective, int AchievedCount)
 {
@@ -76,7 +76,7 @@ void UQuestObjectiveEntry_C::UpdateProgress(class UFortQuestObjectiveInfo* Objec
 // Function QuestObjectiveEntry.QuestObjectiveEntry_C.SetData
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 InData                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 InData                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestObjectiveEntry_C::SetData(class UObject* InData)
 {
@@ -96,7 +96,7 @@ void UQuestObjectiveEntry_C::SetData(class UObject* InData)
 // Function QuestObjectiveEntry.QuestObjectiveEntry_C.ExecuteUbergraph_QuestObjectiveEntry
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestObjectiveEntry_C::ExecuteUbergraph_QuestObjectiveEntry(int EntryPoint)
 {

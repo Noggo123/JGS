@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,8 +32,8 @@ void AAnnounce_Gen_Quest_Conversation_C::UserConstructionScript()
 // Function Announce_Gen_Quest_Conversation.Announce_Gen_Quest_Conversation_C.OnConversationFinished
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// struct FFortConversationSentence* FinishingSentence              (BlueprintVisible, BlueprintReadOnly, Parm)
-// int*                           FinishingSentenceSentenceIndex (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortConversationSentence* FinishingSentence              (Parm)
+// int*                           FinishingSentenceSentenceIndex (Parm, ZeroConstructor, IsPlainOldData)
 
 void AAnnounce_Gen_Quest_Conversation_C::OnConversationFinished(struct FFortConversationSentence* FinishingSentence, int* FinishingSentenceSentenceIndex)
 {
@@ -54,7 +54,7 @@ void AAnnounce_Gen_Quest_Conversation_C::OnConversationFinished(struct FFortConv
 // Function Announce_Gen_Quest_Conversation.Announce_Gen_Quest_Conversation_C.ExecuteUbergraph_Announce_Gen_Quest_Conversation
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AAnnounce_Gen_Quest_Conversation_C::ExecuteUbergraph_Announce_Gen_Quest_Conversation(int EntryPoint)
 {

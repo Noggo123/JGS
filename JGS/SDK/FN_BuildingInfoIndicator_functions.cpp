@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,8 +32,8 @@ void UBuildingInfoIndicator_C::RefreshBuildingInfo()
 // Function BuildingInfoIndicator.BuildingInfoIndicator_C.HandleQuickbarFocusChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortQuickBars                 QuickBar                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            QuickBarSlot                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortQuickBars                 QuickBar                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            QuickBarSlot                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBuildingInfoIndicator_C::HandleQuickbarFocusChanged(EFortQuickBars QuickBar, int QuickBarSlot)
 {
@@ -54,7 +54,7 @@ void UBuildingInfoIndicator_C::HandleQuickbarFocusChanged(EFortQuickBars QuickBa
 // Function BuildingInfoIndicator.BuildingInfoIndicator_C.HandleAttachedTrapChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ABuildingTrap*           BuildingTrap                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class ABuildingTrap*           BuildingTrap                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBuildingInfoIndicator_C::HandleAttachedTrapChanged(class ABuildingTrap* BuildingTrap)
 {
@@ -74,14 +74,14 @@ void UBuildingInfoIndicator_C::HandleAttachedTrapChanged(class ABuildingTrap* Bu
 // Function BuildingInfoIndicator.BuildingInfoIndicator_C.UpdateBuildingInfo_InteractionWidgets
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Interactable                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           CanBePlayerEdited              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           IsAnyTrapAttached              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           IsTrapAttachedFacingPlayer     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           IsPreviewTrapAttached          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortBuildingInteraction       InteractionType                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            InteractionCost                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// TEnumAsByte<EFortResourceType> BuildingMaterial               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Interactable                   (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           CanBePlayerEdited              (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IsAnyTrapAttached              (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IsTrapAttachedFacingPlayer     (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IsPreviewTrapAttached          (Parm, ZeroConstructor, IsPlainOldData)
+// EFortBuildingInteraction       InteractionType                (Parm, ZeroConstructor, IsPlainOldData)
+// int                            InteractionCost                (Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EFortResourceType> BuildingMaterial               (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBuildingInfoIndicator_C::UpdateBuildingInfo_InteractionWidgets(bool Interactable, bool CanBePlayerEdited, bool IsAnyTrapAttached, bool IsTrapAttachedFacingPlayer, bool IsPreviewTrapAttached, EFortBuildingInteraction InteractionType, int InteractionCost, TEnumAsByte<EFortResourceType> BuildingMaterial)
 {
@@ -129,7 +129,7 @@ bool UBuildingInfoIndicator_C::IsCurrentBuildingBeingRepaired()
 // Function BuildingInfoIndicator.BuildingInfoIndicator_C.UpdateBuildingRepairCost
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            NewInteractionCost             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            NewInteractionCost             (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBuildingInfoIndicator_C::UpdateBuildingRepairCost(int NewInteractionCost)
 {
@@ -149,7 +149,7 @@ void UBuildingInfoIndicator_C::UpdateBuildingRepairCost(int NewInteractionCost)
 // Function BuildingInfoIndicator.BuildingInfoIndicator_C.HandlePlayerTargetingChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bIsTargeting                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bIsTargeting                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBuildingInfoIndicator_C::HandlePlayerTargetingChanged(bool bIsTargeting)
 {
@@ -203,8 +203,8 @@ void UBuildingInfoIndicator_C::Update_Keybinds()
 // Function BuildingInfoIndicator.BuildingInfoIndicator_C.HandleTrapDurabilityChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          CurrentDurability              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          MaxDurability                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          CurrentDurability              (Parm, ZeroConstructor, IsPlainOldData)
+// float                          MaxDurability                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBuildingInfoIndicator_C::HandleTrapDurabilityChanged(float CurrentDurability, float MaxDurability)
 {
@@ -225,7 +225,7 @@ void UBuildingInfoIndicator_C::HandleTrapDurabilityChanged(float CurrentDurabili
 // Function BuildingInfoIndicator.BuildingInfoIndicator_C.HandleBuildingHealthChanged
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          Health                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Health                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBuildingInfoIndicator_C::HandleBuildingHealthChanged(float Health)
 {
@@ -245,7 +245,7 @@ void UBuildingInfoIndicator_C::HandleBuildingHealthChanged(float Health)
 // Function BuildingInfoIndicator.BuildingInfoIndicator_C.HandleBuildingFocused
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ABuildingActor*          FocusedBuilding                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class ABuildingActor*          FocusedBuilding                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBuildingInfoIndicator_C::HandleBuildingFocused(class ABuildingActor* FocusedBuilding)
 {
@@ -265,7 +265,7 @@ void UBuildingInfoIndicator_C::HandleBuildingFocused(class ABuildingActor* Focus
 // Function BuildingInfoIndicator.BuildingInfoIndicator_C.UpdateBuildingInfo
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortFocusedBuildingInfo NewBuildingInfo                (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortFocusedBuildingInfo NewBuildingInfo                (Parm, OutParm, ReferenceParm)
 
 void UBuildingInfoIndicator_C::UpdateBuildingInfo(struct FFortFocusedBuildingInfo* NewBuildingInfo)
 {
@@ -304,7 +304,7 @@ void UBuildingInfoIndicator_C::Construct()
 // Function BuildingInfoIndicator.BuildingInfoIndicator_C.ExecuteUbergraph_BuildingInfoIndicator
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBuildingInfoIndicator_C::ExecuteUbergraph_BuildingInfoIndicator(int EntryPoint)
 {

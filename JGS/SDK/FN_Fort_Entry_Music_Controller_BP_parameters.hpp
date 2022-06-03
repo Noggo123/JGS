@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -102,7 +102,7 @@ struct AFort_Entry_Music_Controller_BP_C_ReceiveBeginPlay_Params
 // Function Fort_Entry_Music_Controller_BP.Fort_Entry_Music_Controller_BP_C.On Sub Game Changed
 struct AFort_Entry_Music_Controller_BP_C_On_Sub_Game_Changed_Params
 {
-	ESubGame                                           SubGame;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	ESubGame                                           SubGame;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Fort_Entry_Music_Controller_BP.Fort_Entry_Music_Controller_BP_C.Music_Lobby_Athena_FadeIn
@@ -110,16 +110,10 @@ struct AFort_Entry_Music_Controller_BP_C_Music_Lobby_Athena_FadeIn_Params
 {
 };
 
-// Function Fort_Entry_Music_Controller_BP.Fort_Entry_Music_Controller_BP_C.Change Music
-struct AFort_Entry_Music_Controller_BP_C_Change_Music_Params
-{
-	class USoundBase*                                  New_Music;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function Fort_Entry_Music_Controller_BP.Fort_Entry_Music_Controller_BP_C.ExecuteUbergraph_Fort_Entry_Music_Controller_BP
 struct AFort_Entry_Music_Controller_BP_C_ExecuteUbergraph_Fort_Entry_Music_Controller_BP_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

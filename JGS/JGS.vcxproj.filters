@@ -31,6 +31,9 @@
     <Filter Include="Gameplay">
       <UniqueIdentifier>{9c9b73ec-4884-476f-a9d4-d63c42cd4da8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Misc">
+      <UniqueIdentifier>{08efa366-173f-43f1-9f88-7707225e34ca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Util.h" />
@@ -57,5 +60,11 @@
     <ClInclude Include="Containers.h">
       <Filter>Net</Filter>
     </ClInclude>
+    <ClInclude Include="Discord.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

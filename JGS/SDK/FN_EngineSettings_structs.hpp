@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -45,11 +45,11 @@ struct FAutoCompleteCommand
 };
 
 // ScriptStruct EngineSettings.GameModeName
-// 0x0028
+// 0x0020
 struct FGameModeName
 {
 	struct FString                                     Name;                                                     // 0x0000(0x0010) (Edit, ZeroConstructor)
-	struct FSoftClassPath                              GameMode;                                                 // 0x0010(0x0018) (Edit)
+	struct FStringClassReference                       GameMode;                                                 // 0x0010(0x0010) (Edit)
 };
 
 }

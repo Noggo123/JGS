@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,9 +15,9 @@ namespace SDK
 // Function CollectionBookSectionPanel.CollectionBookSectionPanel_C.OnInspectItem
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           AllowItemModifications         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           IsTemporaryItem                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           AllowItemModifications         (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IsTemporaryItem                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBookSectionPanel_C::OnInspectItem(class UFortItem* Item, bool AllowItemModifications, bool IsTemporaryItem)
 {
@@ -39,7 +39,7 @@ void UCollectionBookSectionPanel_C::OnInspectItem(class UFortItem* Item, bool Al
 // Function CollectionBookSectionPanel.CollectionBookSectionPanel_C.OnSlotItemConfirm
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               ItemToSlot                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               ItemToSlot                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBookSectionPanel_C::OnSlotItemConfirm(class UFortItem* ItemToSlot)
 {
@@ -59,7 +59,7 @@ void UCollectionBookSectionPanel_C::OnSlotItemConfirm(class UFortItem* ItemToSlo
 // Function CollectionBookSectionPanel.CollectionBookSectionPanel_C.ShowItemDetail
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               SelectedItem                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               SelectedItem                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBookSectionPanel_C::ShowItemDetail(class UFortItem* SelectedItem)
 {
@@ -96,7 +96,7 @@ void UCollectionBookSectionPanel_C::Construct()
 // Function CollectionBookSectionPanel.CollectionBookSectionPanel_C.OnSectionChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UFortCollectionBookSection** Section                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortCollectionBookSection** Section                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBookSectionPanel_C::OnSectionChanged(class UFortCollectionBookSection** Section)
 {
@@ -133,7 +133,7 @@ void UCollectionBookSectionPanel_C::OnActivated()
 // Function CollectionBookSectionPanel.CollectionBookSectionPanel_C.ExecuteUbergraph_CollectionBookSectionPanel
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBookSectionPanel_C::ExecuteUbergraph_CollectionBookSectionPanel(int EntryPoint)
 {

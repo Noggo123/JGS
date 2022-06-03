@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function QuestInfo_BulletList.QuestInfo_BulletList_C.AddEntryWithBrush
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   EntryText                      (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FSlateBrush             EntryIconBrush                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   EntryText                      (Parm)
+// struct FSlateBrush             EntryIconBrush                 (Parm)
 
 void UQuestInfo_BulletList_C::AddEntryWithBrush(const struct FText& EntryText, const struct FSlateBrush& EntryIconBrush)
 {
@@ -54,7 +54,7 @@ void UQuestInfo_BulletList_C::InitDesignView()
 // Function QuestInfo_BulletList.QuestInfo_BulletList_C.AddEntry
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   EntryText                      (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   EntryText                      (Parm)
 
 void UQuestInfo_BulletList_C::AddEntry(const struct FText& EntryText)
 {
@@ -74,7 +74,7 @@ void UQuestInfo_BulletList_C::AddEntry(const struct FText& EntryText)
 // Function QuestInfo_BulletList.QuestInfo_BulletList_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestInfo_BulletList_C::PreConstruct(bool* IsDesignTime)
 {
@@ -111,7 +111,7 @@ void UQuestInfo_BulletList_C::Construct()
 // Function QuestInfo_BulletList.QuestInfo_BulletList_C.ExecuteUbergraph_QuestInfo_BulletList
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestInfo_BulletList_C::ExecuteUbergraph_QuestInfo_BulletList(int EntryPoint)
 {

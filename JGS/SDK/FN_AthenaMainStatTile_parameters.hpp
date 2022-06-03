@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,26 +17,26 @@ namespace SDK
 // Function AthenaMainStatTile.AthenaMainStatTile_C.SetStatValue
 struct UAthenaMainStatTile_C_SetStatValue_Params
 {
-	struct FText                                       StatValueAsText;                                          // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FText                                       StatValueAsText;                                          // (Parm)
 };
 
 // Function AthenaMainStatTile.AthenaMainStatTile_C.SetTagAndDisplayName
 struct UAthenaMainStatTile_C_SetTagAndDisplayName_Params
 {
-	struct FString                                     Tag;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-	struct FText                                       DisplayName;                                              // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FString                                     Tag;                                                      // (Parm, ZeroConstructor)
+	struct FText                                       DisplayName;                                              // (Parm)
 };
 
 // Function AthenaMainStatTile.AthenaMainStatTile_C.PreConstruct
 struct UAthenaMainStatTile_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaMainStatTile.AthenaMainStatTile_C.ExecuteUbergraph_AthenaMainStatTile
 struct UAthenaMainStatTile_C_ExecuteUbergraph_AthenaMainStatTile_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

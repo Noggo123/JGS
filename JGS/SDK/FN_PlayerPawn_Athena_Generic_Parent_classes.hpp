@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,23 +13,23 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass PlayerPawn_Athena_Generic_Parent.PlayerPawn_Athena_Generic_Parent_C
-// 0x00C0 (0x21C0 - 0x2100)
+// 0x00C0 (0x1B50 - 0x1A90)
 class APlayerPawn_Athena_Generic_Parent_C : public AFortPlayerPawnAthena
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x2100(0x0008) (Transient, DuplicateTransient)
-	TArray<class UMaterialInterface*>                  Default_Weapon_Materials;                                 // 0x2108(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
-	TArray<class UMaterialInstanceDynamic*>            PawnBackpackMaterials;                                    // 0x2118(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
-	TArray<class UMaterialInstanceDynamic*>            PawnHatMaterials;                                         // 0x2128(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
-	TArray<class UMaterialInstanceDynamic*>            PawnHeadMaterials;                                        // 0x2138(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
-	TArray<class UMaterialInstanceDynamic*>            PawnBodyMaterials;                                        // 0x2148(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
-	TArray<class UMaterialInstanceDynamic*>            PawnCharmMaterials;                                       // 0x2158(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
-	TArray<class UMaterialInstanceDynamic*>            PawnFaceMaterials;                                        // 0x2168(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
-	TArray<class UMaterialInterface*>                  PawnLegsMaterials;                                        // 0x2178(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
-	TArray<class UMaterialInterface*>                  PawnTorsoMaterials;                                       // 0x2188(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
-	class UPostProcessComponent*                       PlayerPostProcessFX;                                      // 0x2198(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
-	TArray<class USkeletalMeshComponent*>              SkeletalMeshes;                                           // 0x21A0(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
-	TArray<class UMaterialInstanceDynamic*>            PawnMaterials_ALL;                                        // 0x21B0(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x1A90(0x0008) (Transient, DuplicateTransient)
+	TArray<class UMaterialInterface*>                  Default_Weapon_Materials;                                 // 0x1A98(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	TArray<class UMaterialInstanceDynamic*>            PawnBackpackMaterials;                                    // 0x1AA8(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	TArray<class UMaterialInstanceDynamic*>            PawnHatMaterials;                                         // 0x1AB8(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	TArray<class UMaterialInstanceDynamic*>            PawnHeadMaterials;                                        // 0x1AC8(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	TArray<class UMaterialInstanceDynamic*>            PawnBodyMaterials;                                        // 0x1AD8(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	TArray<class UMaterialInstanceDynamic*>            PawnCharmMaterials;                                       // 0x1AE8(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	TArray<class UMaterialInstanceDynamic*>            PawnFaceMaterials;                                        // 0x1AF8(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	TArray<class UMaterialInterface*>                  PawnLegsMaterials;                                        // 0x1B08(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	TArray<class UMaterialInterface*>                  PawnTorsoMaterials;                                       // 0x1B18(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	class UPostProcessComponent*                       PlayerPostProcessFX;                                      // 0x1B28(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	TArray<class USkeletalMeshComponent*>              SkeletalMeshes;                                           // 0x1B30(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	TArray<class UMaterialInstanceDynamic*>            PawnMaterials_ALL;                                        // 0x1B40(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{
@@ -38,7 +38,10 @@ public:
 	}
 
 
+	void Teleport(const struct FGameplayCueParameters& GameplayCueParameters, bool TeleportOut_, float Default_PlayLength);
 	void UserConstructionScript();
+	void GameplayCue_Teleport_Out(TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters);
+	void GameplayCue_Teleport_In(TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters);
 	void ReceiveBeginPlay();
 	void ExecuteUbergraph_PlayerPawn_Athena_Generic_Parent(int EntryPoint);
 };

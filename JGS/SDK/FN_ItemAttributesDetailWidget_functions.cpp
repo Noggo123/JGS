@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -117,9 +117,9 @@ void UItemAttributesDetailWidget_C::HandlePreDifferentItemToCompareWithSet()
 // Function ItemAttributesDetailWidget.ItemAttributesDetailWidget_C.HandleItemToDetailChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bItemChanged                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bAmmoChanged                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bIngredientsChanged            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bItemChanged                   (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bAmmoChanged                   (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bIngredientsChanged            (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemAttributesDetailWidget_C::HandleItemToDetailChanged(bool bItemChanged, bool bAmmoChanged, bool bIngredientsChanged)
 {
@@ -141,9 +141,9 @@ void UItemAttributesDetailWidget_C::HandleItemToDetailChanged(bool bItemChanged,
 // Function ItemAttributesDetailWidget.ItemAttributesDetailWidget_C.HandleItemToCompareWithChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bItemChanged                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bAmmoChanged                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bIngredientsChanged            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bItemChanged                   (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bAmmoChanged                   (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bIngredientsChanged            (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemAttributesDetailWidget_C::HandleItemToCompareWithChanged(bool bItemChanged, bool bAmmoChanged, bool bIngredientsChanged)
 {
@@ -165,7 +165,7 @@ void UItemAttributesDetailWidget_C::HandleItemToCompareWithChanged(bool bItemCha
 // Function ItemAttributesDetailWidget.ItemAttributesDetailWidget_C.ExecuteUbergraph_ItemAttributesDetailWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemAttributesDetailWidget_C::ExecuteUbergraph_ItemAttributesDetailWidget(int EntryPoint)
 {

@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function ItemWindow.ItemWindow_C.Set Description Text
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItemDefinition*     Item_Definition                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonTextBlock*        Text_Box_to_Set                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UFortItemDefinition*     Item_Definition                (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonTextBlock*        Text_Box_to_Set                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemWindow_C::Set_Description_Text(class UFortItemDefinition* Item_Definition, class UCommonTextBlock* Text_Box_to_Set)
 {
@@ -37,7 +37,7 @@ void UItemWindow_C::Set_Description_Text(class UFortItemDefinition* Item_Definit
 // Function ItemWindow.ItemWindow_C.InternalToExternalRarity
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// EFortRarity                    InRarity                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortRarity                    InRarity                       (Parm, ZeroConstructor, IsPlainOldData)
 // struct FText                   ExternalRarity                 (Parm, OutParm)
 
 void UItemWindow_C::InternalToExternalRarity(EFortRarity InRarity, struct FText* ExternalRarity)
@@ -61,8 +61,8 @@ void UItemWindow_C::InternalToExternalRarity(EFortRarity InRarity, struct FText*
 // Function ItemWindow.ItemWindow_C.HandleButton
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidget*                 Content                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// int                            Index                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidget*                 Content                        (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemWindow_C::HandleButton(class UWidget* Content, int Index)
 {
@@ -100,8 +100,8 @@ void UItemWindow_C::Initialize()
 // Function ItemWindow.ItemWindow_C.AddInfo
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UFortItemDefinition*> Info_Items                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// struct FText                   Title                          (BlueprintVisible, BlueprintReadOnly, Parm)
+// TArray<class UFortItemDefinition*> Info_Items                     (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// struct FText                   Title                          (Parm)
 
 void UItemWindow_C::AddInfo(const struct FText& Title, TArray<class UFortItemDefinition*>* Info_Items)
 {
@@ -124,8 +124,8 @@ void UItemWindow_C::AddInfo(const struct FText& Title, TArray<class UFortItemDef
 // Function ItemWindow.ItemWindow_C.OnSelectedButtonChanged_Event_0_1
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonButton*           AssociatedButton               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// int                            ButtonIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           AssociatedButton               (Parm, ZeroConstructor, IsPlainOldData)
+// int                            ButtonIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemWindow_C::OnSelectedButtonChanged_Event_0_1(class UCommonButton* AssociatedButton, int ButtonIndex)
 {
@@ -180,7 +180,7 @@ void UItemWindow_C::Construct()
 // Function ItemWindow.ItemWindow_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_37_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemWindow_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_37_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -200,7 +200,7 @@ void UItemWindow_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_37_CommonB
 // Function ItemWindow.ItemWindow_C.ExecuteUbergraph_ItemWindow
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemWindow_C::ExecuteUbergraph_ItemWindow(int EntryPoint)
 {

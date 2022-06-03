@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function HeroSquadBonus.HeroSquadBonus_C.Get_ToolTipWidget
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 class UWidget* UHeroSquadBonus_C::Get_ToolTipWidget()
 {
@@ -36,7 +36,7 @@ class UWidget* UHeroSquadBonus_C::Get_ToolTipWidget()
 // Function HeroSquadBonus.HeroSquadBonus_C.SetBackgroundGlow
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           GlowBackground                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           GlowBackground                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHeroSquadBonus_C::SetBackgroundGlow(bool GlowBackground)
 {
@@ -90,7 +90,7 @@ void UHeroSquadBonus_C::UpdateBonusPerk()
 // Function HeroSquadBonus.HeroSquadBonus_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHeroSquadBonus_C::PreConstruct(bool* IsDesignTime)
 {
@@ -141,30 +141,10 @@ void UHeroSquadBonus_C::Construct()
 }
 
 
-// Function HeroSquadBonus.HeroSquadBonus_C.OnCombinedTooltipDescriptionReady
-// (Event, Public, HasOutParms, BlueprintEvent)
-// Parameters:
-// struct FText*                  Description                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-
-void UHeroSquadBonus_C::OnCombinedTooltipDescriptionReady(struct FText* Description)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HeroSquadBonus.HeroSquadBonus_C.OnCombinedTooltipDescriptionReady");
-
-	UHeroSquadBonus_C_OnCombinedTooltipDescriptionReady_Params params;
-	params.Description = Description;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function HeroSquadBonus.HeroSquadBonus_C.ExecuteUbergraph_HeroSquadBonus
-// (HasDefaults)
+// ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHeroSquadBonus_C::ExecuteUbergraph_HeroSquadBonus(int EntryPoint)
 {

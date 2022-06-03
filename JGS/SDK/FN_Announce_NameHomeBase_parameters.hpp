@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -27,19 +27,19 @@ struct AAnnounce_NameHomeBase_C_InitAnnouncement_Params
 // Function Announce_NameHomeBase.Announce_NameHomeBase_C.HandleSentenceStart_UI
 struct AAnnounce_NameHomeBase_C_HandleSentenceStart_UI_Params
 {
-	int*                                               SentenceIdx;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               SentenceIdx;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Announce_NameHomeBase.Announce_NameHomeBase_C.HandleSentenceStop_UI
 struct AAnnounce_NameHomeBase_C_HandleSentenceStop_UI_Params
 {
-	int*                                               SentenceIdx;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               SentenceIdx;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Announce_NameHomeBase.Announce_NameHomeBase_C.ExecuteUbergraph_Announce_NameHomeBase
 struct AAnnounce_NameHomeBase_C_ExecuteUbergraph_Announce_NameHomeBase_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

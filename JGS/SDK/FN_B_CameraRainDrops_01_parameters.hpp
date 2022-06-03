@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -19,16 +19,6 @@ struct AB_CameraRainDrops_01_C_UserConstructionScript_Params
 {
 };
 
-// Function B_CameraRainDrops_01.B_CameraRainDrops_01_C.Alpha__FinishedFunc
-struct AB_CameraRainDrops_01_C_Alpha__FinishedFunc_Params
-{
-};
-
-// Function B_CameraRainDrops_01.B_CameraRainDrops_01_C.Alpha__UpdateFunc
-struct AB_CameraRainDrops_01_C_Alpha__UpdateFunc_Params
-{
-};
-
 // Function B_CameraRainDrops_01.B_CameraRainDrops_01_C.ReceiveBeginPlay
 struct AB_CameraRainDrops_01_C_ReceiveBeginPlay_Params
 {
@@ -37,7 +27,7 @@ struct AB_CameraRainDrops_01_C_ReceiveBeginPlay_Params
 // Function B_CameraRainDrops_01.B_CameraRainDrops_01_C.ExecuteUbergraph_B_CameraRainDrops_01
 struct AB_CameraRainDrops_01_C_ExecuteUbergraph_B_CameraRainDrops_01_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

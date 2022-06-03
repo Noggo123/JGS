@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,17 +12,14 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.UpdateQuickBarCaching
+// Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.HandleShowHideWeaponRail
 // (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           DesireCaching                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaQuickbarPrimary_C::UpdateQuickBarCaching(bool DesireCaching)
+void UAthenaQuickbarPrimary_C::HandleShowHideWeaponRail()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.UpdateQuickBarCaching");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.HandleShowHideWeaponRail");
 
-	UAthenaQuickbarPrimary_C_UpdateQuickBarCaching_Params params;
-	params.DesireCaching = DesireCaching;
+	UAthenaQuickbarPrimary_C_HandleShowHideWeaponRail_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -32,14 +29,14 @@ void UAthenaQuickbarPrimary_C::UpdateQuickBarCaching(bool DesireCaching)
 }
 
 
-// Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.HandleShowHideWeaponRail
+// Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.HandleUpdateSlots
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void UAthenaQuickbarPrimary_C::HandleShowHideWeaponRail()
+void UAthenaQuickbarPrimary_C::HandleUpdateSlots()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.HandleShowHideWeaponRail");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.HandleUpdateSlots");
 
-	UAthenaQuickbarPrimary_C_HandleShowHideWeaponRail_Params params;
+	UAthenaQuickbarPrimary_C_HandleUpdateSlots_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -74,7 +71,7 @@ void UAthenaQuickbarPrimary_C::HasOneNonHarvestWeapon(bool* HasNonHarvestWeapon)
 // Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.Show Primary Quickbar Rail
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Show                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Show                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaQuickbarPrimary_C::Show_Primary_Quickbar_Rail(bool Show)
 {
@@ -111,7 +108,7 @@ void UAthenaQuickbarPrimary_C::HandleKeybindsChanged()
 // Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.HandleInputMethodChanged_Bind
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bUsingGamepad                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bUsingGamepad                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaQuickbarPrimary_C::HandleInputMethodChanged_Bind(bool bUsingGamepad)
 {
@@ -148,8 +145,8 @@ void UAthenaQuickbarPrimary_C::Destruct()
 // Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.OnQuickBarSlotFocusChanged_Bind
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortQuickBars                 QuickbarIndex                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            Slot                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortQuickBars                 QuickbarIndex                  (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Slot                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaQuickbarPrimary_C::OnQuickBarSlotFocusChanged_Bind(EFortQuickBars QuickbarIndex, int Slot)
 {
@@ -201,45 +198,6 @@ void UAthenaQuickbarPrimary_C::Minimize()
 }
 
 
-// Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.OnQuickbarContentsChanged
-// (HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EFortQuickBars*                QuickbarIndex                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// TArray<int>*                   ChangedSlots                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-
-void UAthenaQuickbarPrimary_C::OnQuickbarContentsChanged(EFortQuickBars* QuickbarIndex, TArray<int>* ChangedSlots)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.OnQuickbarContentsChanged");
-
-	UAthenaQuickbarPrimary_C_OnQuickbarContentsChanged_Params params;
-	params.QuickbarIndex = QuickbarIndex;
-	params.ChangedSlots = ChangedSlots;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.AnimationFinished
-// (BlueprintCallable, BlueprintEvent)
-
-void UAthenaQuickbarPrimary_C::AnimationFinished()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.AnimationFinished");
-
-	UAthenaQuickbarPrimary_C_AnimationFinished_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
@@ -257,10 +215,30 @@ void UAthenaQuickbarPrimary_C::Construct()
 }
 
 
-// Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.ExecuteUbergraph_AthenaQuickbarPrimary
-// (HasDefaults)
+// Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.OnQuickbarContentsChanged
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortQuickBars*                QuickbarIndex                  (Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaQuickbarPrimary_C::OnQuickbarContentsChanged(EFortQuickBars* QuickbarIndex)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.OnQuickbarContentsChanged");
+
+	UAthenaQuickbarPrimary_C_OnQuickbarContentsChanged_Params params;
+	params.QuickbarIndex = QuickbarIndex;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.ExecuteUbergraph_AthenaQuickbarPrimary
+// ()
+// Parameters:
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaQuickbarPrimary_C::ExecuteUbergraph_AthenaQuickbarPrimary(int EntryPoint)
 {

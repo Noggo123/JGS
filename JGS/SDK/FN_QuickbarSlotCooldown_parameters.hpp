@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,32 +17,32 @@ namespace SDK
 // Function QuickbarSlotCooldown.QuickbarSlotCooldown_C.Initialize
 struct UQuickbarSlotCooldown_C_Initialize_Params
 {
-	TEnumAsByte<EItemDisplayStyle>                     QuickbarItemDisplayStyle;                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	TArray<EFortItemCooldownType>                      DesiredCooldownTypesSupported;                            // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TEnumAsByte<EItemDisplayStyle>                     QuickbarItemDisplayStyle;                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	TArray<EFortItemCooldownType>                      DesiredCooldownTypesSupported;                            // (Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function QuickbarSlotCooldown.QuickbarSlotCooldown_C.Show Countdown
 struct UQuickbarSlotCooldown_C_Show_Countdown_Params
 {
-	bool                                               Show;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Show;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function QuickbarSlotCooldown.QuickbarSlotCooldown_C.OnCooldownStarted
 struct UQuickbarSlotCooldown_C_OnCooldownStarted_Params
 {
-	EFortItemCooldownType*                             CooldownType;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	EFortItemCooldownType*                             CooldownType;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function QuickbarSlotCooldown.QuickbarSlotCooldown_C.OnCooldownStopped
 struct UQuickbarSlotCooldown_C_OnCooldownStopped_Params
 {
-	EFortItemCooldownType*                             CooldownType;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	EFortItemCooldownType*                             CooldownType;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function QuickbarSlotCooldown.QuickbarSlotCooldown_C.ExecuteUbergraph_QuickbarSlotCooldown
 struct UQuickbarSlotCooldown_C_ExecuteUbergraph_QuickbarSlotCooldown_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

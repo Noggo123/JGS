@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -96,28 +96,11 @@ class UObject* UOptionsMenuInput_C::GetData()
 }
 
 
-// Function OptionsMenuInput.OptionsMenuInput_C.SetClearButtonVisibility
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UOptionsMenuInput_C::SetClearButtonVisibility()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuInput.OptionsMenuInput_C.SetClearButtonVisibility");
-
-	UOptionsMenuInput_C_SetClearButtonVisibility_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function OptionsMenuInput.OptionsMenuInput_C.Change Key
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Primary_Key                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   Key_To_Sets                    (BlueprintVisible, BlueprintReadOnly, Parm)
+// bool                           Primary_Key                    (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Key_To_Sets                    (Parm)
 
 void UOptionsMenuInput_C::Change_Key(bool Primary_Key, const struct FText& Key_To_Sets)
 {
@@ -152,10 +135,101 @@ void UOptionsMenuInput_C::Center_on_Widget()
 }
 
 
+// Function OptionsMenuInput.OptionsMenuInput_C.OnAcquireFromPool
+// (Event, Protected, BlueprintEvent)
+
+void UOptionsMenuInput_C::OnAcquireFromPool()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuInput.OptionsMenuInput_C.OnAcquireFromPool");
+
+	UOptionsMenuInput_C_OnAcquireFromPool_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuInput.OptionsMenuInput_C.OnReleaseToPool
+// (Event, Protected, BlueprintEvent)
+
+void UOptionsMenuInput_C::OnReleaseToPool()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuInput.OptionsMenuInput_C.OnReleaseToPool");
+
+	UOptionsMenuInput_C_OnReleaseToPool_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuInput.OptionsMenuInput_C.Private_OnExpanderArrowShiftClicked
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void UOptionsMenuInput_C::Private_OnExpanderArrowShiftClicked()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuInput.OptionsMenuInput_C.Private_OnExpanderArrowShiftClicked");
+
+	UOptionsMenuInput_C_Private_OnExpanderArrowShiftClicked_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuInput.OptionsMenuInput_C.RegisterOnClicked
+// (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FScriptDelegate         Callback                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+
+void UOptionsMenuInput_C::RegisterOnClicked(const struct FScriptDelegate& Callback)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuInput.OptionsMenuInput_C.RegisterOnClicked");
+
+	UOptionsMenuInput_C_RegisterOnClicked_Params params;
+	params.Callback = Callback;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OptionsMenuInput.OptionsMenuInput_C.SetExpanded
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           bExpanded                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void UOptionsMenuInput_C::SetExpanded(bool bExpanded)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuInput.OptionsMenuInput_C.SetExpanded");
+
+	UOptionsMenuInput_C_SetExpanded_Params params;
+	params.bExpanded = bExpanded;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function OptionsMenuInput.OptionsMenuInput_C.SetIndexInList
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            InIndexInList                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            InIndexInList                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenuInput_C::SetIndexInList(int InIndexInList)
 {
@@ -175,7 +249,7 @@ void UOptionsMenuInput_C::SetIndexInList(int InIndexInList)
 // Function OptionsMenuInput.OptionsMenuInput_C.SetSelected
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bSelected                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bSelected                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenuInput_C::SetSelected(bool bSelected)
 {
@@ -229,7 +303,7 @@ void UOptionsMenuInput_C::Reset()
 // Function OptionsMenuInput.OptionsMenuInput_C.BndEvt__PrimaryInput_K2Node_ComponentBoundEvent_33_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenuInput_C::BndEvt__PrimaryInput_K2Node_ComponentBoundEvent_33_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -249,7 +323,7 @@ void UOptionsMenuInput_C::BndEvt__PrimaryInput_K2Node_ComponentBoundEvent_33_Com
 // Function OptionsMenuInput.OptionsMenuInput_C.BndEvt__SecondaryInput_K2Node_ComponentBoundEvent_55_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenuInput_C::BndEvt__SecondaryInput_K2Node_ComponentBoundEvent_55_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -269,8 +343,8 @@ void UOptionsMenuInput_C::BndEvt__SecondaryInput_K2Node_ComponentBoundEvent_55_C
 // Function OptionsMenuInput.OptionsMenuInput_C.SetData
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 InData                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonListView*         OwningList                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UObject*                 InData                         (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonListView*         OwningList                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenuInput_C::SetData(class UObject* InData, class UCommonListView* OwningList)
 {
@@ -291,7 +365,7 @@ void UOptionsMenuInput_C::SetData(class UObject* InData, class UCommonListView* 
 // Function OptionsMenuInput.OptionsMenuInput_C.OnMouseLeave
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FPointerEvent*          MouseEvent                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FPointerEvent*          MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UOptionsMenuInput_C::OnMouseLeave(struct FPointerEvent* MouseEvent)
 {
@@ -311,8 +385,8 @@ void UOptionsMenuInput_C::OnMouseLeave(struct FPointerEvent* MouseEvent)
 // Function OptionsMenuInput.OptionsMenuInput_C.OnMouseEnter
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent*          MouseEvent                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// struct FPointerEvent*          MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UOptionsMenuInput_C::OnMouseEnter(struct FGeometry* MyGeometry, struct FPointerEvent* MouseEvent)
 {
@@ -333,7 +407,7 @@ void UOptionsMenuInput_C::OnMouseEnter(struct FGeometry* MyGeometry, struct FPoi
 // Function OptionsMenuInput.OptionsMenuInput_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_226_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenuInput_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_226_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -350,101 +424,10 @@ void UOptionsMenuInput_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_226_
 }
 
 
-// Function OptionsMenuInput.OptionsMenuInput_C.SetExpanded
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           bExpanded                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UOptionsMenuInput_C::SetExpanded(bool bExpanded)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuInput.OptionsMenuInput_C.SetExpanded");
-
-	UOptionsMenuInput_C_SetExpanded_Params params;
-	params.bExpanded = bExpanded;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenuInput.OptionsMenuInput_C.RegisterOnClicked
-// (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FScriptDelegate         Callback                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-
-void UOptionsMenuInput_C::RegisterOnClicked(const struct FScriptDelegate& Callback)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuInput.OptionsMenuInput_C.RegisterOnClicked");
-
-	UOptionsMenuInput_C_RegisterOnClicked_Params params;
-	params.Callback = Callback;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenuInput.OptionsMenuInput_C.Private_OnExpanderArrowShiftClicked
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void UOptionsMenuInput_C::Private_OnExpanderArrowShiftClicked()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuInput.OptionsMenuInput_C.Private_OnExpanderArrowShiftClicked");
-
-	UOptionsMenuInput_C_Private_OnExpanderArrowShiftClicked_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenuInput.OptionsMenuInput_C.OnReleaseToPool
-// (Event, Protected, BlueprintEvent)
-
-void UOptionsMenuInput_C::OnReleaseToPool()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuInput.OptionsMenuInput_C.OnReleaseToPool");
-
-	UOptionsMenuInput_C_OnReleaseToPool_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenuInput.OptionsMenuInput_C.OnAcquireFromPool
-// (Event, Protected, BlueprintEvent)
-
-void UOptionsMenuInput_C::OnAcquireFromPool()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuInput.OptionsMenuInput_C.OnAcquireFromPool");
-
-	UOptionsMenuInput_C_OnAcquireFromPool_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function OptionsMenuInput.OptionsMenuInput_C.ExecuteUbergraph_OptionsMenuInput
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenuInput_C::ExecuteUbergraph_OptionsMenuInput(int EntryPoint)
 {
@@ -464,16 +447,14 @@ void UOptionsMenuInput_C::ExecuteUbergraph_OptionsMenuInput(int EntryPoint)
 // Function OptionsMenuInput.OptionsMenuInput_C.UnbindClicked__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Number_in_List                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UOptionsMenuInput_C*     Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// int                            Number_in_List                 (Parm, ZeroConstructor, IsPlainOldData)
 
-void UOptionsMenuInput_C::UnbindClicked__DelegateSignature(int Number_in_List, class UOptionsMenuInput_C* Widget)
+void UOptionsMenuInput_C::UnbindClicked__DelegateSignature(int Number_in_List)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuInput.OptionsMenuInput_C.UnbindClicked__DelegateSignature");
 
 	UOptionsMenuInput_C_UnbindClicked__DelegateSignature_Params params;
 	params.Number_in_List = Number_in_List;
-	params.Widget = Widget;
 
 	auto flags = fn->FunctionFlags;
 
@@ -486,8 +467,8 @@ void UOptionsMenuInput_C::UnbindClicked__DelegateSignature(int Number_in_List, c
 // Function OptionsMenuInput.OptionsMenuInput_C.Input Clicked__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Number_in_List                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           Is_Primary_Button              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Number_in_List                 (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Is_Primary_Button              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenuInput_C::Input_Clicked__DelegateSignature(int Number_in_List, bool Is_Primary_Button)
 {

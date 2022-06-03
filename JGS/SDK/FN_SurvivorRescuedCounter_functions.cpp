@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function SurvivorRescuedCounter.SurvivorRescuedCounter_C.UpdateSurvivorsRescued
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            SurvivorsRescued               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            SurvivorsRescued               (Parm, ZeroConstructor, IsPlainOldData)
 
 void USurvivorRescuedCounter_C::UpdateSurvivorsRescued(int SurvivorsRescued)
 {
@@ -52,7 +52,7 @@ void USurvivorRescuedCounter_C::Construct()
 // Function SurvivorRescuedCounter.SurvivorRescuedCounter_C.ExecuteUbergraph_SurvivorRescuedCounter
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void USurvivorRescuedCounter_C::ExecuteUbergraph_SurvivorRescuedCounter(int EntryPoint)
 {

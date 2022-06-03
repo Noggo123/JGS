@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UScoreBarsWidget_C::UnregisterForScoreStreamEvents()
 // Function ScoreBarsWidget.ScoreBarsWidget_C.HandleScoreNumberChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EStatCategory                  ScoreCategory                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EStatCategory                  ScoreCategory                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UScoreBarsWidget_C::HandleScoreNumberChanged(EStatCategory ScoreCategory)
 {
@@ -52,7 +52,7 @@ void UScoreBarsWidget_C::HandleScoreNumberChanged(EStatCategory ScoreCategory)
 // Function ScoreBarsWidget.ScoreBarsWidget_C.HandleMessageDisplayed
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortUIMessageItemWidget* ItemWidget                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UFortUIMessageItemWidget* ItemWidget                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UScoreBarsWidget_C::HandleMessageDisplayed(class UFortUIMessageItemWidget* ItemWidget)
 {
@@ -106,7 +106,7 @@ void UScoreBarsWidget_C::RegisterForScoreStreamEvents()
 // Function ScoreBarsWidget.ScoreBarsWidget_C.HandleScoreMessageExpired
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortUIMessageItemWidget* Expired_Message                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UFortUIMessageItemWidget* Expired_Message                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UScoreBarsWidget_C::HandleScoreMessageExpired(class UFortUIMessageItemWidget* Expired_Message)
 {
@@ -143,10 +143,10 @@ void UScoreBarsWidget_C::TryGetNextScoreMessage()
 // Function ScoreBarsWidget.ScoreBarsWidget_C.HandleScoreStatChanged
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Delta                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   Name                           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TEnumAsByte<EFortReplicatedStat> StatType                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EStatCategory                  StatCategory                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Delta                          (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Name                           (Parm, OutParm, ReferenceParm)
+// TEnumAsByte<EFortReplicatedStat> StatType                       (Parm, ZeroConstructor, IsPlainOldData)
+// EStatCategory                  StatCategory                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UScoreBarsWidget_C::HandleScoreStatChanged(int Delta, TEnumAsByte<EFortReplicatedStat> StatType, EStatCategory StatCategory, struct FText* Name)
 {
@@ -205,7 +205,7 @@ void UScoreBarsWidget_C::UpdateScoreBars()
 // Function ScoreBarsWidget.ScoreBarsWidget_C.HandleUpdateUI
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortMissionState*       Mission                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortMissionState*       Mission                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UScoreBarsWidget_C::HandleUpdateUI(class AFortMissionState* Mission)
 {
@@ -332,7 +332,7 @@ void UScoreBarsWidget_C::Destruct()
 // Function ScoreBarsWidget.ScoreBarsWidget_C.ExecuteUbergraph_ScoreBarsWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UScoreBarsWidget_C::ExecuteUbergraph_ScoreBarsWidget(int EntryPoint)
 {

@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,10 +15,10 @@ namespace SDK
 // Function BP_ExpeditionSquadSlotsView.BP_ExpeditionSquadSlotsView_C.CreateAndAddSquadSlotButton
 // (Event, Protected, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int*                           SquadSlotIndex                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FHomebaseSquadSlot*     SquadSlotDefinition            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// class UWidget*                 OutSquadSlotButtonHost         (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// class UFortSquadSlotSelectorButton* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+// int*                           SquadSlotIndex                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// struct FHomebaseSquadSlot*     SquadSlotDefinition            (ConstParm, Parm, OutParm, ReferenceParm)
+// class UWidget*                 OutSquadSlotButtonHost         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// class UFortSquadSlotSelectorButton* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 class UFortSquadSlotSelectorButton* UBP_ExpeditionSquadSlotsView_C::CreateAndAddSquadSlotButton(int* SquadSlotIndex, struct FHomebaseSquadSlot* SquadSlotDefinition, class UWidget** OutSquadSlotButtonHost)
 {
@@ -44,7 +44,7 @@ class UFortSquadSlotSelectorButton* UBP_ExpeditionSquadSlotsView_C::CreateAndAdd
 // Function BP_ExpeditionSquadSlotsView.BP_ExpeditionSquadSlotsView_C.HandleSquadSlotSelected
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            SquadSlotIndex                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            SquadSlotIndex                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_ExpeditionSquadSlotsView_C::HandleSquadSlotSelected(int SquadSlotIndex)
 {
@@ -64,7 +64,7 @@ void UBP_ExpeditionSquadSlotsView_C::HandleSquadSlotSelected(int SquadSlotIndex)
 // Function BP_ExpeditionSquadSlotsView.BP_ExpeditionSquadSlotsView_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_ExpeditionSquadSlotsView_C::PreConstruct(bool* IsDesignTime)
 {
@@ -98,64 +98,10 @@ void UBP_ExpeditionSquadSlotsView_C::HandleSquadSlotOpened()
 }
 
 
-// Function BP_ExpeditionSquadSlotsView.BP_ExpeditionSquadSlotsView_C.OpenSquadSlotEvent
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int                            SquadSlotIndex                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UBP_ExpeditionSquadSlotsView_C::OpenSquadSlotEvent(int SquadSlotIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ExpeditionSquadSlotsView.BP_ExpeditionSquadSlotsView_C.OpenSquadSlotEvent");
-
-	UBP_ExpeditionSquadSlotsView_C_OpenSquadSlotEvent_Params params;
-	params.SquadSlotIndex = SquadSlotIndex;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function BP_ExpeditionSquadSlotsView.BP_ExpeditionSquadSlotsView_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UBP_ExpeditionSquadSlotsView_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ExpeditionSquadSlotsView.BP_ExpeditionSquadSlotsView_C.Construct");
-
-	UBP_ExpeditionSquadSlotsView_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function BP_ExpeditionSquadSlotsView.BP_ExpeditionSquadSlotsView_C.Destruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UBP_ExpeditionSquadSlotsView_C::Destruct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ExpeditionSquadSlotsView.BP_ExpeditionSquadSlotsView_C.Destruct");
-
-	UBP_ExpeditionSquadSlotsView_C_Destruct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function BP_ExpeditionSquadSlotsView.BP_ExpeditionSquadSlotsView_C.ExecuteUbergraph_BP_ExpeditionSquadSlotsView
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_ExpeditionSquadSlotsView_C::ExecuteUbergraph_BP_ExpeditionSquadSlotsView(int EntryPoint)
 {
@@ -192,7 +138,7 @@ void UBP_ExpeditionSquadSlotsView_C::OnSquadSlotOpened__DelegateSignature()
 // Function BP_ExpeditionSquadSlotsView.BP_ExpeditionSquadSlotsView_C.OnSquadSlotSelected__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            SquadSlotIndex                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            SquadSlotIndex                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_ExpeditionSquadSlotsView_C::OnSquadSlotSelected__DelegateSignature(int SquadSlotIndex)
 {

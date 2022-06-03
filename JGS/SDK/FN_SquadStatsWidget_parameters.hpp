@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -27,7 +27,7 @@ struct USquadStatsWidget_C_BindToAttributeChanges_Params
 // Function SquadStatsWidget.SquadStatsWidget_C.HandleActivityChanged
 struct USquadStatsWidget_C_HandleActivityChanged_Params
 {
-	bool                                               IsActive;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               IsActive;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function SquadStatsWidget.SquadStatsWidget_C.HandleAttributeChanged
@@ -38,7 +38,7 @@ struct USquadStatsWidget_C_HandleAttributeChanged_Params
 // Function SquadStatsWidget.SquadStatsWidget_C.HighlightStat
 struct USquadStatsWidget_C_HighlightStat_Params
 {
-	int                                                inStatIndex;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                inStatIndex;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function SquadStatsWidget.SquadStatsWidget_C.RefreshScroll
@@ -74,13 +74,13 @@ struct USquadStatsWidget_C_Construct_Params
 // Function SquadStatsWidget.SquadStatsWidget_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_37_CommonButtonClicked__DelegateSignature
 struct USquadStatsWidget_C_BndEvt__IconTextButton_K2Node_ComponentBoundEvent_37_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function SquadStatsWidget.SquadStatsWidget_C.BndEvt__CloseDetailedStats_K2Node_ComponentBoundEvent_119_CommonButtonClicked__DelegateSignature
 struct USquadStatsWidget_C_BndEvt__CloseDetailedStats_K2Node_ComponentBoundEvent_119_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function SquadStatsWidget.SquadStatsWidget_C.Destruct
@@ -96,7 +96,7 @@ struct USquadStatsWidget_C_HandleSquadSlottingPreviewStateChanged_Params
 // Function SquadStatsWidget.SquadStatsWidget_C.ExecuteUbergraph_SquadStatsWidget
 struct USquadStatsWidget_C_ExecuteUbergraph_SquadStatsWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function SquadStatsWidget.SquadStatsWidget_C.DetailedStatsClosed__DelegateSignature

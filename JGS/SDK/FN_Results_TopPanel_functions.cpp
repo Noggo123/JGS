@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function Results_TopPanel.Results_TopPanel_C.Initialize
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortCompletionResult          CompletionResult               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortCompletionResult          CompletionResult               (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TopPanel_C::Initialize(EFortCompletionResult CompletionResult)
 {
@@ -69,7 +69,7 @@ void UResults_TopPanel_C::Intro_Sequence()
 // Function Results_TopPanel.Results_TopPanel_C.ExecuteUbergraph_Results_TopPanel
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TopPanel_C::ExecuteUbergraph_Results_TopPanel(int EntryPoint)
 {

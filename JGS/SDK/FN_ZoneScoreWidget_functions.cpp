@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -66,7 +66,7 @@ void UZoneScoreWidget_C::ShowXPReward()
 // Function ZoneScoreWidget.ZoneScoreWidget_C.UpdateXPLERP
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          LERP_Factor                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          LERP_Factor                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UZoneScoreWidget_C::UpdateXPLERP(float LERP_Factor)
 {
@@ -103,7 +103,7 @@ void UZoneScoreWidget_C::BeginTweeningXP()
 // Function ZoneScoreWidget.ZoneScoreWidget_C.UpdateScoresLERP
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          LERP_Factor                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          LERP_Factor                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UZoneScoreWidget_C::UpdateScoresLERP(float LERP_Factor)
 {
@@ -191,8 +191,8 @@ void UZoneScoreWidget_C::OnScoreTweenEndEvent()
 // Function ZoneScoreWidget.ZoneScoreWidget_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// float*                         InDeltaTime                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// float*                         InDeltaTime                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UZoneScoreWidget_C::Tick(struct FGeometry* MyGeometry, float* InDeltaTime)
 {
@@ -230,7 +230,7 @@ void UZoneScoreWidget_C::Construct()
 // Function ZoneScoreWidget.ZoneScoreWidget_C.OnEndOfDayRecap
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FEndOfDayRecap          EndOfDayRecap                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FEndOfDayRecap          EndOfDayRecap                  (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UZoneScoreWidget_C::OnEndOfDayRecap(const struct FEndOfDayRecap& EndOfDayRecap)
 {
@@ -250,7 +250,7 @@ void UZoneScoreWidget_C::OnEndOfDayRecap(const struct FEndOfDayRecap& EndOfDayRe
 // Function ZoneScoreWidget.ZoneScoreWidget_C.ExecuteUbergraph_ZoneScoreWidget
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UZoneScoreWidget_C::ExecuteUbergraph_ZoneScoreWidget(int EntryPoint)
 {

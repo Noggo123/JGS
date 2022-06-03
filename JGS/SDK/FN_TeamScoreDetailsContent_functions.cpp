@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UTeamScoreDetailsContent_C::TrimUnusedRows()
 // Function TeamScoreDetailsContent.TeamScoreDetailsContent_C.SetRowData
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            RowIdx                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            RowIdx                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTeamScoreDetailsContent_C::SetRowData(int RowIdx)
 {
@@ -86,7 +86,7 @@ void UTeamScoreDetailsContent_C::OnScoreReportChanged()
 // Function TeamScoreDetailsContent.TeamScoreDetailsContent_C.ExecuteUbergraph_TeamScoreDetailsContent
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTeamScoreDetailsContent_C::ExecuteUbergraph_TeamScoreDetailsContent(int EntryPoint)
 {

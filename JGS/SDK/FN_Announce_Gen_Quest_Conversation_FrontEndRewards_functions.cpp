@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -66,8 +66,8 @@ void AAnnounce_Gen_Quest_Conversation_FrontEndRewards_C::UserConstructionScript(
 // Function Announce_Gen_Quest_Conversation_FrontEndRewards.Announce_Gen_Quest_Conversation_FrontEndRewards_C.OnConversationFinished
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// struct FFortConversationSentence* FinishingSentence              (BlueprintVisible, BlueprintReadOnly, Parm)
-// int*                           FinishingSentenceSentenceIndex (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortConversationSentence* FinishingSentence              (Parm)
+// int*                           FinishingSentenceSentenceIndex (Parm, ZeroConstructor, IsPlainOldData)
 
 void AAnnounce_Gen_Quest_Conversation_FrontEndRewards_C::OnConversationFinished(struct FFortConversationSentence* FinishingSentence, int* FinishingSentenceSentenceIndex)
 {
@@ -88,8 +88,8 @@ void AAnnounce_Gen_Quest_Conversation_FrontEndRewards_C::OnConversationFinished(
 // Function Announce_Gen_Quest_Conversation_FrontEndRewards.Announce_Gen_Quest_Conversation_FrontEndRewards_C.OnSentenceStarted
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FFortConversationSentence* Sentence                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// int*                           SentenceIndex                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortConversationSentence* Sentence                       (ConstParm, Parm, OutParm, ReferenceParm)
+// int*                           SentenceIndex                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void AAnnounce_Gen_Quest_Conversation_FrontEndRewards_C::OnSentenceStarted(struct FFortConversationSentence* Sentence, int* SentenceIndex)
 {
@@ -110,7 +110,7 @@ void AAnnounce_Gen_Quest_Conversation_FrontEndRewards_C::OnSentenceStarted(struc
 // Function Announce_Gen_Quest_Conversation_FrontEndRewards.Announce_Gen_Quest_Conversation_FrontEndRewards_C.ExecuteUbergraph_Announce_Gen_Quest_Conversation_FrontEndRewards
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AAnnounce_Gen_Quest_Conversation_FrontEndRewards_C::ExecuteUbergraph_Announce_Gen_Quest_Conversation_FrontEndRewards(int EntryPoint)
 {
@@ -147,7 +147,7 @@ void AAnnounce_Gen_Quest_Conversation_FrontEndRewards_C::OnCurrentConversationFi
 // Function Announce_Gen_Quest_Conversation_FrontEndRewards.Announce_Gen_Quest_Conversation_FrontEndRewards_C.OnNewSentence__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortConversationSentence Sentence                       (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortConversationSentence Sentence                       (Parm)
 
 void AAnnounce_Gen_Quest_Conversation_FrontEndRewards_C::OnNewSentence__DelegateSignature(const struct FFortConversationSentence& Sentence)
 {

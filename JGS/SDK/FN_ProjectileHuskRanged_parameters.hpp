@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,14 +22,14 @@ struct AProjectileHuskRanged_C_UserConstructionScript_Params
 // Function ProjectileHuskRanged.ProjectileHuskRanged_C.ReceiveHit
 struct AProjectileHuskRanged_C_ReceiveHit_Params
 {
-	class UPrimitiveComponent**                        MyComp;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	class AActor**                                     Other;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UPrimitiveComponent**                        OtherComp;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	bool*                                              bSelfMoved;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector*                                    HitLocation;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	struct FVector*                                    HitNormal;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	struct FVector*                                    NormalImpulse;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	struct FHitResult*                                 Hit;                                                      // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	class UPrimitiveComponent**                        MyComp;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	class AActor**                                     Other;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent**                        OtherComp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              bSelfMoved;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector*                                    HitLocation;                                              // (Parm, IsPlainOldData)
+	struct FVector*                                    HitNormal;                                                // (Parm, IsPlainOldData)
+	struct FVector*                                    NormalImpulse;                                            // (Parm, IsPlainOldData)
+	struct FHitResult*                                 Hit;                                                      // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
 };
 
 // Function ProjectileHuskRanged.ProjectileHuskRanged_C.ReceiveBeginPlay
@@ -50,8 +50,8 @@ struct AProjectileHuskRanged_C_StopHoming_Params
 // Function ProjectileHuskRanged.ProjectileHuskRanged_C.OnExploded
 struct AProjectileHuskRanged_C_OnExploded_Params
 {
-	TArray<class AActor*>*                             HitActors;                                                // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-	TArray<struct FHitResult>*                         HitResults;                                               // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<class AActor*>*                             HitActors;                                                // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<struct FHitResult>*                         HitResults;                                               // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function ProjectileHuskRanged.ProjectileHuskRanged_C.OnStoppedOnServer
@@ -62,7 +62,7 @@ struct AProjectileHuskRanged_C_OnStoppedOnServer_Params
 // Function ProjectileHuskRanged.ProjectileHuskRanged_C.ExecuteUbergraph_ProjectileHuskRanged
 struct AProjectileHuskRanged_C_ExecuteUbergraph_ProjectileHuskRanged_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

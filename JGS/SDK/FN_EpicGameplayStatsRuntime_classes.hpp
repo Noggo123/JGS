@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -31,12 +31,12 @@ public:
 
 
 // Class EpicGameplayStatsRuntime.GameplayTagTableManager
-// 0x0068 (0x0098 - 0x0030)
+// 0x0068 (0x0090 - 0x0028)
 class UGameplayTagTableManager : public UDataAsset
 {
 public:
-	TArray<struct FManagedGameplayTagDataTableItem>    Tables;                                                   // 0x0030(0x0010) (Edit, ZeroConstructor)
-	unsigned char                                      UnknownData00[0x58];                                      // 0x0040(0x0058) MISSED OFFSET
+	TArray<struct FManagedGameplayTagDataTableItem>    Tables;                                                   // 0x0028(0x0010) (Edit, ZeroConstructor)
+	unsigned char                                      UnknownData00[0x58];                                      // 0x0038(0x0058) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

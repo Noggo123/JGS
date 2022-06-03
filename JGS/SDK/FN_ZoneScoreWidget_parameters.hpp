@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ struct UZoneScoreWidget_C_ShowXPReward_Params
 // Function ZoneScoreWidget.ZoneScoreWidget_C.UpdateXPLERP
 struct UZoneScoreWidget_C_UpdateXPLERP_Params
 {
-	float                                              LERP_Factor;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              LERP_Factor;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ZoneScoreWidget.ZoneScoreWidget_C.BeginTweeningXP
@@ -43,7 +43,7 @@ struct UZoneScoreWidget_C_BeginTweeningXP_Params
 // Function ZoneScoreWidget.ZoneScoreWidget_C.UpdateScoresLERP
 struct UZoneScoreWidget_C_UpdateScoresLERP_Params
 {
-	float                                              LERP_Factor;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              LERP_Factor;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ZoneScoreWidget.ZoneScoreWidget_C.BeginTweeningScores
@@ -69,8 +69,8 @@ struct UZoneScoreWidget_C_OnScoreTweenEndEvent_Params
 // Function ZoneScoreWidget.ZoneScoreWidget_C.Tick
 struct UZoneScoreWidget_C_Tick_Params
 {
-	struct FGeometry*                                  MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	float*                                             InDeltaTime;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FGeometry*                                  MyGeometry;                                               // (Parm, IsPlainOldData)
+	float*                                             InDeltaTime;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ZoneScoreWidget.ZoneScoreWidget_C.Construct
@@ -81,13 +81,13 @@ struct UZoneScoreWidget_C_Construct_Params
 // Function ZoneScoreWidget.ZoneScoreWidget_C.OnEndOfDayRecap
 struct UZoneScoreWidget_C_OnEndOfDayRecap_Params
 {
-	struct FEndOfDayRecap                              EndOfDayRecap;                                            // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FEndOfDayRecap                              EndOfDayRecap;                                            // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function ZoneScoreWidget.ZoneScoreWidget_C.ExecuteUbergraph_ZoneScoreWidget
 struct UZoneScoreWidget_C_ExecuteUbergraph_ZoneScoreWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ZoneScoreWidget.ZoneScoreWidget_C.OnEndOfDayRecapEnded__DelegateSignature

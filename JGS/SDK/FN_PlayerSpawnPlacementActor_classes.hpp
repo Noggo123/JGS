@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,11 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass PlayerSpawnPlacementActor.PlayerSpawnPlacementActor_C
-// 0x0008 (0x0688 - 0x0680)
+// 0x0008 (0x0748 - 0x0740)
 class APlayerSpawnPlacementActor_C : public AFortPlacementActor
 {
 public:
-	class UArrowComponent*                             Arrow;                                                    // 0x0680(0x0008) (BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UArrowComponent*                             Arrow;                                                    // 0x0740(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

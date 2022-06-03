@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -67,7 +67,7 @@ struct AB_Rift_Portals_C_OnActivated_Params
 // Function B_Rift_Portals.B_Rift_Portals_C.ReceiveEndPlay
 struct AB_Rift_Portals_C_ReceiveEndPlay_Params
 {
-	TEnumAsByte<EEndPlayReason>*                       EndPlayReason;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EEndPlayReason>*                       EndPlayReason;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function B_Rift_Portals.B_Rift_Portals_C.ReceiveBeginPlay
@@ -98,9 +98,9 @@ struct AB_Rift_Portals_C_ManuallyDeactivateRift_Params
 // Function B_Rift_Portals.B_Rift_Portals_C.PatrolEnemySuckIn
 struct AB_Rift_Portals_C_PatrolEnemySuckIn_Params
 {
-	float                                              Delay;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	float                                              RiftLightningDuration;                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               SpawnImpactParticles;                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Delay;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              RiftLightningDuration;                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               SpawnImpactParticles;                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function B_Rift_Portals.B_Rift_Portals_C.OnDeactivated
@@ -116,7 +116,7 @@ struct AB_Rift_Portals_C_ResetGate_Params
 // Function B_Rift_Portals.B_Rift_Portals_C.ExecuteUbergraph_B_Rift_Portals
 struct AB_Rift_Portals_C_ExecuteUbergraph_B_Rift_Portals_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,14 +22,14 @@ struct USquadSlotItemPickerTileButton_C_UpdateOverlays_Params
 // Function SquadSlotItemPickerTileButton.SquadSlotItemPickerTileButton_C.SetData
 struct USquadSlotItemPickerTileButton_C_SetData_Params
 {
-	class UObject**                                    InData;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonListView**                            OwningList;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UObject**                                    InData;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonListView**                            OwningList;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function SquadSlotItemPickerTileButton.SquadSlotItemPickerTileButton_C.HandleItemSlottedToDifferentSquad
 struct USquadSlotItemPickerTileButton_C_HandleItemSlottedToDifferentSquad_Params
 {
-	struct FHomebaseSquadSlotId*                       SquadSlotId;                                              // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FHomebaseSquadSlotId*                       SquadSlotId;                                              // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function SquadSlotItemPickerTileButton.SquadSlotItemPickerTileButton_C.HandleSlottingRestrictionReasonsChanged
@@ -40,7 +40,7 @@ struct USquadSlotItemPickerTileButton_C_HandleSlottingRestrictionReasonsChanged_
 // Function SquadSlotItemPickerTileButton.SquadSlotItemPickerTileButton_C.ExecuteUbergraph_SquadSlotItemPickerTileButton
 struct USquadSlotItemPickerTileButton_C_ExecuteUbergraph_SquadSlotItemPickerTileButton_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

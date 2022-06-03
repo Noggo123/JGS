@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_ZT_VindermansLab.BP_ZT_VindermansLab_C
-// 0x0000 (0x02E8 - 0x02E8)
+// 0x0000 (0x0270 - 0x0270)
 class UBP_ZT_VindermansLab_C : public UBP_ZT_TheGrasslands_C
 {
 public:

@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function ZoneDayCompletion_ScoreBlock.ZoneDayCompletion_ScoreBlock_C.SetScore
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            New_Score                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            New_Score                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UZoneDayCompletion_ScoreBlock_C::SetScore(int New_Score)
 {
@@ -86,8 +86,8 @@ void UZoneDayCompletion_ScoreBlock_C::Intro()
 // Function ZoneDayCompletion_ScoreBlock.ZoneDayCompletion_ScoreBlock_C.Increment
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            New_Score                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          Interpolation_Length           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            New_Score                      (Parm, ZeroConstructor, IsPlainOldData)
+// float                          Interpolation_Length           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UZoneDayCompletion_ScoreBlock_C::Increment(int New_Score, float Interpolation_Length)
 {
@@ -142,7 +142,7 @@ void UZoneDayCompletion_ScoreBlock_C::BndEvt__Anim_Intro_K2Node_ComponentBoundEv
 // Function ZoneDayCompletion_ScoreBlock.ZoneDayCompletion_ScoreBlock_C.BndEvt__NumericTextScore_K2Node_ComponentBoundEvent_51_FortCountingFinished__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UFortNumericTextBlock*   NumericTextBlock               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UFortNumericTextBlock*   NumericTextBlock               (Parm, ZeroConstructor, IsPlainOldData)
 
 void UZoneDayCompletion_ScoreBlock_C::BndEvt__NumericTextScore_K2Node_ComponentBoundEvent_51_FortCountingFinished__DelegateSignature(class UFortNumericTextBlock* NumericTextBlock)
 {
@@ -196,7 +196,7 @@ void UZoneDayCompletion_ScoreBlock_C::BndEvt__Anim_Outro_K2Node_ComponentBoundEv
 // Function ZoneDayCompletion_ScoreBlock.ZoneDayCompletion_ScoreBlock_C.ExecuteUbergraph_ZoneDayCompletion_ScoreBlock
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UZoneDayCompletion_ScoreBlock_C::ExecuteUbergraph_ZoneDayCompletion_ScoreBlock(int EntryPoint)
 {

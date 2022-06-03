@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -53,8 +53,8 @@ void UMissionTrackerSubEntry_C::CreateCompletionAnnouncement()
 // Function MissionTrackerSubEntry.MissionTrackerSubEntry_C.HandleMissionUIEvent
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortMissionState*       MissionElement                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayTagContainer   EventTags                      (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class AFortMissionState*       MissionElement                 (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayTagContainer   EventTags                      (Parm, OutParm, ReferenceParm)
 
 void UMissionTrackerSubEntry_C::HandleMissionUIEvent(class AFortMissionState* MissionElement, struct FGameplayTagContainer* EventTags)
 {
@@ -145,8 +145,8 @@ void UMissionTrackerSubEntry_C::ShowObjectiveWidget()
 // Function MissionTrackerSubEntry.MissionTrackerSubEntry_C.HanldeObjectiveVisiblityOverrideChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortObjectiveBase*      Objective                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortMissionVisibilityOverride New_Visibility_Override        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortObjectiveBase*      Objective                      (Parm, ZeroConstructor, IsPlainOldData)
+// EFortMissionVisibilityOverride New_Visibility_Override        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMissionTrackerSubEntry_C::HanldeObjectiveVisiblityOverrideChanged(class AFortObjectiveBase* Objective, EFortMissionVisibilityOverride New_Visibility_Override)
 {
@@ -184,7 +184,7 @@ void UMissionTrackerSubEntry_C::CreateObjectiveContentWidget()
 // Function MissionTrackerSubEntry.MissionTrackerSubEntry_C.StartEndingAnimations
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*        Animation                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UWidgetAnimation*        Animation                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMissionTrackerSubEntry_C::StartEndingAnimations(class UWidgetAnimation* Animation)
 {
@@ -221,7 +221,7 @@ void UMissionTrackerSubEntry_C::HideObjectiveWidget()
 // Function MissionTrackerSubEntry.MissionTrackerSubEntry_C.HandleUpdate
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortMissionState*       Objective                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortMissionState*       Objective                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMissionTrackerSubEntry_C::HandleUpdate(class AFortMissionState* Objective)
 {
@@ -241,8 +241,8 @@ void UMissionTrackerSubEntry_C::HandleUpdate(class AFortMissionState* Objective)
 // Function MissionTrackerSubEntry.MissionTrackerSubEntry_C.HandleObjectiveVisibilityChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortObjectiveBase*      Objective                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           NewVisibility                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortObjectiveBase*      Objective                      (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           NewVisibility                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMissionTrackerSubEntry_C::HandleObjectiveVisibilityChanged(class AFortObjectiveBase* Objective, bool NewVisibility)
 {
@@ -263,8 +263,8 @@ void UMissionTrackerSubEntry_C::HandleObjectiveVisibilityChanged(class AFortObje
 // Function MissionTrackerSubEntry.MissionTrackerSubEntry_C.HandleObjectiveStatusChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortObjectiveBase*      Objective                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortObjectiveStatus           NewStatus                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortObjectiveBase*      Objective                      (Parm, ZeroConstructor, IsPlainOldData)
+// EFortObjectiveStatus           NewStatus                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMissionTrackerSubEntry_C::HandleObjectiveStatusChanged(class AFortObjectiveBase* Objective, EFortObjectiveStatus NewStatus)
 {
@@ -285,7 +285,7 @@ void UMissionTrackerSubEntry_C::HandleObjectiveStatusChanged(class AFortObjectiv
 // Function MissionTrackerSubEntry.MissionTrackerSubEntry_C.Setup
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortObjectiveBase*      Objective                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortObjectiveBase*      Objective                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMissionTrackerSubEntry_C::Setup(class AFortObjectiveBase* Objective)
 {
@@ -339,7 +339,7 @@ void UMissionTrackerSubEntry_C::OnHiddenByHeightConstraintChanged()
 // Function MissionTrackerSubEntry.MissionTrackerSubEntry_C.ExecuteUbergraph_MissionTrackerSubEntry
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMissionTrackerSubEntry_C::ExecuteUbergraph_MissionTrackerSubEntry(int EntryPoint)
 {

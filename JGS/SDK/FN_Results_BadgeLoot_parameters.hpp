@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,7 +22,7 @@ struct UResults_BadgeLoot_C_Focus_Params
 // Function Results_BadgeLoot.Results_BadgeLoot_C.ShouldBadgeBeShown
 struct UResults_BadgeLoot_C_ShouldBadgeBeShown_Params
 {
-	class UFortItem*                                   Badge;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItem*                                   Badge;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               ShownBadgeBeShown;                                        // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -44,7 +44,7 @@ struct UResults_BadgeLoot_C_InitializeDelays_Params
 // Function Results_BadgeLoot.Results_BadgeLoot_C.PlayAnimationCommon
 struct UResults_BadgeLoot_C_PlayAnimationCommon_Params
 {
-	class UWidgetAnimation*                            Animation;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UWidgetAnimation*                            Animation;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_BadgeLoot.Results_BadgeLoot_C.StepBadgeQueues
@@ -61,13 +61,13 @@ struct UResults_BadgeLoot_C_HasMoreBadgesToShow_Params
 // Function Results_BadgeLoot.Results_BadgeLoot_C.PopulateNextBadge
 struct UResults_BadgeLoot_C_PopulateNextBadge_Params
 {
-	class UResults_Badge_C*                            Badge;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UResults_Badge_C*                            Badge;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_BadgeLoot.Results_BadgeLoot_C.Initialize
 struct UResults_BadgeLoot_C_Initialize_Params
 {
-	TArray<class UFortItem*>                           RewardItems;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<class UFortItem*>                           RewardItems;                                              // (Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function Results_BadgeLoot.Results_BadgeLoot_C.Intro Sequence
@@ -133,33 +133,33 @@ struct UResults_BadgeLoot_C_Skip_To_End_Sequence_Params
 // Function Results_BadgeLoot.Results_BadgeLoot_C.HandleClientEvent_ChestIntroDone
 struct UResults_BadgeLoot_C_HandleClientEvent_ChestIntroDone_Params
 {
-	class UObject*                                     EventSource;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UObject*                                     EventFocus;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FFortClientEvent                            ClientEvent;                                              // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UObject*                                     EventSource;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	class UObject*                                     EventFocus;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FFortClientEvent                            ClientEvent;                                              // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function Results_BadgeLoot.Results_BadgeLoot_C.HandleClientEvent_ChestProgressionDone
 struct UResults_BadgeLoot_C_HandleClientEvent_ChestProgressionDone_Params
 {
-	class UObject*                                     EventSource;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UObject*                                     EventFocus;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FFortClientEvent                            ClientEvent;                                              // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UObject*                                     EventSource;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	class UObject*                                     EventFocus;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FFortClientEvent                            ClientEvent;                                              // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function Results_BadgeLoot.Results_BadgeLoot_C.HandleClientEvent_ChestResultFocusDone
 struct UResults_BadgeLoot_C_HandleClientEvent_ChestResultFocusDone_Params
 {
-	class UObject*                                     EventSource;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UObject*                                     EventFocus;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FFortClientEvent                            ClientEvent;                                              // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UObject*                                     EventSource;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	class UObject*                                     EventFocus;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FFortClientEvent                            ClientEvent;                                              // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function Results_BadgeLoot.Results_BadgeLoot_C.HandleClientEvent_ChestOutroDone
 struct UResults_BadgeLoot_C_HandleClientEvent_ChestOutroDone_Params
 {
-	class UObject*                                     EventSource;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UObject*                                     EventFocus;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FFortClientEvent                            ClientEvent;                                              // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UObject*                                     EventSource;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	class UObject*                                     EventFocus;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FFortClientEvent                            ClientEvent;                                              // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function Results_BadgeLoot.Results_BadgeLoot_C.Skip
@@ -170,7 +170,7 @@ struct UResults_BadgeLoot_C_Skip_Params
 // Function Results_BadgeLoot.Results_BadgeLoot_C.BndEvt__ButtonContinue_K2Node_ComponentBoundEvent_279_CommonButtonClicked__DelegateSignature
 struct UResults_BadgeLoot_C_BndEvt__ButtonContinue_K2Node_ComponentBoundEvent_279_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_BadgeLoot.Results_BadgeLoot_C.BndEvt__Anim_ContinueButtonIntro_K2Node_ComponentBoundEvent_2_OnWidgetAnimationPlaybackStatusChanged__DelegateSignature
@@ -181,7 +181,7 @@ struct UResults_BadgeLoot_C_BndEvt__Anim_ContinueButtonIntro_K2Node_ComponentBou
 // Function Results_BadgeLoot.Results_BadgeLoot_C.ExecuteUbergraph_Results_BadgeLoot
 struct UResults_BadgeLoot_C_ExecuteUbergraph_Results_BadgeLoot_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_BadgeLoot.Results_BadgeLoot_C.Finished__DelegateSignature

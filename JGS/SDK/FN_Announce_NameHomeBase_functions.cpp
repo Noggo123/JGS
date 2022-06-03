@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,7 +49,7 @@ void AAnnounce_NameHomeBase_C::InitAnnouncement()
 // Function Announce_NameHomeBase.Announce_NameHomeBase_C.HandleSentenceStart_UI
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int*                           SentenceIdx                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           SentenceIdx                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void AAnnounce_NameHomeBase_C::HandleSentenceStart_UI(int* SentenceIdx)
 {
@@ -69,7 +69,7 @@ void AAnnounce_NameHomeBase_C::HandleSentenceStart_UI(int* SentenceIdx)
 // Function Announce_NameHomeBase.Announce_NameHomeBase_C.HandleSentenceStop_UI
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int*                           SentenceIdx                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           SentenceIdx                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void AAnnounce_NameHomeBase_C::HandleSentenceStop_UI(int* SentenceIdx)
 {
@@ -89,7 +89,7 @@ void AAnnounce_NameHomeBase_C::HandleSentenceStop_UI(int* SentenceIdx)
 // Function Announce_NameHomeBase.Announce_NameHomeBase_C.ExecuteUbergraph_Announce_NameHomeBase
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AAnnounce_NameHomeBase_C::ExecuteUbergraph_Announce_NameHomeBase(int EntryPoint)
 {

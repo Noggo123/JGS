@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function Announcement_QuestUpdate.Announcement_QuestUpdate_C.UpdateWidgetData
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// class AFortClientAnnouncement** Announcement                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortClientAnnouncement** Announcement                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAnnouncement_QuestUpdate_C::UpdateWidgetData(class AFortClientAnnouncement** Announcement)
 {
@@ -35,7 +35,7 @@ void UAnnouncement_QuestUpdate_C::UpdateWidgetData(class AFortClientAnnouncement
 // Function Announcement_QuestUpdate.Announcement_QuestUpdate_C.AllUpdatesFinished
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UQuestUpdateEntry_C*     UpdateWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UQuestUpdateEntry_C*     UpdateWidget                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAnnouncement_QuestUpdate_C::AllUpdatesFinished(class UQuestUpdateEntry_C* UpdateWidget)
 {
@@ -55,7 +55,7 @@ void UAnnouncement_QuestUpdate_C::AllUpdatesFinished(class UQuestUpdateEntry_C* 
 // Function Announcement_QuestUpdate.Announcement_QuestUpdate_C.ExecuteUbergraph_Announcement_QuestUpdate
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAnnouncement_QuestUpdate_C::ExecuteUbergraph_Announcement_QuestUpdate(int EntryPoint)
 {

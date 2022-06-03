@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function CollectionBookProgressWidget.CollectionBookProgressWidget_C.OnCollectionBookLevelProgressionChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// float*                         NewCompletionPct               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float*                         NewCompletionPct               (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBookProgressWidget_C::OnCollectionBookLevelProgressionChanged(float* NewCompletionPct)
 {
@@ -35,7 +35,7 @@ void UCollectionBookProgressWidget_C::OnCollectionBookLevelProgressionChanged(fl
 // Function CollectionBookProgressWidget.CollectionBookProgressWidget_C.OnCollectionBookPreviewXPChange
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// float*                         PreviewCompletionPct           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float*                         PreviewCompletionPct           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBookProgressWidget_C::OnCollectionBookPreviewXPChange(float* PreviewCompletionPct)
 {
@@ -55,7 +55,7 @@ void UCollectionBookProgressWidget_C::OnCollectionBookPreviewXPChange(float* Pre
 // Function CollectionBookProgressWidget.CollectionBookProgressWidget_C.ExecuteUbergraph_CollectionBookProgressWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBookProgressWidget_C::ExecuteUbergraph_CollectionBookProgressWidget(int EntryPoint)
 {

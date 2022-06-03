@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -80,7 +80,7 @@ void UJournalQuestDetails_C::Get_Quest_Item_Def(class UFortQuestItemDefinition**
 // Function JournalQuestDetails.JournalQuestDetails_C.Set Quest Display Name
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   InText                         (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   InText                         (Parm)
 
 void UJournalQuestDetails_C::Set_Quest_Display_Name(const struct FText& InText)
 {
@@ -122,9 +122,9 @@ void UJournalQuestDetails_C::IsQuestAudioPlaying(bool* IsQuestAudioPlaying)
 // Function JournalQuestDetails.JournalQuestDetails_C.StartConversation
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortConversation*       Conversation                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UFortQuestItem*          QuestItem                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           IsOutro_                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortConversation*       Conversation                   (Parm, ZeroConstructor, IsPlainOldData)
+// class UFortQuestItem*          QuestItem                      (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IsOutro_                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UJournalQuestDetails_C::StartConversation(class UFortConversation* Conversation, class UFortQuestItem* QuestItem, bool IsOutro_)
 {
@@ -163,15 +163,13 @@ void UJournalQuestDetails_C::StopConversation()
 // Function JournalQuestDetails.JournalQuestDetails_C.AbandonQuest
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortQuestItem*          QuestToAbandon                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           questAbandoned_                (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UJournalQuestDetails_C::AbandonQuest(class UFortQuestItem* QuestToAbandon, bool* questAbandoned_)
+void UJournalQuestDetails_C::AbandonQuest(bool* questAbandoned_)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function JournalQuestDetails.JournalQuestDetails_C.AbandonQuest");
 
 	UJournalQuestDetails_C_AbandonQuest_Params params;
-	params.QuestToAbandon = QuestToAbandon;
 
 	auto flags = fn->FunctionFlags;
 
@@ -255,10 +253,10 @@ void UJournalQuestDetails_C::HandleOnEndSpokenDialog()
 // Function JournalQuestDetails.JournalQuestDetails_C.HandleOnBeginSpokenDialog
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UTexture2D*              Image                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   Title                          (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FText                   Subtitle                       (BlueprintVisible, BlueprintReadOnly, Parm)
-// EFortAnnouncementDisplayPreference DisplayPreference              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture2D*              Image                          (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Title                          (Parm)
+// struct FText                   Subtitle                       (Parm)
+// EFortAnnouncementDisplayPreference DisplayPreference              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UJournalQuestDetails_C::HandleOnBeginSpokenDialog(class UTexture2D* Image, const struct FText& Title, const struct FText& Subtitle, EFortAnnouncementDisplayPreference DisplayPreference)
 {
@@ -332,7 +330,7 @@ void UJournalQuestDetails_C::HandleCurrentQuestChangedBP()
 // Function JournalQuestDetails.JournalQuestDetails_C.ExecuteUbergraph_JournalQuestDetails
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UJournalQuestDetails_C::ExecuteUbergraph_JournalQuestDetails(int EntryPoint)
 {

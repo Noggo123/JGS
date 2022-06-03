@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,9 +15,9 @@ namespace SDK
 // Function Results_BonusXpType.Results_BonusXpType_C.setInformation
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            InXPAmount                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   PlayerName                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FName                   InType                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            InXPAmount                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   PlayerName                     (Parm)
+// struct FName                   InType                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_BonusXpType_C::setInformation(int InXPAmount, const struct FText& PlayerName, const struct FName& InType)
 {
@@ -56,7 +56,7 @@ void UResults_BonusXpType_C::Construct()
 // Function Results_BonusXpType.Results_BonusXpType_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_BonusXpType_C::PreConstruct(bool* IsDesignTime)
 {
@@ -76,7 +76,7 @@ void UResults_BonusXpType_C::PreConstruct(bool* IsDesignTime)
 // Function Results_BonusXpType.Results_BonusXpType_C.ExecuteUbergraph_Results_BonusXpType
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_BonusXpType_C::ExecuteUbergraph_Results_BonusXpType(int EntryPoint)
 {

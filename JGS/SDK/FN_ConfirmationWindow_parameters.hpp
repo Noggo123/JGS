@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,21 +14,23 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function ConfirmationWindow.ConfirmationWindow_C.TapToClose
-struct UConfirmationWindow_C_TapToClose_Params
+// Function ConfirmationWindow.ConfirmationWindow_C.TriggerCameraMode
+struct UConfirmationWindow_C_TriggerCameraMode_Params
 {
-	struct FGeometry                                   MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	struct FPointerEvent                               MouseEvent;                                               // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	struct FEventReply                                 ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
-// Function ConfirmationWindow.ConfirmationWindow_C.CenterFirstButton
-struct UConfirmationWindow_C_CenterFirstButton_Params
+// Function ConfirmationWindow.ConfirmationWindow_C.TriggerCursorMode
+struct UConfirmationWindow_C_TriggerCursorMode_Params
 {
 };
 
 // Function ConfirmationWindow.ConfirmationWindow_C.CloseConfirmation
 struct UConfirmationWindow_C_CloseConfirmation_Params
+{
+};
+
+// Function ConfirmationWindow.ConfirmationWindow_C.CenterFirstButton
+struct UConfirmationWindow_C_CenterFirstButton_Params
 {
 };
 
@@ -55,7 +57,7 @@ struct UConfirmationWindow_C_ClickButtonIfBot_Params
 // Function ConfirmationWindow.ConfirmationWindow_C.OnWaitForExternalLatentAction
 struct UConfirmationWindow_C_OnWaitForExternalLatentAction_Params
 {
-	struct FFortDialogExternalLatentActionHandle       LatentActionHandle;                                       // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FFortDialogExternalLatentActionHandle       LatentActionHandle;                                       // (Parm)
 };
 
 // Function ConfirmationWindow.ConfirmationWindow_C.StopWaitingForLatentAction
@@ -72,7 +74,7 @@ struct UConfirmationWindow_C_GetLatentActionWaitHandle_Params
 // Function ConfirmationWindow.ConfirmationWindow_C.Set Hover Description
 struct UConfirmationWindow_C_Set_Hover_Description_Params
 {
-	class UCommonButton*                               Button_to_Hover;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UCommonButton*                               Button_to_Hover;                                          // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ConfirmationWindow.ConfirmationWindow_C.SetupLeft
@@ -103,23 +105,23 @@ struct UConfirmationWindow_C_KillCurrentConfirmation_Params
 // Function ConfirmationWindow.ConfirmationWindow_C.GetResultName
 struct UConfirmationWindow_C_GetResultName_Params
 {
-	class UIconTextButton_C*                           ConfirmButton;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UIconTextButton_C*                           ConfirmButton;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FName                                       ResultName;                                               // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ConfirmationWindow.ConfirmationWindow_C.GetInputAction
 struct UConfirmationWindow_C_GetInputAction_Params
 {
-	struct FName                                       RowName;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               UseInputAction;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       RowName;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               UseInputAction;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FDataTableRowHandle                         ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function ConfirmationWindow.ConfirmationWindow_C.AddSingleConfirmButton
 struct UConfirmationWindow_C_AddSingleConfirmButton_Params
 {
-	struct FConfirmationDialogAction                   ConfirmDialogAction;                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
-	bool                                               UseInputAction;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FConfirmationDialogAction                   ConfirmDialogAction;                                      // (Parm)
+	bool                                               UseInputAction;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ConfirmationWindow.ConfirmationWindow_C.HasAnyConfirmAction
@@ -131,7 +133,7 @@ struct UConfirmationWindow_C_HasAnyConfirmAction_Params
 // Function ConfirmationWindow.ConfirmationWindow_C.ConfirmActionClicked
 struct UConfirmationWindow_C_ConfirmActionClicked_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ConfirmationWindow.ConfirmationWindow_C.IsSimpleConfirmAction
@@ -143,7 +145,7 @@ struct UConfirmationWindow_C_IsSimpleConfirmAction_Params
 // Function ConfirmationWindow.ConfirmationWindow_C.DeclineActionClicked
 struct UConfirmationWindow_C_DeclineActionClicked_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ConfirmationWindow.ConfirmationWindow_C.AddDeclineButton
@@ -164,7 +166,7 @@ struct UConfirmationWindow_C_Initialize_Params
 // Function ConfirmationWindow.ConfirmationWindow_C.SetDescription
 struct UConfirmationWindow_C_SetDescription_Params
 {
-	struct FFortDialogDescription_NUI                  NewDescription;                                           // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FFortDialogDescription_NUI                  NewDescription;                                           // (Parm)
 };
 
 // Function ConfirmationWindow.ConfirmationWindow_C.Construct
@@ -195,7 +197,7 @@ struct UConfirmationWindow_C_OnBeginOutro_Params
 // Function ConfirmationWindow.ConfirmationWindow_C.PreConstruct
 struct UConfirmationWindow_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ConfirmationWindow.ConfirmationWindow_C.OnActivated
@@ -203,10 +205,15 @@ struct UConfirmationWindow_C_OnActivated_Params
 {
 };
 
+// Function ConfirmationWindow.ConfirmationWindow_C.Destruct
+struct UConfirmationWindow_C_Destruct_Params
+{
+};
+
 // Function ConfirmationWindow.ConfirmationWindow_C.ExecuteUbergraph_ConfirmationWindow
 struct UConfirmationWindow_C_ExecuteUbergraph_ConfirmationWindow_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

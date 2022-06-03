@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -47,26 +47,26 @@ struct ABP_VictoryDrone_C_ReceiveBeginPlay_Params
 // Function BP_VictoryDrone.BP_VictoryDrone_C.OnSpawnOutAnimEnded
 struct ABP_VictoryDrone_C_OnSpawnOutAnimEnded_Params
 {
-	class UAnimMontage*                                Montage;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bInterrupted;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UAnimMontage*                                Montage;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bInterrupted;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function BP_VictoryDrone.BP_VictoryDrone_C.ReceiveTick
 struct ABP_VictoryDrone_C_ReceiveTick_Params
 {
-	float*                                             DeltaSeconds;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float*                                             DeltaSeconds;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function BP_VictoryDrone.BP_VictoryDrone_C.ExecuteUbergraph_BP_VictoryDrone
 struct ABP_VictoryDrone_C_ExecuteUbergraph_BP_VictoryDrone_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function BP_VictoryDrone.BP_VictoryDrone_C.SpawnOutAnimEndedDispatcher__DelegateSignature
 struct ABP_VictoryDrone_C_SpawnOutAnimEndedDispatcher__DelegateSignature_Params
 {
-	class ABP_VictoryDrone_C*                          Drone;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class ABP_VictoryDrone_C*                          Drone;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

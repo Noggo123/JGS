@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,7 +49,7 @@ void UResults_NameplateWidget_C::Intro()
 // Function Results_NameplateWidget.Results_NameplateWidget_C.Initialize
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortCompletionResult          Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortCompletionResult          Result                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_NameplateWidget_C::Initialize(EFortCompletionResult Result)
 {
@@ -120,7 +120,7 @@ void UResults_NameplateWidget_C::Construct()
 // Function Results_NameplateWidget.Results_NameplateWidget_C.ExecuteUbergraph_Results_NameplateWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_NameplateWidget_C::ExecuteUbergraph_Results_NameplateWidget(int EntryPoint)
 {

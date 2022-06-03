@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,19 +17,19 @@ namespace SDK
 // Function ProgressWidget.ProgressWidget_C.SetIcon
 struct UProgressWidget_C_SetIcon_Params
 {
-	struct FSlateBrush                                 IconBrush;                                                // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FSlateBrush                                 IconBrush;                                                // (Parm)
 };
 
 // Function ProgressWidget.ProgressWidget_C.SetDescription
 struct UProgressWidget_C_SetDescription_Params
 {
-	struct FText                                       Description;                                              // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FText                                       Description;                                              // (Parm)
 };
 
 // Function ProgressWidget.ProgressWidget_C.SetTitle
 struct UProgressWidget_C_SetTitle_Params
 {
-	struct FText                                       Title;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FText                                       Title;                                                    // (Parm)
 };
 
 }

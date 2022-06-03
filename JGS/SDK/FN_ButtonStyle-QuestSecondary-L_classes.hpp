@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass ButtonStyle-QuestSecondary-L.ButtonStyle-QuestSecondary-L_C
-// 0x0000 (0x04F0 - 0x04F0)
+// 0x0000 (0x0530 - 0x0530)
 class UButtonStyle_QuestSecondary_L_C : public UCommonButtonStyle
 {
 public:

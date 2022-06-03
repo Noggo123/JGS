@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,8 +13,8 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass Athena_PlayerCameraModeTargetingPistol.Athena_PlayerCameraModeTargetingPistol_C
-// 0x0000 (0x0128 - 0x0128)
-class UAthena_PlayerCameraModeTargetingPistol_C : public UAthena_PlayerCameraModeRangedTargeting_C
+// 0x0000 (0x0110 - 0x0110)
+class UAthena_PlayerCameraModeTargetingPistol_C : public UAthena_PlayerCameraModeBase_C
 {
 public:
 

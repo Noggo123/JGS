@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UTeamMicStack_C::ClearContents()
 // Function TeamMicStack.TeamMicStack_C.AppendTeamMember
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     TeamMemberInfo                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortTeamMemberInfo     TeamMemberInfo                 (Parm, OutParm, ReferenceParm)
 
 void UTeamMicStack_C::AppendTeamMember(struct FFortTeamMemberInfo* TeamMemberInfo)
 {
@@ -54,8 +54,8 @@ void UTeamMicStack_C::AppendTeamMember(struct FFortTeamMemberInfo* TeamMemberInf
 // Function TeamMicStack.TeamMicStack_C.ShiftTeamMembers
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     TeamMemberInfo                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// int                            Index                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortTeamMemberInfo     TeamMemberInfo                 (Parm, OutParm, ReferenceParm)
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTeamMicStack_C::ShiftTeamMembers(int Index, struct FFortTeamMemberInfo* TeamMemberInfo)
 {
@@ -78,7 +78,7 @@ void UTeamMicStack_C::ShiftTeamMembers(int Index, struct FFortTeamMemberInfo* Te
 // Function TeamMicStack.TeamMicStack_C.HandleTeamMemberChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     Member_Info                    (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortTeamMemberInfo     Member_Info                    (Parm)
 
 void UTeamMicStack_C::HandleTeamMemberChanged(const struct FFortTeamMemberInfo& Member_Info)
 {
@@ -98,7 +98,7 @@ void UTeamMicStack_C::HandleTeamMemberChanged(const struct FFortTeamMemberInfo& 
 // Function TeamMicStack.TeamMicStack_C.HandleTeamMemberRemoved
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Member_Index                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Member_Index                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTeamMicStack_C::HandleTeamMemberRemoved(int Member_Index)
 {
@@ -152,7 +152,7 @@ void UTeamMicStack_C::HandlePartyLeft()
 // Function TeamMicStack.TeamMicStack_C.ExecuteUbergraph_TeamMicStack
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTeamMicStack_C::ExecuteUbergraph_TeamMicStack(int EntryPoint)
 {

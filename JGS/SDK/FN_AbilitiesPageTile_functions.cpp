@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function AbilitiesPageTile.AbilitiesPageTile_C.SetAbilityPerkInfo
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortUIPerk             AbilityPerk                    (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortUIPerk             AbilityPerk                    (Parm)
 
 void UAbilitiesPageTile_C::SetAbilityPerkInfo(const struct FFortUIPerk& AbilityPerk)
 {
@@ -52,7 +52,7 @@ void UAbilitiesPageTile_C::UpdateKeyBinding()
 // Function AbilitiesPageTile.AbilitiesPageTile_C.SetAbilityItemInfo
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               SlottedAbilityItem             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               SlottedAbilityItem             (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAbilitiesPageTile_C::SetAbilityItemInfo(class UFortItem* SlottedAbilityItem)
 {
@@ -89,7 +89,7 @@ void UAbilitiesPageTile_C::Construct()
 // Function AbilitiesPageTile.AbilitiesPageTile_C.HandleInputMethodChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bUsingGamepad                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bUsingGamepad                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAbilitiesPageTile_C::HandleInputMethodChanged(bool bUsingGamepad)
 {
@@ -109,7 +109,7 @@ void UAbilitiesPageTile_C::HandleInputMethodChanged(bool bUsingGamepad)
 // Function AbilitiesPageTile.AbilitiesPageTile_C.ExecuteUbergraph_AbilitiesPageTile
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAbilitiesPageTile_C::ExecuteUbergraph_AbilitiesPageTile(int EntryPoint)
 {

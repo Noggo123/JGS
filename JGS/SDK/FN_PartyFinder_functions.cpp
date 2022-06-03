@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,150 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function PartyFinder.PartyFinder_C.TouchToClose
-// (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FGeometry               MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent           MouseEvent                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FEventReply             ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FEventReply UPartyFinder_C::TouchToClose(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.TouchToClose");
-
-	UPartyFinder_C_TouchToClose_Params params;
-	params.MyGeometry = MyGeometry;
-	params.MouseEvent = MouseEvent;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function PartyFinder.PartyFinder_C.SetupInitialSelection
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UPartyFinder_C::SetupInitialSelection()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.SetupInitialSelection");
-
-	UPartyFinder_C_SetupInitialSelection_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PartyFinder.PartyFinder_C.CheckLFGStatusAndUpdateDisplay
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UPartyFinder_C::CheckLFGStatusAndUpdateDisplay()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.CheckLFGStatusAndUpdateDisplay");
-
-	UPartyFinder_C_CheckLFGStatusAndUpdateDisplay_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PartyFinder.PartyFinder_C.OnPartyServicesDegredationChanged
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           bAreServicesDegredated         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UPartyFinder_C::OnPartyServicesDegredationChanged(bool bAreServicesDegredated)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.OnPartyServicesDegredationChanged");
-
-	UPartyFinder_C_OnPartyServicesDegredationChanged_Params params;
-	params.bAreServicesDegredated = bAreServicesDegredated;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PartyFinder.PartyFinder_C.Handle_Nav_left
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EUINavigation                  Navigation                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UWidget*                 Widget                         (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UPartyFinder_C::Handle_Nav_left(EUINavigation Navigation, class UWidget** Widget)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.Handle_Nav_left");
-
-	UPartyFinder_C_Handle_Nav_left_Params params;
-	params.Navigation = Navigation;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Widget != nullptr)
-		*Widget = params.Widget;
-}
-
-
-// Function PartyFinder.PartyFinder_C.Handle_Nav_right
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EUINavigation                  Navigation                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UWidget*                 Widget                         (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UPartyFinder_C::Handle_Nav_right(EUINavigation Navigation, class UWidget** Widget)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.Handle_Nav_right");
-
-	UPartyFinder_C_Handle_Nav_right_Params params;
-	params.Navigation = Navigation;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Widget != nullptr)
-		*Widget = params.Widget;
-}
-
-
-// Function PartyFinder.PartyFinder_C.UnbindDelegates
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UPartyFinder_C::UnbindDelegates()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.UnbindDelegates");
-
-	UPartyFinder_C_UnbindDelegates_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function PartyFinder.PartyFinder_C.UpdateDetailsEmpty
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -176,7 +32,7 @@ void UPartyFinder_C::UpdateDetailsEmpty()
 // Function PartyFinder.PartyFinder_C.HandleFriendPresenceUpdated
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        FriendId                       (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FUniqueNetIdRepl        FriendId                       (Parm, OutParm, ReferenceParm)
 
 void UPartyFinder_C::HandleFriendPresenceUpdated(struct FUniqueNetIdRepl* FriendId)
 {
@@ -198,7 +54,7 @@ void UPartyFinder_C::HandleFriendPresenceUpdated(struct FUniqueNetIdRepl* Friend
 // Function PartyFinder.PartyFinder_C.SocialTreeView_GetChildrenForCategory
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 Item                           (Parm, ZeroConstructor, IsPlainOldData)
 // TArray<class UObject*>         ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
 
 TArray<class UObject*> UPartyFinder_C::SocialTreeView_GetChildrenForCategory(class UObject* Item)
@@ -255,7 +111,7 @@ void UPartyFinder_C::SendInvite()
 // Function PartyFinder.PartyFinder_C.GetFinderItemVisibility
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UFortSocialItem*         PartyFinderItem                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortSocialItem*         PartyFinderItem                (Parm, ZeroConstructor, IsPlainOldData)
 // ESlateVisibility               ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 ESlateVisibility UPartyFinder_C::GetFinderItemVisibility(class UFortSocialItem* PartyFinderItem)
@@ -278,7 +134,7 @@ ESlateVisibility UPartyFinder_C::GetFinderItemVisibility(class UFortSocialItem* 
 // Function PartyFinder.PartyFinder_C.UpdateDetails
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortSocialItem*         PartyFinderItem                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortSocialItem*         PartyFinderItem                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPartyFinder_C::UpdateDetails(class UFortSocialItem* PartyFinderItem)
 {
@@ -298,8 +154,8 @@ void UPartyFinder_C::UpdateDetails(class UFortSocialItem* PartyFinderItem)
 // Function PartyFinder.PartyFinder_C.HandleSocialListChanged
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UFortSocialItem*> SocialItems                    (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// bool                           bExpandAll                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TArray<class UFortSocialItem*> SocialItems                    (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// bool                           bExpandAll                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPartyFinder_C::HandleSocialListChanged(bool bExpandAll, TArray<class UFortSocialItem*>* SocialItems)
 {
@@ -322,7 +178,7 @@ void UPartyFinder_C::HandleSocialListChanged(bool bExpandAll, TArray<class UFort
 // Function PartyFinder.PartyFinder_C.HandlePartyTransitionStarted
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortPartyTransition           Transition                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortPartyTransition           Transition                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPartyFinder_C::HandlePartyTransitionStarted(EFortPartyTransition Transition)
 {
@@ -356,37 +212,19 @@ void UPartyFinder_C::BindDelegates()
 }
 
 
-// Function PartyFinder.PartyFinder_C.BndEvt__IconTextButton_1_K2Node_ComponentBoundEvent_49_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
+// Function PartyFinder.PartyFinder_C.DialogResult_9763B6F5495998E5B2E944A5F646709C
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// EFortDialogResult              Result                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ResultName                     (Parm, ZeroConstructor, IsPlainOldData)
 
-void UPartyFinder_C::BndEvt__IconTextButton_1_K2Node_ComponentBoundEvent_49_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
+void UPartyFinder_C::DialogResult_9763B6F5495998E5B2E944A5F646709C(EFortDialogResult Result, const struct FName& ResultName)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.BndEvt__IconTextButton_1_K2Node_ComponentBoundEvent_49_CommonButtonClicked__DelegateSignature");
+	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.DialogResult_9763B6F5495998E5B2E944A5F646709C");
 
-	UPartyFinder_C_BndEvt__IconTextButton_1_K2Node_ComponentBoundEvent_49_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PartyFinder.PartyFinder_C.BndEvt__ViewProfileButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UPartyFinder_C::BndEvt__ViewProfileButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.BndEvt__ViewProfileButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature");
-
-	UPartyFinder_C_BndEvt__ViewProfileButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
+	UPartyFinder_C_DialogResult_9763B6F5495998E5B2E944A5F646709C_Params params;
+	params.Result = Result;
+	params.ResultName = ResultName;
 
 	auto flags = fn->FunctionFlags;
 
@@ -404,6 +242,168 @@ void UPartyFinder_C::Construct()
 	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.Construct");
 
 	UPartyFinder_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PartyFinder.PartyFinder_C.BndEvt__IconTextButton_1_K2Node_ComponentBoundEvent_49_CommonButtonClicked__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void UPartyFinder_C::BndEvt__IconTextButton_1_K2Node_ComponentBoundEvent_49_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.BndEvt__IconTextButton_1_K2Node_ComponentBoundEvent_49_CommonButtonClicked__DelegateSignature");
+
+	UPartyFinder_C_BndEvt__IconTextButton_1_K2Node_ComponentBoundEvent_49_CommonButtonClicked__DelegateSignature_Params params;
+	params.Button = Button;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PartyFinder.PartyFinder_C.HandlePartyDataChanged
+// (HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FPartyState             PartyData                      (ConstParm, Parm, OutParm, ReferenceParm)
+
+void UPartyFinder_C::HandlePartyDataChanged(const struct FPartyState& PartyData)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.HandlePartyDataChanged");
+
+	UPartyFinder_C_HandlePartyDataChanged_Params params;
+	params.PartyData = PartyData;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PartyFinder.PartyFinder_C.BndEvt__InviteButton_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void UPartyFinder_C::BndEvt__InviteButton_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.BndEvt__InviteButton_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature");
+
+	UPartyFinder_C_BndEvt__InviteButton_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature_Params params;
+	params.Button = Button;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PartyFinder.PartyFinder_C.BndEvt__IgnoreButton_K2Node_ComponentBoundEvent_31_CommonButtonClicked__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void UPartyFinder_C::BndEvt__IgnoreButton_K2Node_ComponentBoundEvent_31_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.BndEvt__IgnoreButton_K2Node_ComponentBoundEvent_31_CommonButtonClicked__DelegateSignature");
+
+	UPartyFinder_C_BndEvt__IgnoreButton_K2Node_ComponentBoundEvent_31_CommonButtonClicked__DelegateSignature_Params params;
+	params.Button = Button;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PartyFinder.PartyFinder_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_99_CommonButtonClicked__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void UPartyFinder_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_99_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_99_CommonButtonClicked__DelegateSignature");
+
+	UPartyFinder_C_BndEvt__IconTextButton_K2Node_ComponentBoundEvent_99_CommonButtonClicked__DelegateSignature_Params params;
+	params.Button = Button;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PartyFinder.PartyFinder_C.BndEvt__SocialTreeView_K2Node_ComponentBoundEvent_256_OnListViewItemSelected__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UObject*                 Item                           (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bIsSelected                    (Parm, ZeroConstructor, IsPlainOldData)
+
+void UPartyFinder_C::BndEvt__SocialTreeView_K2Node_ComponentBoundEvent_256_OnListViewItemSelected__DelegateSignature(class UObject* Item, bool bIsSelected)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.BndEvt__SocialTreeView_K2Node_ComponentBoundEvent_256_OnListViewItemSelected__DelegateSignature");
+
+	UPartyFinder_C_BndEvt__SocialTreeView_K2Node_ComponentBoundEvent_256_OnListViewItemSelected__DelegateSignature_Params params;
+	params.Item = Item;
+	params.bIsSelected = bIsSelected;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PartyFinder.PartyFinder_C.OnSocialListChanged
+// (HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<class UFortSocialItem*> SocialItems                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+
+void UPartyFinder_C::OnSocialListChanged(TArray<class UFortSocialItem*> SocialItems)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.OnSocialListChanged");
+
+	UPartyFinder_C_OnSocialListChanged_Params params;
+	params.SocialItems = SocialItems;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PartyFinder.PartyFinder_C.BndEvt__ViewProfileButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void UPartyFinder_C::BndEvt__ViewProfileButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.BndEvt__ViewProfileButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature");
+
+	UPartyFinder_C_BndEvt__ViewProfileButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature_Params params;
+	params.Button = Button;
 
 	auto flags = fn->FunctionFlags;
 
@@ -433,7 +433,7 @@ void UPartyFinder_C::OnActivated()
 // Function PartyFinder.PartyFinder_C.BndEvt__SocialTreeView_K2Node_ComponentBoundEvent_0_OnListViewItemWidgetCreated__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UUserWidget*             Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UUserWidget*             Widget                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPartyFinder_C::BndEvt__SocialTreeView_K2Node_ComponentBoundEvent_0_OnListViewItemWidgetCreated__DelegateSignature(class UUserWidget* Widget)
 {
@@ -450,186 +450,10 @@ void UPartyFinder_C::BndEvt__SocialTreeView_K2Node_ComponentBoundEvent_0_OnListV
 }
 
 
-// Function PartyFinder.PartyFinder_C.Destruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UPartyFinder_C::Destruct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.Destruct");
-
-	UPartyFinder_C_Destruct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PartyFinder.PartyFinder_C.OnSocialListChanged
-// (HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TArray<class UFortSocialItem*> SocialItems                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-
-void UPartyFinder_C::OnSocialListChanged(TArray<class UFortSocialItem*> SocialItems)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.OnSocialListChanged");
-
-	UPartyFinder_C_OnSocialListChanged_Params params;
-	params.SocialItems = SocialItems;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PartyFinder.PartyFinder_C.BndEvt__SocialTreeView_K2Node_ComponentBoundEvent_256_OnListViewItemSelected__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UObject*                 Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bIsSelected                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UPartyFinder_C::BndEvt__SocialTreeView_K2Node_ComponentBoundEvent_256_OnListViewItemSelected__DelegateSignature(class UObject* Item, bool bIsSelected)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.BndEvt__SocialTreeView_K2Node_ComponentBoundEvent_256_OnListViewItemSelected__DelegateSignature");
-
-	UPartyFinder_C_BndEvt__SocialTreeView_K2Node_ComponentBoundEvent_256_OnListViewItemSelected__DelegateSignature_Params params;
-	params.Item = Item;
-	params.bIsSelected = bIsSelected;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PartyFinder.PartyFinder_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_99_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UPartyFinder_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_99_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_99_CommonButtonClicked__DelegateSignature");
-
-	UPartyFinder_C_BndEvt__IconTextButton_K2Node_ComponentBoundEvent_99_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PartyFinder.PartyFinder_C.HandlePartyDataChanged
-// (HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FPartyState             PartyData                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-
-void UPartyFinder_C::HandlePartyDataChanged(const struct FPartyState& PartyData)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.HandlePartyDataChanged");
-
-	UPartyFinder_C_HandlePartyDataChanged_Params params;
-	params.PartyData = PartyData;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PartyFinder.PartyFinder_C.BndEvt__InviteButton_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UPartyFinder_C::BndEvt__InviteButton_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.BndEvt__InviteButton_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature");
-
-	UPartyFinder_C_BndEvt__InviteButton_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PartyFinder.PartyFinder_C.ClosePartyFinder
-// (BlueprintCallable, BlueprintEvent)
-
-void UPartyFinder_C::ClosePartyFinder()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.ClosePartyFinder");
-
-	UPartyFinder_C_ClosePartyFinder_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PartyFinder.PartyFinder_C.BndEvt__SocialTreeView_K2Node_ComponentBoundEvent_50_OnListViewItemWidgetDestroyed__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UUserWidget*             Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UPartyFinder_C::BndEvt__SocialTreeView_K2Node_ComponentBoundEvent_50_OnListViewItemWidgetDestroyed__DelegateSignature(class UUserWidget* Widget)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.BndEvt__SocialTreeView_K2Node_ComponentBoundEvent_50_OnListViewItemWidgetDestroyed__DelegateSignature");
-
-	UPartyFinder_C_BndEvt__SocialTreeView_K2Node_ComponentBoundEvent_50_OnListViewItemWidgetDestroyed__DelegateSignature_Params params;
-	params.Widget = Widget;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PartyFinder.PartyFinder_C.BndEvt__IgnoreButton_K2Node_ComponentBoundEvent_31_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UPartyFinder_C::BndEvt__IgnoreButton_K2Node_ComponentBoundEvent_31_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PartyFinder.PartyFinder_C.BndEvt__IgnoreButton_K2Node_ComponentBoundEvent_31_CommonButtonClicked__DelegateSignature");
-
-	UPartyFinder_C_BndEvt__IgnoreButton_K2Node_ComponentBoundEvent_31_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function PartyFinder.PartyFinder_C.ExecuteUbergraph_PartyFinder
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPartyFinder_C::ExecuteUbergraph_PartyFinder(int EntryPoint)
 {

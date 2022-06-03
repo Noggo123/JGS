@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,44 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function Results_TeleportPadPlayer.Results_TeleportPadPlayer_C.SetInviteButtonVisibility
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UResults_TeleportPadPlayer_C::SetInviteButtonVisibility()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Results_TeleportPadPlayer.Results_TeleportPadPlayer_C.SetInviteButtonVisibility");
-
-	UResults_TeleportPadPlayer_C_SetInviteButtonVisibility_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Results_TeleportPadPlayer.Results_TeleportPadPlayer_C.On_InvitePopupMenuAnchor_GetMenuContent
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
-
-class UWidget* UResults_TeleportPadPlayer_C::On_InvitePopupMenuAnchor_GetMenuContent()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Results_TeleportPadPlayer.Results_TeleportPadPlayer_C.On_InvitePopupMenuAnchor_GetMenuContent");
-
-	UResults_TeleportPadPlayer_C_On_InvitePopupMenuAnchor_GetMenuContent_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
 
 // Function Results_TeleportPadPlayer.Results_TeleportPadPlayer_C.IsLocalPlayersPad
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
@@ -80,6 +42,67 @@ void UResults_TeleportPadPlayer_C::Focus()
 	static auto fn = UObject::FindObject<UFunction>("Function Results_TeleportPadPlayer.Results_TeleportPadPlayer_C.Focus");
 
 	UResults_TeleportPadPlayer_C_Focus_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Results_TeleportPadPlayer.Results_TeleportPadPlayer_C.CanFriend
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// bool                           bCanFriendPlayer               (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UResults_TeleportPadPlayer_C::CanFriend(bool* bCanFriendPlayer)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Results_TeleportPadPlayer.Results_TeleportPadPlayer_C.CanFriend");
+
+	UResults_TeleportPadPlayer_C_CanFriend_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bCanFriendPlayer != nullptr)
+		*bCanFriendPlayer = params.bCanFriendPlayer;
+}
+
+
+// Function Results_TeleportPadPlayer.Results_TeleportPadPlayer_C.CanInviteParty
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// bool                           bCanInvitePlayer               (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UResults_TeleportPadPlayer_C::CanInviteParty(bool* bCanInvitePlayer)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Results_TeleportPadPlayer.Results_TeleportPadPlayer_C.CanInviteParty");
+
+	UResults_TeleportPadPlayer_C_CanInviteParty_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bCanInvitePlayer != nullptr)
+		*bCanInvitePlayer = params.bCanInvitePlayer;
+}
+
+
+// Function Results_TeleportPadPlayer.Results_TeleportPadPlayer_C.InvitePlayer
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UResults_TeleportPadPlayer_C::InvitePlayer()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Results_TeleportPadPlayer.Results_TeleportPadPlayer_C.InvitePlayer");
+
+	UResults_TeleportPadPlayer_C_InvitePlayer_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -148,9 +171,9 @@ void UResults_TeleportPadPlayer_C::SetIsValidPad()
 // Function Results_TeleportPadPlayer.Results_TeleportPadPlayer_C.Initialize
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        InUniqueId                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// class UFortUIScoreReport*      InScoreReport                  (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
-// struct FUniqueNetIdRepl        InConsoleUniqueId              (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FUniqueNetIdRepl        InUniqueId                     (Parm, OutParm, ReferenceParm)
+// class UFortUIScoreReport*      InScoreReport                  (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FUniqueNetIdRepl        InConsoleUniqueId              (Parm)
 
 void UResults_TeleportPadPlayer_C::Initialize(const struct FUniqueNetIdRepl& InConsoleUniqueId, struct FUniqueNetIdRepl* InUniqueId, class UFortUIScoreReport** InScoreReport)
 {
@@ -243,7 +266,7 @@ void UResults_TeleportPadPlayer_C::Outro()
 // Function Results_TeleportPadPlayer.Results_TeleportPadPlayer_C.BndEvt__ButtonStats_K2Node_ComponentBoundEvent_5_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeleportPadPlayer_C::BndEvt__ButtonStats_K2Node_ComponentBoundEvent_5_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -263,7 +286,7 @@ void UResults_TeleportPadPlayer_C::BndEvt__ButtonStats_K2Node_ComponentBoundEven
 // Function Results_TeleportPadPlayer.Results_TeleportPadPlayer_C.BndEvt__ButtonInvite_K2Node_ComponentBoundEvent_6_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeleportPadPlayer_C::BndEvt__ButtonInvite_K2Node_ComponentBoundEvent_6_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -300,7 +323,7 @@ void UResults_TeleportPadPlayer_C::BndEvt__Anim_TeleportPadScreenIntro_K2Node_Co
 // Function Results_TeleportPadPlayer.Results_TeleportPadPlayer_C.BndEvt__ButtonThumbs_K2Node_ComponentBoundEvent_24_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeleportPadPlayer_C::BndEvt__ButtonThumbs_K2Node_ComponentBoundEvent_24_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -317,27 +340,10 @@ void UResults_TeleportPadPlayer_C::BndEvt__ButtonThumbs_K2Node_ComponentBoundEve
 }
 
 
-// Function Results_TeleportPadPlayer.Results_TeleportPadPlayer_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UResults_TeleportPadPlayer_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Results_TeleportPadPlayer.Results_TeleportPadPlayer_C.Construct");
-
-	UResults_TeleportPadPlayer_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function Results_TeleportPadPlayer.Results_TeleportPadPlayer_C.ExecuteUbergraph_Results_TeleportPadPlayer
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeleportPadPlayer_C::ExecuteUbergraph_Results_TeleportPadPlayer(int EntryPoint)
 {
@@ -357,7 +363,7 @@ void UResults_TeleportPadPlayer_C::ExecuteUbergraph_Results_TeleportPadPlayer(in
 // Function Results_TeleportPadPlayer.Results_TeleportPadPlayer_C.OnTeleportPadIntroFinished__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UResults_TeleportPadPlayer_C* TeleportPadPlayer              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UResults_TeleportPadPlayer_C* TeleportPadPlayer              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeleportPadPlayer_C::OnTeleportPadIntroFinished__DelegateSignature(class UResults_TeleportPadPlayer_C* TeleportPadPlayer)
 {
@@ -377,8 +383,8 @@ void UResults_TeleportPadPlayer_C::OnTeleportPadIntroFinished__DelegateSignature
 // Function Results_TeleportPadPlayer.Results_TeleportPadPlayer_C.OnUpVoteClicked__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        TargetId                       (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FString                 TargetName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// struct FUniqueNetIdRepl        TargetId                       (Parm)
+// struct FString                 TargetName                     (Parm, ZeroConstructor)
 
 void UResults_TeleportPadPlayer_C::OnUpVoteClicked__DelegateSignature(const struct FUniqueNetIdRepl& TargetId, const struct FString& TargetName)
 {
@@ -399,8 +405,8 @@ void UResults_TeleportPadPlayer_C::OnUpVoteClicked__DelegateSignature(const stru
 // Function Results_TeleportPadPlayer.Results_TeleportPadPlayer_C.OnAddFriendClicked__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        TargetId                       (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FString                 TargetName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// struct FUniqueNetIdRepl        TargetId                       (Parm)
+// struct FString                 TargetName                     (Parm, ZeroConstructor)
 
 void UResults_TeleportPadPlayer_C::OnAddFriendClicked__DelegateSignature(const struct FUniqueNetIdRepl& TargetId, const struct FString& TargetName)
 {

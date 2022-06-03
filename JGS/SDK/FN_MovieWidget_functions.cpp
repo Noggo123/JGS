@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UMovieWidget_C::SetDelayedContentValues()
 // Function MovieWidget.MovieWidget_C.Play
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           ShouldRewind                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ShouldRewind                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMovieWidget_C::Play(bool ShouldRewind)
 {
@@ -69,10 +69,10 @@ void UMovieWidget_C::StopPlaying()
 // Function MovieWidget.MovieWidget_C.Init
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UMediaSource*            InMediaSource                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 InMediaSoundWave               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UMediaSource*            InMediaSource                  (Parm, ZeroConstructor, IsPlainOldData)
+// class UMediaSoundWave*         InMediaSoundWave               (Parm, ZeroConstructor, IsPlainOldData)
 
-void UMovieWidget_C::Init(class UMediaSource* InMediaSource, class UObject* InMediaSoundWave)
+void UMovieWidget_C::Init(class UMediaSource* InMediaSource, class UMediaSoundWave* InMediaSoundWave)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function MovieWidget.MovieWidget_C.Init");
 
@@ -108,8 +108,8 @@ void UMovieWidget_C::Destruct()
 // Function MovieWidget.MovieWidget_C.MediaDimensionsUpdated
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float*                         NewWidth                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float*                         NewHeight                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float*                         NewWidth                       (Parm, ZeroConstructor, IsPlainOldData)
+// float*                         NewHeight                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMovieWidget_C::MediaDimensionsUpdated(float* NewWidth, float* NewHeight)
 {
@@ -147,7 +147,7 @@ void UMovieWidget_C::OnMediaLoaded()
 // Function MovieWidget.MovieWidget_C.ExecuteUbergraph_MovieWidget
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMovieWidget_C::ExecuteUbergraph_MovieWidget(int EntryPoint)
 {

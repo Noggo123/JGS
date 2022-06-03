@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,15 +12,6 @@ namespace SDK
 //Enums
 //---------------------------------------------------------------------------
 
-// Enum GameplayTasks.ETaskResourceOverlapPolicy
-enum class ETaskResourceOverlapPolicy : uint8_t
-{
-	StartOnTop                     = 0,
-	StartAtEnd                     = 1,
-	ETaskResourceOverlapPolicy_MAX = 2
-};
-
-
 // Enum GameplayTasks.EGameplayTaskRunResult
 enum class EGameplayTaskRunResult : uint8_t
 {
@@ -30,6 +21,15 @@ enum class EGameplayTaskRunResult : uint8_t
 	Success_Active                 = 3,
 	Success_Finished               = 4,
 	EGameplayTaskRunResult_MAX     = 5
+};
+
+
+// Enum GameplayTasks.ETaskResourceOverlapPolicy
+enum class ETaskResourceOverlapPolicy : uint8_t
+{
+	StartOnTop                     = 0,
+	StartAtEnd                     = 1,
+	ETaskResourceOverlapPolicy_MAX = 2
 };
 
 

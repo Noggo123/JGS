@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -46,32 +46,10 @@ void UEulaTab_C::Construct()
 }
 
 
-// Function EulaTab.EulaTab_C.OnEulaDownloadComplete
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           bSuccessful                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   EULAText                       (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UEulaTab_C::OnEulaDownloadComplete(bool bSuccessful, const struct FText& EULAText)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function EulaTab.EulaTab_C.OnEulaDownloadComplete");
-
-	UEulaTab_C_OnEulaDownloadComplete_Params params;
-	params.bSuccessful = bSuccessful;
-	params.EULAText = EULAText;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function EulaTab.EulaTab_C.ExecuteUbergraph_EulaTab
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UEulaTab_C::ExecuteUbergraph_EulaTab(int EntryPoint)
 {

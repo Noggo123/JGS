@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,19 +22,19 @@ struct UAthenaLeaderboardTabButton_C_ShowText_Params
 // Function AthenaLeaderboardTabButton.AthenaLeaderboardTabButton_C.Set Icon
 struct UAthenaLeaderboardTabButton_C_Set_Icon_Params
 {
-	struct FSlateBrush                                 IconBrush;                                                // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FSlateBrush                                 IconBrush;                                                // (Parm)
 };
 
 // Function AthenaLeaderboardTabButton.AthenaLeaderboardTabButton_C.Set Text
 struct UAthenaLeaderboardTabButton_C_Set_Text_Params
 {
-	struct FText                                       ButtonText;                                               // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FText                                       ButtonText;                                               // (Parm)
 };
 
 // Function AthenaLeaderboardTabButton.AthenaLeaderboardTabButton_C.PreConstruct
 struct UAthenaLeaderboardTabButton_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaLeaderboardTabButton.AthenaLeaderboardTabButton_C.OnCurrentTextStyleChanged
@@ -45,7 +45,7 @@ struct UAthenaLeaderboardTabButton_C_OnCurrentTextStyleChanged_Params
 // Function AthenaLeaderboardTabButton.AthenaLeaderboardTabButton_C.SetTabLabelInfo
 struct UAthenaLeaderboardTabButton_C_SetTabLabelInfo_Params
 {
-	struct FFortTabButtonLabelInfo                     TabLabelInfo;                                             // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FFortTabButtonLabelInfo                     TabLabelInfo;                                             // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function AthenaLeaderboardTabButton.AthenaLeaderboardTabButton_C.OnSelected
@@ -76,7 +76,7 @@ struct UAthenaLeaderboardTabButton_C_OnUnhovered_Params
 // Function AthenaLeaderboardTabButton.AthenaLeaderboardTabButton_C.ExecuteUbergraph_AthenaLeaderboardTabButton
 struct UAthenaLeaderboardTabButton_C_ExecuteUbergraph_AthenaLeaderboardTabButton_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

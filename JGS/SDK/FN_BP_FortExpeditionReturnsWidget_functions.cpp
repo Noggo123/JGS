@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,16 +12,16 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function BP_FortExpeditionReturnsWidget.BP_FortExpeditionReturnsWidget_C.Get Mcp Relative Utc Now
+// Function BP_FortExpeditionReturnsWidget.BP_FortExpeditionReturnsWidget_C.Get Utc Now Offset
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FDateTime               UtcNow                         (Parm, OutParm)
+// struct FTimespan               ReturnValue                    (Parm, OutParm, ReturnParm)
 
-void UBP_FortExpeditionReturnsWidget_C::Get_Mcp_Relative_Utc_Now(struct FDateTime* UtcNow)
+struct FTimespan UBP_FortExpeditionReturnsWidget_C::Get_Utc_Now_Offset()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FortExpeditionReturnsWidget.BP_FortExpeditionReturnsWidget_C.Get Mcp Relative Utc Now");
+	static auto fn = UObject::FindObject<UFunction>("Function BP_FortExpeditionReturnsWidget.BP_FortExpeditionReturnsWidget_C.Get Utc Now Offset");
 
-	UBP_FortExpeditionReturnsWidget_C_Get_Mcp_Relative_Utc_Now_Params params;
+	UBP_FortExpeditionReturnsWidget_C_Get_Utc_Now_Offset_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -29,15 +29,14 @@ void UBP_FortExpeditionReturnsWidget_C::Get_Mcp_Relative_Utc_Now(struct FDateTim
 
 	fn->FunctionFlags = flags;
 
-	if (UtcNow != nullptr)
-		*UtcNow = params.UtcNow;
+	return params.ReturnValue;
 }
 
 
 // Function BP_FortExpeditionReturnsWidget.BP_FortExpeditionReturnsWidget_C.Get Expedition Item Definition
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UFortExpeditionItem*     Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortExpeditionItem*     Item                           (Parm, ZeroConstructor, IsPlainOldData)
 // class UFortExpeditionItemDefinition* ItemDef                        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionReturnsWidget_C::Get_Expedition_Item_Definition(class UFortExpeditionItem* Item, class UFortExpeditionItemDefinition** ItemDef)
@@ -61,7 +60,7 @@ void UBP_FortExpeditionReturnsWidget_C::Get_Expedition_Item_Definition(class UFo
 // Function BP_FortExpeditionReturnsWidget.BP_FortExpeditionReturnsWidget_C.Set Expedition Return Progress
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortExpeditionItem*     Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortExpeditionItem*     Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionReturnsWidget_C::Set_Expedition_Return_Progress(class UFortExpeditionItem* Item)
 {
@@ -81,7 +80,7 @@ void UBP_FortExpeditionReturnsWidget_C::Set_Expedition_Return_Progress(class UFo
 // Function BP_FortExpeditionReturnsWidget.BP_FortExpeditionReturnsWidget_C.Set Expedition Return Time
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortExpeditionItem*     Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortExpeditionItem*     Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionReturnsWidget_C::Set_Expedition_Return_Time(class UFortExpeditionItem* Item)
 {
@@ -101,7 +100,7 @@ void UBP_FortExpeditionReturnsWidget_C::Set_Expedition_Return_Time(class UFortEx
 // Function BP_FortExpeditionReturnsWidget.BP_FortExpeditionReturnsWidget_C.Refresh In Progress Widgets
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortExpeditionItem*     Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortExpeditionItem*     Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionReturnsWidget_C::Refresh_In_Progress_Widgets(class UFortExpeditionItem* Item)
 {
@@ -109,6 +108,26 @@ void UBP_FortExpeditionReturnsWidget_C::Refresh_In_Progress_Widgets(class UFortE
 
 	UBP_FortExpeditionReturnsWidget_C_Refresh_In_Progress_Widgets_Params params;
 	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BP_FortExpeditionReturnsWidget.BP_FortExpeditionReturnsWidget_C.SetData
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortExpeditionItem**    InItem                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void UBP_FortExpeditionReturnsWidget_C::SetData(class UFortExpeditionItem** InItem)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BP_FortExpeditionReturnsWidget.BP_FortExpeditionReturnsWidget_C.SetData");
+
+	UBP_FortExpeditionReturnsWidget_C_SetData_Params params;
+	params.InItem = InItem;
 
 	auto flags = fn->FunctionFlags;
 
@@ -152,30 +171,10 @@ void UBP_FortExpeditionReturnsWidget_C::Construct()
 }
 
 
-// Function BP_FortExpeditionReturnsWidget.BP_FortExpeditionReturnsWidget_C.SetData
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UFortExpeditionItem**    InItem                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UBP_FortExpeditionReturnsWidget_C::SetData(class UFortExpeditionItem** InItem)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FortExpeditionReturnsWidget.BP_FortExpeditionReturnsWidget_C.SetData");
-
-	UBP_FortExpeditionReturnsWidget_C_SetData_Params params;
-	params.InItem = InItem;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function BP_FortExpeditionReturnsWidget.BP_FortExpeditionReturnsWidget_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionReturnsWidget_C::PreConstruct(bool* IsDesignTime)
 {
@@ -195,7 +194,7 @@ void UBP_FortExpeditionReturnsWidget_C::PreConstruct(bool* IsDesignTime)
 // Function BP_FortExpeditionReturnsWidget.BP_FortExpeditionReturnsWidget_C.ExecuteUbergraph_BP_FortExpeditionReturnsWidget
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionReturnsWidget_C::ExecuteUbergraph_BP_FortExpeditionReturnsWidget(int EntryPoint)
 {
@@ -215,7 +214,7 @@ void UBP_FortExpeditionReturnsWidget_C::ExecuteUbergraph_BP_FortExpeditionReturn
 // Function BP_FortExpeditionReturnsWidget.BP_FortExpeditionReturnsWidget_C.OnExpeditionCompleted__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortExpeditionItem*     Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortExpeditionItem*     Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionReturnsWidget_C::OnExpeditionCompleted__DelegateSignature(class UFortExpeditionItem* Item)
 {

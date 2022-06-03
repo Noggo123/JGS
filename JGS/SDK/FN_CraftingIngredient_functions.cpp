@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function CraftingIngredient.CraftingIngredient_C.ShowDivider
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Show                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Show                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCraftingIngredient_C::ShowDivider(bool Show)
 {
@@ -35,7 +35,7 @@ void UCraftingIngredient_C::ShowDivider(bool Show)
 // Function CraftingIngredient.CraftingIngredient_C.Get Tooltip
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 class UWidget* UCraftingIngredient_C::Get_Tooltip()
 {
@@ -90,7 +90,7 @@ void UCraftingIngredient_C::Construct()
 // Function CraftingIngredient.CraftingIngredient_C.ExecuteUbergraph_CraftingIngredient
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCraftingIngredient_C::ExecuteUbergraph_CraftingIngredient(int EntryPoint)
 {

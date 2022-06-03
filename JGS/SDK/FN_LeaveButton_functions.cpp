@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,28 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function LeaveButton.LeaveButton_C.GetDescriptionText
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// struct FText                   DescriptionText                (Parm, OutParm)
-
-void ULeaveButton_C::GetDescriptionText(struct FText* DescriptionText)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LeaveButton.LeaveButton_C.GetDescriptionText");
-
-	ULeaveButton_C_GetDescriptionText_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (DescriptionText != nullptr)
-		*DescriptionText = params.DescriptionText;
-}
-
 
 // Function LeaveButton.LeaveButton_C.IsInNeighborhood
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
@@ -76,7 +54,7 @@ void ULeaveButton_C::Update_Style_State()
 // Function LeaveButton.LeaveButton_C.SetText
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   TextOverride                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   TextOverride                   (Parm)
 
 void ULeaveButton_C::SetText(const struct FText& TextOverride)
 {
@@ -96,7 +74,7 @@ void ULeaveButton_C::SetText(const struct FText& TextOverride)
 // Function LeaveButton.LeaveButton_C.GetButton
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UIconTextButton_C*       Leave                          (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UIconTextButton_C*       Leave                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void ULeaveButton_C::GetButton(class UIconTextButton_C** Leave)
 {
@@ -218,8 +196,8 @@ void ULeaveButton_C::GetLeaveActionText(struct FText* Text)
 // Function LeaveButton.LeaveButton_C.DialogResult_1E39F47546648367BB2F218F69311220
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortDialogResult              Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ResultName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortDialogResult              Result                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ResultName                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULeaveButton_C::DialogResult_1E39F47546648367BB2F218F69311220(EFortDialogResult Result, const struct FName& ResultName)
 {
@@ -240,8 +218,8 @@ void ULeaveButton_C::DialogResult_1E39F47546648367BB2F218F69311220(EFortDialogRe
 // Function LeaveButton.LeaveButton_C.DialogResult_F5AF58094777CFEEC0BF28BEA620800C
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortDialogResult              Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ResultName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortDialogResult              Result                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ResultName                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULeaveButton_C::DialogResult_F5AF58094777CFEEC0BF28BEA620800C(EFortDialogResult Result, const struct FName& ResultName)
 {
@@ -262,8 +240,8 @@ void ULeaveButton_C::DialogResult_F5AF58094777CFEEC0BF28BEA620800C(EFortDialogRe
 // Function LeaveButton.LeaveButton_C.DialogResult_574CB01D47DE8AEDA0EB2F9CFB146A3B
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortDialogResult              Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ResultName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortDialogResult              Result                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ResultName                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULeaveButton_C::DialogResult_574CB01D47DE8AEDA0EB2F9CFB146A3B(EFortDialogResult Result, const struct FName& ResultName)
 {
@@ -284,8 +262,8 @@ void ULeaveButton_C::DialogResult_574CB01D47DE8AEDA0EB2F9CFB146A3B(EFortDialogRe
 // Function LeaveButton.LeaveButton_C.DialogResult_A0D25F7F4E82D325BF226E811F1D79AF
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortDialogResult              Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ResultName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortDialogResult              Result                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ResultName                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULeaveButton_C::DialogResult_A0D25F7F4E82D325BF226E811F1D79AF(EFortDialogResult Result, const struct FName& ResultName)
 {
@@ -306,7 +284,7 @@ void ULeaveButton_C::DialogResult_A0D25F7F4E82D325BF226E811F1D79AF(EFortDialogRe
 // Function LeaveButton.LeaveButton_C.HandleTeamMemberRemoved
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULeaveButton_C::HandleTeamMemberRemoved(int PlayerIndex)
 {
@@ -326,7 +304,7 @@ void ULeaveButton_C::HandleTeamMemberRemoved(int PlayerIndex)
 // Function LeaveButton.LeaveButton_C.HandleTeamMemberAdded
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     NewTeamMemberInfo              (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortTeamMemberInfo     NewTeamMemberInfo              (Parm)
 
 void ULeaveButton_C::HandleTeamMemberAdded(const struct FFortTeamMemberInfo& NewTeamMemberInfo)
 {
@@ -380,7 +358,7 @@ void ULeaveButton_C::Construct()
 // Function LeaveButton.LeaveButton_C.BndEvt__Leave_K2Node_ComponentBoundEvent_90_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULeaveButton_C::BndEvt__Leave_K2Node_ComponentBoundEvent_90_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -417,7 +395,7 @@ void ULeaveButton_C::Destruct()
 // Function LeaveButton.LeaveButton_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULeaveButton_C::PreConstruct(bool* IsDesignTime)
 {
@@ -434,30 +412,10 @@ void ULeaveButton_C::PreConstruct(bool* IsDesignTime)
 }
 
 
-// Function LeaveButton.LeaveButton_C.HandlePlayerStateChanged
-// (HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FFortTeamMemberInfo     TeamMemberInfo                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-
-void ULeaveButton_C::HandlePlayerStateChanged(const struct FFortTeamMemberInfo& TeamMemberInfo)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LeaveButton.LeaveButton_C.HandlePlayerStateChanged");
-
-	ULeaveButton_C_HandlePlayerStateChanged_Params params;
-	params.TeamMemberInfo = TeamMemberInfo;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function LeaveButton.LeaveButton_C.ExecuteUbergraph_LeaveButton
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULeaveButton_C::ExecuteUbergraph_LeaveButton(int EntryPoint)
 {
@@ -477,7 +435,7 @@ void ULeaveButton_C::ExecuteUbergraph_LeaveButton(int EntryPoint)
 // Function LeaveButton.LeaveButton_C.Update Visibility__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Visibility                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Visibility                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULeaveButton_C::Update_Visibility__DelegateSignature(bool Visibility)
 {

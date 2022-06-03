@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,78 +12,10 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function HeroSquadManagementScreen.HeroSquadManagementScreen_C.HandlePickerHideAni
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UHeroSquadManagementScreen_C::HandlePickerHideAni()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HeroSquadManagementScreen.HeroSquadManagementScreen_C.HandlePickerHideAni");
-
-	UHeroSquadManagementScreen_C_HandlePickerHideAni_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HeroSquadManagementScreen.HeroSquadManagementScreen_C.HandleHideSlotInfoAni
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UHeroSquadManagementScreen_C::HandleHideSlotInfoAni()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HeroSquadManagementScreen.HeroSquadManagementScreen_C.HandleHideSlotInfoAni");
-
-	UHeroSquadManagementScreen_C_HandleHideSlotInfoAni_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HeroSquadManagementScreen.HeroSquadManagementScreen_C.HandlePickerShowAni
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UHeroSquadManagementScreen_C::HandlePickerShowAni()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HeroSquadManagementScreen.HeroSquadManagementScreen_C.HandlePickerShowAni");
-
-	UHeroSquadManagementScreen_C_HandlePickerShowAni_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HeroSquadManagementScreen.HeroSquadManagementScreen_C.HandleShowSlotInfoAni
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UHeroSquadManagementScreen_C::HandleShowSlotInfoAni()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HeroSquadManagementScreen.HeroSquadManagementScreen_C.HandleShowSlotInfoAni");
-
-	UHeroSquadManagementScreen_C_HandleShowSlotInfoAni_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function HeroSquadManagementScreen.HeroSquadManagementScreen_C.UpdateSquadSlotInfoPanel
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            SquadSlotIndex                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            SquadSlotIndex                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHeroSquadManagementScreen_C::UpdateSquadSlotInfoPanel(int SquadSlotIndex)
 {
@@ -154,8 +86,8 @@ void UHeroSquadManagementScreen_C::HideSlotInfo()
 // Function HeroSquadManagementScreen.HeroSquadManagementScreen_C.ShowSlotInfo
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   HeaderText                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FText                   BodyText                       (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   HeaderText                     (Parm)
+// struct FText                   BodyText                       (Parm)
 
 void UHeroSquadManagementScreen_C::ShowSlotInfo(const struct FText& HeaderText, const struct FText& BodyText)
 {
@@ -321,7 +253,7 @@ void UHeroSquadManagementScreen_C::HandleSquadSlotPickerHidden()
 // Function HeroSquadManagementScreen.HeroSquadManagementScreen_C.BndEvt__SquadSlotsView_K2Node_ComponentBoundEvent_2_OnDifferentSquadSlotSelected__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// int                            SquadSlotIndex                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            SquadSlotIndex                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHeroSquadManagementScreen_C::BndEvt__SquadSlotsView_K2Node_ComponentBoundEvent_2_OnDifferentSquadSlotSelected__DelegateSignature(int SquadSlotIndex)
 {
@@ -341,7 +273,7 @@ void UHeroSquadManagementScreen_C::BndEvt__SquadSlotsView_K2Node_ComponentBoundE
 // Function HeroSquadManagementScreen.HeroSquadManagementScreen_C.ExecuteUbergraph_HeroSquadManagementScreen
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHeroSquadManagementScreen_C::ExecuteUbergraph_HeroSquadManagementScreen(int EntryPoint)
 {

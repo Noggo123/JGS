@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UAnnouncement_Tutorial_C::ContinueTutorial()
 // Function Announcement_Tutorial.Announcement_Tutorial_C.CheckContinueTutorial
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortClientAnnouncementData_Tutorial TutorialData                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortClientAnnouncementData_Tutorial TutorialData                   (Parm)
 
 void UAnnouncement_Tutorial_C::CheckContinueTutorial(const struct FFortClientAnnouncementData_Tutorial& TutorialData)
 {
@@ -52,7 +52,7 @@ void UAnnouncement_Tutorial_C::CheckContinueTutorial(const struct FFortClientAnn
 // Function Announcement_Tutorial.Announcement_Tutorial_C.GetLightboxVisibility
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FFortClientAnnouncementData_Tutorial FortClientAnnouncementData_Tutorial (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortClientAnnouncementData_Tutorial FortClientAnnouncementData_Tutorial (ConstParm, Parm, OutParm, ReferenceParm)
 // ESlateVisibility               ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 ESlateVisibility UAnnouncement_Tutorial_C::GetLightboxVisibility(const struct FFortClientAnnouncementData_Tutorial& FortClientAnnouncementData_Tutorial)
@@ -92,7 +92,7 @@ void UAnnouncement_Tutorial_C::RefreshTextLines()
 // Function Announcement_Tutorial.Announcement_Tutorial_C.UpdateTutorialData
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortClientAnnouncementData_Tutorial TutorialData                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortClientAnnouncementData_Tutorial TutorialData                   (Parm)
 
 void UAnnouncement_Tutorial_C::UpdateTutorialData(const struct FFortClientAnnouncementData_Tutorial& TutorialData)
 {
@@ -112,8 +112,8 @@ void UAnnouncement_Tutorial_C::UpdateTutorialData(const struct FFortClientAnnoun
 // Function Announcement_Tutorial.Announcement_Tutorial_C.AddTextLine
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Text                           (BlueprintVisible, BlueprintReadOnly, Parm)
-// bool                           Transparent                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Text                           (Parm)
+// bool                           Transparent                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAnnouncement_Tutorial_C::AddTextLine(const struct FText& Text, bool Transparent)
 {
@@ -134,8 +134,8 @@ void UAnnouncement_Tutorial_C::AddTextLine(const struct FText& Text, bool Transp
 // Function Announcement_Tutorial.Announcement_Tutorial_C.HandleUpdateTutorial
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortClientAnnouncementData_Tutorial TutorialData                   (BlueprintVisible, BlueprintReadOnly, Parm)
-// bool                           bShow                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortClientAnnouncementData_Tutorial TutorialData                   (Parm)
+// bool                           bShow                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAnnouncement_Tutorial_C::HandleUpdateTutorial(const struct FFortClientAnnouncementData_Tutorial& TutorialData, bool bShow)
 {
@@ -173,9 +173,9 @@ void UAnnouncement_Tutorial_C::Construct()
 // Function Announcement_Tutorial.Announcement_Tutorial_C.HandleClientEvent_OnboardingShowUI
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 EventSource                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 EventFocus                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FFortClientEvent        ClientEvent                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class UObject*                 EventSource                    (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 EventFocus                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortClientEvent        ClientEvent                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UAnnouncement_Tutorial_C::HandleClientEvent_OnboardingShowUI(class UObject* EventSource, class UObject* EventFocus, const struct FFortClientEvent& ClientEvent)
 {
@@ -197,9 +197,9 @@ void UAnnouncement_Tutorial_C::HandleClientEvent_OnboardingShowUI(class UObject*
 // Function Announcement_Tutorial.Announcement_Tutorial_C.HandleClientEvent_OnboardingHideUI
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 EventSource                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 EventFocus                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FFortClientEvent        ClientEvent                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class UObject*                 EventSource                    (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 EventFocus                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortClientEvent        ClientEvent                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UAnnouncement_Tutorial_C::HandleClientEvent_OnboardingHideUI(class UObject* EventSource, class UObject* EventFocus, const struct FFortClientEvent& ClientEvent)
 {
@@ -238,7 +238,7 @@ void UAnnouncement_Tutorial_C::ResetTutorialAnnoucementWidget()
 // Function Announcement_Tutorial.Announcement_Tutorial_C.ExecuteUbergraph_Announcement_Tutorial
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAnnouncement_Tutorial_C::ExecuteUbergraph_Announcement_Tutorial(int EntryPoint)
 {

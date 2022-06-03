@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -66,7 +66,7 @@ void UResults_Badge_C::SetSkippingToEnd()
 // Function Results_Badge.Results_Badge_C.Initialize
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          PlayRate                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          PlayRate                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_Badge_C::Initialize(float PlayRate)
 {
@@ -108,7 +108,7 @@ void UResults_Badge_C::HasValidItem(bool* HasValidItem)
 // Function Results_Badge.Results_Badge_C.SetItem
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_Badge_C::SetItem(class UFortItem* Item)
 {
@@ -179,7 +179,7 @@ void UResults_Badge_C::BndEvt__Anim_Convert_K2Node_ComponentBoundEvent_1_OnWidge
 // Function Results_Badge.Results_Badge_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_Badge_C::PreConstruct(bool* IsDesignTime)
 {
@@ -216,7 +216,7 @@ void UResults_Badge_C::Reset_Sequence()
 // Function Results_Badge.Results_Badge_C.ExecuteUbergraph_Results_Badge
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_Badge_C::ExecuteUbergraph_Results_Badge(int EntryPoint)
 {

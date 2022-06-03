@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,7 +49,7 @@ void UDailyRewardsSchedule_C::Destruct()
 // Function DailyRewardsSchedule.DailyRewardsSchedule_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UDailyRewardsSchedule_C::PreConstruct(bool* IsDesignTime)
 {
@@ -69,7 +69,7 @@ void UDailyRewardsSchedule_C::PreConstruct(bool* IsDesignTime)
 // Function DailyRewardsSchedule.DailyRewardsSchedule_C.ExecuteUbergraph_DailyRewardsSchedule
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UDailyRewardsSchedule_C::ExecuteUbergraph_DailyRewardsSchedule(int EntryPoint)
 {

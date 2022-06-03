@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,15 +15,15 @@ namespace SDK
 // Function HelpWidget.HelpWidget_C.Init
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   inTitle                        (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FText                   inDescription                  (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FText                   inStep1_Text                   (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FText                   inStep2_Text                   (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FText                   inStep3_Text                   (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UTexture2D*              inStep1_Picture                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UTexture2D*              inStep2_Picture                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UTexture2D*              inStep3_Picture                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            inNumOfSteps                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   inTitle                        (Parm)
+// struct FText                   inDescription                  (Parm)
+// struct FText                   inStep1_Text                   (Parm)
+// struct FText                   inStep2_Text                   (Parm)
+// struct FText                   inStep3_Text                   (Parm)
+// class UTexture2D*              inStep1_Picture                (Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture2D*              inStep2_Picture                (Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture2D*              inStep3_Picture                (Parm, ZeroConstructor, IsPlainOldData)
+// int                            inNumOfSteps                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHelpWidget_C::Init(const struct FText& inTitle, const struct FText& inDescription, const struct FText& inStep1_Text, const struct FText& inStep2_Text, const struct FText& inStep3_Text, class UTexture2D* inStep1_Picture, class UTexture2D* inStep2_Picture, class UTexture2D* inStep3_Picture, int inNumOfSteps)
 {
@@ -51,7 +51,7 @@ void UHelpWidget_C::Init(const struct FText& inTitle, const struct FText& inDesc
 // Function HelpWidget.HelpWidget_C.BndEvt__ButtonClose_K2Node_ComponentBoundEvent_28_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHelpWidget_C::BndEvt__ButtonClose_K2Node_ComponentBoundEvent_28_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -88,7 +88,7 @@ void UHelpWidget_C::Construct()
 // Function HelpWidget.HelpWidget_C.ExecuteUbergraph_HelpWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHelpWidget_C::ExecuteUbergraph_HelpWidget(int EntryPoint)
 {

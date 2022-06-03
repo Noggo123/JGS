@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function BadgesEarnedPanelContent.BadgesEarnedPanelContent_C.Get Badge And Count For Player
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortPlayerController*   InFortPC                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FEarnedBadgeEntry       EarnedBadgeEntry               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class AFortPlayerController*   InFortPC                       (Parm, ZeroConstructor, IsPlainOldData)
+// struct FEarnedBadgeEntry       EarnedBadgeEntry               (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                           Found                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 // class AFortPlayerController*   FortPC                         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 // class UFortBadgeItemDefinition* Badge                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
@@ -152,7 +152,7 @@ void UBadgesEarnedPanelContent_C::Construct()
 // Function BadgesEarnedPanelContent.BadgesEarnedPanelContent_C.ExecuteUbergraph_BadgesEarnedPanelContent
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBadgesEarnedPanelContent_C::ExecuteUbergraph_BadgesEarnedPanelContent(int EntryPoint)
 {

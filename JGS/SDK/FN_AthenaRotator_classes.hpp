@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,19 +13,15 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass AthenaRotator.AthenaRotator_C
-// 0x004A (0x08BA - 0x0870)
+// 0x0031 (0x0961 - 0x0930)
 class UAthenaRotator_C : public UCommonRotator
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0870(0x0008) (Transient, DuplicateTransient)
-	class UIconTextButton_C*                           ButtonLeft;                                               // 0x0878(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
-	class UIconTextButton_C*                           ButtonRight;                                              // 0x0880(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
-	class UCommonBorder*                               MainBorder;                                               // 0x0888(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, RepNotify, Interp, NonTransactional, EditorOnly, NoDestructor, AutoWeak, ContainsInstancedReference, AssetRegistrySearchable, SimpleDisplay, AdvancedDisplay, Protected, BlueprintCallable, BlueprintAuthorityOnly, TextExportTransient, NonPIEDuplicateTransient, ExposeOnSpawn, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, NativeAccessSpecifierProtected, NativeAccessSpecifierPrivate)
-	struct FDataTableRowHandle                         Left_Triggering_Input_Action;                             // 0x0890(0x0010) (Edit, BlueprintVisible)
-	struct FDataTableRowHandle                         Right_Triggering_Input_Action;                            // 0x08A0(0x0010) (Edit, BlueprintVisible)
-	class UClass*                                      TextStyle;                                                // 0x08B0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	bool                                               ShowGamepadButtonOnlyWhenFocused;                         // 0x08B8(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	bool                                               OneDirectionalModeActive;                                 // 0x08B9(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0930(0x0008) (Transient, DuplicateTransient)
+	struct FDataTableRowHandle                         Left_Triggering_Input_Action;                             // 0x0938(0x0010) (Edit, BlueprintVisible)
+	struct FDataTableRowHandle                         Right_Triggering_Input_Action;                            // 0x0948(0x0010) (Edit, BlueprintVisible)
+	class UClass*                                      TextStyle;                                                // 0x0958(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	bool                                               ShowGamepadButtonOnlyWhenFocused;                         // 0x0960(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -34,7 +30,7 @@ public:
 	}
 
 
-	void ConfigureForOneDirectionMode(bool UseOneDirectionalMode);
+	void NewFunction_0_1();
 	void ChangeDirection(bool bDirection);
 	void Construct();
 	void BndEvt__ButtonLeft_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature(class UCommonButton* Button);

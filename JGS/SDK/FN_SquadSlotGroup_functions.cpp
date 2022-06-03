@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void USquadSlotGroup_C::RemoveDarkeningFromAllSlotsInGroup()
 // Function SquadSlotGroup.SquadSlotGroup_C.DarkenAllSlotsExceptIndex
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Index                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void USquadSlotGroup_C::DarkenAllSlotsExceptIndex(int Index)
 {
@@ -52,7 +52,7 @@ void USquadSlotGroup_C::DarkenAllSlotsExceptIndex(int Index)
 // Function SquadSlotGroup.SquadSlotGroup_C.SelectSquadSlot
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            SlotIndex                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            SlotIndex                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void USquadSlotGroup_C::SelectSquadSlot(int SlotIndex)
 {
@@ -72,7 +72,7 @@ void USquadSlotGroup_C::SelectSquadSlot(int SlotIndex)
 // Function SquadSlotGroup.SquadSlotGroup_C.Get_SquadSlotBox_ToolTipWidget
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 class UWidget* USquadSlotGroup_C::Get_SquadSlotBox_ToolTipWidget()
 {
@@ -110,7 +110,7 @@ void USquadSlotGroup_C::Update_Squad_Slot_Visibility()
 // Function SquadSlotGroup.SquadSlotGroup_C.AddSquadSlots
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UWidget*>         SquadSlots                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UWidget*>         SquadSlots                     (Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void USquadSlotGroup_C::AddSquadSlots(TArray<class UWidget*>* SquadSlots)
 {
@@ -132,7 +132,7 @@ void USquadSlotGroup_C::AddSquadSlots(TArray<class UWidget*>* SquadSlots)
 // Function SquadSlotGroup.SquadSlotGroup_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void USquadSlotGroup_C::PreConstruct(bool* IsDesignTime)
 {
@@ -152,8 +152,8 @@ void USquadSlotGroup_C::PreConstruct(bool* IsDesignTime)
 // Function SquadSlotGroup.SquadSlotGroup_C.OnMouseEnter
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent*          MouseEvent                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// struct FPointerEvent*          MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
 
 void USquadSlotGroup_C::OnMouseEnter(struct FGeometry* MyGeometry, struct FPointerEvent* MouseEvent)
 {
@@ -174,7 +174,7 @@ void USquadSlotGroup_C::OnMouseEnter(struct FGeometry* MyGeometry, struct FPoint
 // Function SquadSlotGroup.SquadSlotGroup_C.OnMouseLeave
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FPointerEvent*          MouseEvent                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FPointerEvent*          MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
 
 void USquadSlotGroup_C::OnMouseLeave(struct FPointerEvent* MouseEvent)
 {
@@ -194,7 +194,7 @@ void USquadSlotGroup_C::OnMouseLeave(struct FPointerEvent* MouseEvent)
 // Function SquadSlotGroup.SquadSlotGroup_C.ExecuteUbergraph_SquadSlotGroup
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void USquadSlotGroup_C::ExecuteUbergraph_SquadSlotGroup(int EntryPoint)
 {

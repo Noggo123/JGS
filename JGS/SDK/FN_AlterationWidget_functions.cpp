@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -139,14 +139,14 @@ struct FLinearColor UAlterationWidget_C::GetHighlightColor()
 }
 
 
-// Function AlterationWidget.AlterationWidget_C.OnSetup
-// (Event, Public, BlueprintEvent)
+// Function AlterationWidget.AlterationWidget_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void UAlterationWidget_C::OnSetup()
+void UAlterationWidget_C::Construct()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AlterationWidget.AlterationWidget_C.OnSetup");
+	static auto fn = UObject::FindObject<UFunction>("Function AlterationWidget.AlterationWidget_C.Construct");
 
-	UAlterationWidget_C_OnSetup_Params params;
+	UAlterationWidget_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -159,7 +159,7 @@ void UAlterationWidget_C::OnSetup()
 // Function AlterationWidget.AlterationWidget_C.ExecuteUbergraph_AlterationWidget
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAlterationWidget_C::ExecuteUbergraph_AlterationWidget(int EntryPoint)
 {

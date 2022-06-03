@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,7 @@ namespace SDK
 // Function PermissionsRoot.PermissionsRoot_C.Input Handle Back
 struct UPermissionsRoot_C_Input_Handle_Back_Params
 {
-	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               PassThrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function PermissionsRoot.PermissionsRoot_C.RefreshOutpostInfo
@@ -38,7 +38,7 @@ struct UPermissionsRoot_C_OnActivated_Params
 // Function PermissionsRoot.PermissionsRoot_C.ExecuteUbergraph_PermissionsRoot
 struct UPermissionsRoot_C_ExecuteUbergraph_PermissionsRoot_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

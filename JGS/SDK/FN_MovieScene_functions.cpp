@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,29 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function MovieScene.MovieSceneEasingFunction.OnEvaluate
-// (Event, Protected, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// float                          Interp                         (Parm, ZeroConstructor, IsPlainOldData)
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-float UMovieSceneEasingFunction::OnEvaluate(float Interp)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MovieScene.MovieSceneEasingFunction.OnEvaluate");
-
-	UMovieSceneEasingFunction_OnEvaluate_Params params;
-	params.Interp = Interp;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
 
 // Function MovieScene.MovieSceneSequencePlayer.Stop
 // (Final, Native, Public, BlueprintCallable)
@@ -136,45 +113,6 @@ void UMovieSceneSequencePlayer::SetPlaybackPosition(float NewPlaybackPosition)
 }
 
 
-// Function MovieScene.MovieSceneSequencePlayer.SetDisableCameraCuts
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                           bInDisableCameraCuts           (Parm, ZeroConstructor, IsPlainOldData)
-
-void UMovieSceneSequencePlayer::SetDisableCameraCuts(bool bInDisableCameraCuts)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MovieScene.MovieSceneSequencePlayer.SetDisableCameraCuts");
-
-	UMovieSceneSequencePlayer_SetDisableCameraCuts_Params params;
-	params.bInDisableCameraCuts = bInDisableCameraCuts;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function MovieScene.MovieSceneSequencePlayer.Scrub
-// (Final, Native, Public, BlueprintCallable)
-
-void UMovieSceneSequencePlayer::Scrub()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MovieScene.MovieSceneSequencePlayer.Scrub");
-
-	UMovieSceneSequencePlayer_Scrub_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function MovieScene.MovieSceneSequencePlayer.PlayReverse
 // (Final, Native, Public, BlueprintCallable)
 
@@ -250,27 +188,6 @@ void UMovieSceneSequencePlayer::Pause()
 }
 
 
-// Function MovieScene.MovieSceneSequencePlayer.JumpToPosition
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                          NewPlaybackPosition            (Parm, ZeroConstructor, IsPlainOldData)
-
-void UMovieSceneSequencePlayer::JumpToPosition(float NewPlaybackPosition)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MovieScene.MovieSceneSequencePlayer.JumpToPosition");
-
-	UMovieSceneSequencePlayer_JumpToPosition_Params params;
-	params.NewPlaybackPosition = NewPlaybackPosition;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function MovieScene.MovieSceneSequencePlayer.IsPlaying
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -290,46 +207,6 @@ bool UMovieSceneSequencePlayer::IsPlaying()
 	fn->FunctionFlags = flags;
 
 	return params.ReturnValue;
-}
-
-
-// Function MovieScene.MovieSceneSequencePlayer.IsPaused
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UMovieSceneSequencePlayer::IsPaused()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MovieScene.MovieSceneSequencePlayer.IsPaused");
-
-	UMovieSceneSequencePlayer_IsPaused_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MovieScene.MovieSceneSequencePlayer.GoToEndAndStop
-// (Final, Native, Public, BlueprintCallable)
-
-void UMovieSceneSequencePlayer::GoToEndAndStop()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MovieScene.MovieSceneSequencePlayer.GoToEndAndStop");
-
-	UMovieSceneSequencePlayer_GoToEndAndStop_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
 }
 
 
@@ -431,52 +308,6 @@ float UMovieSceneSequencePlayer::GetLength()
 	static auto fn = UObject::FindObject<UFunction>("Function MovieScene.MovieSceneSequencePlayer.GetLength");
 
 	UMovieSceneSequencePlayer_GetLength_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MovieScene.MovieSceneSequencePlayer.GetDisableCameraCuts
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UMovieSceneSequencePlayer::GetDisableCameraCuts()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MovieScene.MovieSceneSequencePlayer.GetDisableCameraCuts");
-
-	UMovieSceneSequencePlayer_GetDisableCameraCuts_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MovieScene.MovieSceneSequencePlayer.GetBoundObjects
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneObjectBindingID ObjectBinding                  (Parm)
-// TArray<class UObject*>         ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
-
-TArray<class UObject*> UMovieSceneSequencePlayer::GetBoundObjects(const struct FMovieSceneObjectBindingID& ObjectBinding)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MovieScene.MovieSceneSequencePlayer.GetBoundObjects");
-
-	UMovieSceneSequencePlayer_GetBoundObjects_Params params;
-	params.ObjectBinding = ObjectBinding;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;

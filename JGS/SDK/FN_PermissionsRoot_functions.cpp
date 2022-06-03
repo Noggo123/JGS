@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,9 +15,9 @@ namespace SDK
 // Function PermissionsRoot.PermissionsRoot_C.Input Handle Back
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UPermissionsRoot_C::Input_Handle_Back(bool* Passthrough)
+void UPermissionsRoot_C::Input_Handle_Back(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PermissionsRoot.PermissionsRoot_C.Input Handle Back");
 
@@ -29,8 +29,8 @@ void UPermissionsRoot_C::Input_Handle_Back(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -88,7 +88,7 @@ void UPermissionsRoot_C::OnActivated()
 // Function PermissionsRoot.PermissionsRoot_C.ExecuteUbergraph_PermissionsRoot
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPermissionsRoot_C::ExecuteUbergraph_PermissionsRoot(int EntryPoint)
 {

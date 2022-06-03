@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,7 +37,7 @@ void UMissionObjectiveProgressBarsManager_C::GetHeightEstimate(float* Height)
 // Function MissionObjectiveProgressBarsManager.MissionObjectiveProgressBarsManager_C.HandleUpdate
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortMissionState*       Objective                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortMissionState*       Objective                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMissionObjectiveProgressBarsManager_C::HandleUpdate(class AFortMissionState* Objective)
 {
@@ -57,8 +57,8 @@ void UMissionObjectiveProgressBarsManager_C::HandleUpdate(class AFortMissionStat
 // Function MissionObjectiveProgressBarsManager.MissionObjectiveProgressBarsManager_C.HandleObjectiveVisibilityChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortObjectiveBase*      Objective                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           New_Visibility                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortObjectiveBase*      Objective                      (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           New_Visibility                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMissionObjectiveProgressBarsManager_C::HandleObjectiveVisibilityChanged(class AFortObjectiveBase* Objective, bool New_Visibility)
 {
@@ -79,8 +79,8 @@ void UMissionObjectiveProgressBarsManager_C::HandleObjectiveVisibilityChanged(cl
 // Function MissionObjectiveProgressBarsManager.MissionObjectiveProgressBarsManager_C.HandleObjectiveStatusChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortObjectiveBase*      Objective                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortObjectiveStatus           New_Status                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortObjectiveBase*      Objective                      (Parm, ZeroConstructor, IsPlainOldData)
+// EFortObjectiveStatus           New_Status                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMissionObjectiveProgressBarsManager_C::HandleObjectiveStatusChanged(class AFortObjectiveBase* Objective, EFortObjectiveStatus New_Status)
 {
@@ -101,7 +101,7 @@ void UMissionObjectiveProgressBarsManager_C::HandleObjectiveStatusChanged(class 
 // Function MissionObjectiveProgressBarsManager.MissionObjectiveProgressBarsManager_C.CreateProgressBarWidget
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Index                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMissionObjectiveProgressBarsManager_C::CreateProgressBarWidget(int Index)
 {
@@ -121,8 +121,8 @@ void UMissionObjectiveProgressBarsManager_C::CreateProgressBarWidget(int Index)
 // Function MissionObjectiveProgressBarsManager.MissionObjectiveProgressBarsManager_C.Setup
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortObjectiveBase*      TrackedObjective               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bInConfigureAsHUD              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortObjectiveBase*      TrackedObjective               (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bInConfigureAsHUD              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMissionObjectiveProgressBarsManager_C::Setup(class AFortObjectiveBase* TrackedObjective, bool bInConfigureAsHUD)
 {

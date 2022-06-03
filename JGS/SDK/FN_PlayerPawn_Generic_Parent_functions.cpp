@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,6 +12,30 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
+// Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.Teleport
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FGameplayCueParameters  GameplayCueParameters          (Parm)
+// bool                           TeleportOut_                   (Parm, ZeroConstructor, IsPlainOldData)
+// float                          Default_PlayLength             (Parm, ZeroConstructor, IsPlainOldData)
+
+void APlayerPawn_Generic_Parent_C::Teleport(const struct FGameplayCueParameters& GameplayCueParameters, bool TeleportOut_, float Default_PlayLength)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.Teleport");
+
+	APlayerPawn_Generic_Parent_C_Teleport_Params params;
+	params.GameplayCueParameters = GameplayCueParameters;
+	params.TeleportOut_ = TeleportOut_;
+	params.Default_PlayLength = Default_PlayLength;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 
@@ -20,6 +44,28 @@ void APlayerPawn_Generic_Parent_C::UserConstructionScript()
 	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.UserConstructionScript");
 
 	APlayerPawn_Generic_Parent_C_UserConstructionScript_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.GameplayCue.Teleport.Out
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (Parm)
+
+void APlayerPawn_Generic_Parent_C::GameplayCue_Teleport_Out(TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.GameplayCue.Teleport.Out");
+
+	APlayerPawn_Generic_Parent_C_GameplayCue_Teleport_Out_Params params;
+	params.EventType = EventType;
+	params.Parameters = Parameters;
 
 	auto flags = fn->FunctionFlags;
 
@@ -46,34 +92,19 @@ void APlayerPawn_Generic_Parent_C::ReceiveBeginPlay()
 }
 
 
-// Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.Entered Water Volume
+// Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.GameplayCue.Teleport.In
 // (BlueprintCallable, BlueprintEvent)
-
-void APlayerPawn_Generic_Parent_C::Entered_Water_Volume()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.Entered Water Volume");
-
-	APlayerPawn_Generic_Parent_C_Entered_Water_Volume_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.Player Creates a Splash
-// (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FTransform              NewTransform                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
+// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (Parm)
 
-void APlayerPawn_Generic_Parent_C::Player_Creates_a_Splash(const struct FTransform& NewTransform)
+void APlayerPawn_Generic_Parent_C::GameplayCue_Teleport_In(TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.Player Creates a Splash");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.GameplayCue.Teleport.In");
 
-	APlayerPawn_Generic_Parent_C_Player_Creates_a_Splash_Params params;
-	params.NewTransform = NewTransform;
+	APlayerPawn_Generic_Parent_C_GameplayCue_Teleport_In_Params params;
+	params.EventType = EventType;
+	params.Parameters = Parameters;
 
 	auto flags = fn->FunctionFlags;
 
@@ -86,7 +117,7 @@ void APlayerPawn_Generic_Parent_C::Player_Creates_a_Splash(const struct FTransfo
 // Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.ExecuteUbergraph_PlayerPawn_Generic_Parent
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Generic_Parent_C::ExecuteUbergraph_PlayerPawn_Generic_Parent(int EntryPoint)
 {

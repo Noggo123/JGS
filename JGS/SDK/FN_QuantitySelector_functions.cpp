@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,52 +12,10 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function QuantitySelector.QuantitySelector_C.SetCurrentValue
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int                            NewValue                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UQuantitySelector_C::SetCurrentValue(int NewValue)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuantitySelector.QuantitySelector_C.SetCurrentValue");
-
-	UQuantitySelector_C_SetCurrentValue_Params params;
-	params.NewValue = NewValue;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function QuantitySelector.QuantitySelector_C.GetCurrentValue
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int                            CurrentValue                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UQuantitySelector_C::GetCurrentValue(int* CurrentValue)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuantitySelector.QuantitySelector_C.GetCurrentValue");
-
-	UQuantitySelector_C_GetCurrentValue_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (CurrentValue != nullptr)
-		*CurrentValue = params.CurrentValue;
-}
-
-
 // Function QuantitySelector.QuantitySelector_C.SetupForInputMode
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           IsUsingGamepad                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IsUsingGamepad                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuantitySelector_C::SetupForInputMode(bool IsUsingGamepad)
 {
@@ -94,9 +52,9 @@ void UQuantitySelector_C::SliderValueChanged()
 // Function QuantitySelector.QuantitySelector_C.HandleCancelPressed
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UQuantitySelector_C::HandleCancelPressed(bool* Passthrough)
+void UQuantitySelector_C::HandleCancelPressed(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function QuantitySelector.QuantitySelector_C.HandleCancelPressed");
 
@@ -108,17 +66,17 @@ void UQuantitySelector_C::HandleCancelPressed(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function QuantitySelector.QuantitySelector_C.HandleTransferPressed
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UQuantitySelector_C::HandleTransferPressed(bool* Passthrough)
+void UQuantitySelector_C::HandleTransferPressed(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function QuantitySelector.QuantitySelector_C.HandleTransferPressed");
 
@@ -130,17 +88,17 @@ void UQuantitySelector_C::HandleTransferPressed(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function QuantitySelector.QuantitySelector_C.HandleMaxPressed
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UQuantitySelector_C::HandleMaxPressed(bool* Passthrough)
+void UQuantitySelector_C::HandleMaxPressed(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function QuantitySelector.QuantitySelector_C.HandleMaxPressed");
 
@@ -152,8 +110,8 @@ void UQuantitySelector_C::HandleMaxPressed(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -177,7 +135,7 @@ void UQuantitySelector_C::CloseSelector()
 // Function QuantitySelector.QuantitySelector_C.SetAdditionalText
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   AdditionalInfoText             (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   AdditionalInfoText             (Parm)
 
 void UQuantitySelector_C::SetAdditionalText(const struct FText& AdditionalInfoText)
 {
@@ -197,12 +155,12 @@ void UQuantitySelector_C::SetAdditionalText(const struct FText& AdditionalInfoTe
 // Function QuantitySelector.QuantitySelector_C.SetSplitData
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            StartingCount                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            MaximumCount                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   TitleText                      (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FText                   ButtonText                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FText                   AdditionalInfoText             (BlueprintVisible, BlueprintReadOnly, Parm)
+// int                            StartingCount                  (Parm, ZeroConstructor, IsPlainOldData)
+// int                            MaximumCount                   (Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   TitleText                      (Parm)
+// struct FText                   ButtonText                     (Parm)
+// struct FText                   AdditionalInfoText             (Parm)
 
 void UQuantitySelector_C::SetSplitData(int StartingCount, int MaximumCount, class UFortItem* Item, const struct FText& TitleText, const struct FText& ButtonText, const struct FText& AdditionalInfoText)
 {
@@ -227,7 +185,7 @@ void UQuantitySelector_C::SetSplitData(int StartingCount, int MaximumCount, clas
 // Function QuantitySelector.QuantitySelector_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_86_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuantitySelector_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_86_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -247,7 +205,7 @@ void UQuantitySelector_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_86_C
 // Function QuantitySelector.QuantitySelector_C.BndEvt__ConfirmButton_K2Node_ComponentBoundEvent_166_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuantitySelector_C::BndEvt__ConfirmButton_K2Node_ComponentBoundEvent_166_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -267,7 +225,7 @@ void UQuantitySelector_C::BndEvt__ConfirmButton_K2Node_ComponentBoundEvent_166_C
 // Function QuantitySelector.QuantitySelector_C.BndEvt__AnalogSlider_0_K2Node_ComponentBoundEvent_434_OnFloatValueChangedEvent__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// float                          Value                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Value                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuantitySelector_C::BndEvt__AnalogSlider_0_K2Node_ComponentBoundEvent_434_OnFloatValueChangedEvent__DelegateSignature(float Value)
 {
@@ -287,7 +245,7 @@ void UQuantitySelector_C::BndEvt__AnalogSlider_0_K2Node_ComponentBoundEvent_434_
 // Function QuantitySelector.QuantitySelector_C.BndEvt__MaxButton_K2Node_ComponentBoundEvent_343_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuantitySelector_C::BndEvt__MaxButton_K2Node_ComponentBoundEvent_343_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -321,6 +279,23 @@ void UQuantitySelector_C::OnActivated()
 }
 
 
+// Function QuantitySelector.QuantitySelector_C.OnDeactivated
+// (Event, Protected, BlueprintEvent)
+
+void UQuantitySelector_C::OnDeactivated()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function QuantitySelector.QuantitySelector_C.OnDeactivated");
+
+	UQuantitySelector_C_OnDeactivated_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function QuantitySelector.QuantitySelector_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
@@ -341,7 +316,7 @@ void UQuantitySelector_C::Construct()
 // Function QuantitySelector.QuantitySelector_C.HandleChangeInputMode
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bUsingGamepad                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bUsingGamepad                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuantitySelector_C::HandleChangeInputMode(bool bUsingGamepad)
 {
@@ -358,27 +333,10 @@ void UQuantitySelector_C::HandleChangeInputMode(bool bUsingGamepad)
 }
 
 
-// Function QuantitySelector.QuantitySelector_C.Destruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UQuantitySelector_C::Destruct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuantitySelector.QuantitySelector_C.Destruct");
-
-	UQuantitySelector_C_Destruct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function QuantitySelector.QuantitySelector_C.ExecuteUbergraph_QuantitySelector
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuantitySelector_C::ExecuteUbergraph_QuantitySelector(int EntryPoint)
 {
@@ -398,8 +356,8 @@ void UQuantitySelector_C::ExecuteUbergraph_QuantitySelector(int EntryPoint)
 // Function QuantitySelector.QuantitySelector_C.OnStackValueChangedDispatcher__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            NewValue                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UFortItem*               FortItem                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            NewValue                       (Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               FortItem                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuantitySelector_C::OnStackValueChangedDispatcher__DelegateSignature(int NewValue, class UFortItem* FortItem)
 {
@@ -420,8 +378,8 @@ void UQuantitySelector_C::OnStackValueChangedDispatcher__DelegateSignature(int N
 // Function QuantitySelector.QuantitySelector_C.OnButtonClickedDispatcher__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            ChosenValue                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UFortItem*               FortItem                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            ChosenValue                    (Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               FortItem                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuantitySelector_C::OnButtonClickedDispatcher__DelegateSignature(int ChosenValue, class UFortItem* FortItem)
 {

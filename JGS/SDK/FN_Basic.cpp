@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -8,7 +8,18 @@
 
 namespace SDK
 {
-	TUObjectArray* UObject::GObjects = nullptr;
+TUObjectArray* UObject::GObjects = nullptr;
+//---------------------------------------------------------------------------
+bool FWeakObjectPtr::IsValid() const
+{
+	return false;
+}
+//---------------------------------------------------------------------------
+UObject* FWeakObjectPtr::Get() const
+{
+	return nullptr;
+}
+//---------------------------------------------------------------------------
 }
 
 #ifdef _MSC_VER

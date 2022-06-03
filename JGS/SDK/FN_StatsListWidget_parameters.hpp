@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,14 +17,14 @@ namespace SDK
 // Function StatsListWidget.StatsListWidget_C.AdjustClampCount
 struct UStatsListWidget_C_AdjustClampCount_Params
 {
-	class UFortAttributeListItem_NUI*                  Widget;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	bool                                               Add;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortAttributeListItem_NUI*                  Widget;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Add;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StatsListWidget.StatsListWidget_C.ToggleClampedValueMessage
 struct UStatsListWidget_C_ToggleClampedValueMessage_Params
 {
-	bool                                               inShow;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               inShow;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StatsListWidget.StatsListWidget_C.OnClearShownAttributes
@@ -35,20 +35,20 @@ struct UStatsListWidget_C_OnClearShownAttributes_Params
 // Function StatsListWidget.StatsListWidget_C.OnAddShownAttributeListItem
 struct UStatsListWidget_C_OnAddShownAttributeListItem_Params
 {
-	class UFortAttributeListItem_NUI**                 AttributeListItemWidget;                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UFortAttributeListItem_NUI**                 AttributeListItemWidget;                                  // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StatsListWidget.StatsListWidget_C.OnRemoveShownAttributeListItem
 struct UStatsListWidget_C_OnRemoveShownAttributeListItem_Params
 {
-	class UFortAttributeListItem_NUI**                 AttributeListItemWidget;                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	int*                                               AtIndex;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortAttributeListItem_NUI**                 AttributeListItemWidget;                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               AtIndex;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StatsListWidget.StatsListWidget_C.ExecuteUbergraph_StatsListWidget
 struct UStatsListWidget_C_ExecuteUbergraph_StatsListWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

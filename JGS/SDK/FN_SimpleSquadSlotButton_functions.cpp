@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,30 +12,10 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function SimpleSquadSlotButton.SimpleSquadSlotButton_C.UpdateTypeIconOffset
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                          VerticalOffset                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void USimpleSquadSlotButton_C::UpdateTypeIconOffset(float VerticalOffset)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function SimpleSquadSlotButton.SimpleSquadSlotButton_C.UpdateTypeIconOffset");
-
-	USimpleSquadSlotButton_C_UpdateTypeIconOffset_Params params;
-	params.VerticalOffset = VerticalOffset;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function SimpleSquadSlotButton.SimpleSquadSlotButton_C.Update SubType Icon Glow
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           GlowIcon                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           GlowIcon                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void USimpleSquadSlotButton_C::Update_SubType_Icon_Glow(bool GlowIcon)
 {
@@ -72,9 +52,9 @@ void USimpleSquadSlotButton_C::Update_SubType_Icon_Image()
 // Function SimpleSquadSlotButton.SimpleSquadSlotButton_C.IsSlotEmpty
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           isEmpty                        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           IsEmpty                        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void USimpleSquadSlotButton_C::IsSlotEmpty(bool* isEmpty)
+void USimpleSquadSlotButton_C::IsSlotEmpty(bool* IsEmpty)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function SimpleSquadSlotButton.SimpleSquadSlotButton_C.IsSlotEmpty");
 
@@ -86,8 +66,8 @@ void USimpleSquadSlotButton_C::IsSlotEmpty(bool* isEmpty)
 
 	fn->FunctionFlags = flags;
 
-	if (isEmpty != nullptr)
-		*isEmpty = params.isEmpty;
+	if (IsEmpty != nullptr)
+		*IsEmpty = params.IsEmpty;
 }
 
 
@@ -128,7 +108,7 @@ void USimpleSquadSlotButton_C::Update_Bang_State()
 // Function SimpleSquadSlotButton.SimpleSquadSlotButton_C.GetSimpleSquadButtonTooltipWidget
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 class UWidget* USimpleSquadSlotButton_C::GetSimpleSquadButtonTooltipWidget()
 {
@@ -149,7 +129,7 @@ class UWidget* USimpleSquadSlotButton_C::GetSimpleSquadButtonTooltipWidget()
 // Function SimpleSquadSlotButton.SimpleSquadSlotButton_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void USimpleSquadSlotButton_C::PreConstruct(bool* IsDesignTime)
 {
@@ -234,30 +214,10 @@ void USimpleSquadSlotButton_C::OnSelected()
 }
 
 
-// Function SimpleSquadSlotButton.SimpleSquadSlotButton_C.BndEvt__PopupMenuAnchor_K2Node_ComponentBoundEvent_0_OnMenuOpenChangedEvent__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// bool                           bIsOpen                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void USimpleSquadSlotButton_C::BndEvt__PopupMenuAnchor_K2Node_ComponentBoundEvent_0_OnMenuOpenChangedEvent__DelegateSignature(bool bIsOpen)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function SimpleSquadSlotButton.SimpleSquadSlotButton_C.BndEvt__PopupMenuAnchor_K2Node_ComponentBoundEvent_0_OnMenuOpenChangedEvent__DelegateSignature");
-
-	USimpleSquadSlotButton_C_BndEvt__PopupMenuAnchor_K2Node_ComponentBoundEvent_0_OnMenuOpenChangedEvent__DelegateSignature_Params params;
-	params.bIsOpen = bIsOpen;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function SimpleSquadSlotButton.SimpleSquadSlotButton_C.ExecuteUbergraph_SimpleSquadSlotButton
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void USimpleSquadSlotButton_C::ExecuteUbergraph_SimpleSquadSlotButton(int EntryPoint)
 {

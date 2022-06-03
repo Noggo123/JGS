@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,8 +32,8 @@ void UOutpostScreenCanEditRow_C::CenterWidget()
 // Function OutpostScreenCanEditRow.OutpostScreenCanEditRow_C.Init
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortPlayerStateOutpost* InPlayer                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class AFortPlayerStateOutpost* InOutpostOwner                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortPlayerStateOutpost* InPlayer                       (Parm, ZeroConstructor, IsPlainOldData)
+// class AFortPlayerStateOutpost* InOutpostOwner                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenCanEditRow_C::Init(class AFortPlayerStateOutpost* InPlayer, class AFortPlayerStateOutpost* InOutpostOwner)
 {
@@ -54,7 +54,7 @@ void UOutpostScreenCanEditRow_C::Init(class AFortPlayerStateOutpost* InPlayer, c
 // Function OutpostScreenCanEditRow.OutpostScreenCanEditRow_C.BndEvt__CanEditButton_K2Node_ComponentBoundEvent_43_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenCanEditRow_C::BndEvt__CanEditButton_K2Node_ComponentBoundEvent_43_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -74,7 +74,7 @@ void UOutpostScreenCanEditRow_C::BndEvt__CanEditButton_K2Node_ComponentBoundEven
 // Function OutpostScreenCanEditRow.OutpostScreenCanEditRow_C.ExecuteUbergraph_OutpostScreenCanEditRow
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenCanEditRow_C::ExecuteUbergraph_OutpostScreenCanEditRow(int EntryPoint)
 {

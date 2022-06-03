@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,11 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
-
-// Function StoreMain_OfferDetails.StoreMain_OfferDetails_C.BacchusInit
-struct UStoreMain_OfferDetails_C_BacchusInit_Params
-{
-};
 
 // Function StoreMain_OfferDetails.StoreMain_OfferDetails_C.PopDetails
 struct UStoreMain_OfferDetails_C_PopDetails_Params
@@ -32,7 +27,7 @@ struct UStoreMain_OfferDetails_C_Init_Params
 // Function StoreMain_OfferDetails.StoreMain_OfferDetails_C.HandleBack
 struct UStoreMain_OfferDetails_C_HandleBack_Params
 {
-	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               PassThrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StoreMain_OfferDetails.StoreMain_OfferDetails_C.OnActivated
@@ -48,13 +43,13 @@ struct UStoreMain_OfferDetails_C_OnDeactivated_Params
 // Function StoreMain_OfferDetails.StoreMain_OfferDetails_C.BndEvt__PurchaseButton_K2Node_ComponentBoundEvent_16_CommonButtonClicked__DelegateSignature
 struct UStoreMain_OfferDetails_C_BndEvt__PurchaseButton_K2Node_ComponentBoundEvent_16_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StoreMain_OfferDetails.StoreMain_OfferDetails_C.HandlePurchaseComplete
 struct UStoreMain_OfferDetails_C_HandlePurchaseComplete_Params
 {
-	bool                                               bSuccess;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bSuccess;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StoreMain_OfferDetails.StoreMain_OfferDetails_C.Construct
@@ -67,16 +62,10 @@ struct UStoreMain_OfferDetails_C_Destruct_Params
 {
 };
 
-// Function StoreMain_OfferDetails.StoreMain_OfferDetails_C.BndEvt__BacchusCloseButton_K2Node_ComponentBoundEvent_25_CommonButtonClicked__DelegateSignature
-struct UStoreMain_OfferDetails_C_BndEvt__BacchusCloseButton_K2Node_ComponentBoundEvent_25_CommonButtonClicked__DelegateSignature_Params
-{
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-};
-
 // Function StoreMain_OfferDetails.StoreMain_OfferDetails_C.ExecuteUbergraph_StoreMain_OfferDetails
 struct UStoreMain_OfferDetails_C_ExecuteUbergraph_StoreMain_OfferDetails_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

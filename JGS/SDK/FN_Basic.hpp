@@ -1,7 +1,6 @@
 #pragma once
-#include <locale>
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -29,9 +28,9 @@ struct TUObjectArray
 		return NumElements;
 	}
 
-	inline UObject* GetByIndex(int32_t Index)
+	inline UObject* GetByIndex(int32_t id)
 	{
-		auto Offset = 24 * Index;
+		auto Offset = 24 * id;
 		return *(UObject**)(Objects + Offset);
 	}
 };
@@ -68,12 +67,29 @@ public:
 		return i < Num();
 	}
 
-	inline void Add(T InputData)
+	inline int Add(T InputData)
 	{
 		Data = (T*)realloc(Data, sizeof(T) * (Count + 1));
 		Data[Count++] = InputData;
 		Max = Count;
+
+		return Count;
 	};
+
+	inline void Remove(int32_t Index)
+	{
+		TArray<T> NewArray;
+		for (int i = 0; i < this->Count; i++)
+		{
+			if (i == Index)
+				continue;
+
+			NewArray.Add(this->operator[](i));
+		}
+		this->Data = (T*)realloc(NewArray.Data, sizeof(T) * (NewArray.Count));
+		this->Count = NewArray.Count;
+		this->Max = NewArray.Count;
+	}
 
 	T* Data;
 	int32_t Count;
@@ -120,25 +136,37 @@ struct FString : private TArray<wchar_t>
 
 struct FName;
 
-inline void(*FNameToString)(FName*, FString&);
-inline void(*FreeMemory)(void*);
+inline void (*FreeInternal)(void*);
+inline void (*FNameToString)(FName* pThis, FString& out);
 
 struct FName
 {
-	int32_t ComparisonIndex;
-	int32_t Number;
+	uint32_t ComparisonIndex;
+	uint32_t DisplayIndex;
 
-	std::string ToString()
+	FName() = default;
+
+	explicit FName(int64_t name)
 	{
-		FString Temp;
+		DisplayIndex = (name & 0xFFFFFFFF00000000LL) >> 32;
+		ComparisonIndex = (name & 0xFFFFFFFFLL);
+	};
 
-		FNameToString(this, Temp);
+	FName(uint32_t comparisonIndex, uint32_t displayIndex) : ComparisonIndex(comparisonIndex),
+		DisplayIndex(displayIndex)
+	{
+	}
 
-		auto str = std::string(Temp.ToString());
+	auto ToString()
+	{
+		FString temp;
+		FNameToString(this, temp);
 
-		FreeMemory((void*)(Temp.c_str()));
+		std::string ret(temp.ToString());
 
-		return str;
+		FreeInternal((void*)temp.c_str());
+
+		return ret;
 	}
 };
 
@@ -245,6 +273,13 @@ class TMap
 
 struct FWeakObjectPtr
 {
+public:
+	bool IsValid() const;
+
+	UObject* Get() const;
+
+	int32_t ObjectIndex;
+	int32_t ObjectSerialNumber;
 };
 
 template<class T, class TWeakObjectPtrBase = FWeakObjectPtr>

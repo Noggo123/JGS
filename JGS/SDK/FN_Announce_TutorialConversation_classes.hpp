@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,12 +13,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass Announce_TutorialConversation.Announce_TutorialConversation_C
-// 0x0018 (0x0550 - 0x0538)
+// 0x0018 (0x05C8 - 0x05B0)
 class AAnnounce_TutorialConversation_C : public AFortClientAnnouncement_TutorialConversation
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0538(0x0008) (Transient, DuplicateTransient)
-	TArray<struct FTutorialHighlightData>              SentencedIndexedTutorialData;                             // 0x0540(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x05B0(0x0008) (Transient, DuplicateTransient)
+	TArray<struct FTutorialHighlightData>              SentencedIndexedTutorialData;                             // 0x05B8(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{

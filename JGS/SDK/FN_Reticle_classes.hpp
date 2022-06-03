@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass Reticle.Reticle_C
-// 0x0000 (0x0260 - 0x0260)
+// 0x0000 (0x0288 - 0x0288)
 class UReticle_C : public UFortReticle
 {
 public:

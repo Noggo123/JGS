@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,8 +32,8 @@ void UInfoWindow_C::Initialize()
 // Function InfoWindow.InfoWindow_C.AddInfo
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UFortItemDefinition*> Info_Items                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// struct FText                   Title                          (BlueprintVisible, BlueprintReadOnly, Parm)
+// TArray<class UFortItemDefinition*> Info_Items                     (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// struct FText                   Title                          (Parm)
 
 void UInfoWindow_C::AddInfo(const struct FText& Title, TArray<class UFortItemDefinition*>* Info_Items)
 {
@@ -56,7 +56,7 @@ void UInfoWindow_C::AddInfo(const struct FText& Title, TArray<class UFortItemDef
 // Function InfoWindow.InfoWindow_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_37_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UInfoWindow_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_37_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -178,7 +178,7 @@ void UInfoWindow_C::OnBeginIntro()
 // Function InfoWindow.InfoWindow_C.BndEvt__InfoButtons_K2Node_ComponentBoundEvent_212_OnListViewItemWidgetCreated__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UUserWidget*             Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UUserWidget*             Widget                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UInfoWindow_C::BndEvt__InfoButtons_K2Node_ComponentBoundEvent_212_OnListViewItemWidgetCreated__DelegateSignature(class UUserWidget* Widget)
 {
@@ -198,7 +198,7 @@ void UInfoWindow_C::BndEvt__InfoButtons_K2Node_ComponentBoundEvent_212_OnListVie
 // Function InfoWindow.InfoWindow_C.Set Info
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItemDefinition*     Entry_Item_Definition          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItemDefinition*     Entry_Item_Definition          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UInfoWindow_C::Set_Info(class UFortItemDefinition* Entry_Item_Definition)
 {
@@ -218,7 +218,7 @@ void UInfoWindow_C::Set_Info(class UFortItemDefinition* Entry_Item_Definition)
 // Function InfoWindow.InfoWindow_C.ExecuteUbergraph_InfoWindow
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UInfoWindow_C::ExecuteUbergraph_InfoWindow(int EntryPoint)
 {

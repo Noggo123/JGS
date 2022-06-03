@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,7 @@ namespace SDK
 // Function ItemCountOverCost.ItemCountOverCost_C.Calculate Total Item Def in Inventory
 struct UItemCountOverCost_C_Calculate_Total_Item_Def_in_Inventory_Params
 {
-	class UFortItemDefinition*                         ItemDefinition;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItemDefinition*                         ItemDefinition;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                Count;                                                    // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -40,13 +40,13 @@ struct UItemCountOverCost_C_Construct_Params
 // Function ItemCountOverCost.ItemCountOverCost_C.PreConstruct
 struct UItemCountOverCost_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemCountOverCost.ItemCountOverCost_C.ExecuteUbergraph_ItemCountOverCost
 struct UItemCountOverCost_C_ExecuteUbergraph_ItemCountOverCost_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

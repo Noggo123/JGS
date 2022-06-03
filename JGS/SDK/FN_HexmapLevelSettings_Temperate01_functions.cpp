@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void AHexmapLevelSettings_Temperate01_C::UserConstructionScript()
 // Function HexmapLevelSettings_Temperate01.HexmapLevelSettings_Temperate01_C.CustomSettings
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Visibility                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Visibility                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AHexmapLevelSettings_Temperate01_C::CustomSettings(bool Visibility)
 {
@@ -52,7 +52,7 @@ void AHexmapLevelSettings_Temperate01_C::CustomSettings(bool Visibility)
 // Function HexmapLevelSettings_Temperate01.HexmapLevelSettings_Temperate01_C.ExecuteUbergraph_HexmapLevelSettings_Temperate01
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AHexmapLevelSettings_Temperate01_C::ExecuteUbergraph_HexmapLevelSettings_Temperate01(int EntryPoint)
 {

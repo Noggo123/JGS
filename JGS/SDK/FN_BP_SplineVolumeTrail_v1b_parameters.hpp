@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,16 +22,14 @@ struct ABP_SplineVolumeTrail_v1b_C_UpdateCheapSplinesWPOVectors_Params
 // Function BP_SplineVolumeTrail_v1b.BP_SplineVolumeTrail_v1b_C.GetSocketLocationWS
 struct ABP_SplineVolumeTrail_v1b_C_GetSocketLocationWS_Params
 {
-	struct FName                                       Socket_Name;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       Socket_Name;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FVector                                     LocationWS;                                               // (Parm, OutParm, IsPlainOldData)
-	bool                                               Skeletal_Mesh_InValid;                                    // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-	bool                                               Socket_Invalid;                                           // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function BP_SplineVolumeTrail_v1b.BP_SplineVolumeTrail_v1b_C.SetStartAndEndAllSplineMeshes
 struct ABP_SplineVolumeTrail_v1b_C_SetStartAndEndAllSplineMeshes_Params
 {
-	bool                                               Update_All_Spline_Meshes;                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Update_All_Spline_Meshes;                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function BP_SplineVolumeTrail_v1b.BP_SplineVolumeTrail_v1b_C.DestroyAllSplineMeshes
@@ -42,16 +40,16 @@ struct ABP_SplineVolumeTrail_v1b_C_DestroyAllSplineMeshes_Params
 // Function BP_SplineVolumeTrail_v1b.BP_SplineVolumeTrail_v1b_C.BakeLinearColor
 struct ABP_SplineVolumeTrail_v1b_C_BakeLinearColor_Params
 {
-	class UCurveLinearColor*                           Curve_Linear_Color;                                       // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int                                                Pixel__X_;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCurveLinearColor*                           Curve_Linear_Color;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Pixel__X_;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FLinearColor                                LinearColorOut;                                           // (Parm, OutParm, IsPlainOldData)
 };
 
 // Function BP_SplineVolumeTrail_v1b.BP_SplineVolumeTrail_v1b_C.ReturnSplineMeshToPool
 struct ABP_SplineVolumeTrail_v1b_C_ReturnSplineMeshToPool_Params
 {
-	class USplineMeshComponent*                        SplineMesh;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	int                                                IndexToRemove;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class USplineMeshComponent*                        SplineMesh;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                IndexToRemove;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function BP_SplineVolumeTrail_v1b.BP_SplineVolumeTrail_v1b_C.SplineUpdateOnTick
@@ -67,8 +65,8 @@ struct ABP_SplineVolumeTrail_v1b_C_RedistributePointsAlongSpline_Params
 // Function BP_SplineVolumeTrail_v1b.BP_SplineVolumeTrail_v1b_C.GetLinearColorFromCurveAtTime
 struct ABP_SplineVolumeTrail_v1b_C_GetLinearColorFromCurveAtTime_Params
 {
-	class UCurveLinearColor*                           Curve_Linear_Color;                                       // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int                                                Index;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCurveLinearColor*                           Curve_Linear_Color;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FLinearColor                                LinearColorOut;                                           // (Parm, OutParm, IsPlainOldData)
 };
 
@@ -96,7 +94,7 @@ struct ABP_SplineVolumeTrail_v1b_C_SetNewSplinePointsBool_Params
 // Function BP_SplineVolumeTrail_v1b.BP_SplineVolumeTrail_v1b_C.SetForwardAxisOnSplineMesh
 struct ABP_SplineVolumeTrail_v1b_C_SetForwardAxisOnSplineMesh_Params
 {
-	class USplineMeshComponent*                        SplineMesh;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class USplineMeshComponent*                        SplineMesh;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function BP_SplineVolumeTrail_v1b.BP_SplineVolumeTrail_v1b_C.RollSplineMesh
@@ -137,7 +135,7 @@ struct ABP_SplineVolumeTrail_v1b_C_AddSplinePoint_Params
 // Function BP_SplineVolumeTrail_v1b.BP_SplineVolumeTrail_v1b_C.SetStartAndEndSplineMesh
 struct ABP_SplineVolumeTrail_v1b_C_SetStartAndEndSplineMesh_Params
 {
-	bool                                               Update_Spline_Mesh;                                       // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Update_Spline_Mesh;                                       // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function BP_SplineVolumeTrail_v1b.BP_SplineVolumeTrail_v1b_C.AddSplineMesh
@@ -163,7 +161,7 @@ struct ABP_SplineVolumeTrail_v1b_C_DebugRotateTimeline__UpdateFunc_Params
 // Function BP_SplineVolumeTrail_v1b.BP_SplineVolumeTrail_v1b_C.ReceiveTick
 struct ABP_SplineVolumeTrail_v1b_C_ReceiveTick_Params
 {
-	float*                                             DeltaSeconds;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float*                                             DeltaSeconds;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function BP_SplineVolumeTrail_v1b.BP_SplineVolumeTrail_v1b_C.ReceiveBeginPlay
@@ -209,7 +207,7 @@ struct ABP_SplineVolumeTrail_v1b_C_GenerateCurveTextures_Params
 // Function BP_SplineVolumeTrail_v1b.BP_SplineVolumeTrail_v1b_C.ExecuteUbergraph_BP_SplineVolumeTrail_v1b
 struct ABP_SplineVolumeTrail_v1b_C_ExecuteUbergraph_BP_SplineVolumeTrail_v1b_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

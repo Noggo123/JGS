@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,7 @@ namespace SDK
 // Function PerkWidget.PerkWidget_C.CreateToolTipWidget
 struct UPerkWidget_C_CreateToolTipWidget_Params
 {
-	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function PerkWidget.PerkWidget_C.InitializeTextInfo
@@ -87,7 +87,7 @@ struct UPerkWidget_C_InitializeBasicPerk_Params
 // Function PerkWidget.PerkWidget_C.PreConstruct
 struct UPerkWidget_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function PerkWidget.PerkWidget_C.Construct
@@ -95,21 +95,10 @@ struct UPerkWidget_C_Construct_Params
 {
 };
 
-// Function PerkWidget.PerkWidget_C.OnPerkUpdated
-struct UPerkWidget_C_OnPerkUpdated_Params
-{
-};
-
-// Function PerkWidget.PerkWidget_C.OnTooltipDescriptionReady
-struct UPerkWidget_C_OnTooltipDescriptionReady_Params
-{
-	TArray<struct FText>*                              DescriptionList;                                          // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-};
-
 // Function PerkWidget.PerkWidget_C.ExecuteUbergraph_PerkWidget
 struct UPerkWidget_C_ExecuteUbergraph_PerkWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

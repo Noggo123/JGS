@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -73,16 +73,15 @@ public:
 };
 
 
-// Class SlateCore.SlateWidgetStyleAsset
-// 0x0008 (0x0030 - 0x0028)
-class USlateWidgetStyleAsset : public UObject
+// Class SlateCore.SlateWidgetStyleContainerInterface
+// 0x0000 (0x0028 - 0x0028)
+class USlateWidgetStyleContainerInterface : public UInterface
 {
 public:
-	class USlateWidgetStyleContainerBase*              CustomStyle;                                              // 0x0028(0x0008) (Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindClass("Class SlateCore.SlateWidgetStyleAsset");
+		static auto ptr = UObject::FindClass("Class SlateCore.SlateWidgetStyleContainerInterface");
 		return ptr;
 	}
 
@@ -105,15 +104,16 @@ public:
 };
 
 
-// Class SlateCore.SlateWidgetStyleContainerInterface
-// 0x0000 (0x0028 - 0x0028)
-class USlateWidgetStyleContainerInterface : public UInterface
+// Class SlateCore.SlateWidgetStyleAsset
+// 0x0008 (0x0030 - 0x0028)
+class USlateWidgetStyleAsset : public UObject
 {
 public:
+	class USlateWidgetStyleContainerBase*              CustomStyle;                                              // 0x0028(0x0008) (Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindClass("Class SlateCore.SlateWidgetStyleContainerInterface");
+		static auto ptr = UObject::FindClass("Class SlateCore.SlateWidgetStyleAsset");
 		return ptr;
 	}
 

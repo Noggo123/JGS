@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass MissionGen_Athena.MissionGen_Athena_C
-// 0x0000 (0x06C0 - 0x06C0)
+// 0x0000 (0x06A8 - 0x06A8)
 class UMissionGen_Athena_C : public UFortMissionGenerator
 {
 public:

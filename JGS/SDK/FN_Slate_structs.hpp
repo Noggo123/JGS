@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,6 +22,15 @@ enum class ETextFlowDirection : uint8_t
 };
 
 
+// Enum Slate.ETextWrappingPolicy
+enum class ETextWrappingPolicy : uint8_t
+{
+	DefaultWrapping                = 0,
+	AllowPerCharacterWrapping      = 1,
+	ETextWrappingPolicy_MAX        = 2
+};
+
+
 // Enum Slate.ETextJustify
 enum class ETextJustify : uint8_t
 {
@@ -29,25 +38,6 @@ enum class ETextJustify : uint8_t
 	Center                         = 1,
 	Right                          = 2,
 	ETextJustify_MAX               = 3
-};
-
-
-// Enum Slate.EVirtualKeyboardDismissAction
-enum class EVirtualKeyboardDismissAction : uint8_t
-{
-	TextChangeOnDismiss            = 0,
-	TextCommitOnAccept             = 1,
-	TextCommitOnDismiss            = 2,
-	EVirtualKeyboardDismissAction_MAX = 3
-};
-
-
-// Enum Slate.ETextWrappingPolicy
-enum class ETextWrappingPolicy : uint8_t
-{
-	DefaultWrapping                = 0,
-	AllowPerCharacterWrapping      = 1,
-	ETextWrappingPolicy_MAX        = 2
 };
 
 
@@ -69,18 +59,6 @@ enum class ESelectionMode : uint8_t
 	SingleToggle                   = 2,
 	Multi                          = 3,
 	ESelectionMode_MAX             = 4
-};
-
-
-// Enum Slate.EProgressBarFillType
-enum class EProgressBarFillType : uint8_t
-{
-	LeftToRight                    = 0,
-	RightToLeft                    = 1,
-	FillFromCenter                 = 2,
-	TopToBottom                    = 3,
-	BottomToTop                    = 4,
-	EProgressBarFillType_MAX       = 5
 };
 
 
@@ -119,6 +97,18 @@ enum class EDescendantScrollDestination : uint8_t
 };
 
 
+// Enum Slate.EProgressBarFillType
+enum class EProgressBarFillType : uint8_t
+{
+	LeftToRight                    = 0,
+	RightToLeft                    = 1,
+	FillFromCenter                 = 2,
+	TopToBottom                    = 3,
+	BottomToTop                    = 4,
+	EProgressBarFillType_MAX       = 5
+};
+
+
 // Enum Slate.EListItemAlignment
 enum class EListItemAlignment : uint8_t
 {
@@ -133,37 +123,20 @@ enum class EListItemAlignment : uint8_t
 };
 
 
-// Enum Slate.EMultipleKeyBindingIndex
-enum class EMultipleKeyBindingIndex : uint8_t
-{
-	Primary                        = 0,
-	Secondary                      = 1,
-	NumChords                      = 2,
-	EMultipleKeyBindingIndex_MAX   = 3
-};
-
-
 
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
 
-// ScriptStruct Slate.VirtualKeyboardOptions
-// 0x0001
-struct FVirtualKeyboardOptions
-{
-	bool                                               bEnableAutocorrect;                                       // 0x0000(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-};
-
 // ScriptStruct Slate.InputChord
 // 0x0020
 struct FInputChord
 {
-	struct FKey                                        Key;                                                      // 0x0000(0x0018) (Edit, BlueprintVisible)
-	unsigned char                                      bShift : 1;                                               // 0x0018(0x0001) (Edit, BlueprintVisible)
-	unsigned char                                      bCtrl : 1;                                                // 0x0018(0x0001) (Edit, BlueprintVisible)
-	unsigned char                                      bAlt : 1;                                                 // 0x0018(0x0001) (Edit, BlueprintVisible)
-	unsigned char                                      bCmd : 1;                                                 // 0x0018(0x0001) (Edit, BlueprintVisible)
+	struct FKey                                        Key;                                                      // 0x0000(0x0018) (Edit)
+	unsigned char                                      bShift : 1;                                               // 0x0018(0x0001) (Edit)
+	unsigned char                                      bCtrl : 1;                                                // 0x0018(0x0001) (Edit)
+	unsigned char                                      bAlt : 1;                                                 // 0x0018(0x0001) (Edit)
+	unsigned char                                      bCmd : 1;                                                 // 0x0018(0x0001) (Edit)
 	unsigned char                                      UnknownData00[0x7];                                       // 0x0019(0x0007) MISSED OFFSET
 };
 

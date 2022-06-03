@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,21 +22,21 @@ struct UQuestInfo_BulletListEntry_C_ShowBorder_Params
 // Function QuestInfo_BulletListEntry.QuestInfo_BulletListEntry_C.CalcBrushSize
 struct UQuestInfo_BulletListEntry_C_CalcBrushSize_Params
 {
-	struct FVector2D                                   InImageSize;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+	struct FVector2D                                   InImageSize;                                              // (Parm, IsPlainOldData)
 	struct FVector2D                                   ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
 };
 
 // Function QuestInfo_BulletListEntry.QuestInfo_BulletListEntry_C.InitBrush
 struct UQuestInfo_BulletListEntry_C_InitBrush_Params
 {
-	struct FText                                       EntryText;                                                // (BlueprintVisible, BlueprintReadOnly, Parm)
-	struct FSlateBrush                                 EntryIconBrush;                                           // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FText                                       EntryText;                                                // (Parm)
+	struct FSlateBrush                                 EntryIconBrush;                                           // (Parm)
 };
 
 // Function QuestInfo_BulletListEntry.QuestInfo_BulletListEntry_C.InitBullet
 struct UQuestInfo_BulletListEntry_C_InitBullet_Params
 {
-	struct FText                                       EntryText;                                                // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FText                                       EntryText;                                                // (Parm)
 };
 
 }

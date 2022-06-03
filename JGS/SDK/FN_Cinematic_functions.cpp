@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -54,8 +54,8 @@ void UCinematic_C::StopAndClearSubtitles()
 // Function Cinematic.Cinematic_C.ClearOldSubtitlesIfNecessary
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           NewSubtitlesExist              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UFortMediaSubtitlesPlayer* NewSubtitles                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           NewSubtitlesExist              (Parm, ZeroConstructor, IsPlainOldData)
+// class UFortMediaSubtitlesPlayer* NewSubtitles                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCinematic_C::ClearOldSubtitlesIfNecessary(bool NewSubtitlesExist, class UFortMediaSubtitlesPlayer* NewSubtitles)
 {
@@ -76,7 +76,7 @@ void UCinematic_C::ClearOldSubtitlesIfNecessary(bool NewSubtitlesExist, class UF
 // Function Cinematic.Cinematic_C.SetMoviePlaying
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           MoviePlaying                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           MoviePlaying                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCinematic_C::SetMoviePlaying(bool MoviePlaying)
 {
@@ -96,7 +96,7 @@ void UCinematic_C::SetMoviePlaying(bool MoviePlaying)
 // Function Cinematic.Cinematic_C.ClearMovieWidget
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortMovieWidget*        MovieWidgetToClear             (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
+// class UFortMovieWidget*        MovieWidgetToClear             (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
 void UCinematic_C::ClearMovieWidget(class UFortMovieWidget** MovieWidgetToClear)
 {
@@ -118,7 +118,7 @@ void UCinematic_C::ClearMovieWidget(class UFortMovieWidget** MovieWidgetToClear)
 // Function Cinematic.Cinematic_C.ClearMovieSlot
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UPanelWidget*            MovieSlotToClear               (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
+// class UPanelWidget*            MovieSlotToClear               (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
 void UCinematic_C::ClearMovieSlot(class UPanelWidget** MovieSlotToClear)
 {
@@ -140,8 +140,8 @@ void UCinematic_C::ClearMovieSlot(class UPanelWidget** MovieSlotToClear)
 // Function Cinematic.Cinematic_C.PopContentWidgetInternal
 // (Event, Protected, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FContentPushState*      State                          (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+// struct FContentPushState*      State                          (Parm)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 class UWidget* UCinematic_C::PopContentWidgetInternal(struct FContentPushState* State)
 {
@@ -197,16 +197,18 @@ void UCinematic_C::ClearMovie()
 // Function Cinematic.Cinematic_C.ShowMovie
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UMediaSource*            MediaSource                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UNamedSlot*              MovieSlot                      (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
-// class UMovieWidget_C*          MovieWidget                    (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
+// class UMediaSource*            MediaSource                    (Parm, ZeroConstructor, IsPlainOldData)
+// class UMediaSoundWave*         MediaSoundWave                 (Parm, ZeroConstructor, IsPlainOldData)
+// class UNamedSlot*              MovieSlot                      (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// class UMovieWidget_C*          MovieWidget                    (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
-void UCinematic_C::ShowMovie(class UMediaSource* MediaSource, class UNamedSlot** MovieSlot, class UMovieWidget_C** MovieWidget)
+void UCinematic_C::ShowMovie(class UMediaSource* MediaSource, class UMediaSoundWave* MediaSoundWave, class UNamedSlot** MovieSlot, class UMovieWidget_C** MovieWidget)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Cinematic.Cinematic_C.ShowMovie");
 
 	UCinematic_C_ShowMovie_Params params;
 	params.MediaSource = MediaSource;
+	params.MediaSoundWave = MediaSoundWave;
 
 	auto flags = fn->FunctionFlags;
 
@@ -241,9 +243,9 @@ void UCinematic_C::Construct()
 // Function Cinematic.Cinematic_C.HandleClientEvent_QueueCinematic
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 EventSource                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 EventFocus                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FFortClientEvent        ClientEvent                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class UObject*                 EventSource                    (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 EventFocus                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortClientEvent        ClientEvent                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UCinematic_C::HandleClientEvent_QueueCinematic(class UObject* EventSource, class UObject* EventFocus, const struct FFortClientEvent& ClientEvent)
 {
@@ -299,9 +301,9 @@ void UCinematic_C::HandleEndReached()
 // Function Cinematic.Cinematic_C.HandleClientEvent_SkipCinematic
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 EventSource                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 EventFocus                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FFortClientEvent        ClientEvent                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class UObject*                 EventSource                    (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 EventFocus                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortClientEvent        ClientEvent                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UCinematic_C::HandleClientEvent_SkipCinematic(class UObject* EventSource, class UObject* EventFocus, const struct FFortClientEvent& ClientEvent)
 {
@@ -323,8 +325,8 @@ void UCinematic_C::HandleClientEvent_SkipCinematic(class UObject* EventSource, c
 // Function Cinematic.Cinematic_C.PushContentWidgetInternal
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UWidget**                Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// struct FContentPushState*      State                          (BlueprintVisible, BlueprintReadOnly, Parm)
+// class UWidget**                Widget                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FContentPushState*      State                          (Parm)
 
 void UCinematic_C::PushContentWidgetInternal(class UWidget** Widget, struct FContentPushState* State)
 {
@@ -345,7 +347,7 @@ void UCinematic_C::PushContentWidgetInternal(class UWidget** Widget, struct FCon
 // Function Cinematic.Cinematic_C.OnEnterState
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// EFortUIState*                  PreviousUIState                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortUIState*                  PreviousUIState                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCinematic_C::OnEnterState(EFortUIState* PreviousUIState)
 {
@@ -365,7 +367,7 @@ void UCinematic_C::OnEnterState(EFortUIState* PreviousUIState)
 // Function Cinematic.Cinematic_C.OnExitState
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// EFortUIState*                  NextUIState                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortUIState*                  NextUIState                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCinematic_C::OnExitState(EFortUIState* NextUIState)
 {
@@ -402,7 +404,7 @@ void UCinematic_C::OnMediaEvent()
 // Function Cinematic.Cinematic_C.ExecuteUbergraph_Cinematic
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCinematic_C::ExecuteUbergraph_Cinematic(int EntryPoint)
 {

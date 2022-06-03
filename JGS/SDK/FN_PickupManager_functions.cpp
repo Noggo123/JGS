@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,8 +49,8 @@ void UPickupManager_C::RefreshCounts()
 // Function PickupManager.PickupManager_C.HandleItemPickedUp
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortWorldItem*          NewItem                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            Count                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortWorldItem*          NewItem                        (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Count                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPickupManager_C::HandleItemPickedUp(class UFortWorldItem* NewItem, int Count)
 {
@@ -71,7 +71,7 @@ void UPickupManager_C::HandleItemPickedUp(class UFortWorldItem* NewItem, int Cou
 // Function PickupManager.PickupManager_C.HandleMessageExpired
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortUIMessageItemWidget* Message_Item                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UFortUIMessageItemWidget* Message_Item                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPickupManager_C::HandleMessageExpired(class UFortUIMessageItemWidget* Message_Item)
 {
@@ -142,8 +142,8 @@ void UPickupManager_C::HandleWorldItemsChanged()
 // Function PickupManager.PickupManager_C.HandleWorldItemListChanged
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UFortWorldItem*>  ItemsAdded                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// TArray<class UFortWorldItem*>  ItemsRemoved                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UFortWorldItem*>  ItemsAdded                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UFortWorldItem*>  ItemsRemoved                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UPickupManager_C::HandleWorldItemListChanged(TArray<class UFortWorldItem*> ItemsAdded, TArray<class UFortWorldItem*> ItemsRemoved)
 {
@@ -178,27 +178,10 @@ void UPickupManager_C::Destruct()
 }
 
 
-// Function PickupManager.PickupManager_C.HandleBuildingMaterialChanged
-// (BlueprintCallable, BlueprintEvent)
-
-void UPickupManager_C::HandleBuildingMaterialChanged()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PickupManager.PickupManager_C.HandleBuildingMaterialChanged");
-
-	UPickupManager_C_HandleBuildingMaterialChanged_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function PickupManager.PickupManager_C.ExecuteUbergraph_PickupManager
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPickupManager_C::ExecuteUbergraph_PickupManager(int EntryPoint)
 {

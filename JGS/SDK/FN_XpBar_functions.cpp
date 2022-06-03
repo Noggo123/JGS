@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function XpBar.XpBar_C.ScaledCommanderBalance
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// int                            LeveXP                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            InInt2                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            LeveXP                         (Parm, ZeroConstructor, IsPlainOldData)
+// int                            InInt2                         (Parm, ZeroConstructor, IsPlainOldData)
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 float UXpBar_C::ScaledCommanderBalance(int LeveXP, int InInt2)
@@ -40,7 +40,7 @@ float UXpBar_C::ScaledCommanderBalance(int LeveXP, int InInt2)
 // Function XpBar.XpBar_C.ScaledRestBalance
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// int                            AmountToLevel                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            AmountToLevel                  (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 int UXpBar_C::ScaledRestBalance(int AmountToLevel)
@@ -63,7 +63,7 @@ int UXpBar_C::ScaledRestBalance(int AmountToLevel)
 // Function XpBar.XpBar_C.ScaledBoostBalance
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// int                            AmountToLevel                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            AmountToLevel                  (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 int UXpBar_C::ScaledBoostBalance(int AmountToLevel)
@@ -86,7 +86,7 @@ int UXpBar_C::ScaledBoostBalance(int AmountToLevel)
 // Function XpBar.XpBar_C.GetExperienceToolTipWidget
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 class UWidget* UXpBar_C::GetExperienceToolTipWidget()
 {
@@ -107,7 +107,7 @@ class UWidget* UXpBar_C::GetExperienceToolTipWidget()
 // Function XpBar.XpBar_C.Update Xp Bar
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortPublicAccountInfo  Account_Info                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortPublicAccountInfo  Account_Info                   (Parm)
 
 void UXpBar_C::Update_Xp_Bar(const struct FFortPublicAccountInfo& Account_Info)
 {
@@ -144,7 +144,7 @@ void UXpBar_C::Construct()
 // Function XpBar.XpBar_C.Account Info Changed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortPublicAccountInfo  NewInfo                        (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortPublicAccountInfo  NewInfo                        (Parm)
 
 void UXpBar_C::Account_Info_Changed(const struct FFortPublicAccountInfo& NewInfo)
 {
@@ -164,7 +164,7 @@ void UXpBar_C::Account_Info_Changed(const struct FFortPublicAccountInfo& NewInfo
 // Function XpBar.XpBar_C.Xp Boost Changed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            BoostAmount                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            BoostAmount                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UXpBar_C::Xp_Boost_Changed(int BoostAmount)
 {
@@ -181,27 +181,10 @@ void UXpBar_C::Xp_Boost_Changed(int BoostAmount)
 }
 
 
-// Function XpBar.XpBar_C.Destruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UXpBar_C::Destruct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function XpBar.XpBar_C.Destruct");
-
-	UXpBar_C_Destruct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function XpBar.XpBar_C.ExecuteUbergraph_XpBar
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UXpBar_C::ExecuteUbergraph_XpBar(int EntryPoint)
 {

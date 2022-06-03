@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass LF_SurvivorShelterOutdoor1.LF_SurvivorShelterOutdoor1_C
-// 0x0000 (0x0F00 - 0x0F00)
+// 0x0000 (0x1080 - 0x1080)
 class ALF_SurvivorShelterOutdoor1_C : public ABuildingFoundation5x5
 {
 public:

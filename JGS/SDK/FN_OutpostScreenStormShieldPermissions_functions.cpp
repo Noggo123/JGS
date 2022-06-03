@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UOutpostScreenStormShieldPermissions_C::CenterWidget()
 // Function OutpostScreenStormShieldPermissions.OutpostScreenStormShieldPermissions_C.SetParent
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UOutpostScreenStormShield_C* ParentWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UOutpostScreenStormShield_C* ParentWidget                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenStormShieldPermissions_C::SetParent(class UOutpostScreenStormShield_C* ParentWidget)
 {
@@ -52,9 +52,9 @@ void UOutpostScreenStormShieldPermissions_C::SetParent(class UOutpostScreenStorm
 // Function OutpostScreenStormShieldPermissions.OutpostScreenStormShieldPermissions_C.HandleBack
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UOutpostScreenStormShieldPermissions_C::HandleBack(bool* Passthrough)
+void UOutpostScreenStormShieldPermissions_C::HandleBack(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function OutpostScreenStormShieldPermissions.OutpostScreenStormShieldPermissions_C.HandleBack");
 
@@ -66,8 +66,8 @@ void UOutpostScreenStormShieldPermissions_C::HandleBack(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -168,7 +168,7 @@ void UOutpostScreenStormShieldPermissions_C::Construct()
 // Function OutpostScreenStormShieldPermissions.OutpostScreenStormShieldPermissions_C.UpdatePrivilagesEvent_0_1
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     NewTeamMemberInfo              (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortTeamMemberInfo     NewTeamMemberInfo              (Parm)
 
 void UOutpostScreenStormShieldPermissions_C::UpdatePrivilagesEvent_0_1(const struct FFortTeamMemberInfo& NewTeamMemberInfo)
 {
@@ -188,7 +188,7 @@ void UOutpostScreenStormShieldPermissions_C::UpdatePrivilagesEvent_0_1(const str
 // Function OutpostScreenStormShieldPermissions.OutpostScreenStormShieldPermissions_C.UpdatePrivilagesEvent_1_2
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenStormShieldPermissions_C::UpdatePrivilagesEvent_1_2(int PlayerIndex)
 {
@@ -225,7 +225,7 @@ void UOutpostScreenStormShieldPermissions_C::OnActivated()
 // Function OutpostScreenStormShieldPermissions.OutpostScreenStormShieldPermissions_C.ExecuteUbergraph_OutpostScreenStormShieldPermissions
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenStormShieldPermissions_C::ExecuteUbergraph_OutpostScreenStormShieldPermissions(int EntryPoint)
 {

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -28,7 +28,7 @@ struct UPopupCenterMessageModalPanel_C_UpdateMatchTimerText_Params
 // Function PopupCenterMessageModalPanel.PopupCenterMessageModalPanel_C.UpdateState
 struct UPopupCenterMessageModalPanel_C_UpdateState_Params
 {
-	ECenterPopupMessageStateEnum                       NewState;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	ECenterPopupMessageStateEnum                       NewState;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function PopupCenterMessageModalPanel.PopupCenterMessageModalPanel_C.UpdateMatchTimer
@@ -49,7 +49,7 @@ struct UPopupCenterMessageModalPanel_C_OnActivated_Params
 // Function PopupCenterMessageModalPanel.PopupCenterMessageModalPanel_C.ExecuteUbergraph_PopupCenterMessageModalPanel
 struct UPopupCenterMessageModalPanel_C_ExecuteUbergraph_PopupCenterMessageModalPanel_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

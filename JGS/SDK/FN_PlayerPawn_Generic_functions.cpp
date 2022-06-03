@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -31,26 +31,6 @@ void APlayerPawn_Generic_C::Melee_Effect_Color(struct FVector* Melee_Color_Set)
 
 	if (Melee_Color_Set != nullptr)
 		*Melee_Color_Set = params.Melee_Color_Set;
-}
-
-
-// Function PlayerPawn_Generic.PlayerPawn_Generic_C.TriggerGameplayWindEmitter
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TEnumAsByte<EPlayerWindParticleEmitters> Player_Wind_Particle_Emitter_To_Fire (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void APlayerPawn_Generic_C::TriggerGameplayWindEmitter(TEnumAsByte<EPlayerWindParticleEmitters> Player_Wind_Particle_Emitter_To_Fire)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.TriggerGameplayWindEmitter");
-
-	APlayerPawn_Generic_C_TriggerGameplayWindEmitter_Params params;
-	params.Player_Wind_Particle_Emitter_To_Fire = Player_Wind_Particle_Emitter_To_Fire;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
 }
 
 
@@ -96,7 +76,7 @@ void APlayerPawn_Generic_C::DisableWaterLevelTick()
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.SetAdrenalineRushVisibility
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Visible                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Visible                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Generic_C::SetAdrenalineRushVisibility(bool Visible)
 {
@@ -133,15 +113,15 @@ void APlayerPawn_Generic_C::OnRep_On_Player_Built_Floor()
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.Setup FX Mesh Duplicates
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UMaterialInterface*      Material_to_Apply              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
-// TArray<class UMaterialInstanceDynamic*> Charm_MID_Array                (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// class USkeletalMeshComponent*  Charm_Mesh                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
-// TArray<class UMaterialInstanceDynamic*> Head_MID_Array                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// class USkeletalMeshComponent*  Head_Mesh                      (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
-// TArray<class UMaterialInstanceDynamic*> Body_MID_Array                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// class USkeletalMeshComponent*  Body_Mesh                      (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
-// int                            Translucent_Sort_Order         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           Transfer_Material_Parameters   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UMaterialInterface*      Material_to_Apply              (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// TArray<class UMaterialInstanceDynamic*> Charm_MID_Array                (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// class USkeletalMeshComponent*  Charm_Mesh                     (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// TArray<class UMaterialInstanceDynamic*> Head_MID_Array                 (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// class USkeletalMeshComponent*  Head_Mesh                      (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// TArray<class UMaterialInstanceDynamic*> Body_MID_Array                 (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// class USkeletalMeshComponent*  Body_Mesh                      (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// int                            Translucent_Sort_Order         (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Transfer_Material_Parameters   (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Generic_C::Setup_FX_Mesh_Duplicates(int Translucent_Sort_Order, bool Transfer_Material_Parameters, class UMaterialInterface** Material_to_Apply, TArray<class UMaterialInstanceDynamic*>* Charm_MID_Array, class USkeletalMeshComponent** Charm_Mesh, TArray<class UMaterialInstanceDynamic*>* Head_MID_Array, class USkeletalMeshComponent** Head_Mesh, TArray<class UMaterialInstanceDynamic*>* Body_MID_Array, class USkeletalMeshComponent** Body_Mesh)
 {
@@ -177,11 +157,11 @@ void APlayerPawn_Generic_C::Setup_FX_Mesh_Duplicates(int Translucent_Sort_Order,
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.Create and Duplicate Effect Poseable Skeletal Mesh
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EFortCustomPartType> BodyType                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UMaterialInterface*      Material_to_Apply              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// TArray<class UMaterialInstanceDynamic*> Empty_MID_Array                (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// int                            TranslucentSortPriority        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UPoseableMeshComponent*  PoseableMesh                   (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
+// TEnumAsByte<EFortCustomPartType> BodyType                       (Parm, ZeroConstructor, IsPlainOldData)
+// class UMaterialInterface*      Material_to_Apply              (Parm, ZeroConstructor, IsPlainOldData)
+// TArray<class UMaterialInstanceDynamic*> Empty_MID_Array                (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// int                            TranslucentSortPriority        (Parm, ZeroConstructor, IsPlainOldData)
+// class UPoseableMeshComponent*  PoseableMesh                   (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
 void APlayerPawn_Generic_C::Create_and_Duplicate_Effect_Poseable_Skeletal_Mesh(TEnumAsByte<EFortCustomPartType> BodyType, class UMaterialInterface* Material_to_Apply, int TranslucentSortPriority, TArray<class UMaterialInstanceDynamic*>* Empty_MID_Array, class UPoseableMeshComponent** PoseableMesh)
 {
@@ -225,8 +205,8 @@ void APlayerPawn_Generic_C::ToggleShieldVisibility()
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.SlaveAMeshToTheBody
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class USkeletalMeshComponent*  Mesh                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// class USkeletalMeshComponent*  Master                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class USkeletalMeshComponent*  Mesh                           (Parm, ZeroConstructor, IsPlainOldData)
+// class USkeletalMeshComponent*  Master                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Generic_C::SlaveAMeshToTheBody(class USkeletalMeshComponent* Mesh, class USkeletalMeshComponent* Master)
 {
@@ -247,11 +227,11 @@ void APlayerPawn_Generic_C::SlaveAMeshToTheBody(class USkeletalMeshComponent* Me
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.SetShieldMids_InternalLoop
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          Highlight_Cracks               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           Set_Highlight_Cracks           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          Push                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           Set_Push                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// TArray<class UMaterialInstanceDynamic*> NewParam1                      (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// float                          Highlight_Cracks               (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Set_Highlight_Cracks           (Parm, ZeroConstructor, IsPlainOldData)
+// float                          Push                           (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Set_Push                       (Parm, ZeroConstructor, IsPlainOldData)
+// TArray<class UMaterialInstanceDynamic*> NewParam1                      (Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void APlayerPawn_Generic_C::SetShieldMids_InternalLoop(float Highlight_Cracks, bool Set_Highlight_Cracks, float Push, bool Set_Push, TArray<class UMaterialInstanceDynamic*>* NewParam1)
 {
@@ -277,10 +257,10 @@ void APlayerPawn_Generic_C::SetShieldMids_InternalLoop(float Highlight_Cracks, b
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.SetShieldMids
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          Highlight_Cracks               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           Set_Highlight_Cracks           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          Push                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           Set_Push                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Highlight_Cracks               (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Set_Highlight_Cracks           (Parm, ZeroConstructor, IsPlainOldData)
+// float                          Push                           (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Set_Push                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Generic_C::SetShieldMids(float Highlight_Cracks, bool Set_Highlight_Cracks, float Push, bool Set_Push)
 {
@@ -320,11 +300,11 @@ void APlayerPawn_Generic_C::FindShieldOpacity()
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.Create and Duplicate Effect Skeletal Meshes Parent
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EFortCustomPartType> BodyType                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class USkeletalMeshComponent*  DuplicatedSkeletalMeshComponent (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
-// class UMaterialInterface*      Material_to_Apply              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// TArray<class UMaterialInstanceDynamic*> Empty_MID_Array                (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// int                            TranslucentSortPriority        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EFortCustomPartType> BodyType                       (Parm, ZeroConstructor, IsPlainOldData)
+// class USkeletalMeshComponent*  DuplicatedSkeletalMeshComponent (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// class UMaterialInterface*      Material_to_Apply              (Parm, ZeroConstructor, IsPlainOldData)
+// TArray<class UMaterialInstanceDynamic*> Empty_MID_Array                (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// int                            TranslucentSortPriority        (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Generic_C::Create_and_Duplicate_Effect_Skeletal_Meshes_Parent(TEnumAsByte<EFortCustomPartType> BodyType, class UMaterialInterface* Material_to_Apply, int TranslucentSortPriority, class USkeletalMeshComponent** DuplicatedSkeletalMeshComponent, TArray<class UMaterialInstanceDynamic*>* Empty_MID_Array)
 {
@@ -606,13 +586,13 @@ void APlayerPawn_Generic_C::MeleeSwingLeft()
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.OnDamagePlayEffects
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// float*                         Damage                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayTagContainer*  DamageTags                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FVector*                Momentum                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FHitResult*             HitInfo                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
-// class AFortPawn**              InstigatedBy                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class AActor**                 DamageCauser                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayEffectContextHandle* EffectContext                  (BlueprintVisible, BlueprintReadOnly, Parm)
+// float*                         Damage                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayTagContainer*  DamageTags                     (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FVector*                Momentum                       (Parm, IsPlainOldData)
+// struct FHitResult*             HitInfo                        (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+// class AFortPawn**              InstigatedBy                   (Parm, ZeroConstructor, IsPlainOldData)
+// class AActor**                 DamageCauser                   (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayEffectContextHandle* EffectContext                  (Parm)
 
 void APlayerPawn_Generic_C::OnDamagePlayEffects(float* Damage, struct FGameplayTagContainer* DamageTags, struct FVector* Momentum, struct FHitResult* HitInfo, class AFortPawn** InstigatedBy, class AActor** DamageCauser, struct FGameplayEffectContextHandle* EffectContext)
 {
@@ -638,7 +618,7 @@ void APlayerPawn_Generic_C::OnDamagePlayEffects(float* Damage, struct FGameplayT
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.OnLanded
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FHitResult*             Hit                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
+// struct FHitResult*             Hit                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
 
 void APlayerPawn_Generic_C::OnLanded(struct FHitResult* Hit)
 {
@@ -658,13 +638,13 @@ void APlayerPawn_Generic_C::OnLanded(struct FHitResult* Hit)
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.OnDeathPlayEffects
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// float*                         Damage                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayTagContainer*  DamageTags                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FVector*                Momentum                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FHitResult*             HitInfo                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
-// class AFortPawn**              InstigatedBy                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class AActor**                 DamageCauser                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayEffectContextHandle* EffectContext                  (BlueprintVisible, BlueprintReadOnly, Parm)
+// float*                         Damage                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayTagContainer*  DamageTags                     (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FVector*                Momentum                       (Parm, IsPlainOldData)
+// struct FHitResult*             HitInfo                        (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+// class AFortPawn**              InstigatedBy                   (Parm, ZeroConstructor, IsPlainOldData)
+// class AActor**                 DamageCauser                   (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayEffectContextHandle* EffectContext                  (Parm)
 
 void APlayerPawn_Generic_C::OnDeathPlayEffects(float* Damage, struct FGameplayTagContainer* DamageTags, struct FVector* Momentum, struct FHitResult* HitInfo, class AFortPawn** InstigatedBy, class AActor** DamageCauser, struct FGameplayEffectContextHandle* EffectContext)
 {
@@ -690,8 +670,8 @@ void APlayerPawn_Generic_C::OnDeathPlayEffects(float* Damage, struct FGameplayTa
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.OnWeaponEquipped
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class AFortWeapon**            NewWeapon                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class AFortWeapon**            PrevWeapon                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortWeapon**            NewWeapon                      (Parm, ZeroConstructor, IsPlainOldData)
+// class AFortWeapon**            PrevWeapon                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Generic_C::OnWeaponEquipped(class AFortWeapon** NewWeapon, class AFortWeapon** PrevWeapon)
 {
@@ -712,7 +692,7 @@ void APlayerPawn_Generic_C::OnWeaponEquipped(class AFortWeapon** NewWeapon, clas
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float*                         DeltaSeconds                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float*                         DeltaSeconds                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Generic_C::ReceiveTick(float* DeltaSeconds)
 {
@@ -783,8 +763,8 @@ void APlayerPawn_Generic_C::OnCharacterPartsReinitialized()
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.GameplayCue.Abilities.Activation.Generic.HarvestBuff.Tier1
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EGameplayCueEvent> EventType                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (Parm)
 
 void APlayerPawn_Generic_C::GameplayCue_Abilities_Activation_Generic_HarvestBuff_Tier1(TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
 {
@@ -805,8 +785,8 @@ void APlayerPawn_Generic_C::GameplayCue_Abilities_Activation_Generic_HarvestBuff
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.GameplayCue.Abilities.Activation.Generic.HarvestBuff.Tier2
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EGameplayCueEvent> EventType                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (Parm)
 
 void APlayerPawn_Generic_C::GameplayCue_Abilities_Activation_Generic_HarvestBuff_Tier2(TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
 {
@@ -827,7 +807,7 @@ void APlayerPawn_Generic_C::GameplayCue_Abilities_Activation_Generic_HarvestBuff
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.SetFirstPersonCamera
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          bNewUseFirstPersonCamera       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          bNewUseFirstPersonCamera       (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Generic_C::SetFirstPersonCamera(bool* bNewUseFirstPersonCamera)
 {
@@ -844,10 +824,32 @@ void APlayerPawn_Generic_C::SetFirstPersonCamera(bool* bNewUseFirstPersonCamera)
 }
 
 
+// Function PlayerPawn_Generic.PlayerPawn_Generic_C.GameplayCue.GravitySphere
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (Parm)
+
+void APlayerPawn_Generic_C::GameplayCue_GravitySphere(TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.GameplayCue.GravitySphere");
+
+	APlayerPawn_Generic_C_GameplayCue_GravitySphere_Params params;
+	params.EventType = EventType;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.InternalSetFirstPersonCamera
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           NewUseFirstPersonCamera        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           NewUseFirstPersonCamera        (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Generic_C::InternalSetFirstPersonCamera(bool NewUseFirstPersonCamera)
 {
@@ -867,8 +869,8 @@ void APlayerPawn_Generic_C::InternalSetFirstPersonCamera(bool NewUseFirstPersonC
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.GameplayCue.Abilities.Activation.DBNOResurrect
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EGameplayCueEvent> EventType                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (Parm)
 
 void APlayerPawn_Generic_C::GameplayCue_Abilities_Activation_DBNOResurrect(TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
 {
@@ -889,7 +891,7 @@ void APlayerPawn_Generic_C::GameplayCue_Abilities_Activation_DBNOResurrect(TEnum
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.OnBaseChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class AActor**                 NewBase                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AActor**                 NewBase                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Generic_C::OnBaseChanged(class AActor** NewBase)
 {
@@ -909,7 +911,7 @@ void APlayerPawn_Generic_C::OnBaseChanged(class AActor** NewBase)
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.ReceivePossessed
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class AController**            NewController                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AController**            NewController                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Generic_C::ReceivePossessed(class AController** NewController)
 {
@@ -929,7 +931,7 @@ void APlayerPawn_Generic_C::ReceivePossessed(class AController** NewController)
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.OnDisplaySentence
 // (Event, Protected, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FText*                  SpeechText                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FText*                  SpeechText                     (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APlayerPawn_Generic_C::OnDisplaySentence(struct FText* SpeechText)
 {
@@ -963,6 +965,23 @@ void APlayerPawn_Generic_C::OnClearSentence()
 }
 
 
+// Function PlayerPawn_Generic.PlayerPawn_Generic_C.CleanupGravitySphereFootEffects
+// (BlueprintCallable, BlueprintEvent)
+
+void APlayerPawn_Generic_C::CleanupGravitySphereFootEffects()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.CleanupGravitySphereFootEffects");
+
+	APlayerPawn_Generic_C_CleanupGravitySphereFootEffects_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.ReceiveDestroyed
 // (Event, Public, BlueprintEvent)
 
@@ -983,8 +1002,8 @@ void APlayerPawn_Generic_C::ReceiveDestroyed()
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.ClientBindWeaponSwap
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortWeapon*             NewWeapon                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class AFortWeapon*             PrevWeapon                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortWeapon*             NewWeapon                      (Parm, ZeroConstructor, IsPlainOldData)
+// class AFortWeapon*             PrevWeapon                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Generic_C::ClientBindWeaponSwap(class AFortWeapon* NewWeapon, class AFortWeapon* PrevWeapon)
 {
@@ -1005,7 +1024,7 @@ void APlayerPawn_Generic_C::ClientBindWeaponSwap(class AFortWeapon* NewWeapon, c
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.BindWeaponSwap
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          InDuration                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          InDuration                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Generic_C::BindWeaponSwap(float InDuration)
 {
@@ -1025,8 +1044,8 @@ void APlayerPawn_Generic_C::BindWeaponSwap(float InDuration)
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.MultiSwapWeapon
 // (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortWeapon*             New                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class AFortWeapon*             Prev                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortWeapon*             New                            (Parm, ZeroConstructor, IsPlainOldData)
+// class AFortWeapon*             Prev                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Generic_C::MultiSwapWeapon(class AFortWeapon* New, class AFortWeapon* Prev)
 {
@@ -1064,7 +1083,7 @@ void APlayerPawn_Generic_C::UnBindWeaponSwap()
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.MultiEndSwap
 // (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortWeapon*             CurrentWeapon                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortWeapon*             CurrentWeapon                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Generic_C::MultiEndSwap(class AFortWeapon* CurrentWeapon)
 {
@@ -1101,13 +1120,13 @@ void APlayerPawn_Generic_C::Clean_up_DBNO_fx()
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.OnDeathServer
 // (BlueprintAuthorityOnly, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// float*                         Damage                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayTagContainer*  DamageTags                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FVector*                Momentum                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FHitResult*             HitInfo                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
-// class AController**            InstigatedBy                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class AActor**                 DamageCauser                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayEffectContextHandle* EffectContext                  (BlueprintVisible, BlueprintReadOnly, Parm)
+// float*                         Damage                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayTagContainer*  DamageTags                     (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FVector*                Momentum                       (Parm, IsPlainOldData)
+// struct FHitResult*             HitInfo                        (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+// class AController**            InstigatedBy                   (Parm, ZeroConstructor, IsPlainOldData)
+// class AActor**                 DamageCauser                   (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayEffectContextHandle* EffectContext                  (Parm)
 
 void APlayerPawn_Generic_C::OnDeathServer(float* Damage, struct FGameplayTagContainer* DamageTags, struct FVector* Momentum, struct FHitResult* HitInfo, class AController** InstigatedBy, class AActor** DamageCauser, struct FGameplayEffectContextHandle* EffectContext)
 {
@@ -1130,10 +1149,27 @@ void APlayerPawn_Generic_C::OnDeathServer(float* Damage, struct FGameplayTagCont
 }
 
 
+// Function PlayerPawn_Generic.PlayerPawn_Generic_C.Entered WaterVolume
+// (BlueprintCallable, BlueprintEvent)
+
+void APlayerPawn_Generic_C::Entered_WaterVolume()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.Entered WaterVolume");
+
+	APlayerPawn_Generic_C_Entered_WaterVolume_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.CharacterDestroyed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                  DestroyedActor                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AActor*                  DestroyedActor                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Generic_C::CharacterDestroyed(class AActor* DestroyedActor)
 {
@@ -1187,8 +1223,8 @@ void APlayerPawn_Generic_C::FadeOutCapsuleShadow()
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.SpawnDBNOParticles
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                 ParticleLocation               (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FVector                 HitNormal                      (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+// struct FVector                 ParticleLocation               (Parm, IsPlainOldData)
+// struct FVector                 HitNormal                      (Parm, IsPlainOldData)
 
 void APlayerPawn_Generic_C::SpawnDBNOParticles(const struct FVector& ParticleLocation, const struct FVector& HitNormal)
 {
@@ -1197,85 +1233,6 @@ void APlayerPawn_Generic_C::SpawnDBNOParticles(const struct FVector& ParticleLoc
 	APlayerPawn_Generic_C_SpawnDBNOParticles_Params params;
 	params.ParticleLocation = ParticleLocation;
 	params.HitNormal = HitNormal;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerPawn_Generic.PlayerPawn_Generic_C.PlayGameplayWindEffect
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TEnumAsByte<EPlayerWindParticleEmitters> Player_Wind_Particle_Emitter_To_Fire (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void APlayerPawn_Generic_C::PlayGameplayWindEffect(TEnumAsByte<EPlayerWindParticleEmitters> Player_Wind_Particle_Emitter_To_Fire)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.PlayGameplayWindEffect");
-
-	APlayerPawn_Generic_C_PlayGameplayWindEffect_Params params;
-	params.Player_Wind_Particle_Emitter_To_Fire = Player_Wind_Particle_Emitter_To_Fire;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerPawn_Generic.PlayerPawn_Generic_C.GameplayCue.Abilities.Death.FadeCapsule_StW
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TEnumAsByte<EGameplayCueEvent> EventType                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void APlayerPawn_Generic_C::GameplayCue_Abilities_Death_FadeCapsule_StW(TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.GameplayCue.Abilities.Death.FadeCapsule_StW");
-
-	APlayerPawn_Generic_C_GameplayCue_Abilities_Death_FadeCapsule_StW_Params params;
-	params.EventType = EventType;
-	params.Parameters = Parameters;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerPawn_Generic.PlayerPawn_Generic_C.Entered Water Volume
-// (BlueprintCallable, BlueprintEvent)
-
-void APlayerPawn_Generic_C::Entered_Water_Volume()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.Entered Water Volume");
-
-	APlayerPawn_Generic_C_Entered_Water_Volume_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerPawn_Generic.PlayerPawn_Generic_C.Player Creates a Splash
-// (HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FTransform*             NewTransform                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
-
-void APlayerPawn_Generic_C::Player_Creates_a_Splash(struct FTransform* NewTransform)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.Player Creates a Splash");
-
-	APlayerPawn_Generic_C_Player_Creates_a_Splash_Params params;
-	params.NewTransform = NewTransform;
 
 	auto flags = fn->FunctionFlags;
 
@@ -1319,11 +1276,33 @@ void APlayerPawn_Generic_C::Test_Adrenaline_Rush()
 }
 
 
+// Function PlayerPawn_Generic.PlayerPawn_Generic_C.GameplayCue.Generic.AdrenalineRush.PeriodicHeal
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (Parm)
+
+void APlayerPawn_Generic_C::GameplayCue_Generic_AdrenalineRush_PeriodicHeal(TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.GameplayCue.Generic.AdrenalineRush.PeriodicHeal");
+
+	APlayerPawn_Generic_C_GameplayCue_Generic_AdrenalineRush_PeriodicHeal_Params params;
+	params.EventType = EventType;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.GameplayCue.Generic.AdrenalineRush.DirectHeal
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EGameplayCueEvent> EventType                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (Parm)
 
 void APlayerPawn_Generic_C::GameplayCue_Generic_AdrenalineRush_DirectHeal(TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
 {
@@ -1344,8 +1323,8 @@ void APlayerPawn_Generic_C::GameplayCue_Generic_AdrenalineRush_DirectHeal(TEnumA
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.GameplayCue.Damage.Shielded
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EGameplayCueEvent> EventType                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (Parm)
 
 void APlayerPawn_Generic_C::GameplayCue_Damage_Shielded(TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
 {
@@ -1366,8 +1345,8 @@ void APlayerPawn_Generic_C::GameplayCue_Damage_Shielded(TEnumAsByte<EGameplayCue
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.GameplayCue.Shield.Destroyed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EGameplayCueEvent> EventType                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (Parm)
 
 void APlayerPawn_Generic_C::GameplayCue_Shield_Destroyed(TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
 {
@@ -1388,8 +1367,8 @@ void APlayerPawn_Generic_C::GameplayCue_Shield_Destroyed(TEnumAsByte<EGameplayCu
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.GameplayCue.Shield.FullyCharged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EGameplayCueEvent> EventType                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (Parm)
 
 void APlayerPawn_Generic_C::GameplayCue_Shield_FullyCharged(TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
 {
@@ -1410,8 +1389,8 @@ void APlayerPawn_Generic_C::GameplayCue_Shield_FullyCharged(TEnumAsByte<EGamepla
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.GameplayCue.Shield.Reapplied
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EGameplayCueEvent> EventType                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (Parm)
 
 void APlayerPawn_Generic_C::GameplayCue_Shield_Reapplied(TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
 {
@@ -1429,60 +1408,77 @@ void APlayerPawn_Generic_C::GameplayCue_Shield_Reapplied(TEnumAsByte<EGameplayCu
 }
 
 
-// Function PlayerPawn_Generic.PlayerPawn_Generic_C.AnimTrailsSetup
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UParticleSystem**        ParticleSystemReference        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName*                  FirstSocketName                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName*                  SecondSocketName               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float*                         Width                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// Function PlayerPawn_Generic.PlayerPawn_Generic_C.MultiEndAnimTrails
+// (Net, NetMulticast, BlueprintCallable, BlueprintEvent)
 
-void APlayerPawn_Generic_C::AnimTrailsSetup(class UParticleSystem** ParticleSystemReference, struct FName* FirstSocketName, struct FName* SecondSocketName, float* Width)
+void APlayerPawn_Generic_C::MultiEndAnimTrails()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.AnimTrailsSetup");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.MultiEndAnimTrails");
 
-	APlayerPawn_Generic_C_AnimTrailsSetup_Params params;
-	params.ParticleSystemReference = ParticleSystemReference;
-	params.FirstSocketName = FirstSocketName;
-	params.SecondSocketName = SecondSocketName;
+	APlayerPawn_Generic_C_MultiEndAnimTrails_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Generic.PlayerPawn_Generic_C.DisableAnimTrails
+// (BlueprintCallable, BlueprintEvent)
+
+void APlayerPawn_Generic_C::DisableAnimTrails()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.DisableAnimTrails");
+
+	APlayerPawn_Generic_C_DisableAnimTrails_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Generic.PlayerPawn_Generic_C.AnimTrailsCE
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           Active                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void APlayerPawn_Generic_C::AnimTrailsCE(bool Active)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.AnimTrailsCE");
+
+	APlayerPawn_Generic_C_AnimTrailsCE_Params params;
+	params.Active = Active;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Generic.PlayerPawn_Generic_C.SetupAnimTrails
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UParticleSystem*         Particle_System_Reference      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   First_Socket_Name              (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   Second_Socket_Name             (Parm, ZeroConstructor, IsPlainOldData)
+// float                          Width                          (Parm, ZeroConstructor, IsPlainOldData)
+
+void APlayerPawn_Generic_C::SetupAnimTrails(class UParticleSystem* Particle_System_Reference, const struct FName& First_Socket_Name, const struct FName& Second_Socket_Name, float Width)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.SetupAnimTrails");
+
+	APlayerPawn_Generic_C_SetupAnimTrails_Params params;
+	params.Particle_System_Reference = Particle_System_Reference;
+	params.First_Socket_Name = First_Socket_Name;
+	params.Second_Socket_Name = Second_Socket_Name;
 	params.Width = Width;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerPawn_Generic.PlayerPawn_Generic_C.AnimTrailsDisable
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void APlayerPawn_Generic_C::AnimTrailsDisable()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.AnimTrailsDisable");
-
-	APlayerPawn_Generic_C_AnimTrailsDisable_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerPawn_Generic.PlayerPawn_Generic_C.AnimTrailsNotify
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool*                          bActive                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void APlayerPawn_Generic_C::AnimTrailsNotify(bool* bActive)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.AnimTrailsNotify");
-
-	APlayerPawn_Generic_C_AnimTrailsNotify_Params params;
-	params.bActive = bActive;
 
 	auto flags = fn->FunctionFlags;
 
@@ -1495,7 +1491,7 @@ void APlayerPawn_Generic_C::AnimTrailsNotify(bool* bActive)
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.ExecuteUbergraph_PlayerPawn_Generic
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Generic_C::ExecuteUbergraph_PlayerPawn_Generic(int EntryPoint)
 {

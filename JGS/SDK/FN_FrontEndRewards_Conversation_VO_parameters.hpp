@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,7 +23,7 @@ struct UFrontEndRewards_Conversation_VO_C_CreateConversationActor_Params
 // Function FrontEndRewards_Conversation_VO.FrontEndRewards_Conversation_VO_C.PlayConversation
 struct UFrontEndRewards_Conversation_VO_C_PlayConversation_Params
 {
-	class UFortQuestItem*                              QuestItem;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortQuestItem*                              QuestItem;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function FrontEndRewards_Conversation_VO.FrontEndRewards_Conversation_VO_C.HandleConversationFinished
@@ -34,7 +34,7 @@ struct UFrontEndRewards_Conversation_VO_C_HandleConversationFinished_Params
 // Function FrontEndRewards_Conversation_VO.FrontEndRewards_Conversation_VO_C.HandleNewSentence
 struct UFrontEndRewards_Conversation_VO_C_HandleNewSentence_Params
 {
-	struct FFortConversationSentence                   Sentence;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FFortConversationSentence                   Sentence;                                                 // (Parm)
 };
 
 // Function FrontEndRewards_Conversation_VO.FrontEndRewards_Conversation_VO_C.StopConversation
@@ -51,7 +51,7 @@ struct UFrontEndRewards_Conversation_VO_C_HandleReplayAction_Params
 // Function FrontEndRewards_Conversation_VO.FrontEndRewards_Conversation_VO_C.PopulateFromConversation
 struct UFrontEndRewards_Conversation_VO_C_PopulateFromConversation_Params
 {
-	class UFortConversation*                           Conversation;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortConversation*                           Conversation;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

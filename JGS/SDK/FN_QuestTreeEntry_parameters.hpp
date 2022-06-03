@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -81,19 +81,19 @@ struct UQuestTreeEntry_C_SetPinnedState_Params
 // Function QuestTreeEntry.QuestTreeEntry_C.SetupAsCategory
 struct UQuestTreeEntry_C_SetupAsCategory_Params
 {
-	class UFortQuestCategory**                         Category;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortQuestCategory**                         Category;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function QuestTreeEntry.QuestTreeEntry_C.SetupAsQuest
 struct UQuestTreeEntry_C_SetupAsQuest_Params
 {
-	class UFortQuestItem**                             Category;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortQuestItem**                             Category;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function QuestTreeEntry.QuestTreeEntry_C.ExpansionChanged
 struct UQuestTreeEntry_C_ExpansionChanged_Params
 {
-	bool*                                              bExpanded;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              bExpanded;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function QuestTreeEntry.QuestTreeEntry_C.OnSelected
@@ -114,7 +114,7 @@ struct UQuestTreeEntry_C_OnHovered_Params
 // Function QuestTreeEntry.QuestTreeEntry_C.OnQuestSeen_Event_0_1
 struct UQuestTreeEntry_C_OnQuestSeen_Event_0_1_Params
 {
-	class UFortQuestItem*                              Quest;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortQuestItem*                              Quest;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function QuestTreeEntry.QuestTreeEntry_C.Destruct
@@ -122,15 +122,10 @@ struct UQuestTreeEntry_C_Destruct_Params
 {
 };
 
-// Function QuestTreeEntry.QuestTreeEntry_C.OnDeselected
-struct UQuestTreeEntry_C_OnDeselected_Params
-{
-};
-
 // Function QuestTreeEntry.QuestTreeEntry_C.ExecuteUbergraph_QuestTreeEntry
 struct UQuestTreeEntry_C_ExecuteUbergraph_QuestTreeEntry_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

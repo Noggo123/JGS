@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function ActiveModifierItemHUD.ActiveModifierItemHUD_C.AssignIcon
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSlateBrush             inIconSlateBrush               (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FSlateBrush             inIconSlateBrush               (Parm)
 
 void UActiveModifierItemHUD_C::AssignIcon(const struct FSlateBrush& inIconSlateBrush)
 {

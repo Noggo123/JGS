@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,601 +14,325 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasOrigin
-struct UAbilitySystemBlueprintLibrary_TargetDataHasOrigin_Params
+// Function GameplayAbilities.GameplayAbility.SetShouldBlockOtherAbilities
+struct UGameplayAbility_SetShouldBlockOtherAbilities_Params
 {
-	struct FGameplayAbilityTargetDataHandle            TargetData;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	bool                                               bShouldBlockAbilities;                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasHitResult
-struct UAbilitySystemBlueprintLibrary_TargetDataHasHitResult_Params
+// Function GameplayAbilities.GameplayAbility.SetCanBeCanceled
+struct UGameplayAbility_SetCanBeCanceled_Params
 {
-	struct FGameplayAbilityTargetDataHandle            HitResult;                                                // (ConstParm, Parm, OutParm, ReferenceParm)
-	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	bool                                               bCanBeCanceled;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasEndPoint
-struct UAbilitySystemBlueprintLibrary_TargetDataHasEndPoint_Params
+// Function GameplayAbilities.GameplayAbility.SendGameplayEvent
+struct UGameplayAbility_SendGameplayEvent_Params
 {
-	struct FGameplayAbilityTargetDataHandle            TargetData;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasActor
-struct UAbilitySystemBlueprintLibrary_TargetDataHasActor_Params
-{
-	struct FGameplayAbilityTargetDataHandle            TargetData;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.SetStackCountToMax
-struct UAbilitySystemBlueprintLibrary_SetStackCountToMax_Params
-{
-	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
-	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.SetStackCount
-struct UAbilitySystemBlueprintLibrary_SetStackCount_Params
-{
-	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
-	int                                                StackCount;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.SetDuration
-struct UAbilitySystemBlueprintLibrary_SetDuration_Params
-{
-	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
-	float                                              Duration;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.SendGameplayEventToActor
-struct UAbilitySystemBlueprintLibrary_SendGameplayEventToActor_Params
-{
-	class AActor*                                      Actor;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FGameplayTag                                EventTag;                                                 // (Parm)
 	struct FGameplayEventData                          Payload;                                                  // (Parm)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.NotEqual_GameplayAttributeGameplayAttribute
-struct UAbilitySystemBlueprintLibrary_NotEqual_GameplayAttributeGameplayAttribute_Params
+// Function GameplayAbilities.GameplayAbility.RemoveGrantedByEffect
+struct UGameplayAbility_RemoveGrantedByEffect_Params
 {
-	struct FGameplayAttribute                          AttributeA;                                               // (Parm)
-	struct FGameplayAttribute                          AttributeB;                                               // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.MakeSpecHandle
-struct UAbilitySystemBlueprintLibrary_MakeSpecHandle_Params
+// Function GameplayAbilities.GameplayAbility.MontageStop
+struct UGameplayAbility_MontageStop_Params
 {
-	class UGameplayEffect*                             InGameplayEffect;                                         // (Parm, ZeroConstructor, IsPlainOldData)
-	class AActor*                                      InInstigator;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-	class AActor*                                      InEffectCauser;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              InLevel;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              OverrideBlendOutTime;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function GameplayAbilities.GameplayAbility.MontageSetNextSectionName
+struct UGameplayAbility_MontageSetNextSectionName_Params
+{
+	struct FName                                       FromSectionName;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       ToSectionName;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function GameplayAbilities.GameplayAbility.MontageJumpToSection
+struct UGameplayAbility_MontageJumpToSection_Params
+{
+	struct FName                                       SectionName;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function GameplayAbilities.GameplayAbility.MakeTargetLocationInfoFromOwnerSkeletalMeshComponent
+struct UGameplayAbility_MakeTargetLocationInfoFromOwnerSkeletalMeshComponent_Params
+{
+	struct FName                                       SocketName;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayAbilityTargetingLocationInfo       ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function GameplayAbilities.GameplayAbility.MakeTargetLocationInfoFromOwnerActor
+struct UGameplayAbility_MakeTargetLocationInfoFromOwnerActor_Params
+{
+	struct FGameplayAbilityTargetingLocationInfo       ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function GameplayAbilities.GameplayAbility.MakeOutgoingGameplayEffectSpec
+struct UGameplayAbility_MakeOutgoingGameplayEffectSpec_Params
+{
+	class UClass*                                      GameplayEffectClass;                                      // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Level;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.MakeFilterHandle
-struct UAbilitySystemBlueprintLibrary_MakeFilterHandle_Params
+// Function GameplayAbilities.GameplayAbility.K2_ShouldAbilityRespondToEvent
+struct UGameplayAbility_K2_ShouldAbilityRespondToEvent_Params
 {
-	struct FGameplayTargetDataFilter                   Filter;                                                   // (Parm)
-	class AActor*                                      FilterActor;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayTargetDataFilterHandle             ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.IsValid
-struct UAbilitySystemBlueprintLibrary_IsValid_Params
-{
-	struct FGameplayAttribute                          Attribute;                                                // (Parm)
+	struct FGameplayAbilityActorInfo                   ActorInfo;                                                // (Parm)
+	struct FGameplayEventData                          Payload;                                                  // (Parm)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.IsInstigatorLocallyControlledPlayer
-struct UAbilitySystemBlueprintLibrary_IsInstigatorLocallyControlledPlayer_Params
+// Function GameplayAbilities.GameplayAbility.K2_RemoveGameplayCue
+struct UGameplayAbility_K2_RemoveGameplayCue_Params
 {
-	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
+	struct FGameplayTag                                GameplayCueTag;                                           // (Parm)
+};
+
+// Function GameplayAbilities.GameplayAbility.K2_OnEndAbility
+struct UGameplayAbility_K2_OnEndAbility_Params
+{
+};
+
+// Function GameplayAbilities.GameplayAbility.K2_ExecuteGameplayCueWithParams
+struct UGameplayAbility_K2_ExecuteGameplayCueWithParams_Params
+{
+	struct FGameplayTag                                GameplayCueTag;                                           // (Parm)
+	struct FGameplayCueParameters                      GameplayCueParameters;                                    // (ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// Function GameplayAbilities.GameplayAbility.K2_ExecuteGameplayCue
+struct UGameplayAbility_K2_ExecuteGameplayCue_Params
+{
+	struct FGameplayTag                                GameplayCueTag;                                           // (Parm)
+	struct FGameplayEffectContextHandle                Context;                                                  // (Parm)
+};
+
+// Function GameplayAbilities.GameplayAbility.K2_EndAbility
+struct UGameplayAbility_K2_EndAbility_Params
+{
+};
+
+// Function GameplayAbilities.GameplayAbility.K2_CommitExecute
+struct UGameplayAbility_K2_CommitExecute_Params
+{
+};
+
+// Function GameplayAbilities.GameplayAbility.K2_CommitAbilityCost
+struct UGameplayAbility_K2_CommitAbilityCost_Params
+{
+	bool                                               BroadcastCommitEvent;                                     // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.IsInstigatorLocallyControlled
-struct UAbilitySystemBlueprintLibrary_IsInstigatorLocallyControlled_Params
+// Function GameplayAbilities.GameplayAbility.K2_CommitAbilityCooldown
+struct UGameplayAbility_K2_CommitAbilityCooldown_Params
 {
-	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
+	bool                                               BroadcastCommitEvent;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ForceCooldown;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.HasHitResult
-struct UAbilitySystemBlueprintLibrary_HasHitResult_Params
+// Function GameplayAbilities.GameplayAbility.K2_CommitAbility
+struct UGameplayAbility_K2_CommitAbility_Params
 {
-	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetTargetDataOrigin
-struct UAbilitySystemBlueprintLibrary_GetTargetDataOrigin_Params
+// Function GameplayAbilities.GameplayAbility.K2_CheckAbilityCost
+struct UGameplayAbility_K2_CheckAbilityCost_Params
 {
-	struct FGameplayAbilityTargetDataHandle            TargetData;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FTransform                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetTargetDataEndPointTransform
-struct UAbilitySystemBlueprintLibrary_GetTargetDataEndPointTransform_Params
+// Function GameplayAbilities.GameplayAbility.K2_CheckAbilityCooldown
+struct UGameplayAbility_K2_CheckAbilityCooldown_Params
 {
-	struct FGameplayAbilityTargetDataHandle            TargetData;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FTransform                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetTargetDataEndPoint
-struct UAbilitySystemBlueprintLibrary_GetTargetDataEndPoint_Params
+// Function GameplayAbilities.GameplayAbility.K2_CanActivateAbility
+struct UGameplayAbility_K2_CanActivateAbility_Params
 {
-	struct FGameplayAbilityTargetDataHandle            TargetData;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+	struct FGameplayAbilityActorInfo                   ActorInfo;                                                // (Parm)
+	struct FGameplayTagContainer                       RelevantTags;                                             // (Parm, OutParm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetOrigin
-struct UAbilitySystemBlueprintLibrary_GetOrigin_Params
+// Function GameplayAbilities.GameplayAbility.K2_ApplyGameplayEffectSpecToTarget
+struct UGameplayAbility_K2_ApplyGameplayEffectSpecToTarget_Params
 {
-	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+	struct FGameplayEffectSpecHandle                   EffectSpecHandle;                                         // (ConstParm, Parm)
+	struct FGameplayAbilityTargetDataHandle            TargetData;                                               // (Parm)
+	TArray<struct FActiveGameplayEffectHandle>         ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetModifiedAttributeMagnitude
-struct UAbilitySystemBlueprintLibrary_GetModifiedAttributeMagnitude_Params
+// Function GameplayAbilities.GameplayAbility.K2_ApplyGameplayEffectSpecToOwner
+struct UGameplayAbility_K2_ApplyGameplayEffectSpecToOwner_Params
 {
-	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
-	struct FGameplayAttribute                          Attribute;                                                // (Parm)
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	struct FGameplayEffectSpecHandle                   EffectSpecHandle;                                         // (ConstParm, Parm)
+	struct FActiveGameplayEffectHandle                 ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetInstigatorTransform
-struct UAbilitySystemBlueprintLibrary_GetInstigatorTransform_Params
+// Function GameplayAbilities.GameplayAbility.K2_AddGameplayCueWithParams
+struct UGameplayAbility_K2_AddGameplayCueWithParams_Params
 {
-	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
-	struct FTransform                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+	struct FGameplayTag                                GameplayCueTag;                                           // (Parm)
+	struct FGameplayCueParameters                      GameplayCueParameter;                                     // (ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                               bRemoveOnAbilityEnd;                                      // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetInstigatorActor
-struct UAbilitySystemBlueprintLibrary_GetInstigatorActor_Params
+// Function GameplayAbilities.GameplayAbility.K2_AddGameplayCue
+struct UGameplayAbility_K2_AddGameplayCue_Params
 {
-	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
+	struct FGameplayTag                                GameplayCueTag;                                           // (Parm)
+	struct FGameplayEffectContextHandle                Context;                                                  // (Parm)
+	bool                                               bRemoveOnAbilityEnd;                                      // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function GameplayAbilities.GameplayAbility.K2_ActivateAbilityFromEvent
+struct UGameplayAbility_K2_ActivateAbilityFromEvent_Params
+{
+	struct FGameplayEventData                          EventData;                                                // (ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// Function GameplayAbilities.GameplayAbility.K2_ActivateAbility
+struct UGameplayAbility_K2_ActivateAbility_Params
+{
+};
+
+// Function GameplayAbilities.GameplayAbility.InvalidateClientPredictionKey
+struct UGameplayAbility_InvalidateClientPredictionKey_Params
+{
+};
+
+// Function GameplayAbilities.GameplayAbility.GetOwningComponentFromActorInfo
+struct UGameplayAbility_GetOwningComponentFromActorInfo_Params
+{
+	class USkeletalMeshComponent*                      ReturnValue;                                              // (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+};
+
+// Function GameplayAbilities.GameplayAbility.GetOwningActorFromActorInfo
+struct UGameplayAbility_GetOwningActorFromActorInfo_Params
+{
 	class AActor*                                      ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetHitResultFromTargetData
-struct UAbilitySystemBlueprintLibrary_GetHitResultFromTargetData_Params
+// Function GameplayAbilities.GameplayAbility.GetGrantedByEffectContext
+struct UGameplayAbility_GetGrantedByEffectContext_Params
 {
-	struct FGameplayAbilityTargetDataHandle            HitResult;                                                // (ConstParm, Parm, OutParm, ReferenceParm)
-	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FHitResult                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetHitResult
-struct UAbilitySystemBlueprintLibrary_GetHitResult_Params
-{
-	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
-	struct FHitResult                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetGameplayCueEndLocationAndNormal
-struct UAbilitySystemBlueprintLibrary_GetGameplayCueEndLocationAndNormal_Params
-{
-	class AActor*                                      TargetActor;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
-	struct FVector                                     Location;                                                 // (Parm, OutParm, IsPlainOldData)
-	struct FVector                                     Normal;                                                   // (Parm, OutParm, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetGameplayCueDirection
-struct UAbilitySystemBlueprintLibrary_GetGameplayCueDirection_Params
-{
-	class AActor*                                      TargetActor;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
-	struct FVector                                     Direction;                                                // (Parm, OutParm, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttributeFromAbilitySystemComponent
-struct UAbilitySystemBlueprintLibrary_GetFloatAttributeFromAbilitySystemComponent_Params
-{
-	class UAbilitySystemComponent*                     AbilitySystem;                                            // (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	struct FGameplayAttribute                          Attribute;                                                // (Parm)
-	bool                                               bSuccessfullyFoundAttribute;                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttributeBaseFromAbilitySystemComponent
-struct UAbilitySystemBlueprintLibrary_GetFloatAttributeBaseFromAbilitySystemComponent_Params
-{
-	class UAbilitySystemComponent*                     AbilitySystemComponent;                                   // (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	struct FGameplayAttribute                          Attribute;                                                // (Parm)
-	bool                                               bSuccessfullyFoundAttribute;                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttributeBase
-struct UAbilitySystemBlueprintLibrary_GetFloatAttributeBase_Params
-{
-	class AActor*                                      Actor;                                                    // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayAttribute                          Attribute;                                                // (Parm)
-	bool                                               bSuccessfullyFoundAttribute;                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttribute
-struct UAbilitySystemBlueprintLibrary_GetFloatAttribute_Params
-{
-	class AActor*                                      Actor;                                                    // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayAttribute                          Attribute;                                                // (Parm)
-	bool                                               bSuccessfullyFoundAttribute;                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetEffectContext
-struct UAbilitySystemBlueprintLibrary_GetEffectContext_Params
-{
-	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
 	struct FGameplayEffectContextHandle                ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetDataCountFromTargetData
-struct UAbilitySystemBlueprintLibrary_GetDataCountFromTargetData_Params
+// Function GameplayAbilities.GameplayAbility.GetCurrentSourceObject
+struct UGameplayAbility_GetCurrentSourceObject_Params
 {
-	struct FGameplayAbilityTargetDataHandle            TargetData;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetAllLinkedGameplayEffectSpecHandles
-struct UAbilitySystemBlueprintLibrary_GetAllLinkedGameplayEffectSpecHandles_Params
-{
-	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
-	TArray<struct FGameplayEffectSpecHandle>           ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActorsFromTargetData
-struct UAbilitySystemBlueprintLibrary_GetActorsFromTargetData_Params
-{
-	struct FGameplayAbilityTargetDataHandle            TargetData;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	TArray<class AActor*>                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActorCount
-struct UAbilitySystemBlueprintLibrary_GetActorCount_Params
-{
-	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
-	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActorByIndex
-struct UAbilitySystemBlueprintLibrary_GetActorByIndex_Params
-{
-	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
-	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	class AActor*                                      ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectTotalDuration
-struct UAbilitySystemBlueprintLibrary_GetActiveGameplayEffectTotalDuration_Params
-{
-	struct FActiveGameplayEffectHandle                 ActiveHandle;                                             // (Parm)
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectStartTime
-struct UAbilitySystemBlueprintLibrary_GetActiveGameplayEffectStartTime_Params
-{
-	struct FActiveGameplayEffectHandle                 ActiveHandle;                                             // (Parm)
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectStackLimitCount
-struct UAbilitySystemBlueprintLibrary_GetActiveGameplayEffectStackLimitCount_Params
-{
-	struct FActiveGameplayEffectHandle                 ActiveHandle;                                             // (Parm)
-	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectStackCount
-struct UAbilitySystemBlueprintLibrary_GetActiveGameplayEffectStackCount_Params
-{
-	struct FActiveGameplayEffectHandle                 ActiveHandle;                                             // (Parm)
-	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectRemainingDuration
-struct UAbilitySystemBlueprintLibrary_GetActiveGameplayEffectRemainingDuration_Params
-{
-	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FActiveGameplayEffectHandle                 ActiveHandle;                                             // (Parm)
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectExpectedEndTime
-struct UAbilitySystemBlueprintLibrary_GetActiveGameplayEffectExpectedEndTime_Params
-{
-	struct FActiveGameplayEffectHandle                 ActiveHandle;                                             // (Parm)
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectDebugString
-struct UAbilitySystemBlueprintLibrary_GetActiveGameplayEffectDebugString_Params
-{
-	struct FActiveGameplayEffectHandle                 ActiveHandle;                                             // (Parm)
-	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetAbilitySystemComponent
-struct UAbilitySystemBlueprintLibrary_GetAbilitySystemComponent_Params
-{
-	class AActor*                                      Actor;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	class UAbilitySystemComponent*                     ReturnValue;                                              // (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.ForwardGameplayCueToTarget
-struct UAbilitySystemBlueprintLibrary_ForwardGameplayCueToTarget_Params
-{
-	TScriptInterface<class UGameplayCueInterface>      TargetCueInterface;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EGameplayCueEvent>                     EventType;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.FilterTargetData
-struct UAbilitySystemBlueprintLibrary_FilterTargetData_Params
-{
-	struct FGameplayAbilityTargetDataHandle            TargetDataHandle;                                         // (ConstParm, Parm, OutParm, ReferenceParm)
-	struct FGameplayTargetDataFilterHandle             ActorFilterClass;                                         // (Parm)
-	struct FGameplayAbilityTargetDataHandle            ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EvaluateAttributeValueWithTagsAndBase
-struct UAbilitySystemBlueprintLibrary_EvaluateAttributeValueWithTagsAndBase_Params
-{
-	class UAbilitySystemComponent*                     AbilitySystem;                                            // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	struct FGameplayAttribute                          Attribute;                                                // (Parm)
-	struct FGameplayTagContainer                       SourceTags;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-	struct FGameplayTagContainer                       TargetTags;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-	float                                              BaseValue;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bSuccess;                                                 // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EvaluateAttributeValueWithTags
-struct UAbilitySystemBlueprintLibrary_EvaluateAttributeValueWithTags_Params
-{
-	class UAbilitySystemComponent*                     AbilitySystem;                                            // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	struct FGameplayAttribute                          Attribute;                                                // (Parm)
-	struct FGameplayTagContainer                       SourceTags;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-	struct FGameplayTagContainer                       TargetTags;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                               bSuccess;                                                 // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EqualEqual_GameplayAttributeGameplayAttribute
-struct UAbilitySystemBlueprintLibrary_EqualEqual_GameplayAttributeGameplayAttribute_Params
-{
-	struct FGameplayAttribute                          AttributeA;                                               // (Parm)
-	struct FGameplayAttribute                          AttributeB;                                               // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextSetOrigin
-struct UAbilitySystemBlueprintLibrary_EffectContextSetOrigin_Params
-{
-	struct FGameplayEffectContextHandle                EffectContext;                                            // (Parm)
-	struct FVector                                     Origin;                                                   // (Parm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextIsValid
-struct UAbilitySystemBlueprintLibrary_EffectContextIsValid_Params
-{
-	struct FGameplayEffectContextHandle                EffectContext;                                            // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextIsInstigatorLocallyControlled
-struct UAbilitySystemBlueprintLibrary_EffectContextIsInstigatorLocallyControlled_Params
-{
-	struct FGameplayEffectContextHandle                EffectContext;                                            // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextHasHitResult
-struct UAbilitySystemBlueprintLibrary_EffectContextHasHitResult_Params
-{
-	struct FGameplayEffectContextHandle                EffectContext;                                            // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetSourceObject
-struct UAbilitySystemBlueprintLibrary_EffectContextGetSourceObject_Params
-{
-	struct FGameplayEffectContextHandle                EffectContext;                                            // (Parm)
 	class UObject*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetOriginalInstigatorActor
-struct UAbilitySystemBlueprintLibrary_EffectContextGetOriginalInstigatorActor_Params
+// Function GameplayAbilities.GameplayAbility.GetCurrentMontage
+struct UGameplayAbility_GetCurrentMontage_Params
 {
-	struct FGameplayEffectContextHandle                EffectContext;                                            // (Parm)
+	class UAnimMontage*                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.GameplayAbility.GetCoolDownTimeRemaining
+struct UGameplayAbility_GetCoolDownTimeRemaining_Params
+{
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.GameplayAbility.GetContextFromOwner
+struct UGameplayAbility_GetContextFromOwner_Params
+{
+	struct FGameplayAbilityTargetDataHandle            OptionalTargetData;                                       // (Parm)
+	struct FGameplayEffectContextHandle                ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function GameplayAbilities.GameplayAbility.GetAvatarActorFromActorInfo
+struct UGameplayAbility_GetAvatarActorFromActorInfo_Params
+{
 	class AActor*                                      ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetOrigin
-struct UAbilitySystemBlueprintLibrary_EffectContextGetOrigin_Params
+// Function GameplayAbilities.GameplayAbility.GetActorInfo
+struct UGameplayAbility_GetActorInfo_Params
 {
-	struct FGameplayEffectContextHandle                EffectContext;                                            // (Parm)
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+	struct FGameplayAbilityActorInfo                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetInstigatorActor
-struct UAbilitySystemBlueprintLibrary_EffectContextGetInstigatorActor_Params
+// Function GameplayAbilities.GameplayAbility.GetAbilityLevel
+struct UGameplayAbility_GetAbilityLevel_Params
 {
-	struct FGameplayEffectContextHandle                EffectContext;                                            // (Parm)
-	class AActor*                                      ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetHitResult
-struct UAbilitySystemBlueprintLibrary_EffectContextGetHitResult_Params
+// Function GameplayAbilities.GameplayAbility.EndTaskByInstanceName
+struct UGameplayAbility_EndTaskByInstanceName_Params
 {
-	struct FGameplayEffectContextHandle                EffectContext;                                            // (Parm)
-	struct FHitResult                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+	struct FName                                       InstanceName;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetEffectCauser
-struct UAbilitySystemBlueprintLibrary_EffectContextGetEffectCauser_Params
+// Function GameplayAbilities.GameplayAbility.EndAbilityState
+struct UGameplayAbility_EndAbilityState_Params
 {
-	struct FGameplayEffectContextHandle                EffectContext;                                            // (Parm)
-	class AActor*                                      ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	struct FName                                       OptionalStateNameToEnd;                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextAddHitResult
-struct UAbilitySystemBlueprintLibrary_EffectContextAddHitResult_Params
+// Function GameplayAbilities.GameplayAbility.ConfirmTaskByInstanceName
+struct UGameplayAbility_ConfirmTaskByInstanceName_Params
 {
-	struct FGameplayEffectContextHandle                EffectContext;                                            // (Parm)
-	struct FHitResult                                  HitResult;                                                // (Parm, IsPlainOldData)
-	bool                                               bReset;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       InstanceName;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bEndTask;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.DoesTargetDataContainActor
-struct UAbilitySystemBlueprintLibrary_DoesTargetDataContainActor_Params
+// Function GameplayAbilities.GameplayAbility.CancelTaskByInstanceName
+struct UGameplayAbility_CancelTaskByInstanceName_Params
 {
-	struct FGameplayAbilityTargetDataHandle            TargetData;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	class AActor*                                      Actor;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	struct FName                                       InstanceName;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.DoesGameplayCueMeetTagRequirements
-struct UAbilitySystemBlueprintLibrary_DoesGameplayCueMeetTagRequirements_Params
+// Function GameplayAbilities.GameplayAbility.BP_RemoveGameplayEffectFromOwnerWithHandle
+struct UGameplayAbility_BP_RemoveGameplayEffectFromOwnerWithHandle_Params
 {
-	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
-	struct FGameplayTagRequirements                    SourceTagReqs;                                            // (Parm, OutParm, ReferenceParm)
-	struct FGameplayTagRequirements                    TargetTagReqs;                                            // (Parm, OutParm, ReferenceParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+	struct FActiveGameplayEffectHandle                 Handle;                                                   // (Parm)
+	int                                                StacksToRemove;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.CloneSpecHandle
-struct UAbilitySystemBlueprintLibrary_CloneSpecHandle_Params
+// Function GameplayAbilities.GameplayAbility.BP_RemoveGameplayEffectFromOwnerWithGrantedTags
+struct UGameplayAbility_BP_RemoveGameplayEffectFromOwnerWithGrantedTags_Params
 {
-	class AActor*                                      InNewInstigator;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	class AActor*                                      InEffectCauser;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayEffectSpecHandle                   GameplayEffectSpecHandle_Clone;                           // (Parm)
-	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	struct FGameplayTagContainer                       WithGrantedTags;                                          // (Parm)
+	int                                                StacksToRemove;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AssignTagSetByCallerMagnitude
-struct UAbilitySystemBlueprintLibrary_AssignTagSetByCallerMagnitude_Params
+// Function GameplayAbilities.GameplayAbility.BP_RemoveGameplayEffectFromOwnerWithAssetTags
+struct UGameplayAbility_BP_RemoveGameplayEffectFromOwnerWithAssetTags_Params
 {
-	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
-	struct FGameplayTag                                DataTag;                                                  // (Parm)
-	float                                              Magnitude;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	struct FGameplayTagContainer                       WithAssetTags;                                            // (Parm)
+	int                                                StacksToRemove;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AssignSetByCallerMagnitude
-struct UAbilitySystemBlueprintLibrary_AssignSetByCallerMagnitude_Params
+// Function GameplayAbilities.GameplayAbility.BP_ApplyGameplayEffectToTarget
+struct UGameplayAbility_BP_ApplyGameplayEffectToTarget_Params
 {
-	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
-	struct FName                                       DataName;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Magnitude;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	struct FGameplayAbilityTargetDataHandle            TargetData;                                               // (Parm)
+	class UClass*                                      GameplayEffectClass;                                      // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                GameplayEffectLevel;                                      // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Stacks;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	TArray<struct FActiveGameplayEffectHandle>         ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
 };
 
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AppendTargetDataHandle
-struct UAbilitySystemBlueprintLibrary_AppendTargetDataHandle_Params
+// Function GameplayAbilities.GameplayAbility.BP_ApplyGameplayEffectToOwner
+struct UGameplayAbility_BP_ApplyGameplayEffectToOwner_Params
 {
-	struct FGameplayAbilityTargetDataHandle            TargetHandle;                                             // (Parm)
-	struct FGameplayAbilityTargetDataHandle            HandleToAdd;                                              // (ConstParm, Parm, OutParm, ReferenceParm)
-	struct FGameplayAbilityTargetDataHandle            ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddLinkedGameplayEffectSpec
-struct UAbilitySystemBlueprintLibrary_AddLinkedGameplayEffectSpec_Params
-{
-	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
-	struct FGameplayEffectSpecHandle                   LinkedGameplayEffectSpec;                                 // (Parm)
-	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddLinkedGameplayEffect
-struct UAbilitySystemBlueprintLibrary_AddLinkedGameplayEffect_Params
-{
-	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
-	class UClass*                                      LinkedGameplayEffect;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddGrantedTags
-struct UAbilitySystemBlueprintLibrary_AddGrantedTags_Params
-{
-	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
-	struct FGameplayTagContainer                       NewGameplayTags;                                          // (Parm)
-	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddGrantedTag
-struct UAbilitySystemBlueprintLibrary_AddGrantedTag_Params
-{
-	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
-	struct FGameplayTag                                NewGameplayTag;                                           // (Parm)
-	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddAssetTags
-struct UAbilitySystemBlueprintLibrary_AddAssetTags_Params
-{
-	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
-	struct FGameplayTagContainer                       NewGameplayTags;                                          // (Parm)
-	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddAssetTag
-struct UAbilitySystemBlueprintLibrary_AddAssetTag_Params
-{
-	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
-	struct FGameplayTag                                NewGameplayTag;                                           // (Parm)
-	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromLocations
-struct UAbilitySystemBlueprintLibrary_AbilityTargetDataFromLocations_Params
-{
-	struct FGameplayAbilityTargetingLocationInfo       SourceLocation;                                           // (ConstParm, Parm, OutParm, ReferenceParm)
-	struct FGameplayAbilityTargetingLocationInfo       TargetLocation;                                           // (ConstParm, Parm, OutParm, ReferenceParm)
-	struct FGameplayAbilityTargetDataHandle            ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromHitResult
-struct UAbilitySystemBlueprintLibrary_AbilityTargetDataFromHitResult_Params
-{
-	struct FHitResult                                  HitResult;                                                // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	struct FGameplayAbilityTargetDataHandle            ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromActorArray
-struct UAbilitySystemBlueprintLibrary_AbilityTargetDataFromActorArray_Params
-{
-	TArray<class AActor*>                              ActorArray;                                               // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
-	bool                                               OneTargetPerHandle;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayAbilityTargetDataHandle            ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromActor
-struct UAbilitySystemBlueprintLibrary_AbilityTargetDataFromActor_Params
-{
-	class AActor*                                      Actor;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayAbilityTargetDataHandle            ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	class UClass*                                      GameplayEffectClass;                                      // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                GameplayEffectLevel;                                      // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Stacks;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FActiveGameplayEffectHandle                 ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GameplayAbilities.AbilitySystemComponent.TryActivateAbilityByClass
@@ -977,13 +701,6 @@ struct UAbilitySystemComponent_GetGameplayEffectCount_Params
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilitySystemComponent.GetActiveEffects
-struct UAbilitySystemComponent_GetActiveEffects_Params
-{
-	struct FGameplayEffectQuery                        Query;                                                    // (ConstParm, Parm, OutParm, ReferenceParm)
-	TArray<struct FActiveGameplayEffectHandle>         ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
-};
-
 // Function GameplayAbilities.AbilitySystemComponent.ClientTryActivateAbility
 struct UAbilitySystemComponent_ClientTryActivateAbility_Params
 {
@@ -1096,6 +813,673 @@ struct UAbilitySystemGlobals_ToggleIgnoreAbilitySystemCooldowns_Params
 {
 };
 
+// Function GameplayAbilities.GameplayCueNotify_Actor.WhileActive
+struct AGameplayCueNotify_Actor_WhileActive_Params
+{
+	class AActor*                                      MyTarget;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayCueParameters                      Parameters;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.GameplayCueNotify_Actor.OnRemove
+struct AGameplayCueNotify_Actor_OnRemove_Params
+{
+	class AActor*                                      MyTarget;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayCueParameters                      Parameters;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.GameplayCueNotify_Actor.OnOwnerDestroyed
+struct AGameplayCueNotify_Actor_OnOwnerDestroyed_Params
+{
+	class AActor*                                      DestroyedActor;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function GameplayAbilities.GameplayCueNotify_Actor.OnExecute
+struct AGameplayCueNotify_Actor_OnExecute_Params
+{
+	class AActor*                                      MyTarget;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayCueParameters                      Parameters;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.GameplayCueNotify_Actor.OnActive
+struct AGameplayCueNotify_Actor_OnActive_Params
+{
+	class AActor*                                      MyTarget;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayCueParameters                      Parameters;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.GameplayCueNotify_Actor.K2_HandleGameplayCue
+struct AGameplayCueNotify_Actor_K2_HandleGameplayCue_Params
+{
+	class AActor*                                      MyTarget;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EGameplayCueEvent>                     EventType;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayCueParameters                      Parameters;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// Function GameplayAbilities.GameplayCueNotify_Actor.K2_EndGameplayCue
+struct AGameplayCueNotify_Actor_K2_EndGameplayCue_Params
+{
+};
+
+// Function GameplayAbilities.GameplayCueNotify_Static.WhileActive
+struct UGameplayCueNotify_Static_WhileActive_Params
+{
+	class AActor*                                      MyTarget;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayCueParameters                      Parameters;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.GameplayCueNotify_Static.OnRemove
+struct UGameplayCueNotify_Static_OnRemove_Params
+{
+	class AActor*                                      MyTarget;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayCueParameters                      Parameters;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.GameplayCueNotify_Static.OnExecute
+struct UGameplayCueNotify_Static_OnExecute_Params
+{
+	class AActor*                                      MyTarget;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayCueParameters                      Parameters;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.GameplayCueNotify_Static.OnActive
+struct UGameplayCueNotify_Static_OnActive_Params
+{
+	class AActor*                                      MyTarget;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayCueParameters                      Parameters;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.GameplayCueNotify_Static.K2_HandleGameplayCue
+struct UGameplayCueNotify_Static_K2_HandleGameplayCue_Params
+{
+	class AActor*                                      MyTarget;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EGameplayCueEvent>                     EventType;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayCueParameters                      Parameters;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// Function GameplayAbilities.GameplayEffectExecutionCalculation.Execute
+struct UGameplayEffectExecutionCalculation_Execute_Params
+{
+	struct FGameplayEffectCustomExecutionParameters    ExecutionParams;                                          // (ConstParm, Parm, OutParm, ReferenceParm)
+	struct FGameplayEffectCustomExecutionOutput        OutExecutionOutput;                                       // (Parm, OutParm)
+};
+
+// Function GameplayAbilities.GameplayModMagnitudeCalculation.CalculateBaseMagnitude
+struct UGameplayModMagnitudeCalculation_CalculateBaseMagnitude_Params
+{
+	struct FGameplayEffectSpec                         Spec;                                                     // (ConstParm, Parm, OutParm, ReferenceParm)
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.GameplayCueInterface.ForwardGameplayCueToParent
+struct UGameplayCueInterface_ForwardGameplayCueToParent_Params
+{
+};
+
+// Function GameplayAbilities.GameplayCueInterface.BlueprintCustomHandler
+struct UGameplayCueInterface_BlueprintCustomHandler_Params
+{
+	TEnumAsByte<EGameplayCueEvent>                     EventType;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasOrigin
+struct UAbilitySystemBlueprintLibrary_TargetDataHasOrigin_Params
+{
+	struct FGameplayAbilityTargetDataHandle            TargetData;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasHitResult
+struct UAbilitySystemBlueprintLibrary_TargetDataHasHitResult_Params
+{
+	struct FGameplayAbilityTargetDataHandle            HitResult;                                                // (ConstParm, Parm, OutParm, ReferenceParm)
+	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasEndPoint
+struct UAbilitySystemBlueprintLibrary_TargetDataHasEndPoint_Params
+{
+	struct FGameplayAbilityTargetDataHandle            TargetData;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasActor
+struct UAbilitySystemBlueprintLibrary_TargetDataHasActor_Params
+{
+	struct FGameplayAbilityTargetDataHandle            TargetData;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.SetStackCountToMax
+struct UAbilitySystemBlueprintLibrary_SetStackCountToMax_Params
+{
+	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
+	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.SetStackCount
+struct UAbilitySystemBlueprintLibrary_SetStackCount_Params
+{
+	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
+	int                                                StackCount;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.SetDuration
+struct UAbilitySystemBlueprintLibrary_SetDuration_Params
+{
+	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
+	float                                              Duration;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.SendGameplayEventToActor
+struct UAbilitySystemBlueprintLibrary_SendGameplayEventToActor_Params
+{
+	class AActor*                                      Actor;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayTag                                EventTag;                                                 // (Parm)
+	struct FGameplayEventData                          Payload;                                                  // (Parm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.NotEqual_GameplayAttributeGameplayAttribute
+struct UAbilitySystemBlueprintLibrary_NotEqual_GameplayAttributeGameplayAttribute_Params
+{
+	struct FGameplayAttribute                          AttributeA;                                               // (Parm)
+	struct FGameplayAttribute                          AttributeB;                                               // (Parm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.MakeSpecHandle
+struct UAbilitySystemBlueprintLibrary_MakeSpecHandle_Params
+{
+	class UGameplayEffect*                             InGameplayEffect;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+	class AActor*                                      InInstigator;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	class AActor*                                      InEffectCauser;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              InLevel;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.MakeFilterHandle
+struct UAbilitySystemBlueprintLibrary_MakeFilterHandle_Params
+{
+	struct FGameplayTargetDataFilter                   Filter;                                                   // (Parm)
+	class AActor*                                      FilterActor;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayTargetDataFilterHandle             ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.IsValid
+struct UAbilitySystemBlueprintLibrary_IsValid_Params
+{
+	struct FGameplayAttribute                          Attribute;                                                // (Parm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.IsInstigatorLocallyControlledPlayer
+struct UAbilitySystemBlueprintLibrary_IsInstigatorLocallyControlledPlayer_Params
+{
+	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.IsInstigatorLocallyControlled
+struct UAbilitySystemBlueprintLibrary_IsInstigatorLocallyControlled_Params
+{
+	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.HasHitResult
+struct UAbilitySystemBlueprintLibrary_HasHitResult_Params
+{
+	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetTargetDataOrigin
+struct UAbilitySystemBlueprintLibrary_GetTargetDataOrigin_Params
+{
+	struct FGameplayAbilityTargetDataHandle            TargetData;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FTransform                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetTargetDataEndPointTransform
+struct UAbilitySystemBlueprintLibrary_GetTargetDataEndPointTransform_Params
+{
+	struct FGameplayAbilityTargetDataHandle            TargetData;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FTransform                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetTargetDataEndPoint
+struct UAbilitySystemBlueprintLibrary_GetTargetDataEndPoint_Params
+{
+	struct FGameplayAbilityTargetDataHandle            TargetData;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetOrigin
+struct UAbilitySystemBlueprintLibrary_GetOrigin_Params
+{
+	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetModifiedAttributeMagnitude
+struct UAbilitySystemBlueprintLibrary_GetModifiedAttributeMagnitude_Params
+{
+	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
+	struct FGameplayAttribute                          Attribute;                                                // (Parm)
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetInstigatorTransform
+struct UAbilitySystemBlueprintLibrary_GetInstigatorTransform_Params
+{
+	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
+	struct FTransform                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetInstigatorActor
+struct UAbilitySystemBlueprintLibrary_GetInstigatorActor_Params
+{
+	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
+	class AActor*                                      ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetHitResultFromTargetData
+struct UAbilitySystemBlueprintLibrary_GetHitResultFromTargetData_Params
+{
+	struct FGameplayAbilityTargetDataHandle            HitResult;                                                // (ConstParm, Parm, OutParm, ReferenceParm)
+	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FHitResult                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetHitResult
+struct UAbilitySystemBlueprintLibrary_GetHitResult_Params
+{
+	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
+	struct FHitResult                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetGameplayCueEndLocationAndNormal
+struct UAbilitySystemBlueprintLibrary_GetGameplayCueEndLocationAndNormal_Params
+{
+	class AActor*                                      TargetActor;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
+	struct FVector                                     Location;                                                 // (Parm, OutParm, IsPlainOldData)
+	struct FVector                                     Normal;                                                   // (Parm, OutParm, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetGameplayCueDirection
+struct UAbilitySystemBlueprintLibrary_GetGameplayCueDirection_Params
+{
+	class AActor*                                      TargetActor;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
+	struct FVector                                     Direction;                                                // (Parm, OutParm, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttributeFromAbilitySystemComponent
+struct UAbilitySystemBlueprintLibrary_GetFloatAttributeFromAbilitySystemComponent_Params
+{
+	class UAbilitySystemComponent*                     AbilitySystem;                                            // (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	struct FGameplayAttribute                          Attribute;                                                // (Parm)
+	bool                                               bSuccessfullyFoundAttribute;                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttributeBaseFromAbilitySystemComponent
+struct UAbilitySystemBlueprintLibrary_GetFloatAttributeBaseFromAbilitySystemComponent_Params
+{
+	class UAbilitySystemComponent*                     AbilitySystemComponent;                                   // (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	struct FGameplayAttribute                          Attribute;                                                // (Parm)
+	bool                                               bSuccessfullyFoundAttribute;                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttributeBase
+struct UAbilitySystemBlueprintLibrary_GetFloatAttributeBase_Params
+{
+	class AActor*                                      Actor;                                                    // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayAttribute                          Attribute;                                                // (Parm)
+	bool                                               bSuccessfullyFoundAttribute;                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttribute
+struct UAbilitySystemBlueprintLibrary_GetFloatAttribute_Params
+{
+	class AActor*                                      Actor;                                                    // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayAttribute                          Attribute;                                                // (Parm)
+	bool                                               bSuccessfullyFoundAttribute;                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetEffectContext
+struct UAbilitySystemBlueprintLibrary_GetEffectContext_Params
+{
+	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
+	struct FGameplayEffectContextHandle                ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetDataCountFromTargetData
+struct UAbilitySystemBlueprintLibrary_GetDataCountFromTargetData_Params
+{
+	struct FGameplayAbilityTargetDataHandle            TargetData;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetAllLinkedGameplayEffectSpecHandles
+struct UAbilitySystemBlueprintLibrary_GetAllLinkedGameplayEffectSpecHandles_Params
+{
+	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
+	TArray<struct FGameplayEffectSpecHandle>           ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActorsFromTargetData
+struct UAbilitySystemBlueprintLibrary_GetActorsFromTargetData_Params
+{
+	struct FGameplayAbilityTargetDataHandle            TargetData;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	TArray<class AActor*>                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActorCount
+struct UAbilitySystemBlueprintLibrary_GetActorCount_Params
+{
+	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
+	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActorByIndex
+struct UAbilitySystemBlueprintLibrary_GetActorByIndex_Params
+{
+	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
+	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	class AActor*                                      ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectStackLimitCount
+struct UAbilitySystemBlueprintLibrary_GetActiveGameplayEffectStackLimitCount_Params
+{
+	struct FActiveGameplayEffectHandle                 ActiveHandle;                                             // (Parm)
+	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectStackCount
+struct UAbilitySystemBlueprintLibrary_GetActiveGameplayEffectStackCount_Params
+{
+	struct FActiveGameplayEffectHandle                 ActiveHandle;                                             // (Parm)
+	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectDebugString
+struct UAbilitySystemBlueprintLibrary_GetActiveGameplayEffectDebugString_Params
+{
+	struct FActiveGameplayEffectHandle                 ActiveHandle;                                             // (Parm)
+	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetAbilitySystemComponent
+struct UAbilitySystemBlueprintLibrary_GetAbilitySystemComponent_Params
+{
+	class AActor*                                      Actor;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	class UAbilitySystemComponent*                     ReturnValue;                                              // (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.ForwardGameplayCueToTarget
+struct UAbilitySystemBlueprintLibrary_ForwardGameplayCueToTarget_Params
+{
+	TScriptInterface<class UGameplayCueInterface>      TargetCueInterface;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EGameplayCueEvent>                     EventType;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.FilterTargetData
+struct UAbilitySystemBlueprintLibrary_FilterTargetData_Params
+{
+	struct FGameplayAbilityTargetDataHandle            TargetDataHandle;                                         // (ConstParm, Parm, OutParm, ReferenceParm)
+	struct FGameplayTargetDataFilterHandle             ActorFilterClass;                                         // (Parm)
+	struct FGameplayAbilityTargetDataHandle            ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EvaluateAttributeValueWithTagsAndBase
+struct UAbilitySystemBlueprintLibrary_EvaluateAttributeValueWithTagsAndBase_Params
+{
+	class UAbilitySystemComponent*                     AbilitySystem;                                            // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	struct FGameplayAttribute                          Attribute;                                                // (Parm)
+	struct FGameplayTagContainer                       SourceTags;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	struct FGameplayTagContainer                       TargetTags;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	float                                              BaseValue;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bSuccess;                                                 // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EvaluateAttributeValueWithTags
+struct UAbilitySystemBlueprintLibrary_EvaluateAttributeValueWithTags_Params
+{
+	class UAbilitySystemComponent*                     AbilitySystem;                                            // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	struct FGameplayAttribute                          Attribute;                                                // (Parm)
+	struct FGameplayTagContainer                       SourceTags;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	struct FGameplayTagContainer                       TargetTags;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                               bSuccess;                                                 // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EqualEqual_GameplayAttributeGameplayAttribute
+struct UAbilitySystemBlueprintLibrary_EqualEqual_GameplayAttributeGameplayAttribute_Params
+{
+	struct FGameplayAttribute                          AttributeA;                                               // (Parm)
+	struct FGameplayAttribute                          AttributeB;                                               // (Parm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextSetOrigin
+struct UAbilitySystemBlueprintLibrary_EffectContextSetOrigin_Params
+{
+	struct FGameplayEffectContextHandle                EffectContext;                                            // (Parm)
+	struct FVector                                     Origin;                                                   // (Parm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextIsValid
+struct UAbilitySystemBlueprintLibrary_EffectContextIsValid_Params
+{
+	struct FGameplayEffectContextHandle                EffectContext;                                            // (Parm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextIsInstigatorLocallyControlled
+struct UAbilitySystemBlueprintLibrary_EffectContextIsInstigatorLocallyControlled_Params
+{
+	struct FGameplayEffectContextHandle                EffectContext;                                            // (Parm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextHasHitResult
+struct UAbilitySystemBlueprintLibrary_EffectContextHasHitResult_Params
+{
+	struct FGameplayEffectContextHandle                EffectContext;                                            // (Parm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetSourceObject
+struct UAbilitySystemBlueprintLibrary_EffectContextGetSourceObject_Params
+{
+	struct FGameplayEffectContextHandle                EffectContext;                                            // (Parm)
+	class UObject*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetOriginalInstigatorActor
+struct UAbilitySystemBlueprintLibrary_EffectContextGetOriginalInstigatorActor_Params
+{
+	struct FGameplayEffectContextHandle                EffectContext;                                            // (Parm)
+	class AActor*                                      ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetOrigin
+struct UAbilitySystemBlueprintLibrary_EffectContextGetOrigin_Params
+{
+	struct FGameplayEffectContextHandle                EffectContext;                                            // (Parm)
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetInstigatorActor
+struct UAbilitySystemBlueprintLibrary_EffectContextGetInstigatorActor_Params
+{
+	struct FGameplayEffectContextHandle                EffectContext;                                            // (Parm)
+	class AActor*                                      ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetHitResult
+struct UAbilitySystemBlueprintLibrary_EffectContextGetHitResult_Params
+{
+	struct FGameplayEffectContextHandle                EffectContext;                                            // (Parm)
+	struct FHitResult                                  ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetEffectCauser
+struct UAbilitySystemBlueprintLibrary_EffectContextGetEffectCauser_Params
+{
+	struct FGameplayEffectContextHandle                EffectContext;                                            // (Parm)
+	class AActor*                                      ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextAddHitResult
+struct UAbilitySystemBlueprintLibrary_EffectContextAddHitResult_Params
+{
+	struct FGameplayEffectContextHandle                EffectContext;                                            // (Parm)
+	struct FHitResult                                  HitResult;                                                // (Parm, IsPlainOldData)
+	bool                                               bReset;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.DoesTargetDataContainActor
+struct UAbilitySystemBlueprintLibrary_DoesTargetDataContainActor_Params
+{
+	struct FGameplayAbilityTargetDataHandle            TargetData;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	class AActor*                                      Actor;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.DoesGameplayCueMeetTagRequirements
+struct UAbilitySystemBlueprintLibrary_DoesGameplayCueMeetTagRequirements_Params
+{
+	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
+	struct FGameplayTagRequirements                    SourceTagReqs;                                            // (Parm, OutParm, ReferenceParm)
+	struct FGameplayTagRequirements                    TargetTagReqs;                                            // (Parm, OutParm, ReferenceParm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AssignSetByCallerMagnitude
+struct UAbilitySystemBlueprintLibrary_AssignSetByCallerMagnitude_Params
+{
+	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
+	struct FName                                       DataName;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Magnitude;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AppendTargetDataHandle
+struct UAbilitySystemBlueprintLibrary_AppendTargetDataHandle_Params
+{
+	struct FGameplayAbilityTargetDataHandle            TargetHandle;                                             // (Parm)
+	struct FGameplayAbilityTargetDataHandle            HandleToAdd;                                              // (ConstParm, Parm, OutParm, ReferenceParm)
+	struct FGameplayAbilityTargetDataHandle            ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddLinkedGameplayEffectSpec
+struct UAbilitySystemBlueprintLibrary_AddLinkedGameplayEffectSpec_Params
+{
+	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
+	struct FGameplayEffectSpecHandle                   LinkedGameplayEffectSpec;                                 // (Parm)
+	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddLinkedGameplayEffect
+struct UAbilitySystemBlueprintLibrary_AddLinkedGameplayEffect_Params
+{
+	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
+	class UClass*                                      LinkedGameplayEffect;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddGrantedTags
+struct UAbilitySystemBlueprintLibrary_AddGrantedTags_Params
+{
+	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
+	struct FGameplayTagContainer                       NewGameplayTags;                                          // (Parm)
+	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddGrantedTag
+struct UAbilitySystemBlueprintLibrary_AddGrantedTag_Params
+{
+	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
+	struct FGameplayTag                                NewGameplayTag;                                           // (Parm)
+	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddAssetTags
+struct UAbilitySystemBlueprintLibrary_AddAssetTags_Params
+{
+	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
+	struct FGameplayTagContainer                       NewGameplayTags;                                          // (Parm)
+	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddAssetTag
+struct UAbilitySystemBlueprintLibrary_AddAssetTag_Params
+{
+	struct FGameplayEffectSpecHandle                   SpecHandle;                                               // (Parm)
+	struct FGameplayTag                                NewGameplayTag;                                           // (Parm)
+	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromLocations
+struct UAbilitySystemBlueprintLibrary_AbilityTargetDataFromLocations_Params
+{
+	struct FGameplayAbilityTargetingLocationInfo       SourceLocation;                                           // (ConstParm, Parm, OutParm, ReferenceParm)
+	struct FGameplayAbilityTargetingLocationInfo       TargetLocation;                                           // (ConstParm, Parm, OutParm, ReferenceParm)
+	struct FGameplayAbilityTargetDataHandle            ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromHitResult
+struct UAbilitySystemBlueprintLibrary_AbilityTargetDataFromHitResult_Params
+{
+	struct FHitResult                                  HitResult;                                                // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FGameplayAbilityTargetDataHandle            ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromActorArray
+struct UAbilitySystemBlueprintLibrary_AbilityTargetDataFromActorArray_Params
+{
+	TArray<class AActor*>                              ActorArray;                                               // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	bool                                               OneTargetPerHandle;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayAbilityTargetDataHandle            ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromActor
+struct UAbilitySystemBlueprintLibrary_AbilityTargetDataFromActor_Params
+{
+	class AActor*                                      Actor;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayAbilityTargetDataHandle            ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
 // Function GameplayAbilities.AbilityTask_ApplyRootMotionConstantForce.ApplyRootMotionConstantForce
 struct UAbilityTask_ApplyRootMotionConstantForce_ApplyRootMotionConstantForce_Params
 {
@@ -1142,41 +1526,9 @@ struct UAbilityTask_ApplyRootMotionJumpForce_ApplyRootMotionJumpForce_Params
 	class UAbilityTask_ApplyRootMotionJumpForce*       ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilityTask_ApplyRootMotionMoveToActorForce.OnTargetActorSwapped
-struct UAbilityTask_ApplyRootMotionMoveToActorForce_OnTargetActorSwapped_Params
-{
-	class AActor*                                      OriginalTarget;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-	class AActor*                                      NewTarget;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function GameplayAbilities.AbilityTask_ApplyRootMotionMoveToActorForce.OnRep_TargetLocation
 struct UAbilityTask_ApplyRootMotionMoveToActorForce_OnRep_TargetLocation_Params
 {
-};
-
-// Function GameplayAbilities.AbilityTask_ApplyRootMotionMoveToActorForce.ApplyRootMotionMoveToTargetDataActorForce
-struct UAbilityTask_ApplyRootMotionMoveToActorForce_ApplyRootMotionMoveToTargetDataActorForce_Params
-{
-	class UGameplayAbility*                            OwningAbility;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FName                                       TaskInstanceName;                                         // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayAbilityTargetDataHandle            TargetDataHandle;                                         // (Parm)
-	int                                                TargetDataIndex;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	int                                                TargetActorIndex;                                         // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     TargetLocationOffset;                                     // (Parm, IsPlainOldData)
-	ERootMotionMoveToActorTargetOffsetType             OffsetAlignment;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Duration;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	class UCurveFloat*                                 TargetLerpSpeedHorizontal;                                // (Parm, ZeroConstructor, IsPlainOldData)
-	class UCurveFloat*                                 TargetLerpSpeedVertical;                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bSetNewMovementMode;                                      // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EMovementMode>                         MovementMode;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bRestrictSpeedToExpected;                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	class UCurveVector*                                PathOffsetCurve;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	class UCurveFloat*                                 TimeMappingCurve;                                         // (Parm, ZeroConstructor, IsPlainOldData)
-	ERootMotionFinishVelocityMode                      VelocityOnFinishMode;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     SetVelocityOnFinish;                                      // (Parm, IsPlainOldData)
-	float                                              ClampVelocityOnFinish;                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bDisableDestinationReachedInterrupt;                      // (Parm, ZeroConstructor, IsPlainOldData)
-	class UAbilityTask_ApplyRootMotionMoveToActorForce* ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function GameplayAbilities.AbilityTask_ApplyRootMotionMoveToActorForce.ApplyRootMotionMoveToActorForce
@@ -1344,6 +1696,53 @@ struct UAbilityTask_StartAbilityState_StartAbilityState_Params
 	class UAbilityTask_StartAbilityState*              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
+// Function GameplayAbilities.GameplayAbilityWorldReticle.SetReticleMaterialParamVector
+struct AGameplayAbilityWorldReticle_SetReticleMaterialParamVector_Params
+{
+	struct FName                                       ParamName;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     Value;                                                    // (Parm, IsPlainOldData)
+};
+
+// Function GameplayAbilities.GameplayAbilityWorldReticle.SetReticleMaterialParamFloat
+struct AGameplayAbilityWorldReticle_SetReticleMaterialParamFloat_Params
+{
+	struct FName                                       ParamName;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function GameplayAbilities.GameplayAbilityWorldReticle.OnValidTargetChanged
+struct AGameplayAbilityWorldReticle_OnValidTargetChanged_Params
+{
+	bool                                               bNewValue;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function GameplayAbilities.GameplayAbilityWorldReticle.OnTargetingAnActor
+struct AGameplayAbilityWorldReticle_OnTargetingAnActor_Params
+{
+	bool                                               bNewValue;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function GameplayAbilities.GameplayAbilityWorldReticle.OnParametersInitialized
+struct AGameplayAbilityWorldReticle_OnParametersInitialized_Params
+{
+};
+
+// Function GameplayAbilities.GameplayAbilityWorldReticle.FaceTowardSource
+struct AGameplayAbilityWorldReticle_FaceTowardSource_Params
+{
+	bool                                               bFaceIn2D;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function GameplayAbilities.GameplayAbilityTargetActor.ConfirmTargeting
+struct AGameplayAbilityTargetActor_ConfirmTargeting_Params
+{
+};
+
+// Function GameplayAbilities.GameplayAbilityTargetActor.CancelTargeting
+struct AGameplayAbilityTargetActor_CancelTargeting_Params
+{
+};
+
 // Function GameplayAbilities.AbilityTask_VisualizeTargeting.VisualizeTargetingUsingActor
 struct UAbilityTask_VisualizeTargeting_VisualizeTargetingUsingActor_Params
 {
@@ -1390,16 +1789,6 @@ struct UAbilityTask_WaitAbilityActivate_WaitForAbilityActivateWithTagRequirement
 	class UAbilityTask_WaitAbilityActivate*            ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function GameplayAbilities.AbilityTask_WaitAbilityActivate.WaitForAbilityActivate_Query
-struct UAbilityTask_WaitAbilityActivate_WaitForAbilityActivate_Query_Params
-{
-	class UGameplayAbility*                            OwningAbility;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayTagQuery                           Query;                                                    // (Parm)
-	bool                                               IncludeTriggeredAbilities;                                // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               TriggerOnce;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	class UAbilityTask_WaitAbilityActivate*            ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
 // Function GameplayAbilities.AbilityTask_WaitAbilityActivate.WaitForAbilityActivate
 struct UAbilityTask_WaitAbilityActivate_WaitForAbilityActivate_Params
 {
@@ -1415,15 +1804,6 @@ struct UAbilityTask_WaitAbilityActivate_WaitForAbilityActivate_Params
 struct UAbilityTask_WaitAbilityActivate_OnAbilityActivate_Params
 {
 	class UGameplayAbility*                            ActivatedAbility;                                         // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilityTask_WaitAbilityCommit.WaitForAbilityCommit_Query
-struct UAbilityTask_WaitAbilityCommit_WaitForAbilityCommit_Query_Params
-{
-	class UGameplayAbility*                            OwningAbility;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayTagQuery                           Query;                                                    // (Parm)
-	bool                                               TriggerOnce;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	class UAbilityTask_WaitAbilityCommit*              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function GameplayAbilities.AbilityTask_WaitAbilityCommit.WaitForAbilityCommit
@@ -1452,7 +1832,6 @@ struct UAbilityTask_WaitAttributeChange_WaitForAttributeChangeWithComparison_Par
 	TEnumAsByte<EWaitAttributeChangeComparison>        InComparisonType;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 	float                                              InComparisonValue;                                        // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               TriggerOnce;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	class AActor*                                      OptionalExternalOwner;                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	class UAbilityTask_WaitAttributeChange*            ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
@@ -1464,7 +1843,6 @@ struct UAbilityTask_WaitAttributeChange_WaitForAttributeChange_Params
 	struct FGameplayTag                                WithSrcTag;                                               // (Parm)
 	struct FGameplayTag                                WithoutSrcTag;                                            // (Parm)
 	bool                                               TriggerOnce;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	class AActor*                                      OptionalExternalOwner;                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	class UAbilityTask_WaitAttributeChange*            ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
@@ -1477,7 +1855,6 @@ struct UAbilityTask_WaitAttributeChangeRatioThreshold_WaitForAttributeChangeRati
 	TEnumAsByte<EWaitAttributeChangeComparison>        ComparisonType;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 	float                                              ComparisonValue;                                          // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               bTriggerOnce;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-	class AActor*                                      OptionalExternalOwner;                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	class UAbilityTask_WaitAttributeChangeRatioThreshold* ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
@@ -1489,7 +1866,6 @@ struct UAbilityTask_WaitAttributeChangeThreshold_WaitForAttributeChangeThreshold
 	TEnumAsByte<EWaitAttributeChangeComparison>        ComparisonType;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 	float                                              ComparisonValue;                                          // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               bTriggerOnce;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-	class AActor*                                      OptionalExternalOwner;                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	class UAbilityTask_WaitAttributeChangeThreshold*   ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
@@ -1566,19 +1942,6 @@ struct UAbilityTask_WaitGameplayEffectApplied_OnApplyGameplayEffectCallback_Para
 	struct FActiveGameplayEffectHandle                 ActiveHandle;                                             // (Parm)
 };
 
-// Function GameplayAbilities.AbilityTask_WaitGameplayEffectApplied_Self.WaitGameplayEffectAppliedToSelf_Query
-struct UAbilityTask_WaitGameplayEffectApplied_Self_WaitGameplayEffectAppliedToSelf_Query_Params
-{
-	class UGameplayAbility*                            OwningAbility;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayTargetDataFilterHandle             SourceFilter;                                             // (ConstParm, Parm)
-	struct FGameplayTagQuery                           SourceTagQuery;                                           // (Parm)
-	struct FGameplayTagQuery                           TargetTagQuery;                                           // (Parm)
-	bool                                               TriggerOnce;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	class AActor*                                      OptionalExternalOwner;                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ListenForPeriodicEffect;                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	class UAbilityTask_WaitGameplayEffectApplied_Self* ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
 // Function GameplayAbilities.AbilityTask_WaitGameplayEffectApplied_Self.WaitGameplayEffectAppliedToSelf
 struct UAbilityTask_WaitGameplayEffectApplied_Self_WaitGameplayEffectAppliedToSelf_Params
 {
@@ -1590,19 +1953,6 @@ struct UAbilityTask_WaitGameplayEffectApplied_Self_WaitGameplayEffectAppliedToSe
 	class AActor*                                      OptionalExternalOwner;                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               ListenForPeriodicEffect;                                  // (Parm, ZeroConstructor, IsPlainOldData)
 	class UAbilityTask_WaitGameplayEffectApplied_Self* ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.AbilityTask_WaitGameplayEffectApplied_Target.WaitGameplayEffectAppliedToTarget_Query
-struct UAbilityTask_WaitGameplayEffectApplied_Target_WaitGameplayEffectAppliedToTarget_Query_Params
-{
-	class UGameplayAbility*                            OwningAbility;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayTargetDataFilterHandle             SourceFilter;                                             // (ConstParm, Parm)
-	struct FGameplayTagQuery                           SourceTagQuery;                                           // (Parm)
-	struct FGameplayTagQuery                           TargetTagQuery;                                           // (Parm)
-	bool                                               TriggerOnce;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	class AActor*                                      OptionalExternalOwner;                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ListenForPeriodicEffect;                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	class UAbilityTask_WaitGameplayEffectApplied_Target* ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function GameplayAbilities.AbilityTask_WaitGameplayEffectApplied_Target.WaitGameplayEffectAppliedToTarget
@@ -1640,7 +1990,6 @@ struct UAbilityTask_WaitGameplayEffectRemoved_WaitForGameplayEffectRemoved_Param
 // Function GameplayAbilities.AbilityTask_WaitGameplayEffectRemoved.OnGameplayEffectRemoved
 struct UAbilityTask_WaitGameplayEffectRemoved_OnGameplayEffectRemoved_Params
 {
-	struct FGameplayEffectRemovalInfo                  InGameplayEffectRemovalInfo;                              // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function GameplayAbilities.AbilityTask_WaitGameplayEffectStackChange.WaitForGameplayEffectStackChange
@@ -1824,483 +2173,6 @@ struct UAbilityTask_WaitVelocityChange_CreateWaitVelocityChange_Params
 	class UAbilityTask_WaitVelocityChange*             ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function GameplayAbilities.GameplayAbility.SetShouldBlockOtherAbilities
-struct UGameplayAbility_SetShouldBlockOtherAbilities_Params
-{
-	bool                                               bShouldBlockAbilities;                                    // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.SetCanBeCanceled
-struct UGameplayAbility_SetCanBeCanceled_Params
-{
-	bool                                               bCanBeCanceled;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.SendGameplayEvent
-struct UGameplayAbility_SendGameplayEvent_Params
-{
-	struct FGameplayTag                                EventTag;                                                 // (Parm)
-	struct FGameplayEventData                          Payload;                                                  // (Parm)
-};
-
-// Function GameplayAbilities.GameplayAbility.RemoveGrantedByEffect
-struct UGameplayAbility_RemoveGrantedByEffect_Params
-{
-};
-
-// Function GameplayAbilities.GameplayAbility.MontageStop
-struct UGameplayAbility_MontageStop_Params
-{
-	float                                              OverrideBlendOutTime;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.MontageSetNextSectionName
-struct UGameplayAbility_MontageSetNextSectionName_Params
-{
-	struct FName                                       FromSectionName;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FName                                       ToSectionName;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.MontageJumpToSection
-struct UGameplayAbility_MontageJumpToSection_Params
-{
-	struct FName                                       SectionName;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.MakeTargetLocationInfoFromOwnerSkeletalMeshComponent
-struct UGameplayAbility_MakeTargetLocationInfoFromOwnerSkeletalMeshComponent_Params
-{
-	struct FName                                       SocketName;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayAbilityTargetingLocationInfo       ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.GameplayAbility.MakeTargetLocationInfoFromOwnerActor
-struct UGameplayAbility_MakeTargetLocationInfoFromOwnerActor_Params
-{
-	struct FGameplayAbilityTargetingLocationInfo       ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.GameplayAbility.MakeOutgoingGameplayEffectSpec
-struct UGameplayAbility_MakeOutgoingGameplayEffectSpec_Params
-{
-	class UClass*                                      GameplayEffectClass;                                      // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Level;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayEffectSpecHandle                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.GameplayAbility.K2_ShouldAbilityRespondToEvent
-struct UGameplayAbility_K2_ShouldAbilityRespondToEvent_Params
-{
-	struct FGameplayAbilityActorInfo                   ActorInfo;                                                // (Parm)
-	struct FGameplayEventData                          Payload;                                                  // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.K2_RemoveGameplayCue
-struct UGameplayAbility_K2_RemoveGameplayCue_Params
-{
-	struct FGameplayTag                                GameplayCueTag;                                           // (Parm)
-};
-
-// Function GameplayAbilities.GameplayAbility.K2_OnEndAbility
-struct UGameplayAbility_K2_OnEndAbility_Params
-{
-	bool                                               bWasCancelled;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.K2_ExecuteGameplayCueWithParams
-struct UGameplayAbility_K2_ExecuteGameplayCueWithParams_Params
-{
-	struct FGameplayTag                                GameplayCueTag;                                           // (Parm)
-	struct FGameplayCueParameters                      GameplayCueParameters;                                    // (ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// Function GameplayAbilities.GameplayAbility.K2_ExecuteGameplayCue
-struct UGameplayAbility_K2_ExecuteGameplayCue_Params
-{
-	struct FGameplayTag                                GameplayCueTag;                                           // (Parm)
-	struct FGameplayEffectContextHandle                Context;                                                  // (Parm)
-};
-
-// Function GameplayAbilities.GameplayAbility.K2_EndAbility
-struct UGameplayAbility_K2_EndAbility_Params
-{
-};
-
-// Function GameplayAbilities.GameplayAbility.K2_CommitExecute
-struct UGameplayAbility_K2_CommitExecute_Params
-{
-};
-
-// Function GameplayAbilities.GameplayAbility.K2_CommitAbilityCost
-struct UGameplayAbility_K2_CommitAbilityCost_Params
-{
-	bool                                               BroadcastCommitEvent;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.K2_CommitAbilityCooldown
-struct UGameplayAbility_K2_CommitAbilityCooldown_Params
-{
-	bool                                               BroadcastCommitEvent;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ForceCooldown;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.K2_CommitAbility
-struct UGameplayAbility_K2_CommitAbility_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.K2_CheckAbilityCost
-struct UGameplayAbility_K2_CheckAbilityCost_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.K2_CheckAbilityCooldown
-struct UGameplayAbility_K2_CheckAbilityCooldown_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.K2_CancelAbility
-struct UGameplayAbility_K2_CancelAbility_Params
-{
-};
-
-// Function GameplayAbilities.GameplayAbility.K2_CanActivateAbility
-struct UGameplayAbility_K2_CanActivateAbility_Params
-{
-	struct FGameplayAbilityActorInfo                   ActorInfo;                                                // (Parm)
-	struct FGameplayTagContainer                       RelevantTags;                                             // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.K2_ApplyGameplayEffectSpecToTarget
-struct UGameplayAbility_K2_ApplyGameplayEffectSpecToTarget_Params
-{
-	struct FGameplayEffectSpecHandle                   EffectSpecHandle;                                         // (ConstParm, Parm)
-	struct FGameplayAbilityTargetDataHandle            TargetData;                                               // (Parm)
-	TArray<struct FActiveGameplayEffectHandle>         ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
-};
-
-// Function GameplayAbilities.GameplayAbility.K2_ApplyGameplayEffectSpecToOwner
-struct UGameplayAbility_K2_ApplyGameplayEffectSpecToOwner_Params
-{
-	struct FGameplayEffectSpecHandle                   EffectSpecHandle;                                         // (ConstParm, Parm)
-	struct FActiveGameplayEffectHandle                 ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.GameplayAbility.K2_AddGameplayCueWithParams
-struct UGameplayAbility_K2_AddGameplayCueWithParams_Params
-{
-	struct FGameplayTag                                GameplayCueTag;                                           // (Parm)
-	struct FGameplayCueParameters                      GameplayCueParameter;                                     // (ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                               bRemoveOnAbilityEnd;                                      // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.K2_AddGameplayCue
-struct UGameplayAbility_K2_AddGameplayCue_Params
-{
-	struct FGameplayTag                                GameplayCueTag;                                           // (Parm)
-	struct FGameplayEffectContextHandle                Context;                                                  // (Parm)
-	bool                                               bRemoveOnAbilityEnd;                                      // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.K2_ActivateAbilityFromEvent
-struct UGameplayAbility_K2_ActivateAbilityFromEvent_Params
-{
-	struct FGameplayEventData                          EventData;                                                // (ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// Function GameplayAbilities.GameplayAbility.K2_ActivateAbility
-struct UGameplayAbility_K2_ActivateAbility_Params
-{
-};
-
-// Function GameplayAbilities.GameplayAbility.InvalidateClientPredictionKey
-struct UGameplayAbility_InvalidateClientPredictionKey_Params
-{
-};
-
-// Function GameplayAbilities.GameplayAbility.GetOwningComponentFromActorInfo
-struct UGameplayAbility_GetOwningComponentFromActorInfo_Params
-{
-	class USkeletalMeshComponent*                      ReturnValue;                                              // (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.GetOwningActorFromActorInfo
-struct UGameplayAbility_GetOwningActorFromActorInfo_Params
-{
-	class AActor*                                      ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.GetGrantedByEffectContext
-struct UGameplayAbility_GetGrantedByEffectContext_Params
-{
-	struct FGameplayEffectContextHandle                ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.GameplayAbility.GetCurrentSourceObject
-struct UGameplayAbility_GetCurrentSourceObject_Params
-{
-	class UObject*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.GetCurrentMontage
-struct UGameplayAbility_GetCurrentMontage_Params
-{
-	class UAnimMontage*                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.GetCooldownTimeRemaining
-struct UGameplayAbility_GetCooldownTimeRemaining_Params
-{
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.GetContextFromOwner
-struct UGameplayAbility_GetContextFromOwner_Params
-{
-	struct FGameplayAbilityTargetDataHandle            OptionalTargetData;                                       // (Parm)
-	struct FGameplayEffectContextHandle                ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.GameplayAbility.GetAvatarActorFromActorInfo
-struct UGameplayAbility_GetAvatarActorFromActorInfo_Params
-{
-	class AActor*                                      ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.GetActorInfo
-struct UGameplayAbility_GetActorInfo_Params
-{
-	struct FGameplayAbilityActorInfo                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.GameplayAbility.GetAbilityLevel
-struct UGameplayAbility_GetAbilityLevel_Params
-{
-	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.EndTaskByInstanceName
-struct UGameplayAbility_EndTaskByInstanceName_Params
-{
-	struct FName                                       InstanceName;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.EndAbilityState
-struct UGameplayAbility_EndAbilityState_Params
-{
-	struct FName                                       OptionalStateNameToEnd;                                   // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.ConfirmTaskByInstanceName
-struct UGameplayAbility_ConfirmTaskByInstanceName_Params
-{
-	struct FName                                       InstanceName;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bEndTask;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.CancelTaskByInstanceName
-struct UGameplayAbility_CancelTaskByInstanceName_Params
-{
-	struct FName                                       InstanceName;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.BP_RemoveGameplayEffectFromOwnerWithHandle
-struct UGameplayAbility_BP_RemoveGameplayEffectFromOwnerWithHandle_Params
-{
-	struct FActiveGameplayEffectHandle                 Handle;                                                   // (Parm)
-	int                                                StacksToRemove;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.BP_RemoveGameplayEffectFromOwnerWithGrantedTags
-struct UGameplayAbility_BP_RemoveGameplayEffectFromOwnerWithGrantedTags_Params
-{
-	struct FGameplayTagContainer                       WithGrantedTags;                                          // (Parm)
-	int                                                StacksToRemove;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.BP_RemoveGameplayEffectFromOwnerWithAssetTags
-struct UGameplayAbility_BP_RemoveGameplayEffectFromOwnerWithAssetTags_Params
-{
-	struct FGameplayTagContainer                       WithAssetTags;                                            // (Parm)
-	int                                                StacksToRemove;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbility.BP_ApplyGameplayEffectToTarget
-struct UGameplayAbility_BP_ApplyGameplayEffectToTarget_Params
-{
-	struct FGameplayAbilityTargetDataHandle            TargetData;                                               // (Parm)
-	class UClass*                                      GameplayEffectClass;                                      // (Parm, ZeroConstructor, IsPlainOldData)
-	int                                                GameplayEffectLevel;                                      // (Parm, ZeroConstructor, IsPlainOldData)
-	int                                                Stacks;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-	TArray<struct FActiveGameplayEffectHandle>         ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
-};
-
-// Function GameplayAbilities.GameplayAbility.BP_ApplyGameplayEffectToOwner
-struct UGameplayAbility_BP_ApplyGameplayEffectToOwner_Params
-{
-	class UClass*                                      GameplayEffectClass;                                      // (Parm, ZeroConstructor, IsPlainOldData)
-	int                                                GameplayEffectLevel;                                      // (Parm, ZeroConstructor, IsPlainOldData)
-	int                                                Stacks;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FActiveGameplayEffectHandle                 ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function GameplayAbilities.GameplayAbilityTargetActor.ConfirmTargeting
-struct AGameplayAbilityTargetActor_ConfirmTargeting_Params
-{
-};
-
-// Function GameplayAbilities.GameplayAbilityTargetActor.CancelTargeting
-struct AGameplayAbilityTargetActor_CancelTargeting_Params
-{
-};
-
-// Function GameplayAbilities.GameplayAbilityWorldReticle.SetReticleMaterialParamVector
-struct AGameplayAbilityWorldReticle_SetReticleMaterialParamVector_Params
-{
-	struct FName                                       ParamName;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     Value;                                                    // (Parm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbilityWorldReticle.SetReticleMaterialParamFloat
-struct AGameplayAbilityWorldReticle_SetReticleMaterialParamFloat_Params
-{
-	struct FName                                       ParamName;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbilityWorldReticle.OnValidTargetChanged
-struct AGameplayAbilityWorldReticle_OnValidTargetChanged_Params
-{
-	bool                                               bNewValue;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbilityWorldReticle.OnTargetingAnActor
-struct AGameplayAbilityWorldReticle_OnTargetingAnActor_Params
-{
-	bool                                               bNewValue;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayAbilityWorldReticle.OnParametersInitialized
-struct AGameplayAbilityWorldReticle_OnParametersInitialized_Params
-{
-};
-
-// Function GameplayAbilities.GameplayAbilityWorldReticle.FaceTowardSource
-struct AGameplayAbilityWorldReticle_FaceTowardSource_Params
-{
-	bool                                               bFaceIn2D;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayCueInterface.ForwardGameplayCueToParent
-struct UGameplayCueInterface_ForwardGameplayCueToParent_Params
-{
-};
-
-// Function GameplayAbilities.GameplayCueInterface.BlueprintCustomHandler
-struct UGameplayCueInterface_BlueprintCustomHandler_Params
-{
-	TEnumAsByte<EGameplayCueEvent>                     EventType;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
-};
-
-// Function GameplayAbilities.GameplayCueNotify_Actor.WhileActive
-struct AGameplayCueNotify_Actor_WhileActive_Params
-{
-	class AActor*                                      MyTarget;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayCueParameters                      Parameters;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayCueNotify_Actor.OnRemove
-struct AGameplayCueNotify_Actor_OnRemove_Params
-{
-	class AActor*                                      MyTarget;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayCueParameters                      Parameters;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayCueNotify_Actor.OnOwnerDestroyed
-struct AGameplayCueNotify_Actor_OnOwnerDestroyed_Params
-{
-	class AActor*                                      DestroyedActor;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayCueNotify_Actor.OnExecute
-struct AGameplayCueNotify_Actor_OnExecute_Params
-{
-	class AActor*                                      MyTarget;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayCueParameters                      Parameters;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayCueNotify_Actor.OnActive
-struct AGameplayCueNotify_Actor_OnActive_Params
-{
-	class AActor*                                      MyTarget;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayCueParameters                      Parameters;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayCueNotify_Actor.K2_HandleGameplayCue
-struct AGameplayCueNotify_Actor_K2_HandleGameplayCue_Params
-{
-	class AActor*                                      MyTarget;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EGameplayCueEvent>                     EventType;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayCueParameters                      Parameters;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// Function GameplayAbilities.GameplayCueNotify_Actor.K2_EndGameplayCue
-struct AGameplayCueNotify_Actor_K2_EndGameplayCue_Params
-{
-};
-
-// Function GameplayAbilities.GameplayCueNotify_Static.WhileActive
-struct UGameplayCueNotify_Static_WhileActive_Params
-{
-	class AActor*                                      MyTarget;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayCueParameters                      Parameters;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayCueNotify_Static.OnRemove
-struct UGameplayCueNotify_Static_OnRemove_Params
-{
-	class AActor*                                      MyTarget;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayCueParameters                      Parameters;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayCueNotify_Static.OnExecute
-struct UGameplayCueNotify_Static_OnExecute_Params
-{
-	class AActor*                                      MyTarget;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayCueParameters                      Parameters;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayCueNotify_Static.OnActive
-struct UGameplayCueNotify_Static_OnActive_Params
-{
-	class AActor*                                      MyTarget;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayCueParameters                      Parameters;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayAbilities.GameplayCueNotify_Static.K2_HandleGameplayCue
-struct UGameplayCueNotify_Static_K2_HandleGameplayCue_Params
-{
-	class AActor*                                      MyTarget;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EGameplayCueEvent>                     EventType;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayCueParameters                      Parameters;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
-};
-
 // Function GameplayAbilities.GameplayEffectCustomApplicationRequirement.CanApplyGameplayEffect
 struct UGameplayEffectCustomApplicationRequirement_CanApplyGameplayEffect_Params
 {
@@ -2310,27 +2182,13 @@ struct UGameplayEffectCustomApplicationRequirement_CanApplyGameplayEffect_Params
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function GameplayAbilities.GameplayEffectExecutionCalculation.Execute
-struct UGameplayEffectExecutionCalculation_Execute_Params
-{
-	struct FGameplayEffectCustomExecutionParameters    ExecutionParams;                                          // (ConstParm, Parm, OutParm, ReferenceParm)
-	struct FGameplayEffectCustomExecutionOutput        OutExecutionOutput;                                       // (Parm, OutParm)
-};
-
-// Function GameplayAbilities.GameplayModMagnitudeCalculation.CalculateBaseMagnitude
-struct UGameplayModMagnitudeCalculation_CalculateBaseMagnitude_Params
-{
-	struct FGameplayEffectSpec                         Spec;                                                     // (ConstParm, Parm, OutParm, ReferenceParm)
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
 // Function GameplayAbilities.GameplayTagReponseTable.TagResponseEvent
 struct UGameplayTagReponseTable_TagResponseEvent_Params
 {
 	struct FGameplayTag                                Tag;                                                      // (ConstParm, Parm)
 	int                                                NewCount;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	class UAbilitySystemComponent*                     ASC;                                                      // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	int                                                idx;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Idx;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

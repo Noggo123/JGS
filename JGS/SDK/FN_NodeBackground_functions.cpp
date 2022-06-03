@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UNodeBackground_C::SetBackgroundColor()
 // Function NodeBackground.NodeBackground_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UNodeBackground_C::PreConstruct(bool* IsDesignTime)
 {
@@ -69,7 +69,7 @@ void UNodeBackground_C::Construct()
 // Function NodeBackground.NodeBackground_C.ExecuteUbergraph_NodeBackground
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UNodeBackground_C::ExecuteUbergraph_NodeBackground(int EntryPoint)
 {

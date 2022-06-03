@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,64 +12,10 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function AthenaLobbyPlayerPanelDetails.AthenaLobbyPlayerPanelDetails_C.OnTeamMemberStateChanged
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FFortTeamMemberInfo     ChangedTeamMemberInfo          (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UAthenaLobbyPlayerPanelDetails_C::OnTeamMemberStateChanged(const struct FFortTeamMemberInfo& ChangedTeamMemberInfo)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobbyPlayerPanelDetails.AthenaLobbyPlayerPanelDetails_C.OnTeamMemberStateChanged");
-
-	UAthenaLobbyPlayerPanelDetails_C_OnTeamMemberStateChanged_Params params;
-	params.ChangedTeamMemberInfo = ChangedTeamMemberInfo;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaLobbyPlayerPanelDetails.AthenaLobbyPlayerPanelDetails_C.RefreshBattlePass
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UAthenaLobbyPlayerPanelDetails_C::RefreshBattlePass()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobbyPlayerPanelDetails.AthenaLobbyPlayerPanelDetails_C.RefreshBattlePass");
-
-	UAthenaLobbyPlayerPanelDetails_C_RefreshBattlePass_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaLobbyPlayerPanelDetails.AthenaLobbyPlayerPanelDetails_C.RefreshBanner
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaLobbyPlayerPanelDetails_C::RefreshBanner()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobbyPlayerPanelDetails.AthenaLobbyPlayerPanelDetails_C.RefreshBanner");
-
-	UAthenaLobbyPlayerPanelDetails_C_RefreshBanner_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function AthenaLobbyPlayerPanelDetails.AthenaLobbyPlayerPanelDetails_C.SetTeamMemberInfo
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     TeamMemberInfo                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortTeamMemberInfo     TeamMemberInfo                 (Parm)
 
 void UAthenaLobbyPlayerPanelDetails_C::SetTeamMemberInfo(const struct FFortTeamMemberInfo& TeamMemberInfo)
 {
@@ -106,7 +52,7 @@ void UAthenaLobbyPlayerPanelDetails_C::InitializeContextEvents()
 // Function AthenaLobbyPlayerPanelDetails.AthenaLobbyPlayerPanelDetails_C.OnActiveFriendsCountUpdated
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            ActiveFriendsCount             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            ActiveFriendsCount             (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaLobbyPlayerPanelDetails_C::OnActiveFriendsCountUpdated(int ActiveFriendsCount)
 {
@@ -126,7 +72,7 @@ void UAthenaLobbyPlayerPanelDetails_C::OnActiveFriendsCountUpdated(int ActiveFri
 // Function AthenaLobbyPlayerPanelDetails.AthenaLobbyPlayerPanelDetails_C.OnPartyInvitesCountChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            InvitesCount                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            InvitesCount                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaLobbyPlayerPanelDetails_C::OnPartyInvitesCountChanged(int InvitesCount)
 {
@@ -236,7 +182,7 @@ void UAthenaLobbyPlayerPanelDetails_C::Refresh()
 // Function AthenaLobbyPlayerPanelDetails.AthenaLobbyPlayerPanelDetails_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaLobbyPlayerPanelDetails_C::PreConstruct(bool* IsDesignTime)
 {
@@ -256,7 +202,7 @@ void UAthenaLobbyPlayerPanelDetails_C::PreConstruct(bool* IsDesignTime)
 // Function AthenaLobbyPlayerPanelDetails.AthenaLobbyPlayerPanelDetails_C.ExecuteUbergraph_AthenaLobbyPlayerPanelDetails
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaLobbyPlayerPanelDetails_C::ExecuteUbergraph_AthenaLobbyPlayerPanelDetails(int EntryPoint)
 {

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -19,6 +19,12 @@ struct UResults_CommanderXPBar_C_DebugSections_Params
 {
 };
 
+// Function Results_CommanderXPBar.Results_CommanderXPBar_C.Get_ProgressBarNew_ToolTipWidget
+struct UResults_CommanderXPBar_C_Get_ProgressBarNew_ToolTipWidget_Params
+{
+	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.GetHoveredProgressBarSection
 struct UResults_CommanderXPBar_C_GetHoveredProgressBarSection_Params
 {
@@ -28,8 +34,8 @@ struct UResults_CommanderXPBar_C_GetHoveredProgressBarSection_Params
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.UpdateProgressBarPercent
 struct UResults_CommanderXPBar_C_UpdateProgressBarPercent_Params
 {
-	struct FName                                       ParameterName;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ProgressBarPercent;                                       // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       ParameterName;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ProgressBarPercent;                                       // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.RandomizeDesignView
@@ -50,7 +56,7 @@ struct UResults_CommanderXPBar_C_clearXpBar_Params
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.PlayAnimationCommon
 struct UResults_CommanderXPBar_C_PlayAnimationCommon_Params
 {
-	class UWidgetAnimation*                            Animation;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UWidgetAnimation*                            Animation;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.SkipToFinalState
@@ -66,8 +72,8 @@ struct UResults_CommanderXPBar_C_SetSkippingToEnd_Params
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.Initialize
 struct UResults_CommanderXPBar_C_Initialize_Params
 {
-	class UFortUIScoreReport*                          InScoreReport;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	float                                              PlayRate;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortUIScoreReport*                          InScoreReport;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              PlayRate;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.UpdateCount
@@ -98,7 +104,7 @@ struct UResults_CommanderXPBar_C_On_Count_Finished_Params
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.PreConstruct
 struct UResults_CommanderXPBar_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.Construct
@@ -109,7 +115,7 @@ struct UResults_CommanderXPBar_C_Construct_Params
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.ExecuteUbergraph_Results_CommanderXPBar
 struct UResults_CommanderXPBar_C_ExecuteUbergraph_Results_CommanderXPBar_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.CountIncrement__DelegateSignature
@@ -125,7 +131,7 @@ struct UResults_CommanderXPBar_C_IntroFinished__DelegateSignature_Params
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.LeveledUp__DelegateSignature
 struct UResults_CommanderXPBar_C_LeveledUp__DelegateSignature_Params
 {
-	int                                                NewLevel;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                NewLevel;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.CountFinished__DelegateSignature

@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,9 +13,9 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Function AthenaMainStatTile.AthenaMainStatTile_C.SetStatValue
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   StatValueAsText                (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   StatValueAsText                (Parm)
 
 void UAthenaMainStatTile_C::SetStatValue(const struct FText& StatValueAsText)
 {
@@ -33,10 +33,10 @@ void UAthenaMainStatTile_C::SetStatValue(const struct FText& StatValueAsText)
 
 
 // Function AthenaMainStatTile.AthenaMainStatTile_C.SetTagAndDisplayName
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FString                 Tag                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-// struct FText                   DisplayName                    (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FString                 Tag                            (Parm, ZeroConstructor)
+// struct FText                   DisplayName                    (Parm)
 
 void UAthenaMainStatTile_C::SetTagAndDisplayName(const struct FString& Tag, const struct FText& DisplayName)
 {
@@ -57,7 +57,7 @@ void UAthenaMainStatTile_C::SetTagAndDisplayName(const struct FString& Tag, cons
 // Function AthenaMainStatTile.AthenaMainStatTile_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaMainStatTile_C::PreConstruct(bool* IsDesignTime)
 {
@@ -75,9 +75,9 @@ void UAthenaMainStatTile_C::PreConstruct(bool* IsDesignTime)
 
 
 // Function AthenaMainStatTile.AthenaMainStatTile_C.ExecuteUbergraph_AthenaMainStatTile
-// (HasDefaults)
+// ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaMainStatTile_C::ExecuteUbergraph_AthenaMainStatTile(int EntryPoint)
 {

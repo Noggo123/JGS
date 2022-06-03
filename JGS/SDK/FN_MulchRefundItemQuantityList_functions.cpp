@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function MulchRefundItemQuantityList.MulchRefundItemQuantityList_C.AddListEntry
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UFortItemQuantityListEntryBase** ListEntry                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UFortItemQuantityListEntryBase** ListEntry                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMulchRefundItemQuantityList_C::AddListEntry(class UFortItemQuantityListEntryBase** ListEntry)
 {
@@ -35,7 +35,7 @@ void UMulchRefundItemQuantityList_C::AddListEntry(class UFortItemQuantityListEnt
 // Function MulchRefundItemQuantityList.MulchRefundItemQuantityList_C.ExecuteUbergraph_MulchRefundItemQuantityList
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMulchRefundItemQuantityList_C::ExecuteUbergraph_MulchRefundItemQuantityList(int EntryPoint)
 {

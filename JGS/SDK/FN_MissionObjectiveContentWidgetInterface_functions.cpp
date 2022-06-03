@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,8 +37,8 @@ void UMissionObjectiveContentWidgetInterface_C::GetHeightEstimate(float* Height)
 // Function MissionObjectiveContentWidgetInterface.MissionObjectiveContentWidgetInterface_C.Setup
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortObjectiveBase*      Objective                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bInConfigureAsHUD              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortObjectiveBase*      Objective                      (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bInConfigureAsHUD              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMissionObjectiveContentWidgetInterface_C::Setup(class AFortObjectiveBase* Objective, bool bInConfigureAsHUD)
 {

@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function AthenaPlayerActionAlert.AthenaPlayerActionAlert_C.AlertPlayer
 // (Event, Protected, HasOutParms, BlueprintEvent)
 // Parameters:
-// EAthenaPlayerActionAlert*      Alert                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText*                  DetailText                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// EAthenaPlayerActionAlert*      Alert                          (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText*                  DetailText                     (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UAthenaPlayerActionAlert_C::AlertPlayer(EAthenaPlayerActionAlert* Alert, struct FText* DetailText)
 {
@@ -37,7 +37,7 @@ void UAthenaPlayerActionAlert_C::AlertPlayer(EAthenaPlayerActionAlert* Alert, st
 // Function AthenaPlayerActionAlert.AthenaPlayerActionAlert_C.OnAnimationFinished
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation**       Animation                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UWidgetAnimation**       Animation                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaPlayerActionAlert_C::OnAnimationFinished(class UWidgetAnimation** Animation)
 {
@@ -57,7 +57,7 @@ void UAthenaPlayerActionAlert_C::OnAnimationFinished(class UWidgetAnimation** An
 // Function AthenaPlayerActionAlert.AthenaPlayerActionAlert_C.ExecuteUbergraph_AthenaPlayerActionAlert
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaPlayerActionAlert_C::ExecuteUbergraph_AthenaPlayerActionAlert(int EntryPoint)
 {

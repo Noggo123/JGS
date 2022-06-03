@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -110,7 +110,7 @@ void UAccountBonuses_C::Founder_Changed()
 // Function AccountBonuses.AccountBonuses_C.ExecuteUbergraph_AccountBonuses
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAccountBonuses_C::ExecuteUbergraph_AccountBonuses(int EntryPoint)
 {

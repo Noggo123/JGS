@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,16 +14,15 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function AthenaRotator.AthenaRotator_C.ConfigureForOneDirectionMode
-struct UAthenaRotator_C_ConfigureForOneDirectionMode_Params
+// Function AthenaRotator.AthenaRotator_C.NewFunction_0_1
+struct UAthenaRotator_C_NewFunction_0_1_Params
 {
-	bool                                               UseOneDirectionalMode;                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaRotator.AthenaRotator_C.ChangeDirection
 struct UAthenaRotator_C_ChangeDirection_Params
 {
-	bool                                               bDirection;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bDirection;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaRotator.AthenaRotator_C.Construct
@@ -34,26 +33,26 @@ struct UAthenaRotator_C_Construct_Params
 // Function AthenaRotator.AthenaRotator_C.BndEvt__ButtonLeft_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature
 struct UAthenaRotator_C_BndEvt__ButtonLeft_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaRotator.AthenaRotator_C.BndEvt__ButtonRight_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature
 struct UAthenaRotator_C_BndEvt__ButtonRight_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaRotator.AthenaRotator_C.Tick
 struct UAthenaRotator_C_Tick_Params
 {
-	struct FGeometry*                                  MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	float*                                             InDeltaTime;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FGeometry*                                  MyGeometry;                                               // (Parm, IsPlainOldData)
+	float*                                             InDeltaTime;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaRotator.AthenaRotator_C.PreConstruct
 struct UAthenaRotator_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaRotator.AthenaRotator_C.OnClicked
@@ -64,7 +63,7 @@ struct UAthenaRotator_C_OnClicked_Params
 // Function AthenaRotator.AthenaRotator_C.ExecuteUbergraph_AthenaRotator
 struct UAthenaRotator_C_ExecuteUbergraph_AthenaRotator_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

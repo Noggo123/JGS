@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UItemStackCounter_C::Refresh_Visibility()
 // Function ItemStackCounter.ItemStackCounter_C.Set Stack Count
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Count                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Count                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemStackCounter_C::Set_Stack_Count(int Count)
 {
@@ -52,8 +52,8 @@ void UItemStackCounter_C::Set_Stack_Count(int Count)
 // Function ItemStackCounter.ItemStackCounter_C.Update
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EFortBrushSize>    Brush_Size                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            Count                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EFortBrushSize>    Brush_Size                     (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Count                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemStackCounter_C::Update(TEnumAsByte<EFortBrushSize> Brush_Size, int Count)
 {
@@ -74,7 +74,7 @@ void UItemStackCounter_C::Update(TEnumAsByte<EFortBrushSize> Brush_Size, int Cou
 // Function ItemStackCounter.ItemStackCounter_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemStackCounter_C::PreConstruct(bool* IsDesignTime)
 {
@@ -94,7 +94,7 @@ void UItemStackCounter_C::PreConstruct(bool* IsDesignTime)
 // Function ItemStackCounter.ItemStackCounter_C.ExecuteUbergraph_ItemStackCounter
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemStackCounter_C::ExecuteUbergraph_ItemStackCounter(int EntryPoint)
 {

@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -42,27 +42,6 @@ void UGeometryCacheComponent::Stop()
 	static auto fn = UObject::FindObject<UFunction>("Function GeometryCache.GeometryCacheComponent.Stop");
 
 	UGeometryCacheComponent_Stop_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GeometryCache.GeometryCacheComponent.SetStartTimeOffset
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                          NewStartTimeOffset             (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-
-void UGeometryCacheComponent::SetStartTimeOffset(float NewStartTimeOffset)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GeometryCache.GeometryCacheComponent.SetStartTimeOffset");
-
-	UGeometryCacheComponent_SetStartTimeOffset_Params params;
-	params.NewStartTimeOffset = NewStartTimeOffset;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -283,28 +262,6 @@ bool UGeometryCacheComponent::IsLooping()
 	static auto fn = UObject::FindObject<UFunction>("Function GeometryCache.GeometryCacheComponent.IsLooping");
 
 	UGeometryCacheComponent_IsLooping_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GeometryCache.GeometryCacheComponent.GetStartTimeOffset
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-float UGeometryCacheComponent::GetStartTimeOffset()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GeometryCache.GeometryCacheComponent.GetStartTimeOffset");
-
-	UGeometryCacheComponent_GetStartTimeOffset_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;

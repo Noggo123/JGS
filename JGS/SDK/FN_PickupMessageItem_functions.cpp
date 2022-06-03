@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function PickupMessageItem.PickupMessageItem_C.Setup
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Picked_Up_Item                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Picked_Up_Item                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPickupMessageItem_C::Setup(class UFortItem* Picked_Up_Item)
 {
@@ -52,7 +52,7 @@ void UPickupMessageItem_C::Refresh_Count()
 // Function PickupMessageItem.PickupMessageItem_C.OnStackSizeChanged
 // (Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int*                           OldStackSize                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           OldStackSize                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPickupMessageItem_C::OnStackSizeChanged(int* OldStackSize)
 {
@@ -106,7 +106,7 @@ void UPickupMessageItem_C::OnReturnedToPool()
 // Function PickupMessageItem.PickupMessageItem_C.ExecuteUbergraph_PickupMessageItem
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPickupMessageItem_C::ExecuteUbergraph_PickupMessageItem(int EntryPoint)
 {

@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function GAT_TriggeredAbility.GAT_TriggeredAbility_C.K2_ActivateAbilityFromEvent
 // (Event, Protected, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData*     EventData                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGameplayEventData*     EventData                      (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UGAT_TriggeredAbility_C::K2_ActivateAbilityFromEvent(struct FGameplayEventData* EventData)
 {
@@ -35,7 +35,7 @@ void UGAT_TriggeredAbility_C::K2_ActivateAbilityFromEvent(struct FGameplayEventD
 // Function GAT_TriggeredAbility.GAT_TriggeredAbility_C.ExecuteUbergraph_GAT_TriggeredAbility
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UGAT_TriggeredAbility_C::ExecuteUbergraph_GAT_TriggeredAbility(int EntryPoint)
 {

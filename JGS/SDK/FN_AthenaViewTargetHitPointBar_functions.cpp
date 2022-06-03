@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function AthenaViewTargetHitPointBar.AthenaViewTargetHitPointBar_C.UpdateDBNOState
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           IsDBNO                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IsDBNO                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaViewTargetHitPointBar_C::UpdateDBNOState(bool IsDBNO)
 {
@@ -103,7 +103,7 @@ void UAthenaViewTargetHitPointBar_C::Initialize_Bar()
 // Function AthenaViewTargetHitPointBar.AthenaViewTargetHitPointBar_C.UpdateCurrentValueWithoutReason
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          Current                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Current                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaViewTargetHitPointBar_C::UpdateCurrentValueWithoutReason(float Current)
 {
@@ -140,8 +140,8 @@ void UAthenaViewTargetHitPointBar_C::Update_Fill_Bar()
 // Function AthenaViewTargetHitPointBar.AthenaViewTargetHitPointBar_C.UpdateCurrentValue
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          Current                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortHitPointModificationReason Reason                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Current                        (Parm, ZeroConstructor, IsPlainOldData)
+// EFortHitPointModificationReason Reason                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaViewTargetHitPointBar_C::UpdateCurrentValue(float Current, EFortHitPointModificationReason Reason)
 {
@@ -162,7 +162,7 @@ void UAthenaViewTargetHitPointBar_C::UpdateCurrentValue(float Current, EFortHitP
 // Function AthenaViewTargetHitPointBar.AthenaViewTargetHitPointBar_C.UpdateMaxValue
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          Max                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Max                            (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaViewTargetHitPointBar_C::UpdateMaxValue(float Max)
 {
@@ -199,7 +199,7 @@ void UAthenaViewTargetHitPointBar_C::Construct()
 // Function AthenaViewTargetHitPointBar.AthenaViewTargetHitPointBar_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaViewTargetHitPointBar_C::PreConstruct(bool* IsDesignTime)
 {
@@ -219,8 +219,8 @@ void UAthenaViewTargetHitPointBar_C::PreConstruct(bool* IsDesignTime)
 // Function AthenaViewTargetHitPointBar.AthenaViewTargetHitPointBar_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// float*                         InDeltaTime                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// float*                         InDeltaTime                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaViewTargetHitPointBar_C::Tick(struct FGeometry* MyGeometry, float* InDeltaTime)
 {
@@ -241,7 +241,7 @@ void UAthenaViewTargetHitPointBar_C::Tick(struct FGeometry* MyGeometry, float* I
 // Function AthenaViewTargetHitPointBar.AthenaViewTargetHitPointBar_C.ExecuteUbergraph_AthenaViewTargetHitPointBar
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaViewTargetHitPointBar_C::ExecuteUbergraph_AthenaViewTargetHitPointBar(int EntryPoint)
 {

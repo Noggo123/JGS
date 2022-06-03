@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,12 +13,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass Athena_PlayerController.Athena_PlayerController_C
-// 0x0010 (0x3690 - 0x3680)
+// 0x0010 (0x32A0 - 0x3290)
 class AAthena_PlayerController_C : public AFortPlayerControllerAthena
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x3680(0x0008) (Transient, DuplicateTransient)
-	class USceneComponent*                             ListenerOverride;                                         // 0x3688(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x3290(0x0008) (Transient, DuplicateTransient)
+	class USceneComponent*                             ListenerOverride;                                         // 0x3298(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -27,9 +27,9 @@ public:
 	}
 
 
-	bool IsLocalPlayerFriendsWithSquadMember(class AFortPlayerState** SquadMember);
 	void UserConstructionScript();
 	void ReceiveBeginPlay();
+	void ReceiveTick(float* DeltaSeconds);
 	void PlayWinEffects();
 	void ExecuteUbergraph_Athena_PlayerController(int EntryPoint);
 };

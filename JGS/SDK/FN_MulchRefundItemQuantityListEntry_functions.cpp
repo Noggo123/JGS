@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function MulchRefundItemQuantityListEntry.MulchRefundItemQuantityListEntry_C.UpdateItemAndQuantity
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           DirectlySetQuantity            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           DirectlySetQuantity            (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
 void UMulchRefundItemQuantityListEntry_C::UpdateItemAndQuantity(bool DirectlySetQuantity)
 {
@@ -35,7 +35,7 @@ void UMulchRefundItemQuantityListEntry_C::UpdateItemAndQuantity(bool DirectlySet
 // Function MulchRefundItemQuantityListEntry.MulchRefundItemQuantityListEntry_C.HandleDifferentItemOrQuantitySetBP
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool*                          IsBeingReset                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsBeingReset                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
 void UMulchRefundItemQuantityListEntry_C::HandleDifferentItemOrQuantitySetBP(bool* IsBeingReset)
 {
@@ -72,7 +72,7 @@ void UMulchRefundItemQuantityListEntry_C::Construct()
 // Function MulchRefundItemQuantityListEntry.MulchRefundItemQuantityListEntry_C.ExecuteUbergraph_MulchRefundItemQuantityListEntry
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMulchRefundItemQuantityListEntry_C::ExecuteUbergraph_MulchRefundItemQuantityListEntry(int EntryPoint)
 {

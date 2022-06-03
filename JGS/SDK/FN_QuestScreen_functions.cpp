@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,49 +12,10 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function QuestScreen.QuestScreen_C.CalculateInitialQuestToSelect
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UQuestScreen_C::CalculateInitialQuestToSelect()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuestScreen.QuestScreen_C.CalculateInitialQuestToSelect");
-
-	UQuestScreen_C_CalculateInitialQuestToSelect_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function QuestScreen.QuestScreen_C.HandleAbandonQuest
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UQuestScreen_C::HandleAbandonQuest(bool* Passthrough)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuestScreen.QuestScreen_C.HandleAbandonQuest");
-
-	UQuestScreen_C_HandleAbandonQuest_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
-}
-
-
 // Function QuestScreen.QuestScreen_C.ShouldShowPlayQuest
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortQuestItem*          Quest                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortQuestItem*          Quest                          (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ShouldShowPlay                 (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UQuestScreen_C::ShouldShowPlayQuest(class UFortQuestItem* Quest, bool* ShouldShowPlay)
@@ -78,7 +39,7 @@ void UQuestScreen_C::ShouldShowPlayQuest(class UFortQuestItem* Quest, bool* Shou
 // Function QuestScreen.QuestScreen_C.Toggle Disable Claim Reward Button
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           ToDisable                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ToDisable                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestScreen_C::Toggle_Disable_Claim_Reward_Button(bool ToDisable)
 {
@@ -98,9 +59,9 @@ void UQuestScreen_C::Toggle_Disable_Claim_Reward_Button(bool ToDisable)
 // Function QuestScreen.QuestScreen_C.HandleInventory
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UQuestScreen_C::HandleInventory(bool* Passthrough)
+void UQuestScreen_C::HandleInventory(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function QuestScreen.QuestScreen_C.HandleInventory");
 
@@ -112,8 +73,8 @@ void UQuestScreen_C::HandleInventory(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -188,9 +149,9 @@ void UQuestScreen_C::HandleOnEndSpokenDialog()
 // Function QuestScreen.QuestScreen_C.StopConversation
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UQuestScreen_C::StopConversation(bool* Passthrough)
+void UQuestScreen_C::StopConversation(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function QuestScreen.QuestScreen_C.StopConversation");
 
@@ -202,17 +163,17 @@ void UQuestScreen_C::StopConversation(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function QuestScreen.QuestScreen_C.ReplayOutroAudio
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UQuestScreen_C::ReplayOutroAudio(bool* Passthrough)
+void UQuestScreen_C::ReplayOutroAudio(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function QuestScreen.QuestScreen_C.ReplayOutroAudio");
 
@@ -224,8 +185,8 @@ void UQuestScreen_C::ReplayOutroAudio(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -249,7 +210,7 @@ void UQuestScreen_C::HandlePendingNavigationOp()
 // Function QuestScreen.QuestScreen_C.SelectQuest
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortQuestItem*          Quest                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortQuestItem*          Quest                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestScreen_C::SelectQuest(class UFortQuestItem* Quest)
 {
@@ -269,7 +230,7 @@ void UQuestScreen_C::SelectQuest(class UFortQuestItem* Quest)
 // Function QuestScreen.QuestScreen_C.HandleQuestOp
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortQuestItem*          Quest                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortQuestItem*          Quest                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestScreen_C::HandleQuestOp(class UFortQuestItem* Quest)
 {
@@ -289,9 +250,9 @@ void UQuestScreen_C::HandleQuestOp(class UFortQuestItem* Quest)
 // Function QuestScreen.QuestScreen_C.PinQuest
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UQuestScreen_C::PinQuest(bool* Passthrough)
+void UQuestScreen_C::PinQuest(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function QuestScreen.QuestScreen_C.PinQuest");
 
@@ -303,15 +264,15 @@ void UQuestScreen_C::PinQuest(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function QuestScreen.QuestScreen_C.UpdateInputHandlers
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortQuestItem*          Active_Quest                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortQuestItem*          Active_Quest                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestScreen_C::UpdateInputHandlers(class UFortQuestItem* Active_Quest)
 {
@@ -331,9 +292,9 @@ void UQuestScreen_C::UpdateInputHandlers(class UFortQuestItem* Active_Quest)
 // Function QuestScreen.QuestScreen_C.ClaimReward
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UQuestScreen_C::ClaimReward(bool* Passthrough)
+void UQuestScreen_C::ClaimReward(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function QuestScreen.QuestScreen_C.ClaimReward");
 
@@ -345,8 +306,8 @@ void UQuestScreen_C::ClaimReward(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -367,32 +328,34 @@ void UQuestScreen_C::SelectInitialQuest()
 }
 
 
-// Function QuestScreen.QuestScreen_C.OnAbandonQuestConfirmed
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function QuestScreen.QuestScreen_C.AbandonQuest
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortQuestItem*          QuestToAbandon                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UQuestScreen_C::OnAbandonQuestConfirmed(class UFortQuestItem* QuestToAbandon)
+void UQuestScreen_C::AbandonQuest(bool* PassThrough)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function QuestScreen.QuestScreen_C.OnAbandonQuestConfirmed");
+	static auto fn = UObject::FindObject<UFunction>("Function QuestScreen.QuestScreen_C.AbandonQuest");
 
-	UQuestScreen_C_OnAbandonQuestConfirmed_Params params;
-	params.QuestToAbandon = QuestToAbandon;
+	UQuestScreen_C_AbandonQuest_Params params;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function QuestScreen.QuestScreen_C.ReplayIntroAudio
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UQuestScreen_C::ReplayIntroAudio(bool* Passthrough)
+void UQuestScreen_C::ReplayIntroAudio(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function QuestScreen.QuestScreen_C.ReplayIntroAudio");
 
@@ -404,8 +367,8 @@ void UQuestScreen_C::ReplayIntroAudio(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -446,9 +409,9 @@ void UQuestScreen_C::populateDetailWidgets()
 // Function QuestScreen.QuestScreen_C.PlayQuest
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UQuestScreen_C::PlayQuest(bool* Passthrough)
+void UQuestScreen_C::PlayQuest(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function QuestScreen.QuestScreen_C.PlayQuest");
 
@@ -460,17 +423,17 @@ void UQuestScreen_C::PlayQuest(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function QuestScreen.QuestScreen_C.HandleBack
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UQuestScreen_C::HandleBack(bool* Passthrough)
+void UQuestScreen_C::HandleBack(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function QuestScreen.QuestScreen_C.HandleBack");
 
@@ -482,15 +445,15 @@ void UQuestScreen_C::HandleBack(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function QuestScreen.QuestScreen_C.OnGetChildrenForCategory
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 Item                           (Parm, ZeroConstructor, IsPlainOldData)
 // TArray<class UObject*>         ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
 
 TArray<class UObject*> UQuestScreen_C::OnGetChildrenForCategory(class UObject* Item)
@@ -510,19 +473,17 @@ TArray<class UObject*> UQuestScreen_C::OnGetChildrenForCategory(class UObject* I
 }
 
 
-// Function QuestScreen.QuestScreen_C.DialogResult_CE39442C4BCACCFD8414B495A3B27A21
-// (BlueprintCallable, BlueprintEvent)
+// Function QuestScreen.QuestScreen_C.BndEvt__QuestsTreeView_K2Node_ComponentBoundEvent_23_OnListViewItemWidgetCreated__DelegateSignature
+// (BlueprintEvent)
 // Parameters:
-// EFortDialogResult              Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ResultName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UUserWidget*             Widget                         (Parm, ZeroConstructor, IsPlainOldData)
 
-void UQuestScreen_C::DialogResult_CE39442C4BCACCFD8414B495A3B27A21(EFortDialogResult Result, const struct FName& ResultName)
+void UQuestScreen_C::BndEvt__QuestsTreeView_K2Node_ComponentBoundEvent_23_OnListViewItemWidgetCreated__DelegateSignature(class UUserWidget* Widget)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function QuestScreen.QuestScreen_C.DialogResult_CE39442C4BCACCFD8414B495A3B27A21");
+	static auto fn = UObject::FindObject<UFunction>("Function QuestScreen.QuestScreen_C.BndEvt__QuestsTreeView_K2Node_ComponentBoundEvent_23_OnListViewItemWidgetCreated__DelegateSignature");
 
-	UQuestScreen_C_DialogResult_CE39442C4BCACCFD8414B495A3B27A21_Params params;
-	params.Result = Result;
-	params.ResultName = ResultName;
+	UQuestScreen_C_BndEvt__QuestsTreeView_K2Node_ComponentBoundEvent_23_OnListViewItemWidgetCreated__DelegateSignature_Params params;
+	params.Widget = Widget;
 
 	auto flags = fn->FunctionFlags;
 
@@ -535,8 +496,8 @@ void UQuestScreen_C::DialogResult_CE39442C4BCACCFD8414B495A3B27A21(EFortDialogRe
 // Function QuestScreen.QuestScreen_C.BndEvt__HorizontalTabList_K2Node_ComponentBoundEvent_150_OnTabButtonCreated__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestScreen_C::BndEvt__HorizontalTabList_K2Node_ComponentBoundEvent_150_OnTabButtonCreated__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton)
 {
@@ -557,7 +518,7 @@ void UQuestScreen_C::BndEvt__HorizontalTabList_K2Node_ComponentBoundEvent_150_On
 // Function QuestScreen.QuestScreen_C.BndEvt__HorizontalTabList_K2Node_ComponentBoundEvent_252_OnTabSelected__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestScreen_C::BndEvt__HorizontalTabList_K2Node_ComponentBoundEvent_252_OnTabSelected__DelegateSignature(const struct FName& TabId)
 {
@@ -628,7 +589,7 @@ void UQuestScreen_C::OnDeactivated()
 // Function QuestScreen.QuestScreen_C.BndEvt__QuestsTreeView_K2Node_ComponentBoundEvent_200_OnListViewItemWidgetDestroyed__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UUserWidget*             Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UUserWidget*             Widget                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestScreen_C::BndEvt__QuestsTreeView_K2Node_ComponentBoundEvent_200_OnListViewItemWidgetDestroyed__DelegateSignature(class UUserWidget* Widget)
 {
@@ -648,7 +609,7 @@ void UQuestScreen_C::BndEvt__QuestsTreeView_K2Node_ComponentBoundEvent_200_OnLis
 // Function QuestScreen.QuestScreen_C.PlayerPartyStateChanged
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     PlayerInfo                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortTeamMemberInfo     PlayerInfo                     (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UQuestScreen_C::PlayerPartyStateChanged(const struct FFortTeamMemberInfo& PlayerInfo)
 {
@@ -668,7 +629,7 @@ void UQuestScreen_C::PlayerPartyStateChanged(const struct FFortTeamMemberInfo& P
 // Function QuestScreen.QuestScreen_C.OnClientPartyStateChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortPartyState                PartyState                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortPartyState                PartyState                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestScreen_C::OnClientPartyStateChanged(EFortPartyState PartyState)
 {
@@ -688,7 +649,7 @@ void UQuestScreen_C::OnClientPartyStateChanged(EFortPartyState PartyState)
 // Function QuestScreen.QuestScreen_C.OnMatchamkingComplete
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EMatchmakingCompleteResult     Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EMatchmakingCompleteResult     Result                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestScreen_C::OnMatchamkingComplete(EMatchmakingCompleteResult Result)
 {
@@ -739,26 +700,6 @@ void UQuestScreen_C::OnPartyLeft()
 }
 
 
-// Function QuestScreen.QuestScreen_C.BndEvt__QuestsTreeView_K2Node_ComponentBoundEvent_23_OnListViewItemWidgetCreated__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UUserWidget*             Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UQuestScreen_C::BndEvt__QuestsTreeView_K2Node_ComponentBoundEvent_23_OnListViewItemWidgetCreated__DelegateSignature(class UUserWidget* Widget)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuestScreen.QuestScreen_C.BndEvt__QuestsTreeView_K2Node_ComponentBoundEvent_23_OnListViewItemWidgetCreated__DelegateSignature");
-
-	UQuestScreen_C_BndEvt__QuestsTreeView_K2Node_ComponentBoundEvent_23_OnListViewItemWidgetCreated__DelegateSignature_Params params;
-	params.Widget = Widget;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function QuestScreen.QuestScreen_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
@@ -779,8 +720,8 @@ void UQuestScreen_C::Construct()
 // Function QuestScreen.QuestScreen_C.OnItemSelected
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bIsSelected                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 Item                           (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bIsSelected                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestScreen_C::OnItemSelected(class UObject* Item, bool bIsSelected)
 {
@@ -798,30 +739,10 @@ void UQuestScreen_C::OnItemSelected(class UObject* Item, bool bIsSelected)
 }
 
 
-// Function QuestScreen.QuestScreen_C.ShowAbandonQuestDialog
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UFortQuestItem*          QuestToAbandon                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UQuestScreen_C::ShowAbandonQuestDialog(class UFortQuestItem* QuestToAbandon)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuestScreen.QuestScreen_C.ShowAbandonQuestDialog");
-
-	UQuestScreen_C_ShowAbandonQuestDialog_Params params;
-	params.QuestToAbandon = QuestToAbandon;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function QuestScreen.QuestScreen_C.ExecuteUbergraph_QuestScreen
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestScreen_C::ExecuteUbergraph_QuestScreen(int EntryPoint)
 {
@@ -829,26 +750,6 @@ void UQuestScreen_C::ExecuteUbergraph_QuestScreen(int EntryPoint)
 
 	UQuestScreen_C_ExecuteUbergraph_QuestScreen_Params params;
 	params.EntryPoint = EntryPoint;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function QuestScreen.QuestScreen_C.AbandonQuest__DelegateSignature
-// (Public, Delegate, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UFortQuestItem*          QuestToAbandon                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UQuestScreen_C::AbandonQuest__DelegateSignature(class UFortQuestItem* QuestToAbandon)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuestScreen.QuestScreen_C.AbandonQuest__DelegateSignature");
-
-	UQuestScreen_C_AbandonQuest__DelegateSignature_Params params;
-	params.QuestToAbandon = QuestToAbandon;
 
 	auto flags = fn->FunctionFlags;
 

@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UAthenaLeaderboardTabButton_C::ShowText()
 // Function AthenaLeaderboardTabButton.AthenaLeaderboardTabButton_C.Set Icon
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSlateBrush             IconBrush                      (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FSlateBrush             IconBrush                      (Parm)
 
 void UAthenaLeaderboardTabButton_C::Set_Icon(const struct FSlateBrush& IconBrush)
 {
@@ -52,7 +52,7 @@ void UAthenaLeaderboardTabButton_C::Set_Icon(const struct FSlateBrush& IconBrush
 // Function AthenaLeaderboardTabButton.AthenaLeaderboardTabButton_C.Set Text
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   ButtonText                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   ButtonText                     (Parm)
 
 void UAthenaLeaderboardTabButton_C::Set_Text(const struct FText& ButtonText)
 {
@@ -72,7 +72,7 @@ void UAthenaLeaderboardTabButton_C::Set_Text(const struct FText& ButtonText)
 // Function AthenaLeaderboardTabButton.AthenaLeaderboardTabButton_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaLeaderboardTabButton_C::PreConstruct(bool* IsDesignTime)
 {
@@ -109,7 +109,7 @@ void UAthenaLeaderboardTabButton_C::OnCurrentTextStyleChanged()
 // Function AthenaLeaderboardTabButton.AthenaLeaderboardTabButton_C.SetTabLabelInfo
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FFortTabButtonLabelInfo TabLabelInfo                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortTabButtonLabelInfo TabLabelInfo                   (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UAthenaLeaderboardTabButton_C::SetTabLabelInfo(const struct FFortTabButtonLabelInfo& TabLabelInfo)
 {
@@ -214,7 +214,7 @@ void UAthenaLeaderboardTabButton_C::OnUnhovered()
 // Function AthenaLeaderboardTabButton.AthenaLeaderboardTabButton_C.ExecuteUbergraph_AthenaLeaderboardTabButton
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaLeaderboardTabButton_C::ExecuteUbergraph_AthenaLeaderboardTabButton(int EntryPoint)
 {

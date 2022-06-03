@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function BasicRatingWidget.BasicRatingWidget_C.Update Power Rating Style
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UClass*                  InStyle                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UClass*                  InStyle                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBasicRatingWidget_C::Update_Power_Rating_Style(class UClass* InStyle)
 {
@@ -57,8 +57,8 @@ void UBasicRatingWidget_C::Get_Current_Rating(float* CurrentNumericValue)
 // Function BasicRatingWidget.BasicRatingWidget_C.Update Border Color
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FLinearColor            Color1                         (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FLinearColor            Color2                         (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+// struct FLinearColor            Color1                         (Parm, IsPlainOldData)
+// struct FLinearColor            Color2                         (Parm, IsPlainOldData)
 
 void UBasicRatingWidget_C::Update_Border_Color(const struct FLinearColor& Color1, const struct FLinearColor& Color2)
 {
@@ -79,7 +79,7 @@ void UBasicRatingWidget_C::Update_Border_Color(const struct FLinearColor& Color1
 // Function BasicRatingWidget.BasicRatingWidget_C.Update Power Rating Value
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Rating                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Rating                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBasicRatingWidget_C::Update_Power_Rating_Value(int Rating)
 {
@@ -121,7 +121,7 @@ void UBasicRatingWidget_C::GetBorderVisibility(ESlateVisibility* Visibility)
 // Function BasicRatingWidget.BasicRatingWidget_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBasicRatingWidget_C::PreConstruct(bool* IsDesignTime)
 {
@@ -141,7 +141,7 @@ void UBasicRatingWidget_C::PreConstruct(bool* IsDesignTime)
 // Function BasicRatingWidget.BasicRatingWidget_C.ExecuteUbergraph_BasicRatingWidget
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBasicRatingWidget_C::ExecuteUbergraph_BasicRatingWidget(int EntryPoint)
 {

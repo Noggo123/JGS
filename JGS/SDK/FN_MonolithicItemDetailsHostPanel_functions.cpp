@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -29,27 +29,10 @@ void UMonolithicItemDetailsHostPanel_C::HandleHasItemMarkedForMulchingChanged()
 }
 
 
-// Function MonolithicItemDetailsHostPanel.MonolithicItemDetailsHostPanel_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UMonolithicItemDetailsHostPanel_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MonolithicItemDetailsHostPanel.MonolithicItemDetailsHostPanel_C.Construct");
-
-	UMonolithicItemDetailsHostPanel_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function MonolithicItemDetailsHostPanel.MonolithicItemDetailsHostPanel_C.ExecuteUbergraph_MonolithicItemDetailsHostPanel
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMonolithicItemDetailsHostPanel_C::ExecuteUbergraph_MonolithicItemDetailsHostPanel(int EntryPoint)
 {

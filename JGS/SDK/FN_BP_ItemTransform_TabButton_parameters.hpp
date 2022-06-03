@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,21 +14,35 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Refresh Bang State Internal
-struct UBP_ItemTransform_TabButton_C_Refresh_Bang_State_Internal_Params
+// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Update Air Vehicles
+struct UBP_ItemTransform_TabButton_C_Update_Air_Vehicles_Params
 {
 };
 
-// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Get Tab Id as Request Type
-struct UBP_ItemTransform_TabButton_C_Get_Tab_Id_as_Request_Type_Params
+// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Update Sea Vehicles
+struct UBP_ItemTransform_TabButton_C_Update_Sea_Vehicles_Params
 {
-	EConversionControlKeyRequest                       ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Update Land Vehicles
+struct UBP_ItemTransform_TabButton_C_Update_Land_Vehicles_Params
+{
+};
+
+// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Update All Vehicles
+struct UBP_ItemTransform_TabButton_C_Update_All_Vehicles_Params
+{
+};
+
+// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Update Available Vehicles
+struct UBP_ItemTransform_TabButton_C_Update_Available_Vehicles_Params
+{
 };
 
 // Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Set Tab Id
 struct UBP_ItemTransform_TabButton_C_Set_Tab_Id_Params
 {
-	struct FName                                       TabId;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       TabId;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Refresh Bang State
@@ -39,13 +53,13 @@ struct UBP_ItemTransform_TabButton_C_Refresh_Bang_State_Params
 // Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Set Icon
 struct UBP_ItemTransform_TabButton_C_Set_Icon_Params
 {
-	struct FSlateBrush                                 IconBrush;                                                // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FSlateBrush                                 IconBrush;                                                // (Parm)
 };
 
 // Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Set Text
 struct UBP_ItemTransform_TabButton_C_Set_Text_Params
 {
-	struct FText                                       ButtonText;                                               // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FText                                       ButtonText;                                               // (Parm)
 };
 
 // Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.OnCurrentTextStyleChanged
@@ -56,13 +70,13 @@ struct UBP_ItemTransform_TabButton_C_OnCurrentTextStyleChanged_Params
 // Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.PreConstruct
 struct UBP_ItemTransform_TabButton_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.SetTabLabelInfo
 struct UBP_ItemTransform_TabButton_C_SetTabLabelInfo_Params
 {
-	struct FFortTabButtonLabelInfo                     TabLabelInfo;                                             // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FFortTabButtonLabelInfo                     TabLabelInfo;                                             // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Construct
@@ -93,7 +107,7 @@ struct UBP_ItemTransform_TabButton_C_OnUnhovered_Params
 // Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.ExecuteUbergraph_BP_ItemTransform_TabButton
 struct UBP_ItemTransform_TabButton_C_ExecuteUbergraph_BP_ItemTransform_TabButton_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

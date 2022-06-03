@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,17 +14,11 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.SetTutorialNameID
-struct UQuestsCountIconTabButton_C_SetTutorialNameID_Params
-{
-	struct FName                                       InTutorialBangID;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.Update Bang State
 struct UQuestsCountIconTabButton_C_Update_Bang_State_Params
 {
-	bool                                               bBangEnabled;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int                                                Count;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bBangEnabled;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Count;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.Update Text
@@ -35,7 +29,7 @@ struct UQuestsCountIconTabButton_C_Update_Text_Params
 // Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.SetTutorialBorderStyle
 struct UQuestsCountIconTabButton_C_SetTutorialBorderStyle_Params
 {
-	class UClass*                                      BorderStyle;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      BorderStyle;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.ShowText
@@ -46,13 +40,13 @@ struct UQuestsCountIconTabButton_C_ShowText_Params
 // Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.Set Icon
 struct UQuestsCountIconTabButton_C_Set_Icon_Params
 {
-	struct FSlateBrush                                 IconBrush;                                                // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FSlateBrush                                 IconBrush;                                                // (Parm)
 };
 
 // Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.Set Text
 struct UQuestsCountIconTabButton_C_Set_Text_Params
 {
-	struct FText                                       ButtonText;                                               // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FText                                       ButtonText;                                               // (Parm)
 };
 
 // Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.OnCurrentTextStyleChanged
@@ -63,13 +57,13 @@ struct UQuestsCountIconTabButton_C_OnCurrentTextStyleChanged_Params
 // Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.PreConstruct
 struct UQuestsCountIconTabButton_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.SetTabLabelInfo
 struct UQuestsCountIconTabButton_C_SetTabLabelInfo_Params
 {
-	struct FFortTabButtonLabelInfo                     TabLabelInfo;                                             // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FFortTabButtonLabelInfo                     TabLabelInfo;                                             // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.OnSelected
@@ -102,20 +96,10 @@ struct UQuestsCountIconTabButton_C_Handle_Quest_Count_Updated_Params
 {
 };
 
-// Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.OnEnabled
-struct UQuestsCountIconTabButton_C_OnEnabled_Params
-{
-};
-
-// Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.OnDisabled
-struct UQuestsCountIconTabButton_C_OnDisabled_Params
-{
-};
-
 // Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.ExecuteUbergraph_QuestsCountIconTabButton
 struct UQuestsCountIconTabButton_C_ExecuteUbergraph_QuestsCountIconTabButton_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

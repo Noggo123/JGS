@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -99,8 +99,8 @@ class UObject* UMessageCenterListItem_C::GetData()
 // Function MessageCenterListItem.MessageCenterListItem_C.ShowText
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Text                           (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UCommonTextBlock*        TextBlock                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// struct FText                   Text                           (Parm)
+// class UCommonTextBlock*        TextBlock                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMessageCenterListItem_C::ShowText(const struct FText& Text, class UCommonTextBlock* TextBlock)
 {
@@ -121,7 +121,7 @@ void UMessageCenterListItem_C::ShowText(const struct FText& Text, class UCommonT
 // Function MessageCenterListItem.MessageCenterListItem_C.SetMessage
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortUINotification*     MESSAGE                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortUINotification*     MESSAGE                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMessageCenterListItem_C::SetMessage(class UFortUINotification* MESSAGE)
 {
@@ -192,7 +192,7 @@ void UMessageCenterListItem_C::Private_OnExpanderArrowShiftClicked()
 // Function MessageCenterListItem.MessageCenterListItem_C.RegisterOnClicked
 // (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FScriptDelegate         Callback                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// struct FScriptDelegate         Callback                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UMessageCenterListItem_C::RegisterOnClicked(const struct FScriptDelegate& Callback)
 {
@@ -212,7 +212,7 @@ void UMessageCenterListItem_C::RegisterOnClicked(const struct FScriptDelegate& C
 // Function MessageCenterListItem.MessageCenterListItem_C.SetExpanded
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bExpanded                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bExpanded                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMessageCenterListItem_C::SetExpanded(bool bExpanded)
 {
@@ -232,7 +232,7 @@ void UMessageCenterListItem_C::SetExpanded(bool bExpanded)
 // Function MessageCenterListItem.MessageCenterListItem_C.SetIndexInList
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            InIndexInList                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            InIndexInList                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMessageCenterListItem_C::SetIndexInList(int InIndexInList)
 {
@@ -286,8 +286,8 @@ void UMessageCenterListItem_C::Reset()
 // Function MessageCenterListItem.MessageCenterListItem_C.SetData
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 InData                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonListView*         OwningList                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UObject*                 InData                         (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonListView*         OwningList                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMessageCenterListItem_C::SetData(class UObject* InData, class UCommonListView* OwningList)
 {
@@ -325,7 +325,7 @@ void UMessageCenterListItem_C::Construct()
 // Function MessageCenterListItem.MessageCenterListItem_C.SetSelected
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bSelected                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bSelected                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMessageCenterListItem_C::SetSelected(bool bSelected)
 {
@@ -345,7 +345,7 @@ void UMessageCenterListItem_C::SetSelected(bool bSelected)
 // Function MessageCenterListItem.MessageCenterListItem_C.ExecuteUbergraph_MessageCenterListItem
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMessageCenterListItem_C::ExecuteUbergraph_MessageCenterListItem(int EntryPoint)
 {

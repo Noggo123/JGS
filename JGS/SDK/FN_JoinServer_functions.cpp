@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,8 +49,8 @@ void UJoinServer_C::ShowAbandoningProgress()
 // Function JoinServer.JoinServer_C.ShowRetryRejoinWindow
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Failure                        (BlueprintVisible, BlueprintReadOnly, Parm)
-// bool                           AllowRetry                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Failure                        (Parm)
+// bool                           AllowRetry                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UJoinServer_C::ShowRetryRejoinWindow(const struct FText& Failure, bool AllowRetry)
 {
@@ -105,7 +105,7 @@ void UJoinServer_C::ShowRejoiningProgress()
 // Function JoinServer.JoinServer_C.HideRejoinWindow
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           AbandonSession                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           AbandonSession                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UJoinServer_C::HideRejoinWindow(bool AbandonSession)
 {
@@ -142,7 +142,7 @@ void UJoinServer_C::ShowRejoinWindow()
 // Function JoinServer.JoinServer_C.HandleGetMainMenuContent
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 class UWidget* UJoinServer_C::HandleGetMainMenuContent()
 {
@@ -180,7 +180,7 @@ void UJoinServer_C::ShowTutorialCanceled()
 // Function JoinServer.JoinServer_C.GetMatchmakingError
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// EMatchmakingCompleteResult     MatchMakingError               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EMatchmakingCompleteResult     MatchMakingError               (Parm, ZeroConstructor, IsPlainOldData)
 // struct FText                   ErrorText                      (Parm, OutParm)
 
 void UJoinServer_C::GetMatchmakingError(EMatchmakingCompleteResult MatchMakingError, struct FText* ErrorText)
@@ -204,7 +204,7 @@ void UJoinServer_C::GetMatchmakingError(EMatchmakingCompleteResult MatchMakingEr
 // Function JoinServer.JoinServer_C.HandleLobbyTimeUpdated
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            TimeRemaining                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            TimeRemaining                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UJoinServer_C::HandleLobbyTimeUpdated(int TimeRemaining)
 {
@@ -258,7 +258,7 @@ void UJoinServer_C::StartTutorialMatchmakingFlow()
 // Function JoinServer.JoinServer_C.HandleEnterState
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortUIState                   PreviousState                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortUIState                   PreviousState                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UJoinServer_C::HandleEnterState(EFortUIState PreviousState)
 {
@@ -295,8 +295,8 @@ void UJoinServer_C::HandleLobbyDisconnected()
 // Function JoinServer.JoinServer_C.HandleMatchmakingStateChange
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EMatchmakingState> OldState                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// TEnumAsByte<EMatchmakingState> NewState                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EMatchmakingState> OldState                       (Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EMatchmakingState> NewState                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UJoinServer_C::HandleMatchmakingStateChange(TEnumAsByte<EMatchmakingState> OldState, TEnumAsByte<EMatchmakingState> NewState)
 {
@@ -317,7 +317,7 @@ void UJoinServer_C::HandleMatchmakingStateChange(TEnumAsByte<EMatchmakingState> 
 // Function JoinServer.JoinServer_C.HandleMatchmakingComplete
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EMatchmakingCompleteResult     Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EMatchmakingCompleteResult     Result                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UJoinServer_C::HandleMatchmakingComplete(EMatchmakingCompleteResult Result)
 {
@@ -354,8 +354,8 @@ void UJoinServer_C::Initialize()
 // Function JoinServer.JoinServer_C.DialogResult_B65B7C6342A70AAA7E4C689EE8A624BF
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortDialogResult              Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ResultName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortDialogResult              Result                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ResultName                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UJoinServer_C::DialogResult_B65B7C6342A70AAA7E4C689EE8A624BF(EFortDialogResult Result, const struct FName& ResultName)
 {
@@ -478,9 +478,9 @@ void UJoinServer_C::ShowSkipTutorial()
 // Function JoinServer.JoinServer_C.HandleClientEvent_RejoinStart
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 EventSource                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 EventFocus                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FFortClientEvent        ClientEvent                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class UObject*                 EventSource                    (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 EventFocus                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortClientEvent        ClientEvent                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UJoinServer_C::HandleClientEvent_RejoinStart(class UObject* EventSource, class UObject* EventFocus, const struct FFortClientEvent& ClientEvent)
 {
@@ -536,9 +536,9 @@ void UJoinServer_C::HandleRequestAbandon()
 // Function JoinServer.JoinServer_C.HandleClientEvent_OnboardingStartMatchmaking
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 EventSource                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 EventFocus                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FFortClientEvent        ClientEvent                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class UObject*                 EventSource                    (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 EventFocus                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortClientEvent        ClientEvent                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UJoinServer_C::HandleClientEvent_OnboardingStartMatchmaking(class UObject* EventSource, class UObject* EventFocus, const struct FFortClientEvent& ClientEvent)
 {
@@ -577,7 +577,7 @@ void UJoinServer_C::Construct()
 // Function JoinServer.JoinServer_C.OnEnterState
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// EFortUIState*                  PreviousUIState                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortUIState*                  PreviousUIState                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UJoinServer_C::OnEnterState(EFortUIState* PreviousUIState)
 {
@@ -597,7 +597,7 @@ void UJoinServer_C::OnEnterState(EFortUIState* PreviousUIState)
 // Function JoinServer.JoinServer_C.ExecuteUbergraph_JoinServer
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UJoinServer_C::ExecuteUbergraph_JoinServer(int EntryPoint)
 {

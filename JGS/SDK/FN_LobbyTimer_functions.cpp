@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function LobbyTimer.LobbyTimer_C.Handle Lobby Timer Updated
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Seconds_Remaining              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Seconds_Remaining              (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyTimer_C::Handle_Lobby_Timer_Updated(int Seconds_Remaining)
 {
@@ -35,7 +35,7 @@ void ULobbyTimer_C::Handle_Lobby_Timer_Updated(int Seconds_Remaining)
 // Function LobbyTimer.LobbyTimer_C.Handle Show Lobby Timer
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Show                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Show                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyTimer_C::Handle_Show_Lobby_Timer(bool Show)
 {
@@ -72,7 +72,7 @@ void ULobbyTimer_C::Bind_Delegates()
 // Function LobbyTimer.LobbyTimer_C.Show Lobby Timer
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Show                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Show                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyTimer_C::Show_Lobby_Timer(bool Show)
 {
@@ -143,7 +143,7 @@ void ULobbyTimer_C::Construct()
 // Function LobbyTimer.LobbyTimer_C.ExecuteUbergraph_LobbyTimer
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyTimer_C::ExecuteUbergraph_LobbyTimer(int EntryPoint)
 {

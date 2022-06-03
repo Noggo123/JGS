@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,26 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function MissionDetailsModifierRow.MissionDetailsModifierRow_C.Show Label
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           ShowLabel                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UMissionDetailsModifierRow_C::Show_Label(bool ShowLabel)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MissionDetailsModifierRow.MissionDetailsModifierRow_C.Show Label");
-
-	UMissionDetailsModifierRow_C_Show_Label_Params params;
-	params.ShowLabel = ShowLabel;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function MissionDetailsModifierRow.MissionDetailsModifierRow_C.PlayIntroAnimation
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -52,12 +32,12 @@ void UMissionDetailsModifierRow_C::PlayIntroAnimation()
 // Function MissionDetailsModifierRow.MissionDetailsModifierRow_C.Init
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   ModifierName                   (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FText                   ModifierDescription            (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UTexture2D*              ModifierIcon                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UClass*                  TextStyle                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           Show_Description               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           UseSmallIcon                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   ModifierName                   (Parm)
+// struct FText                   ModifierDescription            (Parm)
+// class UTexture2D*              ModifierIcon                   (Parm, ZeroConstructor, IsPlainOldData)
+// class UClass*                  TextStyle                      (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Show_Description               (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           UseSmallIcon                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMissionDetailsModifierRow_C::Init(const struct FText& ModifierName, const struct FText& ModifierDescription, class UTexture2D* ModifierIcon, class UClass* TextStyle, bool Show_Description, bool UseSmallIcon)
 {
@@ -99,7 +79,7 @@ void UMissionDetailsModifierRow_C::Construct()
 // Function MissionDetailsModifierRow.MissionDetailsModifierRow_C.ExecuteUbergraph_MissionDetailsModifierRow
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMissionDetailsModifierRow_C::ExecuteUbergraph_MissionDetailsModifierRow(int EntryPoint)
 {

@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,7 +37,7 @@ void UDefaultObjectiveContentWidget_C::GetHeightEstimate(float* Height)
 // Function DefaultObjectiveContentWidget.DefaultObjectiveContentWidget_C.HandleTimerComponentUpdated
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortMissionTimerComponent* InTimerComponent               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UFortMissionTimerComponent* InTimerComponent               (Parm, ZeroConstructor, IsPlainOldData)
 
 void UDefaultObjectiveContentWidget_C::HandleTimerComponentUpdated(class UFortMissionTimerComponent* InTimerComponent)
 {
@@ -57,7 +57,7 @@ void UDefaultObjectiveContentWidget_C::HandleTimerComponentUpdated(class UFortMi
 // Function DefaultObjectiveContentWidget.DefaultObjectiveContentWidget_C.CreateRichTextBlock
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Text                           (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   Text                           (Parm)
 
 void UDefaultObjectiveContentWidget_C::CreateRichTextBlock(const struct FText& Text)
 {
@@ -77,7 +77,7 @@ void UDefaultObjectiveContentWidget_C::CreateRichTextBlock(const struct FText& T
 // Function DefaultObjectiveContentWidget.DefaultObjectiveContentWidget_C.GetRichTextBlock
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UMissionRichText_C*      MissionRichTextBlock           (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UMissionRichText_C*      MissionRichTextBlock           (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UDefaultObjectiveContentWidget_C::GetRichTextBlock(class UMissionRichText_C** MissionRichTextBlock)
 {
@@ -116,8 +116,8 @@ void UDefaultObjectiveContentWidget_C::Update()
 // Function DefaultObjectiveContentWidget.DefaultObjectiveContentWidget_C.Setup
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortObjectiveBase*      Objective                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bInConfigureAsHUD              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortObjectiveBase*      Objective                      (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bInConfigureAsHUD              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UDefaultObjectiveContentWidget_C::Setup(class AFortObjectiveBase* Objective, bool bInConfigureAsHUD)
 {
@@ -138,8 +138,8 @@ void UDefaultObjectiveContentWidget_C::Setup(class AFortObjectiveBase* Objective
 // Function DefaultObjectiveContentWidget.DefaultObjectiveContentWidget_C.HandleObjectiveStatusChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortObjectiveBase*      Objective                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortObjectiveStatus           NewStatus                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortObjectiveBase*      Objective                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// EFortObjectiveStatus           NewStatus                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UDefaultObjectiveContentWidget_C::HandleObjectiveStatusChanged(class AFortObjectiveBase* Objective, EFortObjectiveStatus NewStatus)
 {
@@ -160,8 +160,8 @@ void UDefaultObjectiveContentWidget_C::HandleObjectiveStatusChanged(class AFortO
 // Function DefaultObjectiveContentWidget.DefaultObjectiveContentWidget_C.HandleObjectiveVisibilityChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortObjectiveBase*      Objective                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bNewVisibility                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortObjectiveBase*      Objective                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bNewVisibility                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UDefaultObjectiveContentWidget_C::HandleObjectiveVisibilityChanged(class AFortObjectiveBase* Objective, bool bNewVisibility)
 {
@@ -182,7 +182,7 @@ void UDefaultObjectiveContentWidget_C::HandleObjectiveVisibilityChanged(class AF
 // Function DefaultObjectiveContentWidget.DefaultObjectiveContentWidget_C.HandleUpdate
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortMissionState*       MissionState                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortMissionState*       MissionState                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UDefaultObjectiveContentWidget_C::HandleUpdate(class AFortMissionState* MissionState)
 {
@@ -202,7 +202,7 @@ void UDefaultObjectiveContentWidget_C::HandleUpdate(class AFortMissionState* Mis
 // Function DefaultObjectiveContentWidget.DefaultObjectiveContentWidget_C.ExecuteUbergraph_DefaultObjectiveContentWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UDefaultObjectiveContentWidget_C::ExecuteUbergraph_DefaultObjectiveContentWidget(int EntryPoint)
 {

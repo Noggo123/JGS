@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,13 +17,13 @@ namespace SDK
 // Function DailyRewards.DailyRewards_C.Handle Collect
 struct UDailyRewards_C_Handle_Collect_Params
 {
-	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               PassThrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function DailyRewards.DailyRewards_C.Handle Close
 struct UDailyRewards_C_Handle_Close_Params
 {
-	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               PassThrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function DailyRewards.DailyRewards_C.Set Input Action Handlers
@@ -54,13 +54,13 @@ struct UDailyRewards_C_OnActivated_Params
 // Function DailyRewards.DailyRewards_C.PreConstruct
 struct UDailyRewards_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function DailyRewards.DailyRewards_C.ClaimResultReceived
 struct UDailyRewards_C_ClaimResultReceived_Params
 {
-	TArray<struct FFortItemInstanceQuantityPair>*      Loot;                                                     // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<struct FFortItemInstanceQuantityPair>*      Loot;                                                     // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function DailyRewards.DailyRewards_C.OnDeactivated
@@ -76,7 +76,7 @@ struct UDailyRewards_C_Destruct_Params
 // Function DailyRewards.DailyRewards_C.ExecuteUbergraph_DailyRewards
 struct UDailyRewards_C_ExecuteUbergraph_DailyRewards_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function DailyRewards.DailyRewards_C.OnDailyRewardsComplete__DelegateSignature

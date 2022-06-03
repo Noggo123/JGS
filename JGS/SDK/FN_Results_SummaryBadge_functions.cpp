@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function Results_SummaryBadge.Results_SummaryBadge_C.Initialize
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               BadgeItem                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               BadgeItem                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_SummaryBadge_C::Initialize(class UFortItem* BadgeItem)
 {
@@ -35,7 +35,7 @@ void UResults_SummaryBadge_C::Initialize(class UFortItem* BadgeItem)
 // Function Results_SummaryBadge.Results_SummaryBadge_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_SummaryBadge_C::PreConstruct(bool* IsDesignTime)
 {
@@ -72,7 +72,7 @@ void UResults_SummaryBadge_C::Manual_Pre_Construct()
 // Function Results_SummaryBadge.Results_SummaryBadge_C.ExecuteUbergraph_Results_SummaryBadge
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_SummaryBadge_C::ExecuteUbergraph_Results_SummaryBadge(int EntryPoint)
 {

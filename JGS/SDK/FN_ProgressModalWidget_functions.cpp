@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function ProgressModalWidget.ProgressModalWidget_C.OnAnalogValueChanged
 // (Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FAnalogInputEvent*      InAnalogInputEvent             (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// struct FAnalogInputEvent*      InAnalogInputEvent             (Parm)
 // struct FEventReply             ReturnValue                    (Parm, OutParm, ReturnParm)
 
 struct FEventReply UProgressModalWidget_C::OnAnalogValueChanged(struct FGeometry* MyGeometry, struct FAnalogInputEvent* InAnalogInputEvent)
@@ -40,7 +40,7 @@ struct FEventReply UProgressModalWidget_C::OnAnalogValueChanged(struct FGeometry
 // Function ProgressModalWidget.ProgressModalWidget_C.SetIcon
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSlateBrush             Icon                           (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FSlateBrush             Icon                           (Parm)
 
 void UProgressModalWidget_C::SetIcon(const struct FSlateBrush& Icon)
 {
@@ -60,7 +60,7 @@ void UProgressModalWidget_C::SetIcon(const struct FSlateBrush& Icon)
 // Function ProgressModalWidget.ProgressModalWidget_C.SetDescription
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Description                    (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   Description                    (Parm)
 
 void UProgressModalWidget_C::SetDescription(const struct FText& Description)
 {
@@ -80,7 +80,7 @@ void UProgressModalWidget_C::SetDescription(const struct FText& Description)
 // Function ProgressModalWidget.ProgressModalWidget_C.SetTitle
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Title                          (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   Title                          (Parm)
 
 void UProgressModalWidget_C::SetTitle(const struct FText& Title)
 {
@@ -219,7 +219,7 @@ void UProgressModalWidget_C::Destruct()
 // Function ProgressModalWidget.ProgressModalWidget_C.ExecuteUbergraph_ProgressModalWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UProgressModalWidget_C::ExecuteUbergraph_ProgressModalWidget(int EntryPoint)
 {

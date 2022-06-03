@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function ChoiceCardCount.ChoiceCardCount_C.UpdateText
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            InventoryCount                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            InventoryCount                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UChoiceCardCount_C::UpdateText(int InventoryCount)
 {

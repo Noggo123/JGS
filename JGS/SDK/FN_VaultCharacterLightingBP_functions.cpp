@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,66 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.SwitchPCLighting_LOWDetail
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           Visibility                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void AVaultCharacterLightingBP_C::SwitchPCLighting_LOWDetail(bool Visibility)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.SwitchPCLighting_LOWDetail");
-
-	AVaultCharacterLightingBP_C_SwitchPCLighting_LOWDetail_Params params;
-	params.Visibility = Visibility;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.SwitchPCLighting
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           Visibility                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void AVaultCharacterLightingBP_C::SwitchPCLighting(bool Visibility)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.SwitchPCLighting");
-
-	AVaultCharacterLightingBP_C_SwitchPCLighting_Params params;
-	params.Visibility = Visibility;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.SwitchMobileLighting
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           Visibilty                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void AVaultCharacterLightingBP_C::SwitchMobileLighting(bool Visibilty)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.SwitchMobileLighting");
-
-	AVaultCharacterLightingBP_C_SwitchMobileLighting_Params params;
-	params.Visibilty = Visibilty;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -89,48 +29,17 @@ void AVaultCharacterLightingBP_C::UserConstructionScript()
 }
 
 
-// Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.UpdateSettings
+// Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.LightControl
 // (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           NewParam                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void AVaultCharacterLightingBP_C::UpdateSettings()
+void AVaultCharacterLightingBP_C::LightControl(bool NewParam)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.UpdateSettings");
+	static auto fn = UObject::FindObject<UFunction>("Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.LightControl");
 
-	AVaultCharacterLightingBP_C_UpdateSettings_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.ToggleLighting
-// (BlueprintCallable, BlueprintEvent)
-
-void AVaultCharacterLightingBP_C::ToggleLighting()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.ToggleLighting");
-
-	AVaultCharacterLightingBP_C_ToggleLighting_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.OVERRIDELIGHTING
-// (BlueprintCallable, BlueprintEvent)
-
-void AVaultCharacterLightingBP_C::OVERRIDELIGHTING()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.OVERRIDELIGHTING");
-
-	AVaultCharacterLightingBP_C_OVERRIDELIGHTING_Params params;
+	AVaultCharacterLightingBP_C_LightControl_Params params;
+	params.NewParam = NewParam;
 
 	auto flags = fn->FunctionFlags;
 
@@ -157,30 +66,10 @@ void AVaultCharacterLightingBP_C::ReceiveBeginPlay()
 }
 
 
-// Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.LightControl
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           NewParam                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void AVaultCharacterLightingBP_C::LightControl(bool NewParam)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.LightControl");
-
-	AVaultCharacterLightingBP_C_LightControl_Params params;
-	params.NewParam = NewParam;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.ExecuteUbergraph_VaultCharacterLightingBP
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AVaultCharacterLightingBP_C::ExecuteUbergraph_VaultCharacterLightingBP(int EntryPoint)
 {

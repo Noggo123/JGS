@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,68 +14,29 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.OnAthenaReadyTypeChanged
-struct ULobbyPlayerPadTop_C_OnAthenaReadyTypeChanged_Params
+// Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.RefreshReadyState
+struct ULobbyPlayerPadTop_C_RefreshReadyState_Params
 {
-	struct FUniqueNetIdRepl                            MemberId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	EAthenaPartyMemberReadyType                        ReadyType;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Ready;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.OnAthenaTimeSpentInMatchChanged
-struct ULobbyPlayerPadTop_C_OnAthenaTimeSpentInMatchChanged_Params
+// Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.OnAthenaReadyStateChanged
+struct ULobbyPlayerPadTop_C_OnAthenaReadyStateChanged_Params
 {
-	struct FUniqueNetIdRepl                            MemberId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	struct FText                                       Minutes;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	struct FText                                       Seconds;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-};
-
-// Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.OnAthenaNumAliveChanged
-struct ULobbyPlayerPadTop_C_OnAthenaNumAliveChanged_Params
-{
-	struct FUniqueNetIdRepl                            MemberId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	int                                                NumAlive;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.UpdateMicIcon
-struct ULobbyPlayerPadTop_C_UpdateMicIcon_Params
-{
-};
-
-// Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.HandlePlayerStoppedTalking
-struct ULobbyPlayerPadTop_C_HandlePlayerStoppedTalking_Params
-{
-};
-
-// Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.HandlePlayerMutingChanged
-struct ULobbyPlayerPadTop_C_HandlePlayerMutingChanged_Params
-{
-	struct FUniqueNetIdRepl                            UniqueId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
-	bool                                               IsTalking;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.HandlePlayerTalkingChanged
-struct ULobbyPlayerPadTop_C_HandlePlayerTalkingChanged_Params
-{
-	struct FUniqueNetIdRepl                            UniqueId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
-	bool                                               IsTalking;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.RefreshAthenaReadyState
-struct ULobbyPlayerPadTop_C_RefreshAthenaReadyState_Params
-{
-	struct FUniqueNetIdRepl                            MemberId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FUniqueNetIdRepl                            Member_Id;                                                // (Parm, OutParm, ReferenceParm)
+	bool                                               Ready;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.OnLobbyPlayerUnhovered
 struct ULobbyPlayerPadTop_C_OnLobbyPlayerUnhovered_Params
 {
-	int                                                PlayerIndex;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                PlayerIndex;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.Initialize
 struct ULobbyPlayerPadTop_C_Initialize_Params
 {
-	int                                                PlayerIndex;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                PlayerIndex;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.InitializeContextEvents
@@ -86,13 +47,13 @@ struct ULobbyPlayerPadTop_C_InitializeContextEvents_Params
 // Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.OnLobbyPlayerHovered
 struct ULobbyPlayerPadTop_C_OnLobbyPlayerHovered_Params
 {
-	int                                                PlayerIndex;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                PlayerIndex;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.SetTeamMemberInfo
 struct ULobbyPlayerPadTop_C_SetTeamMemberInfo_Params
 {
-	struct FFortTeamMemberInfo                         TeamMemberInfo;                                           // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FFortTeamMemberInfo                         TeamMemberInfo;                                           // (Parm)
 };
 
 // Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.Refresh
@@ -105,10 +66,15 @@ struct ULobbyPlayerPadTop_C_RefreshPlayerName_Params
 {
 };
 
+// Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.RefreshHomeBasePower
+struct ULobbyPlayerPadTop_C_RefreshHomeBasePower_Params
+{
+};
+
 // Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.PreConstruct
 struct ULobbyPlayerPadTop_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.Construct
@@ -124,8 +90,8 @@ struct ULobbyPlayerPadTop_C_OnLobbyStarted_Params
 // Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.OnUpdateLobbyPlayerPadTop
 struct ULobbyPlayerPadTop_C_OnUpdateLobbyPlayerPadTop_Params
 {
-	struct FUniqueNetIdRepl                            PlayerNetId;                                              // (BlueprintVisible, BlueprintReadOnly, Parm)
-	bool                                               bIsReady;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FUniqueNetIdRepl                            PlayerNetId;                                              // (Parm)
+	bool                                               bIsReady;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.OnLobbyDisconnected
@@ -136,7 +102,7 @@ struct ULobbyPlayerPadTop_C_OnLobbyDisconnected_Params
 // Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.ExecuteUbergraph_LobbyPlayerPadTop
 struct ULobbyPlayerPadTop_C_ExecuteUbergraph_LobbyPlayerPadTop_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

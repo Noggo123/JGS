@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,27 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function Results_Widget.Results_Widget_C.ShouldDisplayEndOfZoneCinematic
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UResults_Widget_C::ShouldDisplayEndOfZoneCinematic()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Results_Widget.Results_Widget_C.ShouldDisplayEndOfZoneCinematic");
-
-	UResults_Widget_C_ShouldDisplayEndOfZoneCinematic_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
 
 // Function Results_Widget.Results_Widget_C.UseVideos
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
@@ -114,8 +93,8 @@ void UResults_Widget_C::OnInputSkip(bool* bCommited)
 // Function Results_Widget.Results_Widget_C.LogAnalytics
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FString                 ScreenName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-// bool                           bSkipped                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FString                 ScreenName                     (Parm, ZeroConstructor)
+// bool                           bSkipped                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_Widget_C::LogAnalytics(const struct FString& ScreenName, bool bSkipped)
 {
@@ -153,7 +132,7 @@ void UResults_Widget_C::PlayMissionResultSound()
 // Function Results_Widget.Results_Widget_C.Toggle Top Level Tab Controls
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Show                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Show                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_Widget_C::Toggle_Top_Level_Tab_Controls(bool Show)
 {
@@ -190,7 +169,7 @@ void UResults_Widget_C::SpawnResultsMusic()
 // Function Results_Widget.Results_Widget_C.Toggle Chat
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Show                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Show                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_Widget_C::Toggle_Chat(bool Show)
 {
@@ -278,8 +257,8 @@ void UResults_Widget_C::Teleport_Scene_Sequence()
 // Function Results_Widget.Results_Widget_C.BndEvt__ResultsTeleportPad_K2Node_ComponentBoundEvent_7_OnAddFriendClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        TargetId                       (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FString                 TargetName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// struct FUniqueNetIdRepl        TargetId                       (Parm)
+// struct FString                 TargetName                     (Parm, ZeroConstructor)
 
 void UResults_Widget_C::BndEvt__ResultsTeleportPad_K2Node_ComponentBoundEvent_7_OnAddFriendClicked__DelegateSignature(const struct FUniqueNetIdRepl& TargetId, const struct FString& TargetName)
 {
@@ -300,8 +279,8 @@ void UResults_Widget_C::BndEvt__ResultsTeleportPad_K2Node_ComponentBoundEvent_7_
 // Function Results_Widget.Results_Widget_C.BndEvt__ResultsTeleportPad_K2Node_ComponentBoundEvent_8_OnUpVoteClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        TargetId                       (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FString                 TargetName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// struct FUniqueNetIdRepl        TargetId                       (Parm)
+// struct FString                 TargetName                     (Parm, ZeroConstructor)
 
 void UResults_Widget_C::BndEvt__ResultsTeleportPad_K2Node_ComponentBoundEvent_8_OnUpVoteClicked__DelegateSignature(const struct FUniqueNetIdRepl& TargetId, const struct FString& TargetName)
 {
@@ -645,9 +624,9 @@ void UResults_Widget_C::Construct()
 // Function Results_Widget.Results_Widget_C.HandleClientEvent_PlayerLeftEvent
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 EventSource                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 EventFocus                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FFortClientEvent        ClientEvent                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class UObject*                 EventSource                    (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 EventFocus                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortClientEvent        ClientEvent                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UResults_Widget_C::HandleClientEvent_PlayerLeftEvent(class UObject* EventSource, class UObject* EventFocus, const struct FFortClientEvent& ClientEvent)
 {
@@ -720,7 +699,7 @@ void UResults_Widget_C::OnActivated()
 // Function Results_Widget.Results_Widget_C.ExecuteUbergraph_Results_Widget
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_Widget_C::ExecuteUbergraph_Results_Widget(int EntryPoint)
 {

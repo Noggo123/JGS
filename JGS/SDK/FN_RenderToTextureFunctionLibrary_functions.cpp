@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,12 +13,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Function RenderToTextureFunctionLibrary.RenderToTextureFunctionLibrary_C.Set Canvas Material Scale and Position
-// (Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// (Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector2D               Size                           (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FVector2D               Position                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// float                          Scale                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector2D               Size                           (Parm, IsPlainOldData)
+// struct FVector2D               Position                       (Parm, IsPlainOldData)
+// float                          Scale                          (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FVector2D               Screen_Position                (Parm, OutParm, IsPlainOldData)
 // struct FVector2D               Screen_Size                    (Parm, OutParm, IsPlainOldData)
 
@@ -48,13 +48,13 @@ void URenderToTextureFunctionLibrary_C::STATIC_Set_Canvas_Material_Scale_and_Pos
 // Function RenderToTextureFunctionLibrary.RenderToTextureFunctionLibrary_C.Array to HLSL Int Array
 // (Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EIntTypes>         Type                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FString                 Variable_Name                  (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// TArray<int>                    int                            (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// TArray<struct FVector2D>       int2                           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// TArray<struct FVector>         int3                           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// TArray<struct FLinearColor>    int4                           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EIntTypes>         Type                           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FString                 Variable_Name                  (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<int>                    int                            (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<struct FVector2D>       int2                           (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<struct FVector>         int3                           (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<struct FLinearColor>    int4                           (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FString                 String                         (Parm, OutParm, ZeroConstructor)
 
 void URenderToTextureFunctionLibrary_C::STATIC_Array_to_HLSL_Int_Array(TEnumAsByte<EIntTypes> Type, class UObject* __WorldContext, struct FString* Variable_Name, TArray<int>* int, TArray<struct FVector2D>* int2, TArray<struct FVector>* int3, TArray<struct FLinearColor>* int4, struct FString* String)

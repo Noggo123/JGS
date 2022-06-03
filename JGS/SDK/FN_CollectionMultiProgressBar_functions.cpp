@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,7 +49,7 @@ void UCollectionMultiProgressBar_C::UpdateVisibleBar()
 // Function CollectionMultiProgressBar.CollectionMultiProgressBar_C.Update
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            AchievedCount                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            AchievedCount                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionMultiProgressBar_C::Update(int AchievedCount)
 {
@@ -69,8 +69,8 @@ void UCollectionMultiProgressBar_C::Update(int AchievedCount)
 // Function CollectionMultiProgressBar.CollectionMultiProgressBar_C.Setup
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FCollectionMissionBadgeDisplayInfo> InBarInfos                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// int                            AchievedCount                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TArray<struct FCollectionMissionBadgeDisplayInfo> InBarInfos                     (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// int                            AchievedCount                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionMultiProgressBar_C::Setup(int AchievedCount, TArray<struct FCollectionMissionBadgeDisplayInfo>* InBarInfos)
 {
@@ -110,7 +110,7 @@ void UCollectionMultiProgressBar_C::Construct()
 // Function CollectionMultiProgressBar.CollectionMultiProgressBar_C.ExecuteUbergraph_CollectionMultiProgressBar
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionMultiProgressBar_C::ExecuteUbergraph_CollectionMultiProgressBar(int EntryPoint)
 {

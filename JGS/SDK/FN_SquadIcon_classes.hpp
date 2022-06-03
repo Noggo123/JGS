@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // WidgetBlueprintGeneratedClass SquadIcon.SquadIcon_C
-// 0x0000 (0x0228 - 0x0228)
+// 0x0000 (0x0250 - 0x0250)
 class USquadIcon_C : public UFortSquadIcon
 {
 public:

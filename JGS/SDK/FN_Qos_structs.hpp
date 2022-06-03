@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -48,14 +48,6 @@ enum class EQosRegionResult : uint8_t
 //Script Structs
 //---------------------------------------------------------------------------
 
-// ScriptStruct Qos.QosSearchPass
-// 0x0008
-struct FQosSearchPass
-{
-	int                                                RegionIdx;                                                // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
-	int                                                CurrentSessionIdx;                                        // 0x0004(0x0004) (ZeroConstructor, IsPlainOldData)
-};
-
 // ScriptStruct Qos.QosPingServerInfo
 // 0x0018
 struct FQosPingServerInfo
@@ -90,6 +82,14 @@ struct FQosRegionInfo
 	TArray<int>                                        PingResults;                                              // 0x0058(0x0010) (ZeroConstructor, Transient)
 	unsigned char                                      UnknownData02[0x8];                                       // 0x0068(0x0008) MISSED OFFSET
 	struct FDateTime                                   LastCheckTimestamp;                                       // 0x0070(0x0008) (Transient)
+};
+
+// ScriptStruct Qos.QosSearchPass
+// 0x0008
+struct FQosSearchPass
+{
+	int                                                RegionIdx;                                                // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
+	int                                                CurrentSessionIdx;                                        // 0x0004(0x0004) (ZeroConstructor, IsPlainOldData)
 };
 
 }

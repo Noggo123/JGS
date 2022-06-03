@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,16 +12,16 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function BP_FortExpeditionExpiresWidget.BP_FortExpeditionExpiresWidget_C.Get Mcp Relative Utc Now
+// Function BP_FortExpeditionExpiresWidget.BP_FortExpeditionExpiresWidget_C.Get Utc Now Offset
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FDateTime               UtcNow                         (Parm, OutParm)
+// struct FTimespan               ReturnValue                    (Parm, OutParm, ReturnParm)
 
-void UBP_FortExpeditionExpiresWidget_C::Get_Mcp_Relative_Utc_Now(struct FDateTime* UtcNow)
+struct FTimespan UBP_FortExpeditionExpiresWidget_C::Get_Utc_Now_Offset()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FortExpeditionExpiresWidget.BP_FortExpeditionExpiresWidget_C.Get Mcp Relative Utc Now");
+	static auto fn = UObject::FindObject<UFunction>("Function BP_FortExpeditionExpiresWidget.BP_FortExpeditionExpiresWidget_C.Get Utc Now Offset");
 
-	UBP_FortExpeditionExpiresWidget_C_Get_Mcp_Relative_Utc_Now_Params params;
+	UBP_FortExpeditionExpiresWidget_C_Get_Utc_Now_Offset_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -29,15 +29,14 @@ void UBP_FortExpeditionExpiresWidget_C::Get_Mcp_Relative_Utc_Now(struct FDateTim
 
 	fn->FunctionFlags = flags;
 
-	if (UtcNow != nullptr)
-		*UtcNow = params.UtcNow;
+	return params.ReturnValue;
 }
 
 
 // Function BP_FortExpeditionExpiresWidget.BP_FortExpeditionExpiresWidget_C.Refresh Expiration Timer
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortExpeditionItem*     Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortExpeditionItem*     Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionExpiresWidget_C::Refresh_Expiration_Timer(class UFortExpeditionItem* Item)
 {
@@ -57,7 +56,7 @@ void UBP_FortExpeditionExpiresWidget_C::Refresh_Expiration_Timer(class UFortExpe
 // Function BP_FortExpeditionExpiresWidget.BP_FortExpeditionExpiresWidget_C.SetData
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortExpeditionItem**    InItem                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortExpeditionItem**    InItem                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionExpiresWidget_C::SetData(class UFortExpeditionItem** InItem)
 {
@@ -94,7 +93,7 @@ void UBP_FortExpeditionExpiresWidget_C::OnExpeditionExpirationUpdated()
 // Function BP_FortExpeditionExpiresWidget.BP_FortExpeditionExpiresWidget_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionExpiresWidget_C::PreConstruct(bool* IsDesignTime)
 {
@@ -114,7 +113,7 @@ void UBP_FortExpeditionExpiresWidget_C::PreConstruct(bool* IsDesignTime)
 // Function BP_FortExpeditionExpiresWidget.BP_FortExpeditionExpiresWidget_C.ExecuteUbergraph_BP_FortExpeditionExpiresWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionExpiresWidget_C::ExecuteUbergraph_BP_FortExpeditionExpiresWidget(int EntryPoint)
 {

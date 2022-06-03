@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -150,7 +150,7 @@ void UInfoEntry_C::Private_OnExpanderArrowShiftClicked()
 // Function InfoEntry.InfoEntry_C.RegisterOnClicked
 // (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FScriptDelegate         Callback                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// struct FScriptDelegate         Callback                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UInfoEntry_C::RegisterOnClicked(const struct FScriptDelegate& Callback)
 {
@@ -170,7 +170,7 @@ void UInfoEntry_C::RegisterOnClicked(const struct FScriptDelegate& Callback)
 // Function InfoEntry.InfoEntry_C.SetExpanded
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bExpanded                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bExpanded                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UInfoEntry_C::SetExpanded(bool bExpanded)
 {
@@ -190,7 +190,7 @@ void UInfoEntry_C::SetExpanded(bool bExpanded)
 // Function InfoEntry.InfoEntry_C.SetIndexInList
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            InIndexInList                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            InIndexInList                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UInfoEntry_C::SetIndexInList(int InIndexInList)
 {
@@ -210,7 +210,7 @@ void UInfoEntry_C::SetIndexInList(int InIndexInList)
 // Function InfoEntry.InfoEntry_C.SetSelected
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bSelected                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bSelected                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UInfoEntry_C::SetSelected(bool bSelected)
 {
@@ -281,8 +281,8 @@ void UInfoEntry_C::Construct()
 // Function InfoEntry.InfoEntry_C.SetData
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 InData                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonListView*         OwningList                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UObject*                 InData                         (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonListView*         OwningList                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UInfoEntry_C::SetData(class UObject* InData, class UCommonListView* OwningList)
 {
@@ -303,7 +303,7 @@ void UInfoEntry_C::SetData(class UObject* InData, class UCommonListView* OwningL
 // Function InfoEntry.InfoEntry_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_34_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UInfoEntry_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_34_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -323,7 +323,7 @@ void UInfoEntry_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_34_CommonBu
 // Function InfoEntry.InfoEntry_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_61_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UInfoEntry_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_61_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -343,7 +343,7 @@ void UInfoEntry_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_61_CommonBu
 // Function InfoEntry.InfoEntry_C.ExecuteUbergraph_InfoEntry
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UInfoEntry_C::ExecuteUbergraph_InfoEntry(int EntryPoint)
 {
@@ -363,7 +363,7 @@ void UInfoEntry_C::ExecuteUbergraph_InfoEntry(int EntryPoint)
 // Function InfoEntry.InfoEntry_C.Entry Selected__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItemDefinition*     Entry_Item_Definition          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItemDefinition*     Entry_Item_Definition          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UInfoEntry_C::Entry_Selected__DelegateSignature(class UFortItemDefinition* Entry_Item_Definition)
 {

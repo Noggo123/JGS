@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,113 +12,19 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function AthenaHUD.AthenaHUD_C.IsClientNotifiedOfWin
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// bool                           bClientWon                     (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-// bool                           bTeamWon                       (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaHUD_C::IsClientNotifiedOfWin(bool* bClientWon, bool* bTeamWon)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.IsClientNotifiedOfWin");
-
-	UAthenaHUD_C_IsClientNotifiedOfWin_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (bClientWon != nullptr)
-		*bClientWon = params.bClientWon;
-	if (bTeamWon != nullptr)
-		*bTeamWon = params.bTeamWon;
-}
-
-
-// Function AthenaHUD.AthenaHUD_C.HandlePawnSet_RCPawnVisibilityUpdates
+// Function AthenaHUD.AthenaHUD_C.AddTeamMemberIndicator
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// ESlateVisibility               InVisibility                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortPlayerStateAthena*  Player_State                   (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Team_Member_Index              (Parm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaHUD_C::HandlePawnSet_RCPawnVisibilityUpdates(ESlateVisibility InVisibility)
+void UAthenaHUD_C::AddTeamMemberIndicator(class AFortPlayerStateAthena* Player_State, int Team_Member_Index)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.HandlePawnSet_RCPawnVisibilityUpdates");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.AddTeamMemberIndicator");
 
-	UAthenaHUD_C_HandlePawnSet_RCPawnVisibilityUpdates_Params params;
-	params.InVisibility = InVisibility;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaHUD.AthenaHUD_C.HandlePawnSet_VisibilityUpdates
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// ESlateVisibility               InVisibility                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaHUD_C::HandlePawnSet_VisibilityUpdates(ESlateVisibility InVisibility)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.HandlePawnSet_VisibilityUpdates");
-
-	UAthenaHUD_C_HandlePawnSet_VisibilityUpdates_Params params;
-	params.InVisibility = InVisibility;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaHUD.AthenaHUD_C.HandlePawnSet
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaHUD_C::HandlePawnSet()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.HandlePawnSet");
-
-	UAthenaHUD_C_HandlePawnSet_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaHUD.AthenaHUD_C.BindDelegates
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaHUD_C::BindDelegates()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.BindDelegates");
-
-	UAthenaHUD_C_BindDelegates_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaHUD.AthenaHUD_C.SetupCameraMode
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaHUD_C::SetupCameraMode()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.SetupCameraMode");
-
-	UAthenaHUD_C_SetupCameraMode_Params params;
+	UAthenaHUD_C_AddTeamMemberIndicator_Params params;
+	params.Player_State = Player_State;
+	params.Team_Member_Index = Team_Member_Index;
 
 	auto flags = fn->FunctionFlags;
 
@@ -148,9 +54,9 @@ void UAthenaHUD_C::HandleAircraftModeChanged()
 // Function AthenaHUD.AthenaHUD_C.CheckHUDElementVisibility
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTagContainer   HiddenHUDElementTags           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FGameplayTag            HUDElementTagToCheck           (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UWidget*                 HUDElement                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData)
+// struct FGameplayTagContainer   HiddenHUDElementTags           (Parm, OutParm, ReferenceParm)
+// struct FGameplayTag            HUDElementTagToCheck           (Parm)
+// class UWidget*                 HUDElement                     (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
 void UAthenaHUD_C::CheckHUDElementVisibility(const struct FGameplayTag& HUDElementTagToCheck, struct FGameplayTagContainer* HiddenHUDElementTags, class UWidget** HUDElement)
 {
@@ -172,11 +78,33 @@ void UAthenaHUD_C::CheckHUDElementVisibility(const struct FGameplayTag& HUDEleme
 }
 
 
+// Function AthenaHUD.AthenaHUD_C.OnHUDElementVisibilityChanged
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FGameplayTagContainer   HiddenHUDElementTags           (Parm, OutParm, ReferenceParm)
+
+void UAthenaHUD_C::OnHUDElementVisibilityChanged(struct FGameplayTagContainer* HiddenHUDElementTags)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.OnHUDElementVisibilityChanged");
+
+	UAthenaHUD_C_OnHUDElementVisibilityChanged_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (HiddenHUDElementTags != nullptr)
+		*HiddenHUDElementTags = params.HiddenHUDElementTags;
+}
+
+
 // Function AthenaHUD.AthenaHUD_C.PopContentWidgetInternal
 // (Event, Protected, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FContentPushState*      State                          (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+// struct FContentPushState*      State                          (Parm)
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 class UWidget* UAthenaHUD_C::PopContentWidgetInternal(struct FContentPushState* State)
 {
@@ -195,12 +123,73 @@ class UWidget* UAthenaHUD_C::PopContentWidgetInternal(struct FContentPushState* 
 }
 
 
+// Function AthenaHUD.AthenaHUD_C.CreateInterestIndicatorWidget
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UAthenaHUD_C::CreateInterestIndicatorWidget()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.CreateInterestIndicatorWidget");
+
+	UAthenaHUD_C_CreateInterestIndicatorWidget_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaHUD.AthenaHUD_C.HandleOnPointOfInterestRemoved
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                  PointOfInterest                (Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaHUD_C::HandleOnPointOfInterestRemoved(class AActor* PointOfInterest)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.HandleOnPointOfInterestRemoved");
+
+	UAthenaHUD_C_HandleOnPointOfInterestRemoved_Params params;
+	params.PointOfInterest = PointOfInterest;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaHUD.AthenaHUD_C.HandleOnPointOfInterestAdded
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                  PointOfInterest                (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   DisplayText                    (Parm)
+// class UTexture2D*              DisplayImage                   (Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaHUD_C::HandleOnPointOfInterestAdded(class AActor* PointOfInterest, const struct FText& DisplayText, class UTexture2D* DisplayImage)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.HandleOnPointOfInterestAdded");
+
+	UAthenaHUD_C_HandleOnPointOfInterestAdded_Params params;
+	params.PointOfInterest = PointOfInterest;
+	params.DisplayText = DisplayText;
+	params.DisplayImage = DisplayImage;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AthenaHUD.AthenaHUD_C.ShowPicker
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortPickerMode                Mode                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            InitialOption                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           IgnoreFirstAccept              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortPickerMode                Mode                           (Parm, ZeroConstructor, IsPlainOldData)
+// int                            InitialOption                  (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IgnoreFirstAccept              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaHUD_C::ShowPicker(EFortPickerMode Mode, int InitialOption, bool IgnoreFirstAccept)
 {
@@ -236,10 +225,30 @@ void UAthenaHUD_C::HandleFocusChat()
 }
 
 
+// Function AthenaHUD.AthenaHUD_C.ToggleTopLevelMenu
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           Show                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaHUD_C::ToggleTopLevelMenu(bool Show)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.ToggleTopLevelMenu");
+
+	UAthenaHUD_C_ToggleTopLevelMenu_Params params;
+	params.Show = Show;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AthenaHUD.AthenaHUD_C.ToggleChat
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Show                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Show                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaHUD_C::ToggleChat(bool Show)
 {
@@ -259,7 +268,7 @@ void UAthenaHUD_C::ToggleChat(bool Show)
 // Function AthenaHUD.AthenaHUD_C.SetPersistentHUDContentVisibility
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Visible                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Visible                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaHUD_C::SetPersistentHUDContentVisibility(bool Visible)
 {
@@ -279,7 +288,7 @@ void UAthenaHUD_C::SetPersistentHUDContentVisibility(bool Visible)
 // Function AthenaHUD.AthenaHUD_C.HandleIndicatorModeChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           InidicatorsEnabled             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           InidicatorsEnabled             (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaHUD_C::HandleIndicatorModeChanged(bool InidicatorsEnabled)
 {
@@ -296,10 +305,34 @@ void UAthenaHUD_C::HandleIndicatorModeChanged(bool InidicatorsEnabled)
 }
 
 
+// Function AthenaHUD.AthenaHUD_C.SetCursorModeContent
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UUserWidget*             CustomWidget                   (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ActionName                     (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+
+void UAthenaHUD_C::SetCursorModeContent(class UUserWidget* CustomWidget, struct FName* ActionName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.SetCursorModeContent");
+
+	UAthenaHUD_C_SetCursorModeContent_Params params;
+	params.CustomWidget = CustomWidget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (ActionName != nullptr)
+		*ActionName = params.ActionName;
+}
+
+
 // Function AthenaHUD.AthenaHUD_C.OnPlayerTargetingChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           IsTargeting                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IsTargeting                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaHUD_C::OnPlayerTargetingChanged(bool IsTargeting)
 {
@@ -378,8 +411,8 @@ void UAthenaHUD_C::SetQuickbarSizes()
 // Function AthenaHUD.AthenaHUD_C.HandleQuickbarSlotFocusSlotChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortQuickBars                 Quickbar_Index                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            Slot                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortQuickBars                 Quickbar_Index                 (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Slot                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaHUD_C::HandleQuickbarSlotFocusSlotChanged(EFortQuickBars Quickbar_Index, int Slot)
 {
@@ -400,9 +433,9 @@ void UAthenaHUD_C::HandleQuickbarSlotFocusSlotChanged(EFortQuickBars Quickbar_In
 // Function AthenaHUD.AthenaHUD_C.HandleCursorModeChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           IsEnabled                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ActionName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UUserWidget*             CursorModeContentCustomWidget  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// bool                           IsEnabled                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ActionName                     (Parm, ZeroConstructor, IsPlainOldData)
+// class UUserWidget*             CursorModeContentCustomWidget  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaHUD_C::HandleCursorModeChanged(bool IsEnabled, const struct FName& ActionName, class UUserWidget* CursorModeContentCustomWidget)
 {
@@ -455,10 +488,27 @@ void UAthenaHUD_C::OnConfirmed_13B571B74B3BBCF095CCFA8AED69EBED()
 }
 
 
+// Function AthenaHUD.AthenaHUD_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UAthenaHUD_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.Construct");
+
+	UAthenaHUD_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AthenaHUD.AthenaHUD_C.OnEnterState
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// EFortUIState*                  PreviousUIState                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortUIState*                  PreviousUIState                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaHUD_C::OnEnterState(EFortUIState* PreviousUIState)
 {
@@ -478,7 +528,7 @@ void UAthenaHUD_C::OnEnterState(EFortUIState* PreviousUIState)
 // Function AthenaHUD.AthenaHUD_C.QuestsCompleted
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UFortQuestItem*>  Quests                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UFortQuestItem*>  Quests                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UAthenaHUD_C::QuestsCompleted(TArray<class UFortQuestItem*> Quests)
 {
@@ -498,8 +548,8 @@ void UAthenaHUD_C::QuestsCompleted(TArray<class UFortQuestItem*> Quests)
 // Function AthenaHUD.AthenaHUD_C.PushContentWidgetInternal
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UWidget**                Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// struct FContentPushState*      State                          (BlueprintVisible, BlueprintReadOnly, Parm)
+// class UWidget**                Widget                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FContentPushState*      State                          (Parm)
 
 void UAthenaHUD_C::PushContentWidgetInternal(class UWidget** Widget, struct FContentPushState* State)
 {
@@ -534,27 +584,10 @@ void UAthenaHUD_C::Destruct()
 }
 
 
-// Function AthenaHUD.AthenaHUD_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UAthenaHUD_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.Construct");
-
-	UAthenaHUD_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function AthenaHUD.AthenaHUD_C.HandleInputMethodChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           UsingGamepad                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           UsingGamepad                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaHUD_C::HandleInputMethodChanged(bool UsingGamepad)
 {
@@ -571,19 +604,31 @@ void UAthenaHUD_C::HandleInputMethodChanged(bool UsingGamepad)
 }
 
 
-// Function AthenaHUD.AthenaHUD_C.OnUnableToPerformAction
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FGameplayTagContainer   FailedReason                   (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FText                   FailureText                    (BlueprintVisible, BlueprintReadOnly, Parm)
+// Function AthenaHUD.AthenaHUD_C.BndEvt__BP_FortLiveStreamGrantWindowExpires_K2Node_ComponentBoundEvent_8_StreamTimerExpired__DelegateSignature
+// (BlueprintEvent)
 
-void UAthenaHUD_C::OnUnableToPerformAction(const struct FGameplayTagContainer& FailedReason, const struct FText& FailureText)
+void UAthenaHUD_C::BndEvt__BP_FortLiveStreamGrantWindowExpires_K2Node_ComponentBoundEvent_8_StreamTimerExpired__DelegateSignature()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.OnUnableToPerformAction");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.BndEvt__BP_FortLiveStreamGrantWindowExpires_K2Node_ComponentBoundEvent_8_StreamTimerExpired__DelegateSignature");
 
-	UAthenaHUD_C_OnUnableToPerformAction_Params params;
-	params.FailedReason = FailedReason;
-	params.FailureText = FailureText;
+	UAthenaHUD_C_BndEvt__BP_FortLiveStreamGrantWindowExpires_K2Node_ComponentBoundEvent_8_StreamTimerExpired__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaHUD.AthenaHUD_C.BndEvt__BP_FortLiveStreamGrantWindowExpires_K2Node_ComponentBoundEvent_13_StreamTimerStarted__DelegateSignature
+// (BlueprintEvent)
+
+void UAthenaHUD_C::BndEvt__BP_FortLiveStreamGrantWindowExpires_K2Node_ComponentBoundEvent_13_StreamTimerStarted__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.BndEvt__BP_FortLiveStreamGrantWindowExpires_K2Node_ComponentBoundEvent_13_StreamTimerStarted__DelegateSignature");
+
+	UAthenaHUD_C_BndEvt__BP_FortLiveStreamGrantWindowExpires_K2Node_ComponentBoundEvent_13_StreamTimerStarted__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -613,7 +658,7 @@ void UAthenaHUD_C::Prepare_Game_Over()
 // Function AthenaHUD.AthenaHUD_C.On Player Died
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortPlayerDeathReport  DeathReport                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortPlayerDeathReport  DeathReport                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UAthenaHUD_C::On_Player_Died(const struct FFortPlayerDeathReport& DeathReport)
 {
@@ -698,6 +743,28 @@ void UAthenaHUD_C::HandleRevived()
 }
 
 
+// Function AthenaHUD.AthenaHUD_C.OnUnableToPerformAction
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FGameplayTagContainer   FailedReason                   (Parm)
+// struct FText                   FailureText                    (Parm)
+
+void UAthenaHUD_C::OnUnableToPerformAction(const struct FGameplayTagContainer& FailedReason, const struct FText& FailureText)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.OnUnableToPerformAction");
+
+	UAthenaHUD_C_OnUnableToPerformAction_Params params;
+	params.FailedReason = FailedReason;
+	params.FailureText = FailureText;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AthenaHUD.AthenaHUD_C.On Team Won
 // (BlueprintCallable, BlueprintEvent)
 
@@ -715,79 +782,14 @@ void UAthenaHUD_C::On_Team_Won()
 }
 
 
-// Function AthenaHUD.AthenaHUD_C.ViewModelChanged
+// Function AthenaHUD.AthenaHUD_C.TeamMembersChanged
 // (Event, Protected, BlueprintEvent)
-// Parameters:
-// class UAthenaPlayerViewModel** ViewModel                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaHUD_C::ViewModelChanged(class UAthenaPlayerViewModel** ViewModel)
+void UAthenaHUD_C::TeamMembersChanged()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.ViewModelChanged");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.TeamMembersChanged");
 
-	UAthenaHUD_C_ViewModelChanged_Params params;
-	params.ViewModel = ViewModel;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaHUD.AthenaHUD_C.OnHUDScaleChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// float*                         HUDScale                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaHUD_C::OnHUDScaleChanged(float* HUDScale)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.OnHUDScaleChanged");
-
-	UAthenaHUD_C_OnHUDScaleChanged_Params params;
-	params.HUDScale = HUDScale;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaHUD.AthenaHUD_C.SetFullScreenMapVisibility
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool*                          bIsVisible                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaHUD_C::SetFullScreenMapVisibility(bool* bIsVisible)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.SetFullScreenMapVisibility");
-
-	UAthenaHUD_C_SetFullScreenMapVisibility_Params params;
-	params.bIsVisible = bIsVisible;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaHUD.AthenaHUD_C.OnPlaylistExtensionWidgetCreated
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// EPlaylistUIExtensionSlot*      ExtensionSlot                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UUserWidget**            Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UAthenaHUD_C::OnPlaylistExtensionWidgetCreated(EPlaylistUIExtensionSlot* ExtensionSlot, class UUserWidget** Widget)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.OnPlaylistExtensionWidgetCreated");
-
-	UAthenaHUD_C_OnPlaylistExtensionWidgetCreated_Params params;
-	params.ExtensionSlot = ExtensionSlot;
-	params.Widget = Widget;
+	UAthenaHUD_C_TeamMembersChanged_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -800,7 +802,7 @@ void UAthenaHUD_C::OnPlaylistExtensionWidgetCreated(EPlaylistUIExtensionSlot* Ex
 // Function AthenaHUD.AthenaHUD_C.ExecuteUbergraph_AthenaHUD
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaHUD_C::ExecuteUbergraph_AthenaHUD(int EntryPoint)
 {

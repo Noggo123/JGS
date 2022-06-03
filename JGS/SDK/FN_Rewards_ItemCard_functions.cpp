@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,50 +12,10 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function Rewards_ItemCard.Rewards_ItemCard_C.SetItemLimitReachedNotification
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           ShouldShow                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void URewards_ItemCard_C::SetItemLimitReachedNotification(bool ShouldShow)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Rewards_ItemCard.Rewards_ItemCard_C.SetItemLimitReachedNotification");
-
-	URewards_ItemCard_C_SetItemLimitReachedNotification_Params params;
-	params.ShouldShow = ShouldShow;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Rewards_ItemCard.Rewards_ItemCard_C.SetQuantityOverride
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int                            QuantityOverride               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void URewards_ItemCard_C::SetQuantityOverride(int QuantityOverride)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Rewards_ItemCard.Rewards_ItemCard_C.SetQuantityOverride");
-
-	URewards_ItemCard_C_SetQuantityOverride_Params params;
-	params.QuantityOverride = QuantityOverride;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function Rewards_ItemCard.Rewards_ItemCard_C.SetOutpostInventoryNotification
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           ShouldShow                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ShouldShow                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewards_ItemCard_C::SetOutpostInventoryNotification(bool ShouldShow)
 {
@@ -216,7 +176,7 @@ void URewards_ItemCard_C::SetDropShadowSize()
 // Function Rewards_ItemCard.Rewards_ItemCard_C.SetDropShadowDepth
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          ShadowDepth                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          ShadowDepth                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewards_ItemCard_C::SetDropShadowDepth(float ShadowDepth)
 {
@@ -253,7 +213,7 @@ void URewards_ItemCard_C::HideDropShadow()
 // Function Rewards_ItemCard.Rewards_ItemCard_C.ShowDropShadow
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          ShadowDepth                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          ShadowDepth                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewards_ItemCard_C::ShowDropShadow(float ShadowDepth)
 {
@@ -290,9 +250,9 @@ void URewards_ItemCard_C::StartResizeAnimation()
 // Function Rewards_ItemCard.Rewards_ItemCard_C.SizeUp
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          Duration                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          Delay                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          DropShadowDepth                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Duration                       (Parm, ZeroConstructor, IsPlainOldData)
+// float                          Delay                          (Parm, ZeroConstructor, IsPlainOldData)
+// float                          DropShadowDepth                (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewards_ItemCard_C::SizeUp(float Duration, float Delay, float DropShadowDepth)
 {
@@ -331,9 +291,9 @@ void URewards_ItemCard_C::TickResizeAnimation()
 // Function Rewards_ItemCard.Rewards_ItemCard_C.SizeDown
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          Duration                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          Delay                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          DropShadowDepth                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Duration                       (Parm, ZeroConstructor, IsPlainOldData)
+// float                          Delay                          (Parm, ZeroConstructor, IsPlainOldData)
+// float                          DropShadowDepth                (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewards_ItemCard_C::SizeDown(float Duration, float Delay, float DropShadowDepth)
 {
@@ -449,9 +409,9 @@ void URewards_ItemCard_C::TickScaleAnimation()
 // Function Rewards_ItemCard.Rewards_ItemCard_C.PlayScaleAnimation
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          TargetScale                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          Duration                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          DropShadowDepth                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          TargetScale                    (Parm, ZeroConstructor, IsPlainOldData)
+// float                          Duration                       (Parm, ZeroConstructor, IsPlainOldData)
+// float                          DropShadowDepth                (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewards_ItemCard_C::PlayScaleAnimation(float TargetScale, float Duration, float DropShadowDepth)
 {
@@ -507,14 +467,14 @@ void URewards_ItemCard_C::EndSlideAnimation()
 // Function Rewards_ItemCard.Rewards_ItemCard_C.PlaySlideAnimation
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector2D               TargetAlignment                (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FAnchors                TargetAnchors                  (BlueprintVisible, BlueprintReadOnly, Parm)
-// float                          TargetScale                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          TargetOffset                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          TargetAngle                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          Duration                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          StaggerDelay                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FVector2D               TargetTranslation              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+// struct FVector2D               TargetAlignment                (Parm, IsPlainOldData)
+// struct FAnchors                TargetAnchors                  (Parm)
+// float                          TargetScale                    (Parm, ZeroConstructor, IsPlainOldData)
+// float                          TargetOffset                   (Parm, ZeroConstructor, IsPlainOldData)
+// float                          TargetAngle                    (Parm, ZeroConstructor, IsPlainOldData)
+// float                          Duration                       (Parm, ZeroConstructor, IsPlainOldData)
+// float                          StaggerDelay                   (Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector2D               TargetTranslation              (Parm, IsPlainOldData)
 
 void URewards_ItemCard_C::PlaySlideAnimation(const struct FVector2D& TargetAlignment, const struct FAnchors& TargetAnchors, float TargetScale, float TargetOffset, float TargetAngle, float Duration, float StaggerDelay, const struct FVector2D& TargetTranslation)
 {
@@ -558,7 +518,7 @@ void URewards_ItemCard_C::TickSlideAnimation()
 // Function Rewards_ItemCard.Rewards_ItemCard_C.SetItemToRepresent
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewards_ItemCard_C::SetItemToRepresent(class UFortItem* Item)
 {
@@ -595,7 +555,7 @@ void URewards_ItemCard_C::InitDesignView()
 // Function Rewards_ItemCard.Rewards_ItemCard_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewards_ItemCard_C::PreConstruct(bool* IsDesignTime)
 {
@@ -615,7 +575,7 @@ void URewards_ItemCard_C::PreConstruct(bool* IsDesignTime)
 // Function Rewards_ItemCard.Rewards_ItemCard_C.BndEvt__ButtonInspect_K2Node_ComponentBoundEvent_5_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewards_ItemCard_C::BndEvt__ButtonInspect_K2Node_ComponentBoundEvent_5_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -652,7 +612,7 @@ void URewards_ItemCard_C::Construct()
 // Function Rewards_ItemCard.Rewards_ItemCard_C.ExecuteUbergraph_Rewards_ItemCard
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewards_ItemCard_C::ExecuteUbergraph_Rewards_ItemCard(int EntryPoint)
 {
@@ -689,7 +649,7 @@ void URewards_ItemCard_C::OnPopInAnimationFinished__DelegateSignature()
 // Function Rewards_ItemCard.Rewards_ItemCard_C.OnResizeAnimationFinished__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class URewards_ItemCard_C*     RewardsItemCard                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class URewards_ItemCard_C*     RewardsItemCard                (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewards_ItemCard_C::OnResizeAnimationFinished__DelegateSignature(class URewards_ItemCard_C* RewardsItemCard)
 {
@@ -709,7 +669,7 @@ void URewards_ItemCard_C::OnResizeAnimationFinished__DelegateSignature(class URe
 // Function Rewards_ItemCard.Rewards_ItemCard_C.OnInspectClicked__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class URewards_ItemCard_C*     Card                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class URewards_ItemCard_C*     Card                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewards_ItemCard_C::OnInspectClicked__DelegateSignature(class URewards_ItemCard_C* Card)
 {
@@ -729,7 +689,7 @@ void URewards_ItemCard_C::OnInspectClicked__DelegateSignature(class URewards_Ite
 // Function Rewards_ItemCard.Rewards_ItemCard_C.OnSlideAnimationFinished__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class URewards_ItemCard_C*     RewardsItemCard                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class URewards_ItemCard_C*     RewardsItemCard                (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewards_ItemCard_C::OnSlideAnimationFinished__DelegateSignature(class URewards_ItemCard_C* RewardsItemCard)
 {

@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UResults_TeamSubtotalScore_C::UpdateBackground()
 // Function Results_TeamSubtotalScore.Results_TeamSubtotalScore_C.SetScore
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Score                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Score                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeamSubtotalScore_C::SetScore(int Score)
 {
@@ -52,7 +52,7 @@ void UResults_TeamSubtotalScore_C::SetScore(int Score)
 // Function Results_TeamSubtotalScore.Results_TeamSubtotalScore_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeamSubtotalScore_C::PreConstruct(bool* IsDesignTime)
 {
@@ -89,7 +89,7 @@ void UResults_TeamSubtotalScore_C::Construct()
 // Function Results_TeamSubtotalScore.Results_TeamSubtotalScore_C.ExecuteUbergraph_Results_TeamSubtotalScore
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeamSubtotalScore_C::ExecuteUbergraph_Results_TeamSubtotalScore(int EntryPoint)
 {

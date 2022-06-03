@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,74 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function DeathWidget.DeathWidget_C.Show Resurrect & Respawn Anim
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UDeathWidget_C::Show_Resurrect___Respawn_Anim()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DeathWidget.DeathWidget_C.Show Resurrect & Respawn Anim");
-
-	UDeathWidget_C_Show_Resurrect___Respawn_Anim_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function DeathWidget.DeathWidget_C.Prompt Out Anim
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UDeathWidget_C::Prompt_Out_Anim()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DeathWidget.DeathWidget_C.Prompt Out Anim");
-
-	UDeathWidget_C_Prompt_Out_Anim_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function DeathWidget.DeathWidget_C.Resurrection Prompt Anim
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UDeathWidget_C::Resurrection_Prompt_Anim()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DeathWidget.DeathWidget_C.Resurrection Prompt Anim");
-
-	UDeathWidget_C_Resurrection_Prompt_Anim_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function DeathWidget.DeathWidget_C.YouDied Anim
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UDeathWidget_C::YouDied_Anim()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function DeathWidget.DeathWidget_C.YouDied Anim");
-
-	UDeathWidget_C_YouDied_Anim_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function DeathWidget.DeathWidget_C.ShowExtraLivesText
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -134,8 +66,8 @@ void UDeathWidget_C::OnRespawnTimerUpdate()
 // Function DeathWidget.DeathWidget_C.ConfigureRespawnTimer
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          ServerRespawnTime              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          ServerResurrectTime            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          ServerRespawnTime              (Parm, ZeroConstructor, IsPlainOldData)
+// float                          ServerResurrectTime            (Parm, ZeroConstructor, IsPlainOldData)
 
 void UDeathWidget_C::ConfigureRespawnTimer(float ServerRespawnTime, float ServerResurrectTime)
 {
@@ -156,7 +88,7 @@ void UDeathWidget_C::ConfigureRespawnTimer(float ServerRespawnTime, float Server
 // Function DeathWidget.DeathWidget_C.OnPawnDied
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortPlayerDeathReport  DeathReport                    (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortPlayerDeathReport  DeathReport                    (Parm, OutParm, ReferenceParm)
 
 void UDeathWidget_C::OnPawnDied(struct FFortPlayerDeathReport* DeathReport)
 {
@@ -212,7 +144,7 @@ void UDeathWidget_C::Construct()
 // Function DeathWidget.DeathWidget_C.ExecuteUbergraph_DeathWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UDeathWidget_C::ExecuteUbergraph_DeathWidget(int EntryPoint)
 {

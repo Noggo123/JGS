@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass Border-ShellTopBar-RightSide.Border-ShellTopBar-RightSide_C
-// 0x0000 (0x00B0 - 0x00B0)
+// 0x0000 (0x00B8 - 0x00B8)
 class UBorder_ShellTopBar_RightSide_C : public UCommonBorderStyle
 {
 public:

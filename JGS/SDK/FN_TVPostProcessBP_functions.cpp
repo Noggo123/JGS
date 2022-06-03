@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,11 +15,11 @@ namespace SDK
 // Function TVPostProcessBP.TVPostProcessBP_C.RandomizeTheColor
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          Use_Bluescreen                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          Probablility_modulator         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          Use_Flat_Blue                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          MaxColorPerChannelValue        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           Control_replacement_alpha      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Use_Bluescreen                 (Parm, ZeroConstructor, IsPlainOldData)
+// float                          Probablility_modulator         (Parm, ZeroConstructor, IsPlainOldData)
+// float                          Use_Flat_Blue                  (Parm, ZeroConstructor, IsPlainOldData)
+// float                          MaxColorPerChannelValue        (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Control_replacement_alpha      (Parm, ZeroConstructor, IsPlainOldData)
 
 void ATVPostProcessBP_C::RandomizeTheColor(float Use_Bluescreen, float Probablility_modulator, float Use_Flat_Blue, float MaxColorPerChannelValue, bool Control_replacement_alpha)
 {
@@ -621,7 +621,7 @@ void ATVPostProcessBP_C::WriteOutLoading()
 // Function TVPostProcessBP.TVPostProcessBP_C.SequenceFinished
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FString                 SequenceName                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// struct FString                 SequenceName                   (Parm, ZeroConstructor)
 
 void ATVPostProcessBP_C::SequenceFinished(const struct FString& SequenceName)
 {
@@ -675,7 +675,7 @@ void ATVPostProcessBP_C::Camera_DisableEffects()
 // Function TVPostProcessBP.TVPostProcessBP_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float*                         DeltaSeconds                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float*                         DeltaSeconds                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void ATVPostProcessBP_C::ReceiveTick(float* DeltaSeconds)
 {
@@ -746,7 +746,7 @@ void ATVPostProcessBP_C::ReceiveBeginPlay()
 // Function TVPostProcessBP.TVPostProcessBP_C.ExecuteUbergraph_TVPostProcessBP
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ATVPostProcessBP_C::ExecuteUbergraph_TVPostProcessBP(int EntryPoint)
 {

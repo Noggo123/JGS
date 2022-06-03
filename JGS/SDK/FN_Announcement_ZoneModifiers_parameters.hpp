@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,7 @@ namespace SDK
 // Function Announcement_ZoneModifiers.Announcement_ZoneModifiers_C.UpdateWidgetData
 struct UAnnouncement_ZoneModifiers_C_UpdateWidgetData_Params
 {
-	class AFortClientAnnouncement**                    Announcement;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AFortClientAnnouncement**                    Announcement;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Announcement_ZoneModifiers.Announcement_ZoneModifiers_C.OnDisplayTimerFinished
@@ -38,7 +38,7 @@ struct UAnnouncement_ZoneModifiers_C_WidgetCachingHack_Params
 // Function Announcement_ZoneModifiers.Announcement_ZoneModifiers_C.ExecuteUbergraph_Announcement_ZoneModifiers
 struct UAnnouncement_ZoneModifiers_C_ExecuteUbergraph_Announcement_ZoneModifiers_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

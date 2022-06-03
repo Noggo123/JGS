@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,51 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function MissionAlertIndicator.MissionAlertIndicator_C.Get Mission Alert Visual Icon
-// (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// struct FGameplayTagContainer   TagContainer                   (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FSlateBrush             OutBrush                       (Parm, OutParm)
-
-void UMissionAlertIndicator_C::Get_Mission_Alert_Visual_Icon(struct FGameplayTagContainer* TagContainer, struct FSlateBrush* OutBrush)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MissionAlertIndicator.MissionAlertIndicator_C.Get Mission Alert Visual Icon");
-
-	UMissionAlertIndicator_C_Get_Mission_Alert_Visual_Icon_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (TagContainer != nullptr)
-		*TagContainer = params.TagContainer;
-	if (OutBrush != nullptr)
-		*OutBrush = params.OutBrush;
-}
-
-
-// Function MissionAlertIndicator.MissionAlertIndicator_C.Config
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FGameplayTagContainer   AlertVisualTags                (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UMissionAlertIndicator_C::Config(const struct FGameplayTagContainer& AlertVisualTags)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MissionAlertIndicator.MissionAlertIndicator_C.Config");
-
-	UMissionAlertIndicator_C_Config_Params params;
-	params.AlertVisualTags = AlertVisualTags;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function MissionAlertIndicator.MissionAlertIndicator_C.Update
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -77,7 +32,7 @@ void UMissionAlertIndicator_C::Update()
 // Function MissionAlertIndicator.MissionAlertIndicator_C.ToggleTimer
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           IsEnabled                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IsEnabled                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMissionAlertIndicator_C::ToggleTimer(bool IsEnabled)
 {
@@ -85,6 +40,43 @@ void UMissionAlertIndicator_C::ToggleTimer(bool IsEnabled)
 
 	UMissionAlertIndicator_C_ToggleTimer_Params params;
 	params.IsEnabled = IsEnabled;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MissionAlertIndicator.MissionAlertIndicator_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UMissionAlertIndicator_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MissionAlertIndicator.MissionAlertIndicator_C.Construct");
+
+	UMissionAlertIndicator_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MissionAlertIndicator.MissionAlertIndicator_C.ExecuteUbergraph_MissionAlertIndicator
+// ()
+// Parameters:
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
+
+void UMissionAlertIndicator_C::ExecuteUbergraph_MissionAlertIndicator(int EntryPoint)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MissionAlertIndicator.MissionAlertIndicator_C.ExecuteUbergraph_MissionAlertIndicator");
+
+	UMissionAlertIndicator_C_ExecuteUbergraph_MissionAlertIndicator_Params params;
+	params.EntryPoint = EntryPoint;
 
 	auto flags = fn->FunctionFlags;
 

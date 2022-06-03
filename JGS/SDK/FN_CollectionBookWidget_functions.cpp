@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,8 +32,8 @@ void UCollectionBookWidget_C::Construct()
 // Function CollectionBookWidget.CollectionBookWidget_C.SlotItemComplete
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortAccountItem*        ItemSlotted                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   SlotId                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortAccountItem*        ItemSlotted                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   SlotId                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBookWidget_C::SlotItemComplete(class UFortAccountItem* ItemSlotted, const struct FName& SlotId)
 {
@@ -88,7 +88,7 @@ void UCollectionBookWidget_C::OnActivated()
 // Function CollectionBookWidget.CollectionBookWidget_C.ExecuteUbergraph_CollectionBookWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBookWidget_C::ExecuteUbergraph_CollectionBookWidget(int EntryPoint)
 {

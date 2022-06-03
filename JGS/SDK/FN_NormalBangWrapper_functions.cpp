@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,61 +12,10 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function NormalBangWrapper.NormalBangWrapper_C.InitialReset
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UNormalBangWrapper_C::InitialReset()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function NormalBangWrapper.NormalBangWrapper_C.InitialReset");
-
-	UNormalBangWrapper_C_InitialReset_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function NormalBangWrapper.NormalBangWrapper_C.TriggerReset
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UNormalBangWrapper_C::TriggerReset()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function NormalBangWrapper.NormalBangWrapper_C.TriggerReset");
-
-	UNormalBangWrapper_C_TriggerReset_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function NormalBangWrapper.NormalBangWrapper_C.TriggerIntro
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UNormalBangWrapper_C::TriggerIntro()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function NormalBangWrapper.NormalBangWrapper_C.TriggerIntro");
-
-	UNormalBangWrapper_C_TriggerIntro_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function NormalBangWrapper.NormalBangWrapper_C.Adjust Bang Image Translation
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector2D               Translation                    (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+// struct FVector2D               Translation                    (Parm, IsPlainOldData)
 
 void UNormalBangWrapper_C::Adjust_Bang_Image_Translation(const struct FVector2D& Translation)
 {
@@ -86,7 +35,7 @@ void UNormalBangWrapper_C::Adjust_Bang_Image_Translation(const struct FVector2D&
 // Function NormalBangWrapper.NormalBangWrapper_C.Update Bang Icon Version
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            InCount                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            InCount                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UNormalBangWrapper_C::Update_Bang_Icon_Version(int InCount)
 {
@@ -106,7 +55,7 @@ void UNormalBangWrapper_C::Update_Bang_Icon_Version(int InCount)
 // Function NormalBangWrapper.NormalBangWrapper_C.SetTutorialBorderStyle
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UClass*                  BorderStyle                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UClass*                  BorderStyle                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UNormalBangWrapper_C::SetTutorialBorderStyle(class UClass* BorderStyle)
 {
@@ -126,8 +75,8 @@ void UNormalBangWrapper_C::SetTutorialBorderStyle(class UClass* BorderStyle)
 // Function NormalBangWrapper.NormalBangWrapper_C.OnBangStateChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool*                          bEnabled                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int*                           Count                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          bEnabled                       (Parm, ZeroConstructor, IsPlainOldData)
+// int*                           Count                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UNormalBangWrapper_C::OnBangStateChanged(bool* bEnabled, int* Count)
 {
@@ -182,7 +131,7 @@ void UNormalBangWrapper_C::OnStartCallout()
 // Function NormalBangWrapper.NormalBangWrapper_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UNormalBangWrapper_C::PreConstruct(bool* IsDesignTime)
 {
@@ -202,7 +151,7 @@ void UNormalBangWrapper_C::PreConstruct(bool* IsDesignTime)
 // Function NormalBangWrapper.NormalBangWrapper_C.ExecuteUbergraph_NormalBangWrapper
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UNormalBangWrapper_C::ExecuteUbergraph_NormalBangWrapper(int EntryPoint)
 {

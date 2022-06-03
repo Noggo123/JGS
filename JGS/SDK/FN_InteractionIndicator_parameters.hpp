@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,7 +22,13 @@ struct UInteractionIndicator_C_UpdateKeybinds_Params
 // Function InteractionIndicator.InteractionIndicator_C.ShowDefenderBeaconWidget
 struct UInteractionIndicator_C_ShowDefenderBeaconWidget_Params
 {
-	class ABuildingTrapDefender*                       BuildingTrap;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class ABuildingTrapDefender*                       BuildingTrap;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function InteractionIndicator.InteractionIndicator_C.HandleInteractionUpdated
+struct UInteractionIndicator_C_HandleInteractionUpdated_Params
+{
+	class UFortInteractContextInfo*                    Interaction;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function InteractionIndicator.InteractionIndicator_C.ShowBasicInteractionWidget
@@ -33,13 +39,13 @@ struct UInteractionIndicator_C_ShowBasicInteractionWidget_Params
 // Function InteractionIndicator.InteractionIndicator_C.ShowPickupWidget
 struct UInteractionIndicator_C_ShowPickupWidget_Params
 {
-	class AFortPickup*                                 Pickup;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AFortPickup*                                 Pickup;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function InteractionIndicator.InteractionIndicator_C.HandleInteractionChanged
 struct UInteractionIndicator_C_HandleInteractionChanged_Params
 {
-	class UFortInteractContextInfo*                    Interaction;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortInteractContextInfo*                    Interaction;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function InteractionIndicator.InteractionIndicator_C.Construct
@@ -55,7 +61,7 @@ struct UInteractionIndicator_C_Destruct_Params
 // Function InteractionIndicator.InteractionIndicator_C.ExecuteUbergraph_InteractionIndicator
 struct UInteractionIndicator_C_ExecuteUbergraph_InteractionIndicator_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

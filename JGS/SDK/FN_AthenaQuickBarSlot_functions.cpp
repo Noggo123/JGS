@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,71 +12,16 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function AthenaQuickBarSlot.AthenaQuickBarSlot_C.UpdateJetpackFuelGaugeVisiblity
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaQuickBarSlot_C::UpdateJetpackFuelGaugeVisiblity()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickBarSlot.AthenaQuickBarSlot_C.UpdateJetpackFuelGaugeVisiblity");
-
-	UAthenaQuickBarSlot_C_UpdateJetpackFuelGaugeVisiblity_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaQuickBarSlot.AthenaQuickBarSlot_C.ShowJetpackFuelGauge
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaQuickBarSlot_C::ShowJetpackFuelGauge()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickBarSlot.AthenaQuickBarSlot_C.ShowJetpackFuelGauge");
-
-	UAthenaQuickBarSlot_C_ShowJetpackFuelGauge_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaQuickBarSlot.AthenaQuickBarSlot_C.HideJetpackFuelGauge
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaQuickBarSlot_C::HideJetpackFuelGauge()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickBarSlot.AthenaQuickBarSlot_C.HideJetpackFuelGauge");
-
-	UAthenaQuickBarSlot_C_HideJetpackFuelGauge_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaQuickBarSlot.AthenaQuickBarSlot_C.OnTouchStarted
-// (BlueprintCosmetic, Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function AthenaQuickBarSlot.AthenaQuickBarSlot_C.GetKeyBindingAction_Gamepad
+// (Private, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent*          InTouchEvent                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FEventReply             ReturnValue                    (Parm, OutParm, ReturnParm)
+// struct FName                   KeyBindingAction               (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-struct FEventReply UAthenaQuickBarSlot_C::OnTouchStarted(struct FGeometry* MyGeometry, struct FPointerEvent* InTouchEvent)
+void UAthenaQuickBarSlot_C::GetKeyBindingAction_Gamepad(struct FName* KeyBindingAction)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickBarSlot.AthenaQuickBarSlot_C.OnTouchStarted");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickBarSlot.AthenaQuickBarSlot_C.GetKeyBindingAction_Gamepad");
 
-	UAthenaQuickBarSlot_C_OnTouchStarted_Params params;
-	params.MyGeometry = MyGeometry;
-	params.InTouchEvent = InTouchEvent;
+	UAthenaQuickBarSlot_C_GetKeyBindingAction_Gamepad_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -84,44 +29,8 @@ struct FEventReply UAthenaQuickBarSlot_C::OnTouchStarted(struct FGeometry* MyGeo
 
 	fn->FunctionFlags = flags;
 
-	return params.ReturnValue;
-}
-
-
-// Function AthenaQuickBarSlot.AthenaQuickBarSlot_C.OnRefreshItem
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaQuickBarSlot_C::OnRefreshItem()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickBarSlot.AthenaQuickBarSlot_C.OnRefreshItem");
-
-	UAthenaQuickBarSlot_C_OnRefreshItem_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaQuickBarSlot.AthenaQuickBarSlot_C.ExecuteUbergraph_AthenaQuickBarSlot
-// ()
-// Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaQuickBarSlot_C::ExecuteUbergraph_AthenaQuickBarSlot(int EntryPoint)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickBarSlot.AthenaQuickBarSlot_C.ExecuteUbergraph_AthenaQuickBarSlot");
-
-	UAthenaQuickBarSlot_C_ExecuteUbergraph_AthenaQuickBarSlot_Params params;
-	params.EntryPoint = EntryPoint;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
+	if (KeyBindingAction != nullptr)
+		*KeyBindingAction = params.KeyBindingAction;
 }
 
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,13 +17,13 @@ namespace SDK
 // Function ItemManagementMulchModeBox.ItemManagementMulchModeBox_C.HandleLeaveInventory
 struct UItemManagementMulchModeBox_C_HandleLeaveInventory_Params
 {
-	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               PassThrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemManagementMulchModeBox.ItemManagementMulchModeBox_C.HandleCursorModeChanging
 struct UItemManagementMulchModeBox_C_HandleCursorModeChanging_Params
 {
-	bool                                               IsEnabled;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               IsEnabled;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemManagementMulchModeBox.ItemManagementMulchModeBox_C.HandleMulchListChanged
@@ -40,7 +40,7 @@ struct UItemManagementMulchModeBox_C_HandleInfo_Params
 // Function ItemManagementMulchModeBox.ItemManagementMulchModeBox_C.HandleBack
 struct UItemManagementMulchModeBox_C_HandleBack_Params
 {
-	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               PassThrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemManagementMulchModeBox.ItemManagementMulchModeBox_C.HandleDifferentItemToDetailSetBP
@@ -66,7 +66,7 @@ struct UItemManagementMulchModeBox_C_Destruct_Params
 // Function ItemManagementMulchModeBox.ItemManagementMulchModeBox_C.ExecuteUbergraph_ItemManagementMulchModeBox
 struct UItemManagementMulchModeBox_C_ExecuteUbergraph_ItemManagementMulchModeBox_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

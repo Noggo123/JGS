@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -185,7 +185,7 @@ void AB_Rift_Portals_C::OnActivated()
 // Function B_Rift_Portals.B_Rift_Portals_C.ReceiveEndPlay
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EEndPlayReason>*   EndPlayReason                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EEndPlayReason>*   EndPlayReason                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void AB_Rift_Portals_C::ReceiveEndPlay(TEnumAsByte<EEndPlayReason>* EndPlayReason)
 {
@@ -290,9 +290,9 @@ void AB_Rift_Portals_C::ManuallyDeactivateRift()
 // Function B_Rift_Portals.B_Rift_Portals_C.PatrolEnemySuckIn
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          Delay                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          RiftLightningDuration          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           SpawnImpactParticles           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Delay                          (Parm, ZeroConstructor, IsPlainOldData)
+// float                          RiftLightningDuration          (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           SpawnImpactParticles           (Parm, ZeroConstructor, IsPlainOldData)
 
 void AB_Rift_Portals_C::PatrolEnemySuckIn(float Delay, float RiftLightningDuration, bool SpawnImpactParticles)
 {
@@ -348,7 +348,7 @@ void AB_Rift_Portals_C::ResetGate()
 // Function B_Rift_Portals.B_Rift_Portals_C.ExecuteUbergraph_B_Rift_Portals
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AB_Rift_Portals_C::ExecuteUbergraph_B_Rift_Portals(int EntryPoint)
 {

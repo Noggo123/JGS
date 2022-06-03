@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function Cinematic-TeamMics.Cinematic-TeamMics_C.Update
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     UpdatedMemberInfo              (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortTeamMemberInfo     UpdatedMemberInfo              (Parm)
 
 void UCinematic_TeamMics_C::Update(const struct FFortTeamMemberInfo& UpdatedMemberInfo)
 {
@@ -52,7 +52,7 @@ void UCinematic_TeamMics_C::Construct()
 // Function Cinematic-TeamMics.Cinematic-TeamMics_C.ExecuteUbergraph_Cinematic-TeamMics
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCinematic_TeamMics_C::ExecuteUbergraph_Cinematic_TeamMics(int EntryPoint)
 {

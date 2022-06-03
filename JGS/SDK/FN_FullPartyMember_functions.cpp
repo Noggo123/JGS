@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UFullPartyMember_C::UpdateBang()
 // Function FullPartyMember.FullPartyMember_C.HighlightEmptyBanner
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           BannerIsHighlighted            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           BannerIsHighlighted            (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFullPartyMember_C::HighlightEmptyBanner(bool BannerIsHighlighted)
 {
@@ -52,7 +52,7 @@ void UFullPartyMember_C::HighlightEmptyBanner(bool BannerIsHighlighted)
 // Function FullPartyMember.FullPartyMember_C.SetSecondaryStatDisplayVisibility
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// ESlateVisibility               InVisibility                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// ESlateVisibility               InVisibility                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFullPartyMember_C::SetSecondaryStatDisplayVisibility(ESlateVisibility InVisibility)
 {
@@ -72,7 +72,7 @@ void UFullPartyMember_C::SetSecondaryStatDisplayVisibility(ESlateVisibility InVi
 // Function FullPartyMember.FullPartyMember_C.SetStatDisplayStyle
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UClass*                  InStyle                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UClass*                  InStyle                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFullPartyMember_C::SetStatDisplayStyle(class UClass* InStyle)
 {
@@ -80,6 +80,23 @@ void UFullPartyMember_C::SetStatDisplayStyle(class UClass* InStyle)
 
 	UFullPartyMember_C_SetStatDisplayStyle_Params params;
 	params.InStyle = InStyle;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function FullPartyMember.FullPartyMember_C.UpdateHomebaseRating
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UFullPartyMember_C::UpdateHomebaseRating()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function FullPartyMember.FullPartyMember_C.UpdateHomebaseRating");
+
+	UFullPartyMember_C_UpdateHomebaseRating_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -109,7 +126,7 @@ void UFullPartyMember_C::UpdateStatDisplays()
 // Function FullPartyMember.FullPartyMember_C.InitializeConnectedWidget
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFullPartyMemberConnected_C* ConnectedWidget                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UFullPartyMemberConnected_C* ConnectedWidget                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFullPartyMember_C::InitializeConnectedWidget(class UFullPartyMemberConnected_C* ConnectedWidget)
 {
@@ -129,7 +146,7 @@ void UFullPartyMember_C::InitializeConnectedWidget(class UFullPartyMemberConnect
 // Function FullPartyMember.FullPartyMember_C.MakeLocalPlayerConfirmActions
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// bool                           LocalPlayerAlone               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           LocalPlayerAlone               (Parm, ZeroConstructor, IsPlainOldData)
 // TArray<struct FConfirmationDialogAction> OutConfirmActions              (Parm, OutParm, ZeroConstructor)
 
 void UFullPartyMember_C::MakeLocalPlayerConfirmActions(bool LocalPlayerAlone, TArray<struct FConfirmationDialogAction>* OutConfirmActions)
@@ -153,8 +170,8 @@ void UFullPartyMember_C::MakeLocalPlayerConfirmActions(bool LocalPlayerAlone, TA
 // Function FullPartyMember.FullPartyMember_C.HandleLocalPlayerActionsResult
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortDialogResult              Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ResultName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortDialogResult              Result                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ResultName                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFullPartyMember_C::HandleLocalPlayerActionsResult(EFortDialogResult Result, const struct FName& ResultName)
 {
@@ -192,7 +209,7 @@ void UFullPartyMember_C::UpdateLocalPlayerAction()
 // Function FullPartyMember.FullPartyMember_C.DuplicateConnectedWidget
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFullPartyMemberConnected_C* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+// class UFullPartyMemberConnected_C* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 class UFullPartyMemberConnected_C* UFullPartyMember_C::DuplicateConnectedWidget()
 {
@@ -230,7 +247,7 @@ void UFullPartyMember_C::Initialize()
 // Function FullPartyMember.FullPartyMember_C.UpdateDimensions
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector2D               NewDimensions                  (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+// struct FVector2D               NewDimensions                  (Parm, IsPlainOldData)
 
 void UFullPartyMember_C::UpdateDimensions(const struct FVector2D& NewDimensions)
 {
@@ -301,7 +318,7 @@ void UFullPartyMember_C::ShowOpen()
 // Function FullPartyMember.FullPartyMember_C.UpdateMemberInfo
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     NewMemberInfo                  (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortTeamMemberInfo     NewMemberInfo                  (Parm)
 
 void UFullPartyMember_C::UpdateMemberInfo(const struct FFortTeamMemberInfo& NewMemberInfo)
 {
@@ -321,8 +338,8 @@ void UFullPartyMember_C::UpdateMemberInfo(const struct FFortTeamMemberInfo& NewM
 // Function FullPartyMember.FullPartyMember_C.DialogResult_1F64669049EA0B1762273C8ED9CBB619
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortDialogResult              Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ResultName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortDialogResult              Result                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ResultName                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFullPartyMember_C::DialogResult_1F64669049EA0B1762273C8ED9CBB619(EFortDialogResult Result, const struct FName& ResultName)
 {
@@ -360,7 +377,7 @@ void UFullPartyMember_C::Construct()
 // Function FullPartyMember.FullPartyMember_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFullPartyMember_C::PreConstruct(bool* IsDesignTime)
 {
@@ -414,7 +431,7 @@ void UFullPartyMember_C::Destruct()
 // Function FullPartyMember.FullPartyMember_C.OnPlayerInfoChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo*    NewInfo                        (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortTeamMemberInfo*    NewInfo                        (Parm)
 
 void UFullPartyMember_C::OnPlayerInfoChanged(struct FFortTeamMemberInfo* NewInfo)
 {
@@ -431,27 +448,10 @@ void UFullPartyMember_C::OnPlayerInfoChanged(struct FFortTeamMemberInfo* NewInfo
 }
 
 
-// Function FullPartyMember.FullPartyMember_C.OnPlayerAttributesChanged
-// (Event, Public, BlueprintEvent)
-
-void UFullPartyMember_C::OnPlayerAttributesChanged()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function FullPartyMember.FullPartyMember_C.OnPlayerAttributesChanged");
-
-	UFullPartyMember_C_OnPlayerAttributesChanged_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function FullPartyMember.FullPartyMember_C.ExecuteUbergraph_FullPartyMember
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFullPartyMember_C::ExecuteUbergraph_FullPartyMember(int EntryPoint)
 {

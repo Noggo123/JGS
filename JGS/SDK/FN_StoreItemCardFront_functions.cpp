@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -75,7 +75,7 @@ void UStoreItemCardFront_C::Draw_Card()
 // Function StoreItemCardFront.StoreItemCardFront_C.Initialize_Card
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FCard                   inCard                         (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FCard                   inCard                         (Parm)
 
 void UStoreItemCardFront_C::Initialize_Card(const struct FCard& inCard)
 {
@@ -112,7 +112,7 @@ void UStoreItemCardFront_C::Construct()
 // Function StoreItemCardFront.StoreItemCardFront_C.OnFortStoreStateChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortStoreState                NewStoreState                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortStoreState                NewStoreState                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UStoreItemCardFront_C::OnFortStoreStateChanged(EFortStoreState NewStoreState)
 {
@@ -132,7 +132,7 @@ void UStoreItemCardFront_C::OnFortStoreStateChanged(EFortStoreState NewStoreStat
 // Function StoreItemCardFront.StoreItemCardFront_C.InitFromObject
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 InitObject                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 InitObject                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UStoreItemCardFront_C::InitFromObject(class UObject* InitObject)
 {
@@ -152,7 +152,7 @@ void UStoreItemCardFront_C::InitFromObject(class UObject* InitObject)
 // Function StoreItemCardFront.StoreItemCardFront_C.ExecuteUbergraph_StoreItemCardFront
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UStoreItemCardFront_C::ExecuteUbergraph_StoreItemCardFront(int EntryPoint)
 {

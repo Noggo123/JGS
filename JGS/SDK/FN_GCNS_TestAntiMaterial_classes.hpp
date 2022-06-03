@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass GCNS_TestAntiMaterial.GCNS_TestAntiMaterial_C
-// 0x0000 (0x00B0 - 0x00B0)
+// 0x0000 (0x0070 - 0x0070)
 class UGCNS_TestAntiMaterial_C : public UFortGameplayCueNotify_Simple
 {
 public:

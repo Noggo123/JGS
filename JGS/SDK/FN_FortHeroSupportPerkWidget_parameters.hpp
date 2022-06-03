@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,12 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
-
-// Function FortHeroSupportPerkWidget.FortHeroSupportPerkWidget_C.IsInInvalidSlot
-struct UFortHeroSupportPerkWidget_C_IsInInvalidSlot_Params
-{
-	bool                                               InInvalidSlot;                                            // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-};
 
 // Function FortHeroSupportPerkWidget.FortHeroSupportPerkWidget_C.UpdateComparisonVisibility
 struct UFortHeroSupportPerkWidget_C_UpdateComparisonVisibility_Params
@@ -48,8 +42,8 @@ struct UFortHeroSupportPerkWidget_C_UpdateVisibility_Params
 // Function FortHeroSupportPerkWidget.FortHeroSupportPerkWidget_C.Update
 struct UFortHeroSupportPerkWidget_C_Update_Params
 {
-	bool                                               DisplayedOutsideOfHeroSquad;                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	EFortSupportBonusType                              TargetedSupportType;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               DisplayedOutsideOfHeroSquad;                              // (Parm, ZeroConstructor, IsPlainOldData)
+	EFortSupportBonusType                              TargetedSupportType;                                      // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function FortHeroSupportPerkWidget.FortHeroSupportPerkWidget_C.OnHeroUpdated
@@ -75,7 +69,7 @@ struct UFortHeroSupportPerkWidget_C_OnStateChanged_Params
 // Function FortHeroSupportPerkWidget.FortHeroSupportPerkWidget_C.ExecuteUbergraph_FortHeroSupportPerkWidget
 struct UFortHeroSupportPerkWidget_C_ExecuteUbergraph_FortHeroSupportPerkWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

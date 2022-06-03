@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UQuestInfo_BulletListEntry_C::ShowBorder()
 // Function QuestInfo_BulletListEntry.QuestInfo_BulletListEntry_C.CalcBrushSize
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector2D               InImageSize                    (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+// struct FVector2D               InImageSize                    (Parm, IsPlainOldData)
 // struct FVector2D               ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
 
 struct FVector2D UQuestInfo_BulletListEntry_C::CalcBrushSize(const struct FVector2D& InImageSize)
@@ -55,8 +55,8 @@ struct FVector2D UQuestInfo_BulletListEntry_C::CalcBrushSize(const struct FVecto
 // Function QuestInfo_BulletListEntry.QuestInfo_BulletListEntry_C.InitBrush
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   EntryText                      (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FSlateBrush             EntryIconBrush                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   EntryText                      (Parm)
+// struct FSlateBrush             EntryIconBrush                 (Parm)
 
 void UQuestInfo_BulletListEntry_C::InitBrush(const struct FText& EntryText, const struct FSlateBrush& EntryIconBrush)
 {
@@ -77,7 +77,7 @@ void UQuestInfo_BulletListEntry_C::InitBrush(const struct FText& EntryText, cons
 // Function QuestInfo_BulletListEntry.QuestInfo_BulletListEntry_C.InitBullet
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   EntryText                      (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   EntryText                      (Parm)
 
 void UQuestInfo_BulletListEntry_C::InitBullet(const struct FText& EntryText)
 {

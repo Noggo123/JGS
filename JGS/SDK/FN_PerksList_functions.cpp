@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -29,28 +29,11 @@ void UPerksList_C::ResetVariables()
 }
 
 
-// Function PerksList.PerksList_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UPerksList_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PerksList.PerksList_C.Construct");
-
-	UPerksList_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function PerksList.PerksList_C.OnGeneratePerkTier
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// struct FFortUIPerkTier*        FortPerkTier                   (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UFortPerkTierWidget_NUI** PerkTierWidget                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// struct FFortUIPerkTier*        FortPerkTier                   (Parm)
+// class UFortPerkTierWidget_NUI** PerkTierWidget                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPerksList_C::OnGeneratePerkTier(struct FFortUIPerkTier* FortPerkTier, class UFortPerkTierWidget_NUI** PerkTierWidget)
 {
@@ -71,8 +54,8 @@ void UPerksList_C::OnGeneratePerkTier(struct FFortUIPerkTier* FortPerkTier, clas
 // Function PerksList.PerksList_C.OnGeneratePerk
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// struct FFortUIPerk*            FortPerk                       (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UFortPerkWidget_NUI**    PerkWidget                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// struct FFortUIPerk*            FortPerk                       (Parm)
+// class UFortPerkWidget_NUI**    PerkWidget                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPerksList_C::OnGeneratePerk(struct FFortUIPerk* FortPerk, class UFortPerkWidget_NUI** PerkWidget)
 {
@@ -81,6 +64,23 @@ void UPerksList_C::OnGeneratePerk(struct FFortUIPerk* FortPerk, class UFortPerkW
 	UPerksList_C_OnGeneratePerk_Params params;
 	params.FortPerk = FortPerk;
 	params.PerkWidget = PerkWidget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PerksList.PerksList_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UPerksList_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PerksList.PerksList_C.Construct");
+
+	UPerksList_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -127,7 +127,7 @@ void UPerksList_C::OnStateChanged()
 // Function PerksList.PerksList_C.ExecuteUbergraph_PerksList
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPerksList_C::ExecuteUbergraph_PerksList(int EntryPoint)
 {

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,20 +17,20 @@ namespace SDK
 // Function CollectionBookSectionTileRewardWidget.CollectionBookSectionTileRewardWidget_C.SetSlotCompletionRatio
 struct UCollectionBookSectionTileRewardWidget_C_SetSlotCompletionRatio_Params
 {
-	int                                                NumSlotted;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int                                                NumSlots;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                NumSlotted;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                NumSlots;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function CollectionBookSectionTileRewardWidget.CollectionBookSectionTileRewardWidget_C.OnRewardStatusChanged
 struct UCollectionBookSectionTileRewardWidget_C_OnRewardStatusChanged_Params
 {
-	ECollectionBookRewardStatus*                       NewStatus;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	ECollectionBookRewardStatus*                       NewStatus;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function CollectionBookSectionTileRewardWidget.CollectionBookSectionTileRewardWidget_C.ExecuteUbergraph_CollectionBookSectionTileRewardWidget
 struct UCollectionBookSectionTileRewardWidget_C_ExecuteUbergraph_CollectionBookSectionTileRewardWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

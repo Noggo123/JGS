@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass SkillTreeGroupBG-H-Wide.SkillTreeGroupBG-H-Wide_C
-// 0x0000 (0x04F0 - 0x04F0)
+// 0x0000 (0x0530 - 0x0530)
 class USkillTreeGroupBG_H_Wide_C : public USkillTreeGroupBG_H_C
 {
 public:

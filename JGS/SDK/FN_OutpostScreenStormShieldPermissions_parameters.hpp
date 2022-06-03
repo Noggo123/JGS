@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,13 +22,13 @@ struct UOutpostScreenStormShieldPermissions_C_CenterWidget_Params
 // Function OutpostScreenStormShieldPermissions.OutpostScreenStormShieldPermissions_C.SetParent
 struct UOutpostScreenStormShieldPermissions_C_SetParent_Params
 {
-	class UOutpostScreenStormShield_C*                 ParentWidget;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UOutpostScreenStormShield_C*                 ParentWidget;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function OutpostScreenStormShieldPermissions.OutpostScreenStormShieldPermissions_C.HandleBack
 struct UOutpostScreenStormShieldPermissions_C_HandleBack_Params
 {
-	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               PassThrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function OutpostScreenStormShieldPermissions.OutpostScreenStormShieldPermissions_C.AddInputHandlers
@@ -61,13 +61,13 @@ struct UOutpostScreenStormShieldPermissions_C_Construct_Params
 // Function OutpostScreenStormShieldPermissions.OutpostScreenStormShieldPermissions_C.UpdatePrivilagesEvent_0_1
 struct UOutpostScreenStormShieldPermissions_C_UpdatePrivilagesEvent_0_1_Params
 {
-	struct FFortTeamMemberInfo                         NewTeamMemberInfo;                                        // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FFortTeamMemberInfo                         NewTeamMemberInfo;                                        // (Parm)
 };
 
 // Function OutpostScreenStormShieldPermissions.OutpostScreenStormShieldPermissions_C.UpdatePrivilagesEvent_1_2
 struct UOutpostScreenStormShieldPermissions_C_UpdatePrivilagesEvent_1_2_Params
 {
-	int                                                PlayerIndex;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                PlayerIndex;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function OutpostScreenStormShieldPermissions.OutpostScreenStormShieldPermissions_C.OnActivated
@@ -78,7 +78,7 @@ struct UOutpostScreenStormShieldPermissions_C_OnActivated_Params
 // Function OutpostScreenStormShieldPermissions.OutpostScreenStormShieldPermissions_C.ExecuteUbergraph_OutpostScreenStormShieldPermissions
 struct UOutpostScreenStormShieldPermissions_C_ExecuteUbergraph_OutpostScreenStormShieldPermissions_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function OutpostScreenStormShieldPermissions.OutpostScreenStormShieldPermissions_C.CloseOutpostScreen__DelegateSignature

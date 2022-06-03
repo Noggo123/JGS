@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,7 +22,7 @@ struct UWaveModifiersTile_C_PlayIntro_Params
 // Function WaveModifiersTile.WaveModifiersTile_C.SetModifierItem
 struct UWaveModifiersTile_C_SetModifierItem_Params
 {
-	class UFortItem*                                   ModifierItem;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItem*                                   ModifierItem;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function WaveModifiersTile.WaveModifiersTile_C.OnAnimReadyForNextModifier
@@ -33,13 +33,13 @@ struct UWaveModifiersTile_C_OnAnimReadyForNextModifier_Params
 // Function WaveModifiersTile.WaveModifiersTile_C.SetData
 struct UWaveModifiersTile_C_SetData_Params
 {
-	class UObject*                                     InData;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UObject*                                     InData;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function WaveModifiersTile.WaveModifiersTile_C.ExecuteUbergraph_WaveModifiersTile
 struct UWaveModifiersTile_C_ExecuteUbergraph_WaveModifiersTile_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function WaveModifiersTile.WaveModifiersTile_C.OnReadyForNextModifierPresentation__DelegateSignature

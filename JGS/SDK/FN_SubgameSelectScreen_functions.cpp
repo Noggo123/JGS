@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,79 +12,6 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function SubgameSelectScreen.SubgameSelectScreen_C.StartSubgameSelectMusic
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void USubgameSelectScreen_C::StartSubgameSelectMusic()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.StartSubgameSelectMusic");
-
-	USubgameSelectScreen_C_StartSubgameSelectMusic_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function SubgameSelectScreen.SubgameSelectScreen_C.IsMinorShutdownWarningEnabled
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// bool                           Enabled                        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void USubgameSelectScreen_C::IsMinorShutdownWarningEnabled(bool* Enabled)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.IsMinorShutdownWarningEnabled");
-
-	USubgameSelectScreen_C_IsMinorShutdownWarningEnabled_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Enabled != nullptr)
-		*Enabled = params.Enabled;
-}
-
-
-// Function SubgameSelectScreen.SubgameSelectScreen_C.ShowUpsell
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void USubgameSelectScreen_C::ShowUpsell()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.ShowUpsell");
-
-	USubgameSelectScreen_C_ShowUpsell_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function SubgameSelectScreen.SubgameSelectScreen_C.InitializeRedeemButton
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void USubgameSelectScreen_C::InitializeRedeemButton()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.InitializeRedeemButton");
-
-	USubgameSelectScreen_C_InitializeRedeemButton_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function SubgameSelectScreen.SubgameSelectScreen_C.InitializeShortDescriptions
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
@@ -93,6 +20,23 @@ void USubgameSelectScreen_C::InitializeShortDescriptions()
 	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.InitializeShortDescriptions");
 
 	USubgameSelectScreen_C_InitializeShortDescriptions_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function SubgameSelectScreen.SubgameSelectScreen_C.InitializeReedemButton
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void USubgameSelectScreen_C::InitializeReedemButton()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.InitializeReedemButton");
+
+	USubgameSelectScreen_C_InitializeReedemButton_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -177,7 +121,7 @@ void USubgameSelectScreen_C::ResetKeyArtForMainMenu()
 // Function SubgameSelectScreen.SubgameSelectScreen_C.ToggleTimer
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Enabled                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Enabled                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void USubgameSelectScreen_C::ToggleTimer(bool Enabled)
 {
@@ -197,7 +141,7 @@ void USubgameSelectScreen_C::ToggleTimer(bool Enabled)
 // Function SubgameSelectScreen.SubgameSelectScreen_C.SafeSetSubGame
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// ESubGame                       SubGame                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// ESubGame                       SubGame                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void USubgameSelectScreen_C::SafeSetSubGame(ESubGame SubGame)
 {
@@ -217,7 +161,7 @@ void USubgameSelectScreen_C::SafeSetSubGame(ESubGame SubGame)
 // Function SubgameSelectScreen.SubgameSelectScreen_C.SetDescriptionForSubGame
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// ESubGame                       SubGame                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// ESubGame                       SubGame                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void USubgameSelectScreen_C::SetDescriptionForSubGame(ESubGame SubGame)
 {
@@ -234,19 +178,14 @@ void USubgameSelectScreen_C::SetDescriptionForSubGame(ESubGame SubGame)
 }
 
 
-// Function SubgameSelectScreen.SubgameSelectScreen_C.DialogResult_FA087F7E461591BDBC2AECAB522E633C
+// Function SubgameSelectScreen.SubgameSelectScreen_C.OnCodeRedeemCanceled_4BE2E0B94F226EFF37B0C4B3DCA8A2CF
 // (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EFortDialogResult              Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ResultName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void USubgameSelectScreen_C::DialogResult_FA087F7E461591BDBC2AECAB522E633C(EFortDialogResult Result, const struct FName& ResultName)
+void USubgameSelectScreen_C::OnCodeRedeemCanceled_4BE2E0B94F226EFF37B0C4B3DCA8A2CF()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.DialogResult_FA087F7E461591BDBC2AECAB522E633C");
+	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.OnCodeRedeemCanceled_4BE2E0B94F226EFF37B0C4B3DCA8A2CF");
 
-	USubgameSelectScreen_C_DialogResult_FA087F7E461591BDBC2AECAB522E633C_Params params;
-	params.Result = Result;
-	params.ResultName = ResultName;
+	USubgameSelectScreen_C_OnCodeRedeemCanceled_4BE2E0B94F226EFF37B0C4B3DCA8A2CF_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -256,19 +195,14 @@ void USubgameSelectScreen_C::DialogResult_FA087F7E461591BDBC2AECAB522E633C(EFort
 }
 
 
-// Function SubgameSelectScreen.SubgameSelectScreen_C.DialogResult_9B87D67040B12081C9B651A92AD99EA4
+// Function SubgameSelectScreen.SubgameSelectScreen_C.OnCodeRedeemComplete_4BE2E0B94F226EFF37B0C4B3DCA8A2CF
 // (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EFortDialogResult              Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ResultName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void USubgameSelectScreen_C::DialogResult_9B87D67040B12081C9B651A92AD99EA4(EFortDialogResult Result, const struct FName& ResultName)
+void USubgameSelectScreen_C::OnCodeRedeemComplete_4BE2E0B94F226EFF37B0C4B3DCA8A2CF()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.DialogResult_9B87D67040B12081C9B651A92AD99EA4");
+	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.OnCodeRedeemComplete_4BE2E0B94F226EFF37B0C4B3DCA8A2CF");
 
-	USubgameSelectScreen_C_DialogResult_9B87D67040B12081C9B651A92AD99EA4_Params params;
-	params.Result = Result;
-	params.ResultName = ResultName;
+	USubgameSelectScreen_C_OnCodeRedeemComplete_4BE2E0B94F226EFF37B0C4B3DCA8A2CF_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -281,7 +215,7 @@ void USubgameSelectScreen_C::DialogResult_9B87D67040B12081C9B651A92AD99EA4(EFort
 // Function SubgameSelectScreen.SubgameSelectScreen_C.BndEvt__CampaignBtn_K2Node_ComponentBoundEvent_282_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void USubgameSelectScreen_C::BndEvt__CampaignBtn_K2Node_ComponentBoundEvent_282_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -301,7 +235,7 @@ void USubgameSelectScreen_C::BndEvt__CampaignBtn_K2Node_ComponentBoundEvent_282_
 // Function SubgameSelectScreen.SubgameSelectScreen_C.BndEvt__AthenaBtn_K2Node_ComponentBoundEvent_298_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void USubgameSelectScreen_C::BndEvt__AthenaBtn_K2Node_ComponentBoundEvent_298_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -355,14 +289,16 @@ void USubgameSelectScreen_C::Clear_Party_and_Matchmaking_Delegates()
 // Function SubgameSelectScreen.SubgameSelectScreen_C.CustomEvent_0_1
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EMatchmakingCompleteResult     Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EMatchmakingState> OldState                       (Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EMatchmakingState> NewState                       (Parm, ZeroConstructor, IsPlainOldData)
 
-void USubgameSelectScreen_C::CustomEvent_0_1(EMatchmakingCompleteResult Result)
+void USubgameSelectScreen_C::CustomEvent_0_1(TEnumAsByte<EMatchmakingState> OldState, TEnumAsByte<EMatchmakingState> NewState)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.CustomEvent_0_1");
 
 	USubgameSelectScreen_C_CustomEvent_0_1_Params params;
-	params.Result = Result;
+	params.OldState = OldState;
+	params.NewState = NewState;
 
 	auto flags = fn->FunctionFlags;
 
@@ -409,7 +345,7 @@ void USubgameSelectScreen_C::Show_Busy_If_Async_Tasks_Still_Pending()
 // Function SubgameSelectScreen.SubgameSelectScreen_C.BndEvt__ButtonBack_K2Node_ComponentBoundEvent_128_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void USubgameSelectScreen_C::BndEvt__ButtonBack_K2Node_ComponentBoundEvent_128_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -443,30 +379,10 @@ void USubgameSelectScreen_C::Construct()
 }
 
 
-// Function SubgameSelectScreen.SubgameSelectScreen_C.BndEvt__ButtonPurchase_K2Node_ComponentBoundEvent_39_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void USubgameSelectScreen_C::BndEvt__ButtonPurchase_K2Node_ComponentBoundEvent_39_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.BndEvt__ButtonPurchase_K2Node_ComponentBoundEvent_39_CommonButtonClicked__DelegateSignature");
-
-	USubgameSelectScreen_C_BndEvt__ButtonPurchase_K2Node_ComponentBoundEvent_39_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function SubgameSelectScreen.SubgameSelectScreen_C.BndEvt__BattlegroundBtn_K2Node_ComponentBoundEvent_125_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void USubgameSelectScreen_C::BndEvt__BattlegroundBtn_K2Node_ComponentBoundEvent_125_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -486,7 +402,7 @@ void USubgameSelectScreen_C::BndEvt__BattlegroundBtn_K2Node_ComponentBoundEvent_
 // Function SubgameSelectScreen.SubgameSelectScreen_C.BndEvt__CampaignBtn_K2Node_ComponentBoundEvent_107_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void USubgameSelectScreen_C::BndEvt__CampaignBtn_K2Node_ComponentBoundEvent_107_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -503,14 +419,17 @@ void USubgameSelectScreen_C::BndEvt__CampaignBtn_K2Node_ComponentBoundEvent_107_
 }
 
 
-// Function SubgameSelectScreen.SubgameSelectScreen_C.CustomEvent_2_3
-// (BlueprintCallable, BlueprintEvent)
+// Function SubgameSelectScreen.SubgameSelectScreen_C.BndEvt__ButtonPurchase_K2Node_ComponentBoundEvent_39_CommonButtonClicked__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
-void USubgameSelectScreen_C::CustomEvent_2_3()
+void USubgameSelectScreen_C::BndEvt__ButtonPurchase_K2Node_ComponentBoundEvent_39_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.CustomEvent_2_3");
+	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.BndEvt__ButtonPurchase_K2Node_ComponentBoundEvent_39_CommonButtonClicked__DelegateSignature");
 
-	USubgameSelectScreen_C_CustomEvent_2_3_Params params;
+	USubgameSelectScreen_C_BndEvt__ButtonPurchase_K2Node_ComponentBoundEvent_39_CommonButtonClicked__DelegateSignature_Params params;
+	params.Button = Button;
 
 	auto flags = fn->FunctionFlags;
 
@@ -537,10 +456,47 @@ void USubgameSelectScreen_C::OnActivated()
 }
 
 
+// Function SubgameSelectScreen.SubgameSelectScreen_C.CustomEvent_2_3
+// (BlueprintCallable, BlueprintEvent)
+
+void USubgameSelectScreen_C::CustomEvent_2_3()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.CustomEvent_2_3");
+
+	USubgameSelectScreen_C_CustomEvent_2_3_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function SubgameSelectScreen.SubgameSelectScreen_C.BndEvt__ButtonRedeem_K2Node_ComponentBoundEvent_67_CommonButtonClicked__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void USubgameSelectScreen_C::BndEvt__ButtonRedeem_K2Node_ComponentBoundEvent_67_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.BndEvt__ButtonRedeem_K2Node_ComponentBoundEvent_67_CommonButtonClicked__DelegateSignature");
+
+	USubgameSelectScreen_C_BndEvt__ButtonRedeem_K2Node_ComponentBoundEvent_67_CommonButtonClicked__DelegateSignature_Params params;
+	params.Button = Button;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function SubgameSelectScreen.SubgameSelectScreen_C.OnRealMoneyPurchaseComleteHandler
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bSuccess                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bSuccess                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void USubgameSelectScreen_C::OnRealMoneyPurchaseComleteHandler(bool bSuccess)
 {
@@ -574,141 +530,10 @@ void USubgameSelectScreen_C::Destruct()
 }
 
 
-// Function SubgameSelectScreen.SubgameSelectScreen_C.BndEvt__ButtonExit_K2Node_ComponentBoundEvent_193_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void USubgameSelectScreen_C::BndEvt__ButtonExit_K2Node_ComponentBoundEvent_193_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.BndEvt__ButtonExit_K2Node_ComponentBoundEvent_193_CommonButtonClicked__DelegateSignature");
-
-	USubgameSelectScreen_C_BndEvt__ButtonExit_K2Node_ComponentBoundEvent_193_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function SubgameSelectScreen.SubgameSelectScreen_C.BndEvt__ButtonExit_K2Node_ComponentBoundEvent_114_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void USubgameSelectScreen_C::BndEvt__ButtonExit_K2Node_ComponentBoundEvent_114_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.BndEvt__ButtonExit_K2Node_ComponentBoundEvent_114_CommonButtonClicked__DelegateSignature");
-
-	USubgameSelectScreen_C_BndEvt__ButtonExit_K2Node_ComponentBoundEvent_114_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function SubgameSelectScreen.SubgameSelectScreen_C.ShowMinorShutdownMessage
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           bIsCampaign                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void USubgameSelectScreen_C::ShowMinorShutdownMessage(bool bIsCampaign)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.ShowMinorShutdownMessage");
-
-	USubgameSelectScreen_C_ShowMinorShutdownMessage_Params params;
-	params.bIsCampaign = bIsCampaign;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function SubgameSelectScreen.SubgameSelectScreen_C.HandleMinorWarning_Campaign
-// (BlueprintCallable, BlueprintEvent)
-
-void USubgameSelectScreen_C::HandleMinorWarning_Campaign()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.HandleMinorWarning_Campaign");
-
-	USubgameSelectScreen_C_HandleMinorWarning_Campaign_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function SubgameSelectScreen.SubgameSelectScreen_C.HandleMinorWarning_Athena
-// (BlueprintCallable, BlueprintEvent)
-
-void USubgameSelectScreen_C::HandleMinorWarning_Athena()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.HandleMinorWarning_Athena");
-
-	USubgameSelectScreen_C_HandleMinorWarning_Athena_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function SubgameSelectScreen.SubgameSelectScreen_C.BndEvt__ButtonRedeem_K2Node_ComponentBoundEvent_68_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void USubgameSelectScreen_C::BndEvt__ButtonRedeem_K2Node_ComponentBoundEvent_68_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.BndEvt__ButtonRedeem_K2Node_ComponentBoundEvent_68_CommonButtonClicked__DelegateSignature");
-
-	USubgameSelectScreen_C_BndEvt__ButtonRedeem_K2Node_ComponentBoundEvent_68_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function SubgameSelectScreen.SubgameSelectScreen_C.OnRedeemCodeComplete
-// (BlueprintCallable, BlueprintEvent)
-
-void USubgameSelectScreen_C::OnRedeemCodeComplete()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function SubgameSelectScreen.SubgameSelectScreen_C.OnRedeemCodeComplete");
-
-	USubgameSelectScreen_C_OnRedeemCodeComplete_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function SubgameSelectScreen.SubgameSelectScreen_C.ExecuteUbergraph_SubgameSelectScreen
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void USubgameSelectScreen_C::ExecuteUbergraph_SubgameSelectScreen(int EntryPoint)
 {

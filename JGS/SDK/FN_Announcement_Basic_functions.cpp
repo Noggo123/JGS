@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function Announcement_Basic.Announcement_Basic_C.UpdateWidgetData
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// class AFortClientAnnouncement** Announcement                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortClientAnnouncement** Announcement                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAnnouncement_Basic_C::UpdateWidgetData(class AFortClientAnnouncement** Announcement)
 {
@@ -52,7 +52,7 @@ void UAnnouncement_Basic_C::Construct()
 // Function Announcement_Basic.Announcement_Basic_C.AnnouncementStopped
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// class AFortClientAnnouncement** Announcement                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortClientAnnouncement** Announcement                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAnnouncement_Basic_C::AnnouncementStopped(class AFortClientAnnouncement** Announcement)
 {
@@ -72,7 +72,7 @@ void UAnnouncement_Basic_C::AnnouncementStopped(class AFortClientAnnouncement** 
 // Function Announcement_Basic.Announcement_Basic_C.ExecuteUbergraph_Announcement_Basic
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAnnouncement_Basic_C::ExecuteUbergraph_Announcement_Basic(int EntryPoint)
 {

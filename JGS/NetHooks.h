@@ -1,9 +1,12 @@
 #pragma once
 
 #include "Inventory.h"
+#include <fstream>
 
 namespace Beacons
 {
+	bool bSetupCharPartArray = false;
+
 	AOnlineBeaconHost* Beacon;
 
 	bool (*InitHost)(AOnlineBeaconHost*);
@@ -13,6 +16,7 @@ namespace Beacons
 
 	void (*TickFlush)(UNetDriver*, float DeltaSeconds);
 	void (*NotifyActorDestroyed)(UNetDriver*, AActor*, bool);
+	bool (*DestroyActor)(UWorld*, AActor*, bool, bool);
 
 	FVector GetPlayerStart()
 	{
@@ -31,30 +35,6 @@ namespace Beacons
 		LOG("AOnlineBeaconHost::NotifyControlMessage Called! " << std::to_string(a3).c_str());
 		LOG("Channel Count " << std::to_string(NetConnection->OpenChannels.Num()).c_str());
 		return UWorld_NotifyControlMessage(Globals::World, NetConnection, a3, a4);
-	}
-
-	void NotifyActorDestroyedHook(UNetDriver* NetDriver, AActor* Actor, bool IsSeamlessTravel)
-	{
-		LOG("Trying to destroy actor: " << Actor->GetName());
-
-		for (int i = 0; i < NetDriver->ClientConnections.Num(); i++)
-		{
-			auto Connection = NetDriver->ClientConnections[i];
-
-			if (Connection)
-			{
-				auto ActorChannel = Replication::FindChannel(Actor, Connection);
-				if (!ActorChannel)
-					return;
-
-				if (ActorChannel)
-				{
-					Replication::ActorChannelClose(ActorChannel);
-				}
-			}
-		}
-
-		return;
 	}
 
 	void TickFlushHook(UNetDriver* NetDriver, float DeltaSeconds)
@@ -83,15 +63,18 @@ namespace Beacons
 		Connection->OwningActor = PlayerController;
 
 		auto Pawn = (APlayerPawn_Athena_C*)(Util::SpawnActor(APlayerPawn_Athena_C::StaticClass(), GetPlayerStart(), {}));
+		Pawn->bCanBeDamaged = false;
 		Pawn->SetOwner(PlayerController);
 		PlayerController->Possess(Pawn);
 
+		Pawn->SetMaxHealth(100);
+		Pawn->SetHealth(100);
+
 		PlayerController->ClientForceProfileQuery();
-		Pawn->OnRep_CustomizationLoadout();
 
 		Pawn->ServerChoosePart(EFortCustomPartType::Head, Globals::HeadPart);
 		Pawn->ServerChoosePart(EFortCustomPartType::Body, Globals::BodyPart);
-		((AFortPlayerStateAthena*)Pawn)->OnRep_CharacterParts();
+		((AFortPlayerState*)Pawn->PlayerState)->OnRep_CharacterParts();
 
 		Pawn->CharacterMovement->bReplicates = true;
 		Pawn->SetReplicateMovement(true);
@@ -105,27 +88,38 @@ namespace Beacons
 		auto PlayerState = (AFortPlayerStateAthena*)(PlayerController->PlayerState);
 
 		PlayerState->TeamIndex = EFortTeam::HumanPvP_Team69;
-		PlayerState->SquadId = 70;
-		PlayerState->OnRep_SquadId();
-		PlayerState->OnRep_PlayerTeam();
+		PlayerState->OnRep_TeamIndex();
 
 		PlayerState->bHasFinishedLoading = true;
 		PlayerState->bHasStartedPlaying = true;
+		PlayerState->bIsGameSessionAdmin = true;
+		PlayerState->bIsGameSessionOwner = true;
+		PlayerState->bIsWorldDataOwner = true;
+		PlayerState->bIsReadyToContinue = true;
 		PlayerState->OnRep_bHasStartedPlaying();
 		PlayerState->OnRep_CharacterParts();
 
 		auto NewCheatManager = (UFortCheatManager*)(Globals::GPS->STATIC_SpawnObject(UFortCheatManager::StaticClass(), PlayerController));
 		PlayerController->CheatManager = NewCheatManager;
+		NewCheatManager->BackpackSetSize(5);
 
-		Inventory::SetupInventory(PlayerController);
-		Inventory::UpdateInventory(PlayerController);
-		Abilities::GrantGameplayAbility(Pawn, UFortGameplayAbility_Jump::StaticClass());
+		auto NewInv = CreateInventoryForPlayerController(PlayerController);
+		NewInv->SetupInventory();
+		NewInv->UpdateInventory();
 
 		PlayerState->OnRep_HeroType();
+		PlayerState->OnRep_PlayerTeam();
 
 		PlayerController->ClientRestart(Pawn);
 
 		return PlayerController;
+	}
+
+	bool DestroyActorHook(UWorld* InWorld, AActor* InActor, bool bNetForce, bool bShouldModifyLevel)
+	{
+		NotifyActorDestroyed(Beacon->NetDriver, InActor, true);
+
+		return DestroyActor(InWorld, InActor, bNetForce, bShouldModifyLevel);
 	}
 
 	void InitHooks()
@@ -142,9 +136,10 @@ namespace Beacons
 		auto SpawnPlayActorAddr = BaseAddr + Offsets::SpawnPlayActor;
 		auto TickFlushAddr = BaseAddr + Offsets::TickFlush;
 
-		InitHost = decltype(InitHost)(Util::FindPattern("48 8B C4 48 81 EC ? ? ? ? 48 89 58 18 4C 8D 05 ? ? ? ? 48 8B D9 48 89 78 F8 48 8D 48 88 45 33 C9"));
+		InitHost = decltype(InitHost)(BaseAddr + Offsets::InitHost);
 		TickFlush = decltype(TickFlush)(TickFlushAddr);
 		SpawnPlayActor = decltype(SpawnPlayActor)(SpawnPlayActorAddr);
+		NotifyActorDestroyed = decltype(NotifyActorDestroyed)(BaseAddr + Offsets::NotifyActorDestroyed);
 
 		MH_CreateHook((void*)(AOnlineBeaconHost_NotifyControlMessageAddr), AOnlineBeaconHost_NotifyControlMessageHook, nullptr);
 		MH_EnableHook((void*)(AOnlineBeaconHost_NotifyControlMessageAddr));
@@ -154,6 +149,8 @@ namespace Beacons
 		MH_EnableHook((void*)(SpawnPlayActorAddr));
 		MH_CreateHook((void*)(BaseAddr + Offsets::KickPatch), KickPatch, nullptr);
 		MH_EnableHook((void*)(BaseAddr + Offsets::KickPatch));
+		MH_CreateHook((void*)(BaseAddr + Offsets::DestroyActor), DestroyActorHook, (void**)(&DestroyActor));
+		MH_EnableHook((void*)(BaseAddr + Offsets::DestroyActor));
 
 		Beacon = (AOnlineBeaconHost*)(Util::SpawnActor(AOnlineBeaconHost::StaticClass(), {}, {}));
 		Beacon->ListenPort = 7777;
@@ -167,8 +164,6 @@ namespace Beacons
 
 			MH_CreateHook((void*)(TickFlushAddr), TickFlushHook, (void**)(&TickFlush));
 			MH_EnableHook((void*)(TickFlushAddr));
-			//MH_CreateHook((void*)(BaseAddr + Offsets::NotifyActorDestroyed), NotifyActorDestroyedHook, (void**)(&NotifyActorDestroyed));
-			//MH_EnableHook((void*)(BaseAddr + Offsets::NotifyActorDestroyed));
 
 			LOG("Server is now listening!");
 		}

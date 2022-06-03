@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -51,15 +51,15 @@ struct UAlterationWidget_C_GetHighlightColor_Params
 	struct FLinearColor                                ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
 };
 
-// Function AlterationWidget.AlterationWidget_C.OnSetup
-struct UAlterationWidget_C_OnSetup_Params
+// Function AlterationWidget.AlterationWidget_C.Construct
+struct UAlterationWidget_C_Construct_Params
 {
 };
 
 // Function AlterationWidget.AlterationWidget_C.ExecuteUbergraph_AlterationWidget
 struct UAlterationWidget_C_ExecuteUbergraph_AlterationWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

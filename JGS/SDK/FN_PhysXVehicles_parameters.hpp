@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -176,12 +176,6 @@ struct USimpleWheeledVehicleMovementComponent_SetBrakeTorque_Params
 struct UVehicleAnimInstance_GetVehicle_Params
 {
 	class AWheeledVehicle*                             ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function PhysXVehicles.VehicleWheel.IsInAir
-struct UVehicleWheel_IsInAir_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function PhysXVehicles.VehicleWheel.GetSuspensionOffset

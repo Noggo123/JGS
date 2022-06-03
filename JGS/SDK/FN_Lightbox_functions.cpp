@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void ULightbox_C::RemoveContent()
 // Function Lightbox.Lightbox_C.AddContent
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonUserWidget*       Content                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UCommonUserWidget*       Content                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULightbox_C::AddContent(class UCommonUserWidget* Content)
 {
@@ -137,7 +137,7 @@ void ULightbox_C::BndEvt__FadeOut_K2Node_ComponentBoundEvent_1_OnWidgetAnimation
 // Function Lightbox.Lightbox_C.ExecuteUbergraph_Lightbox
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULightbox_C::ExecuteUbergraph_Lightbox(int EntryPoint)
 {

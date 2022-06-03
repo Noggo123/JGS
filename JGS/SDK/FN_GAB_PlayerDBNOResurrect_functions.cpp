@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function GAB_PlayerDBNOResurrect.GAB_PlayerDBNOResurrect_C.Completed_0B41E4DC44D3371D619734A714E9FE50
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FGameplayTag            ApplicationTag                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FGameplayTag            ApplicationTag                 (Parm)
 
 void UGAB_PlayerDBNOResurrect_C::Completed_0B41E4DC44D3371D619734A714E9FE50(const struct FGameplayAbilityTargetDataHandle& TargetData, const struct FGameplayTag& ApplicationTag)
 {
@@ -37,8 +37,8 @@ void UGAB_PlayerDBNOResurrect_C::Completed_0B41E4DC44D3371D619734A714E9FE50(cons
 // Function GAB_PlayerDBNOResurrect.GAB_PlayerDBNOResurrect_C.Cancelled_0B41E4DC44D3371D619734A714E9FE50
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FGameplayTag            ApplicationTag                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FGameplayTag            ApplicationTag                 (Parm)
 
 void UGAB_PlayerDBNOResurrect_C::Cancelled_0B41E4DC44D3371D619734A714E9FE50(const struct FGameplayAbilityTargetDataHandle& TargetData, const struct FGameplayTag& ApplicationTag)
 {
@@ -59,8 +59,8 @@ void UGAB_PlayerDBNOResurrect_C::Cancelled_0B41E4DC44D3371D619734A714E9FE50(cons
 // Function GAB_PlayerDBNOResurrect.GAB_PlayerDBNOResurrect_C.Triggered_0B41E4DC44D3371D619734A714E9FE50
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FGameplayTag            ApplicationTag                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FGameplayTag            ApplicationTag                 (Parm)
 
 void UGAB_PlayerDBNOResurrect_C::Triggered_0B41E4DC44D3371D619734A714E9FE50(const struct FGameplayAbilityTargetDataHandle& TargetData, const struct FGameplayTag& ApplicationTag)
 {
@@ -81,8 +81,8 @@ void UGAB_PlayerDBNOResurrect_C::Triggered_0B41E4DC44D3371D619734A714E9FE50(cons
 // Function GAB_PlayerDBNOResurrect.GAB_PlayerDBNOResurrect_C.Cancelled_8E1AEF7D40AE1D4CCBACC68EEB3D87D6
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FGameplayTag            ApplicationTag                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FGameplayTag            ApplicationTag                 (Parm)
 
 void UGAB_PlayerDBNOResurrect_C::Cancelled_8E1AEF7D40AE1D4CCBACC68EEB3D87D6(const struct FGameplayAbilityTargetDataHandle& TargetData, const struct FGameplayTag& ApplicationTag)
 {
@@ -103,8 +103,8 @@ void UGAB_PlayerDBNOResurrect_C::Cancelled_8E1AEF7D40AE1D4CCBACC68EEB3D87D6(cons
 // Function GAB_PlayerDBNOResurrect.GAB_PlayerDBNOResurrect_C.Targeted_8E1AEF7D40AE1D4CCBACC68EEB3D87D6
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FGameplayTag            ApplicationTag                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FGameplayTag            ApplicationTag                 (Parm)
 
 void UGAB_PlayerDBNOResurrect_C::Targeted_8E1AEF7D40AE1D4CCBACC68EEB3D87D6(const struct FGameplayAbilityTargetDataHandle& TargetData, const struct FGameplayTag& ApplicationTag)
 {
@@ -125,7 +125,7 @@ void UGAB_PlayerDBNOResurrect_C::Targeted_8E1AEF7D40AE1D4CCBACC68EEB3D87D6(const
 // Function GAB_PlayerDBNOResurrect.GAB_PlayerDBNOResurrect_C.K2_ActivateAbilityFromEvent
 // (Event, Protected, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData*     EventData                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGameplayEventData*     EventData                      (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UGAB_PlayerDBNOResurrect_C::K2_ActivateAbilityFromEvent(struct FGameplayEventData* EventData)
 {
@@ -144,15 +144,12 @@ void UGAB_PlayerDBNOResurrect_C::K2_ActivateAbilityFromEvent(struct FGameplayEve
 
 // Function GAB_PlayerDBNOResurrect.GAB_PlayerDBNOResurrect_C.K2_OnEndAbility
 // (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool*                          bWasCancelled                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UGAB_PlayerDBNOResurrect_C::K2_OnEndAbility(bool* bWasCancelled)
+void UGAB_PlayerDBNOResurrect_C::K2_OnEndAbility()
 {
 	static auto fn = UObject::FindObject<UFunction>("Function GAB_PlayerDBNOResurrect.GAB_PlayerDBNOResurrect_C.K2_OnEndAbility");
 
 	UGAB_PlayerDBNOResurrect_C_K2_OnEndAbility_Params params;
-	params.bWasCancelled = bWasCancelled;
 
 	auto flags = fn->FunctionFlags;
 
@@ -165,7 +162,7 @@ void UGAB_PlayerDBNOResurrect_C::K2_OnEndAbility(bool* bWasCancelled)
 // Function GAB_PlayerDBNOResurrect.GAB_PlayerDBNOResurrect_C.ExecuteUbergraph_GAB_PlayerDBNOResurrect
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UGAB_PlayerDBNOResurrect_C::ExecuteUbergraph_GAB_PlayerDBNOResurrect(int EntryPoint)
 {

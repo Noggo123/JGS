@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,7 @@ namespace SDK
 // Function ItemDetailsHeaderTagListText.ItemDetailsHeaderTagListText_C.FormatItemDisplayTags
 struct UItemDetailsHeaderTagListText_C_FormatItemDisplayTags_Params
 {
-	TArray<struct FText>                               TagTexts;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<struct FText>                               TagTexts;                                                 // (Parm, OutParm, ZeroConstructor, ReferenceParm)
 	struct FText                                       FormatedText;                                             // (Parm, OutParm)
 };
 
@@ -31,10 +31,15 @@ struct UItemDetailsHeaderTagListText_C_HandlePostDifferentItemToCompareWithSet_P
 {
 };
 
+// Function ItemDetailsHeaderTagListText.ItemDetailsHeaderTagListText_C.Construct
+struct UItemDetailsHeaderTagListText_C_Construct_Params
+{
+};
+
 // Function ItemDetailsHeaderTagListText.ItemDetailsHeaderTagListText_C.ExecuteUbergraph_ItemDetailsHeaderTagListText
 struct UItemDetailsHeaderTagListText_C_ExecuteUbergraph_ItemDetailsHeaderTagListText_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

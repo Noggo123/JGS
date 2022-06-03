@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,7 @@ namespace SDK
 // Function MiniPartyMember.MiniPartyMember_C.HandleMouseHoverVisualState
 struct UMiniPartyMember_C_HandleMouseHoverVisualState_Params
 {
-	bool                                               Hover;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Hover;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MiniPartyMember.MiniPartyMember_C.OpenPartyFinder
@@ -34,7 +34,7 @@ struct UMiniPartyMember_C_GetLeaderVisibility_Params
 // Function MiniPartyMember.MiniPartyMember_C.UpdateMemberInfo
 struct UMiniPartyMember_C_UpdateMemberInfo_Params
 {
-	struct FFortTeamMemberInfo                         NewMemberInfo;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FFortTeamMemberInfo                         NewMemberInfo;                                            // (Parm, OutParm, ReferenceParm)
 };
 
 // Function MiniPartyMember.MiniPartyMember_C.ShowOpen
@@ -60,37 +60,37 @@ struct UMiniPartyMember_C_Destruct_Params
 // Function MiniPartyMember.MiniPartyMember_C.OnPlayerInfoChanged
 struct UMiniPartyMember_C_OnPlayerInfoChanged_Params
 {
-	struct FFortTeamMemberInfo*                        NewInfo;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FFortTeamMemberInfo*                        NewInfo;                                                  // (Parm)
 };
 
 // Function MiniPartyMember.MiniPartyMember_C.BndEvt__ButtonPartyFinder_K2Node_ComponentBoundEvent_11_CommonButtonClicked__DelegateSignature
 struct UMiniPartyMember_C_BndEvt__ButtonPartyFinder_K2Node_ComponentBoundEvent_11_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MiniPartyMember.MiniPartyMember_C.BndEvt__ButtonPartyFinder_K2Node_ComponentBoundEvent_43_CommonButtonClicked__DelegateSignature
 struct UMiniPartyMember_C_BndEvt__ButtonPartyFinder_K2Node_ComponentBoundEvent_43_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MiniPartyMember.MiniPartyMember_C.BndEvt__ButtonPartyFinder_K2Node_ComponentBoundEvent_55_CommonButtonClicked__DelegateSignature
 struct UMiniPartyMember_C_BndEvt__ButtonPartyFinder_K2Node_ComponentBoundEvent_55_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MiniPartyMember.MiniPartyMember_C.PreConstruct
 struct UMiniPartyMember_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MiniPartyMember.MiniPartyMember_C.ExecuteUbergraph_MiniPartyMember
 struct UMiniPartyMember_C_ExecuteUbergraph_MiniPartyMember_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -79,7 +79,7 @@ void UHordeTierResultsWidget_C::ChooseMediaToUse(class UMediaSource** MediaToUse
 // Function HordeTierResultsWidget.HordeTierResultsWidget_C.Initialize
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortCompletionResult          Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortCompletionResult          Result                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHordeTierResultsWidget_C::Initialize(EFortCompletionResult Result)
 {

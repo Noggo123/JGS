@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function StyleLibrary.StyleLibrary_C.Get Conning Color For Specific Difficulty
 // (Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Difficulty_Value               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Difficulty_Value               (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            Difficulty_Linear_Color        (Parm, OutParm, IsPlainOldData)
 // bool                           Invalid                        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
@@ -44,11 +44,11 @@ void UStyleLibrary_C::STATIC_Get_Conning_Color_For_Specific_Difficulty(int Diffi
 // Function StyleLibrary.StyleLibrary_C.Get Conning Color From Difficulty Value
 // (Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Player_Skill_Level             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          Content_Difficulty_Level       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameDifficultyInfo     Game_Difficulty_Info           (BlueprintVisible, BlueprintReadOnly, Parm)
-// int                            Content_Skill_Points           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Player_Skill_Level             (Parm, ZeroConstructor, IsPlainOldData)
+// float                          Content_Difficulty_Level       (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameDifficultyInfo     Game_Difficulty_Info           (Parm)
+// int                            Content_Skill_Points           (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            Difficulty_Linear_Color        (Parm, OutParm, IsPlainOldData)
 // bool                           Success                        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 // struct FText                   ToolTipText                    (Parm, OutParm)
@@ -85,8 +85,8 @@ void UStyleLibrary_C::STATIC_Get_Conning_Color_From_Difficulty_Value(int Player_
 // Function StyleLibrary.StyleLibrary_C.Get HarvestWeakPoint Color
 // (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FFortUIStylesheet       Stylesheet                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortUIStylesheet       Stylesheet                     (Parm)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            StyleSheetOut                  (Parm, OutParm, IsPlainOldData)
 
 void UStyleLibrary_C::STATIC_Get_HarvestWeakPoint_Color(const struct FFortUIStylesheet& Stylesheet, class UObject* __WorldContext, struct FLinearColor* StyleSheetOut)
@@ -111,9 +111,9 @@ void UStyleLibrary_C::STATIC_Get_HarvestWeakPoint_Color(const struct FFortUIStyl
 // Function StyleLibrary.StyleLibrary_C.ResizeBrush
 // (Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EFortBrushSize>    BrushSize                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FSlateBrush             BaseBrush                      (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EFortBrushSize>    BrushSize                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FSlateBrush             BaseBrush                      (Parm)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FSlateBrush             NewParam                       (Parm, OutParm)
 
 void UStyleLibrary_C::STATIC_ResizeBrush(TEnumAsByte<EFortBrushSize> BrushSize, const struct FSlateBrush& BaseBrush, class UObject* __WorldContext, struct FSlateBrush* NewParam)
@@ -137,16 +137,16 @@ void UStyleLibrary_C::STATIC_ResizeBrush(TEnumAsByte<EFortBrushSize> BrushSize, 
 
 
 // Function StyleLibrary.StyleLibrary_C.Get Base & Buff Colors
-// (Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// EFortStatValueDisplayType      Display_Type                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortBuffState                 Buff_State                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FFortUIStylesheet       Stylesheet                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortStatValueDisplayType      Display_Type                   (Parm, ZeroConstructor, IsPlainOldData)
+// EFortBuffState                 Buff_State                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortUIStylesheet       Stylesheet                     (Parm)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            Base                           (Parm, OutParm, IsPlainOldData)
-// struct FLinearColor            Buff                           (Parm, OutParm, IsPlainOldData)
+// struct FLinearColor            buff                           (Parm, OutParm, IsPlainOldData)
 
-void UStyleLibrary_C::STATIC_Get_Base___Buff_Colors(EFortStatValueDisplayType Display_Type, EFortBuffState Buff_State, const struct FFortUIStylesheet& Stylesheet, class UObject* __WorldContext, struct FLinearColor* Base, struct FLinearColor* Buff)
+void UStyleLibrary_C::STATIC_Get_Base___Buff_Colors(EFortStatValueDisplayType Display_Type, EFortBuffState Buff_State, const struct FFortUIStylesheet& Stylesheet, class UObject* __WorldContext, struct FLinearColor* Base, struct FLinearColor* buff)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function StyleLibrary.StyleLibrary_C.Get Base & Buff Colors");
 
@@ -164,16 +164,16 @@ void UStyleLibrary_C::STATIC_Get_Base___Buff_Colors(EFortStatValueDisplayType Di
 
 	if (Base != nullptr)
 		*Base = params.Base;
-	if (Buff != nullptr)
-		*Buff = params.Buff;
+	if (buff != nullptr)
+		*buff = params.buff;
 }
 
 
 // Function StyleLibrary.StyleLibrary_C.Get Bolt Elemental Color
 // (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FFortUIStylesheet       Stylesheet                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortUIStylesheet       Stylesheet                     (Parm)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            Color                          (Parm, OutParm, IsPlainOldData)
 
 void UStyleLibrary_C::STATIC_Get_Bolt_Elemental_Color(const struct FFortUIStylesheet& Stylesheet, class UObject* __WorldContext, struct FLinearColor* Color)
@@ -198,8 +198,8 @@ void UStyleLibrary_C::STATIC_Get_Bolt_Elemental_Color(const struct FFortUIStyles
 // Function StyleLibrary.StyleLibrary_C.Get Ice Elemental Color
 // (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FFortUIStylesheet       Stylesheet                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortUIStylesheet       Stylesheet                     (Parm)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            Color                          (Parm, OutParm, IsPlainOldData)
 
 void UStyleLibrary_C::STATIC_Get_Ice_Elemental_Color(const struct FFortUIStylesheet& Stylesheet, class UObject* __WorldContext, struct FLinearColor* Color)
@@ -224,8 +224,8 @@ void UStyleLibrary_C::STATIC_Get_Ice_Elemental_Color(const struct FFortUIStylesh
 // Function StyleLibrary.StyleLibrary_C.Get Fire Elemental Color
 // (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FFortUIStylesheet       Stylesheet                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortUIStylesheet       Stylesheet                     (Parm)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            Color                          (Parm, OutParm, IsPlainOldData)
 
 void UStyleLibrary_C::STATIC_Get_Fire_Elemental_Color(const struct FFortUIStylesheet& Stylesheet, class UObject* __WorldContext, struct FLinearColor* Color)
@@ -250,8 +250,8 @@ void UStyleLibrary_C::STATIC_Get_Fire_Elemental_Color(const struct FFortUIStyles
 // Function StyleLibrary.StyleLibrary_C.Get Unique Color
 // (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FFortUIStylesheet       Stylesheet                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortUIStylesheet       Stylesheet                     (Parm)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            Color                          (Parm, OutParm, IsPlainOldData)
 
 void UStyleLibrary_C::STATIC_Get_Unique_Color(const struct FFortUIStylesheet& Stylesheet, class UObject* __WorldContext, struct FLinearColor* Color)
@@ -276,9 +276,9 @@ void UStyleLibrary_C::STATIC_Get_Unique_Color(const struct FFortUIStylesheet& St
 // Function StyleLibrary.StyleLibrary_C.Get Item Size
 // (Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortUIStylesheet       Stylesheet                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// TEnumAsByte<EFortBrushSize>    Brush_Size                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortUIStylesheet       Stylesheet                     (Parm)
+// TEnumAsByte<EFortBrushSize>    Brush_Size                     (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FVector2D               Item_Size                      (Parm, OutParm, IsPlainOldData)
 
 void UStyleLibrary_C::STATIC_Get_Item_Size(const struct FFortUIStylesheet& Stylesheet, TEnumAsByte<EFortBrushSize> Brush_Size, class UObject* __WorldContext, struct FVector2D* Item_Size)
@@ -304,8 +304,8 @@ void UStyleLibrary_C::STATIC_Get_Item_Size(const struct FFortUIStylesheet& Style
 // Function StyleLibrary.StyleLibrary_C.Get Debuff Color
 // (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FFortUIStylesheet       Stylesheet                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortUIStylesheet       Stylesheet                     (Parm)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            Color                          (Parm, OutParm, IsPlainOldData)
 
 void UStyleLibrary_C::STATIC_Get_Debuff_Color(const struct FFortUIStylesheet& Stylesheet, class UObject* __WorldContext, struct FLinearColor* Color)
@@ -330,8 +330,8 @@ void UStyleLibrary_C::STATIC_Get_Debuff_Color(const struct FFortUIStylesheet& St
 // Function StyleLibrary.StyleLibrary_C.Get Buff Color
 // (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FFortUIStylesheet       Stylesheet                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortUIStylesheet       Stylesheet                     (Parm)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            Color                          (Parm, OutParm, IsPlainOldData)
 
 void UStyleLibrary_C::STATIC_Get_Buff_Color(const struct FFortUIStylesheet& Stylesheet, class UObject* __WorldContext, struct FLinearColor* Color)
@@ -356,9 +356,9 @@ void UStyleLibrary_C::STATIC_Get_Buff_Color(const struct FFortUIStylesheet& Styl
 // Function StyleLibrary.StyleLibrary_C.Get Item Icon Size
 // (Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortUIStylesheet       Stylesheet                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// TEnumAsByte<EFortBrushSize>    Brush_Size                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortUIStylesheet       Stylesheet                     (Parm)
+// TEnumAsByte<EFortBrushSize>    Brush_Size                     (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FVector2D               Icon_Size                      (Parm, OutParm, IsPlainOldData)
 
 void UStyleLibrary_C::STATIC_Get_Item_Icon_Size(const struct FFortUIStylesheet& Stylesheet, TEnumAsByte<EFortBrushSize> Brush_Size, class UObject* __WorldContext, struct FVector2D* Icon_Size)
@@ -384,9 +384,9 @@ void UStyleLibrary_C::STATIC_Get_Item_Icon_Size(const struct FFortUIStylesheet& 
 // Function StyleLibrary.StyleLibrary_C.Get Standard Icon Size
 // (Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortUIStylesheet       Stylesheet                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// TEnumAsByte<EFortBrushSize>    Brush_Size                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortUIStylesheet       Stylesheet                     (Parm)
+// TEnumAsByte<EFortBrushSize>    Brush_Size                     (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FVector2D               Icon_Size                      (Parm, OutParm, IsPlainOldData)
 
 void UStyleLibrary_C::STATIC_Get_Standard_Icon_Size(const struct FFortUIStylesheet& Stylesheet, TEnumAsByte<EFortBrushSize> Brush_Size, class UObject* __WorldContext, struct FVector2D* Icon_Size)
@@ -412,9 +412,9 @@ void UStyleLibrary_C::STATIC_Get_Standard_Icon_Size(const struct FFortUIStyleshe
 // Function StyleLibrary.StyleLibrary_C.Get Theme
 // (Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FFortUIStylesheet       Stylesheet                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// TEnumAsByte<EFortUITheme>      Theme_Type                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortUIStylesheet       Stylesheet                     (Parm)
+// TEnumAsByte<EFortUITheme>      Theme_Type                     (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FFortUITheme            Theme                          (Parm, OutParm)
 
 void UStyleLibrary_C::STATIC_Get_Theme(const struct FFortUIStylesheet& Stylesheet, TEnumAsByte<EFortUITheme> Theme_Type, class UObject* __WorldContext, struct FFortUITheme* Theme)
@@ -440,10 +440,10 @@ void UStyleLibrary_C::STATIC_Get_Theme(const struct FFortUIStylesheet& Styleshee
 // Function StyleLibrary.StyleLibrary_C.Get Theme Color
 // (Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FFortUIStylesheet       Stylesheet                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// TEnumAsByte<EFortUITheme>      Theme_Type                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// TEnumAsByte<EFortUIThemeColor> Color_Type                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortUIStylesheet       Stylesheet                     (Parm)
+// TEnumAsByte<EFortUITheme>      Theme_Type                     (Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EFortUIThemeColor> Color_Type                     (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            Theme_Color                    (Parm, OutParm, IsPlainOldData)
 
 void UStyleLibrary_C::STATIC_Get_Theme_Color(const struct FFortUIStylesheet& Stylesheet, TEnumAsByte<EFortUITheme> Theme_Type, TEnumAsByte<EFortUIThemeColor> Color_Type, class UObject* __WorldContext, struct FLinearColor* Theme_Color)

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -28,7 +28,7 @@ enum class EMobileCSMQuality : uint8_t
 //---------------------------------------------------------------------------
 
 // ScriptStruct MaterialShaderQualitySettings.MaterialQualityOverrides
-// 0x0007
+// 0x0006
 struct FMaterialQualityOverrides
 {
 	bool                                               bEnableOverride;                                          // 0x0000(0x0001) (Edit, ZeroConstructor, Config, IsPlainOldData)
@@ -36,8 +36,7 @@ struct FMaterialQualityOverrides
 	bool                                               bForceNonMetal;                                           // 0x0002(0x0001) (Edit, ZeroConstructor, Config, IsPlainOldData)
 	bool                                               bForceDisableLMDirectionality;                            // 0x0003(0x0001) (Edit, ZeroConstructor, Config, IsPlainOldData)
 	bool                                               bForceLQReflections;                                      // 0x0004(0x0001) (Edit, ZeroConstructor, Config, IsPlainOldData)
-	bool                                               bDisableMaterialNormalCalculation;                        // 0x0005(0x0001) (Edit, ZeroConstructor, Config, IsPlainOldData)
-	EMobileCSMQuality                                  MobileCSMQuality;                                         // 0x0006(0x0001) (Edit, ZeroConstructor, Config, IsPlainOldData)
+	EMobileCSMQuality                                  MobileCSMQuality;                                         // 0x0005(0x0001) (Edit, ZeroConstructor, Config, IsPlainOldData)
 };
 
 }

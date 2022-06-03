@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,7 +23,7 @@ struct UXpBarXpText_C_Get_Skill_Points_For_Next_Level_Params
 // Function XpBarXpText.XpBarXpText_C.Update Xp Text
 struct UXpBarXpText_C_Update_Xp_Text_Params
 {
-	struct FFortPublicAccountInfo                      Account_Info;                                             // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FFortPublicAccountInfo                      Account_Info;                                             // (Parm)
 };
 
 // Function XpBarXpText.XpBarXpText_C.Construct
@@ -34,13 +34,13 @@ struct UXpBarXpText_C_Construct_Params
 // Function XpBarXpText.XpBarXpText_C.HandleAccountUpdate
 struct UXpBarXpText_C_HandleAccountUpdate_Params
 {
-	struct FFortPublicAccountInfo                      NewInfo;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FFortPublicAccountInfo                      NewInfo;                                                  // (Parm)
 };
 
 // Function XpBarXpText.XpBarXpText_C.ExecuteUbergraph_XpBarXpText
 struct UXpBarXpText_C_ExecuteUbergraph_XpBarXpText_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

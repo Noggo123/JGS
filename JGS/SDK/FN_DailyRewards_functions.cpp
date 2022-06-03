@@ -1,4 +1,4 @@
-// Fortnite (4.1) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,9 +15,9 @@ namespace SDK
 // Function DailyRewards.DailyRewards_C.Handle Collect
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UDailyRewards_C::Handle_Collect(bool* Passthrough)
+void UDailyRewards_C::Handle_Collect(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DailyRewards.DailyRewards_C.Handle Collect");
 
@@ -29,17 +29,17 @@ void UDailyRewards_C::Handle_Collect(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function DailyRewards.DailyRewards_C.Handle Close
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UDailyRewards_C::Handle_Close(bool* Passthrough)
+void UDailyRewards_C::Handle_Close(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function DailyRewards.DailyRewards_C.Handle Close");
 
@@ -51,8 +51,8 @@ void UDailyRewards_C::Handle_Close(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -144,7 +144,7 @@ void UDailyRewards_C::OnActivated()
 // Function DailyRewards.DailyRewards_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UDailyRewards_C::PreConstruct(bool* IsDesignTime)
 {
@@ -164,7 +164,7 @@ void UDailyRewards_C::PreConstruct(bool* IsDesignTime)
 // Function DailyRewards.DailyRewards_C.ClaimResultReceived
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// TArray<struct FFortItemInstanceQuantityPair>* Loot                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<struct FFortItemInstanceQuantityPair>* Loot                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UDailyRewards_C::ClaimResultReceived(TArray<struct FFortItemInstanceQuantityPair>* Loot)
 {
@@ -218,7 +218,7 @@ void UDailyRewards_C::Destruct()
 // Function DailyRewards.DailyRewards_C.ExecuteUbergraph_DailyRewards
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UDailyRewards_C::ExecuteUbergraph_DailyRewards(int EntryPoint)
 {
