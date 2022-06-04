@@ -8,6 +8,7 @@ namespace Abilities
 
 		auto DefaultGameplayEffect = UObject::FindObject<UGameplayEffect>("GE_Athena_PurpleStuff_C GE_Athena_PurpleStuff.Default__GE_Athena_PurpleStuff_C");
 		if (DefaultGameplayEffect) {
+			DefaultGameplayEffect->GrantedAbilities.Add(FGameplayAbilitySpecDef());
 			DefaultGameplayEffect->GrantedAbilities.operator[](0).Ability = InGameplayAbility;
 			DefaultGameplayEffect->GrantedAbilities.operator[](0).RemovalPolicy = EGameplayEffectGrantedAbilityRemovePolicy::DoNothing;
 			DefaultGameplayEffect->GrantedAbilities.operator[](0).Level = 1.0;

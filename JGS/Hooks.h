@@ -99,7 +99,7 @@ namespace Hooks
 			!FuncName.contains("ServerMoveOld") &&
 			!FuncName.contains("ClientAdjustPosition"))
 		{
-			LOG("RPC: " << FuncName);
+			//LOG("RPC: " << FuncName);
 		}
 
 		/////////// RPCS ////////////
@@ -171,78 +171,6 @@ namespace Hooks
 		{
 			auto PC = (AFortPlayerController*)pObject;
 			PC->ClientTravel(L"/Game/Maps/Frontend", ETravelType::TRAVEL_Absolute, false, FGuid());
-		}
-
-		if (FuncName.contains("ServerHandlePickup"))
-		{
-			auto Pawn = (AFortPlayerPawn*)pObject;
-			auto Params = (AFortPlayerPawn_ServerHandlePickup_Params*)pParams;
-
-			if (Pawn)
-			{
-				auto PC = Pawn->Controller;
-				if (PC)
-				{
-					
-				}
-			}
-		}
-
-		if (FuncName.contains("ServerCreateBuildingActor"))
-		{
-			auto PlayerController = (AFortPlayerController*)pObject;
-			if (PlayerController)
-			{
-				auto BuildLoc = PlayerController->LastBuildPreviewGridSnapLoc;
-				auto BuildRot = PlayerController->LastBuildPreviewGridSnapRot;
-				auto BuildClass = PlayerController->CurrentBuildableClass;
-				auto BuildingActor = SpawnActor<ABuildingActor>(BuildLoc, BuildRot, BuildClass);
-				if (BuildingActor) {
-					BuildingActor->InitializeKismetSpawnedBuildingActor(BuildingActor, PlayerController);
-				}
-			}
-		}
-
-		// FIX TOMORROW
-		if (FuncName.find("ServerPlayEmoteItem") != std::string::npos)
-		{
-			for (int i = 0; i < Beacons::Beacon->NetDriver->ClientConnections.Num(); i++)
-			{
-				auto Connection = Beacons::Beacon->NetDriver->ClientConnections[i];
-
-				if (Connection && Connection->PlayerController)
-				{
-					auto ControllerFromObject = (AFortPlayerControllerAthena*)pObject;
-					auto AthenaPlayerPawn = (AFortPlayerPawnAthena*)ControllerFromObject->Pawn;
-
-					if (!ControllerFromObject->bIsPlayerActivelyMoving)
-					{
-						if (AthenaPlayerPawn->bIsCrouched) AthenaPlayerPawn->UnCrouch(true);
-
-						auto EmoteAsset = static_cast<AFortPlayerController_ServerPlayEmoteItem_Params*>(pParams)->EmoteAsset;
-						LOG(AthenaPlayerPawn->PlayerState->GetPlayerName().ToString() << " wants to play " << EmoteAsset->GetName());
-
-						auto Montage = EmoteAsset->GetAnimationHardReference(EFortCustomBodyType::All, EFortCustomGender::Both);
-
-						if (AthenaPlayerPawn->RepAnimMontageInfo.AnimMontage != Montage)
-						{
-
-							AthenaPlayerPawn->RepAnimMontageInfo.AnimMontage = Montage;
-							AthenaPlayerPawn->RepAnimMontageInfo.PlayRate = 1;
-							AthenaPlayerPawn->RepAnimMontageInfo.IsStopped = false;
-							AthenaPlayerPawn->RepAnimMontageInfo.SkipPositionCorrection = true;
-
-							auto AnimInstance = AthenaPlayerPawn->Mesh->GetAnimInstance();
-							auto thisok = AnimInstance->Montage_Play(Montage, 1, EMontagePlayReturnType::Duration, 0);
-
-							AthenaPlayerPawn->OnRep_ReplicatedAnimMontage();
-							AthenaPlayerPawn->OnRep_AttachmentMesh();
-							AthenaPlayerPawn->OnRep_AttachmentReplication();
-							AthenaPlayerPawn->OnRep_ReplicateMovement();
-						}
-					}
-				}
-			}
 		}
 
 		/////////// RPCS ////////////
