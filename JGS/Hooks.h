@@ -123,9 +123,9 @@ namespace Hooks
 
 				bHasInitedTheBeacon = true;
 
-				Globals::World->AuthorityGameMode->GameSession->MaxPlayers = 100;
-
-				((AFortGameModeAthena*)Globals::World->AuthorityGameMode)->StartMatch();
+				Globals::World->AuthorityGameMode->GameSession->MaxPlayers = 50;
+				((AFortGameModeAthena*)Globals::World->AuthorityGameMode)->bAlwaysDBNO = true;
+				((AGameMode*)Globals::World->AuthorityGameMode)->StartMatch();
 
 				Discord::UpdateStatus("Server is now up and joinable!");
 			}
@@ -289,8 +289,6 @@ namespace Hooks
 			auto NewPawn = (APlayerPawn_Athena_C*)(Util::SpawnActor(APlayerPawn_Athena_C::StaticClass(), ((AFortGameStateAthena*)Globals::World->GameState)->GetAircraft()->K2_GetActorLocation(), {}));
 			if (NewPawn) {
 				PC->Possess(NewPawn);
-
-				reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars->ServerActivateSlotInternal(EFortQuickBars::Primary, 0, 0.0, true);
 			}
 		}
 

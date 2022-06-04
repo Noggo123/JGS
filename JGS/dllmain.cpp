@@ -60,7 +60,7 @@ DWORD WINAPI MainThread(LPVOID)
 
     MH_Initialize();
 
-    LoadLootPools();
+    //LoadLootPools();
 
     Discord::UpdateStatus("Server is now loading map...");
 
