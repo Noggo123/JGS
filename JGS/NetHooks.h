@@ -87,6 +87,15 @@ namespace Beacons
 
 		Pawn->SetMaxHealth(100);
 		Pawn->SetHealth(100);
+		auto HealthSet = Pawn->HealthSet;
+		HealthSet->CurrentShield.Minimum = 0;
+		HealthSet->CurrentShield.Maximum = 100;
+		HealthSet->CurrentShield.BaseValue = 100;
+		HealthSet->Shield.Minimum = 0;
+		HealthSet->Shield.Maximum = 100;
+		HealthSet->Shield.BaseValue = 100;
+		HealthSet->OnRep_Shield();
+		HealthSet->OnRep_CurrentShield();
 
 		PlayerController->ClientForceProfileQuery();
 

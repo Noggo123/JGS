@@ -288,6 +288,15 @@ namespace Hooks
 			auto NewPawn = (APlayerPawn_Athena_C*)(Util::SpawnActor(APlayerPawn_Athena_C::StaticClass(), ((AFortGameStateAthena*)Globals::World->GameState)->GetAircraft()->K2_GetActorLocation(), {}));
 			if (NewPawn) {
 				PC->Possess(NewPawn);
+				auto HealthSet = NewPawn->HealthSet;
+				HealthSet->CurrentShield.Minimum = 0;
+				HealthSet->CurrentShield.Maximum = 100;
+				HealthSet->CurrentShield.BaseValue = 100;
+				HealthSet->Shield.Minimum = 0;
+				HealthSet->Shield.Maximum = 100;
+				HealthSet->Shield.BaseValue = 100;
+				HealthSet->OnRep_Shield();
+				HealthSet->OnRep_CurrentShield();
 			}
 		}
 
