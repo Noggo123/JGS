@@ -15,6 +15,8 @@ inline Fn GetVFunction(const void *instance, std::size_t index)
 	return reinterpret_cast<Fn>(vtable[index]);
 }
 
+static auto Realloc = reinterpret_cast<void* (*)(void* Memory, int64_t NewSize, uint32_t Alignment)>(uintptr_t(GetModuleHandle(0)) + 0x123E4C0);
+
 class UObject;
 
 struct TUObjectArray
@@ -69,7 +71,7 @@ public:
 
 	inline int Add(T InputData)
 	{
-		Data = (T*)realloc(Data, sizeof(T) * (Count + 1));
+		Data = (T*)Realloc(Data, sizeof(T) * (Count + 1), 0);
 		Data[Count++] = InputData;
 		Max = Count;
 
@@ -86,7 +88,7 @@ public:
 
 			NewArray.Add(this->operator[](i));
 		}
-		this->Data = (T*)realloc(NewArray.Data, sizeof(T) * (NewArray.Count));
+		this->Data = (T*)Realloc(NewArray.Data, sizeof(T) * (NewArray.Count), 0);
 		this->Count = NewArray.Count;
 		this->Max = NewArray.Count;
 	}

@@ -2,32 +2,37 @@
 
 namespace Hooks
 {
-	UFortItemDefinition* ScarItemDef;
-
 	static void SpawnFloorLoot()
 	{
-		ScarItemDef = UObject::FindObject<UFortWeaponItemDefinition>("FortWeaponRangedItemDefinition WID_Assault_AutoHigh_Athena_SR_Ore_T03.WID_Assault_AutoHigh_Athena_SR_Ore_T03");
-
 		TArray<AActor*> OutActors;
 		Globals::GPS->STATIC_GetAllActorsOfClass(Globals::World, UObject::FindClass("BlueprintGeneratedClass Tiered_Athena_FloorLoot_01.Tiered_Athena_FloorLoot_01_C"), &OutActors);
 
 		for (int i = 0; i < OutActors.Num(); i++)
 		{
+			bool bShouldSpawn = Globals::MathLib->STATIC_RandomBoolWithWeight(0.6f);
+			bool bIsConsumable = !Globals::MathLib->STATIC_RandomBoolWithWeight(0.2f);
+
 			auto Actor = OutActors[i];
 
-			if (Actor)
+			if (Actor && bShouldSpawn)
 			{
 				auto SpawnLoc = Actor->K2_GetActorLocation();
 
 				auto NewFortPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), SpawnLoc, FRotator()));
 
 				NewFortPickup->PrimaryPickupItemEntry.Count = 1;
-				NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::RangedWeapons[rand() % Globals::RangedWeapons.size()];
+				if (bIsConsumable)
+				{
+					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::RangedWeapons[rand() % Globals::RangedWeapons.size()];
+				}
+				else {
+					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::Consumables[rand() % Globals::Consumables.size()];
+				}
 				NewFortPickup->OnRep_PrimaryPickupItemEntry();
 
 				NewFortPickup->TossPickup(SpawnLoc, nullptr, 1);
 
-				LOG("Spawned Pickup: " << NewFortPickup->GetName() << " With weapon definition: " << NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetName());
+				//LOG("Spawned Pickup: " << NewFortPickup->GetName() << " With weapon definition: " << NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetName());
 			}
 		}
 	}
@@ -53,19 +58,6 @@ namespace Hooks
 	{
 		return InternalTryActivateAbilityLong(AbilitySystemComp, AbilityToActivate, InPredictionKey, OutInstancedAbility, OnGameplayAbilityEndedDelegate, TriggerEventData);
 	}
-
-	struct FPendingAbilityInfo
-	{
-		FGameplayAbilitySpecHandle Handle;
-		FPredictionKey	PredictionKey;
-		FGameplayEventData TriggerEventData;
-
-		bool bPartiallyActivated;
-
-		FPendingAbilityInfo()
-			: bPartiallyActivated(false)
-		{}
-	};
 
 	bool bIsReady = false;
 	bool bHasSpawned = false;
@@ -128,6 +120,8 @@ namespace Hooks
 				((AGameMode*)Globals::World->AuthorityGameMode)->StartMatch();
 
 				Discord::UpdateStatus("Server is now up and joinable!");
+
+				StaticLoadObject<UBlueprintGeneratedClass>(L"/Game/Abilities/Player/Constructor/Perks/ContainmentUnit/GE_Constructor_ContainmentUnit_Applied.GE_Constructor_ContainmentUnit_Applied_C");
 			}
 		}
 
@@ -139,7 +133,7 @@ namespace Hooks
 				!FuncName.contains("ServerMove") &&
 				!FuncName.contains("ClientAdjustPosition"))
 			{
-				LOG("RPC: " << FuncName);
+				//LOG("RPC: " << FuncName);
 			}
 		}
 
@@ -151,7 +145,12 @@ namespace Hooks
 			auto Params = (UAbilitySystemComponent_ServerTryActivateAbility_Params*)pParams;
 			auto AbilitySystemComp = (UAbilitySystemComponent*)pObject;
 
-			AbilitySystemComp->ClientTryActivateAbility(Params->AbilityToActivate);
+			auto AbilityToActivate = Params->AbilityToActivate;
+			auto PredictionKey = Params->PredictionKey;
+
+			UGameplayAbility* InstancedAbility = nullptr;
+
+			InternalTryActivateAbilityLong(AbilitySystemComp, AbilityToActivate, PredictionKey, &InstancedAbility, nullptr, nullptr);
 
 			return NULL;
 		}
@@ -290,6 +289,72 @@ namespace Hooks
 			if (NewPawn) {
 				PC->Possess(NewPawn);
 			}
+		}
+
+		if (FuncName.contains("ServerAbilityRPCBatch"))
+		{
+			auto AbilityComp = (UAbilitySystemComponent*)pObject;
+			auto CurrentParams = (UAbilitySystemComponent_ServerAbilityRPCBatch_Params*)pParams;
+
+			FGameplayAbilitySpec* FoundSpec = FindAbilitySpecFromHandle(AbilityComp, CurrentParams->BatchInfo.AbilitySpecHandle);
+
+			if (FoundSpec && FoundSpec->Ability)
+			{
+				if (FoundSpec->Ability->GetName().contains("GenericDamage"))
+				{
+					UGameplayAbility* InstancedAbility = nullptr;
+					InternalTryActivateAbilityLong(AbilityComp, CurrentParams->BatchInfo.AbilitySpecHandle, CurrentParams->BatchInfo.PredictionKey, &InstancedAbility, nullptr, &FoundSpec->Ability->CurrentEventData);
+				}
+			}
+		}
+
+		if (FuncName.contains("ServerLoadingScreenDropped"))
+		{
+			auto PC = (AFortPlayerController*)pObject;
+			auto Pawn = (APlayerPawn_Athena_C*)PC->Pawn;
+
+			CreateThread(0, 0, (LPTHREAD_START_ROUTINE)Beacons::GrantGameplayAbilities, Pawn, 0, 0);
+		}
+
+		if (FuncName.contains("ServerAttemptInteract"))
+		{
+			auto PlayerController = (AFortPlayerControllerAthena*)pObject;
+			auto CurrentParams = (AFortPlayerController_ServerAttemptInteract_Params*)pParams;
+
+			auto ReceivingActor = CurrentParams->ReceivingActor;
+
+			if (ReceivingActor && ReceivingActor->Class->GetName().contains("Tiered_Chest"))
+			{
+				auto Chest = (ABuildingContainer*)ReceivingActor;
+				Chest->bAlreadySearched = true;
+				Chest->OnRep_bAlreadySearched();
+
+				auto Location = ReceivingActor->K2_GetActorLocation();
+
+				auto NewFortPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
+
+				NewFortPickup->PrimaryPickupItemEntry.Count = 1;
+				NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::RangedWeapons[rand() % Globals::RangedWeapons.size()];
+				NewFortPickup->OnRep_PrimaryPickupItemEntry();
+				NewFortPickup->TossPickup(Location, nullptr, 1);
+
+				auto NewFortPickup1 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
+
+				NewFortPickup1->PrimaryPickupItemEntry.Count = 1;
+				NewFortPickup1->PrimaryPickupItemEntry.ItemDefinition = Globals::Consumables[rand() % Globals::Consumables.size()];
+				NewFortPickup1->OnRep_PrimaryPickupItemEntry();
+				NewFortPickup1->TossPickup(Location, nullptr, 1);
+
+				return NULL;
+			}
+		}
+
+		if (FuncName.contains("ReceiveDestroyed") && Beacons::Beacon)
+		{
+			auto Actor = (AActor*)pObject;
+
+			if (Beacons::NotifyActorDestroyed && Beacons::Beacon->NetDriver)
+				Beacons::NotifyActorDestroyed(Beacons::Beacon->NetDriver, Actor, false);
 		}
 
 		/////////// RPCS ////////////

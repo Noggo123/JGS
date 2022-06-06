@@ -55,6 +55,24 @@ namespace Beacons
 		return WelcomePlayer(Globals::World, NetConnection);
 	}
 
+	void GrantGameplayAbilities(APlayerPawn_Athena_C* InPawn)
+	{
+		static auto AbilitySet = FindObjectFast<UFortAbilitySet>("/Game/Abilities/Player/Generic/Traits/DefaultPlayer/GAS_DefaultPlayer.GAS_DefaultPlayer");
+
+		for (int i = 0; i < AbilitySet->GameplayAbilities.Num(); i++)
+		{
+			auto Ability = AbilitySet->GameplayAbilities[i];
+
+			Abilities::GrantGameplayAbility(InPawn, Ability);
+		}
+
+		static auto ShootingAbility = FindObjectFast<UClass>("/Game/Abilities/Weapons/Ranged/GA_Ranged_GenericDamage.GA_Ranged_GenericDamage_C");
+		if (ShootingAbility)
+		{
+			Abilities::GrantGameplayAbility(InPawn, ShootingAbility);
+		}
+	}
+
 	APlayerController* SpawnPlayActorHook(UWorld*, UNetConnection* Connection, ENetRole NetRole, FURL a4, void* a5, FString& Src, uint8_t a7)
 	{
 		auto PlayerController = (AFortPlayerControllerAthena*)SpawnPlayActor(Globals::World, Connection, NetRole, a4, a5, Src, a7);
@@ -122,6 +140,12 @@ namespace Beacons
 		return DestroyActor(InWorld, InActor, bNetForce, bShouldModifyLevel);
 	}
 
+	PVOID(*CollectGarbageInternal)(uint32_t, bool) = nullptr;
+	PVOID CollectGarbageInternalHook(uint32_t KeepFlags, bool bPerformFullPurge)
+	{
+		return NULL;
+	}
+
 	void InitHooks()
 	{
 		Replication::InitOffsets();
@@ -151,6 +175,10 @@ namespace Beacons
 		MH_EnableHook((void*)(BaseAddr + Offsets::KickPatch));
 		MH_CreateHook((void*)(BaseAddr + Offsets::DestroyActor), DestroyActorHook, (void**)(&DestroyActor));
 		MH_EnableHook((void*)(BaseAddr + Offsets::DestroyActor));
+
+		auto pCollectGarbageInternalAddress = Util::FindPattern("\x48\x8B\xC4\x48\x89\x58\x08\x88\x50\x10", "xxxxxxxxxx");
+		MH_CreateHook(static_cast<LPVOID>(pCollectGarbageInternalAddress), CollectGarbageInternalHook, reinterpret_cast<LPVOID*>(&CollectGarbageInternal));
+		MH_EnableHook(static_cast<LPVOID>(pCollectGarbageInternalAddress));
 
 		Beacon = (AOnlineBeaconHost*)(Util::SpawnActor(AOnlineBeaconHost::StaticClass(), {}, {}));
 		Beacon->ListenPort = 7777;

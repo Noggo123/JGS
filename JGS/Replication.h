@@ -176,17 +176,10 @@ namespace Replication
 		Actors.Max = 0;
 	}
 
-	bool IsActorRelevantToConnection(AActor* Actor, std::vector<FNetViewer>& ConnectionViewers)
+	bool IsActorRelevantToConnection(AActor* Actor, UNetConnection* NetConnection)
 	{
-		for (int32_t viewerIdx = 0; viewerIdx < ConnectionViewers.size(); viewerIdx++)
-		{
-			if (IsNetRelevantFor(Actor, ConnectionViewers[viewerIdx].InViewer, ConnectionViewers[viewerIdx].ViewTarget, ConnectionViewers[viewerIdx].ViewLocation))
-			{
-				return true;
-			}
-		}
-
-		return false;
+		auto ActorLocation = NetConnection->ViewTarget->K2_GetActorLocation();
+		return IsNetRelevantFor(Actor, NetConnection->ViewTarget, NetConnection->ViewTarget, ActorLocation);
 	}
 
 	void ReplicateActors(UNetDriver* NetDriver)
@@ -211,17 +204,6 @@ namespace Replication
 			if (i >= NumClientsToTick)
 				continue;
 
-			std::vector<FNetViewer> ConnectionViewers;
-			ConnectionViewers.push_back(FNetViewer{ Connection });
-
-			for (int ViewerIndex = 0; ViewerIndex < Connection->Children.Num(); ViewerIndex++)
-			{
-				if (Connection->Children[ViewerIndex]->ViewTarget != NULL)
-				{
-					ConnectionViewers.push_back(FNetViewer{ Connection->Children[ViewerIndex] });
-				}
-			}
-
 			if (Connection->PlayerController)
 			{
 				SendClientAdjustment(Connection->PlayerController);
@@ -243,44 +225,29 @@ namespace Replication
 				if (!ActorInfo->Actor)
 					continue;
 
-				/*if (ActorInfo->Actor->IsA(APawn::StaticClass())
-					|| ActorInfo->Actor->IsA(APlayerState::StaticClass())
-					|| ActorInfo->Actor->IsA(AController::StaticClass())) //Skip relevancy check
+				auto Actor = ActorInfo->Actor;
+
+				auto Channel = FindChannel(Actor, Connection);
+
+				const bool bIsRelevant = IsActorRelevantToConnection(ActorInfo->Actor, Connection);
+
+				if (!Actor->bAlwaysRelevant && !Actor->bNetUseOwnerRelevancy && !Actor->bOnlyRelevantToOwner)
 				{
-					LOG("Skipping Relevancy Check for actor: " << ActorInfo->Actor->GetName());
-
-					auto Channel = FindChannel(ActorInfo->Actor, Connection);
-
-					if (!Channel)
-						Channel = ReplicateToClient(ActorInfo->Actor, Connection);
-
-					if (Channel)
+					auto Viewer = Connection->ViewTarget;
+					auto Loc = Viewer->K2_GetActorLocation();
+					if (!IsNetRelevantFor(Actor, Viewer, Connection->ViewTarget, Loc))
 					{
-						ReplicateActor(Channel);
+						if (Channel)
+							ActorChannelClose(Channel, 0, 0, 0);
+						continue;
 					}
+				}
 
-					continue;
-				}*/
+				if (!Channel)
+					Channel = ReplicateToClient(Actor, Connection);
 
-				//if (IsActorRelevantToConnection(ActorInfo->Actor, ConnectionViewers))
-				//{
-					auto Channel = FindChannel(ActorInfo->Actor, Connection);
-
-					if (!Channel)
-						Channel = ReplicateToClient(ActorInfo->Actor, Connection);
-
-					if (Channel)
-					{
-						ReplicateActor(Channel);
-					}
-				/*} else {
-					auto Channel = FindChannel(ActorInfo->Actor, Connection);
-					if (Channel)
-					{
-						LOG("Closing Actor Channel: " << Channel->GetName() << " Actor: " << Channel->Actor->GetName() << " Because it is not dormant!");
-						ActorChannelClose(Channel, 0, 0, 0);
-					}
-				}*/
+				if (Channel)
+					ReplicateActor(Channel);
 			}
 		}
 

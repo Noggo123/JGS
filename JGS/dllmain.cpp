@@ -48,9 +48,10 @@ DWORD WINAPI MainThread(LPVOID)
     Globals::GPS = reinterpret_cast<UGameplayStatics*>(UGameplayStatics::StaticClass());
     Globals::PC = reinterpret_cast<AFortPlayerController*>(FortEngine->GameInstance->LocalPlayers[0]->PlayerController);
     Globals::MathLib = reinterpret_cast<UKismetMathLibrary*>(UKismetMathLibrary::StaticClass());
+    Globals::SystemLib = reinterpret_cast<UKismetSystemLibrary*>(UKismetSystemLibrary::StaticClass());
 
-    Globals::HeadPart = UObject::FindObject<UCustomCharacterPart>("CustomCharacterPart F_Med_Head1.F_Med_Head1");
-    Globals::BodyPart = UObject::FindObject<UCustomCharacterPart>("CustomCharacterPart F_Med_Soldier_01.F_Med_Soldier_01");
+    Globals::HeadPart = FindObjectFast<UCustomCharacterPart>("/Game/Characters/CharacterParts/Female/Medium/Heads/F_Med_Head1.F_Med_Head1");
+    Globals::BodyPart = FindObjectFast<UCustomCharacterPart>("/Game/Characters/CharacterParts/Female/Medium/Bodies/F_Med_Soldier_01.F_Med_Soldier_01");
 
     auto NewConsole = Globals::GPS->STATIC_SpawnObject(UFortConsole::StaticClass(), FortEngine->GameViewport);
     FortEngine->GameViewport->ViewportConsole = (UFortConsole*)(NewConsole);
@@ -60,7 +61,7 @@ DWORD WINAPI MainThread(LPVOID)
 
     MH_Initialize();
 
-    //LoadLootPools();
+    LoadLootPools();
 
     Discord::UpdateStatus("Server is now loading map...");
 
