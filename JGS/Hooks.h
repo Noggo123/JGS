@@ -199,7 +199,7 @@ namespace Hooks
 
 			if (Pawn)
 			{
-				auto PC = Pawn->Controller;
+				auto PC = (AFortPlayerController*)Pawn->Controller;
 				if (PC)
 				{
 					auto WorldInventory = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory;

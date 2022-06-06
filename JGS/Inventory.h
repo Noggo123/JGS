@@ -26,6 +26,13 @@ struct CurrentBuildableClassPointer
     UClass* CurrentBuildableClass;
 };
 
+struct AFortAsBuildPreviewMID
+{
+public:
+    unsigned char UnknownData00[0x1AE8];
+    class UMaterialInstanceDynamic* BuildPreviewMarkerMID;
+};
+
 class Inventory
 {
 public:
@@ -43,10 +50,20 @@ public:
     FGuid StairGuid;
     FGuid RoofGuid;
 
-    UClass* WallBuildClass;
-    UClass* FloorBuildClass;
-    UClass* StairBuildClass;
-    UClass* RoofBuildClass;
+    UStaticMesh* WallBuildMesh;
+    UStaticMesh* FloorBuildMesh;
+    UStaticMesh* StairBuildMesh;
+    UStaticMesh* RoofBuildMesh;
+
+    UClass* BuildClassWall;
+    UClass* BuildClassFloor;
+    UClass* BuildClassStair;
+    UClass* BuildClassRoof;
+
+    UBuildingEditModeMetadata_Wall* MetadataWall;
+    UBuildingEditModeMetadata_Roof* MetadataRoof;
+    UBuildingEditModeMetadata_Stair* MetadataStair;
+    UBuildingEditModeMetadata_Floor* MetadataFloor;
 
     FString BuildingMat;
 
@@ -61,11 +78,11 @@ public:
         auto FortInventory = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory;
 
         static auto PickaxeDef = FindObjectFast<UFortWeaponItemDefinition>("/Game/Athena/Items/Weapons/WID_Harvest_Pickaxe_Athena_C_T01.WID_Harvest_Pickaxe_Athena_C_T01");
-        static auto EditToolDef = FindObjectFast<SDK::UFortEditToolItemDefinition>("/Game/Items/Weapons/BuildingTools/EditTool.EditTool");
-        static auto WallBuildDef = FindObjectFast<SDK::UFortBuildingItemDefinition>("/Game/Items/Weapons/BuildingTools/BuildingItemData_Wall.BuildingItemData_Wall");
-        static auto FloorBuildDef = FindObjectFast<SDK::UFortBuildingItemDefinition>("/Game/Items/Weapons/BuildingTools/BuildingItemData_Floor.BuildingItemData_Floor");
-        static auto StairBuildDef = FindObjectFast<SDK::UFortBuildingItemDefinition>("/Game/Items/Weapons/BuildingTools/BuildingItemData_Stair_W.BuildingItemData_Stair_W");
-        static auto RoofBuildDef = FindObjectFast<SDK::UFortBuildingItemDefinition>("/Game/Items/Weapons/BuildingTools/BuildingItemData_RoofS.BuildingItemData_RoofS");
+        static auto EditToolDef = FindObjectFast<UFortEditToolItemDefinition>("/Game/Items/Weapons/BuildingTools/EditTool.EditTool");
+        static auto WallBuildDef = FindObjectFast<UFortBuildingItemDefinition>("/Game/Items/Weapons/BuildingTools/BuildingItemData_Wall.BuildingItemData_Wall");
+        static auto FloorBuildDef = FindObjectFast<UFortBuildingItemDefinition>("/Game/Items/Weapons/BuildingTools/BuildingItemData_Floor.BuildingItemData_Floor");
+        static auto StairBuildDef = FindObjectFast<UFortBuildingItemDefinition>("/Game/Items/Weapons/BuildingTools/BuildingItemData_Stair_W.BuildingItemData_Stair_W");
+        static auto RoofBuildDef = FindObjectFast<UFortBuildingItemDefinition>("/Game/Items/Weapons/BuildingTools/BuildingItemData_RoofS.BuildingItemData_RoofS");
 
         auto EditToolItem = EditToolDef->CreateTemporaryItemInstanceBP(1, 0);
         auto WorldEditToolItem = (UFortWorldItem*)EditToolItem;
@@ -74,35 +91,35 @@ public:
         FortInventory->Inventory.ItemInstances.Add(WorldEditToolItem);
 
         auto PickaxeItem = PickaxeDef->CreateTemporaryItemInstanceBP(1, 0);
-        auto WorldPickaxeItem = reinterpret_cast<SDK::UFortWorldItem*>(PickaxeItem);
+        auto WorldPickaxeItem = reinterpret_cast<UFortWorldItem*>(PickaxeItem);
         WorldPickaxeItem->ItemEntry.Count = 1;
         FortInventory->Inventory.ReplicatedEntries.Add(WorldPickaxeItem->ItemEntry);
         FortInventory->Inventory.ItemInstances.Add(WorldPickaxeItem);
-        QuickBars->ServerAddItemInternal(WorldPickaxeItem->GetItemGuid(), SDK::EFortQuickBars::Primary, 0);
+        QuickBars->ServerAddItemInternal(WorldPickaxeItem->GetItemGuid(), EFortQuickBars::Primary, 0);
 
         auto WallBuildItem = WallBuildDef->CreateTemporaryItemInstanceBP(1, 0);
-        auto WallWorldBuildItem = reinterpret_cast<SDK::UFortWorldItem*>(WallBuildItem);
+        auto WallWorldBuildItem = reinterpret_cast<UFortWorldItem*>(WallBuildItem);
         FortInventory->Inventory.ReplicatedEntries.Add(WallWorldBuildItem->ItemEntry);
         FortInventory->Inventory.ItemInstances.Add(WallWorldBuildItem);
-        QuickBars->ServerAddItemInternal(WallWorldBuildItem->GetItemGuid(), SDK::EFortQuickBars::Secondary, 0);
+        QuickBars->ServerAddItemInternal(WallWorldBuildItem->GetItemGuid(), EFortQuickBars::Secondary, 0);
 
         auto FloorBuildItem = FloorBuildDef->CreateTemporaryItemInstanceBP(1, 0);
-        auto FloorWorldBuildItem = reinterpret_cast<SDK::UFortWorldItem*>(FloorBuildItem);
+        auto FloorWorldBuildItem = reinterpret_cast<UFortWorldItem*>(FloorBuildItem);
         FortInventory->Inventory.ReplicatedEntries.Add(FloorWorldBuildItem->ItemEntry);
         FortInventory->Inventory.ItemInstances.Add(FloorWorldBuildItem);
-        QuickBars->ServerAddItemInternal(FloorWorldBuildItem->GetItemGuid(), SDK::EFortQuickBars::Secondary, 1);
+        QuickBars->ServerAddItemInternal(FloorWorldBuildItem->GetItemGuid(), EFortQuickBars::Secondary, 1);
 
         auto StairBuildItem = StairBuildDef->CreateTemporaryItemInstanceBP(1, 0);
-        auto StairWorldBuildItem = reinterpret_cast<SDK::UFortWorldItem*>(StairBuildItem);
+        auto StairWorldBuildItem = reinterpret_cast<UFortWorldItem*>(StairBuildItem);
         FortInventory->Inventory.ReplicatedEntries.Add(StairWorldBuildItem->ItemEntry);
         FortInventory->Inventory.ItemInstances.Add(StairWorldBuildItem);
-        QuickBars->ServerAddItemInternal(StairWorldBuildItem->GetItemGuid(), SDK::EFortQuickBars::Secondary, 2);
+        QuickBars->ServerAddItemInternal(StairWorldBuildItem->GetItemGuid(), EFortQuickBars::Secondary, 2);
 
         auto RoofBuildItem = RoofBuildDef->CreateTemporaryItemInstanceBP(1, 0);
-        auto RoofWorldBuildItem = reinterpret_cast<SDK::UFortWorldItem*>(RoofBuildItem);
+        auto RoofWorldBuildItem = reinterpret_cast<UFortWorldItem*>(RoofBuildItem);
         FortInventory->Inventory.ReplicatedEntries.Add(RoofWorldBuildItem->ItemEntry);
         FortInventory->Inventory.ItemInstances.Add(RoofWorldBuildItem);
-        QuickBars->ServerAddItemInternal(RoofWorldBuildItem->GetItemGuid(), SDK::EFortQuickBars::Secondary, 3);
+        QuickBars->ServerAddItemInternal(RoofWorldBuildItem->GetItemGuid(), EFortQuickBars::Secondary, 3);
 
         WallGuid = WallWorldBuildItem->GetItemGuid();
         FloorGuid = FloorWorldBuildItem->GetItemGuid();
@@ -164,13 +181,20 @@ public:
             }
         }
 
-        WallBuildClass = APBWA_W1_Solid_C::StaticClass();
-        FloorBuildClass = APBWA_W1_Floor_C::StaticClass();
-        StairBuildClass = APBWA_W1_StairW_C::StaticClass();
-        RoofBuildClass = APBWA_W1_RoofC_C::StaticClass();
+        WallBuildMesh = FindObjectFast<UStaticMesh>("/Game/Packages/PBW/Wood/L1/PBW_W1_Solid.PBW_W1_Solid");
+        FloorBuildMesh = FindObjectFast<UStaticMesh>("/Game/Packages/PBW/Wood/L1/PBW_W1_Floor.PBW_W1_Floor");
+        StairBuildMesh = FindObjectFast<UStaticMesh>("/Game/Packages/PBW/Wood/L1/PBW_W1_StairW.PBW_W1_StairW");
+        RoofBuildMesh = FindObjectFast<UStaticMesh>("/Game/Packages/PBW/Wood/L1/PBW_W1_RoofC.PBW_W1_RoofC");
+
+        BuildClassWall = APBWA_W1_Solid_C::StaticClass();
+        BuildClassFloor = APBWA_W1_Floor_C::StaticClass();
+        BuildClassStair = APBWA_M1_StairW_C::StaticClass();
+        BuildClassRoof = APBWA_W1_RoofC_C::StaticClass();
 
         ItemsToAddMap.empty();
         ItemsToAddMap.clear();
+
+        PC->bHasInitializedWorldInventory = true;
 	}
 
 	void UpdateInventory()
@@ -185,71 +209,66 @@ public:
 
     void CreateBuildPreviews()
     {
-        AFortPlayerController* playerController = PC;
-        playerController->CheatManager->Summon(TEXT("BuildingPlayerPrimitivePreview"));
-        m_pBuildPreviewRoof = static_cast<SDK::ABuildingPlayerPrimitivePreview*>(polaris::utilities::SDKUtils::FindActor(SDK::ABuildingPlayerPrimitivePreview::StaticClass()));
-        auto pBuildingEditSupportRoof = reinterpret_cast<SDK::UBuildingEditModeSupport_Roof*>(globals::StaticConstructObject_Internal(SDK::UBuildingEditModeSupport_Roof::StaticClass(), (*globals::gpWorld), SDK::FName("None"), 0, SDK::FUObjectItem::ObjectFlags::None, NULL, false, NULL, false));
-        pBuildingEditSupportRoof->Outer = m_pBuildPreviewRoof;
-        m_pBuildPreviewRoof->EditModeSupport = pBuildingEditSupportRoof;
-        auto pComponent = m_pBuildPreviewRoof->GetBuildingMeshComponent();
-        m_pStaticRoof = SDK::UObject::FindObject<SDK::UStaticMesh>("StaticMesh PBW_W1_RoofC.PBW_W1_RoofC");
-        pComponent->SetStaticMesh(m_pStaticRoof);
-        pComponent->SetMaterial(0, reinterpret_cast<AFortAsBuildPreviewMID*>(globals::gpPlayerController)->BuildPreviewMarkerMID);
-        m_pBuildPreviewRoof->BuildingType = SDK::EFortBuildingType::Roof;
-        m_pMetadataRoof = SDK::UObject::FindObject<SDK::UBuildingEditModeMetadata_Roof>("BuildingEditModeMetadata_Roof EMP_Roof_RoofC.EMP_Roof_RoofC");
-        m_pBuildPreviewRoof->EditModePatternData = m_pMetadataRoof;
-        m_pBuildPreviewRoof->EditModeSupportClass = SDK::UBuildingEditModeSupport_Roof::StaticClass();
-        m_pBuildPreviewRoof->OnBuildingActorInitialized(SDK::EFortBuildingInitializationReason::PlacementTool, SDK::EFortBuildingPersistentState::New);
+        BuildPreviewRoof = static_cast<ABuildingPlayerPrimitivePreview*>(Util::SpawnActor(ABuildingPlayerPrimitivePreview::StaticClass(), {}, {}));
+        BuildPreviewRoof->bAlwaysRelevant = true;
+        auto pBuildingEditSupportRoof = reinterpret_cast<UBuildingEditModeSupport_Roof*>(Globals::GPS->STATIC_SpawnObject(UBuildingEditModeSupport_Roof::StaticClass(), Globals::World));
+        pBuildingEditSupportRoof->Outer = BuildPreviewRoof;
+        BuildPreviewRoof->EditModeSupport = pBuildingEditSupportRoof;
+        auto pComponent = BuildPreviewRoof->GetBuildingMeshComponent();
+        pComponent->SetStaticMesh(RoofBuildMesh);
+        pComponent->SetMaterial(0, reinterpret_cast<AFortAsBuildPreviewMID*>(PC)->BuildPreviewMarkerMID);
+        BuildPreviewRoof->BuildingType = EFortBuildingType::Roof;
+        MetadataRoof = FindObjectFast<UBuildingEditModeMetadata_Roof>("/Game/Building/EditModePatterns/Roof/EMP_Roof_RoofC.EMP_Roof_RoofC");
+        BuildPreviewRoof->EditModePatternData = MetadataRoof;
+        BuildPreviewRoof->EditModeSupportClass = UBuildingEditModeSupport_Roof::StaticClass();
+        BuildPreviewRoof->OnBuildingActorInitialized(EFortBuildingInitializationReason::PlacementTool, EFortBuildingPersistentState::New);
 
-        playerController->CheatManager->Summon(TEXT("BuildingPlayerPrimitivePreview"));
-        m_pBuildPreviewStair = static_cast<SDK::ABuildingPlayerPrimitivePreview*>(polaris::utilities::SDKUtils::FindActor(SDK::ABuildingPlayerPrimitivePreview::StaticClass(), 1));
-        auto pBuildingEditSupportStair = reinterpret_cast<SDK::UBuildingEditModeSupport_Stair*>(globals::StaticConstructObject_Internal(SDK::UBuildingEditModeSupport_Stair::StaticClass(), (*globals::gpWorld), SDK::FName("None"), 0, SDK::FUObjectItem::ObjectFlags::None, NULL, false, NULL, false));
-        pBuildingEditSupportStair->Outer = m_pBuildPreviewStair;
-        m_pBuildPreviewStair->EditModeSupport = pBuildingEditSupportStair;
-        auto pComponent1 = m_pBuildPreviewStair->GetBuildingMeshComponent();
-        m_pStaticStair = SDK::UObject::FindObject<SDK::UStaticMesh>("StaticMesh PBW_W1_StairW.PBW_W1_StairW");
-        pComponent1->SetStaticMesh(m_pStaticStair);
-        pComponent1->SetMaterial(0, reinterpret_cast<AFortAsBuildPreviewMID*>(globals::gpPlayerController)->BuildPreviewMarkerMID);
-        m_pBuildPreviewStair->BuildingType = SDK::EFortBuildingType::Stairs;
-        m_pMetadataStair = SDK::UObject::FindObject<SDK::UBuildingEditModeMetadata_Stair>("BuildingEditModeMetadata_Stair EMP_Stair_StairW.EMP_Stair_StairW");
-        m_pBuildPreviewStair->EditModePatternData = m_pMetadataStair;
-        m_pBuildPreviewStair->EditModeSupportClass = SDK::UBuildingEditModeSupport_Stair::StaticClass();
-        m_pBuildPreviewStair->OnBuildingActorInitialized(SDK::EFortBuildingInitializationReason::PlacementTool, SDK::EFortBuildingPersistentState::New);
+        BuildPreviewStair = static_cast<ABuildingPlayerPrimitivePreview*>(Util::SpawnActor(ABuildingPlayerPrimitivePreview::StaticClass(), {}, {}));
+        BuildPreviewStair->bAlwaysRelevant = true;
+        auto pBuildingEditSupportStair = reinterpret_cast<UBuildingEditModeSupport_Stair*>(Globals::GPS->STATIC_SpawnObject(UBuildingEditModeSupport_Stair::StaticClass(), Globals::World));
+        pBuildingEditSupportStair->Outer = BuildPreviewStair;
+        BuildPreviewStair->EditModeSupport = pBuildingEditSupportStair;
+        auto pComponent1 = BuildPreviewStair->GetBuildingMeshComponent();
+        pComponent1->SetStaticMesh(StairBuildMesh);
+        pComponent1->SetMaterial(0, reinterpret_cast<AFortAsBuildPreviewMID*>(PC)->BuildPreviewMarkerMID);
+        BuildPreviewStair->BuildingType = EFortBuildingType::Stairs;
+        MetadataStair = FindObjectFast<UBuildingEditModeMetadata_Stair>("/Game/Building/EditModePatterns/Stair/EMP_Stair_StairW.EMP_Stair_StairW");
+        BuildPreviewStair->EditModePatternData = MetadataStair;
+        BuildPreviewStair->EditModeSupportClass = UBuildingEditModeSupport_Stair::StaticClass();
+        BuildPreviewStair->OnBuildingActorInitialized(EFortBuildingInitializationReason::PlacementTool, EFortBuildingPersistentState::New);
 
-        playerController->CheatManager->Summon(TEXT("BuildingPlayerPrimitivePreview"));
-        m_pBuildPreviewFloor = static_cast<SDK::ABuildingPlayerPrimitivePreview*>(polaris::utilities::SDKUtils::FindActor(SDK::ABuildingPlayerPrimitivePreview::StaticClass(), 2));
-        auto pBuildingEditSupportFloor = reinterpret_cast<SDK::UBuildingEditModeSupport_Floor*>(globals::StaticConstructObject_Internal(SDK::UBuildingEditModeSupport_Floor::StaticClass(), (*globals::gpWorld), SDK::FName("None"), 0, SDK::FUObjectItem::ObjectFlags::None, NULL, false, NULL, false));
-        pBuildingEditSupportFloor->Outer = reinterpret_cast<AFortAsBuildPreview*>(globals::gpPlayerController)->BuildPreviewMarker;
-        m_pBuildPreviewFloor->EditModeSupport = pBuildingEditSupportFloor;
-        auto pComponent2 = m_pBuildPreviewFloor->GetBuildingMeshComponent();
-        m_pStaticFloor = SDK::UObject::FindObject<SDK::UStaticMesh>("StaticMesh PBW_W1_Floor.PBW_W1_Floor");
-        pComponent2->SetStaticMesh(m_pStaticFloor);
-        pComponent2->SetMaterial(0, reinterpret_cast<AFortAsBuildPreviewMID*>(globals::gpPlayerController)->BuildPreviewMarkerMID);
-        m_pBuildPreviewFloor->BuildingType = SDK::EFortBuildingType::Floor;
-        m_pMetadataFloor = SDK::UObject::FindObject<SDK::UBuildingEditModeMetadata_Floor>("BuildingEditModeMetadata_Floor EMP_Floor_Floor.EMP_Floor_Floor");
-        m_pBuildPreviewFloor->EditModePatternData = m_pMetadataFloor;
-        m_pBuildPreviewFloor->EditModeSupportClass = SDK::UBuildingEditModeSupport_Floor::StaticClass();
-        m_pBuildPreviewFloor->OnBuildingActorInitialized(SDK::EFortBuildingInitializationReason::PlacementTool, SDK::EFortBuildingPersistentState::New);
+        BuildPreviewFloor = static_cast<ABuildingPlayerPrimitivePreview*>(Util::SpawnActor(ABuildingPlayerPrimitivePreview::StaticClass(), {}, {}));
+        BuildPreviewFloor->bAlwaysRelevant = true;
+        auto pBuildingEditSupportFloor = reinterpret_cast<UBuildingEditModeSupport_Floor*>(Globals::GPS->STATIC_SpawnObject(UBuildingEditModeSupport_Floor::StaticClass(), Globals::World));
+        pBuildingEditSupportFloor->Outer = BuildPreviewFloor;
+        BuildPreviewFloor->EditModeSupport = pBuildingEditSupportFloor;
+        auto pComponent2 = BuildPreviewFloor->GetBuildingMeshComponent();
+        pComponent2->SetStaticMesh(FloorBuildMesh);
+        pComponent2->SetMaterial(0, reinterpret_cast<AFortAsBuildPreviewMID*>(PC)->BuildPreviewMarkerMID);
+        BuildPreviewFloor->BuildingType = EFortBuildingType::Floor;
+        MetadataFloor = FindObjectFast<UBuildingEditModeMetadata_Floor>("/Game/Building/EditModePatterns/Floor/EMP_Floor_Floor.EMP_Floor_Floor");
+        BuildPreviewFloor->EditModePatternData = MetadataFloor;
+        BuildPreviewFloor->EditModeSupportClass = UBuildingEditModeSupport_Floor::StaticClass();
+        BuildPreviewFloor->OnBuildingActorInitialized(EFortBuildingInitializationReason::PlacementTool, EFortBuildingPersistentState::New);
 
-        playerController->CheatManager->Summon(TEXT("BuildingPlayerPrimitivePreview"));
-        m_pBuildPreviewWall = static_cast<SDK::ABuildingPlayerPrimitivePreview*>(polaris::utilities::SDKUtils::FindActor(SDK::ABuildingPlayerPrimitivePreview::StaticClass(), 3));
-        auto pBuildingEditSupportWall = reinterpret_cast<SDK::UBuildingEditModeSupport_Wall*>(globals::StaticConstructObject_Internal(SDK::UBuildingEditModeSupport_Wall::StaticClass(), (*globals::gpWorld), SDK::FName("None"), 0, SDK::FUObjectItem::ObjectFlags::None, NULL, false, NULL, false));
-        pBuildingEditSupportWall->Outer = m_pBuildPreviewWall;
-        m_pBuildPreviewWall->EditModeSupport = pBuildingEditSupportWall;
-        auto pComponent3 = m_pBuildPreviewWall->GetBuildingMeshComponent();
-        m_pStaticWall = SDK::UObject::FindObject<SDK::UStaticMesh>("StaticMesh PBW_W1_Solid.PBW_W1_Solid");
-        pComponent3->SetStaticMesh(m_pStaticWall);
-        pComponent3->SetMaterial(0, reinterpret_cast<AFortAsBuildPreviewMID*>(globals::gpPlayerController)->BuildPreviewMarkerMID);
-        m_pBuildPreviewWall->BuildingType = SDK::EFortBuildingType::Wall;
-        m_pMetadataWall = SDK::UObject::FindObject<SDK::UBuildingEditModeMetadata_Wall>("BuildingEditModeMetadata_Wall EMP_Wall_Solid.EMP_Wall_Solid");
-        m_pBuildPreviewWall->EditModePatternData = m_pMetadataWall;
-        m_pBuildPreviewWall->EditModeSupportClass = SDK::UBuildingEditModeSupport_Wall::StaticClass();
-        m_pBuildPreviewWall->OnBuildingActorInitialized(SDK::EFortBuildingInitializationReason::PlacementTool, SDK::EFortBuildingPersistentState::New);
+        BuildPreviewWall = static_cast<ABuildingPlayerPrimitivePreview*>(Util::SpawnActor(ABuildingPlayerPrimitivePreview::StaticClass(), {}, {}));
+        BuildPreviewWall->bAlwaysRelevant = true;
+        auto pBuildingEditSupportWall = reinterpret_cast<UBuildingEditModeSupport_Wall*>(Globals::GPS->STATIC_SpawnObject(UBuildingEditModeSupport_Wall::StaticClass(), Globals::World));
+        pBuildingEditSupportWall->Outer = BuildPreviewWall;
+        BuildPreviewWall->EditModeSupport = pBuildingEditSupportWall;
+        auto pComponent3 = BuildPreviewWall->GetBuildingMeshComponent();
+        pComponent3->SetStaticMesh(WallBuildMesh);
+        pComponent3->SetMaterial(0, reinterpret_cast<AFortAsBuildPreviewMID*>(PC)->BuildPreviewMarkerMID);
+        BuildPreviewWall->BuildingType = EFortBuildingType::Wall;
+        MetadataWall = FindObjectFast<UBuildingEditModeMetadata_Wall>("/Game/Building/EditModePatterns/Wall/EMP_Wall_Solid.EMP_Wall_Solid");
+        BuildPreviewWall->EditModePatternData = MetadataWall;
+        BuildPreviewWall->EditModeSupportClass = UBuildingEditModeSupport_Wall::StaticClass();
+        BuildPreviewWall->OnBuildingActorInitialized(EFortBuildingInitializationReason::PlacementTool, EFortBuildingPersistentState::New);
 
-        m_pBuildPreviewWall->SetActorHiddenInGame(true);
-        m_pBuildPreviewFloor->SetActorHiddenInGame(true);
-        m_pBuildPreviewStair->SetActorHiddenInGame(true);
-        m_pBuildPreviewRoof->SetActorHiddenInGame(true);
+        BuildPreviewWall->SetActorHiddenInGame(true);
+        BuildPreviewFloor->SetActorHiddenInGame(true);
+        BuildPreviewRoof->SetActorHiddenInGame(true);
+        BuildPreviewStair->SetActorHiddenInGame(true);
     }
 
     void ExecuteInventoryItem(FGuid InGuid)
@@ -264,6 +283,62 @@ public:
             {
                 if (PC->Pawn)
                     ((AFortPlayerPawn*)PC->Pawn)->EquipWeaponDefinition((UFortWeaponItemDefinition*)ItemInstance->GetItemDefinitionBP(), InGuid);
+            }
+
+            if (Util::AreGuidsTheSame(InGuid, WallGuid))
+            {
+                reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass = BuildClassWall;
+                reinterpret_cast<BuildPreviewPointer*>(PC)->BuildPreviewMarker = BuildPreviewWall;
+                BuildPreviewWall->SetActorHiddenInGame(false);
+                BuildPreviewFloor->SetActorHiddenInGame(true);
+                BuildPreviewStair->SetActorHiddenInGame(true);
+                BuildPreviewRoof->SetActorHiddenInGame(true);
+
+                ((UFortCheatManager*)PC->CheatManager)->BuildWith(L"Wood");
+
+                BuildClassWall = reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass;
+            }
+
+            if (Util::AreGuidsTheSame(InGuid, FloorGuid))
+            {
+                reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass = BuildClassFloor;
+                reinterpret_cast<BuildPreviewPointer*>(PC)->BuildPreviewMarker = BuildPreviewFloor;
+                BuildPreviewWall->SetActorHiddenInGame(true);
+                BuildPreviewFloor->SetActorHiddenInGame(false);
+                BuildPreviewStair->SetActorHiddenInGame(true);
+                BuildPreviewRoof->SetActorHiddenInGame(true);
+
+                ((UFortCheatManager*)PC->CheatManager)->BuildWith(L"Wood");
+
+                BuildClassFloor = reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass;
+            }
+
+            if (Util::AreGuidsTheSame(InGuid, StairGuid))
+            {
+                reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass = BuildClassStair;
+                reinterpret_cast<BuildPreviewPointer*>(PC)->BuildPreviewMarker = BuildPreviewStair;
+                BuildPreviewWall->SetActorHiddenInGame(true);
+                BuildPreviewFloor->SetActorHiddenInGame(true);
+                BuildPreviewStair->SetActorHiddenInGame(false);
+                BuildPreviewRoof->SetActorHiddenInGame(true);
+
+                ((UFortCheatManager*)PC->CheatManager)->BuildWith(L"Wood");
+
+                BuildClassStair = reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass;
+            }
+
+            if (Util::AreGuidsTheSame(InGuid, RoofGuid))
+            {
+                reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass = BuildClassRoof;
+                reinterpret_cast<BuildPreviewPointer*>(PC)->BuildPreviewMarker = BuildPreviewRoof;
+                BuildPreviewWall->SetActorHiddenInGame(true);
+                BuildPreviewFloor->SetActorHiddenInGame(true);
+                BuildPreviewStair->SetActorHiddenInGame(true);
+                BuildPreviewRoof->SetActorHiddenInGame(false);
+
+                ((UFortCheatManager*)PC->CheatManager)->BuildWith(L"Wood");
+
+                BuildClassRoof = reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass;
             }
         }
     }
