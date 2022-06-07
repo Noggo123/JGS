@@ -2,6 +2,8 @@
 
 namespace Hooks
 {
+	bool bSTWMode = true;
+
 	static void SpawnFloorLoot()
 	{
 		TArray<AActor*> OutActors;
@@ -23,7 +25,14 @@ namespace Hooks
 				NewFortPickup->PrimaryPickupItemEntry.Count = 1;
 				if (bIsConsumable)
 				{
-					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::RangedWeapons[rand() % Globals::RangedWeapons.size()];
+					if (bSTWMode)
+					{
+						NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::STWWeapons[rand() % Globals::STWWeapons.size()];
+						NewFortPickup->PrimaryPickupItemEntry.Durability = 1000000;
+					}
+					else {
+						NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::RangedWeapons[rand() % Globals::RangedWeapons.size()];
+					}
 				}
 				else {
 					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::Consumables[rand() % Globals::Consumables.size()];
@@ -336,6 +345,7 @@ namespace Hooks
 			{
 				auto Chest = (ABuildingContainer*)ReceivingActor;
 				Chest->bAlreadySearched = true;
+				Chest->OnSetSearched();
 				Chest->OnRep_bAlreadySearched();
 
 				auto Location = ReceivingActor->K2_GetActorLocation();
@@ -343,7 +353,14 @@ namespace Hooks
 				auto NewFortPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
 
 				NewFortPickup->PrimaryPickupItemEntry.Count = 1;
-				NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::RangedWeapons[rand() % Globals::RangedWeapons.size()];
+				if (bSTWMode)
+				{
+					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::STWWeapons[rand() % Globals::STWWeapons.size()];
+					NewFortPickup->PrimaryPickupItemEntry.Durability = 1000000;
+				}
+				else {
+					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::RangedWeapons[rand() % Globals::RangedWeapons.size()];
+				}
 				NewFortPickup->OnRep_PrimaryPickupItemEntry();
 				NewFortPickup->TossPickup(Location, nullptr, 1);
 

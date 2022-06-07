@@ -2,6 +2,8 @@
 
 #include <map>
 
+bool bSTWMode = true;
+
 struct QuickBarsPointer
 {
     unsigned char pad[0x1C48];
@@ -144,14 +146,32 @@ public:
         static auto pMedium = FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Ammo/AthenaAmmoDataBulletsMedium.AthenaAmmoDataBulletsMedium");
         static auto pLight = FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Ammo/AthenaAmmoDataBulletsLight.AthenaAmmoDataBulletsLight");
         static auto pHeavy = FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Ammo/AthenaAmmoDataBulletsHeavy.AthenaAmmoDataBulletsHeavy");
+        static auto pEnergy = FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Ammo/AthenaAmmoDataEnergyCell.AthenaAmmoDataEnergyCell");
+        static auto pRocketsSTW = FindObjectFast<UFortItemDefinition>("/Game/Items/Ammo/AmmoInfinite.AmmoInfinite");
+        static auto pShellsSTW = FindObjectFast<UFortItemDefinition>("/Game/Items/Ammo/AmmoDataShells.AmmoDataShells");
+        static auto pMediumSTW = FindObjectFast<UFortItemDefinition>("/Game/Items/Ammo/AmmoDataBulletsMedium.AmmoDataBulletsMedium");
+        static auto pLightSTW = FindObjectFast<UFortItemDefinition>("/Game/Items/Ammo/AmmoDataBulletsLight.AmmoDataBulletsLight");
+        static auto pHeavySTW = FindObjectFast<UFortItemDefinition>("/Game/Items/Ammo/AmmoDataBulletsHeavy.AmmoDataBulletsHeavy");
+        static auto pEnergySTW = FindObjectFast<UFortItemDefinition>("/Game/Items/Ammo/AmmoDataEnergyCell.AmmoDataEnergyCell");
         ItemsToAddMap.insert_or_assign(pWood, 999);
         ItemsToAddMap.insert_or_assign(pMetal, 999);
         ItemsToAddMap.insert_or_assign(pStone, 999);
-        ItemsToAddMap.insert_or_assign(pRockets, 999);
-        ItemsToAddMap.insert_or_assign(pShells, 999);
-        ItemsToAddMap.insert_or_assign(pMedium, 999);
-        ItemsToAddMap.insert_or_assign(pLight, 999);
-        ItemsToAddMap.insert_or_assign(pHeavy, 999);
+        if (bSTWMode) {
+            ItemsToAddMap.insert_or_assign(pRocketsSTW, 999);
+            ItemsToAddMap.insert_or_assign(pShellsSTW, 999);
+            ItemsToAddMap.insert_or_assign(pMediumSTW, 999);
+            ItemsToAddMap.insert_or_assign(pLightSTW, 999);
+            ItemsToAddMap.insert_or_assign(pHeavySTW, 999);
+            ItemsToAddMap.insert_or_assign(pEnergySTW, 999);
+        }
+        else {
+            ItemsToAddMap.insert_or_assign(pRockets, 999);
+            ItemsToAddMap.insert_or_assign(pShells, 999);
+            ItemsToAddMap.insert_or_assign(pMedium, 999);
+            ItemsToAddMap.insert_or_assign(pLight, 999);
+            ItemsToAddMap.insert_or_assign(pHeavy, 999);
+            ItemsToAddMap.insert_or_assign(pEnergy, 999);
+        }
 
         auto FortInventory = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory;
         auto QuickBars = reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars;
@@ -285,7 +305,7 @@ public:
                     ((AFortPlayerPawn*)PC->Pawn)->EquipWeaponDefinition((UFortWeaponItemDefinition*)ItemInstance->GetItemDefinitionBP(), InGuid);
             }
 
-            if (Util::AreGuidsTheSame(InGuid, WallGuid))
+            /*if (Util::AreGuidsTheSame(InGuid, WallGuid))
             {
                 reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass = BuildClassWall;
                 reinterpret_cast<BuildPreviewPointer*>(PC)->BuildPreviewMarker = BuildPreviewWall;
@@ -339,7 +359,7 @@ public:
                 ((UFortCheatManager*)PC->CheatManager)->BuildWith(L"Wood");
 
                 BuildClassRoof = reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass;
-            }
+            }*/
         }
     }
 };
