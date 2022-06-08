@@ -90,7 +90,7 @@ namespace Beacons
 		auto HealthSet = Pawn->HealthSet;
 		HealthSet->CurrentShield.Minimum = 0;
 		HealthSet->CurrentShield.Maximum = 100;
-		HealthSet->CurrentShield.BaseValue = 100;
+		HealthSet->CurrentShield.BaseValue = -28;
 		HealthSet->Shield.Minimum = 0;
 		HealthSet->Shield.Maximum = 100;
 		HealthSet->Shield.BaseValue = 100;
