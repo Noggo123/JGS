@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,7 +37,7 @@ struct UTooltipStatWidget_C_BndEvt__ButtonHover_K2Node_ComponentBoundEvent_1037_
 // Function TooltipStatWidget.TooltipStatWidget_C.ExecuteUbergraph_TooltipStatWidget
 struct UTooltipStatWidget_C_ExecuteUbergraph_TooltipStatWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

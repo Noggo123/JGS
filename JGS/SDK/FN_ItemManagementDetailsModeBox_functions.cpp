@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,201 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleMore
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           Pass_Through                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UItemManagementDetailsModeBox_C::HandleMore(bool* Pass_Through)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleMore");
-
-	UItemManagementDetailsModeBox_C_HandleMore_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Pass_Through != nullptr)
-		*Pass_Through = params.Pass_Through;
-}
-
-
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RegisterMore
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UItemManagementDetailsModeBox_C::RegisterMore()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RegisterMore");
-
-	UItemManagementDetailsModeBox_C_RegisterMore_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleDestroy
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UItemManagementDetailsModeBox_C::HandleDestroy(bool* Passthrough)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleDestroy");
-
-	UItemManagementDetailsModeBox_C_HandleDestroy_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
-}
-
-
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleWithdrawAll
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UItemManagementDetailsModeBox_C::HandleWithdrawAll(bool* Passthrough)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleWithdrawAll");
-
-	UItemManagementDetailsModeBox_C_HandleWithdrawAll_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
-}
-
-
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RefreshSwitchPanelAction
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UItemManagementDetailsModeBox_C::RefreshSwitchPanelAction()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RefreshSwitchPanelAction");
-
-	UItemManagementDetailsModeBox_C_RefreshSwitchPanelAction_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleSwitchPanel
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UItemManagementDetailsModeBox_C::HandleSwitchPanel(bool* Passthrough)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleSwitchPanel");
-
-	UItemManagementDetailsModeBox_C_HandleSwitchPanel_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
-}
-
-
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.UnbindEvents
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UItemManagementDetailsModeBox_C::UnbindEvents()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.UnbindEvents");
-
-	UItemManagementDetailsModeBox_C_UnbindEvents_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RefreshTransferAction
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UItemManagementDetailsModeBox_C::RefreshTransferAction()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RefreshTransferAction");
-
-	UItemManagementDetailsModeBox_C_RefreshTransferAction_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleTransfer
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UItemManagementDetailsModeBox_C::HandleTransfer(bool* Passthrough)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleTransfer");
-
-	UItemManagementDetailsModeBox_C_HandleTransfer_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
-}
-
-
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RegisterTransferActions
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UItemManagementDetailsModeBox_C::RegisterTransferActions()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RegisterTransferActions");
-
-	UItemManagementDetailsModeBox_C_RegisterTransferActions_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RegisterInspectUpgrade
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -227,7 +32,7 @@ void UItemManagementDetailsModeBox_C::RegisterInspectUpgrade()
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleQuickbarContentsChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortQuickBars                 QuickbarIndex                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortQuickBars                 QuickbarIndex                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementDetailsModeBox_C::HandleQuickbarContentsChanged(EFortQuickBars QuickbarIndex)
 {
@@ -278,12 +83,152 @@ void UItemManagementDetailsModeBox_C::RefreshMulchAction()
 }
 
 
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.ForceRefreshTab
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UHorizontalTabList_C*    TabList                        (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementDetailsModeBox_C::ForceRefreshTab(class UHorizontalTabList_C* TabList)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.ForceRefreshTab");
+
+	UItemManagementDetailsModeBox_C_ForceRefreshTab_Params params;
+	params.TabList = TabList;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RegisterCraftingCompare
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UItemManagementDetailsModeBox_C::RegisterCraftingCompare()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RegisterCraftingCompare");
+
+	UItemManagementDetailsModeBox_C_RegisterCraftingCompare_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleDropItemCallback
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            ChosenQuantity                 (Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementDetailsModeBox_C::HandleDropItemCallback(int ChosenQuantity, class UFortItem* Item)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleDropItemCallback");
+
+	UItemManagementDetailsModeBox_C_HandleDropItemCallback_Params params;
+	params.ChosenQuantity = ChosenQuantity;
+	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.DropItem
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortWorldItem*          Item                           (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Quantity                       (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementDetailsModeBox_C::DropItem(class UFortWorldItem* Item, int Quantity)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.DropItem");
+
+	UItemManagementDetailsModeBox_C_DropItem_Params params;
+	params.Item = Item;
+	params.Quantity = Quantity;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.CreateQuantitySelectorWidget
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortWorldItem*          Item                           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   ConfirmationText               (Parm)
+
+void UItemManagementDetailsModeBox_C::CreateQuantitySelectorWidget(class UFortWorldItem* Item, const struct FText& ConfirmationText)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.CreateQuantitySelectorWidget");
+
+	UItemManagementDetailsModeBox_C_CreateQuantitySelectorWidget_Params params;
+	params.Item = Item;
+	params.ConfirmationText = ConfirmationText;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.DestroyQuantitySelectorWidget
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UItemManagementDetailsModeBox_C::DestroyQuantitySelectorWidget()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.DestroyQuantitySelectorWidget");
+
+	UItemManagementDetailsModeBox_C_DestroyQuantitySelectorWidget_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleInputMethodChanged
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           UsingGamepad                   (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementDetailsModeBox_C::HandleInputMethodChanged(bool UsingGamepad)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleInputMethodChanged");
+
+	UItemManagementDetailsModeBox_C_HandleInputMethodChanged_Params params;
+	params.UsingGamepad = UsingGamepad;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleCraftAndSlot
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemManagementDetailsModeBox_C::HandleCraftAndSlot(bool* Passthrough)
+void UItemManagementDetailsModeBox_C::HandleCraftAndSlot(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleCraftAndSlot");
 
@@ -295,8 +240,8 @@ void UItemManagementDetailsModeBox_C::HandleCraftAndSlot(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -354,8 +299,8 @@ void UItemManagementDetailsModeBox_C::HandleWorldItemsChanged()
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleWorldItemListChanged
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UFortWorldItem*>  ItemsAdded                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// TArray<class UFortWorldItem*>  ItemsRemoved                   (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UFortWorldItem*>  ItemsAdded                     (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UFortWorldItem*>  ItemsRemoved                   (Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UItemManagementDetailsModeBox_C::HandleWorldItemListChanged(TArray<class UFortWorldItem*>* ItemsAdded, TArray<class UFortWorldItem*>* ItemsRemoved)
 {
@@ -396,7 +341,7 @@ void UItemManagementDetailsModeBox_C::RegisterInventoryInspect()
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.SetTabStyling
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 Object                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 Object                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementDetailsModeBox_C::SetTabStyling(class UObject* Object)
 {
@@ -467,9 +412,9 @@ void UItemManagementDetailsModeBox_C::SetupDetailPanels()
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleEquip
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemManagementDetailsModeBox_C::HandleEquip(bool* Passthrough)
+void UItemManagementDetailsModeBox_C::HandleEquip(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleEquip");
 
@@ -481,8 +426,8 @@ void UItemManagementDetailsModeBox_C::HandleEquip(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -506,9 +451,9 @@ void UItemManagementDetailsModeBox_C::RegisterEquip()
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleTrack
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemManagementDetailsModeBox_C::HandleTrack(bool* Passthrough)
+void UItemManagementDetailsModeBox_C::HandleTrack(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleTrack");
 
@@ -520,8 +465,8 @@ void UItemManagementDetailsModeBox_C::HandleTrack(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -579,7 +524,7 @@ void UItemManagementDetailsModeBox_C::RegisterConsumeItem()
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RegisterSort
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           InGame                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           InGame                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementDetailsModeBox_C::RegisterSort(bool InGame)
 {
@@ -681,14 +626,14 @@ void UItemManagementDetailsModeBox_C::RegisterCraft()
 }
 
 
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RegisterDropOrDestroy
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RegisterDrop
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void UItemManagementDetailsModeBox_C::RegisterDropOrDestroy()
+void UItemManagementDetailsModeBox_C::RegisterDrop()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RegisterDropOrDestroy");
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RegisterDrop");
 
-	UItemManagementDetailsModeBox_C_RegisterDropOrDestroy_Params params;
+	UItemManagementDetailsModeBox_C_RegisterDrop_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -701,9 +646,9 @@ void UItemManagementDetailsModeBox_C::RegisterDropOrDestroy()
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleDrop
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemManagementDetailsModeBox_C::HandleDrop(bool* Passthrough)
+void UItemManagementDetailsModeBox_C::HandleDrop(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleDrop");
 
@@ -715,8 +660,8 @@ void UItemManagementDetailsModeBox_C::HandleDrop(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -740,9 +685,9 @@ void UItemManagementDetailsModeBox_C::ShowSelection()
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleCraft
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemManagementDetailsModeBox_C::HandleCraft(bool* Passthrough)
+void UItemManagementDetailsModeBox_C::HandleCraft(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleCraft");
 
@@ -754,17 +699,17 @@ void UItemManagementDetailsModeBox_C::HandleCraft(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleConsumeItem
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemManagementDetailsModeBox_C::HandleConsumeItem(bool* Passthrough)
+void UItemManagementDetailsModeBox_C::HandleConsumeItem(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleConsumeItem");
 
@@ -776,8 +721,8 @@ void UItemManagementDetailsModeBox_C::HandleConsumeItem(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -801,9 +746,9 @@ void UItemManagementDetailsModeBox_C::TrySetupInputHandling()
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleSort
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemManagementDetailsModeBox_C::HandleSort(bool* Passthrough)
+void UItemManagementDetailsModeBox_C::HandleSort(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleSort");
 
@@ -815,17 +760,17 @@ void UItemManagementDetailsModeBox_C::HandleSort(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleMulch
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemManagementDetailsModeBox_C::HandleMulch(bool* Passthrough)
+void UItemManagementDetailsModeBox_C::HandleMulch(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleMulch");
 
@@ -837,17 +782,17 @@ void UItemManagementDetailsModeBox_C::HandleMulch(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleCompare
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemManagementDetailsModeBox_C::HandleCompare(bool* Passthrough)
+void UItemManagementDetailsModeBox_C::HandleCompare(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleCompare");
 
@@ -859,17 +804,17 @@ void UItemManagementDetailsModeBox_C::HandleCompare(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleInspect
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemManagementDetailsModeBox_C::HandleInspect(bool* Passthrough)
+void UItemManagementDetailsModeBox_C::HandleInspect(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleInspect");
 
@@ -881,21 +826,21 @@ void UItemManagementDetailsModeBox_C::HandleInspect(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleBack
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleClose
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemManagementDetailsModeBox_C::HandleBack(bool* Passthrough)
+void UItemManagementDetailsModeBox_C::HandleClose(bool* PassThrough)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleBack");
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleClose");
 
-	UItemManagementDetailsModeBox_C_HandleBack_Params params;
+	UItemManagementDetailsModeBox_C_HandleClose_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -903,38 +848,16 @@ void UItemManagementDetailsModeBox_C::HandleBack(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
-}
-
-
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.DialogResult_475B18A9452A639A04116D83A8B1CC22
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EFortDialogResult              Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ResultName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UItemManagementDetailsModeBox_C::DialogResult_475B18A9452A639A04116D83A8B1CC22(EFortDialogResult Result, const struct FName& ResultName)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.DialogResult_475B18A9452A639A04116D83A8B1CC22");
-
-	UItemManagementDetailsModeBox_C_DialogResult_475B18A9452A639A04116D83A8B1CC22_Params params;
-	params.Result = Result;
-	params.ResultName = ResultName;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.BndEvt__DetailPanelWidgetSwitcher_K2Node_ComponentBoundEvent_16_OnActiveWidgetChanged__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UWidget*                 ActiveWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            ActiveWidgetIndex              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidget*                 ActiveWidget                   (Parm, ZeroConstructor, IsPlainOldData)
+// int                            ActiveWidgetIndex              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementDetailsModeBox_C::BndEvt__DetailPanelWidgetSwitcher_K2Node_ComponentBoundEvent_16_OnActiveWidgetChanged__DelegateSignature(class UWidget* ActiveWidget, int ActiveWidgetIndex)
 {
@@ -989,8 +912,8 @@ void UItemManagementDetailsModeBox_C::OnActivated()
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.BndEvt__DetailPanelTabList-OPI_K2Node_ComponentBoundEvent_4_OnTabButtonCreated__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementDetailsModeBox_C::BndEvt__DetailPanelTabList_OPI_K2Node_ComponentBoundEvent_4_OnTabButtonCreated__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton)
 {
@@ -1011,8 +934,8 @@ void UItemManagementDetailsModeBox_C::BndEvt__DetailPanelTabList_OPI_K2Node_Comp
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.BndEvt__DetailPanelTabList-OP_K2Node_ComponentBoundEvent_15_OnTabButtonCreated__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementDetailsModeBox_C::BndEvt__DetailPanelTabList_OP_K2Node_ComponentBoundEvent_15_OnTabButtonCreated__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton)
 {
@@ -1033,8 +956,8 @@ void UItemManagementDetailsModeBox_C::BndEvt__DetailPanelTabList_OP_K2Node_Compo
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.BndEvt__DetailPanelTabList-OI_K2Node_ComponentBoundEvent_27_OnTabButtonCreated__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementDetailsModeBox_C::BndEvt__DetailPanelTabList_OI_K2Node_ComponentBoundEvent_27_OnTabButtonCreated__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton)
 {
@@ -1069,45 +992,6 @@ void UItemManagementDetailsModeBox_C::HandleConsumeItemProgressChangedBP()
 }
 
 
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.BndEvt__DetailPanelTabList-MSB_K2Node_ComponentBoundEvent_18_OnTabButtonCreated__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UItemManagementDetailsModeBox_C::BndEvt__DetailPanelTabList_MSB_K2Node_ComponentBoundEvent_18_OnTabButtonCreated__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.BndEvt__DetailPanelTabList-MSB_K2Node_ComponentBoundEvent_18_OnTabButtonCreated__DelegateSignature");
-
-	UItemManagementDetailsModeBox_C_BndEvt__DetailPanelTabList_MSB_K2Node_ComponentBoundEvent_18_OnTabButtonCreated__DelegateSignature_Params params;
-	params.TabId = TabId;
-	params.TabButton = TabButton;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.OnDeactivated
-// (Event, Protected, BlueprintEvent)
-
-void UItemManagementDetailsModeBox_C::OnDeactivated()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.OnDeactivated");
-
-	UItemManagementDetailsModeBox_C_OnDeactivated_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
@@ -1125,37 +1009,19 @@ void UItemManagementDetailsModeBox_C::Construct()
 }
 
 
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.OnInputModeChanged
-// (Event, Protected, BlueprintEvent)
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.BndEvt__DetailPanelTabList-MSB_K2Node_ComponentBoundEvent_18_OnTabButtonCreated__DelegateSignature
+// (BlueprintEvent)
 // Parameters:
-// bool*                          bUsingGamepad                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (Parm, ZeroConstructor, IsPlainOldData)
 
-void UItemManagementDetailsModeBox_C::OnInputModeChanged(bool* bUsingGamepad)
+void UItemManagementDetailsModeBox_C::BndEvt__DetailPanelTabList_MSB_K2Node_ComponentBoundEvent_18_OnTabButtonCreated__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.OnInputModeChanged");
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.BndEvt__DetailPanelTabList-MSB_K2Node_ComponentBoundEvent_18_OnTabButtonCreated__DelegateSignature");
 
-	UItemManagementDetailsModeBox_C_OnInputModeChanged_Params params;
-	params.bUsingGamepad = bUsingGamepad;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.OnDestroyItem
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UItemManagementDetailsModeBox_C::OnDestroyItem(class UFortItem* Item)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.OnDestroyItem");
-
-	UItemManagementDetailsModeBox_C_OnDestroyItem_Params params;
-	params.Item = Item;
+	UItemManagementDetailsModeBox_C_BndEvt__DetailPanelTabList_MSB_K2Node_ComponentBoundEvent_18_OnTabButtonCreated__DelegateSignature_Params params;
+	params.TabId = TabId;
+	params.TabButton = TabButton;
 
 	auto flags = fn->FunctionFlags;
 
@@ -1166,9 +1032,9 @@ void UItemManagementDetailsModeBox_C::OnDestroyItem(class UFortItem* Item)
 
 
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.ExecuteUbergraph_ItemManagementDetailsModeBox
-// (HasDefaults)
+// ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementDetailsModeBox_C::ExecuteUbergraph_ItemManagementDetailsModeBox(int EntryPoint)
 {

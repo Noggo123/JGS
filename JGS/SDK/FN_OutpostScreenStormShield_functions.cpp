@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,9 +49,9 @@ void UOutpostScreenStormShield_C::CenterStormShieldWidget()
 // Function OutpostScreenStormShield.OutpostScreenStormShield_C.HandleBack
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UOutpostScreenStormShield_C::HandleBack(bool* Passthrough)
+void UOutpostScreenStormShield_C::HandleBack(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function OutpostScreenStormShield.OutpostScreenStormShield_C.HandleBack");
 
@@ -63,8 +63,8 @@ void UOutpostScreenStormShield_C::HandleBack(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -88,7 +88,7 @@ void UOutpostScreenStormShield_C::AddInputHandlers()
 // Function OutpostScreenStormShield.OutpostScreenStormShield_C.SetCoreBuilding
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortOutpostBuilding*    NewCoreBuilding                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortOutpostBuilding*    NewCoreBuilding                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenStormShield_C::SetCoreBuilding(class AFortOutpostBuilding* NewCoreBuilding)
 {
@@ -125,7 +125,7 @@ void UOutpostScreenStormShield_C::Construct()
 // Function OutpostScreenStormShield.OutpostScreenStormShield_C.BndEvt__ContentOrPermissionsTab_K2Node_ComponentBoundEvent_0_OnTabSelected__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenStormShield_C::BndEvt__ContentOrPermissionsTab_K2Node_ComponentBoundEvent_0_OnTabSelected__DelegateSignature(const struct FName& TabId)
 {
@@ -145,8 +145,8 @@ void UOutpostScreenStormShield_C::BndEvt__ContentOrPermissionsTab_K2Node_Compone
 // Function OutpostScreenStormShield.OutpostScreenStormShield_C.BndEvt__ContentOrPermissionsTab_K2Node_ComponentBoundEvent_36_OnTabButtonCreated__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenStormShield_C::BndEvt__ContentOrPermissionsTab_K2Node_ComponentBoundEvent_36_OnTabButtonCreated__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton)
 {
@@ -167,7 +167,7 @@ void UOutpostScreenStormShield_C::BndEvt__ContentOrPermissionsTab_K2Node_Compone
 // Function OutpostScreenStormShield.OutpostScreenStormShield_C.ExecuteUbergraph_OutpostScreenStormShield
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenStormShield_C::ExecuteUbergraph_OutpostScreenStormShield(int EntryPoint)
 {

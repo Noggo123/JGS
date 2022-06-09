@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -29,19 +29,19 @@ struct UQuestUpdatesLog_C_GetTotalDisplayedObjectives_Params
 // Function QuestUpdatesLog.QuestUpdatesLog_C.CreateAnnouncementUpdate
 struct UQuestUpdatesLog_C_CreateAnnouncementUpdate_Params
 {
-	struct FDynamicQuestUpdateInfo                     UpdateInfo;                                               // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FDynamicQuestUpdateInfo                     UpdateInfo;                                               // (Parm)
 };
 
 // Function QuestUpdatesLog.QuestUpdatesLog_C.HandleQuestUpdateWidgetFinished
 struct UQuestUpdatesLog_C_HandleQuestUpdateWidgetFinished_Params
 {
-	class UQuestUpdateEntry_C*                         UpdateWidget;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UQuestUpdateEntry_C*                         UpdateWidget;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function QuestUpdatesLog.QuestUpdatesLog_C.GetAvailableQuestUpdateWidget
 struct UQuestUpdatesLog_C_GetAvailableQuestUpdateWidget_Params
 {
-	struct FDynamicQuestUpdateInfo                     UpdateInfo;                                               // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FDynamicQuestUpdateInfo                     UpdateInfo;                                               // (Parm)
 	class UQuestUpdateEntry_C*                         AvailableWIdget;                                          // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -58,9 +58,9 @@ struct UQuestUpdatesLog_C_CreateQuestUpdateWIdgets_Params
 // Function QuestUpdatesLog.QuestUpdatesLog_C.HandleDisplayDynamicQuestUpdate
 struct UQuestUpdatesLog_C_HandleDisplayDynamicQuestUpdate_Params
 {
-	class UFortQuestObjectiveInfo*                     QuestObjective;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bDisplayStatusUpdate;                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bDisplayAnnouncementUpdate;                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortQuestObjectiveInfo*                     QuestObjective;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bDisplayStatusUpdate;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bDisplayAnnouncementUpdate;                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function QuestUpdatesLog.QuestUpdatesLog_C.Construct
@@ -71,7 +71,7 @@ struct UQuestUpdatesLog_C_Construct_Params
 // Function QuestUpdatesLog.QuestUpdatesLog_C.ExecuteUbergraph_QuestUpdatesLog
 struct UQuestUpdatesLog_C_ExecuteUbergraph_QuestUpdatesLog_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

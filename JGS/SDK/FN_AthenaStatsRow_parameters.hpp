@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,19 +17,19 @@ namespace SDK
 // Function AthenaStatsRow.AthenaStatsRow_C.SetStatValueAsText
 struct UAthenaStatsRow_C_SetStatValueAsText_Params
 {
-	struct FText                                       StatValue;                                                // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FText                                       StatValue;                                                // (Parm)
 };
 
 // Function AthenaStatsRow.AthenaStatsRow_C.PreConstruct
 struct UAthenaStatsRow_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaStatsRow.AthenaStatsRow_C.ExecuteUbergraph_AthenaStatsRow
 struct UAthenaStatsRow_C_ExecuteUbergraph_AthenaStatsRow_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

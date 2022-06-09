@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -47,7 +47,7 @@ struct UQuestInfo_Widget_C_InitDesignView_Params
 // Function QuestInfo_Widget.QuestInfo_Widget_C.PopulateFromQuest
 struct UQuestInfo_Widget_C_PopulateFromQuest_Params
 {
-	class UFortQuestItem*                              InQuest;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+	class UFortQuestItem*                              InQuest;                                                  // (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 };
 
 // Function QuestInfo_Widget.QuestInfo_Widget_C.Construct
@@ -58,13 +58,13 @@ struct UQuestInfo_Widget_C_Construct_Params
 // Function QuestInfo_Widget.QuestInfo_Widget_C.PreConstruct
 struct UQuestInfo_Widget_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function QuestInfo_Widget.QuestInfo_Widget_C.ExecuteUbergraph_QuestInfo_Widget
 struct UQuestInfo_Widget_C_ExecuteUbergraph_QuestInfo_Widget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

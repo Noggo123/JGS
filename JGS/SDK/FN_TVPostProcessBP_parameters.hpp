@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,11 +17,11 @@ namespace SDK
 // Function TVPostProcessBP.TVPostProcessBP_C.RandomizeTheColor
 struct ATVPostProcessBP_C_RandomizeTheColor_Params
 {
-	float                                              Use_Bluescreen;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Probablility_modulator;                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Use_Flat_Blue;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	float                                              MaxColorPerChannelValue;                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               Control_replacement_alpha;                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Use_Bluescreen;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Probablility_modulator;                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Use_Flat_Blue;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              MaxColorPerChannelValue;                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Control_replacement_alpha;                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TVPostProcessBP.TVPostProcessBP_C.UserConstructionScript
@@ -197,7 +197,7 @@ struct ATVPostProcessBP_C_WriteOutLoading_Params
 // Function TVPostProcessBP.TVPostProcessBP_C.SequenceFinished
 struct ATVPostProcessBP_C_SequenceFinished_Params
 {
-	struct FString                                     SequenceName;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	struct FString                                     SequenceName;                                             // (Parm, ZeroConstructor)
 };
 
 // Function TVPostProcessBP.TVPostProcessBP_C.Camera_InitializePost
@@ -213,7 +213,7 @@ struct ATVPostProcessBP_C_Camera_DisableEffects_Params
 // Function TVPostProcessBP.TVPostProcessBP_C.ReceiveTick
 struct ATVPostProcessBP_C_ReceiveTick_Params
 {
-	float*                                             DeltaSeconds;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float*                                             DeltaSeconds;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TVPostProcessBP.TVPostProcessBP_C.FastForwardPostProcess
@@ -234,7 +234,7 @@ struct ATVPostProcessBP_C_ReceiveBeginPlay_Params
 // Function TVPostProcessBP.TVPostProcessBP_C.ExecuteUbergraph_TVPostProcessBP
 struct ATVPostProcessBP_C_ExecuteUbergraph_TVPostProcessBP_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

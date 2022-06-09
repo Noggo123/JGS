@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,7 @@ namespace SDK
 // Function ItemInspectEvolutionIngredientsList.ItemInspectEvolutionIngredientsList_C.SetupItemLevelRequirement
 struct UItemInspectEvolutionIngredientsList_C_SetupItemLevelRequirement_Params
 {
-	class UFortItem*                                   Item;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemInspectEvolutionIngredientsList.ItemInspectEvolutionIngredientsList_C.ClearIngredients
@@ -28,8 +28,8 @@ struct UItemInspectEvolutionIngredientsList_C_ClearIngredients_Params
 // Function ItemInspectEvolutionIngredientsList.ItemInspectEvolutionIngredientsList_C.SetIngredients
 struct UItemInspectEvolutionIngredientsList_C_SetIngredients_Params
 {
-	class UFortItem*                                   Item;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	TArray<struct FFortItemQuantityPair>               InIngredients;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	TArray<struct FFortItemQuantityPair>               InIngredients;                                            // (Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,12 +14,31 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function GameplayTags.BlueprintGameplayTagLibrary.RemoveGameplayTag
-struct UBlueprintGameplayTagLibrary_RemoveGameplayTag_Params
+// Function GameplayTags.GameplayTagAssetInterface.HasMatchingGameplayTag
+struct UGameplayTagAssetInterface_HasMatchingGameplayTag_Params
 {
-	struct FGameplayTagContainer                       TagContainer;                                             // (Parm, OutParm, ReferenceParm)
-	struct FGameplayTag                                Tag;                                                      // (Parm)
+	struct FGameplayTag                                TagToCheck;                                               // (Parm)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayTags.GameplayTagAssetInterface.HasAnyMatchingGameplayTags
+struct UGameplayTagAssetInterface_HasAnyMatchingGameplayTags_Params
+{
+	struct FGameplayTagContainer                       TagContainer;                                             // (ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayTags.GameplayTagAssetInterface.HasAllMatchingGameplayTags
+struct UGameplayTagAssetInterface_HasAllMatchingGameplayTags_Params
+{
+	struct FGameplayTagContainer                       TagContainer;                                             // (ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function GameplayTags.GameplayTagAssetInterface.GetOwnedGameplayTags
+struct UGameplayTagAssetInterface_GetOwnedGameplayTags_Params
+{
+	struct FGameplayTagContainer                       TagContainer;                                             // (Parm, OutParm)
 };
 
 // Function GameplayTags.BlueprintGameplayTagLibrary.NotEqual_TagTag
@@ -232,38 +251,19 @@ struct UBlueprintGameplayTagLibrary_AppendGameplayTagContainers_Params
 	struct FGameplayTagContainer                       InTagContainer;                                           // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
+// Function GameplayTags.BlueprintGameplayTagLibrary.AddGameplayTagToContainer
+struct UBlueprintGameplayTagLibrary_AddGameplayTagToContainer_Params
+{
+	struct FGameplayTagContainer                       TagContainer;                                             // (Parm, OutParm, ReferenceParm)
+	struct FGameplayTag                                Tag;                                                      // (ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
 // Function GameplayTags.BlueprintGameplayTagLibrary.AddGameplayTag
 struct UBlueprintGameplayTagLibrary_AddGameplayTag_Params
 {
-	struct FGameplayTagContainer                       TagContainer;                                             // (Parm, OutParm, ReferenceParm)
+	struct FGameplayTagContainer                       InOutTagContainer;                                        // (Parm, OutParm, ReferenceParm)
 	struct FGameplayTag                                Tag;                                                      // (Parm)
-};
-
-// Function GameplayTags.GameplayTagAssetInterface.HasMatchingGameplayTag
-struct UGameplayTagAssetInterface_HasMatchingGameplayTag_Params
-{
-	struct FGameplayTag                                TagToCheck;                                               // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayTags.GameplayTagAssetInterface.HasAnyMatchingGameplayTags
-struct UGameplayTagAssetInterface_HasAnyMatchingGameplayTags_Params
-{
-	struct FGameplayTagContainer                       TagContainer;                                             // (ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayTags.GameplayTagAssetInterface.HasAllMatchingGameplayTags
-struct UGameplayTagAssetInterface_HasAllMatchingGameplayTags_Params
-{
-	struct FGameplayTagContainer                       TagContainer;                                             // (ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function GameplayTags.GameplayTagAssetInterface.GetOwnedGameplayTags
-struct UGameplayTagAssetInterface_GetOwnedGameplayTags_Params
-{
-	struct FGameplayTagContainer                       TagContainer;                                             // (Parm, OutParm)
 };
 
 }

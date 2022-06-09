@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -54,7 +54,7 @@ void UPopupCenterMessageModalPanel_C::UpdateMatchTimerText(bool* StopTimer)
 // Function PopupCenterMessageModalPanel.PopupCenterMessageModalPanel_C.UpdateState
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// ECenterPopupMessageStateEnum   NewState                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// ECenterPopupMessageStateEnum   NewState                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPopupCenterMessageModalPanel_C::UpdateState(ECenterPopupMessageStateEnum NewState)
 {
@@ -125,7 +125,7 @@ void UPopupCenterMessageModalPanel_C::OnActivated()
 // Function PopupCenterMessageModalPanel.PopupCenterMessageModalPanel_C.ExecuteUbergraph_PopupCenterMessageModalPanel
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPopupCenterMessageModalPanel_C::ExecuteUbergraph_PopupCenterMessageModalPanel(int EntryPoint)
 {

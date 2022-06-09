@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,30 +12,10 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.Refresh Lights
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FFortTeamMemberInfo     Team_Info                      (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void APartyCharacterPlacementHelper_C::Refresh_Lights(const struct FFortTeamMemberInfo& Team_Info)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.Refresh Lights");
-
-	APartyCharacterPlacementHelper_C_Refresh_Lights_Params params;
-	params.Team_Info = Team_Info;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnPartyDataChanged
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     MemberInfo                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortTeamMemberInfo     MemberInfo                     (Parm, OutParm, ReferenceParm)
 
 void APartyCharacterPlacementHelper_C::OnPartyDataChanged(struct FFortTeamMemberInfo* MemberInfo)
 {
@@ -101,7 +81,7 @@ void APartyCharacterPlacementHelper_C::IsInLobby(bool* IsInLobby)
 // Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.PlayLobbyAnimation
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PartyMemberIndex               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PartyMemberIndex               (Parm, ZeroConstructor, IsPlainOldData)
 
 void APartyCharacterPlacementHelper_C::PlayLobbyAnimation(int PartyMemberIndex)
 {
@@ -172,7 +152,7 @@ void APartyCharacterPlacementHelper_C::InitializeWidgets()
 // Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnLobbyPlayerUnhovered
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void APartyCharacterPlacementHelper_C::OnLobbyPlayerUnhovered(int PlayerIndex)
 {
@@ -192,7 +172,7 @@ void APartyCharacterPlacementHelper_C::OnLobbyPlayerUnhovered(int PlayerIndex)
 // Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnTeamMemberStateChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     TeamMemberInfo                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortTeamMemberInfo     TeamMemberInfo                 (Parm)
 
 void APartyCharacterPlacementHelper_C::OnTeamMemberStateChanged(const struct FFortTeamMemberInfo& TeamMemberInfo)
 {
@@ -212,7 +192,7 @@ void APartyCharacterPlacementHelper_C::OnTeamMemberStateChanged(const struct FFo
 // Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnTeamMemberRemoved
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            TeamMemberRemovedInt           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            TeamMemberRemovedInt           (Parm, ZeroConstructor, IsPlainOldData)
 
 void APartyCharacterPlacementHelper_C::OnTeamMemberRemoved(int TeamMemberRemovedInt)
 {
@@ -232,7 +212,7 @@ void APartyCharacterPlacementHelper_C::OnTeamMemberRemoved(int TeamMemberRemoved
 // Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnTeamMemberAdded
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     TeamMemberInfo                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortTeamMemberInfo     TeamMemberInfo                 (Parm)
 
 void APartyCharacterPlacementHelper_C::OnTeamMemberAdded(const struct FFortTeamMemberInfo& TeamMemberInfo)
 {
@@ -252,8 +232,8 @@ void APartyCharacterPlacementHelper_C::OnTeamMemberAdded(const struct FFortTeamM
 // Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnFrontEndCameraChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFrontEndCamera                NewCamera                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFrontEndCamera                OldCamera                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFrontEndCamera                NewCamera                      (Parm, ZeroConstructor, IsPlainOldData)
+// EFrontEndCamera                OldCamera                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void APartyCharacterPlacementHelper_C::OnFrontEndCameraChanged(EFrontEndCamera NewCamera, EFrontEndCamera OldCamera)
 {
@@ -342,7 +322,7 @@ void APartyCharacterPlacementHelper_C::InitializeContextEvents()
 // Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnLobbyPlayerUnselected
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void APartyCharacterPlacementHelper_C::OnLobbyPlayerUnselected(int PlayerIndex)
 {
@@ -362,7 +342,7 @@ void APartyCharacterPlacementHelper_C::OnLobbyPlayerUnselected(int PlayerIndex)
 // Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnLobbyPlayerSelected
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void APartyCharacterPlacementHelper_C::OnLobbyPlayerSelected(int PlayerIndex)
 {
@@ -382,7 +362,7 @@ void APartyCharacterPlacementHelper_C::OnLobbyPlayerSelected(int PlayerIndex)
 // Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.OnLobbyPlayerHovered
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void APartyCharacterPlacementHelper_C::OnLobbyPlayerHovered(int PlayerIndex)
 {
@@ -436,9 +416,9 @@ void APartyCharacterPlacementHelper_C::ReceiveBeginPlay()
 // Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.HandleClientEvent_StoreTabClosed
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 EventSource                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 EventFocus                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FFortClientEvent        ClientEvent                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class UObject*                 EventSource                    (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 EventFocus                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortClientEvent        ClientEvent                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APartyCharacterPlacementHelper_C::HandleClientEvent_StoreTabClosed(class UObject* EventSource, class UObject* EventFocus, const struct FFortClientEvent& ClientEvent)
 {
@@ -460,9 +440,9 @@ void APartyCharacterPlacementHelper_C::HandleClientEvent_StoreTabClosed(class UO
 // Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.HandleClientEvent_StoreTabSelected
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 EventSource                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 EventFocus                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FFortClientEvent        ClientEvent                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class UObject*                 EventSource                    (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 EventFocus                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortClientEvent        ClientEvent                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APartyCharacterPlacementHelper_C::HandleClientEvent_StoreTabSelected(class UObject* EventSource, class UObject* EventFocus, const struct FFortClientEvent& ClientEvent)
 {
@@ -484,7 +464,7 @@ void APartyCharacterPlacementHelper_C::HandleClientEvent_StoreTabSelected(class 
 // Function PartyCharacterPlacementHelper.PartyCharacterPlacementHelper_C.ExecuteUbergraph_PartyCharacterPlacementHelper
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void APartyCharacterPlacementHelper_C::ExecuteUbergraph_PartyCharacterPlacementHelper(int EntryPoint)
 {

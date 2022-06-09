@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,8 +17,8 @@ namespace SDK
 // Function AthenaEquipProgress.AthenaEquipProgress_C.Tick
 struct UAthenaEquipProgress_C_Tick_Params
 {
-	struct FGeometry*                                  MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	float*                                             InDeltaTime;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FGeometry*                                  MyGeometry;                                               // (Parm, IsPlainOldData)
+	float*                                             InDeltaTime;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaEquipProgress.AthenaEquipProgress_C.Construct
@@ -29,9 +29,9 @@ struct UAthenaEquipProgress_C_Construct_Params
 // Function AthenaEquipProgress.AthenaEquipProgress_C.OnUIGameplayCue_Event_0_1
 struct UAthenaEquipProgress_C_OnUIGameplayCue_Event_0_1_Params
 {
-	struct FName                                       CueName;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EGameplayCueEvent>                     EventType;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayCueParameters                      Parameters;                                               // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FName                                       CueName;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EGameplayCueEvent>                     EventType;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayCueParameters                      Parameters;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function AthenaEquipProgress.AthenaEquipProgress_C.Destruct
@@ -42,7 +42,7 @@ struct UAthenaEquipProgress_C_Destruct_Params
 // Function AthenaEquipProgress.AthenaEquipProgress_C.ExecuteUbergraph_AthenaEquipProgress
 struct UAthenaEquipProgress_C_ExecuteUbergraph_AthenaEquipProgress_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

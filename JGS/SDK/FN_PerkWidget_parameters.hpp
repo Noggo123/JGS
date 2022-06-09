@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -87,7 +87,7 @@ struct UPerkWidget_C_InitializeBasicPerk_Params
 // Function PerkWidget.PerkWidget_C.PreConstruct
 struct UPerkWidget_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function PerkWidget.PerkWidget_C.Construct
@@ -98,7 +98,7 @@ struct UPerkWidget_C_Construct_Params
 // Function PerkWidget.PerkWidget_C.ExecuteUbergraph_PerkWidget
 struct UPerkWidget_C_ExecuteUbergraph_PerkWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

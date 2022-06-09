@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,7 +37,7 @@ void URewardInfoButtonWidget_C::GetDisplayName(struct FText* DisplayName)
 // Function RewardInfoButtonWidget.RewardInfoButtonWidget_C.SetShowDescriptionBP
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool*                          bInShowDescription             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          bInShowDescription             (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewardInfoButtonWidget_C::SetShowDescriptionBP(bool* bInShowDescription)
 {
@@ -74,7 +74,7 @@ void URewardInfoButtonWidget_C::HandleDifferentItemOrQuantitySetBP()
 // Function RewardInfoButtonWidget.RewardInfoButtonWidget_C.ExecuteUbergraph_RewardInfoButtonWidget
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewardInfoButtonWidget_C::ExecuteUbergraph_RewardInfoButtonWidget(int EntryPoint)
 {

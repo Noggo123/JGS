@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,23 +20,6 @@ void UMenuScreen_Commando_C::EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScr
 	static auto fn = UObject::FindObject<UFunction>("Function MenuScreen_Commando.MenuScreen_Commando_C.EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScreen_Commando_AnimGraphNode_BlendListByEnum_A3E599E943E9B22B3BC78EA28C49C57B");
 
 	UMenuScreen_Commando_C_EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScreen_Commando_AnimGraphNode_BlendListByEnum_A3E599E943E9B22B3BC78EA28C49C57B_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function MenuScreen_Commando.MenuScreen_Commando_C.EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScreen_Commando_AnimGraphNode_ModifyBone_E4328FA745CE2162C4FC048495DF6B7C
-// (BlueprintEvent)
-
-void UMenuScreen_Commando_C::EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScreen_Commando_AnimGraphNode_ModifyBone_E4328FA745CE2162C4FC048495DF6B7C()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MenuScreen_Commando.MenuScreen_Commando_C.EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScreen_Commando_AnimGraphNode_ModifyBone_E4328FA745CE2162C4FC048495DF6B7C");
-
-	UMenuScreen_Commando_C_EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScreen_Commando_AnimGraphNode_ModifyBone_E4328FA745CE2162C4FC048495DF6B7C_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -97,30 +80,10 @@ void UMenuScreen_Commando_C::AnimNotify_LeftB()
 }
 
 
-// Function MenuScreen_Commando.MenuScreen_Commando_C.BlueprintUpdateAnimation
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float*                         DeltaTimeX                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UMenuScreen_Commando_C::BlueprintUpdateAnimation(float* DeltaTimeX)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MenuScreen_Commando.MenuScreen_Commando_C.BlueprintUpdateAnimation");
-
-	UMenuScreen_Commando_C_BlueprintUpdateAnimation_Params params;
-	params.DeltaTimeX = DeltaTimeX;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function MenuScreen_Commando.MenuScreen_Commando_C.ExecuteUbergraph_MenuScreen_Commando
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMenuScreen_Commando_C::ExecuteUbergraph_MenuScreen_Commando(int EntryPoint)
 {

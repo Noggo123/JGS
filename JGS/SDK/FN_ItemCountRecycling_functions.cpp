@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function ItemCountRecycling.ItemCountRecycling_C.SetItemDefinition
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItemDefinition*     ItemDefinition                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItemDefinition*     ItemDefinition                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemCountRecycling_C::SetItemDefinition(class UFortItemDefinition* ItemDefinition)
 {
@@ -52,7 +52,7 @@ void UItemCountRecycling_C::Construct()
 // Function ItemCountRecycling.ItemCountRecycling_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemCountRecycling_C::PreConstruct(bool* IsDesignTime)
 {
@@ -72,7 +72,7 @@ void UItemCountRecycling_C::PreConstruct(bool* IsDesignTime)
 // Function ItemCountRecycling.ItemCountRecycling_C.ExecuteUbergraph_ItemCountRecycling
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemCountRecycling_C::ExecuteUbergraph_ItemCountRecycling(int EntryPoint)
 {

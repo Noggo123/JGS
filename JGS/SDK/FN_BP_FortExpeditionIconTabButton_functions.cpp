@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -100,7 +100,7 @@ void UBP_FortExpeditionIconTabButton_C::Update_Available_Vehicles()
 // Function BP_FortExpeditionIconTabButton.BP_FortExpeditionIconTabButton_C.Set Tab Id
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionIconTabButton_C::Set_Tab_Id(const struct FName& TabId)
 {
@@ -137,7 +137,7 @@ void UBP_FortExpeditionIconTabButton_C::Refresh_Bang_State()
 // Function BP_FortExpeditionIconTabButton.BP_FortExpeditionIconTabButton_C.Set Icon
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSlateBrush             IconBrush                      (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FSlateBrush             IconBrush                      (Parm)
 
 void UBP_FortExpeditionIconTabButton_C::Set_Icon(const struct FSlateBrush& IconBrush)
 {
@@ -157,7 +157,7 @@ void UBP_FortExpeditionIconTabButton_C::Set_Icon(const struct FSlateBrush& IconB
 // Function BP_FortExpeditionIconTabButton.BP_FortExpeditionIconTabButton_C.Set Text
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   ButtonText                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   ButtonText                     (Parm)
 
 void UBP_FortExpeditionIconTabButton_C::Set_Text(const struct FText& ButtonText)
 {
@@ -194,7 +194,7 @@ void UBP_FortExpeditionIconTabButton_C::OnCurrentTextStyleChanged()
 // Function BP_FortExpeditionIconTabButton.BP_FortExpeditionIconTabButton_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionIconTabButton_C::PreConstruct(bool* IsDesignTime)
 {
@@ -214,7 +214,7 @@ void UBP_FortExpeditionIconTabButton_C::PreConstruct(bool* IsDesignTime)
 // Function BP_FortExpeditionIconTabButton.BP_FortExpeditionIconTabButton_C.SetTabLabelInfo
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FFortTabButtonLabelInfo TabLabelInfo                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortTabButtonLabelInfo TabLabelInfo                   (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UBP_FortExpeditionIconTabButton_C::SetTabLabelInfo(const struct FFortTabButtonLabelInfo& TabLabelInfo)
 {
@@ -319,7 +319,7 @@ void UBP_FortExpeditionIconTabButton_C::OnUnhovered()
 // Function BP_FortExpeditionIconTabButton.BP_FortExpeditionIconTabButton_C.ExecuteUbergraph_BP_FortExpeditionIconTabButton
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionIconTabButton_C::ExecuteUbergraph_BP_FortExpeditionIconTabButton(int EntryPoint)
 {

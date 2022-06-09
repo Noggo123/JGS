@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function RotatorSelector.RotatorSelector_C.Update Options
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FText>           NewParam                       (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<struct FText>           NewParam                       (Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void URotatorSelector_C::Update_Options(TArray<struct FText>* NewParam)
 {
@@ -54,12 +54,12 @@ void URotatorSelector_C::Center_on_Widget()
 // Function RotatorSelector.RotatorSelector_C.Initialize
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Display_Text                   (BlueprintVisible, BlueprintReadOnly, Parm)
-// TArray<struct FText>           options                        (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// struct FText                   Hover_Text                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UCommonTextBlock*        Tab_Tooltip                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Display_Text                   (Parm)
+// TArray<struct FText>           Options                        (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// struct FText                   Hover_Text                     (Parm)
+// class UCommonTextBlock*        Tab_Tooltip                    (Parm, ZeroConstructor, IsPlainOldData)
 
-void URotatorSelector_C::Initialize(const struct FText& Display_Text, const struct FText& Hover_Text, class UCommonTextBlock* Tab_Tooltip, TArray<struct FText>* options)
+void URotatorSelector_C::Initialize(const struct FText& Display_Text, const struct FText& Hover_Text, class UCommonTextBlock* Tab_Tooltip, TArray<struct FText>* Options)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function RotatorSelector.RotatorSelector_C.Initialize");
 
@@ -74,15 +74,15 @@ void URotatorSelector_C::Initialize(const struct FText& Display_Text, const stru
 
 	fn->FunctionFlags = flags;
 
-	if (options != nullptr)
-		*options = params.options;
+	if (Options != nullptr)
+		*Options = params.Options;
 }
 
 
 // Function RotatorSelector.RotatorSelector_C.Update Row Selector
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Currently_Selected             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Currently_Selected             (Parm, ZeroConstructor, IsPlainOldData)
 
 void URotatorSelector_C::Update_Row_Selector(int Currently_Selected)
 {
@@ -119,7 +119,7 @@ void URotatorSelector_C::Construct()
 // Function RotatorSelector.RotatorSelector_C.OnMouseLeave
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FPointerEvent*          MouseEvent                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FPointerEvent*          MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
 
 void URotatorSelector_C::OnMouseLeave(struct FPointerEvent* MouseEvent)
 {
@@ -139,8 +139,8 @@ void URotatorSelector_C::OnMouseLeave(struct FPointerEvent* MouseEvent)
 // Function RotatorSelector.RotatorSelector_C.OnMouseEnter
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent*          MouseEvent                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// struct FPointerEvent*          MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
 
 void URotatorSelector_C::OnMouseEnter(struct FGeometry* MyGeometry, struct FPointerEvent* MouseEvent)
 {
@@ -161,7 +161,7 @@ void URotatorSelector_C::OnMouseEnter(struct FGeometry* MyGeometry, struct FPoin
 // Function RotatorSelector.RotatorSelector_C.BndEvt__TextRotator_K2Node_ComponentBoundEvent_5_OnRotated__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// int                            Value                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Value                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void URotatorSelector_C::BndEvt__TextRotator_K2Node_ComponentBoundEvent_5_OnRotated__DelegateSignature(int Value)
 {
@@ -178,50 +178,10 @@ void URotatorSelector_C::BndEvt__TextRotator_K2Node_ComponentBoundEvent_5_OnRota
 }
 
 
-// Function RotatorSelector.RotatorSelector_C.BndEvt__ButtonLeft_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void URotatorSelector_C::BndEvt__ButtonLeft_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function RotatorSelector.RotatorSelector_C.BndEvt__ButtonLeft_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature");
-
-	URotatorSelector_C_BndEvt__ButtonLeft_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function RotatorSelector.RotatorSelector_C.BndEvt__ButtonRight_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void URotatorSelector_C::BndEvt__ButtonRight_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function RotatorSelector.RotatorSelector_C.BndEvt__ButtonRight_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature");
-
-	URotatorSelector_C_BndEvt__ButtonRight_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function RotatorSelector.RotatorSelector_C.ExecuteUbergraph_RotatorSelector
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void URotatorSelector_C::ExecuteUbergraph_RotatorSelector(int EntryPoint)
 {
@@ -241,7 +201,7 @@ void URotatorSelector_C::ExecuteUbergraph_RotatorSelector(int EntryPoint)
 // Function RotatorSelector.RotatorSelector_C.Selection Changed__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Selected_Index                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Selected_Index                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void URotatorSelector_C::Selection_Changed__DelegateSignature(int Selected_Index)
 {

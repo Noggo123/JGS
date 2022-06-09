@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,10 +15,10 @@ namespace SDK
 // Function BannerLibrary.BannerLibrary_C.UpdateBannerMeshMaterialForUniqueId_New
 // (Static, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UMaterialInstanceDynamic* Material_Instance_Dynamic      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           UseIconMask                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FUniqueNetIdRepl        UniqueId                       (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UMaterialInstanceDynamic* Material_Instance_Dynamic      (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           UseIconMask                    (Parm, ZeroConstructor, IsPlainOldData)
+// struct FUniqueNetIdRepl        UniqueId                       (Parm)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBannerLibrary_C::STATIC_UpdateBannerMeshMaterialForUniqueId_New(class UMaterialInstanceDynamic* Material_Instance_Dynamic, bool UseIconMask, const struct FUniqueNetIdRepl& UniqueId, class UObject* __WorldContext)
 {
@@ -41,9 +41,9 @@ void UBannerLibrary_C::STATIC_UpdateBannerMeshMaterialForUniqueId_New(class UMat
 // Function BannerLibrary.BannerLibrary_C.Get Icon Texture and Colors
 // (Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FString                 BannerIconId                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-// struct FString                 BannerColorId                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FString                 BannerIconId                   (Parm, ZeroConstructor)
+// struct FString                 BannerColorId                  (Parm, ZeroConstructor)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // class UTexture2D*              Icon                           (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            PrimaryColor                   (Parm, OutParm, IsPlainOldData)
 // struct FLinearColor            Secondary_Color                (Parm, OutParm, IsPlainOldData)
@@ -75,10 +75,10 @@ void UBannerLibrary_C::STATIC_Get_Icon_Texture_and_Colors(const struct FString& 
 // Function BannerLibrary.BannerLibrary_C.UpdateMaterial_New
 // (Static, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UImage*                  Banner_material                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FFortHomeBaseInfo       Image_info                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// bool                           Is_Icon                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UImage*                  Banner_material                (Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortHomeBaseInfo       Image_info                     (Parm)
+// bool                           Is_Icon                        (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBannerLibrary_C::STATIC_UpdateMaterial_New(class UImage* Banner_material, const struct FFortHomeBaseInfo& Image_info, bool Is_Icon, class UObject* __WorldContext)
 {
@@ -101,10 +101,10 @@ void UBannerLibrary_C::STATIC_UpdateMaterial_New(class UImage* Banner_material, 
 // Function BannerLibrary.BannerLibrary_C.UpdateBannerMeshMaterial_New
 // (Static, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UMaterialInstanceDynamic* Material_Instance_Dynamic      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           UseIconMask                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class AFortPlayerState*        InstigatorPlayerState          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UMaterialInstanceDynamic* Material_Instance_Dynamic      (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           UseIconMask                    (Parm, ZeroConstructor, IsPlainOldData)
+// class AFortPlayerState*        InstigatorPlayerState          (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBannerLibrary_C::STATIC_UpdateBannerMeshMaterial_New(class UMaterialInstanceDynamic* Material_Instance_Dynamic, bool UseIconMask, class AFortPlayerState* InstigatorPlayerState, class UObject* __WorldContext)
 {
@@ -127,9 +127,9 @@ void UBannerLibrary_C::STATIC_UpdateBannerMeshMaterial_New(class UMaterialInstan
 // Function BannerLibrary.BannerLibrary_C.UpdateBannerIconOnMaterial
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UMaterialInstanceDynamic* Material                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UTexture*                Icon                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UMaterialInstanceDynamic* Material                       (Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture*                Icon                           (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBannerLibrary_C::STATIC_UpdateBannerIconOnMaterial(class UMaterialInstanceDynamic* Material, class UTexture* Icon, class UObject* __WorldContext)
 {
@@ -151,10 +151,10 @@ void UBannerLibrary_C::STATIC_UpdateBannerIconOnMaterial(class UMaterialInstance
 // Function BannerLibrary.BannerLibrary_C.UpdateBannerColorOnMaterial
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UMaterialInstanceDynamic* Material                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FLinearColor            PrimaryBGColor                 (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FLinearColor            SecondaryBGColor               (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UMaterialInstanceDynamic* Material                       (Parm, ZeroConstructor, IsPlainOldData)
+// struct FLinearColor            PrimaryBGColor                 (Parm, IsPlainOldData)
+// struct FLinearColor            SecondaryBGColor               (Parm, IsPlainOldData)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBannerLibrary_C::STATIC_UpdateBannerColorOnMaterial(class UMaterialInstanceDynamic* Material, const struct FLinearColor& PrimaryBGColor, const struct FLinearColor& SecondaryBGColor, class UObject* __WorldContext)
 {
@@ -177,12 +177,12 @@ void UBannerLibrary_C::STATIC_UpdateBannerColorOnMaterial(class UMaterialInstanc
 // Function BannerLibrary.BannerLibrary_C.GenericUpdateMaterial
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UMaterialInstanceDynamic* Target                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UTexture*                BannerIcon                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FLinearColor            BG_PrimaryColor                (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FLinearColor            BG_SecondaryColor              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// class UTexture*                ShapeIcon                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UMaterialInstanceDynamic* Target                         (Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture*                BannerIcon                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FLinearColor            BG_PrimaryColor                (Parm, IsPlainOldData)
+// struct FLinearColor            BG_SecondaryColor              (Parm, IsPlainOldData)
+// class UTexture*                ShapeIcon                      (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBannerLibrary_C::STATIC_GenericUpdateMaterial(class UMaterialInstanceDynamic* Target, class UTexture* BannerIcon, const struct FLinearColor& BG_PrimaryColor, const struct FLinearColor& BG_SecondaryColor, class UTexture* ShapeIcon, class UObject* __WorldContext)
 {

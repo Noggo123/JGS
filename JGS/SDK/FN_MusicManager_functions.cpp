@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,9 +49,9 @@ void AMusicManager_C::UserConstructionScript()
 // Function MusicManager.MusicManager_C.OnDayPhaseChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EFortDayPhase>*    CurrentDayPhase                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// TEnumAsByte<EFortDayPhase>*    PreviousDayPhase               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool*                          bAtCreation                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EFortDayPhase>*    CurrentDayPhase                (Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EFortDayPhase>*    PreviousDayPhase               (Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          bAtCreation                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void AMusicManager_C::OnDayPhaseChanged(TEnumAsByte<EFortDayPhase>* CurrentDayPhase, TEnumAsByte<EFortDayPhase>* PreviousDayPhase, bool* bAtCreation)
 {
@@ -158,7 +158,7 @@ void AMusicManager_C::StopMusic()
 // Function MusicManager.MusicManager_C.ExecuteUbergraph_MusicManager
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AMusicManager_C::ExecuteUbergraph_MusicManager(int EntryPoint)
 {

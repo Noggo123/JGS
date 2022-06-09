@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,14 +32,14 @@ void AProjectileHuskRanged_C::UserConstructionScript()
 // Function ProjectileHuskRanged.ProjectileHuskRanged_C.ReceiveHit
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// class UPrimitiveComponent**    MyComp                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class AActor**                 Other                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UPrimitiveComponent**    OtherComp                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool*                          bSelfMoved                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FVector*                HitLocation                    (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FVector*                HitNormal                      (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FVector*                NormalImpulse                  (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FHitResult*             Hit                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
+// class UPrimitiveComponent**    MyComp                         (Parm, ZeroConstructor, IsPlainOldData)
+// class AActor**                 Other                          (Parm, ZeroConstructor, IsPlainOldData)
+// class UPrimitiveComponent**    OtherComp                      (Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          bSelfMoved                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector*                HitLocation                    (Parm, IsPlainOldData)
+// struct FVector*                HitNormal                      (Parm, IsPlainOldData)
+// struct FVector*                NormalImpulse                  (Parm, IsPlainOldData)
+// struct FHitResult*             Hit                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
 
 void AProjectileHuskRanged_C::ReceiveHit(class UPrimitiveComponent** MyComp, class AActor** Other, class UPrimitiveComponent** OtherComp, bool* bSelfMoved, struct FVector* HitLocation, struct FVector* HitNormal, struct FVector* NormalImpulse, struct FHitResult* Hit)
 {
@@ -117,8 +117,8 @@ void AProjectileHuskRanged_C::StopHoming()
 // Function ProjectileHuskRanged.ProjectileHuskRanged_C.OnExploded
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// TArray<class AActor*>*         HitActors                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// TArray<struct FHitResult>*     HitResults                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class AActor*>*         HitActors                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<struct FHitResult>*     HitResults                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void AProjectileHuskRanged_C::OnExploded(TArray<class AActor*>* HitActors, TArray<struct FHitResult>* HitResults)
 {
@@ -156,7 +156,7 @@ void AProjectileHuskRanged_C::OnStoppedOnServer()
 // Function ProjectileHuskRanged.ProjectileHuskRanged_C.ExecuteUbergraph_ProjectileHuskRanged
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AProjectileHuskRanged_C::ExecuteUbergraph_ProjectileHuskRanged(int EntryPoint)
 {

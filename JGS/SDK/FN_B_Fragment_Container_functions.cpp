@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,34 +12,10 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function B_Fragment_Container.B_Fragment_Container_C.IsOutlander
-// (Private, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// class AFortPawn*               Pawn                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           IsOutlander                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void AB_Fragment_Container_C::IsOutlander(class AFortPawn* Pawn, bool* IsOutlander)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function B_Fragment_Container.B_Fragment_Container_C.IsOutlander");
-
-	AB_Fragment_Container_C_IsOutlander_Params params;
-	params.Pawn = Pawn;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (IsOutlander != nullptr)
-		*IsOutlander = params.IsOutlander;
-}
-
-
 // Function B_Fragment_Container.B_Fragment_Container_C.ForceFeedbackInteract
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Soft                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Soft                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void AB_Fragment_Container_C::ForceFeedbackInteract(bool Soft)
 {
@@ -93,7 +69,7 @@ void AB_Fragment_Container_C::OnRep_IsOn()
 // Function B_Fragment_Container.B_Fragment_Container_C.SetOutlander
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                  NewOutlander                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AActor*                  NewOutlander                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void AB_Fragment_Container_C::SetOutlander(class AActor* NewOutlander)
 {
@@ -113,7 +89,7 @@ void AB_Fragment_Container_C::SetOutlander(class AActor* NewOutlander)
 // Function B_Fragment_Container.B_Fragment_Container_C.SetAwake
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           NewAwake                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           NewAwake                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void AB_Fragment_Container_C::SetAwake(bool NewAwake)
 {
@@ -150,7 +126,7 @@ void AB_Fragment_Container_C::UpdateShouldTick()
 // Function B_Fragment_Container.B_Fragment_Container_C.BlueprintGetFailedInteractionString
 // (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// class AFortPawn**              InteractingPawn                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortPawn**              InteractingPawn                (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // struct FText                   ReturnValue                    (Parm, OutParm, ReturnParm)
 
 struct FText AB_Fragment_Container_C::BlueprintGetFailedInteractionString(class AFortPawn** InteractingPawn)
@@ -224,7 +200,7 @@ void AB_Fragment_Container_C::OnRep_BuffType()
 // Function B_Fragment_Container.B_Fragment_Container_C.BlueprintGetInteractionString
 // (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortPawn**              InteractingPawn                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortPawn**              InteractingPawn                (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // struct FText                   ReturnValue                    (Parm, OutParm, ReturnParm)
 
 struct FText AB_Fragment_Container_C::BlueprintGetInteractionString(class AFortPawn** InteractingPawn)
@@ -247,7 +223,7 @@ struct FText AB_Fragment_Container_C::BlueprintGetInteractionString(class AFortP
 // Function B_Fragment_Container.B_Fragment_Container_C.BlueprintCanInteract
 // (Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
-// class AFortPawn**              InteractingPawn                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortPawn**              InteractingPawn                (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 bool AB_Fragment_Container_C::BlueprintCanInteract(class AFortPawn** InteractingPawn)
@@ -372,13 +348,13 @@ void AB_Fragment_Container_C::ReceiveBeginPlay()
 // Function B_Fragment_Container.B_Fragment_Container_C.OnDeathServer
 // (BlueprintAuthorityOnly, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// float*                         Damage                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayTagContainer*  DamageTags                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FVector*                Momentum                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FHitResult*             HitInfo                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
-// class AController**            InstigatedBy                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class AActor**                 DamageCauser                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayEffectContextHandle* EffectContext                  (BlueprintVisible, BlueprintReadOnly, Parm)
+// float*                         Damage                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayTagContainer*  DamageTags                     (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FVector*                Momentum                       (Parm, IsPlainOldData)
+// struct FHitResult*             HitInfo                        (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+// class AController**            InstigatedBy                   (Parm, ZeroConstructor, IsPlainOldData)
+// class AActor**                 DamageCauser                   (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayEffectContextHandle* EffectContext                  (Parm)
 
 void AB_Fragment_Container_C::OnDeathServer(float* Damage, struct FGameplayTagContainer* DamageTags, struct FVector* Momentum, struct FHitResult* HitInfo, class AController** InstigatedBy, class AActor** DamageCauser, struct FGameplayEffectContextHandle* EffectContext)
 {
@@ -404,7 +380,7 @@ void AB_Fragment_Container_C::OnDeathServer(float* Damage, struct FGameplayTagCo
 // Function B_Fragment_Container.B_Fragment_Container_C.BlueprintOnInteract
 // (BlueprintAuthorityOnly, Event, Public, BlueprintEvent)
 // Parameters:
-// class AFortPawn**              InteractingPawn                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortPawn**              InteractingPawn                (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
 void AB_Fragment_Container_C::BlueprintOnInteract(class AFortPawn** InteractingPawn)
 {
@@ -441,12 +417,12 @@ void AB_Fragment_Container_C::ActivateFX()
 // Function B_Fragment_Container.B_Fragment_Container_C.BndEvt__Awaken_Collision_K2Node_ComponentBoundEvent_108_ComponentBeginOverlapSignature__DelegateSignature
 // (HasOutParms, BlueprintEvent)
 // Parameters:
-// class UPrimitiveComponent*     OverlappedComponent            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class AActor*                  OtherActor                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UPrimitiveComponent*     OtherComp                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            OtherBodyIndex                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bFromSweep                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FHitResult              SweepResult                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
+// class UPrimitiveComponent*     OverlappedComponent            (Parm, ZeroConstructor, IsPlainOldData)
+// class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData)
+// class UPrimitiveComponent*     OtherComp                      (Parm, ZeroConstructor, IsPlainOldData)
+// int                            OtherBodyIndex                 (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bFromSweep                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FHitResult              SweepResult                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
 
 void AB_Fragment_Container_C::BndEvt__Awaken_Collision_K2Node_ComponentBoundEvent_108_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
 {
@@ -471,10 +447,10 @@ void AB_Fragment_Container_C::BndEvt__Awaken_Collision_K2Node_ComponentBoundEven
 // Function B_Fragment_Container.B_Fragment_Container_C.BndEvt__Awaken_Collision_K2Node_ComponentBoundEvent_111_ComponentEndOverlapSignature__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UPrimitiveComponent*     OverlappedComponent            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class AActor*                  OtherActor                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UPrimitiveComponent*     OtherComp                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            OtherBodyIndex                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UPrimitiveComponent*     OverlappedComponent            (Parm, ZeroConstructor, IsPlainOldData)
+// class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData)
+// class UPrimitiveComponent*     OtherComp                      (Parm, ZeroConstructor, IsPlainOldData)
+// int                            OtherBodyIndex                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void AB_Fragment_Container_C::BndEvt__Awaken_Collision_K2Node_ComponentBoundEvent_111_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex)
 {
@@ -497,7 +473,7 @@ void AB_Fragment_Container_C::BndEvt__Awaken_Collision_K2Node_ComponentBoundEven
 // Function B_Fragment_Container.B_Fragment_Container_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float*                         DeltaSeconds                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float*                         DeltaSeconds                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void AB_Fragment_Container_C::ReceiveTick(float* DeltaSeconds)
 {
@@ -667,47 +643,10 @@ void AB_Fragment_Container_C::SoftFeedback()
 }
 
 
-// Function B_Fragment_Container.B_Fragment_Container_C.PlayAnimation
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UAnimSequence*           AnimToPlay                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void AB_Fragment_Container_C::PlayAnimation(class UAnimSequence* AnimToPlay)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function B_Fragment_Container.B_Fragment_Container_C.PlayAnimation");
-
-	AB_Fragment_Container_C_PlayAnimation_Params params;
-	params.AnimToPlay = AnimToPlay;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function B_Fragment_Container.B_Fragment_Container_C.AnimationComplete
-// (BlueprintCallable, BlueprintEvent)
-
-void AB_Fragment_Container_C::AnimationComplete()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function B_Fragment_Container.B_Fragment_Container_C.AnimationComplete");
-
-	AB_Fragment_Container_C_AnimationComplete_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function B_Fragment_Container.B_Fragment_Container_C.ExecuteUbergraph_B_Fragment_Container
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AB_Fragment_Container_C::ExecuteUbergraph_B_Fragment_Container(int EntryPoint)
 {

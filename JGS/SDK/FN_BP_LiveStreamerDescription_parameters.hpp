@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,7 +23,7 @@ struct UBP_LiveStreamerDescription_C_GetBroadcasterName_Params
 // Function BP_LiveStreamerDescription.BP_LiveStreamerDescription_C.SetViewerQuestText
 struct UBP_LiveStreamerDescription_C_SetViewerQuestText_Params
 {
-	struct FText                                       NewText;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FText                                       NewText;                                                  // (Parm)
 };
 
 // Function BP_LiveStreamerDescription.BP_LiveStreamerDescription_C.Update Viewer Note Visibility
@@ -45,13 +45,13 @@ struct UBP_LiveStreamerDescription_C_Is_Viewer_Quest_Params
 // Function BP_LiveStreamerDescription.BP_LiveStreamerDescription_C.Update Visibility
 struct UBP_LiveStreamerDescription_C_Update_Visibility_Params
 {
-	class UFortQuestItemDefinition*                    Item;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortQuestItemDefinition*                    Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function BP_LiveStreamerDescription.BP_LiveStreamerDescription_C.Set Quest
 struct UBP_LiveStreamerDescription_C_Set_Quest_Params
 {
-	class UFortQuestItem*                              Quest;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortQuestItem*                              Quest;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

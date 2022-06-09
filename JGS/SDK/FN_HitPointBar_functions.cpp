@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,23 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function HitPointBar.HitPointBar_C.SetInitialValues
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UHitPointBar_C::SetInitialValues()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HitPointBar.HitPointBar_C.SetInitialValues");
-
-	UHitPointBar_C_SetInitialValues_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function HitPointBar.HitPointBar_C.UpdateVolatileForUpdate
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -100,7 +83,7 @@ void UHitPointBar_C::Initialize_Bar()
 // Function HitPointBar.HitPointBar_C.UpdateCurrentValueWithoutReason
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          Current                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Current                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHitPointBar_C::UpdateCurrentValueWithoutReason(float Current)
 {
@@ -137,8 +120,8 @@ void UHitPointBar_C::Update_Fill_Bar()
 // Function HitPointBar.HitPointBar_C.UpdateCurrentValue
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          Current                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortHitPointModificationReason Reason                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Current                        (Parm, ZeroConstructor, IsPlainOldData)
+// EFortHitPointModificationReason Reason                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHitPointBar_C::UpdateCurrentValue(float Current, EFortHitPointModificationReason Reason)
 {
@@ -159,7 +142,7 @@ void UHitPointBar_C::UpdateCurrentValue(float Current, EFortHitPointModification
 // Function HitPointBar.HitPointBar_C.UpdateMaxValue
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          Max                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Max                            (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHitPointBar_C::UpdateMaxValue(float Max)
 {
@@ -179,7 +162,7 @@ void UHitPointBar_C::UpdateMaxValue(float Max)
 // Function HitPointBar.HitPointBar_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHitPointBar_C::PreConstruct(bool* IsDesignTime)
 {
@@ -196,11 +179,28 @@ void UHitPointBar_C::PreConstruct(bool* IsDesignTime)
 }
 
 
+// Function HitPointBar.HitPointBar_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UHitPointBar_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function HitPointBar.HitPointBar_C.Construct");
+
+	UHitPointBar_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function HitPointBar.HitPointBar_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// float*                         InDeltaTime                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// float*                         InDeltaTime                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHitPointBar_C::Tick(struct FGeometry* MyGeometry, float* InDeltaTime)
 {
@@ -221,7 +221,7 @@ void UHitPointBar_C::Tick(struct FGeometry* MyGeometry, float* InDeltaTime)
 // Function HitPointBar.HitPointBar_C.ExecuteUbergraph_HitPointBar
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHitPointBar_C::ExecuteUbergraph_HitPointBar(int EntryPoint)
 {

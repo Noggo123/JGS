@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -70,14 +68,6 @@ struct FGameplayTag
 	struct FName                                       TagName;                                                  // 0x0000(0x0008) (Edit, ZeroConstructor, EditConst, IsPlainOldData)
 };
 
-// ScriptStruct GameplayTags.GameplayTagContainer
-// 0x0020
-struct FGameplayTagContainer
-{
-	TArray<struct FGameplayTag>                        GameplayTags;                                             // 0x0000(0x0010) (BlueprintVisible, ZeroConstructor)
-	TArray<struct FGameplayTag>                        ParentTags;                                               // 0x0010(0x0010) (ZeroConstructor, Transient)
-};
-
 // ScriptStruct GameplayTags.GameplayTagQuery
 // 0x0048
 struct FGameplayTagQuery
@@ -88,6 +78,14 @@ struct FGameplayTagQuery
 	TArray<unsigned char>                              QueryTokenStream;                                         // 0x0018(0x0010) (ZeroConstructor)
 	struct FString                                     UserDescription;                                          // 0x0028(0x0010) (ZeroConstructor)
 	struct FString                                     AutoDescription;                                          // 0x0038(0x0010) (ZeroConstructor)
+};
+
+// ScriptStruct GameplayTags.GameplayTagContainer
+// 0x0020
+struct FGameplayTagContainer
+{
+	TArray<struct FGameplayTag>                        GameplayTags;                                             // 0x0000(0x0010) (BlueprintVisible, ZeroConstructor)
+	TArray<struct FGameplayTag>                        ParentTags;                                               // 0x0010(0x0010) (ZeroConstructor, Transient)
 };
 
 // ScriptStruct GameplayTags.GameplayTagSource

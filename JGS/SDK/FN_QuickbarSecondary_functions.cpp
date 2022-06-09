@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function QuickbarSecondary.QuickbarSecondary_C.Show Secondary Quickbar Rail
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Show                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Show                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuickbarSecondary_C::Show_Secondary_Quickbar_Rail(bool Show)
 {
@@ -103,7 +103,7 @@ void UQuickbarSecondary_C::HandleKeybindsChanged()
 // Function QuickbarSecondary.QuickbarSecondary_C.HandleInputMethodChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bUsingGamepad                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bUsingGamepad                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuickbarSecondary_C::HandleInputMethodChanged(bool bUsingGamepad)
 {
@@ -140,7 +140,7 @@ void UQuickbarSecondary_C::Destruct()
 // Function QuickbarSecondary.QuickbarSecondary_C.ExecuteUbergraph_QuickbarSecondary
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuickbarSecondary_C::ExecuteUbergraph_QuickbarSecondary(int EntryPoint)
 {

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -27,7 +27,7 @@ struct UPartyFinderListItem_C_UpdateStateText_Params
 // Function PartyFinderListItem.PartyFinderListItem_C.SetupExpansion
 struct UPartyFinderListItem_C_SetupExpansion_Params
 {
-	bool                                               Expanded;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Expanded;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function PartyFinderListItem.PartyFinderListItem_C.HandlePresenceUpdated
@@ -53,7 +53,7 @@ struct UPartyFinderListItem_C_OnSocialItemSet_Params
 // Function PartyFinderListItem.PartyFinderListItem_C.ExpansionChanged
 struct UPartyFinderListItem_C_ExpansionChanged_Params
 {
-	bool*                                              bExpanded;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              bExpanded;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function PartyFinderListItem.PartyFinderListItem_C.Construct
@@ -69,7 +69,7 @@ struct UPartyFinderListItem_C_Destruct_Params
 // Function PartyFinderListItem.PartyFinderListItem_C.ExecuteUbergraph_PartyFinderListItem
 struct UPartyFinderListItem_C_ExecuteUbergraph_PartyFinderListItem_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function PartyFinderListItem.PartyFinderListItem_C.InviteJoinChanged__DelegateSignature

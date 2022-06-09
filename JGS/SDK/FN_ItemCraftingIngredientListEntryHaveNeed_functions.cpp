@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -70,7 +70,7 @@ void UItemCraftingIngredientListEntryHaveNeed_C::DoDesignTimeRandomization()
 // Function ItemCraftingIngredientListEntryHaveNeed.ItemCraftingIngredientListEntryHaveNeed_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemCraftingIngredientListEntryHaveNeed_C::PreConstruct(bool* IsDesignTime)
 {
@@ -90,7 +90,7 @@ void UItemCraftingIngredientListEntryHaveNeed_C::PreConstruct(bool* IsDesignTime
 // Function ItemCraftingIngredientListEntryHaveNeed.ItemCraftingIngredientListEntryHaveNeed_C.HandleDifferentItemOrQuantitySetBP
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool*                          IsBeingReset                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsBeingReset                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemCraftingIngredientListEntryHaveNeed_C::HandleDifferentItemOrQuantitySetBP(bool* IsBeingReset)
 {
@@ -110,7 +110,7 @@ void UItemCraftingIngredientListEntryHaveNeed_C::HandleDifferentItemOrQuantitySe
 // Function ItemCraftingIngredientListEntryHaveNeed.ItemCraftingIngredientListEntryHaveNeed_C.ExecuteUbergraph_ItemCraftingIngredientListEntryHaveNeed
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemCraftingIngredientListEntryHaveNeed_C::ExecuteUbergraph_ItemCraftingIngredientListEntryHaveNeed(int EntryPoint)
 {

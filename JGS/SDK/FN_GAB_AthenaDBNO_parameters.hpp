@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,7 +23,7 @@ struct UGAB_AthenaDBNO_C_GetInitialHealAmount_Params
 // Function GAB_AthenaDBNO.GAB_AthenaDBNO_C.InitializeDeathHitDirection
 struct UGAB_AthenaDBNO_C_InitializeDeathHitDirection_Params
 {
-	struct FGameplayEventData                          EventHitData;                                             // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FGameplayEventData                          EventHitData;                                             // (Parm)
 };
 
 // Function GAB_AthenaDBNO.GAB_AthenaDBNO_C.OnCancelled_F0F6785443BD2E74F5591884CB19F35F
@@ -56,27 +56,21 @@ struct UGAB_AthenaDBNO_C_OnStateEnded_C85094F843D5075FE4872C95AFC5D6B6_Params
 {
 };
 
-// Function GAB_AthenaDBNO.GAB_AthenaDBNO_C.OnFinish_4C169D40441E45B462D83CBBA67F6E45
-struct UGAB_AthenaDBNO_C_OnFinish_4C169D40441E45B462D83CBBA67F6E45_Params
+// Function GAB_AthenaDBNO.GAB_AthenaDBNO_C.K2_ActivateAbilityFromEvent
+struct UGAB_AthenaDBNO_C_K2_ActivateAbilityFromEvent_Params
 {
+	struct FGameplayEventData*                         EventData;                                                // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function GAB_AthenaDBNO.GAB_AthenaDBNO_C.K2_OnEndAbility
 struct UGAB_AthenaDBNO_C_K2_OnEndAbility_Params
 {
-	bool*                                              bWasCancelled;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function GAB_AthenaDBNO.GAB_AthenaDBNO_C.K2_ActivateAbilityFromEvent
-struct UGAB_AthenaDBNO_C_K2_ActivateAbilityFromEvent_Params
-{
-	struct FGameplayEventData*                         EventData;                                                // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 };
 
 // Function GAB_AthenaDBNO.GAB_AthenaDBNO_C.ExecuteUbergraph_GAB_AthenaDBNO
 struct UGAB_AthenaDBNO_C_ExecuteUbergraph_GAB_AthenaDBNO_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,102 +12,95 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Get FortPC
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class AFortPlayerController*   FortPC                         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Update Air Vehicles
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void UBP_ItemTransform_TabButton_C::Get_FortPC(class AFortPlayerController** FortPC)
+void UBP_ItemTransform_TabButton_C::Update_Air_Vehicles()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Get FortPC");
+	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Update Air Vehicles");
 
-	UBP_ItemTransform_TabButton_C_Get_FortPC_Params params;
+	UBP_ItemTransform_TabButton_C_Update_Air_Vehicles_Params params;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (FortPC != nullptr)
-		*FortPC = params.FortPC;
 }
 
 
-// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Get Item from Transform Seen State
-// (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UFortAccountItem*        Transform_Key                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UFortAccountItem*        Item                           (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Update Sea Vehicles
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void UBP_ItemTransform_TabButton_C::Get_Item_from_Transform_Seen_State(class UFortAccountItem* Transform_Key, class UFortAccountItem** Item)
+void UBP_ItemTransform_TabButton_C::Update_Sea_Vehicles()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Get Item from Transform Seen State");
+	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Update Sea Vehicles");
 
-	UBP_ItemTransform_TabButton_C_Get_Item_from_Transform_Seen_State_Params params;
-	params.Transform_Key = Transform_Key;
+	UBP_ItemTransform_TabButton_C_Update_Sea_Vehicles_Params params;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (Item != nullptr)
-		*Item = params.Item;
 }
 
 
-// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Calculate Unseen Keys
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TArray<class UFortAccountItem*> Array                          (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// int                            NumUnseen                      (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Update Land Vehicles
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void UBP_ItemTransform_TabButton_C::Calculate_Unseen_Keys(TArray<class UFortAccountItem*>* Array, int* NumUnseen)
+void UBP_ItemTransform_TabButton_C::Update_Land_Vehicles()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Calculate Unseen Keys");
+	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Update Land Vehicles");
 
-	UBP_ItemTransform_TabButton_C_Calculate_Unseen_Keys_Params params;
+	UBP_ItemTransform_TabButton_C_Update_Land_Vehicles_Params params;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (Array != nullptr)
-		*Array = params.Array;
-	if (NumUnseen != nullptr)
-		*NumUnseen = params.NumUnseen;
 }
 
 
-// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Get Tab Id as Request Type
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// EConversionControlKeyRequest   ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Update All Vehicles
+// (Public, BlueprintCallable, BlueprintEvent)
 
-EConversionControlKeyRequest UBP_ItemTransform_TabButton_C::Get_Tab_Id_as_Request_Type()
+void UBP_ItemTransform_TabButton_C::Update_All_Vehicles()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Get Tab Id as Request Type");
+	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Update All Vehicles");
 
-	UBP_ItemTransform_TabButton_C_Get_Tab_Id_as_Request_Type_Params params;
+	UBP_ItemTransform_TabButton_C_Update_All_Vehicles_Params params;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+}
 
-	return params.ReturnValue;
+
+// Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Update Available Vehicles
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UBP_ItemTransform_TabButton_C::Update_Available_Vehicles()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Update Available Vehicles");
+
+	UBP_ItemTransform_TabButton_C_Update_Available_Vehicles_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
 }
 
 
 // Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Set Tab Id
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_ItemTransform_TabButton_C::Set_Tab_Id(const struct FName& TabId)
 {
@@ -144,7 +137,7 @@ void UBP_ItemTransform_TabButton_C::Refresh_Bang_State()
 // Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Set Icon
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSlateBrush             IconBrush                      (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FSlateBrush             IconBrush                      (Parm)
 
 void UBP_ItemTransform_TabButton_C::Set_Icon(const struct FSlateBrush& IconBrush)
 {
@@ -164,7 +157,7 @@ void UBP_ItemTransform_TabButton_C::Set_Icon(const struct FSlateBrush& IconBrush
 // Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.Set Text
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   ButtonText                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   ButtonText                     (Parm)
 
 void UBP_ItemTransform_TabButton_C::Set_Text(const struct FText& ButtonText)
 {
@@ -201,7 +194,7 @@ void UBP_ItemTransform_TabButton_C::OnCurrentTextStyleChanged()
 // Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_ItemTransform_TabButton_C::PreConstruct(bool* IsDesignTime)
 {
@@ -221,7 +214,7 @@ void UBP_ItemTransform_TabButton_C::PreConstruct(bool* IsDesignTime)
 // Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.SetTabLabelInfo
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FFortTabButtonLabelInfo TabLabelInfo                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortTabButtonLabelInfo TabLabelInfo                   (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UBP_ItemTransform_TabButton_C::SetTabLabelInfo(const struct FFortTabButtonLabelInfo& TabLabelInfo)
 {
@@ -326,7 +319,7 @@ void UBP_ItemTransform_TabButton_C::OnUnhovered()
 // Function BP_ItemTransform_TabButton.BP_ItemTransform_TabButton_C.ExecuteUbergraph_BP_ItemTransform_TabButton
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_ItemTransform_TabButton_C::ExecuteUbergraph_BP_ItemTransform_TabButton(int EntryPoint)
 {

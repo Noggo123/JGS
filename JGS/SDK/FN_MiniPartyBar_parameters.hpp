@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,8 +23,8 @@ struct UMiniPartyBar_C_Get_Banners_Tooltip_Widget_Params
 // Function MiniPartyBar.MiniPartyBar_C.HandlePartybarUIFeatureChanged
 struct UMiniPartyBar_C_HandlePartybarUIFeatureChanged_Params
 {
-	EFortUIFeature                                     Feature;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	EFortUIFeatureState                                FeatureState;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	EFortUIFeature                                     Feature;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	EFortUIFeatureState                                FeatureState;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MiniPartyBar.MiniPartyBar_C.Construct
@@ -35,13 +35,13 @@ struct UMiniPartyBar_C_Construct_Params
 // Function MiniPartyBar.MiniPartyBar_C.BndEvt__ButtonLocalPlayer_K2Node_ComponentBoundEvent_81_CommonButtonClicked__DelegateSignature
 struct UMiniPartyBar_C_BndEvt__ButtonLocalPlayer_K2Node_ComponentBoundEvent_81_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MiniPartyBar.MiniPartyBar_C.ExecuteUbergraph_MiniPartyBar
 struct UMiniPartyBar_C_ExecuteUbergraph_MiniPartyBar_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

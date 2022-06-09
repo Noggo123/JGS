@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function HUD-PickupItemWidget.HUD-PickupItemWidget_C.SetPickup
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortPickup*             NewPickup                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortPickup*             NewPickup                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_PickupItemWidget_C::SetPickup(class AFortPickup* NewPickup)
 {
@@ -86,7 +86,7 @@ void UHUD_PickupItemWidget_C::Construct()
 // Function HUD-PickupItemWidget.HUD-PickupItemWidget_C.ExecuteUbergraph_HUD-PickupItemWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_PickupItemWidget_C::ExecuteUbergraph_HUD_PickupItemWidget(int EntryPoint)
 {

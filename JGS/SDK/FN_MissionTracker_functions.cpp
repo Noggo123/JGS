@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -121,7 +121,7 @@ void UMissionTracker_C::Destruct()
 // Function MissionTracker.MissionTracker_C.ExecuteUbergraph_MissionTracker
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMissionTracker_C::ExecuteUbergraph_MissionTracker(int EntryPoint)
 {

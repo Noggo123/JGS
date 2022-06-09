@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,7 +37,7 @@ void UQuickbarPrimary_C::HasOneNonHarvestWeapon(bool* HasNonHarvestWeapon)
 // Function QuickbarPrimary.QuickbarPrimary_C.Show Primary Quickbar Rail
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Show                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Show                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuickbarPrimary_C::Show_Primary_Quickbar_Rail(bool Show)
 {
@@ -91,7 +91,7 @@ void UQuickbarPrimary_C::Construct()
 // Function QuickbarPrimary.QuickbarPrimary_C.HandleInputMethodChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bUsingGamepad                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bUsingGamepad                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuickbarPrimary_C::HandleInputMethodChanged(bool bUsingGamepad)
 {
@@ -145,7 +145,7 @@ void UQuickbarPrimary_C::Destruct()
 // Function QuickbarPrimary.QuickbarPrimary_C.ExecuteUbergraph_QuickbarPrimary
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuickbarPrimary_C::ExecuteUbergraph_QuickbarPrimary(int EntryPoint)
 {

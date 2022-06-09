@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,7 @@ namespace SDK
 // Function T2_Research.T2_Research_C.PreConstruct
 struct UT2_Research_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function T2_Research.T2_Research_C.Construct
@@ -28,7 +28,7 @@ struct UT2_Research_C_Construct_Params
 // Function T2_Research.T2_Research_C.ExecuteUbergraph_T2_Research
 struct UT2_Research_C_ExecuteUbergraph_T2_Research_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

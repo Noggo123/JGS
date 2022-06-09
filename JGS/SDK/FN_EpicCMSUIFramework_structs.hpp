@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -41,20 +39,6 @@ struct FSlotDescription
 	unsigned char                                      UnknownData00[0x6];                                       // 0x0012(0x0006) MISSED OFFSET
 };
 
-// ScriptStruct EpicCMSUIFramework.EpicCMSTileTypeMapping
-// 0x0028 (0x0030 - 0x0008)
-struct FEpicCMSTileTypeMapping : public FTableRowBase
-{
-	unsigned char                                      UnknownData00[0x28];                                      // 0x0008(0x0028) UNKNOWN PROPERTY: SoftClassProperty EpicCMSUIFramework.EpicCMSTileTypeMapping.TileClass
-};
-
-// ScriptStruct EpicCMSUIFramework.EpicCMSLayoutTypeMapping
-// 0x0028 (0x0030 - 0x0008)
-struct FEpicCMSLayoutTypeMapping : public FTableRowBase
-{
-	unsigned char                                      UnknownData00[0x28];                                      // 0x0008(0x0028) UNKNOWN PROPERTY: SoftClassProperty EpicCMSUIFramework.EpicCMSLayoutTypeMapping.LayoutType
-};
-
 // ScriptStruct EpicCMSUIFramework.TileDefinition
 // 0x0088
 struct FTileDefinition
@@ -71,6 +55,20 @@ struct FTileDefinition
 	struct FString                                     MediaUrl;                                                 // 0x0070(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
 	bool                                               IsVisible;                                                // 0x0080(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData01[0x7];                                       // 0x0081(0x0007) MISSED OFFSET
+};
+
+// ScriptStruct EpicCMSUIFramework.EpicCMSTileTypeMapping
+// 0x0020 (0x0028 - 0x0008)
+struct FEpicCMSTileTypeMapping : public FTableRowBase
+{
+	TAssetPtr<class UClass>                            TileClass;                                                // 0x0008(0x0020) (Edit)
+};
+
+// ScriptStruct EpicCMSUIFramework.EpicCMSLayoutTypeMapping
+// 0x0020 (0x0028 - 0x0008)
+struct FEpicCMSLayoutTypeMapping : public FTableRowBase
+{
+	TAssetPtr<class UClass>                            LayoutType;                                               // 0x0008(0x0020) (Edit)
 };
 
 }

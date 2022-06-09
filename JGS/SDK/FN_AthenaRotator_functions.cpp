@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,17 +12,14 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function AthenaRotator.AthenaRotator_C.ConfigureForOneDirectionMode
+// Function AthenaRotator.AthenaRotator_C.NewFunction_0_1
 // (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           UseOneDirectionalMode          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaRotator_C::ConfigureForOneDirectionMode(bool UseOneDirectionalMode)
+void UAthenaRotator_C::NewFunction_0_1()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaRotator.AthenaRotator_C.ConfigureForOneDirectionMode");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaRotator.AthenaRotator_C.NewFunction_0_1");
 
-	UAthenaRotator_C_ConfigureForOneDirectionMode_Params params;
-	params.UseOneDirectionalMode = UseOneDirectionalMode;
+	UAthenaRotator_C_NewFunction_0_1_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -35,7 +32,7 @@ void UAthenaRotator_C::ConfigureForOneDirectionMode(bool UseOneDirectionalMode)
 // Function AthenaRotator.AthenaRotator_C.ChangeDirection
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bDirection                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bDirection                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaRotator_C::ChangeDirection(bool bDirection)
 {
@@ -72,7 +69,7 @@ void UAthenaRotator_C::Construct()
 // Function AthenaRotator.AthenaRotator_C.BndEvt__ButtonLeft_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaRotator_C::BndEvt__ButtonLeft_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -92,7 +89,7 @@ void UAthenaRotator_C::BndEvt__ButtonLeft_K2Node_ComponentBoundEvent_1_CommonBut
 // Function AthenaRotator.AthenaRotator_C.BndEvt__ButtonRight_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaRotator_C::BndEvt__ButtonRight_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -112,8 +109,8 @@ void UAthenaRotator_C::BndEvt__ButtonRight_K2Node_ComponentBoundEvent_15_CommonB
 // Function AthenaRotator.AthenaRotator_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// float*                         InDeltaTime                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// float*                         InDeltaTime                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaRotator_C::Tick(struct FGeometry* MyGeometry, float* InDeltaTime)
 {
@@ -134,7 +131,7 @@ void UAthenaRotator_C::Tick(struct FGeometry* MyGeometry, float* InDeltaTime)
 // Function AthenaRotator.AthenaRotator_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaRotator_C::PreConstruct(bool* IsDesignTime)
 {
@@ -171,7 +168,7 @@ void UAthenaRotator_C::OnClicked()
 // Function AthenaRotator.AthenaRotator_C.ExecuteUbergraph_AthenaRotator
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaRotator_C::ExecuteUbergraph_AthenaRotator(int EntryPoint)
 {

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function RadialPicker.RadialPicker_C.SetShowMouseCursor
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           InShowMouseCursor              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           InShowMouseCursor              (Parm, ZeroConstructor, IsPlainOldData)
 
 void URadialPicker_C::SetShowMouseCursor(bool InShowMouseCursor)
 {
@@ -74,7 +74,7 @@ void URadialPicker_C::IsGamepadInPickerDeadZone(bool* bIsInDeadZone)
 // Function RadialPicker.RadialPicker_C.MoveActiveOption
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            MoveOptionDirection            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            MoveOptionDirection            (Parm, ZeroConstructor, IsPlainOldData)
 
 void URadialPicker_C::MoveActiveOption(int MoveOptionDirection)
 {
@@ -150,7 +150,7 @@ void URadialPicker_C::SetInputMode()
 // Function RadialPicker.RadialPicker_C.SetActiveOption
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Option                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Option                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void URadialPicker_C::SetActiveOption(int Option)
 {
@@ -187,7 +187,7 @@ void URadialPicker_C::ClearActiveOption()
 // Function RadialPicker.RadialPicker_C.GetOptionAngle
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Option                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Option                         (Parm, ZeroConstructor, IsPlainOldData)
 // float                          Angle                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void URadialPicker_C::GetOptionAngle(int Option, float* Angle)
@@ -211,8 +211,8 @@ void URadialPicker_C::GetOptionAngle(int Option, float* Angle)
 // Function RadialPicker.RadialPicker_C.GetAngleDifference
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          AngleA                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          AngleB                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          AngleA                         (Parm, ZeroConstructor, IsPlainOldData)
+// float                          AngleB                         (Parm, ZeroConstructor, IsPlainOldData)
 // float                          Difference                     (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void URadialPicker_C::GetAngleDifference(float AngleA, float AngleB, float* Difference)
@@ -237,7 +237,7 @@ void URadialPicker_C::GetAngleDifference(float AngleA, float AngleB, float* Diff
 // Function RadialPicker.RadialPicker_C.GetOptionPosition
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Option                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Option                         (Parm, ZeroConstructor, IsPlainOldData)
 // struct FVector2D               Position                       (Parm, OutParm, IsPlainOldData)
 
 void URadialPicker_C::GetOptionPosition(int Option, struct FVector2D* Position)
@@ -261,8 +261,8 @@ void URadialPicker_C::GetOptionPosition(int Option, struct FVector2D* Position)
 // Function RadialPicker.RadialPicker_C.InitializePicker
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortPickerMode                PickerMode                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            InitialOption                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortPickerMode                PickerMode                     (Parm, ZeroConstructor, IsPlainOldData)
+// int                            InitialOption                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void URadialPicker_C::InitializePicker(EFortPickerMode PickerMode, int InitialOption)
 {
@@ -283,8 +283,8 @@ void URadialPicker_C::InitializePicker(EFortPickerMode PickerMode, int InitialOp
 // Function RadialPicker.RadialPicker_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// float*                         InDeltaTime                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// float*                         InDeltaTime                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void URadialPicker_C::Tick(struct FGeometry* MyGeometry, float* InDeltaTime)
 {
@@ -373,7 +373,7 @@ void URadialPicker_C::ClosePicker()
 // Function RadialPicker.RadialPicker_C.AcceptChosenOption
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PickerOption                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PickerOption                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void URadialPicker_C::AcceptChosenOption(int PickerOption)
 {
@@ -410,7 +410,7 @@ void URadialPicker_C::OnPickerRefreshItems()
 // Function RadialPicker.RadialPicker_C.ExecuteUbergraph_RadialPicker
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void URadialPicker_C::ExecuteUbergraph_RadialPicker(int EntryPoint)
 {

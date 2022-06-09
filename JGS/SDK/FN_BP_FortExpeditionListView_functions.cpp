@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UBP_FortExpeditionListView_C::Construct()
 // Function BP_FortExpeditionListView.BP_FortExpeditionListView_C.BndEvt__ExpeditionListView_K2Node_ComponentBoundEvent_10_OnListViewItemClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UObject*                 Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionListView_C::BndEvt__ExpeditionListView_K2Node_ComponentBoundEvent_10_OnListViewItemClicked__DelegateSignature(class UObject* Item)
 {
@@ -52,7 +52,7 @@ void UBP_FortExpeditionListView_C::BndEvt__ExpeditionListView_K2Node_ComponentBo
 // Function BP_FortExpeditionListView.BP_FortExpeditionListView_C.BndEvt__ExpeditionListView_K2Node_ComponentBoundEvent_52_OnListViewItemClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UObject*                 Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionListView_C::BndEvt__ExpeditionListView_K2Node_ComponentBoundEvent_52_OnListViewItemClicked__DelegateSignature(class UObject* Item)
 {
@@ -72,7 +72,7 @@ void UBP_FortExpeditionListView_C::BndEvt__ExpeditionListView_K2Node_ComponentBo
 // Function BP_FortExpeditionListView.BP_FortExpeditionListView_C.BndEvt__ExpeditionListView_K2Node_ComponentBoundEvent_6_OnListViewItemClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UObject*                 Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionListView_C::BndEvt__ExpeditionListView_K2Node_ComponentBoundEvent_6_OnListViewItemClicked__DelegateSignature(class UObject* Item)
 {
@@ -92,7 +92,7 @@ void UBP_FortExpeditionListView_C::BndEvt__ExpeditionListView_K2Node_ComponentBo
 // Function BP_FortExpeditionListView.BP_FortExpeditionListView_C.ExecuteUbergraph_BP_FortExpeditionListView
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionListView_C::ExecuteUbergraph_BP_FortExpeditionListView(int EntryPoint)
 {
@@ -112,7 +112,7 @@ void UBP_FortExpeditionListView_C::ExecuteUbergraph_BP_FortExpeditionListView(in
 // Function BP_FortExpeditionListView.BP_FortExpeditionListView_C.OnItemHovered__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionListView_C::OnItemHovered__DelegateSignature(class UObject* Item)
 {
@@ -132,7 +132,7 @@ void UBP_FortExpeditionListView_C::OnItemHovered__DelegateSignature(class UObjec
 // Function BP_FortExpeditionListView.BP_FortExpeditionListView_C.OnItemClicked__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionListView_C::OnItemClicked__DelegateSignature(class UObject* Item)
 {

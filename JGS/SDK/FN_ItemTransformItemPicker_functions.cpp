@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function ItemTransformItemPicker.ItemTransformItemPicker_C.Return Item to Detail
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               InItem                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               InItem                         (Parm, ZeroConstructor, IsPlainOldData)
 // class UFortItem*               OutItem                        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformItemPicker_C::Return_Item_to_Detail(class UFortItem* InItem, class UFortItem** OutItem)
@@ -83,8 +83,8 @@ void UItemTransformItemPicker_C::CommitSelectedItem(bool* PassThru)
 // Function ItemTransformItemPicker.ItemTransformItemPicker_C.OpenPicker
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UFortItem*>       SacrificeItems                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// int                            SelectedSlot                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TArray<class UFortItem*>       SacrificeItems                 (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// int                            SelectedSlot                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformItemPicker_C::OpenPicker(int SelectedSlot, TArray<class UFortItem*>* SacrificeItems)
 {
@@ -107,7 +107,7 @@ void UItemTransformItemPicker_C::OpenPicker(int SelectedSlot, TArray<class UFort
 // Function ItemTransformItemPicker.ItemTransformItemPicker_C.SetFilter
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   FilterName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   FilterName                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformItemPicker_C::SetFilter(const struct FName& FilterName)
 {
@@ -144,7 +144,7 @@ void UItemTransformItemPicker_C::SetupFilterTabList()
 // Function ItemTransformItemPicker.ItemTransformItemPicker_C.HandleItemCommitted
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformItemPicker_C::HandleItemCommitted(class UFortItem* Item)
 {
@@ -164,8 +164,8 @@ void UItemTransformItemPicker_C::HandleItemCommitted(class UFortItem* Item)
 // Function ItemTransformItemPicker.ItemTransformItemPicker_C.RemoveInvalidItems
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UFortAccountItem*> UnrefinedItems                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// TArray<class UFortItem*>       CurrentSacrificeItems          (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UFortAccountItem*> UnrefinedItems                 (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UFortItem*>       CurrentSacrificeItems          (Parm, OutParm, ZeroConstructor, ReferenceParm)
 // TArray<class UFortAccountItem*> RefinedItems                   (Parm, OutParm, ZeroConstructor)
 
 void UItemTransformItemPicker_C::RemoveInvalidItems(TArray<class UFortAccountItem*>* UnrefinedItems, TArray<class UFortItem*>* CurrentSacrificeItems, TArray<class UFortAccountItem*>* RefinedItems)
@@ -192,7 +192,7 @@ void UItemTransformItemPicker_C::RemoveInvalidItems(TArray<class UFortAccountIte
 // Function ItemTransformItemPicker.ItemTransformItemPicker_C.HandleItemSelected
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformItemPicker_C::HandleItemSelected(class UFortItem* Item)
 {
@@ -246,7 +246,7 @@ void UItemTransformItemPicker_C::Construct()
 // Function ItemTransformItemPicker.ItemTransformItemPicker_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformItemPicker_C::PreConstruct(bool* IsDesignTime)
 {
@@ -266,7 +266,7 @@ void UItemTransformItemPicker_C::PreConstruct(bool* IsDesignTime)
 // Function ItemTransformItemPicker.ItemTransformItemPicker_C.BndEvt__FilterTabList_K2Node_ComponentBoundEvent_0_OnTabSelected__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformItemPicker_C::BndEvt__FilterTabList_K2Node_ComponentBoundEvent_0_OnTabSelected__DelegateSignature(const struct FName& TabId)
 {
@@ -286,7 +286,7 @@ void UItemTransformItemPicker_C::BndEvt__FilterTabList_K2Node_ComponentBoundEven
 // Function ItemTransformItemPicker.ItemTransformItemPicker_C.ExecuteUbergraph_ItemTransformItemPicker
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformItemPicker_C::ExecuteUbergraph_ItemTransformItemPicker(int EntryPoint)
 {
@@ -306,7 +306,7 @@ void UItemTransformItemPicker_C::ExecuteUbergraph_ItemTransformItemPicker(int En
 // Function ItemTransformItemPicker.ItemTransformItemPicker_C.OnItemSelected__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               SelectedItem                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               SelectedItem                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformItemPicker_C::OnItemSelected__DelegateSignature(class UFortItem* SelectedItem)
 {

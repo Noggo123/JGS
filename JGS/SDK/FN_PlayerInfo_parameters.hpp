@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,7 @@ namespace SDK
 // Function PlayerInfo.PlayerInfo_C.UpdateLocalPlayerInfo
 struct UPlayerInfo_C_UpdateLocalPlayerInfo_Params
 {
-	struct FFortTeamMemberInfo                         Player_Info;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FFortTeamMemberInfo                         Player_Info;                                              // (Parm, OutParm, ReferenceParm)
 };
 
 // Function PlayerInfo.PlayerInfo_C.Construct
@@ -28,7 +28,7 @@ struct UPlayerInfo_C_Construct_Params
 // Function PlayerInfo.PlayerInfo_C.HandlePlayerStateChanged
 struct UPlayerInfo_C_HandlePlayerStateChanged_Params
 {
-	struct FFortTeamMemberInfo                         PlayerInfo;                                               // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FFortTeamMemberInfo                         PlayerInfo;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function PlayerInfo.PlayerInfo_C.Destruct
@@ -39,7 +39,7 @@ struct UPlayerInfo_C_Destruct_Params
 // Function PlayerInfo.PlayerInfo_C.ExecuteUbergraph_PlayerInfo
 struct UPlayerInfo_C_ExecuteUbergraph_PlayerInfo_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,12 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
-
-// Function Landscape.LandscapeProxy.EditorSetLandscapeMaterial
-struct ALandscapeProxy_EditorSetLandscapeMaterial_Params
-{
-	class UMaterialInterface*                          NewLandscapeMaterial;                                     // (Parm, ZeroConstructor, IsPlainOldData)
-};
 
 // Function Landscape.LandscapeProxy.EditorApplySpline
 struct ALandscapeProxy_EditorApplySpline_Params

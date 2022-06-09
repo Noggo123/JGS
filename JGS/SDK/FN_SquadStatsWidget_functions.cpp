@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,7 +49,7 @@ void USquadStatsWidget_C::BindToAttributeChanges()
 // Function SquadStatsWidget.SquadStatsWidget_C.HandleActivityChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           IsActive                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IsActive                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void USquadStatsWidget_C::HandleActivityChanged(bool IsActive)
 {
@@ -86,7 +86,7 @@ void USquadStatsWidget_C::HandleAttributeChanged()
 // Function SquadStatsWidget.SquadStatsWidget_C.HighlightStat
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            inStatIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            inStatIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void USquadStatsWidget_C::HighlightStat(int inStatIndex)
 {
@@ -208,7 +208,7 @@ void USquadStatsWidget_C::Construct()
 // Function SquadStatsWidget.SquadStatsWidget_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_37_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void USquadStatsWidget_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_37_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -228,7 +228,7 @@ void USquadStatsWidget_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_37_C
 // Function SquadStatsWidget.SquadStatsWidget_C.BndEvt__CloseDetailedStats_K2Node_ComponentBoundEvent_119_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void USquadStatsWidget_C::BndEvt__CloseDetailedStats_K2Node_ComponentBoundEvent_119_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -282,7 +282,7 @@ void USquadStatsWidget_C::HandleSquadSlottingPreviewStateChanged()
 // Function SquadStatsWidget.SquadStatsWidget_C.ExecuteUbergraph_SquadStatsWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void USquadStatsWidget_C::ExecuteUbergraph_SquadStatsWidget(int EntryPoint)
 {

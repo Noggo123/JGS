@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -44,8 +42,8 @@ public:
 	}
 
 
-	void Handle_Collect(bool* Passthrough);
-	void Handle_Close(bool* Passthrough);
+	void Handle_Collect(bool* PassThrough);
+	void Handle_Close(bool* PassThrough);
 	void Set_Input_Action_Handlers();
 	void PopPanelWhileInGame();
 	void Setup_Daily_Rewards();

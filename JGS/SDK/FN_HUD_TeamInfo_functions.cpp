@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function HUD_TeamInfo.HUD_TeamInfo_C.HandleTeamHitInfoChanged
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<float>                  HealthFractions                (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// TArray<float>                  ShieldFractions                (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<float>                  HealthFractions                (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<float>                  ShieldFractions                (Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UHUD_TeamInfo_C::HandleTeamHitInfoChanged(TArray<float>* HealthFractions, TArray<float>* ShieldFractions)
 {
@@ -57,15 +57,13 @@ void UHUD_TeamInfo_C::ClearContents()
 // Function HUD_TeamInfo.HUD_TeamInfo_C.AppendTeamMember
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     TeamMemberInfo                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// int                            TeamMemberNumber               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortTeamMemberInfo     TeamMemberInfo                 (Parm, OutParm, ReferenceParm)
 
-void UHUD_TeamInfo_C::AppendTeamMember(int TeamMemberNumber, struct FFortTeamMemberInfo* TeamMemberInfo)
+void UHUD_TeamInfo_C::AppendTeamMember(struct FFortTeamMemberInfo* TeamMemberInfo)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function HUD_TeamInfo.HUD_TeamInfo_C.AppendTeamMember");
 
 	UHUD_TeamInfo_C_AppendTeamMember_Params params;
-	params.TeamMemberNumber = TeamMemberNumber;
 
 	auto flags = fn->FunctionFlags;
 
@@ -81,8 +79,8 @@ void UHUD_TeamInfo_C::AppendTeamMember(int TeamMemberNumber, struct FFortTeamMem
 // Function HUD_TeamInfo.HUD_TeamInfo_C.ShiftTeamMembers
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     TeamMemberInfo                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// int                            Index                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortTeamMemberInfo     TeamMemberInfo                 (Parm, OutParm, ReferenceParm)
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_TeamInfo_C::ShiftTeamMembers(int Index, struct FFortTeamMemberInfo* TeamMemberInfo)
 {
@@ -105,7 +103,7 @@ void UHUD_TeamInfo_C::ShiftTeamMembers(int Index, struct FFortTeamMemberInfo* Te
 // Function HUD_TeamInfo.HUD_TeamInfo_C.HandleTeamMemberChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     Member_Info                    (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortTeamMemberInfo     Member_Info                    (Parm)
 
 void UHUD_TeamInfo_C::HandleTeamMemberChanged(const struct FFortTeamMemberInfo& Member_Info)
 {
@@ -125,7 +123,7 @@ void UHUD_TeamInfo_C::HandleTeamMemberChanged(const struct FFortTeamMemberInfo& 
 // Function HUD_TeamInfo.HUD_TeamInfo_C.HandleTeamMemberRemoved
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Member_Index                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Member_Index                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_TeamInfo_C::HandleTeamMemberRemoved(int Member_Index)
 {
@@ -179,7 +177,7 @@ void UHUD_TeamInfo_C::HandlePartyLeft()
 // Function HUD_TeamInfo.HUD_TeamInfo_C.ExecuteUbergraph_HUD_TeamInfo
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_TeamInfo_C::ExecuteUbergraph_HUD_TeamInfo(int EntryPoint)
 {

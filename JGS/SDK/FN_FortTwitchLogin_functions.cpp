@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -146,8 +146,8 @@ void UFortTwitchLogin_C::CenterOnWidget()
 // Function FortTwitchLogin.FortTwitchLogin_C.DialogResult_5994C6BA48DC4D282A16D7BA54384F79
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortDialogResult              Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ResultName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortDialogResult              Result                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ResultName                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFortTwitchLogin_C::DialogResult_5994C6BA48DC4D282A16D7BA54384F79(EFortDialogResult Result, const struct FName& ResultName)
 {
@@ -185,8 +185,8 @@ void UFortTwitchLogin_C::Initialize_Data()
 // Function FortTwitchLogin.FortTwitchLogin_C.OnLoginStatusChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          bLoggedIn                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FString*                AccountName                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// bool*                          bLoggedIn                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FString*                AccountName                    (Parm, ZeroConstructor)
 
 void UFortTwitchLogin_C::OnLoginStatusChanged(bool* bLoggedIn, struct FString* AccountName)
 {
@@ -207,7 +207,7 @@ void UFortTwitchLogin_C::OnLoginStatusChanged(bool* bLoggedIn, struct FString* A
 // Function FortTwitchLogin.FortTwitchLogin_C.OnLoginFlowModalCreated
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class UFortTwitchLoginModalWidget** Modal                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortTwitchLoginModalWidget** Modal                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFortTwitchLogin_C::OnLoginFlowModalCreated(class UFortTwitchLoginModalWidget** Modal)
 {
@@ -244,7 +244,7 @@ void UFortTwitchLogin_C::OnCancelButtonClicked()
 // Function FortTwitchLogin.FortTwitchLogin_C.OnLoginFlowModalDismissed
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class UFortTwitchLoginModalWidget** Modal                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortTwitchLoginModalWidget** Modal                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFortTwitchLogin_C::OnLoginFlowModalDismissed(class UFortTwitchLoginModalWidget** Modal)
 {
@@ -264,7 +264,7 @@ void UFortTwitchLogin_C::OnLoginFlowModalDismissed(class UFortTwitchLoginModalWi
 // Function FortTwitchLogin.FortTwitchLogin_C.BndEvt__SignInButton_K2Node_ComponentBoundEvent_209_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFortTwitchLogin_C::BndEvt__SignInButton_K2Node_ComponentBoundEvent_209_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -284,7 +284,7 @@ void UFortTwitchLogin_C::BndEvt__SignInButton_K2Node_ComponentBoundEvent_209_Com
 // Function FortTwitchLogin.FortTwitchLogin_C.BndEvt__SignOutButton_K2Node_ComponentBoundEvent_229_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFortTwitchLogin_C::BndEvt__SignOutButton_K2Node_ComponentBoundEvent_229_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -304,7 +304,7 @@ void UFortTwitchLogin_C::BndEvt__SignOutButton_K2Node_ComponentBoundEvent_229_Co
 // Function FortTwitchLogin.FortTwitchLogin_C.BndEvt__SignInButton_K2Node_ComponentBoundEvent_46_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFortTwitchLogin_C::BndEvt__SignInButton_K2Node_ComponentBoundEvent_46_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -324,7 +324,7 @@ void UFortTwitchLogin_C::BndEvt__SignInButton_K2Node_ComponentBoundEvent_46_Comm
 // Function FortTwitchLogin.FortTwitchLogin_C.BndEvt__SignInButton_K2Node_ComponentBoundEvent_59_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFortTwitchLogin_C::BndEvt__SignInButton_K2Node_ComponentBoundEvent_59_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -344,7 +344,7 @@ void UFortTwitchLogin_C::BndEvt__SignInButton_K2Node_ComponentBoundEvent_59_Comm
 // Function FortTwitchLogin.FortTwitchLogin_C.BndEvt__SignOutButton_K2Node_ComponentBoundEvent_116_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFortTwitchLogin_C::BndEvt__SignOutButton_K2Node_ComponentBoundEvent_116_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -364,7 +364,7 @@ void UFortTwitchLogin_C::BndEvt__SignOutButton_K2Node_ComponentBoundEvent_116_Co
 // Function FortTwitchLogin.FortTwitchLogin_C.BndEvt__SignOutButton_K2Node_ComponentBoundEvent_131_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFortTwitchLogin_C::BndEvt__SignOutButton_K2Node_ComponentBoundEvent_131_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -384,8 +384,8 @@ void UFortTwitchLogin_C::BndEvt__SignOutButton_K2Node_ComponentBoundEvent_131_Co
 // Function FortTwitchLogin.FortTwitchLogin_C.OnShowLoginError
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FText*                  ErrorTitle                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FText*                  ErrorMessage                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FText*                  ErrorTitle                     (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FText*                  ErrorMessage                   (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UFortTwitchLogin_C::OnShowLoginError(struct FText* ErrorTitle, struct FText* ErrorMessage)
 {
@@ -406,7 +406,7 @@ void UFortTwitchLogin_C::OnShowLoginError(struct FText* ErrorTitle, struct FText
 // Function FortTwitchLogin.FortTwitchLogin_C.ExecuteUbergraph_FortTwitchLogin
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFortTwitchLogin_C::ExecuteUbergraph_FortTwitchLogin(int EntryPoint)
 {
@@ -426,7 +426,7 @@ void UFortTwitchLogin_C::ExecuteUbergraph_FortTwitchLogin(int EntryPoint)
 // Function FortTwitchLogin.FortTwitchLogin_C.OnRequestToolTipChange__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   NewTooltipText                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   NewTooltipText                 (Parm)
 
 void UFortTwitchLogin_C::OnRequestToolTipChange__DelegateSignature(const struct FText& NewTooltipText)
 {

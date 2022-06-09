@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -260,7 +260,7 @@ void UPerkWidget_C::InitializeBasicPerk()
 // Function PerkWidget.PerkWidget_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPerkWidget_C::PreConstruct(bool* IsDesignTime)
 {
@@ -297,7 +297,7 @@ void UPerkWidget_C::Construct()
 // Function PerkWidget.PerkWidget_C.ExecuteUbergraph_PerkWidget
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPerkWidget_C::ExecuteUbergraph_PerkWidget(int EntryPoint)
 {

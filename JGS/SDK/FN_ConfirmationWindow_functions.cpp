@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,14 +12,31 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function ConfirmationWindow.ConfirmationWindow_C.CenterFirstButton
+// Function ConfirmationWindow.ConfirmationWindow_C.TriggerCameraMode
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void UConfirmationWindow_C::CenterFirstButton()
+void UConfirmationWindow_C::TriggerCameraMode()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ConfirmationWindow.ConfirmationWindow_C.CenterFirstButton");
+	static auto fn = UObject::FindObject<UFunction>("Function ConfirmationWindow.ConfirmationWindow_C.TriggerCameraMode");
 
-	UConfirmationWindow_C_CenterFirstButton_Params params;
+	UConfirmationWindow_C_TriggerCameraMode_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ConfirmationWindow.ConfirmationWindow_C.TriggerCursorMode
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UConfirmationWindow_C::TriggerCursorMode()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ConfirmationWindow.ConfirmationWindow_C.TriggerCursorMode");
+
+	UConfirmationWindow_C_TriggerCursorMode_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -37,6 +54,23 @@ void UConfirmationWindow_C::CloseConfirmation()
 	static auto fn = UObject::FindObject<UFunction>("Function ConfirmationWindow.ConfirmationWindow_C.CloseConfirmation");
 
 	UConfirmationWindow_C_CloseConfirmation_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ConfirmationWindow.ConfirmationWindow_C.CenterFirstButton
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UConfirmationWindow_C::CenterFirstButton()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ConfirmationWindow.ConfirmationWindow_C.CenterFirstButton");
+
+	UConfirmationWindow_C_CenterFirstButton_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -117,7 +151,7 @@ void UConfirmationWindow_C::ClickButtonIfBot()
 // Function ConfirmationWindow.ConfirmationWindow_C.OnWaitForExternalLatentAction
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortDialogExternalLatentActionHandle LatentActionHandle             (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortDialogExternalLatentActionHandle LatentActionHandle             (Parm)
 
 void UConfirmationWindow_C::OnWaitForExternalLatentAction(const struct FFortDialogExternalLatentActionHandle& LatentActionHandle)
 {
@@ -176,7 +210,7 @@ void UConfirmationWindow_C::GetLatentActionWaitHandle(struct FFortDialogExternal
 // Function ConfirmationWindow.ConfirmationWindow_C.Set Hover Description
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button_to_Hover                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button_to_Hover                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UConfirmationWindow_C::Set_Hover_Description(class UCommonButton* Button_to_Hover)
 {
@@ -281,7 +315,7 @@ void UConfirmationWindow_C::KillCurrentConfirmation()
 // Function ConfirmationWindow.ConfirmationWindow_C.GetResultName
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UIconTextButton_C*       ConfirmButton                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UIconTextButton_C*       ConfirmButton                  (Parm, ZeroConstructor, IsPlainOldData)
 // struct FName                   ResultName                     (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UConfirmationWindow_C::GetResultName(class UIconTextButton_C* ConfirmButton, struct FName* ResultName)
@@ -305,8 +339,8 @@ void UConfirmationWindow_C::GetResultName(class UIconTextButton_C* ConfirmButton
 // Function ConfirmationWindow.ConfirmationWindow_C.GetInputAction
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FName                   RowName                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           UseInputAction                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   RowName                        (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           UseInputAction                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FDataTableRowHandle     ReturnValue                    (Parm, OutParm, ReturnParm)
 
 struct FDataTableRowHandle UConfirmationWindow_C::GetInputAction(const struct FName& RowName, bool UseInputAction)
@@ -330,8 +364,8 @@ struct FDataTableRowHandle UConfirmationWindow_C::GetInputAction(const struct FN
 // Function ConfirmationWindow.ConfirmationWindow_C.AddSingleConfirmButton
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FConfirmationDialogAction ConfirmDialogAction            (BlueprintVisible, BlueprintReadOnly, Parm)
-// bool                           UseInputAction                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FConfirmationDialogAction ConfirmDialogAction            (Parm)
+// bool                           UseInputAction                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UConfirmationWindow_C::AddSingleConfirmButton(const struct FConfirmationDialogAction& ConfirmDialogAction, bool UseInputAction)
 {
@@ -373,7 +407,7 @@ bool UConfirmationWindow_C::HasAnyConfirmAction()
 // Function ConfirmationWindow.ConfirmationWindow_C.ConfirmActionClicked
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UConfirmationWindow_C::ConfirmActionClicked(class UCommonButton* Button)
 {
@@ -414,7 +448,7 @@ bool UConfirmationWindow_C::IsSimpleConfirmAction()
 // Function ConfirmationWindow.ConfirmationWindow_C.DeclineActionClicked
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UConfirmationWindow_C::DeclineActionClicked(class UCommonButton* Button)
 {
@@ -485,7 +519,7 @@ void UConfirmationWindow_C::Initialize()
 // Function ConfirmationWindow.ConfirmationWindow_C.SetDescription
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortDialogDescription_NUI NewDescription                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortDialogDescription_NUI NewDescription                 (Parm)
 
 void UConfirmationWindow_C::SetDescription(const struct FFortDialogDescription_NUI& NewDescription)
 {
@@ -590,7 +624,7 @@ void UConfirmationWindow_C::OnBeginOutro()
 // Function ConfirmationWindow.ConfirmationWindow_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UConfirmationWindow_C::PreConstruct(bool* IsDesignTime)
 {
@@ -624,10 +658,27 @@ void UConfirmationWindow_C::OnActivated()
 }
 
 
+// Function ConfirmationWindow.ConfirmationWindow_C.Destruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UConfirmationWindow_C::Destruct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ConfirmationWindow.ConfirmationWindow_C.Destruct");
+
+	UConfirmationWindow_C_Destruct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function ConfirmationWindow.ConfirmationWindow_C.ExecuteUbergraph_ConfirmationWindow
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UConfirmationWindow_C::ExecuteUbergraph_ConfirmationWindow(int EntryPoint)
 {

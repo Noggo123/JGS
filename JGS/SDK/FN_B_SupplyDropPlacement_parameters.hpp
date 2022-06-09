@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -39,7 +39,7 @@ struct AB_SupplyDropPlacement_C_GetImpactLocation_Params
 // Function B_SupplyDropPlacement.B_SupplyDropPlacement_C.ToggleFallingFX
 struct AB_SupplyDropPlacement_C_ToggleFallingFX_Params
 {
-	bool                                               bToggleOn;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bToggleOn;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function B_SupplyDropPlacement.B_SupplyDropPlacement_C.ClientPlayDropFX
@@ -50,7 +50,7 @@ struct AB_SupplyDropPlacement_C_ClientPlayDropFX_Params
 // Function B_SupplyDropPlacement.B_SupplyDropPlacement_C.SpawnTierDrops
 struct AB_SupplyDropPlacement_C_SpawnTierDrops_Params
 {
-	int                                                LootTableIndex;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                LootTableIndex;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function B_SupplyDropPlacement.B_SupplyDropPlacement_C.LootSpawnPosition
@@ -62,13 +62,13 @@ struct AB_SupplyDropPlacement_C_LootSpawnPosition_Params
 // Function B_SupplyDropPlacement.B_SupplyDropPlacement_C.InitDrop
 struct AB_SupplyDropPlacement_C_InitDrop_Params
 {
-	struct FSupplyDropUnlocks                          InUnlocks;                                                // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FSupplyDropUnlocks                          InUnlocks;                                                // (Parm)
 };
 
 // Function B_SupplyDropPlacement.B_SupplyDropPlacement_C.BlueprintGetInteractionString
 struct AB_SupplyDropPlacement_C_BlueprintGetInteractionString_Params
 {
-	class AFortPawn**                                  InteractingPawn;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AFortPawn**                                  InteractingPawn;                                          // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 	struct FText                                       ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -80,10 +80,10 @@ struct AB_SupplyDropPlacement_C_Landed_Params
 // Function B_SupplyDropPlacement.B_SupplyDropPlacement_C.IsAcceptablePositionForPlacement
 struct AB_SupplyDropPlacement_C_IsAcceptablePositionForPlacement_Params
 {
-	struct FVector                                     InLocation;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	struct FRotator                                    InRotation;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	class AFortDecoTool**                              DecoTool;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool*                                              bIsCDO;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector*                                    InLocation;                                               // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FRotator*                                   InRotation;                                               // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	class AFortDecoTool**                              DecoTool;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              bIsCDO;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FText                                       OutFailureReason;                                         // (Parm, OutParm)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
@@ -91,20 +91,20 @@ struct AB_SupplyDropPlacement_C_IsAcceptablePositionForPlacement_Params
 // Function B_SupplyDropPlacement.B_SupplyDropPlacement_C.UpdateLocation
 struct AB_SupplyDropPlacement_C_UpdateLocation_Params
 {
-	float                                              Time;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Time;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function B_SupplyDropPlacement.B_SupplyDropPlacement_C.BlueprintCanInteract
 struct AB_SupplyDropPlacement_C_BlueprintCanInteract_Params
 {
-	class AFortPawn**                                  InteractingPawn;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AFortPawn**                                  InteractingPawn;                                          // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function B_SupplyDropPlacement.B_SupplyDropPlacement_C.TurnOnInteract
 struct AB_SupplyDropPlacement_C_TurnOnInteract_Params
 {
-	bool                                               bNewActorEnableCollision;                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bNewActorEnableCollision;                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function B_SupplyDropPlacement.B_SupplyDropPlacement_C.SpawnLoot
@@ -145,25 +145,25 @@ struct AB_SupplyDropPlacement_C_ImpactFX_Params
 // Function B_SupplyDropPlacement.B_SupplyDropPlacement_C.BndEvt__ActiveFloorCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature
 struct AB_SupplyDropPlacement_C_BndEvt__ActiveFloorCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature_Params
 {
-	class UPrimitiveComponent*                         OverlappedComponent;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class AActor*                                      OtherActor;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UPrimitiveComponent*                         OtherComp;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int                                                OtherBodyIndex;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bFromSweep;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FHitResult                                  SweepResult;                                              // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	class UPrimitiveComponent*                         OverlappedComponent;                                      // (Parm, ZeroConstructor, IsPlainOldData)
+	class AActor*                                      OtherActor;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent*                         OtherComp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                OtherBodyIndex;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bFromSweep;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FHitResult                                  SweepResult;                                              // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
 };
 
 // Function B_SupplyDropPlacement.B_SupplyDropPlacement_C.OverlappingDied
 struct AB_SupplyDropPlacement_C_OverlappingDied_Params
 {
-	class AActor*                                      DamagedActor;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Damage;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class AController*                                 InstigatedBy;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class AActor*                                      DamageCauser;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     HitLocation;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	class UPrimitiveComponent*                         FHitComponent;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FName                                       BoneName;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     Momentum;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+	class AActor*                                      DamagedActor;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Damage;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	class AController*                                 InstigatedBy;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	class AActor*                                      DamageCauser;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     HitLocation;                                              // (Parm, IsPlainOldData)
+	class UPrimitiveComponent*                         FHitComponent;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       BoneName;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     Momentum;                                                 // (Parm, IsPlainOldData)
 };
 
 // Function B_SupplyDropPlacement.B_SupplyDropPlacement_C.SelfDestruction
@@ -174,7 +174,7 @@ struct AB_SupplyDropPlacement_C_SelfDestruction_Params
 // Function B_SupplyDropPlacement.B_SupplyDropPlacement_C.BlueprintOnInteract
 struct AB_SupplyDropPlacement_C_BlueprintOnInteract_Params
 {
-	class AFortPawn**                                  InteractingPawn;                                          // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AFortPawn**                                  InteractingPawn;                                          // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function B_SupplyDropPlacement.B_SupplyDropPlacement_C.PlayDrop
@@ -210,7 +210,7 @@ struct AB_SupplyDropPlacement_C_ReceiveBeginPlay_Params
 // Function B_SupplyDropPlacement.B_SupplyDropPlacement_C.ExecuteUbergraph_B_SupplyDropPlacement
 struct AB_SupplyDropPlacement_C_ExecuteUbergraph_B_SupplyDropPlacement_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

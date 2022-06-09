@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,14 +17,14 @@ namespace SDK
 // Function UACCommon.UACNetComponent.SendPacketToServer
 struct UUACNetComponent_SendPacketToServer_Params
 {
-	unsigned char                                      Type;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	EUACPacketType                                     Type;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 	TArray<unsigned char>                              Packet;                                                   // (ConstParm, Parm, ZeroConstructor, ReferenceParm)
 };
 
 // Function UACCommon.UACNetComponent.SendPacketToClient
 struct UUACNetComponent_SendPacketToClient_Params
 {
-	unsigned char                                      Type;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	EUACPacketType                                     Type;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 	TArray<unsigned char>                              Packet;                                                   // (ConstParm, Parm, ZeroConstructor, ReferenceParm)
 };
 

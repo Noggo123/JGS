@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,13 +37,13 @@ struct UAthenaStatsTab_C_OnActivated_Params
 // Function AthenaStatsTab.AthenaStatsTab_C.OnQueryFinished
 struct UAthenaStatsTab_C_OnQueryFinished_Params
 {
-	bool*                                              bWasSuccessful;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              bWasSuccessful;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaStatsTab.AthenaStatsTab_C.BndEvt__StatsTabList_K2Node_ComponentBoundEvent_0_OnTabSelected__DelegateSignature
 struct UAthenaStatsTab_C_BndEvt__StatsTabList_K2Node_ComponentBoundEvent_0_OnTabSelected__DelegateSignature_Params
 {
-	struct FName                                       TabId;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       TabId;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaStatsTab.AthenaStatsTab_C.OnQueryStarted
@@ -59,7 +59,7 @@ struct UAthenaStatsTab_C_OnDeactivated_Params
 // Function AthenaStatsTab.AthenaStatsTab_C.ExecuteUbergraph_AthenaStatsTab
 struct UAthenaStatsTab_C_ExecuteUbergraph_AthenaStatsTab_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UWaveModifiersTile_C::PlayIntro()
 // Function WaveModifiersTile.WaveModifiersTile_C.SetModifierItem
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               ModifierItem                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               ModifierItem                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UWaveModifiersTile_C::SetModifierItem(class UFortItem* ModifierItem)
 {
@@ -69,7 +69,7 @@ void UWaveModifiersTile_C::OnAnimReadyForNextModifier()
 // Function WaveModifiersTile.WaveModifiersTile_C.SetData
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 InData                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 InData                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UWaveModifiersTile_C::SetData(class UObject* InData)
 {
@@ -89,7 +89,7 @@ void UWaveModifiersTile_C::SetData(class UObject* InData)
 // Function WaveModifiersTile.WaveModifiersTile_C.ExecuteUbergraph_WaveModifiersTile
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UWaveModifiersTile_C::ExecuteUbergraph_WaveModifiersTile(int EntryPoint)
 {

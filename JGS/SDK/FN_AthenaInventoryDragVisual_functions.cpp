@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,26 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function AthenaInventoryDragVisual.AthenaInventoryDragVisual_C.ShowDropIcon
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TEnumAsByte<EAthenaDragDropAction> Drop_Action                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaInventoryDragVisual_C::ShowDropIcon(TEnumAsByte<EAthenaDragDropAction> Drop_Action)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryDragVisual.AthenaInventoryDragVisual_C.ShowDropIcon");
-
-	UAthenaInventoryDragVisual_C_ShowDropIcon_Params params;
-	params.Drop_Action = Drop_Action;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function AthenaInventoryDragVisual.AthenaInventoryDragVisual_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -52,7 +32,7 @@ void UAthenaInventoryDragVisual_C::Construct()
 // Function AthenaInventoryDragVisual.AthenaInventoryDragVisual_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaInventoryDragVisual_C::PreConstruct(bool* IsDesignTime)
 {
@@ -72,7 +52,7 @@ void UAthenaInventoryDragVisual_C::PreConstruct(bool* IsDesignTime)
 // Function AthenaInventoryDragVisual.AthenaInventoryDragVisual_C.ExecuteUbergraph_AthenaInventoryDragVisual
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaInventoryDragVisual_C::ExecuteUbergraph_AthenaInventoryDragVisual(int EntryPoint)
 {

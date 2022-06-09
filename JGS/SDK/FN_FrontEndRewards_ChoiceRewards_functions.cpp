@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function FrontEndRewards_ChoiceRewards.FrontEndRewards_ChoiceRewards_C.HandleResizeFinished
 // (Private, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class URewards_ItemCard_C*     Card                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class URewards_ItemCard_C*     Card                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_ChoiceRewards_C::HandleResizeFinished(class URewards_ItemCard_C* Card)
 {
@@ -108,7 +108,7 @@ void UFrontEndRewards_ChoiceRewards_C::Reset()
 // Function FrontEndRewards_ChoiceRewards.FrontEndRewards_ChoiceRewards_C.PopulateFromCardList
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class URewards_ItemCard_C*> Cards                          (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class URewards_ItemCard_C*> Cards                          (Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UFrontEndRewards_ChoiceRewards_C::PopulateFromCardList(TArray<class URewards_ItemCard_C*>* Cards)
 {
@@ -215,7 +215,7 @@ void UFrontEndRewards_ChoiceRewards_C::SetSelectedItemDescription()
 // Function FrontEndRewards_ChoiceRewards.FrontEndRewards_ChoiceRewards_C.HandleCardClicked
 // (Private, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class URewards_ItemCard_C*     ItemCard                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class URewards_ItemCard_C*     ItemCard                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_ChoiceRewards_C::HandleCardClicked(class URewards_ItemCard_C* ItemCard)
 {
@@ -269,7 +269,7 @@ void UFrontEndRewards_ChoiceRewards_C::SelectNextCard()
 // Function FrontEndRewards_ChoiceRewards.FrontEndRewards_ChoiceRewards_C.SelectCard
 // (Private, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            NewSelection                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            NewSelection                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_ChoiceRewards_C::SelectCard(int NewSelection)
 {
@@ -289,7 +289,7 @@ void UFrontEndRewards_ChoiceRewards_C::SelectCard(int NewSelection)
 // Function FrontEndRewards_ChoiceRewards.FrontEndRewards_ChoiceRewards_C.SetCardSelected
 // (Private, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class URewards_ItemCard_C*     Card                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class URewards_ItemCard_C*     Card                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_ChoiceRewards_C::SetCardSelected(class URewards_ItemCard_C* Card)
 {
@@ -343,7 +343,7 @@ void UFrontEndRewards_ChoiceRewards_C::AdjustCardPositions()
 // Function FrontEndRewards_ChoiceRewards.FrontEndRewards_ChoiceRewards_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_ChoiceRewards_C::PreConstruct(bool* IsDesignTime)
 {
@@ -363,7 +363,7 @@ void UFrontEndRewards_ChoiceRewards_C::PreConstruct(bool* IsDesignTime)
 // Function FrontEndRewards_ChoiceRewards.FrontEndRewards_ChoiceRewards_C.BndEvt__ButtonSure_K2Node_ComponentBoundEvent_41_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_ChoiceRewards_C::BndEvt__ButtonSure_K2Node_ComponentBoundEvent_41_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -383,7 +383,7 @@ void UFrontEndRewards_ChoiceRewards_C::BndEvt__ButtonSure_K2Node_ComponentBoundE
 // Function FrontEndRewards_ChoiceRewards.FrontEndRewards_ChoiceRewards_C.BndEvt__ButtonNope_K2Node_ComponentBoundEvent_55_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_ChoiceRewards_C::BndEvt__ButtonNope_K2Node_ComponentBoundEvent_55_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -573,7 +573,7 @@ void UFrontEndRewards_ChoiceRewards_C::OnPrimaryAction()
 // Function FrontEndRewards_ChoiceRewards.FrontEndRewards_ChoiceRewards_C.ExecuteUbergraph_FrontEndRewards_ChoiceRewards
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_ChoiceRewards_C::ExecuteUbergraph_FrontEndRewards_ChoiceRewards(int EntryPoint)
 {
@@ -593,8 +593,8 @@ void UFrontEndRewards_ChoiceRewards_C::ExecuteUbergraph_FrontEndRewards_ChoiceRe
 // Function FrontEndRewards_ChoiceRewards.FrontEndRewards_ChoiceRewards_C.OnRewardSelected__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Index                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_ChoiceRewards_C::OnRewardSelected__DelegateSignature(int Index, class UFortItem* Item)
 {

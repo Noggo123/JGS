@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,27 +12,10 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function AthenaTeamMemberDBNOState.AthenaTeamMemberDBNOState_C.RefreshVisuals
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaTeamMemberDBNOState_C::RefreshVisuals()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaTeamMemberDBNOState.AthenaTeamMemberDBNOState_C.RefreshVisuals");
-
-	UAthenaTeamMemberDBNOState_C_RefreshVisuals_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function AthenaTeamMemberDBNOState.AthenaTeamMemberDBNOState_C.Set Reviving
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Is_Reviving                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Is_Reviving                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaTeamMemberDBNOState_C::Set_Reviving(bool Is_Reviving)
 {
@@ -52,7 +35,7 @@ void UAthenaTeamMemberDBNOState_C::Set_Reviving(bool Is_Reviving)
 // Function AthenaTeamMemberDBNOState.AthenaTeamMemberDBNOState_C.Set DBNO
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Is_DBNO                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Is_DBNO                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaTeamMemberDBNOState_C::Set_DBNO(bool Is_DBNO)
 {
@@ -72,7 +55,7 @@ void UAthenaTeamMemberDBNOState_C::Set_DBNO(bool Is_DBNO)
 // Function AthenaTeamMemberDBNOState.AthenaTeamMemberDBNOState_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaTeamMemberDBNOState_C::PreConstruct(bool* IsDesignTime)
 {
@@ -92,7 +75,7 @@ void UAthenaTeamMemberDBNOState_C::PreConstruct(bool* IsDesignTime)
 // Function AthenaTeamMemberDBNOState.AthenaTeamMemberDBNOState_C.ExecuteUbergraph_AthenaTeamMemberDBNOState
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaTeamMemberDBNOState_C::ExecuteUbergraph_AthenaTeamMemberDBNOState(int EntryPoint)
 {

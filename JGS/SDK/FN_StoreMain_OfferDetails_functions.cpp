@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,9 +49,9 @@ void UStoreMain_OfferDetails_C::Init()
 // Function StoreMain_OfferDetails.StoreMain_OfferDetails_C.HandleBack
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UStoreMain_OfferDetails_C::HandleBack(bool* Passthrough)
+void UStoreMain_OfferDetails_C::HandleBack(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function StoreMain_OfferDetails.StoreMain_OfferDetails_C.HandleBack");
 
@@ -63,8 +63,8 @@ void UStoreMain_OfferDetails_C::HandleBack(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -105,7 +105,7 @@ void UStoreMain_OfferDetails_C::OnDeactivated()
 // Function StoreMain_OfferDetails.StoreMain_OfferDetails_C.BndEvt__PurchaseButton_K2Node_ComponentBoundEvent_16_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UStoreMain_OfferDetails_C::BndEvt__PurchaseButton_K2Node_ComponentBoundEvent_16_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -125,7 +125,7 @@ void UStoreMain_OfferDetails_C::BndEvt__PurchaseButton_K2Node_ComponentBoundEven
 // Function StoreMain_OfferDetails.StoreMain_OfferDetails_C.HandlePurchaseComplete
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bSuccess                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bSuccess                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UStoreMain_OfferDetails_C::HandlePurchaseComplete(bool bSuccess)
 {
@@ -179,7 +179,7 @@ void UStoreMain_OfferDetails_C::Destruct()
 // Function StoreMain_OfferDetails.StoreMain_OfferDetails_C.ExecuteUbergraph_StoreMain_OfferDetails
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UStoreMain_OfferDetails_C::ExecuteUbergraph_StoreMain_OfferDetails(int EntryPoint)
 {

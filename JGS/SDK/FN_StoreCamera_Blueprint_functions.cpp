@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -168,7 +168,7 @@ void AStoreCamera_Blueprint_C::ResetCamera()
 // Function StoreCamera_Blueprint.StoreCamera_Blueprint_C.DarkenBGVisibility
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Enable                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Enable                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void AStoreCamera_Blueprint_C::DarkenBGVisibility(bool Enable)
 {
@@ -222,7 +222,7 @@ void AStoreCamera_Blueprint_C::ChoicePackFOV_In()
 // Function StoreCamera_Blueprint.StoreCamera_Blueprint_C.ExecuteUbergraph_StoreCamera_Blueprint
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AStoreCamera_Blueprint_C::ExecuteUbergraph_StoreCamera_Blueprint(int EntryPoint)
 {

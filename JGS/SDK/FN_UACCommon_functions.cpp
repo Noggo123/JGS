@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,10 +15,10 @@ namespace SDK
 // Function UACCommon.UACNetComponent.SendPacketToServer
 // (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
 // Parameters:
-// unsigned char                  Type                           (Parm, ZeroConstructor, IsPlainOldData)
+// EUACPacketType                 Type                           (Parm, ZeroConstructor, IsPlainOldData)
 // TArray<unsigned char>          Packet                         (ConstParm, Parm, ZeroConstructor, ReferenceParm)
 
-void UUACNetComponent::SendPacketToServer(unsigned char Type, TArray<unsigned char> Packet)
+void UUACNetComponent::SendPacketToServer(EUACPacketType Type, TArray<unsigned char> Packet)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function UACCommon.UACNetComponent.SendPacketToServer");
 
@@ -38,10 +38,10 @@ void UUACNetComponent::SendPacketToServer(unsigned char Type, TArray<unsigned ch
 // Function UACCommon.UACNetComponent.SendPacketToClient
 // (Net, NetReliable, Native, Event, Public, NetClient)
 // Parameters:
-// unsigned char                  Type                           (Parm, ZeroConstructor, IsPlainOldData)
+// EUACPacketType                 Type                           (Parm, ZeroConstructor, IsPlainOldData)
 // TArray<unsigned char>          Packet                         (ConstParm, Parm, ZeroConstructor, ReferenceParm)
 
-void UUACNetComponent::SendPacketToClient(unsigned char Type, TArray<unsigned char> Packet)
+void UUACNetComponent::SendPacketToClient(EUACPacketType Type, TArray<unsigned char> Packet)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function UACCommon.UACNetComponent.SendPacketToClient");
 

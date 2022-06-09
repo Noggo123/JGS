@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -842,7 +842,7 @@ struct UDefenderAnimBlueprint_C_EvaluateGraphExposedInputs_ExecuteUbergraph_Defe
 // Function DefenderAnimBlueprint.DefenderAnimBlueprint_C.ExecuteUbergraph_DefenderAnimBlueprint
 struct UDefenderAnimBlueprint_C_ExecuteUbergraph_DefenderAnimBlueprint_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

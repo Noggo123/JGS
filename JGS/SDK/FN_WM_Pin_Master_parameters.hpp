@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,19 +22,19 @@ struct AWM_Pin_Master_C_UpdateSelectionState_Params
 // Function WM_Pin_Master.WM_Pin_Master_C.OnQuestsCompleted
 struct AWM_Pin_Master_C_OnQuestsCompleted_Params
 {
-	TArray<class UFortQuestItem*>                      QuestItems;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<class UFortQuestItem*>                      QuestItems;                                               // (Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function WM_Pin_Master.WM_Pin_Master_C.OnTheaterSelected
 struct AWM_Pin_Master_C_OnTheaterSelected_Params
 {
-	struct FString                                     TheaterId;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	struct FString                                     TheaterId;                                                // (Parm, ZeroConstructor)
 };
 
 // Function WM_Pin_Master.WM_Pin_Master_C.OnSetPreviewedSceneTheater
 struct AWM_Pin_Master_C_OnSetPreviewedSceneTheater_Params
 {
-	struct FString                                     PreviewedTheaterId;                                       // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	struct FString                                     PreviewedTheaterId;                                       // (Parm, ZeroConstructor)
 };
 
 // Function WM_Pin_Master.WM_Pin_Master_C.InitializeContextEvents
@@ -78,20 +78,20 @@ struct AWM_Pin_Master_C_ReceiveBeginPlay_Params
 // Function WM_Pin_Master.WM_Pin_Master_C.HandleOnClicked
 struct AWM_Pin_Master_C_HandleOnClicked_Params
 {
-	class AActor*                                      TouchedActor;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FKey                                        ButtonPressed;                                            // (BlueprintVisible, BlueprintReadOnly, Parm)
+	class AActor*                                      TouchedActor;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FKey                                        ButtonPressed;                                            // (Parm)
 };
 
 // Function WM_Pin_Master.WM_Pin_Master_C.HandleOnBeginCursorOver
 struct AWM_Pin_Master_C_HandleOnBeginCursorOver_Params
 {
-	class AActor*                                      TouchedActor;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AActor*                                      TouchedActor;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function WM_Pin_Master.WM_Pin_Master_C.HandleOnEndCursorOver
 struct AWM_Pin_Master_C_HandleOnEndCursorOver_Params
 {
-	class AActor*                                      TouchedActor;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AActor*                                      TouchedActor;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function WM_Pin_Master.WM_Pin_Master_C.OnTheaterIdSet
@@ -102,7 +102,7 @@ struct AWM_Pin_Master_C_OnTheaterIdSet_Params
 // Function WM_Pin_Master.WM_Pin_Master_C.ExecuteUbergraph_WM_Pin_Master
 struct AWM_Pin_Master_C_ExecuteUbergraph_WM_Pin_Master_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

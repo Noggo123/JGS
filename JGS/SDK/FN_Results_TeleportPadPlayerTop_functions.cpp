@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,9 +32,9 @@ void UResults_TeleportPadPlayerTop_C::Play_Anim_Intro()
 // Function Results_TeleportPadPlayerTop.Results_TeleportPadPlayerTop_C.Initialize
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        UniqueNetID                    (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UFortUIScoreReport*      ScoreReport                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            ScoreReportIndex               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FUniqueNetIdRepl        UniqueNetID                    (Parm)
+// class UFortUIScoreReport*      ScoreReport                    (Parm, ZeroConstructor, IsPlainOldData)
+// int                            ScoreReportIndex               (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeleportPadPlayerTop_C::Initialize(const struct FUniqueNetIdRepl& UniqueNetID, class UFortUIScoreReport* ScoreReport, int ScoreReportIndex)
 {
@@ -73,7 +73,7 @@ void UResults_TeleportPadPlayerTop_C::IntroName()
 // Function Results_TeleportPadPlayerTop.Results_TeleportPadPlayerTop_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeleportPadPlayerTop_C::PreConstruct(bool* IsDesignTime)
 {
@@ -110,7 +110,7 @@ void UResults_TeleportPadPlayerTop_C::Intro()
 // Function Results_TeleportPadPlayerTop.Results_TeleportPadPlayerTop_C.ExecuteUbergraph_Results_TeleportPadPlayerTop
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeleportPadPlayerTop_C::ExecuteUbergraph_Results_TeleportPadPlayerTop(int EntryPoint)
 {

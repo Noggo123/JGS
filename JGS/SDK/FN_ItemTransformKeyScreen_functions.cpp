@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,27 +12,10 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function ItemTransformKeyScreen.ItemTransformKeyScreen_C.Refresh Tab Button Bangs
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UItemTransformKeyScreen_C::Refresh_Tab_Button_Bangs()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformKeyScreen.ItemTransformKeyScreen_C.Refresh Tab Button Bangs");
-
-	UItemTransformKeyScreen_C_Refresh_Tab_Button_Bangs_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function ItemTransformKeyScreen.ItemTransformKeyScreen_C.Determine Tab List Title
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FName                   TabNameID                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
 // struct FText                   Text                           (Parm, OutParm)
 
 void UItemTransformKeyScreen_C::Determine_Tab_List_Title(const struct FName& TabNameID, struct FText* Text)
@@ -56,7 +39,7 @@ void UItemTransformKeyScreen_C::Determine_Tab_List_Title(const struct FName& Tab
 // Function ItemTransformKeyScreen.ItemTransformKeyScreen_C.Determine Key Types to See
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   TabNameID                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
 // EConversionControlKeyRequest   RequestType                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformKeyScreen_C::Determine_Key_Types_to_See(const struct FName& TabNameID, EConversionControlKeyRequest* RequestType)
@@ -97,7 +80,7 @@ void UItemTransformKeyScreen_C::NavigateToFirstItem()
 // Function ItemTransformKeyScreen.ItemTransformKeyScreen_C.NavigateToSelectedItem
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               InItem                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               InItem                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformKeyScreen_C::NavigateToSelectedItem(class UFortItem* InItem)
 {
@@ -156,7 +139,7 @@ void UItemTransformKeyScreen_C::ResetScreen()
 // Function ItemTransformKeyScreen.ItemTransformKeyScreen_C.HandleItemSelected
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformKeyScreen_C::HandleItemSelected(class UFortItem* Item)
 {
@@ -193,7 +176,7 @@ void UItemTransformKeyScreen_C::SetupKeyList()
 // Function ItemTransformKeyScreen.ItemTransformKeyScreen_C.RebuildKeyList
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EConversionControlKeyRequest   RequestType                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EConversionControlKeyRequest   RequestType                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformKeyScreen_C::RebuildKeyList(EConversionControlKeyRequest RequestType)
 {
@@ -230,7 +213,7 @@ void UItemTransformKeyScreen_C::Construct()
 // Function ItemTransformKeyScreen.ItemTransformKeyScreen_C.BndEvt__ItemTransformKeyPicker_K2Node_ComponentBoundEvent_189_OnItemSelectionEvent__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UFortItem*               SelectedItem                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               SelectedItem                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformKeyScreen_C::BndEvt__ItemTransformKeyPicker_K2Node_ComponentBoundEvent_189_OnItemSelectionEvent__DelegateSignature(class UFortItem* SelectedItem)
 {
@@ -250,7 +233,7 @@ void UItemTransformKeyScreen_C::BndEvt__ItemTransformKeyPicker_K2Node_ComponentB
 // Function ItemTransformKeyScreen.ItemTransformKeyScreen_C.BndEvt__HorizontalTabList_K2Node_ComponentBoundEvent_17_OnTabSelected__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformKeyScreen_C::BndEvt__HorizontalTabList_K2Node_ComponentBoundEvent_17_OnTabSelected__DelegateSignature(const struct FName& TabId)
 {
@@ -284,89 +267,10 @@ void UItemTransformKeyScreen_C::HandleHomebaseInventoryChanged()
 }
 
 
-// Function ItemTransformKeyScreen.ItemTransformKeyScreen_C.BndEvt__HorizontalTabList_K2Node_ComponentBoundEvent_40_OnTabButtonCreated__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UItemTransformKeyScreen_C::BndEvt__HorizontalTabList_K2Node_ComponentBoundEvent_40_OnTabButtonCreated__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformKeyScreen.ItemTransformKeyScreen_C.BndEvt__HorizontalTabList_K2Node_ComponentBoundEvent_40_OnTabButtonCreated__DelegateSignature");
-
-	UItemTransformKeyScreen_C_BndEvt__HorizontalTabList_K2Node_ComponentBoundEvent_40_OnTabButtonCreated__DelegateSignature_Params params;
-	params.TabId = TabId;
-	params.TabButton = TabButton;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemTransformKeyScreen.ItemTransformKeyScreen_C.BndEvt__ItemTransformKeyPicker_K2Node_ComponentBoundEvent_77_OnItemSelectionEvent__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UFortItem*               SelectedItem                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UItemTransformKeyScreen_C::BndEvt__ItemTransformKeyPicker_K2Node_ComponentBoundEvent_77_OnItemSelectionEvent__DelegateSignature(class UFortItem* SelectedItem)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformKeyScreen.ItemTransformKeyScreen_C.BndEvt__ItemTransformKeyPicker_K2Node_ComponentBoundEvent_77_OnItemSelectionEvent__DelegateSignature");
-
-	UItemTransformKeyScreen_C_BndEvt__ItemTransformKeyPicker_K2Node_ComponentBoundEvent_77_OnItemSelectionEvent__DelegateSignature_Params params;
-	params.SelectedItem = SelectedItem;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemTransformKeyScreen.ItemTransformKeyScreen_C.BndEvt__ItemTransformKeyPicker_K2Node_ComponentBoundEvent_116_OnItemSelectionEvent__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UFortItem*               SelectedItem                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UItemTransformKeyScreen_C::BndEvt__ItemTransformKeyPicker_K2Node_ComponentBoundEvent_116_OnItemSelectionEvent__DelegateSignature(class UFortItem* SelectedItem)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformKeyScreen.ItemTransformKeyScreen_C.BndEvt__ItemTransformKeyPicker_K2Node_ComponentBoundEvent_116_OnItemSelectionEvent__DelegateSignature");
-
-	UItemTransformKeyScreen_C_BndEvt__ItemTransformKeyPicker_K2Node_ComponentBoundEvent_116_OnItemSelectionEvent__DelegateSignature_Params params;
-	params.SelectedItem = SelectedItem;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemTransformKeyScreen.ItemTransformKeyScreen_C.HACK
-// (BlueprintCallable, BlueprintEvent)
-
-void UItemTransformKeyScreen_C::HACK()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemTransformKeyScreen.ItemTransformKeyScreen_C.HACK");
-
-	UItemTransformKeyScreen_C_HACK_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function ItemTransformKeyScreen.ItemTransformKeyScreen_C.ExecuteUbergraph_ItemTransformKeyScreen
-// (HasDefaults)
+// ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformKeyScreen_C::ExecuteUbergraph_ItemTransformKeyScreen(int EntryPoint)
 {
@@ -403,7 +307,7 @@ void UItemTransformKeyScreen_C::OnKeyConfirmed__DelegateSignature()
 // Function ItemTransformKeyScreen.ItemTransformKeyScreen_C.OnKeySelected__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Key                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Key                            (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformKeyScreen_C::OnKeySelected__DelegateSignature(class UFortItem* Key)
 {

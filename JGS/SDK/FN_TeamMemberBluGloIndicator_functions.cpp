@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UTeamMemberBluGloIndicator_C::OnPlayerAccumulatedItemsUpdated()
 // Function TeamMemberBluGloIndicator.TeamMemberBluGloIndicator_C.SetPlayer
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        PlayerNetId                    (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FUniqueNetIdRepl        PlayerNetId                    (Parm)
 
 void UTeamMemberBluGloIndicator_C::SetPlayer(const struct FUniqueNetIdRepl& PlayerNetId)
 {

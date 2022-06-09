@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,12 +13,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class UACCommon.UACNetComponent
-// 0x00B0 (0x01A0 - 0x00F0)
+// 0x0090 (0x0180 - 0x00F0)
 class UUACNetComponent : public UActorComponent
 {
 public:
 	int                                                PlayerID;                                                 // 0x00F0(0x0004) (Net, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0xAC];                                      // 0x00F4(0x00AC) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8C];                                      // 0x00F4(0x008C) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -29,8 +27,8 @@ public:
 	}
 
 
-	void SendPacketToServer(unsigned char Type, TArray<unsigned char> Packet);
-	void SendPacketToClient(unsigned char Type, TArray<unsigned char> Packet);
+	void SendPacketToServer(EUACPacketType Type, TArray<unsigned char> Packet);
+	void SendPacketToClient(EUACPacketType Type, TArray<unsigned char> Packet);
 	void SendClientHello();
 };
 

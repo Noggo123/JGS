@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,31 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
-
-// Function TopBarSkillPoints.TopBarSkillPoints_C.HandleItemCountChanged
-struct UTopBarSkillPoints_C_HandleItemCountChanged_Params
-{
-	class UFortItemDefinition*                         Definition;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int                                                Delta;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function TopBarSkillPoints.TopBarSkillPoints_C.HandleLocalAccountInfoChanged
-struct UTopBarSkillPoints_C_HandleLocalAccountInfoChanged_Params
-{
-	struct FFortPrivateAccountInfo                     NewInfo;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm)
-};
-
-// Function TopBarSkillPoints.TopBarSkillPoints_C.GetMissionRewardBadgeTooltipWidget
-struct UTopBarSkillPoints_C_GetMissionRewardBadgeTooltipWidget_Params
-{
-	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function TopBarSkillPoints.TopBarSkillPoints_C.Has Mission Reward Boost
-struct UTopBarSkillPoints_C_Has_Mission_Reward_Boost_Params
-{
-	bool                                               Result;                                                   // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-};
 
 // Function TopBarSkillPoints.TopBarSkillPoints_C.GetFounderBadgetTooltipWidget
 struct UTopBarSkillPoints_C_GetFounderBadgetTooltipWidget_Params
@@ -66,13 +41,13 @@ struct UTopBarSkillPoints_C_Has_Founder_Badge_Params
 // Function TopBarSkillPoints.TopBarSkillPoints_C.HandleRemotePlayerRemoved
 struct UTopBarSkillPoints_C_HandleRemotePlayerRemoved_Params
 {
-	int                                                RemovedIndex;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                RemovedIndex;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TopBarSkillPoints.TopBarSkillPoints_C.HandleOnTeamMemberStateChanged
 struct UTopBarSkillPoints_C_HandleOnTeamMemberStateChanged_Params
 {
-	struct FFortTeamMemberInfo                         NewMemberState;                                           // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FFortTeamMemberInfo                         NewMemberState;                                           // (Parm)
 };
 
 // Function TopBarSkillPoints.TopBarSkillPoints_C.Unbind Party Delegates
@@ -123,7 +98,7 @@ struct UTopBarSkillPoints_C_Update_Boosts_Params
 // Function TopBarSkillPoints.TopBarSkillPoints_C.UpdateAccountInfo
 struct UTopBarSkillPoints_C_UpdateAccountInfo_Params
 {
-	struct FFortPublicAccountInfo                      Info;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FFortPublicAccountInfo                      Info;                                                     // (Parm)
 };
 
 // Function TopBarSkillPoints.TopBarSkillPoints_C.Construct
@@ -134,13 +109,13 @@ struct UTopBarSkillPoints_C_Construct_Params
 // Function TopBarSkillPoints.TopBarSkillPoints_C.Xp Boost Changed
 struct UTopBarSkillPoints_C_Xp_Boost_Changed_Params
 {
-	int                                                BoostAmount;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                BoostAmount;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TopBarSkillPoints.TopBarSkillPoints_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_36_CommonButtonClicked__DelegateSignature
 struct UTopBarSkillPoints_C_BndEvt__IconTextButton_K2Node_ComponentBoundEvent_36_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TopBarSkillPoints.TopBarSkillPoints_C.On Party Left
@@ -166,7 +141,7 @@ struct UTopBarSkillPoints_C_Destruct_Params
 // Function TopBarSkillPoints.TopBarSkillPoints_C.ExecuteUbergraph_TopBarSkillPoints
 struct UTopBarSkillPoints_C_ExecuteUbergraph_TopBarSkillPoints_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

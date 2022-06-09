@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -38,14 +36,14 @@ public:
 
 
 // Class SubtitlesWidgets.SubtitleDisplay
-// 0x0260 (0x0360 - 0x0100)
+// 0x02B0 (0x03C8 - 0x0118)
 class USubtitleDisplay : public UWidget
 {
 public:
-	struct FSlateFontInfo                              FontInfo;                                                 // 0x0100(0x0058) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FLinearColor                                ColorAndOpacity;                                          // 0x0158(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	float                                              WrapTextAt;                                               // 0x0168(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x1F4];                                     // 0x016C(0x01F4) MISSED OFFSET
+	struct FSlateFontInfo                              FontInfo;                                                 // 0x0118(0x0068) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FLinearColor                                ColorAndOpacity;                                          // 0x0180(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	float                                              WrapTextAt;                                               // 0x0190(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x234];                                     // 0x0194(0x0234) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

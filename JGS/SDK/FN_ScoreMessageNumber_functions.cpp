@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function ScoreMessageNumber.ScoreMessageNumber_C.SetScore
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            InScore                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            InScore                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UScoreMessageNumber_C::SetScore(int InScore)
 {
@@ -69,7 +69,7 @@ void UScoreMessageNumber_C::Construct()
 // Function ScoreMessageNumber.ScoreMessageNumber_C.ExecuteUbergraph_ScoreMessageNumber
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UScoreMessageNumber_C::ExecuteUbergraph_ScoreMessageNumber(int EntryPoint)
 {
@@ -89,7 +89,7 @@ void UScoreMessageNumber_C::ExecuteUbergraph_ScoreMessageNumber(int EntryPoint)
 // Function ScoreMessageNumber.ScoreMessageNumber_C.OnScoreValueSet__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EStatCategory                  ChangedScoreCategory           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EStatCategory                  ChangedScoreCategory           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UScoreMessageNumber_C::OnScoreValueSet__DelegateSignature(EStatCategory ChangedScoreCategory)
 {

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function GCNL_GM_MaxHealthIncrease_Major.GCNL_GM_MaxHealthIncrease_Major_C.OnActive
 // (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor**                 MyTarget                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class AActor**                 MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters* Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 bool AGCNL_GM_MaxHealthIncrease_Major_C::OnActive(class AActor** MyTarget, struct FGameplayCueParameters* Parameters)
@@ -25,15 +25,13 @@ bool AGCNL_GM_MaxHealthIncrease_Major_C::OnActive(class AActor** MyTarget, struc
 
 	AGCNL_GM_MaxHealthIncrease_Major_C_OnActive_Params params;
 	params.MyTarget = MyTarget;
+	params.Parameters = Parameters;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (Parameters != nullptr)
-		*Parameters = params.Parameters;
 
 	return params.ReturnValue;
 }

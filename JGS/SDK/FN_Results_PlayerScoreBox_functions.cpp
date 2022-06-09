@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,7 +37,7 @@ void UResults_PlayerScoreBox_C::GetIsValidScoreBox(bool* bIsValidScoreBox)
 // Function Results_PlayerScoreBox.Results_PlayerScoreBox_C.SetIsValidScoreBox
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bIsValidScoreBox               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bIsValidScoreBox               (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_PlayerScoreBox_C::SetIsValidScoreBox(bool bIsValidScoreBox)
 {
@@ -74,7 +74,7 @@ void UResults_PlayerScoreBox_C::SetSkippingToEnd()
 // Function Results_PlayerScoreBox.Results_PlayerScoreBox_C.SetIsBestScore
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bIsBestScore                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bIsBestScore                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_PlayerScoreBox_C::SetIsBestScore(bool bIsBestScore)
 {
@@ -94,8 +94,8 @@ void UResults_PlayerScoreBox_C::SetIsBestScore(bool bIsBestScore)
 // Function Results_PlayerScoreBox.Results_PlayerScoreBox_C.Initialize
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Score                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          PlayRate                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Score                          (Parm, ZeroConstructor, IsPlainOldData)
+// float                          PlayRate                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_PlayerScoreBox_C::Initialize(int Score, float PlayRate)
 {
@@ -116,7 +116,7 @@ void UResults_PlayerScoreBox_C::Initialize(int Score, float PlayRate)
 // Function Results_PlayerScoreBox.Results_PlayerScoreBox_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_PlayerScoreBox_C::PreConstruct(bool* IsDesignTime)
 {
@@ -204,8 +204,8 @@ void UResults_PlayerScoreBox_C::Skipped_Count_Interpolation()
 // Function Results_PlayerScoreBox.Results_PlayerScoreBox_C.BndEvt__TextScore_K2Node_ComponentBoundEvent_0_OnInterpolationEnded__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonNumericTextBlock* NumericTextBlock               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           HadCompleted                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonNumericTextBlock* NumericTextBlock               (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           HadCompleted                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_PlayerScoreBox_C::BndEvt__TextScore_K2Node_ComponentBoundEvent_0_OnInterpolationEnded__DelegateSignature(class UCommonNumericTextBlock* NumericTextBlock, bool HadCompleted)
 {
@@ -226,7 +226,7 @@ void UResults_PlayerScoreBox_C::BndEvt__TextScore_K2Node_ComponentBoundEvent_0_O
 // Function Results_PlayerScoreBox.Results_PlayerScoreBox_C.ExecuteUbergraph_Results_PlayerScoreBox
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_PlayerScoreBox_C::ExecuteUbergraph_Results_PlayerScoreBox(int EntryPoint)
 {

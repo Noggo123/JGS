@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function QuickbarSlotCooldown.QuickbarSlotCooldown_C.Initialize
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EItemDisplayStyle> QuickbarItemDisplayStyle       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// TArray<EFortItemCooldownType>  DesiredCooldownTypesSupported  (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TEnumAsByte<EItemDisplayStyle> QuickbarItemDisplayStyle       (Parm, ZeroConstructor, IsPlainOldData)
+// TArray<EFortItemCooldownType>  DesiredCooldownTypesSupported  (Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UQuickbarSlotCooldown_C::Initialize(TEnumAsByte<EItemDisplayStyle> QuickbarItemDisplayStyle, TArray<EFortItemCooldownType>* DesiredCooldownTypesSupported)
 {
@@ -39,7 +39,7 @@ void UQuickbarSlotCooldown_C::Initialize(TEnumAsByte<EItemDisplayStyle> Quickbar
 // Function QuickbarSlotCooldown.QuickbarSlotCooldown_C.Show Countdown
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Show                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Show                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuickbarSlotCooldown_C::Show_Countdown(bool Show)
 {
@@ -59,7 +59,7 @@ void UQuickbarSlotCooldown_C::Show_Countdown(bool Show)
 // Function QuickbarSlotCooldown.QuickbarSlotCooldown_C.OnCooldownStarted
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// EFortItemCooldownType*         CooldownType                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortItemCooldownType*         CooldownType                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuickbarSlotCooldown_C::OnCooldownStarted(EFortItemCooldownType* CooldownType)
 {
@@ -79,7 +79,7 @@ void UQuickbarSlotCooldown_C::OnCooldownStarted(EFortItemCooldownType* CooldownT
 // Function QuickbarSlotCooldown.QuickbarSlotCooldown_C.OnCooldownStopped
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// EFortItemCooldownType*         CooldownType                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortItemCooldownType*         CooldownType                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuickbarSlotCooldown_C::OnCooldownStopped(EFortItemCooldownType* CooldownType)
 {
@@ -99,7 +99,7 @@ void UQuickbarSlotCooldown_C::OnCooldownStopped(EFortItemCooldownType* CooldownT
 // Function QuickbarSlotCooldown.QuickbarSlotCooldown_C.ExecuteUbergraph_QuickbarSlotCooldown
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuickbarSlotCooldown_C::ExecuteUbergraph_QuickbarSlotCooldown(int EntryPoint)
 {

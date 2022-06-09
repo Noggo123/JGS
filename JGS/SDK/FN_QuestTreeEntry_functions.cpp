@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -112,6 +112,28 @@ void UQuestTreeEntry_C::Get_Quest_Item_Def(class UFortQuestItemDefinition** AsFo
 }
 
 
+// Function QuestTreeEntry.QuestTreeEntry_C.Quest Category Have Unseen Quests
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// bool                           HasUnseen                      (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UQuestTreeEntry_C::Quest_Category_Have_Unseen_Quests(bool* HasUnseen)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function QuestTreeEntry.QuestTreeEntry_C.Quest Category Have Unseen Quests");
+
+	UQuestTreeEntry_C_Quest_Category_Have_Unseen_Quests_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (HasUnseen != nullptr)
+		*HasUnseen = params.HasUnseen;
+}
+
+
 // Function QuestTreeEntry.QuestTreeEntry_C.Update Quest Category Bang State
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -217,7 +239,7 @@ void UQuestTreeEntry_C::SetPinnedState()
 // Function QuestTreeEntry.QuestTreeEntry_C.SetupAsCategory
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UFortQuestCategory**     Category                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortQuestCategory**     Category                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestTreeEntry_C::SetupAsCategory(class UFortQuestCategory** Category)
 {
@@ -237,7 +259,7 @@ void UQuestTreeEntry_C::SetupAsCategory(class UFortQuestCategory** Category)
 // Function QuestTreeEntry.QuestTreeEntry_C.SetupAsQuest
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UFortQuestItem**         Category                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortQuestItem**         Category                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestTreeEntry_C::SetupAsQuest(class UFortQuestItem** Category)
 {
@@ -257,7 +279,7 @@ void UQuestTreeEntry_C::SetupAsQuest(class UFortQuestItem** Category)
 // Function QuestTreeEntry.QuestTreeEntry_C.ExpansionChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool*                          bExpanded                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          bExpanded                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestTreeEntry_C::ExpansionChanged(bool* bExpanded)
 {
@@ -328,7 +350,7 @@ void UQuestTreeEntry_C::OnHovered()
 // Function QuestTreeEntry.QuestTreeEntry_C.OnQuestSeen_Event_0_1
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortQuestItem*          Quest                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortQuestItem*          Quest                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestTreeEntry_C::OnQuestSeen_Event_0_1(class UFortQuestItem* Quest)
 {
@@ -362,27 +384,10 @@ void UQuestTreeEntry_C::Destruct()
 }
 
 
-// Function QuestTreeEntry.QuestTreeEntry_C.OnDeselected
-// (Event, Protected, BlueprintEvent)
-
-void UQuestTreeEntry_C::OnDeselected()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuestTreeEntry.QuestTreeEntry_C.OnDeselected");
-
-	UQuestTreeEntry_C_OnDeselected_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function QuestTreeEntry.QuestTreeEntry_C.ExecuteUbergraph_QuestTreeEntry
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestTreeEntry_C::ExecuteUbergraph_QuestTreeEntry(int EntryPoint)
 {

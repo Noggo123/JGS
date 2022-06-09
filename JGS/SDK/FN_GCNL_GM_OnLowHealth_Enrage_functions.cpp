@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function GCNL_GM_OnLowHealth_Enrage.GCNL_GM_OnLowHealth_Enrage_C.OnRemove
 // (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor**                 MyTarget                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class AActor**                 MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters* Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 bool AGCNL_GM_OnLowHealth_Enrage_C::OnRemove(class AActor** MyTarget, struct FGameplayCueParameters* Parameters)
@@ -25,15 +25,13 @@ bool AGCNL_GM_OnLowHealth_Enrage_C::OnRemove(class AActor** MyTarget, struct FGa
 
 	AGCNL_GM_OnLowHealth_Enrage_C_OnRemove_Params params;
 	params.MyTarget = MyTarget;
+	params.Parameters = Parameters;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (Parameters != nullptr)
-		*Parameters = params.Parameters;
 
 	return params.ReturnValue;
 }
@@ -42,8 +40,8 @@ bool AGCNL_GM_OnLowHealth_Enrage_C::OnRemove(class AActor** MyTarget, struct FGa
 // Function GCNL_GM_OnLowHealth_Enrage.GCNL_GM_OnLowHealth_Enrage_C.OnActive
 // (Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor**                 MyTarget                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class AActor**                 MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters* Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 bool AGCNL_GM_OnLowHealth_Enrage_C::OnActive(class AActor** MyTarget, struct FGameplayCueParameters* Parameters)
@@ -52,15 +50,13 @@ bool AGCNL_GM_OnLowHealth_Enrage_C::OnActive(class AActor** MyTarget, struct FGa
 
 	AGCNL_GM_OnLowHealth_Enrage_C_OnActive_Params params;
 	params.MyTarget = MyTarget;
+	params.Parameters = Parameters;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (Parameters != nullptr)
-		*Parameters = params.Parameters;
 
 	return params.ReturnValue;
 }

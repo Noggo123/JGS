@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -83,10 +83,10 @@ void UJournalQuestRewardDetails_C::HandleOnEndSpokenDialog()
 // Function JournalQuestRewardDetails.JournalQuestRewardDetails_C.HandleOnBeginSpokenDialog
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UTexture2D*              Image                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   Title                          (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FText                   Subtitle                       (BlueprintVisible, BlueprintReadOnly, Parm)
-// EFortAnnouncementDisplayPreference DisplayPreference              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture2D*              Image                          (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Title                          (Parm)
+// struct FText                   Subtitle                       (Parm)
+// EFortAnnouncementDisplayPreference DisplayPreference              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UJournalQuestRewardDetails_C::HandleOnBeginSpokenDialog(class UTexture2D* Image, const struct FText& Title, const struct FText& Subtitle, EFortAnnouncementDisplayPreference DisplayPreference)
 {
@@ -160,7 +160,7 @@ void UJournalQuestRewardDetails_C::HandleCurrentQuestChangedBP()
 // Function JournalQuestRewardDetails.JournalQuestRewardDetails_C.ExecuteUbergraph_JournalQuestRewardDetails
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UJournalQuestRewardDetails_C::ExecuteUbergraph_JournalQuestRewardDetails(int EntryPoint)
 {

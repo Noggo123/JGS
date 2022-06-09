@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,7 +22,7 @@ struct UItemTransformKeyPicker_C_NavigateToFirstItem_Params
 // Function ItemTransformKeyPicker.ItemTransformKeyPicker_C.NavigateToSelectedItem
 struct UItemTransformKeyPicker_C_NavigateToSelectedItem_Params
 {
-	class UFortItem*                                   InItem;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItem*                                   InItem;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemTransformKeyPicker.ItemTransformKeyPicker_C.GetSelectedKey
@@ -34,7 +34,7 @@ struct UItemTransformKeyPicker_C_GetSelectedKey_Params
 // Function ItemTransformKeyPicker.ItemTransformKeyPicker_C.SetSelectedKey
 struct UItemTransformKeyPicker_C_SetSelectedKey_Params
 {
-	class UFortAccountItem*                            AccountKey;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortAccountItem*                            AccountKey;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

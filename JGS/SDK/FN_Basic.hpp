@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -16,6 +14,8 @@ inline Fn GetVFunction(const void *instance, std::size_t index)
 	auto vtable = *reinterpret_cast<const void***>(const_cast<void*>(instance));
 	return reinterpret_cast<Fn>(vtable[index]);
 }
+
+static auto Realloc = reinterpret_cast<void* (*)(void* Memory, int64_t NewSize, uint32_t Alignment)>(uintptr_t(GetModuleHandle(0)) + 0x123E4C0);
 
 class UObject;
 
@@ -69,54 +69,33 @@ public:
 		return i < Num();
 	}
 
-	inline void Add(T InputData)
+	inline int Add(T InputData)
 	{
-		Data = (T*)realloc(Data, sizeof(T) * (Count + 1));
+		Data = (T*)Realloc(Data, sizeof(T) * (Count + 1), 0);
 		Data[Count++] = InputData;
 		Max = Count;
+
+		return Count;
 	};
+
+	inline void Remove(int32_t Index)
+	{
+		TArray<T> NewArray;
+		for (int i = 0; i < this->Count; i++)
+		{
+			if (i == Index)
+				continue;
+
+			NewArray.Add(this->operator[](i));
+		}
+		this->Data = (T*)Realloc(NewArray.Data, sizeof(T) * (NewArray.Count), 0);
+		this->Count = NewArray.Count;
+		this->Max = NewArray.Count;
+	}
 
 	T* Data;
 	int32_t Count;
 	int32_t Max;
-};
-
-template<typename ElementType, int32_t MaxTotalElements, int32_t ElementsPerChunk>
-class TStaticIndirectArrayThreadSafeRead
-{
-public:
-	inline size_t Num() const
-	{
-		return NumElements;
-	}
-
-	inline bool IsValidIndex(int32_t index) const
-	{
-		return index < Num() && index >= 0;
-	}
-
-	inline ElementType const* const& operator[](int32_t index) const
-	{
-		return *GetItemPtr(index);
-	}
-
-private:
-	inline ElementType const* const* GetItemPtr(int32_t Index) const
-	{
-		int32_t ChunkIndex = Index / ElementsPerChunk;
-		int32_t WithinChunkIndex = Index % ElementsPerChunk;
-		ElementType** Chunk = Chunks[ChunkIndex];
-		return Chunk + WithinChunkIndex;
-	}
-
-	enum
-	{
-		ChunkTableSize = (MaxTotalElements + ElementsPerChunk - 1) / ElementsPerChunk
-	};
-
-	ElementType** Chunks[ChunkTableSize];
-	int32_t NumElements;
-	int32_t NumChunks;
 };
 
 struct FString : private TArray<wchar_t>
@@ -159,35 +138,37 @@ struct FString : private TArray<wchar_t>
 
 struct FName;
 
-inline void (*FNameToString)(FName* This, FString& OutStr);
-inline void (*FreeInternal)(__int64);
+inline void (*FreeInternal)(void*);
+inline void (*FNameToString)(FName* pThis, FString& out);
 
 struct FName
 {
-	int32_t ComparisonIndex;
-	int32_t Number;
+	uint32_t ComparisonIndex;
+	uint32_t DisplayIndex;
 
-	std::string ToString()
+	FName() = default;
+
+	explicit FName(int64_t name)
 	{
-		if (!this)
-			return "";
+		DisplayIndex = (name & 0xFFFFFFFF00000000LL) >> 32;
+		ComparisonIndex = (name & 0xFFFFFFFFLL);
+	};
 
+	FName(uint32_t comparisonIndex, uint32_t displayIndex) : ComparisonIndex(comparisonIndex),
+		DisplayIndex(displayIndex)
+	{
+	}
+
+	auto ToString()
+	{
 		FString temp;
-
 		FNameToString(this, temp);
 
-		auto wName = std::wstring(temp.c_str());
-		auto name = std::string(wName.begin(), wName.end());
+		std::string ret(temp.ToString());
 
-		FreeInternal((__int64)temp.c_str());
+		FreeInternal((void*)temp.c_str());
 
-		auto pos = name.rfind('/');
-		if (pos == std::string::npos)
-		{
-			return name;
-		}
-
-		return name.substr(pos + 1);
+		return ret;
 	}
 };
 

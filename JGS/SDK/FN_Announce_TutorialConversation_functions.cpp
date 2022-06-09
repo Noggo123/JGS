@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function Announce_TutorialConversation.Announce_TutorialConversation_C.HandleSentenceStop_UI
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            SentenceIdx                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            SentenceIdx                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void AAnnounce_TutorialConversation_C::HandleSentenceStop_UI(int SentenceIdx)
 {
@@ -35,7 +35,7 @@ void AAnnounce_TutorialConversation_C::HandleSentenceStop_UI(int SentenceIdx)
 // Function Announce_TutorialConversation.Announce_TutorialConversation_C.HandleSentenceStart_UI
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            SentenceIdx                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            SentenceIdx                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void AAnnounce_TutorialConversation_C::HandleSentenceStart_UI(int SentenceIdx)
 {
@@ -106,8 +106,8 @@ void AAnnounce_TutorialConversation_C::OnClientAnnouncementStart()
 // Function Announce_TutorialConversation.Announce_TutorialConversation_C.OnSentenceStarted
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FFortConversationSentence* Sentence                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// int*                           SentenceIndex                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortConversationSentence* Sentence                       (ConstParm, Parm, OutParm, ReferenceParm)
+// int*                           SentenceIndex                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void AAnnounce_TutorialConversation_C::OnSentenceStarted(struct FFortConversationSentence* Sentence, int* SentenceIndex)
 {
@@ -128,8 +128,8 @@ void AAnnounce_TutorialConversation_C::OnSentenceStarted(struct FFortConversatio
 // Function Announce_TutorialConversation.Announce_TutorialConversation_C.OnConversationFinished
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// struct FFortConversationSentence* FinishingSentence              (BlueprintVisible, BlueprintReadOnly, Parm)
-// int*                           FinishingSentenceSentenceIndex (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortConversationSentence* FinishingSentence              (Parm)
+// int*                           FinishingSentenceSentenceIndex (Parm, ZeroConstructor, IsPlainOldData)
 
 void AAnnounce_TutorialConversation_C::OnConversationFinished(struct FFortConversationSentence* FinishingSentence, int* FinishingSentenceSentenceIndex)
 {
@@ -150,8 +150,8 @@ void AAnnounce_TutorialConversation_C::OnConversationFinished(struct FFortConver
 // Function Announce_TutorialConversation.Announce_TutorialConversation_C.OnSentenceFinished
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FFortConversationSentence* Sentence                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// int*                           SentenceIndex                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortConversationSentence* Sentence                       (ConstParm, Parm, OutParm, ReferenceParm)
+// int*                           SentenceIndex                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void AAnnounce_TutorialConversation_C::OnSentenceFinished(struct FFortConversationSentence* Sentence, int* SentenceIndex)
 {
@@ -189,7 +189,7 @@ void AAnnounce_TutorialConversation_C::OnClientAnnouncementStop()
 // Function Announce_TutorialConversation.Announce_TutorialConversation_C.ExecuteUbergraph_Announce_TutorialConversation
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AAnnounce_TutorialConversation_C::ExecuteUbergraph_Announce_TutorialConversation(int EntryPoint)
 {

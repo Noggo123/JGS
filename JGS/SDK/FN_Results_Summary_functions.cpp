@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,8 +32,8 @@ void UResults_Summary_C::Focus()
 // Function Results_Summary.Results_Summary_C.InitializeRewards
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UFortItem*>       Items                          (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// int                            InTotalMissionPoints           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TArray<class UFortItem*>       Items                          (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// int                            InTotalMissionPoints           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_Summary_C::InitializeRewards(int InTotalMissionPoints, TArray<class UFortItem*>* Items)
 {
@@ -73,9 +73,9 @@ void UResults_Summary_C::DoDesignTimeRandomization()
 // Function Results_Summary.Results_Summary_C.Initialize
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortUIScoreReport*      InScoreReport                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// TArray<class UFortItem*>       InRewardItems                  (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// int                            InTotalMissionPoints           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortUIScoreReport*      InScoreReport                  (Parm, ZeroConstructor, IsPlainOldData)
+// TArray<class UFortItem*>       InRewardItems                  (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// int                            InTotalMissionPoints           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_Summary_C::Initialize(class UFortUIScoreReport* InScoreReport, int InTotalMissionPoints, TArray<class UFortItem*>* InRewardItems)
 {
@@ -99,7 +99,7 @@ void UResults_Summary_C::Initialize(class UFortUIScoreReport* InScoreReport, int
 // Function Results_Summary.Results_Summary_C.InitializeLootChest
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Level                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Level                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_Summary_C::InitializeLootChest(int Level)
 {
@@ -119,7 +119,7 @@ void UResults_Summary_C::InitializeLootChest(int Level)
 // Function Results_Summary.Results_Summary_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_Summary_C::PreConstruct(bool* IsDesignTime)
 {
@@ -139,7 +139,7 @@ void UResults_Summary_C::PreConstruct(bool* IsDesignTime)
 // Function Results_Summary.Results_Summary_C.BndEvt__ButtonClose_K2Node_ComponentBoundEvent_65_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_Summary_C::BndEvt__ButtonClose_K2Node_ComponentBoundEvent_65_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -159,7 +159,7 @@ void UResults_Summary_C::BndEvt__ButtonClose_K2Node_ComponentBoundEvent_65_Commo
 // Function Results_Summary.Results_Summary_C.ExecuteUbergraph_Results_Summary
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_Summary_C::ExecuteUbergraph_Results_Summary(int EntryPoint)
 {

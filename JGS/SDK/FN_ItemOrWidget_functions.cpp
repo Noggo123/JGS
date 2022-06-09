@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UItemOrWidget_C::Construct()
 // Function ItemOrWidget.ItemOrWidget_C.ExecuteUbergraph_ItemOrWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemOrWidget_C::ExecuteUbergraph_ItemOrWidget(int EntryPoint)
 {

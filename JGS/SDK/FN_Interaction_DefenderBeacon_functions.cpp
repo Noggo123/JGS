@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -105,8 +105,8 @@ void UInteraction_DefenderBeacon_C::Destruct()
 // Function Interaction_DefenderBeacon.Interaction_DefenderBeacon_C.OnDefenderEquippedWeapon
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortWeapon*             NewWeapon                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class AFortWeapon*             OldWeapon                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortWeapon*             NewWeapon                      (Parm, ZeroConstructor, IsPlainOldData)
+// class AFortWeapon*             OldWeapon                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UInteraction_DefenderBeacon_C::OnDefenderEquippedWeapon(class AFortWeapon* NewWeapon, class AFortWeapon* OldWeapon)
 {
@@ -127,7 +127,7 @@ void UInteraction_DefenderBeacon_C::OnDefenderEquippedWeapon(class AFortWeapon* 
 // Function Interaction_DefenderBeacon.Interaction_DefenderBeacon_C.ExecuteUbergraph_Interaction_DefenderBeacon
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UInteraction_DefenderBeacon_C::ExecuteUbergraph_Interaction_DefenderBeacon(int EntryPoint)
 {

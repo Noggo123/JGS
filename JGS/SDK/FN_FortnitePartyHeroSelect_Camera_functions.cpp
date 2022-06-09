@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -63,16 +63,16 @@ void AFortnitePartyHeroSelect_Camera_C::UserConstructionScript()
 }
 
 
-// Function FortnitePartyHeroSelect_Camera.FortnitePartyHeroSelect_Camera_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_3_4
+// Function FortnitePartyHeroSelect_Camera.FortnitePartyHeroSelect_Camera_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_7_8
 // (BlueprintEvent)
 // Parameters:
-// struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FKey                    Key                            (Parm)
 
-void AFortnitePartyHeroSelect_Camera_C::InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_3_4(const struct FKey& Key)
+void AFortnitePartyHeroSelect_Camera_C::InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_7_8(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function FortnitePartyHeroSelect_Camera.FortnitePartyHeroSelect_Camera_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_3_4");
+	static auto fn = UObject::FindObject<UFunction>("Function FortnitePartyHeroSelect_Camera.FortnitePartyHeroSelect_Camera_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_7_8");
 
-	AFortnitePartyHeroSelect_Camera_C_InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_3_4_Params params;
+	AFortnitePartyHeroSelect_Camera_C_InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_7_8_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -83,16 +83,16 @@ void AFortnitePartyHeroSelect_Camera_C::InpActEvt_LeftMouseButton_K2Node_InputKe
 }
 
 
-// Function FortnitePartyHeroSelect_Camera.FortnitePartyHeroSelect_Camera_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_2_3
+// Function FortnitePartyHeroSelect_Camera.FortnitePartyHeroSelect_Camera_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_6_7
 // (BlueprintEvent)
 // Parameters:
-// struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FKey                    Key                            (Parm)
 
-void AFortnitePartyHeroSelect_Camera_C::InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_2_3(const struct FKey& Key)
+void AFortnitePartyHeroSelect_Camera_C::InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_6_7(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function FortnitePartyHeroSelect_Camera.FortnitePartyHeroSelect_Camera_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_2_3");
+	static auto fn = UObject::FindObject<UFunction>("Function FortnitePartyHeroSelect_Camera.FortnitePartyHeroSelect_Camera_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_6_7");
 
-	AFortnitePartyHeroSelect_Camera_C_InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_2_3_Params params;
+	AFortnitePartyHeroSelect_Camera_C_InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_6_7_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -103,16 +103,16 @@ void AFortnitePartyHeroSelect_Camera_C::InpActEvt_LeftMouseButton_K2Node_InputKe
 }
 
 
-// Function FortnitePartyHeroSelect_Camera.FortnitePartyHeroSelect_Camera_C.InpActEvt_RightMouseButton_K2Node_InputKeyEvent_1_2
+// Function FortnitePartyHeroSelect_Camera.FortnitePartyHeroSelect_Camera_C.InpActEvt_RightMouseButton_K2Node_InputKeyEvent_5_6
 // (BlueprintEvent)
 // Parameters:
-// struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FKey                    Key                            (Parm)
 
-void AFortnitePartyHeroSelect_Camera_C::InpActEvt_RightMouseButton_K2Node_InputKeyEvent_1_2(const struct FKey& Key)
+void AFortnitePartyHeroSelect_Camera_C::InpActEvt_RightMouseButton_K2Node_InputKeyEvent_5_6(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function FortnitePartyHeroSelect_Camera.FortnitePartyHeroSelect_Camera_C.InpActEvt_RightMouseButton_K2Node_InputKeyEvent_1_2");
+	static auto fn = UObject::FindObject<UFunction>("Function FortnitePartyHeroSelect_Camera.FortnitePartyHeroSelect_Camera_C.InpActEvt_RightMouseButton_K2Node_InputKeyEvent_5_6");
 
-	AFortnitePartyHeroSelect_Camera_C_InpActEvt_RightMouseButton_K2Node_InputKeyEvent_1_2_Params params;
+	AFortnitePartyHeroSelect_Camera_C_InpActEvt_RightMouseButton_K2Node_InputKeyEvent_5_6_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -123,16 +123,16 @@ void AFortnitePartyHeroSelect_Camera_C::InpActEvt_RightMouseButton_K2Node_InputK
 }
 
 
-// Function FortnitePartyHeroSelect_Camera.FortnitePartyHeroSelect_Camera_C.InpActEvt_RightMouseButton_K2Node_InputKeyEvent_0_1
+// Function FortnitePartyHeroSelect_Camera.FortnitePartyHeroSelect_Camera_C.InpActEvt_RightMouseButton_K2Node_InputKeyEvent_4_5
 // (BlueprintEvent)
 // Parameters:
-// struct FKey                    Key                            (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FKey                    Key                            (Parm)
 
-void AFortnitePartyHeroSelect_Camera_C::InpActEvt_RightMouseButton_K2Node_InputKeyEvent_0_1(const struct FKey& Key)
+void AFortnitePartyHeroSelect_Camera_C::InpActEvt_RightMouseButton_K2Node_InputKeyEvent_4_5(const struct FKey& Key)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function FortnitePartyHeroSelect_Camera.FortnitePartyHeroSelect_Camera_C.InpActEvt_RightMouseButton_K2Node_InputKeyEvent_0_1");
+	static auto fn = UObject::FindObject<UFunction>("Function FortnitePartyHeroSelect_Camera.FortnitePartyHeroSelect_Camera_C.InpActEvt_RightMouseButton_K2Node_InputKeyEvent_4_5");
 
-	AFortnitePartyHeroSelect_Camera_C_InpActEvt_RightMouseButton_K2Node_InputKeyEvent_0_1_Params params;
+	AFortnitePartyHeroSelect_Camera_C_InpActEvt_RightMouseButton_K2Node_InputKeyEvent_4_5_Params params;
 	params.Key = Key;
 
 	auto flags = fn->FunctionFlags;
@@ -163,7 +163,7 @@ void AFortnitePartyHeroSelect_Camera_C::OnDeactivated()
 // Function FortnitePartyHeroSelect_Camera.FortnitePartyHeroSelect_Camera_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float*                         DeltaSeconds                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float*                         DeltaSeconds                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void AFortnitePartyHeroSelect_Camera_C::ReceiveTick(float* DeltaSeconds)
 {
@@ -200,7 +200,7 @@ void AFortnitePartyHeroSelect_Camera_C::OnActivated()
 // Function FortnitePartyHeroSelect_Camera.FortnitePartyHeroSelect_Camera_C.ExecuteUbergraph_FortnitePartyHeroSelect_Camera
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AFortnitePartyHeroSelect_Camera_C::ExecuteUbergraph_FortnitePartyHeroSelect_Camera(int EntryPoint)
 {

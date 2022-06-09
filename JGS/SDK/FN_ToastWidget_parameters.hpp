@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,16 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
-
-// Function ToastWidget.ToastWidget_C.ApplyAdditionalStyling
-struct UToastWidget_C_ApplyAdditionalStyling_Params
-{
-};
-
-// Function ToastWidget.ToastWidget_C.SetImage
-struct UToastWidget_C_SetImage_Params
-{
-};
 
 // Function ToastWidget.ToastWidget_C.GetOpenButtonVisibility
 struct UToastWidget_C_GetOpenButtonVisibility_Params
@@ -38,14 +28,14 @@ struct UToastWidget_C_StartIntro_Params
 // Function ToastWidget.ToastWidget_C.ShowText
 struct UToastWidget_C_ShowText_Params
 {
-	struct FText                                       Text;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm)
-	class UCommonTextBlock*                            TextBlock;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FText                                       Text;                                                     // (Parm)
+	class UCommonTextBlock*                            TextBlock;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ToastWidget.ToastWidget_C.SetToast
 struct UToastWidget_C_SetToast_Params
 {
-	class UFortUINotification*                         Toast;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortUINotification*                         Toast;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ToastWidget.ToastWidget_C.Construct
@@ -71,26 +61,26 @@ struct UToastWidget_C_HandleAnimationDelay_Params
 // Function ToastWidget.ToastWidget_C.OnMouseEnter
 struct UToastWidget_C_OnMouseEnter_Params
 {
-	struct FGeometry*                                  MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	struct FPointerEvent*                              MouseEvent;                                               // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FGeometry*                                  MyGeometry;                                               // (Parm, IsPlainOldData)
+	struct FPointerEvent*                              MouseEvent;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function ToastWidget.ToastWidget_C.OnMouseLeave
 struct UToastWidget_C_OnMouseLeave_Params
 {
-	struct FPointerEvent*                              MouseEvent;                                               // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FPointerEvent*                              MouseEvent;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function ToastWidget.ToastWidget_C.BndEvt__OpenButton_K2Node_ComponentBoundEvent_5_CommonButtonClicked__DelegateSignature
 struct UToastWidget_C_BndEvt__OpenButton_K2Node_ComponentBoundEvent_5_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ToastWidget.ToastWidget_C.ExecuteUbergraph_ToastWidget
 struct UToastWidget_C_ExecuteUbergraph_ToastWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ToastWidget.ToastWidget_C.OnFinishedToast__DelegateSignature

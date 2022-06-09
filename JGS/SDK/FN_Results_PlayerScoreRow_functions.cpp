@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function Results_PlayerScoreRow.Results_PlayerScoreRow_C.InitializeHomeBasePower
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        PlayerID                       (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FUniqueNetIdRepl        PlayerID                       (Parm)
 
 void UResults_PlayerScoreRow_C::InitializeHomeBasePower(const struct FUniqueNetIdRepl& PlayerID)
 {
@@ -35,8 +35,8 @@ void UResults_PlayerScoreRow_C::InitializeHomeBasePower(const struct FUniqueNetI
 // Function Results_PlayerScoreRow.Results_PlayerScoreRow_C.InitializePlayerName
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortUIScoreReport*      ScoreReport                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            ScoreReportReferece            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortUIScoreReport*      ScoreReport                    (Parm, ZeroConstructor, IsPlainOldData)
+// int                            ScoreReportReferece            (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_PlayerScoreRow_C::InitializePlayerName(class UFortUIScoreReport* ScoreReport, int ScoreReportReferece)
 {
@@ -57,8 +57,8 @@ void UResults_PlayerScoreRow_C::InitializePlayerName(class UFortUIScoreReport* S
 // Function Results_PlayerScoreRow.Results_PlayerScoreRow_C.InitializeScores
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortUIScoreReport*      InScoreReport                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            InScoreReportIndex             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortUIScoreReport*      InScoreReport                  (Parm, ZeroConstructor, IsPlainOldData)
+// int                            InScoreReportIndex             (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_PlayerScoreRow_C::InitializeScores(class UFortUIScoreReport* InScoreReport, int InScoreReportIndex)
 {
@@ -96,8 +96,8 @@ void UResults_PlayerScoreRow_C::InitializeBackground()
 // Function Results_PlayerScoreRow.Results_PlayerScoreRow_C.Initialize
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortUIScoreReport*      ScoreReport                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            ScoreReportIndex               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortUIScoreReport*      ScoreReport                    (Parm, ZeroConstructor, IsPlainOldData)
+// int                            ScoreReportIndex               (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_PlayerScoreRow_C::Initialize(class UFortUIScoreReport* ScoreReport, int ScoreReportIndex)
 {
@@ -118,7 +118,7 @@ void UResults_PlayerScoreRow_C::Initialize(class UFortUIScoreReport* ScoreReport
 // Function Results_PlayerScoreRow.Results_PlayerScoreRow_C.Manual Pre Construct
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bIsDesignTime                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bIsDesignTime                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_PlayerScoreRow_C::Manual_Pre_Construct(bool bIsDesignTime)
 {
@@ -138,7 +138,7 @@ void UResults_PlayerScoreRow_C::Manual_Pre_Construct(bool bIsDesignTime)
 // Function Results_PlayerScoreRow.Results_PlayerScoreRow_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_PlayerScoreRow_C::PreConstruct(bool* IsDesignTime)
 {
@@ -158,7 +158,7 @@ void UResults_PlayerScoreRow_C::PreConstruct(bool* IsDesignTime)
 // Function Results_PlayerScoreRow.Results_PlayerScoreRow_C.ExecuteUbergraph_Results_PlayerScoreRow
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_PlayerScoreRow_C::ExecuteUbergraph_Results_PlayerScoreRow(int EntryPoint)
 {

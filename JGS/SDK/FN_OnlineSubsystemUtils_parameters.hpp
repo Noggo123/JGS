@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -277,6 +277,16 @@ struct ULogoutCallbackProxy_Logout_Params
 	class ULogoutCallbackProxy*                        ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
+// Function OnlineSubsystemUtils.TestBeaconClient.ServerPong
+struct ATestBeaconClient_ServerPong_Params
+{
+};
+
+// Function OnlineSubsystemUtils.TestBeaconClient.ClientPing
+struct ATestBeaconClient_ClientPing_Params
+{
+};
+
 // Function OnlineSubsystemUtils.QuitMatchCallbackProxy.QuitMatch
 struct UQuitMatchCallbackProxy_QuitMatch_Params
 {
@@ -294,16 +304,6 @@ struct UShowLoginUICallbackProxy_ShowExternalLoginUI_Params
 	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
 	class APlayerController*                           InPlayerController;                                       // (Parm, ZeroConstructor, IsPlainOldData)
 	class UShowLoginUICallbackProxy*                   ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function OnlineSubsystemUtils.TestBeaconClient.ServerPong
-struct ATestBeaconClient_ServerPong_Params
-{
-};
-
-// Function OnlineSubsystemUtils.TestBeaconClient.ClientPing
-struct ATestBeaconClient_ClientPing_Params
-{
 };
 
 // Function OnlineSubsystemUtils.TurnBasedBlueprintLibrary.RegisterTurnBasedMatchInterfaceObject

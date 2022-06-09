@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function CollectionBookSectionRewardWidget.CollectionBookSectionRewardWidget_C.OnRewardStatusChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// ECollectionBookRewardStatus*   NewStatus                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// ECollectionBookRewardStatus*   NewStatus                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBookSectionRewardWidget_C::OnRewardStatusChanged(ECollectionBookRewardStatus* NewStatus)
 {
@@ -35,7 +35,7 @@ void UCollectionBookSectionRewardWidget_C::OnRewardStatusChanged(ECollectionBook
 // Function CollectionBookSectionRewardWidget.CollectionBookSectionRewardWidget_C.ExecuteUbergraph_CollectionBookSectionRewardWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBookSectionRewardWidget_C::ExecuteUbergraph_CollectionBookSectionRewardWidget(int EntryPoint)
 {

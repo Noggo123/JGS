@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -304,7 +304,7 @@ void AFort_Entry_Music_Controller_BP_C::ReceiveBeginPlay()
 // Function Fort_Entry_Music_Controller_BP.Fort_Entry_Music_Controller_BP_C.On Sub Game Changed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// ESubGame                       SubGame                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// ESubGame                       SubGame                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void AFort_Entry_Music_Controller_BP_C::On_Sub_Game_Changed(ESubGame SubGame)
 {
@@ -341,7 +341,7 @@ void AFort_Entry_Music_Controller_BP_C::Music_Lobby_Athena_FadeIn()
 // Function Fort_Entry_Music_Controller_BP.Fort_Entry_Music_Controller_BP_C.ExecuteUbergraph_Fort_Entry_Music_Controller_BP
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AFort_Entry_Music_Controller_BP_C::ExecuteUbergraph_Fort_Entry_Music_Controller_BP(int EntryPoint)
 {

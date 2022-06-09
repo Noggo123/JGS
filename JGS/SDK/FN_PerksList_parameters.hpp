@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,15 +22,15 @@ struct UPerksList_C_ResetVariables_Params
 // Function PerksList.PerksList_C.OnGeneratePerkTier
 struct UPerksList_C_OnGeneratePerkTier_Params
 {
-	struct FFortUIPerkTier*                            FortPerkTier;                                             // (BlueprintVisible, BlueprintReadOnly, Parm)
-	class UFortPerkTierWidget_NUI**                    PerkTierWidget;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FFortUIPerkTier*                            FortPerkTier;                                             // (Parm)
+	class UFortPerkTierWidget_NUI**                    PerkTierWidget;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function PerksList.PerksList_C.OnGeneratePerk
 struct UPerksList_C_OnGeneratePerk_Params
 {
-	struct FFortUIPerk*                                FortPerk;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
-	class UFortPerkWidget_NUI**                        PerkWidget;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FFortUIPerk*                                FortPerk;                                                 // (Parm)
+	class UFortPerkWidget_NUI**                        PerkWidget;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function PerksList.PerksList_C.Construct
@@ -51,7 +51,7 @@ struct UPerksList_C_OnStateChanged_Params
 // Function PerksList.PerksList_C.ExecuteUbergraph_PerksList
 struct UPerksList_C_ExecuteUbergraph_PerksList_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

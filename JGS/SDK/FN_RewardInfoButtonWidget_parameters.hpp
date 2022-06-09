@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,7 +23,7 @@ struct URewardInfoButtonWidget_C_GetDisplayName_Params
 // Function RewardInfoButtonWidget.RewardInfoButtonWidget_C.SetShowDescriptionBP
 struct URewardInfoButtonWidget_C_SetShowDescriptionBP_Params
 {
-	bool*                                              bInShowDescription;                                       // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              bInShowDescription;                                       // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function RewardInfoButtonWidget.RewardInfoButtonWidget_C.HandleDifferentItemOrQuantitySetBP
@@ -34,7 +34,7 @@ struct URewardInfoButtonWidget_C_HandleDifferentItemOrQuantitySetBP_Params
 // Function RewardInfoButtonWidget.RewardInfoButtonWidget_C.ExecuteUbergraph_RewardInfoButtonWidget
 struct URewardInfoButtonWidget_C_ExecuteUbergraph_RewardInfoButtonWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

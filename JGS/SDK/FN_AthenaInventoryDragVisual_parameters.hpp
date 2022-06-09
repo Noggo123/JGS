@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,12 +14,6 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function AthenaInventoryDragVisual.AthenaInventoryDragVisual_C.ShowDropIcon
-struct UAthenaInventoryDragVisual_C_ShowDropIcon_Params
-{
-	TEnumAsByte<EAthenaDragDropAction>                 Drop_Action;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function AthenaInventoryDragVisual.AthenaInventoryDragVisual_C.Construct
 struct UAthenaInventoryDragVisual_C_Construct_Params
 {
@@ -28,13 +22,13 @@ struct UAthenaInventoryDragVisual_C_Construct_Params
 // Function AthenaInventoryDragVisual.AthenaInventoryDragVisual_C.PreConstruct
 struct UAthenaInventoryDragVisual_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaInventoryDragVisual.AthenaInventoryDragVisual_C.ExecuteUbergraph_AthenaInventoryDragVisual
 struct UAthenaInventoryDragVisual_C_ExecuteUbergraph_AthenaInventoryDragVisual_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

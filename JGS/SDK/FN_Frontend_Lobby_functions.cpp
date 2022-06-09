@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,23 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function Frontend_Lobby.Frontend_Lobby_C.OnBackgroundChanged
-// (BlueprintCallable, BlueprintEvent)
-
-void AFrontend_Lobby_C::OnBackgroundChanged()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Frontend_Lobby.Frontend_Lobby_C.OnBackgroundChanged");
-
-	AFrontend_Lobby_C_OnBackgroundChanged_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function Frontend_Lobby.Frontend_Lobby_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
@@ -49,7 +32,7 @@ void AFrontend_Lobby_C::ReceiveBeginPlay()
 // Function Frontend_Lobby.Frontend_Lobby_C.ExecuteUbergraph_Frontend_Lobby
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AFrontend_Lobby_C::ExecuteUbergraph_Frontend_Lobby(int EntryPoint)
 {

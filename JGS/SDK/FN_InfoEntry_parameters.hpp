@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -56,25 +56,25 @@ struct UInfoEntry_C_Private_OnExpanderArrowShiftClicked_Params
 // Function InfoEntry.InfoEntry_C.RegisterOnClicked
 struct UInfoEntry_C_RegisterOnClicked_Params
 {
-	struct FScriptDelegate                             Callback;                                                 // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	struct FScriptDelegate                             Callback;                                                 // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function InfoEntry.InfoEntry_C.SetExpanded
 struct UInfoEntry_C_SetExpanded_Params
 {
-	bool                                               bExpanded;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bExpanded;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function InfoEntry.InfoEntry_C.SetIndexInList
 struct UInfoEntry_C_SetIndexInList_Params
 {
-	int                                                InIndexInList;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                InIndexInList;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function InfoEntry.InfoEntry_C.SetSelected
 struct UInfoEntry_C_SetSelected_Params
 {
-	bool                                               bSelected;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bSelected;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function InfoEntry.InfoEntry_C.ToggleExpansion
@@ -95,32 +95,32 @@ struct UInfoEntry_C_Construct_Params
 // Function InfoEntry.InfoEntry_C.SetData
 struct UInfoEntry_C_SetData_Params
 {
-	class UObject*                                     InData;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonListView*                             OwningList;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UObject*                                     InData;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonListView*                             OwningList;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function InfoEntry.InfoEntry_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_34_CommonButtonClicked__DelegateSignature
 struct UInfoEntry_C_BndEvt__IconTextButton_K2Node_ComponentBoundEvent_34_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function InfoEntry.InfoEntry_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_61_CommonButtonClicked__DelegateSignature
 struct UInfoEntry_C_BndEvt__IconTextButton_K2Node_ComponentBoundEvent_61_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function InfoEntry.InfoEntry_C.ExecuteUbergraph_InfoEntry
 struct UInfoEntry_C_ExecuteUbergraph_InfoEntry_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function InfoEntry.InfoEntry_C.Entry Selected__DelegateSignature
 struct UInfoEntry_C_Entry_Selected__DelegateSignature_Params
 {
-	class UFortItemDefinition*                         Entry_Item_Definition;                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItemDefinition*                         Entry_Item_Definition;                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

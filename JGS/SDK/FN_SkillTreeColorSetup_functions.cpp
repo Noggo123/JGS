@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,10 +15,10 @@ namespace SDK
 // Function SkillTreeColorSetup.SkillTreeColorSetup_C.SkillTreeBGSetup
 // (Static, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSkillTreePageColors    Page_Color                     (BlueprintVisible, BlueprintReadOnly, Parm)
-// TEnumAsByte<ESkillTreePages>   Pages                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UMaterialInstanceDynamic* Mid                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FSkillTreePageColors    Page_Color                     (Parm)
+// TEnumAsByte<ESkillTreePages>   Pages                          (Parm, ZeroConstructor, IsPlainOldData)
+// class UMaterialInstanceDynamic* Mid                            (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void USkillTreeColorSetup_C::STATIC_SkillTreeBGSetup(const struct FSkillTreePageColors& Page_Color, TEnumAsByte<ESkillTreePages> Pages, class UMaterialInstanceDynamic* Mid, class UObject* __WorldContext)
 {

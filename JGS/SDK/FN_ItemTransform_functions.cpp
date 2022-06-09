@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,9 +15,9 @@ namespace SDK
 // Function ItemTransform.ItemTransform_C.HandleClosePicker
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemTransform_C::HandleClosePicker(bool* Passthrough)
+void UItemTransform_C::HandleClosePicker(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemTransform.ItemTransform_C.HandleClosePicker");
 
@@ -29,8 +29,8 @@ void UItemTransform_C::HandleClosePicker(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -71,7 +71,7 @@ void UItemTransform_C::OnItemPickerClosed()
 // Function ItemTransform.ItemTransform_C.UpdateTransformAction
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           TransformActive                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           TransformActive                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransform_C::UpdateTransformAction(bool TransformActive)
 {
@@ -244,9 +244,9 @@ void UItemTransform_C::ShowSelectKeyAction()
 // Function ItemTransform.ItemTransform_C.HandleSelectKeyAction
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemTransform_C::HandleSelectKeyAction(bool* Passthrough)
+void UItemTransform_C::HandleSelectKeyAction(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemTransform.ItemTransform_C.HandleSelectKeyAction");
 
@@ -258,17 +258,17 @@ void UItemTransform_C::HandleSelectKeyAction(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function ItemTransform.ItemTransform_C.HandleTransformAction
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemTransform_C::HandleTransformAction(bool* Passthrough)
+void UItemTransform_C::HandleTransformAction(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemTransform.ItemTransform_C.HandleTransformAction");
 
@@ -280,8 +280,8 @@ void UItemTransform_C::HandleTransformAction(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -305,7 +305,7 @@ void UItemTransform_C::ResetItemTransform()
 // Function ItemTransform.ItemTransform_C.HandleTransformFailed
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   ErrorMessage                   (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FText                   ErrorMessage                   (Parm, OutParm, ReferenceParm)
 
 void UItemTransform_C::HandleTransformFailed(struct FText* ErrorMessage)
 {
@@ -327,8 +327,8 @@ void UItemTransform_C::HandleTransformFailed(struct FText* ErrorMessage)
 // Function ItemTransform.ItemTransform_C.HandleTransformSucceeded
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FFortItemInstanceQuantityPair> RewardedItems                  (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// TArray<struct FFortItemInstanceQuantityPair> SacrificedItems                (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<struct FFortItemInstanceQuantityPair> RewardedItems                  (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<struct FFortItemInstanceQuantityPair> SacrificedItems                (Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UItemTransform_C::HandleTransformSucceeded(TArray<struct FFortItemInstanceQuantityPair>* RewardedItems, TArray<struct FFortItemInstanceQuantityPair>* SacrificedItems)
 {
@@ -369,8 +369,8 @@ void UItemTransform_C::HandleTransformContinue()
 // Function ItemTransform.ItemTransform_C.OpenResult
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FFortItemInstanceQuantityPair> RewardItems                    (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// TArray<struct FFortItemInstanceQuantityPair> SacrificeItems                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<struct FFortItemInstanceQuantityPair> RewardItems                    (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<struct FFortItemInstanceQuantityPair> SacrificeItems                 (Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UItemTransform_C::OpenResult(TArray<struct FFortItemInstanceQuantityPair>* RewardItems, TArray<struct FFortItemInstanceQuantityPair>* SacrificeItems)
 {
@@ -445,9 +445,9 @@ void UItemTransform_C::OpenConfirmation()
 // Function ItemTransform.ItemTransform_C.HandleSelect
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemTransform_C::HandleSelect(bool* Passthrough)
+void UItemTransform_C::HandleSelect(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemTransform.ItemTransform_C.HandleSelect");
 
@@ -459,17 +459,17 @@ void UItemTransform_C::HandleSelect(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function ItemTransform.ItemTransform_C.HandleBack
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemTransform_C::HandleBack(bool* Passthrough)
+void UItemTransform_C::HandleBack(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemTransform.ItemTransform_C.HandleBack");
 
@@ -481,8 +481,8 @@ void UItemTransform_C::HandleBack(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -557,7 +557,7 @@ void UItemTransform_C::OpenItemTransform()
 // Function ItemTransform.ItemTransform_C.BndEvt__KeyScreen_K2Node_ComponentBoundEvent_6_OnKeySelected__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UFortItem*               Key                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Key                            (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransform_C::BndEvt__KeyScreen_K2Node_ComponentBoundEvent_6_OnKeySelected__DelegateSignature(class UFortItem* Key)
 {
@@ -577,8 +577,8 @@ void UItemTransform_C::BndEvt__KeyScreen_K2Node_ComponentBoundEvent_6_OnKeySelec
 // Function ItemTransform.ItemTransform_C.BndEvt__TransformScreenSwitcher_K2Node_ComponentBoundEvent_213_OnActiveWidgetChanged__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UWidget*                 ActiveWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            ActiveWidgetIndex              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidget*                 ActiveWidget                   (Parm, ZeroConstructor, IsPlainOldData)
+// int                            ActiveWidgetIndex              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransform_C::BndEvt__TransformScreenSwitcher_K2Node_ComponentBoundEvent_213_OnActiveWidgetChanged__DelegateSignature(class UWidget* ActiveWidget, int ActiveWidgetIndex)
 {
@@ -633,7 +633,7 @@ void UItemTransform_C::BndEvt__KeyScreen_K2Node_ComponentBoundEvent_513_OnKeyCon
 // Function ItemTransform.ItemTransform_C.BndEvt__SlotScreen_K2Node_ComponentBoundEvent_598_OnTransformButtonUpdated__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// bool                           TransformActive                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           TransformActive                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransform_C::BndEvt__SlotScreen_K2Node_ComponentBoundEvent_598_OnTransformButtonUpdated__DelegateSignature(bool TransformActive)
 {
@@ -667,27 +667,10 @@ void UItemTransform_C::Construct()
 }
 
 
-// Function ItemTransform.ItemTransform_C.OnRequestCloseItemPicker
-// (Event, Public, BlueprintEvent)
-
-void UItemTransform_C::OnRequestCloseItemPicker()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemTransform.ItemTransform_C.OnRequestCloseItemPicker");
-
-	UItemTransform_C_OnRequestCloseItemPicker_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function ItemTransform.ItemTransform_C.ExecuteUbergraph_ItemTransform
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransform_C::ExecuteUbergraph_ItemTransform(int EntryPoint)
 {

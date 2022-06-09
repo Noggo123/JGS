@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,17 +32,17 @@ struct AB_Post_SupplyDrop_Impact_C_Timeline_0__UpdateFunc_Params
 // Function B_Post_SupplyDrop_Impact.B_Post_SupplyDrop_Impact_C.SpawnPostFX
 struct AB_Post_SupplyDrop_Impact_C_SpawnPostFX_Params
 {
-	float                                              PostFX_BoxScaleDyn;                                       // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     PostFX_CamShakeLoc;                                       // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	bool                                               PostFX_UseCamShake;                                       // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	float                                              PostFX_DeactivateDelay;                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               PostFX_UseForceFeedback;                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              PostFX_BoxScaleDyn;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     PostFX_CamShakeLoc;                                       // (Parm, IsPlainOldData)
+	bool                                               PostFX_UseCamShake;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              PostFX_DeactivateDelay;                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               PostFX_UseForceFeedback;                                  // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function B_Post_SupplyDrop_Impact.B_Post_SupplyDrop_Impact_C.ExecuteUbergraph_B_Post_SupplyDrop_Impact
 struct AB_Post_SupplyDrop_Impact_C_ExecuteUbergraph_B_Post_SupplyDrop_Impact_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

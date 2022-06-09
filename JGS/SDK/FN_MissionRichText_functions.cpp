@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function MissionRichText.MissionRichText_C.Update
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Text                           (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   Text                           (Parm)
 
 void UMissionRichText_C::Update(const struct FText& Text)
 {
@@ -52,7 +52,7 @@ void UMissionRichText_C::Construct()
 // Function MissionRichText.MissionRichText_C.ExecuteUbergraph_MissionRichText
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMissionRichText_C::ExecuteUbergraph_MissionRichText(int EntryPoint)
 {

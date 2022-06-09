@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function Announcement_Layout.Announcement_Layout_C.CreateAnnouncementWidget
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UClass*                  NewWidgetClass                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ForceCreateUI                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UClass*                  NewWidgetClass                 (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ForceCreateUI                  (Parm, ZeroConstructor, IsPlainOldData)
 // class UFortAnnouncementWidget* NewWidget                      (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UAnnouncement_Layout_C::CreateAnnouncementWidget(class UClass* NewWidgetClass, bool ForceCreateUI, class UFortAnnouncementWidget** NewWidget)
@@ -41,7 +41,7 @@ void UAnnouncement_Layout_C::CreateAnnouncementWidget(class UClass* NewWidgetCla
 // Function Announcement_Layout.Announcement_Layout_C.SwapAnnouncementUIContent
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortClientAnnouncement* NewAnnouncement                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortClientAnnouncement* NewAnnouncement                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAnnouncement_Layout_C::SwapAnnouncementUIContent(class AFortClientAnnouncement* NewAnnouncement)
 {
@@ -78,7 +78,7 @@ void UAnnouncement_Layout_C::Construct()
 // Function Announcement_Layout.Announcement_Layout_C.OnStartNewAnnouncement
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortClientAnnouncement* NewAnnouncement                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortClientAnnouncement* NewAnnouncement                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAnnouncement_Layout_C::OnStartNewAnnouncement(class AFortClientAnnouncement* NewAnnouncement)
 {
@@ -98,7 +98,7 @@ void UAnnouncement_Layout_C::OnStartNewAnnouncement(class AFortClientAnnouncemen
 // Function Announcement_Layout.Announcement_Layout_C.ExecuteUbergraph_Announcement_Layout
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAnnouncement_Layout_C::ExecuteUbergraph_Announcement_Layout(int EntryPoint)
 {

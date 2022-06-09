@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function InputReflector.InputReflector_C.OnButtonAdded
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// class UCommonButton**          AddedButton                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FCommonInputActionHandlerData* Data                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class UCommonButton**          AddedButton                    (Parm, ZeroConstructor, IsPlainOldData)
+// struct FCommonInputActionHandlerData* Data                           (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UInputReflector_C::OnButtonAdded(class UCommonButton** AddedButton, struct FCommonInputActionHandlerData* Data)
 {
@@ -71,7 +71,7 @@ void UInputReflector_C::Construct()
 // Function InputReflector.InputReflector_C.ExecuteUbergraph_InputReflector
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UInputReflector_C::ExecuteUbergraph_InputReflector(int EntryPoint)
 {

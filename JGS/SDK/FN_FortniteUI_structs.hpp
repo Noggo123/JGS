@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -21,43 +19,6 @@ enum class EFortAnimSpeed : uint8_t
 	Fast                           = 1,
 	Normal                         = 2,
 	EFortAnimSpeed_MAX             = 3
-};
-
-
-// Enum FortniteUI.EFortHitPointModificationReason
-enum class EFortHitPointModificationReason : uint8_t
-{
-	Invalid                        = 0,
-	InitalSet                      = 1,
-	AutoRegen                      = 2,
-	ItemRegen                      = 3,
-	DamageOverTime                 = 4,
-	DamageReceived                 = 5,
-	EFortHitPointModificationReason_MAX = 6
-};
-
-
-// Enum FortniteUI.EFortBuildingInteraction
-enum class EFortBuildingInteraction : uint8_t
-{
-	None                           = 0,
-	Build                          = 1,
-	Repair                         = 2,
-	Upgrade                        = 3,
-	Edit                           = 4,
-	BeingModified                  = 5,
-	ConfirmEdit                    = 6,
-	EFortBuildingInteraction_MAX   = 7
-};
-
-
-// Enum FortniteUI.EFortBuildingHealthDisplayRule
-enum class EFortBuildingHealthDisplayRule : uint8_t
-{
-	Never                          = 0,
-	Allowed                        = 1,
-	Always                         = 2,
-	EFortBuildingHealthDisplayRule_MAX = 3
 };
 
 
@@ -84,28 +45,15 @@ enum class ECollectionBookSectionNavTarget : uint8_t
 };
 
 
-// Enum FortniteUI.EFortFrontEndFeatureStateReason
-enum class EFortFrontEndFeatureStateReason : uint8_t
-{
-	Default                        = 0,
-	NoHeroes                       = 1,
-	Tutorial                       = 2,
-	BROnly                         = 3,
-	NoPlayerController             = 4,
-	UnexpectedFeature              = 5,
-	Invalid                        = 6,
-	EFortFrontEndFeatureStateReason_MAX = 7
-};
-
-
 // Enum FortniteUI.EFortFrontEndFeatureState
 enum class EFortFrontEndFeatureState : uint8_t
 {
 	Enabled                        = 0,
-	Disabled                       = 1,
-	Hidden                         = 2,
-	Invalid                        = 3,
-	EFortFrontEndFeatureState_MAX  = 4
+	NoHeroes                       = 1,
+	NoRecruitableHeroes            = 2,
+	DisabledByTutorial             = 3,
+	Invalid                        = 4,
+	EFortFrontEndFeatureState_MAX  = 5
 };
 
 
@@ -137,27 +85,12 @@ enum class EFortHomebaseNodePurchaseRestrictionReason : uint8_t
 };
 
 
-// Enum FortniteUI.EFortUIFeatureStateReason
-enum class EFortUIFeatureStateReason : uint8_t
-{
-	Default                        = 0,
-	Tutorial                       = 1,
-	ContentInstall                 = 2,
-	AccountRestrictions            = 3,
-	Platform                       = 4,
-	NoPlayerController             = 5,
-	UnexpectedFeature              = 6,
-	Invalid                        = 7,
-	EFortUIFeatureStateReason_MAX  = 8
-};
-
-
 // Enum FortniteUI.EFortUIFeatureState
 enum class EFortUIFeatureState : uint8_t
 {
 	Enabled                        = 0,
-	Disabled                       = 1,
-	Hidden                         = 2,
+	DisabledByTutorial             = 1,
+	DisabledByContentInstall       = 2,
 	Invalid                        = 3,
 	EFortUIFeatureState_MAX        = 4
 };
@@ -182,14 +115,8 @@ enum class EFortUIFeature : uint8_t
 	ShowChatWindow                 = 13,
 	ShowFriendsMenu                = 14,
 	ShowObjectives                 = 15,
-	ShowRatingIconsInTopbar        = 16,
-	ShowAntiAddictionMessage       = 17,
-	ShowMinorShutdownMessage       = 18,
-	ShowHealthWarningScreen        = 19,
-	ShowSimplifiedHUD              = 20,
-	LargeHeaderFooterButtons       = 21,
-	Max_None                       = 22,
-	EFortUIFeature_MAX             = 23
+	Max_None                       = 16,
+	EFortUIFeature_MAX             = 17
 };
 
 
@@ -281,6 +208,43 @@ enum class EFortStatValueDisplayType : uint8_t
 };
 
 
+// Enum FortniteUI.EFortHitPointModificationReason
+enum class EFortHitPointModificationReason : uint8_t
+{
+	Invalid                        = 0,
+	InitalSet                      = 1,
+	AutoRegen                      = 2,
+	ItemRegen                      = 3,
+	DamageOverTime                 = 4,
+	DamageReceived                 = 5,
+	EFortHitPointModificationReason_MAX = 6
+};
+
+
+// Enum FortniteUI.EFortBuildingInteraction
+enum class EFortBuildingInteraction : uint8_t
+{
+	None                           = 0,
+	Build                          = 1,
+	Repair                         = 2,
+	Upgrade                        = 3,
+	Edit                           = 4,
+	BeingModified                  = 5,
+	ConfirmEdit                    = 6,
+	EFortBuildingInteraction_MAX   = 7
+};
+
+
+// Enum FortniteUI.EFortBuildingHealthDisplayRule
+enum class EFortBuildingHealthDisplayRule : uint8_t
+{
+	Never                          = 0,
+	Allowed                        = 1,
+	Always                         = 2,
+	EFortBuildingHealthDisplayRule_MAX = 3
+};
+
+
 // Enum FortniteUI.EFortPickerMode
 enum class EFortPickerMode : uint8_t
 {
@@ -293,10 +257,8 @@ enum class EFortPickerMode : uint8_t
 	TrapRadial                     = 6,
 	Weapon                         = 7,
 	Social                         = 8,
-	DirectPickEmote                = 9,
-	SquadQuickChat                 = 10,
-	WeaponsSlotted                 = 11,
-	EFortPickerMode_MAX            = 12
+	WeaponsSlotted                 = 9,
+	EFortPickerMode_MAX            = 10
 };
 
 
@@ -372,22 +334,38 @@ enum class EFortUIState : uint8_t
 	InGame                         = 7,
 	Cinematic                      = 8,
 	Athena                         = 9,
-	AthenaSpectator                = 10,
-	Replay                         = 11,
-	MAX                            = 12
+	MAX                            = 10,
+	EFortUIState_MAX               = 11
+};
+
+
+// Enum FortniteUI.EFortPlayerControllerProcessing
+enum class EFortPlayerControllerProcessing : uint8_t
+{
+	NoPlayerControllerProcessing   = 0,
+	LetPlayerControllerProcessFirst = 1,
+	HandleAllInput                 = 2,
+	EFortPlayerControllerProcessing_MAX = 3
+};
+
+
+// Enum FortniteUI.EVaultItemChangedType
+enum class EVaultItemChangedType : uint8_t
+{
+	Added                          = 0,
+	Removed                        = 1,
+	NoChange                       = 2,
+	EVaultItemChangedType_MAX      = 3
 };
 
 
 // Enum FortniteUI.EFortLoginAccountType
 enum class EFortLoginAccountType : uint8_t
 {
-	None                           = 0,
-	EpicAccount                    = 1,
-	Facebook                       = 2,
-	Google                         = 3,
-	PSN                            = 4,
-	XBLive                         = 5,
-	EFortLoginAccountType_MAX      = 6
+	Epic                           = 0,
+	PS4                            = 1,
+	XboxOne                        = 2,
+	EFortLoginAccountType_MAX      = 3
 };
 
 
@@ -413,55 +391,107 @@ enum class ESquadSlotItemRestrictionReason : uint8_t
 };
 
 
-// Enum FortniteUI.ESquadSlotSortType
-enum class ESquadSlotSortType : uint8_t
+// Enum FortniteUI.EFortUIGameFeedbackType
+enum class EFortUIGameFeedbackType : uint8_t
 {
-	ByRating                       = 0,
-	ByLevel                        = 1,
-	ByRarity                       = 2,
-	ByBonus                        = 3,
-	ByMatch                        = 4,
-	ESquadSlotSortType_MAX         = 5
+	Bug                            = 0,
+	Comment                        = 1,
+	Player                         = 2,
+	EFortUIGameFeedbackType_MAX    = 3
 };
 
 
-// Enum FortniteUI.EAthenaPlayerActionAlert
-enum class EAthenaPlayerActionAlert : uint8_t
+// Enum FortniteUI.EFortMtxStoreOfferType
+enum class EFortMtxStoreOfferType : uint8_t
 {
-	PlayerDown                     = 0,
-	PlayerKill                     = 1,
-	EnteredStorm                   = 2,
-	EAthenaPlayerActionAlert_MAX   = 3
+	FoundersPack                   = 0,
+	CurrencyPack                   = 1,
+	Max_None                       = 2,
+	EFortMtxStoreOfferType_MAX     = 3
 };
 
 
-// Enum FortniteUI.EHealthBarType
-enum class EHealthBarType : uint8_t
+// Enum FortniteUI.EFortItemManagementMode
+enum class EFortItemManagementMode : uint8_t
 {
-	Health                         = 0,
-	Shield                         = 1,
-	Stamina                        = 2,
-	EHealthBarType_MAX             = 3
+	Details                        = 0,
+	Comparison                     = 1,
+	Mulch                          = 2,
+	EFortItemManagementMode_MAX    = 3
 };
 
 
-// Enum FortniteUI.EBacchusHUDStateType
-enum class EBacchusHUDStateType : uint8_t
+// Enum FortniteUI.EFortSocialPanelTab
+enum class EFortSocialPanelTab : uint8_t
 {
-	DoNothing                      = 0,
-	Hide                           = 1,
-	Show                           = 2,
-	EBacchusHUDStateType_MAX       = 3
+	PartyInvitations               = 0,
+	Friends                        = 1,
+	RecentPlayers                  = 2,
+	Max                            = 3,
+	EFortSocialPanelTab_MAX        = 4
 };
 
 
-// Enum FortniteUI.EFortPlayerControllerProcessing
-enum class EFortPlayerControllerProcessing : uint8_t
+// Enum FortniteUI.EFortSocialPanelType
+enum class EFortSocialPanelType : uint8_t
 {
-	NoPlayerControllerProcessing   = 0,
-	LetPlayerControllerProcessFirst = 1,
-	HandleAllInput                 = 2,
-	EFortPlayerControllerProcessing_MAX = 3
+	Join                           = 0,
+	Invite                         = 1,
+	Max                            = 2,
+	EFortSocialPanelType_MAX       = 3
+};
+
+
+// Enum FortniteUI.EModalContainerSize
+enum class EModalContainerSize : uint8_t
+{
+	ExtraSmall                     = 0,
+	Small                          = 1,
+	Medium                         = 2,
+	Large                          = 3,
+	Max                            = 4,
+	EModalContainerSize_MAX        = 5
+};
+
+
+// Enum FortniteUI.ENotificationType
+enum class ENotificationType : uint8_t
+{
+	Basic                          = 0,
+	Friends                        = 1,
+	ENotificationType_MAX          = 2
+};
+
+
+// Enum FortniteUI.ENotificationResult
+enum class ENotificationResult : uint8_t
+{
+	Confirmed                      = 0,
+	Declined                       = 1,
+	Unknown                        = 2,
+	ENotificationResult_MAX        = 3
+};
+
+
+// Enum FortniteUI.EFortInventoryContext
+enum class EFortInventoryContext : uint8_t
+{
+	Game                           = 0,
+	Lobby                          = 1,
+	FrontEnd                       = 2,
+	Pickup                         = 3,
+	EFortInventoryContext_MAX      = 4
+};
+
+
+// Enum FortniteUI.EFortSquadSlottingRestrictionReason
+enum class EFortSquadSlottingRestrictionReason : uint8_t
+{
+	ItemIsInInventoryOverflow      = 0,
+	MandatorySlotWouldBeEmptied    = 1,
+	ItemIsOnActiveExpedition       = 2,
+	HeroRequiresMissingGameplayTag = 3,
+	EFortSquadSlottingRestrictionReason_MAX = 4
 };
 
 
@@ -494,16 +524,6 @@ enum class ECollectionBookPrimaryNavTarget : uint8_t
 };
 
 
-// Enum FortniteUI.EFortDefenderSlotType
-enum class EFortDefenderSlotType : uint8_t
-{
-	Invalid                        = 0,
-	Defender                       = 1,
-	Weapon                         = 2,
-	EFortDefenderSlotType_MAX      = 3
-};
-
-
 // Enum FortniteUI.EFortExpeditionListSort
 enum class EFortExpeditionListSort : uint8_t
 {
@@ -514,26 +534,37 @@ enum class EFortExpeditionListSort : uint8_t
 };
 
 
-// Enum FortniteUI.EFrontEndRewardType
-enum class EFrontEndRewardType : uint8_t
+// Enum FortniteUI.EFortKeybindForcedHoldStatus
+enum class EFortKeybindForcedHoldStatus : uint8_t
 {
-	Mission                        = 0,
-	Quest                          = 1,
-	EpicNewQuest                   = 2,
-	Expedition                     = 3,
-	CollectionBook                 = 4,
-	MissionAlert                   = 5,
-	EFrontEndRewardType_MAX        = 6
+	NoForcedHold                   = 0,
+	ForcedHold                     = 1,
+	NeverShowHold                  = 2,
+	EFortKeybindForcedHoldStatus_MAX = 3
 };
 
 
-// Enum FortniteUI.EFortUIGameFeedbackType
-enum class EFortUIGameFeedbackType : uint8_t
+// Enum FortniteUI.EFortItemInspectionMode
+enum class EFortItemInspectionMode : uint8_t
 {
-	Bug                            = 0,
-	Comment                        = 1,
-	Player                         = 2,
-	EFortUIGameFeedbackType_MAX    = 3
+	Overview                       = 0,
+	Details                        = 1,
+	View                           = 2,
+	Evolution                      = 3,
+	Upgrade                        = 4,
+	EFortItemInspectionMode_MAX    = 5
+};
+
+
+// Enum FortniteUI.EFortReturnToFrontendBehavior
+enum class EFortReturnToFrontendBehavior : uint8_t
+{
+	NotSpecified                   = 0,
+	HomeScreen                     = 1,
+	MapScreen                      = 2,
+	MapScreenWithAutoLaunch        = 3,
+	MapScreenWithMinimalAutoLaunch = 4,
+	EFortReturnToFrontendBehavior_MAX = 5
 };
 
 
@@ -545,6 +576,16 @@ enum class ENameStatus : uint8_t
 	TooLong                        = 2,
 	ContainsInvalidCharacter       = 3,
 	ENameStatus_MAX                = 4
+};
+
+
+// Enum FortniteUI.EFortPerksWidgetState
+enum class EFortPerksWidgetState : uint8_t
+{
+	Normal                         = 0,
+	Upgrade                        = 1,
+	Evolution                      = 2,
+	EFortPerksWidgetState_MAX      = 3
 };
 
 
@@ -566,6 +607,16 @@ enum class ECenterPopupMessageStateEnum : uint8_t
 	WaitingForOutpostOwner         = 2,
 	WaitingForPlayers              = 3,
 	ECenterPopupMessageStateEnum_MAX = 4
+};
+
+
+// Enum FortniteUI.EAthenaPlayerActionAlert
+enum class EAthenaPlayerActionAlert : uint8_t
+{
+	PlayerDown                     = 0,
+	PlayerKill                     = 1,
+	EnteredStorm                   = 2,
+	EAthenaPlayerActionAlert_MAX   = 3
 };
 
 
@@ -631,47 +682,16 @@ enum class EFortItemCountStyle : uint8_t
 };
 
 
-// Enum FortniteUI.EFortItemInspectionMode
-enum class EFortItemInspectionMode : uint8_t
-{
-	Overview                       = 0,
-	Details                        = 1,
-	View                           = 2,
-	Evolution                      = 3,
-	Upgrade                        = 4,
-	UpgradeRarity                  = 5,
-	EFortItemInspectionMode_MAX    = 6
-};
-
-
-// Enum FortniteUI.EFortItemManagementMode
-enum class EFortItemManagementMode : uint8_t
-{
-	Details                        = 0,
-	Comparison                     = 1,
-	Mulch                          = 2,
-	EFortItemManagementMode_MAX    = 3
-};
-
-
-// Enum FortniteUI.EFortKeybindForcedHoldStatus
-enum class EFortKeybindForcedHoldStatus : uint8_t
-{
-	NoForcedHold                   = 0,
-	ForcedHold                     = 1,
-	NeverShowHold                  = 2,
-	EFortKeybindForcedHoldStatus_MAX = 3
-};
-
-
 // Enum FortniteUI.EFortLegacySlateWidget
 enum class EFortLegacySlateWidget : uint8_t
 {
 	None                           = 0,
-	Minimap                        = 1,
-	DefaultObjective               = 2,
-	AthenaMiniMap                  = 3,
-	MAX                            = 4
+	FriendsList                    = 1,
+	Minimap                        = 2,
+	DefaultObjective               = 3,
+	AthenaMiniMap                  = 4,
+	MAX                            = 5,
+	EFortLegacySlateWidget_MAX     = 6
 };
 
 
@@ -712,57 +732,8 @@ enum class EModalContainerSlot : uint8_t
 	Middle                         = 1,
 	Bottom                         = 2,
 	Background                     = 3,
-	Max                            = 4
-};
-
-
-// Enum FortniteUI.EFortMtxStoreOfferType
-enum class EFortMtxStoreOfferType : uint8_t
-{
-	FoundersPack                   = 0,
-	CurrencyPack                   = 1,
-	Max_None                       = 2,
-	EFortMtxStoreOfferType_MAX     = 3
-};
-
-
-// Enum FortniteUI.EFortNodePrerequisiteConnector
-enum class EFortNodePrerequisiteConnector : uint8_t
-{
-	ANDConnector                   = 0,
-	ORConnector                    = 1,
-	EFortNodePrerequisiteConnector_MAX = 2
-};
-
-
-// Enum FortniteUI.EFortPerksWidgetState
-enum class EFortPerksWidgetState : uint8_t
-{
-	Normal                         = 0,
-	Upgrade                        = 1,
-	Evolution                      = 2,
-	EFortPerksWidgetState_MAX      = 3
-};
-
-
-// Enum FortniteUI.ESaveProfileForBanners
-enum class ESaveProfileForBanners : uint8_t
-{
-	SaveTheWorld                   = 0,
-	BattleRoyale                   = 1,
-	ESaveProfileForBanners_MAX     = 2
-};
-
-
-// Enum FortniteUI.ERedeemCodeFailureReason
-enum class ERedeemCodeFailureReason : uint8_t
-{
-	InvalidCode                    = 0,
-	CodeAlreadyUsed                = 1,
-	AlreadyHasAccess               = 2,
-	FailedToGetItem                = 3,
-	Unknown                        = 4,
-	ERedeemCodeFailureReason_MAX   = 5
+	Max                            = 4,
+	EModalContainerSlot_MAX        = 5
 };
 
 
@@ -777,6 +748,19 @@ enum class EFortRewardItemType : uint8_t
 };
 
 
+// Enum FortniteUI.EFrontEndRewardType
+enum class EFrontEndRewardType : uint8_t
+{
+	Mission                        = 0,
+	Quest                          = 1,
+	EpicNewQuest                   = 2,
+	Expedition                     = 3,
+	CollectionBook                 = 4,
+	MissionAlert                   = 5,
+	EFrontEndRewardType_MAX        = 6
+};
+
+
 // Enum FortniteUI.ESkillTreePageType
 enum class ESkillTreePageType : uint8_t
 {
@@ -787,14 +771,14 @@ enum class ESkillTreePageType : uint8_t
 };
 
 
-// Enum FortniteUI.EFortSquadSlottingRestrictionReason
-enum class EFortSquadSlottingRestrictionReason : uint8_t
+// Enum FortniteUI.EFortUISurvivorSquadMatchType
+enum class EFortUISurvivorSquadMatchType : uint8_t
 {
-	ItemIsInInventoryOverflow      = 0,
-	MandatorySlotWouldBeEmptied    = 1,
-	ItemIsOnActiveExpedition       = 2,
-	HeroRequiresMissingGameplayTag = 3,
-	EFortSquadSlottingRestrictionReason_MAX = 4
+	Multi                          = 0,
+	Single                         = 1,
+	Summary                        = 2,
+	Max_None                       = 3,
+	EFortUISurvivorSquadMatchType_MAX = 4
 };
 
 
@@ -829,36 +813,36 @@ enum class EFortStoreTransition : uint8_t
 };
 
 
-// Enum FortniteUI.EFortUISurvivorSquadMatchType
-enum class EFortUISurvivorSquadMatchType : uint8_t
+// Enum FortniteUI.EFortLoginState
+enum class EFortLoginState : uint8_t
 {
-	Multi                          = 0,
-	Single                         = 1,
-	Summary                        = 2,
-	Max_None                       = 3,
-	EFortUISurvivorSquadMatchType_MAX = 4
+	AutoLogin                      = 0,
+	ManualLogin                    = 1,
+	EFortLoginState_MAX            = 2
 };
 
 
-// Enum FortniteUI.EFortTouchControlRegion
-enum class EFortTouchControlRegion : uint8_t
+// Enum FortniteUI.EVaultCommandType
+enum class EVaultCommandType : uint8_t
 {
-	MovePlayer                     = 0,
-	RotateCamera                   = 1,
-	COUNT                          = 2,
-	EFortTouchControlRegion_MAX    = 3
+	Upgrade                        = 0,
+	Customize                      = 1,
+	Recycle                        = 2,
+	Retire                         = 3,
+	Boost                          = 4,
+	Evolve                         = 5,
+	Transform                      = 6,
+	None                           = 7,
+	EVaultCommandType_MAX          = 8
 };
 
 
-// Enum FortniteUI.EFortReturnToFrontendBehavior
-enum class EFortReturnToFrontendBehavior : uint8_t
+// Enum FortniteUI.EFortNodePrerequisiteConnector
+enum class EFortNodePrerequisiteConnector : uint8_t
 {
-	NotSpecified                   = 0,
-	HomeScreen                     = 1,
-	MapScreen                      = 2,
-	MapScreenWithAutoLaunch        = 3,
-	MapScreenWithMinimalAutoLaunch = 4,
-	EFortReturnToFrontendBehavior_MAX = 5
+	ANDConnector                   = 0,
+	ORConnector                    = 1,
+	EFortNodePrerequisiteConnector_MAX = 2
 };
 
 
@@ -878,63 +862,14 @@ enum class EFortUINavigationOp : uint8_t
 };
 
 
-// Enum FortniteUI.EFortSocialPanelTab
-enum class EFortSocialPanelTab : uint8_t
+// Enum FortniteUI.EFortNameValidationResult
+enum class EFortNameValidationResult : uint8_t
 {
-	PartyInvitations               = 0,
-	Friends                        = 1,
-	RecentPlayers                  = 2,
-	Max                            = 3
-};
-
-
-// Enum FortniteUI.EFortSocialPanelType
-enum class EFortSocialPanelType : uint8_t
-{
-	Join                           = 0,
-	Invite                         = 1,
-	Max                            = 2
-};
-
-
-// Enum FortniteUI.EModalContainerSize
-enum class EModalContainerSize : uint8_t
-{
-	ExtraSmall                     = 0,
-	Small                          = 1,
-	Medium                         = 2,
-	Large                          = 3,
-	Max                            = 4
-};
-
-
-// Enum FortniteUI.ENotificationType
-enum class ENotificationType : uint8_t
-{
-	Basic                          = 0,
-	Friends                        = 1,
-	ENotificationType_MAX          = 2
-};
-
-
-// Enum FortniteUI.ENotificationResult
-enum class ENotificationResult : uint8_t
-{
-	Confirmed                      = 0,
-	Declined                       = 1,
-	Unknown                        = 2,
-	ENotificationResult_MAX        = 3
-};
-
-
-// Enum FortniteUI.EFortInventoryContext
-enum class EFortInventoryContext : uint8_t
-{
-	Game                           = 0,
-	Lobby                          = 1,
-	FrontEnd                       = 2,
-	Pickup                         = 3,
-	EFortInventoryContext_MAX      = 4
+	Valid                          = 0,
+	TooShort                       = 1,
+	TooLong                        = 2,
+	IllegalCharacter               = 3,
+	EFortNameValidationResult_MAX  = 4
 };
 
 
@@ -943,13 +878,25 @@ enum class EFortInventoryContext : uint8_t
 //Script Structs
 //---------------------------------------------------------------------------
 
-// ScriptStruct FortniteUI.ContentPushState
-// 0x0003
-struct FContentPushState
+// ScriptStruct FortniteUI.FortTabButtonLabelInfo
+// 0x00A8
+struct FFortTabButtonLabelInfo
 {
-	bool                                               bHideHeader;                                              // 0x0000(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	bool                                               bHideFooter;                                              // 0x0001(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	bool                                               bHideChatWidget;                                          // 0x0002(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FText                                       DisplayName;                                              // 0x0000(0x0018) (Edit, BlueprintVisible)
+	struct FSlateBrush                                 IconBrush;                                                // 0x0018(0x0090) (Edit, BlueprintVisible)
+};
+
+// ScriptStruct FortniteUI.FortTabListRegistrationInfo
+// 0x00D0
+struct FFortTabListRegistrationInfo
+{
+	struct FName                                       TabNameID;                                                // 0x0000(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	bool                                               bAllowedInZone;                                           // 0x0008(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0009(0x0007) MISSED OFFSET
+	struct FFortTabButtonLabelInfo                     TabLabelInfo;                                             // 0x0010(0x00A8) (Edit, BlueprintVisible, BlueprintReadOnly)
+	class UClass*                                      TabButtonType;                                            // 0x00B8(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      TabContentType;                                           // 0x00C0(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	class UWidget*                                     CreatedTabContentWidget;                                  // 0x00C8(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
 };
 
 // ScriptStruct FortniteUI.LeaderboardFilter
@@ -961,39 +908,39 @@ struct FLeaderboardFilter
 };
 
 // ScriptStruct FortniteUI.AthenaPlaylistLeaderboardData
-// 0x0050
+// 0x0048
 struct FAthenaPlaylistLeaderboardData
 {
 	struct FName                                       StatId;                                                   // 0x0000(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 	struct FText                                       StatDisplayName;                                          // 0x0008(0x0018) (Edit, BlueprintVisible, BlueprintReadOnly)
 	struct FText                                       TabDisplayName;                                           // 0x0020(0x0018) (Edit, BlueprintVisible, BlueprintReadOnly)
 	struct FString                                     BaseGameplayTag;                                          // 0x0038(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-	bool                                               bIsGlobal;                                                // 0x0048(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0049(0x0007) MISSED OFFSET
 };
 
-// ScriptStruct FortniteUI.FortHUDState
-// 0x0004
-struct FFortHUDState
+// ScriptStruct FortniteUI.FortErrorInfo
+// 0x0080
+struct FFortErrorInfo
 {
-	bool                                               bInBuildMode;                                             // 0x0000(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	bool                                               bInCombatMode;                                            // 0x0001(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	bool                                               bInEditMode;                                              // 0x0002(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	bool                                               bCurrentlyInteracting;                                    // 0x0003(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FText                                       Operation;                                                // 0x0000(0x0018) (BlueprintVisible, BlueprintReadOnly)
+	struct FText                                       ErrorMessage;                                             // 0x0018(0x0018) (BlueprintVisible, BlueprintReadOnly)
+	struct FString                                     ErrorCode;                                                // 0x0030(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+	unsigned char                                      UnknownData00[0x40];                                      // 0x0040(0x0040) MISSED OFFSET
 };
 
-// ScriptStruct FortniteUI.AthenaNews
-// 0x0010
-struct FAthenaNews
-{
-	unsigned char                                      UnknownData00[0x10];                                      // 0x0000(0x0010) MISSED OFFSET
-};
-
-// ScriptStruct FortniteUI.AthenaNewsEntry
+// ScriptStruct FortniteUI.FortMtxDetailsAttribute
 // 0x0030
-struct FAthenaNewsEntry
+struct FFortMtxDetailsAttribute
 {
-	unsigned char                                      UnknownData00[0x30];                                      // 0x0000(0x0030) MISSED OFFSET
+	struct FText                                       Name;                                                     // 0x0000(0x0018) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FText                                       Value;                                                    // 0x0018(0x0018) (Edit, BlueprintVisible, BlueprintReadOnly)
+};
+
+// ScriptStruct FortniteUI.FortMtxGradient
+// 0x0020
+struct FFortMtxGradient
+{
+	struct FLinearColor                                Start;                                                    // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FLinearColor                                Stop;                                                     // 0x0010(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
 };
 
 // ScriptStruct FortniteUI.FortUIAlteration
@@ -1008,6 +955,51 @@ struct FFortUIAlteration
 	EFortRarity                                        Rarity;                                                   // 0x0014(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 	bool                                               bUnlockedByEvolution;                                     // 0x0015(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData01[0x2];                                       // 0x0016(0x0002) MISSED OFFSET
+};
+
+// ScriptStruct FortniteUI.FortNodeStyleData
+// 0x06C8 (0x06D0 - 0x0008)
+struct FFortNodeStyleData : public FTableRowBase
+{
+	struct FFortMultiSizeBrush                         ActiveBrush;                                              // 0x0008(0x0360) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortMultiSizeBrush                         InactiveBrush;                                            // 0x0368(0x0360) (Edit, BlueprintVisible, BlueprintReadOnly)
+	class UMediaSource*                                PreviewMediaSource;                                       // 0x06C8(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct FortniteUI.FortUIFeatureStruct
+// 0x0018
+struct FFortUIFeatureStruct
+{
+	EFortUIFeatureState                                CurrentState;                                             // 0x0000(0x0001) (ZeroConstructor, IsPlainOldData)
+	EFortUIFeatureState                                ForcedState;                                              // 0x0001(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x6];                                       // 0x0002(0x0006) MISSED OFFSET
+	struct FScriptMulticastDelegate                    ChangeDelegate;                                           // 0x0008(0x0010) (ZeroConstructor, InstancedReference)
+};
+
+// ScriptStruct FortniteUI.FortBackendVersion
+// 0x0098
+struct FFortBackendVersion
+{
+	bool                                               bIsValid;                                                 // 0x0000(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0001(0x0007) MISSED OFFSET
+	struct FString                                     App;                                                      // 0x0008(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+	struct FString                                     ModuleName;                                               // 0x0018(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+	struct FString                                     Branch;                                                   // 0x0028(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+	struct FString                                     BuildDate;                                                // 0x0038(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+	struct FString                                     ServerDate;                                               // 0x0048(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+	struct FString                                     Build;                                                    // 0x0058(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+	struct FString                                     Changelist;                                               // 0x0068(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+	struct FString                                     OverridePropertiesVersion;                                // 0x0078(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+	struct FString                                     Version;                                                  // 0x0088(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+};
+
+// ScriptStruct FortniteUI.FortLastMissionInfo
+// 0x0048
+struct FFortLastMissionInfo
+{
+	struct FText                                       TheaterName;                                              // 0x0000(0x0018) (BlueprintVisible, BlueprintReadOnly)
+	struct FText                                       MissionName;                                              // 0x0018(0x0018) (BlueprintVisible, BlueprintReadOnly)
+	struct FText                                       Difficulty;                                               // 0x0030(0x0018) (BlueprintVisible, BlueprintReadOnly)
 };
 
 // ScriptStruct FortniteUI.FortDisplayAttribute
@@ -1026,20 +1018,12 @@ struct FFortDisplayAttribute
 };
 
 // ScriptStruct FortniteUI.FortStateStyle
-// 0x02F0
+// 0x0380
 struct FFortStateStyle
 {
-	struct FFortMultiSizeBrush                         Brush;                                                    // 0x0000(0x02D0) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FLinearColor                                PrimaryColor;                                             // 0x02D0(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FLinearColor                                SecondaryColor;                                           // 0x02E0(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-};
-
-// ScriptStruct FortniteUI.FortSwipeDetector
-// 0x0130
-struct FFortSwipeDetector
-{
-	struct FVector2D                                   SwipeThreshold;                                           // 0x0000(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x128];                                     // 0x0008(0x0128) MISSED OFFSET
+	struct FFortMultiSizeBrush                         Brush;                                                    // 0x0000(0x0360) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FLinearColor                                PrimaryColor;                                             // 0x0360(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FLinearColor                                SecondaryColor;                                           // 0x0370(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
 };
 
 // ScriptStruct FortniteUI.FortDailyRewardsItemData
@@ -1081,60 +1065,282 @@ struct FFortDailyRewardsData
 	TArray<struct FFortDailyRewardsScheduleData>       Schedules;                                                // 0x0008(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
 };
 
-// ScriptStruct FortniteUI.FortItemFilterDefinition
-// 0x0060
-struct FFortItemFilterDefinition
-{
-	unsigned char                                      UnknownData00[0x60];                                      // 0x0000(0x0060) MISSED OFFSET
-};
-
-// ScriptStruct FortniteUI.FortItemSorterDefinition
-// 0x0050
-struct FFortItemSorterDefinition
-{
-	unsigned char                                      UnknownData00[0x50];                                      // 0x0000(0x0050) MISSED OFFSET
-};
-
-// ScriptStruct FortniteUI.FortMtxGradient
-// 0x0020
-struct FFortMtxGradient
-{
-	struct FLinearColor                                Start;                                                    // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FLinearColor                                Stop;                                                     // 0x0010(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-};
-
-// ScriptStruct FortniteUI.FortMtxDetailsAttribute
-// 0x0030
-struct FFortMtxDetailsAttribute
-{
-	struct FText                                       Name;                                                     // 0x0000(0x0018) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FText                                       Value;                                                    // 0x0018(0x0018) (Edit, BlueprintVisible, BlueprintReadOnly)
-};
-
-// ScriptStruct FortniteUI.FortErrorInfo
-// 0x0080
-struct FFortErrorInfo
-{
-	struct FText                                       Operation;                                                // 0x0000(0x0018) (BlueprintVisible, BlueprintReadOnly)
-	struct FText                                       ErrorMessage;                                             // 0x0018(0x0018) (BlueprintVisible, BlueprintReadOnly)
-	struct FString                                     ErrorCode;                                                // 0x0030(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-	unsigned char                                      UnknownData00[0x40];                                      // 0x0040(0x0040) MISSED OFFSET
-};
-
-// ScriptStruct FortniteUI.FortTabButtonLabelInfo
-// 0x0090
-struct FFortTabButtonLabelInfo
-{
-	struct FText                                       DisplayName;                                              // 0x0000(0x0018) (Edit, BlueprintVisible)
-	struct FSlateBrush                                 IconBrush;                                                // 0x0018(0x0078) (Edit, BlueprintVisible)
-};
-
 // ScriptStruct FortniteUI.ExpeditionTabInfo
-// 0x0098
+// 0x00B0
 struct FExpeditionTabInfo
 {
 	struct FName                                       TabNameID;                                                // 0x0000(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FFortTabButtonLabelInfo                     TabLabelInfo;                                             // 0x0008(0x0090) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortTabButtonLabelInfo                     TabLabelInfo;                                             // 0x0008(0x00A8) (Edit, BlueprintVisible, BlueprintReadOnly)
+};
+
+// ScriptStruct FortniteUI.FortSkillTreeNodeDisplayData
+// 0x0368
+struct FFortSkillTreeNodeDisplayData
+{
+	struct FFortMultiSizeBrush                         Icon;                                                     // 0x0000(0x0360) (Edit, BlueprintVisible, BlueprintReadOnly)
+	class UMediaSource*                                PreviewVideoMediaSource;                                  // 0x0360(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct FortniteUI.FortSkillTreeCanvasStyle
+// 0x0034
+struct FFortSkillTreeCanvasStyle
+{
+	float                                              ConnectorThickness;                                       // 0x0000(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FLinearColor                                ConnectorOwnedColor;                                      // 0x0004(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FLinearColor                                ConnectorPurchasableColor;                                // 0x0014(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FLinearColor                                ConnectorNonPurchasableColor;                             // 0x0024(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+};
+
+// ScriptStruct FortniteUI.FortItemCard_PowerRatingBlock_Configuration
+// 0x0160
+struct FFortItemCard_PowerRatingBlock_Configuration
+{
+	struct FSlateBrush                                 PersonnelPowerRatingIconBrush;                            // 0x0000(0x0090) (Edit, BlueprintVisible, BlueprintReadOnly)
+	TAssetPtr<class UClass>                            PersonnelPowerRatingTextStyle;                            // 0x0090(0x0020) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FSlateBrush                                 SchematicPowerRatingIconBrush;                            // 0x00B0(0x0090) (Edit, BlueprintVisible, BlueprintReadOnly)
+	TAssetPtr<class UClass>                            SchematicPowerRatingTextStyle;                            // 0x0140(0x0020) (Edit, BlueprintVisible, BlueprintReadOnly)
+};
+
+// ScriptStruct FortniteUI.FortItemCard_StackCountBlock_Configuration
+// 0x00C0
+struct FFortItemCard_StackCountBlock_Configuration
+{
+	struct FSlateBrush                                 BorderBrush;                                              // 0x0000(0x0090) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FMargin                                     InternalPadding;                                          // 0x0090(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	TAssetPtr<class UClass>                            TextStyle;                                                // 0x00A0(0x0020) (Edit, BlueprintVisible, BlueprintReadOnly)
+};
+
+// ScriptStruct FortniteUI.FortItemCard_NameplateBorder_Configuration
+// 0x00A0
+struct FFortItemCard_NameplateBorder_Configuration
+{
+	struct FMargin                                     Padding;                                                  // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FSlateBrush                                 Brush;                                                    // 0x0010(0x0090) (Edit, BlueprintVisible, BlueprintReadOnly)
+};
+
+// ScriptStruct FortniteUI.FortItemCard_DefenderWeaponTypeIcon_Configuration
+// 0x0008
+struct FFortItemCard_DefenderWeaponTypeIcon_Configuration
+{
+	struct FVector2D                                   IconConstraints;                                          // 0x0000(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+};
+
+// ScriptStruct FortniteUI.FortItemCard_DetailAreaBorder_Configuration
+// 0x0014
+struct FFortItemCard_DetailAreaBorder_Configuration
+{
+	float                                              MinimumHeight;                                            // 0x0000(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FMargin                                     Padding;                                                  // 0x0004(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+};
+
+// ScriptStruct FortniteUI.FortItemCard_TierMeter_Configuration
+// 0x000C
+struct FFortItemCard_TierMeter_Configuration
+{
+	struct FVector2D                                   PipSize;                                                  // 0x0000(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	float                                              InterPipPadding;                                          // 0x0008(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct FortniteUI.FortItemCard_XL_PersonnelAndSchematics_Configuration
+// 0x03B0
+struct FFortItemCard_XL_PersonnelAndSchematics_Configuration
+{
+	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_PowerRatingBlock_Configuration PowerRatingBlock;                                         // 0x0010(0x0160) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_StackCountBlock_Configuration StackCountBlock;                                          // 0x0170(0x00C0) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FVector2D                                   BookmarkImageSize;                                        // 0x0230(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FFortItemCard_NameplateBorder_Configuration Nameplate;                                                // 0x0238(0x00A0) (Edit, BlueprintVisible, BlueprintReadOnly)
+	TAssetPtr<class UClass>                            ItemNameTextStyle;                                        // 0x02D8(0x0020) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FVector2D                                   LeadSurvivorTypeIconSize;                                 // 0x02F8(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FVector2D                                   FirstIconSlotSize;                                        // 0x0300(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	float                                              PaddingBetweenIconSlots;                                  // 0x0308(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FVector2D                                   SecondIconSlotSize;                                       // 0x030C(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FFortItemCard_DefenderWeaponTypeIcon_Configuration DefenderWeaponTypeIcon;                                   // 0x0314(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_DetailAreaBorder_Configuration DetailAreaBorder;                                         // 0x031C(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
+	float                                              RarityNameTextLeftPadding;                                // 0x0330(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0334(0x0004) MISSED OFFSET
+	TAssetPtr<class UClass>                            RarityNameTextStyle;                                      // 0x0338(0x0020) (Edit, BlueprintVisible, BlueprintReadOnly)
+	float                                              ClassIconImageLeftPadding;                                // 0x0358(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FVector2D                                   ClassIconSize;                                            // 0x035C(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	float                                              PaddingBetweenClassIconAndName;                           // 0x0364(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	TAssetPtr<class UClass>                            ClassNameTextStyle;                                       // 0x0368(0x0020) (Edit, BlueprintVisible, BlueprintReadOnly)
+	float                                              TierMeterLeftPadding;                                     // 0x0388(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FFortItemCard_TierMeter_Configuration       TierMeter;                                                // 0x038C(0x000C) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FMargin                                     IconSlotOverNameplatePadding;                             // 0x0398(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FVector2D                                   IconSlotOverNameplateSize;                                // 0x03A8(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+};
+
+// ScriptStruct FortniteUI.FortItemCard_DurabilityMeter_Configuration
+// 0x0014
+struct FFortItemCard_DurabilityMeter_Configuration
+{
+	float                                              MeterThickness;                                           // 0x0000(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FMargin                                     MeterPadding;                                             // 0x0004(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+};
+
+// ScriptStruct FortniteUI.FortItemCard_XL_ItemInstance_Configuration
+// 0x0298
+struct FFortItemCard_XL_ItemInstance_Configuration
+{
+	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FMargin                                     PowerRatingBlockPadding;                                  // 0x0010(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_PowerRatingBlock_Configuration PowerRatingBlock;                                         // 0x0020(0x0160) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_StackCountBlock_Configuration StackCountBlock;                                          // 0x0180(0x00C0) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FMargin                                     TraitBoxPadding;                                          // 0x0240(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FVector2D                                   FirstTraitSize;                                           // 0x0250(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	float                                              PaddingBetweenTraitIcons;                                 // 0x0258(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FVector2D                                   SecondTraitSize;                                          // 0x025C(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FMargin                                     TierMeterPadding;                                         // 0x0264(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_TierMeter_Configuration       TierMeter;                                                // 0x0274(0x000C) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_DurabilityMeter_Configuration DurabilityMeter;                                          // 0x0280(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0294(0x0004) MISSED OFFSET
+};
+
+// ScriptStruct FortniteUI.FortItemCard_LevelMeter_Configuration
+// 0x0014
+struct FFortItemCard_LevelMeter_Configuration
+{
+	float                                              MeterThickness;                                           // 0x0000(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FMargin                                     MeterPadding;                                             // 0x0004(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+};
+
+// ScriptStruct FortniteUI.FortItemCard_L_PersonnelAndSchematics_Configuration
+// 0x0340
+struct FFortItemCard_L_PersonnelAndSchematics_Configuration
+{
+	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_PowerRatingBlock_Configuration PowerRatingBlock;                                         // 0x0010(0x0160) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_StackCountBlock_Configuration StackCountBlock;                                          // 0x0170(0x00C0) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FVector2D                                   BookmarkImageSize;                                        // 0x0230(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FFortItemCard_NameplateBorder_Configuration Nameplate;                                                // 0x0238(0x00A0) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FVector2D                                   ClassIconSize;                                            // 0x02D8(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FVector2D                                   LeadSurvivorTypeIconSize;                                 // 0x02E0(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FVector2D                                   FirstIconSlotSize;                                        // 0x02E8(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	float                                              PaddingBetweenIconSlots;                                  // 0x02F0(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FVector2D                                   SecondIconSlotSize;                                       // 0x02F4(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FFortItemCard_DefenderWeaponTypeIcon_Configuration DefenderWeaponTypeIcon;                                   // 0x02FC(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_DetailAreaBorder_Configuration DetailAreaBorder;                                         // 0x0304(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_LevelMeter_Configuration      LevelMeter;                                               // 0x0318(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
+	float                                              TierMeterLeftPadding;                                     // 0x032C(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FFortItemCard_TierMeter_Configuration       TierMeter;                                                // 0x0330(0x000C) (Edit, BlueprintVisible, BlueprintReadOnly)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x033C(0x0004) MISSED OFFSET
+};
+
+// ScriptStruct FortniteUI.FortItemCard_AmmoCountBlock_Configuration
+// 0x0020
+struct FFortItemCard_AmmoCountBlock_Configuration
+{
+	TAssetPtr<class UClass>                            TextStyle;                                                // 0x0000(0x0020) (Edit, BlueprintVisible, BlueprintReadOnly)
+};
+
+// ScriptStruct FortniteUI.FortItemCard_L_ItemInstance_Configuration
+// 0x02B8
+struct FFortItemCard_L_ItemInstance_Configuration
+{
+	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FMargin                                     PowerRatingBlockPadding;                                  // 0x0010(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_PowerRatingBlock_Configuration PowerRatingBlock;                                         // 0x0020(0x0160) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_StackCountBlock_Configuration StackCountBlock;                                          // 0x0180(0x00C0) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_AmmoCountBlock_Configuration  AmmoCountBlock;                                           // 0x0240(0x0020) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FMargin                                     TraitBoxPadding;                                          // 0x0260(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FVector2D                                   FirstTraitSize;                                           // 0x0270(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	float                                              PaddingBetweenTraitIcons;                                 // 0x0278(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FVector2D                                   SecondTraitSize;                                          // 0x027C(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FMargin                                     TierMeterPadding;                                         // 0x0284(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_TierMeter_Configuration       TierMeter;                                                // 0x0294(0x000C) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_DurabilityMeter_Configuration DurabilityMeter;                                          // 0x02A0(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x02B4(0x0004) MISSED OFFSET
+};
+
+// ScriptStruct FortniteUI.FortItemCard_M_PersonnelAndSchematics_Configuration
+// 0x0340
+struct FFortItemCard_M_PersonnelAndSchematics_Configuration
+{
+	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_PowerRatingBlock_Configuration PowerRatingBlock;                                         // 0x0010(0x0160) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_StackCountBlock_Configuration StackCountBlock;                                          // 0x0170(0x00C0) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FVector2D                                   BookmarkImageSize;                                        // 0x0230(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FFortItemCard_NameplateBorder_Configuration Nameplate;                                                // 0x0238(0x00A0) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FVector2D                                   ClassIconSize;                                            // 0x02D8(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FVector2D                                   LeadSurvivorTypeIconSize;                                 // 0x02E0(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FVector2D                                   FirstIconSlotSize;                                        // 0x02E8(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	float                                              PaddingBetweenIconSlots;                                  // 0x02F0(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FVector2D                                   SecondIconSlotSize;                                       // 0x02F4(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FFortItemCard_DefenderWeaponTypeIcon_Configuration DefenderWeaponTypeIcon;                                   // 0x02FC(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_DetailAreaBorder_Configuration DetailAreaBorder;                                         // 0x0304(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_LevelMeter_Configuration      LevelMeter;                                               // 0x0318(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
+	float                                              TierMeterLeftPadding;                                     // 0x032C(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FFortItemCard_TierMeter_Configuration       TierMeter;                                                // 0x0330(0x000C) (Edit, BlueprintVisible, BlueprintReadOnly)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x033C(0x0004) MISSED OFFSET
+};
+
+// ScriptStruct FortniteUI.FortItemCard_M_ItemInstance_Configuration
+// 0x0290
+struct FFortItemCard_M_ItemInstance_Configuration
+{
+	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FMargin                                     PowerRatingBlockPadding;                                  // 0x0010(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_PowerRatingBlock_Configuration PowerRatingBlock;                                         // 0x0020(0x0160) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_StackCountBlock_Configuration StackCountBlock;                                          // 0x0180(0x00C0) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_AmmoCountBlock_Configuration  AmmoCountBlock;                                           // 0x0240(0x0020) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FMargin                                     TraitBoxPadding;                                          // 0x0260(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FVector2D                                   FirstTraitSize;                                           // 0x0270(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FFortItemCard_DurabilityMeter_Configuration DurabilityMeter;                                          // 0x0278(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x028C(0x0004) MISSED OFFSET
+};
+
+// ScriptStruct FortniteUI.FortItemCard_S_PersonnelAndSchematics_Configuration
+// 0x0340
+struct FFortItemCard_S_PersonnelAndSchematics_Configuration
+{
+	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_PowerRatingBlock_Configuration PowerRatingBlock;                                         // 0x0010(0x0160) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_StackCountBlock_Configuration StackCountBlock;                                          // 0x0170(0x00C0) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FVector2D                                   BookmarkImageSize;                                        // 0x0230(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FFortItemCard_NameplateBorder_Configuration Nameplate;                                                // 0x0238(0x00A0) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FVector2D                                   ClassIconSize;                                            // 0x02D8(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FVector2D                                   LeadSurvivorTypeIconSize;                                 // 0x02E0(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FVector2D                                   FirstIconSlotSize;                                        // 0x02E8(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	float                                              PaddingBetweenIconSlots;                                  // 0x02F0(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FVector2D                                   SecondIconSlotSize;                                       // 0x02F4(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FFortItemCard_DefenderWeaponTypeIcon_Configuration DefenderWeaponTypeIcon;                                   // 0x02FC(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_DetailAreaBorder_Configuration DetailAreaBorder;                                         // 0x0304(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_LevelMeter_Configuration      LevelMeter;                                               // 0x0318(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
+	float                                              TierMeterLeftPadding;                                     // 0x032C(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FFortItemCard_TierMeter_Configuration       TierMeter;                                                // 0x0330(0x000C) (Edit, BlueprintVisible, BlueprintReadOnly)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x033C(0x0004) MISSED OFFSET
+};
+
+// ScriptStruct FortniteUI.FortItemCard_S_ItemInstance_Configuration
+// 0x01C0
+struct FFortItemCard_S_ItemInstance_Configuration
+{
+	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FMargin                                     PowerRatingBlockPadding;                                  // 0x0010(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_PowerRatingBlock_Configuration PowerRatingBlock;                                         // 0x0020(0x0160) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FMargin                                     TraitBoxPadding;                                          // 0x0180(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FVector2D                                   FirstTraitSize;                                           // 0x0190(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	float                                              PaddingBetweenTraitIcons;                                 // 0x0198(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FVector2D                                   SecondTraitSize;                                          // 0x019C(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FMargin                                     TierMeterPadding;                                         // 0x01A4(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FFortItemCard_TierMeter_Configuration       TierMeter;                                                // 0x01B4(0x000C) (Edit, BlueprintVisible, BlueprintReadOnly)
+};
+
+// ScriptStruct FortniteUI.FortItemCard_XS_PersonnelAndSchematics_Configuration
+// 0x0034
+struct FFortItemCard_XS_PersonnelAndSchematics_Configuration
+{
+	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FVector2D                                   BookmarkImageSize;                                        // 0x0010(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FFortItemCard_DetailAreaBorder_Configuration DetailAreaBorder;                                         // 0x0018(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FVector2D                                   AvailableUpgradeIconSize;                                 // 0x002C(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+};
+
+// ScriptStruct FortniteUI.FortItemCard_XS_ItemInstance_Configuration
+// 0x0001
+struct FFortItemCard_XS_ItemInstance_Configuration
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 };
 
 // ScriptStruct FortniteUI.FortFrontEndFeatureStruct
@@ -1143,24 +1349,23 @@ struct FFortFrontEndFeatureStruct
 {
 	EFortFrontEndFeatureState                          CurrentState;                                             // 0x0000(0x0001) (ZeroConstructor, IsPlainOldData)
 	EFortFrontEndFeatureState                          ForcedState;                                              // 0x0001(0x0001) (ZeroConstructor, IsPlainOldData)
-	EFortFrontEndFeatureStateReason                    ForcedStateReason;                                        // 0x0002(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x5];                                       // 0x0003(0x0005) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x6];                                       // 0x0002(0x0006) MISSED OFFSET
 	struct FScriptMulticastDelegate                    ChangeDelegate;                                           // 0x0008(0x0010) (ZeroConstructor, InstancedReference)
 };
 
 // ScriptStruct FortniteUI.FortMissionRewardInfo
-// 0x00A0
+// 0x00B8
 struct FFortMissionRewardInfo
 {
-	struct FSlateBrush                                 Icon;                                                     // 0x0000(0x0078) (BlueprintVisible, BlueprintReadOnly)
-	struct FText                                       DisplayName;                                              // 0x0078(0x0018) (BlueprintVisible, BlueprintReadOnly)
-	class UFortItem*                                   Item;                                                     // 0x0090(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	bool                                               bIsMissionAlertReward;                                    // 0x0098(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0099(0x0007) MISSED OFFSET
+	struct FSlateBrush                                 Icon;                                                     // 0x0000(0x0090) (BlueprintVisible, BlueprintReadOnly)
+	struct FText                                       DisplayName;                                              // 0x0090(0x0018) (BlueprintVisible, BlueprintReadOnly)
+	class UFortItem*                                   Item;                                                     // 0x00A8(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	bool                                               bIsMissionAlertReward;                                    // 0x00B0(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x00B1(0x0007) MISSED OFFSET
 };
 
 // ScriptStruct FortniteUI.FortMissionDetails
-// 0x0168
+// 0x0160
 struct FFortMissionDetails
 {
 	EFortTheaterMapTileType                            TileType;                                                 // 0x0000(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
@@ -1174,59 +1379,22 @@ struct FFortMissionDetails
 	struct FText                                       ZoneName;                                                 // 0x0060(0x0018) (BlueprintVisible, BlueprintReadOnly)
 	struct FText                                       ZoneDescription;                                          // 0x0078(0x0018) (BlueprintVisible, BlueprintReadOnly)
 	struct FText                                       RegionThemeName;                                          // 0x0090(0x0018) (BlueprintVisible, BlueprintReadOnly)
-	unsigned char                                      UnknownData02[0x28];                                      // 0x00A8(0x0028) UNKNOWN PROPERTY: SoftObjectProperty FortniteUI.FortMissionDetails.RegionThemeIcon
-	struct FText                                       DifficultyName;                                           // 0x00D0(0x0018) (BlueprintVisible, BlueprintReadOnly)
-	TArray<struct FFortMissionRewardInfo>              MissionRewards;                                           // 0x00E8(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-	struct FTimespan                                   AvailableTime;                                            // 0x00F8(0x0008) (BlueprintVisible, BlueprintReadOnly)
-	int                                                RequiredBaseRating;                                       // 0x0100(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	int                                                RecommendedBaseRating;                                    // 0x0104(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	int                                                ContentDifficultyLevel;                                   // 0x0108(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	int                                                ContentAccountLevel;                                      // 0x010C(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	int                                                LootLevel;                                                // 0x0110(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	bool                                               bOverrideConningText;                                     // 0x0114(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData03[0x3];                                       // 0x0115(0x0003) MISSED OFFSET
-	struct FText                                       ConningOverrideText;                                      // 0x0118(0x0018) (BlueprintVisible, BlueprintReadOnly)
-	struct FString                                     TheaterUniqueId;                                          // 0x0130(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-	class UFortCloudSaveItemDefinition*                AssociatedCloudSaveItemDefinition;                        // 0x0140(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	TArray<class UFortGameplayModifierItemDefinition*> GameplayModifiers;                                        // 0x0148(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-	TArray<struct FText>                               Objectives;                                               // 0x0158(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-};
-
-// ScriptStruct FortniteUI.FortUIFeatureStruct
-// 0x0018
-struct FFortUIFeatureStruct
-{
-	EFortUIFeatureState                                CurrentState;                                             // 0x0000(0x0001) (ZeroConstructor, IsPlainOldData)
-	EFortUIFeatureState                                ForcedState;                                              // 0x0001(0x0001) (ZeroConstructor, IsPlainOldData)
-	EFortUIFeatureStateReason                          ForcedStateReason;                                        // 0x0002(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x5];                                       // 0x0003(0x0005) MISSED OFFSET
-	struct FScriptMulticastDelegate                    ChangeDelegate;                                           // 0x0008(0x0010) (ZeroConstructor, InstancedReference)
-};
-
-// ScriptStruct FortniteUI.FortBackendVersion
-// 0x0098
-struct FFortBackendVersion
-{
-	bool                                               bIsValid;                                                 // 0x0000(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0001(0x0007) MISSED OFFSET
-	struct FString                                     App;                                                      // 0x0008(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-	struct FString                                     ModuleName;                                               // 0x0018(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-	struct FString                                     Branch;                                                   // 0x0028(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-	struct FString                                     BuildDate;                                                // 0x0038(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-	struct FString                                     ServerDate;                                               // 0x0048(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-	struct FString                                     Build;                                                    // 0x0058(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-	struct FString                                     Changelist;                                               // 0x0068(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-	struct FString                                     OverridePropertiesVersion;                                // 0x0078(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-	struct FString                                     Version;                                                  // 0x0088(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-};
-
-// ScriptStruct FortniteUI.FortLastMissionInfo
-// 0x0048
-struct FFortLastMissionInfo
-{
-	struct FText                                       TheaterName;                                              // 0x0000(0x0018) (BlueprintVisible, BlueprintReadOnly)
-	struct FText                                       MissionName;                                              // 0x0018(0x0018) (BlueprintVisible, BlueprintReadOnly)
-	struct FText                                       Difficulty;                                               // 0x0030(0x0018) (BlueprintVisible, BlueprintReadOnly)
+	TAssetPtr<class USlateBrushAsset>                  RegionThemeIcon;                                          // 0x00A8(0x0020) (BlueprintVisible, BlueprintReadOnly)
+	struct FText                                       DifficultyName;                                           // 0x00C8(0x0018) (BlueprintVisible, BlueprintReadOnly)
+	TArray<struct FFortMissionRewardInfo>              MissionRewards;                                           // 0x00E0(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+	struct FTimespan                                   AvailableTime;                                            // 0x00F0(0x0008) (BlueprintVisible, BlueprintReadOnly)
+	int                                                RequiredBaseRating;                                       // 0x00F8(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	int                                                RecommendedBaseRating;                                    // 0x00FC(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	int                                                ContentDifficultyLevel;                                   // 0x0100(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	int                                                ContentAccountLevel;                                      // 0x0104(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	int                                                LootLevel;                                                // 0x0108(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	bool                                               bOverrideConningText;                                     // 0x010C(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x3];                                       // 0x010D(0x0003) MISSED OFFSET
+	struct FText                                       ConningOverrideText;                                      // 0x0110(0x0018) (BlueprintVisible, BlueprintReadOnly)
+	struct FString                                     TheaterUniqueId;                                          // 0x0128(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+	class UFortCloudSaveItemDefinition*                AssociatedCloudSaveItemDefinition;                        // 0x0138(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	TArray<class UFortGameplayModifierItemDefinition*> GameplayModifiers;                                        // 0x0140(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+	TArray<struct FText>                               Objectives;                                               // 0x0150(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
 };
 
 // ScriptStruct FortniteUI.HeroUIData
@@ -1256,11 +1424,11 @@ struct FFortAttributeModifierDisplayData
 };
 
 // ScriptStruct FortniteUI.FortKillerVisualInfo
-// 0x0090
+// 0x00A8
 struct FFortKillerVisualInfo
 {
-	struct FSlateBrush                                 KillerBrush;                                              // 0x0000(0x0078) (BlueprintVisible, BlueprintReadOnly)
-	struct FText                                       KillerName;                                               // 0x0078(0x0018) (BlueprintVisible, BlueprintReadOnly)
+	struct FSlateBrush                                 KillerBrush;                                              // 0x0000(0x0090) (BlueprintVisible, BlueprintReadOnly)
+	struct FText                                       KillerName;                                               // 0x0090(0x0018) (BlueprintVisible, BlueprintReadOnly)
 };
 
 // ScriptStruct FortniteUI.FortFocusedBuildingInfo
@@ -1291,16 +1459,23 @@ struct FFortFocusedBuildingInfo
 };
 
 // ScriptStruct FortniteUI.FortBasicMissionInfo
-// 0x0328
+// 0x03B8
 struct FFortBasicMissionInfo
 {
 	struct FText                                       MissionName;                                              // 0x0000(0x0018) (BlueprintVisible, BlueprintReadOnly)
-	struct FFortMultiSizeBrush                         MissionIcons;                                             // 0x0018(0x02D0) (BlueprintVisible, BlueprintReadOnly)
-	struct FText                                       TheaterName;                                              // 0x02E8(0x0018) (BlueprintVisible, BlueprintReadOnly)
-	struct FText                                       DifficultyName;                                           // 0x0300(0x0018) (BlueprintVisible, BlueprintReadOnly)
-	class UMediaSource*                                EndOfMissionMediaSource;                                  // 0x0318(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	bool                                               bSkipEndOfMissionVideo;                                   // 0x0320(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0321(0x0007) MISSED OFFSET
+	struct FFortMultiSizeBrush                         MissionIcons;                                             // 0x0018(0x0360) (BlueprintVisible, BlueprintReadOnly)
+	struct FText                                       TheaterName;                                              // 0x0378(0x0018) (BlueprintVisible, BlueprintReadOnly)
+	struct FText                                       DifficultyName;                                           // 0x0390(0x0018) (BlueprintVisible, BlueprintReadOnly)
+	class UMediaSource*                                EndOfMissionMediaSource;                                  // 0x03A8(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	bool                                               bSkipEndOfMissionVideo;                                   // 0x03B0(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x03B1(0x0007) MISSED OFFSET
+};
+
+// ScriptStruct FortniteUI.ItemDefinitionChangedStruct
+// 0x0010
+struct FItemDefinitionChangedStruct
+{
+	struct FScriptMulticastDelegate                    ChangeDelegate;                                           // 0x0000(0x0010) (ZeroConstructor, InstancedReference)
 };
 
 // ScriptStruct FortniteUI.FortItemListFilter
@@ -1315,34 +1490,46 @@ struct FFortItemListFilter
 };
 
 // ScriptStruct FortniteUI.FortUIPerk
-// 0x0098
+// 0x0088
 struct FFortUIPerk
 {
-	struct FFortSpecializationSlot                     SpecializationSlot;                                       // 0x0000(0x0088) (BlueprintVisible, BlueprintReadOnly)
-	class UFortHero*                                   Hero;                                                     // 0x0088(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EFortItemTier>                         Tier;                                                     // 0x0090(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	EFortSupportBonusType                              SupportBonusType;                                         // 0x0091(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	bool                                               bIsTierPerk;                                              // 0x0092(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	bool                                               bIsUpgrade;                                               // 0x0093(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	bool                                               bIsEvolution;                                             // 0x0094(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	bool                                               bIsEvolutionBranch;                                       // 0x0095(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x2];                                       // 0x0096(0x0002) MISSED OFFSET
+	struct FFortSpecializationSlot                     SpecializationSlot;                                       // 0x0000(0x0078) (BlueprintVisible, BlueprintReadOnly)
+	class UFortHero*                                   Hero;                                                     // 0x0078(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EFortItemTier>                         Tier;                                                     // 0x0080(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	EFortSupportBonusType                              SupportBonusType;                                         // 0x0081(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	bool                                               bIsTierPerk;                                              // 0x0082(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	bool                                               bIsUpgrade;                                               // 0x0083(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	bool                                               bIsEvolution;                                             // 0x0084(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	bool                                               bIsEvolutionBranch;                                       // 0x0085(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x2];                                       // 0x0086(0x0002) MISSED OFFSET
 };
 
 // ScriptStruct FortniteUI.FortItemManagementInventoryFilterTabLabelInfo
-// 0x0008 (0x0098 - 0x0090)
+// 0x0008 (0x00B0 - 0x00A8)
 struct FFortItemManagementInventoryFilterTabLabelInfo : public FFortTabButtonLabelInfo
 {
-	struct FName                                       FilterTabNameId;                                          // 0x0090(0x0008) (Edit, ZeroConstructor, EditConst, IsPlainOldData)
+	struct FName                                       FilterTabNameId;                                          // 0x00A8(0x0008) (Edit, ZeroConstructor, EditConst, IsPlainOldData)
 };
 
 // ScriptStruct FortniteUI.FortItemEntryPreviewData
-// 0x0008
+// 0x0004
 struct FFortItemEntryPreviewData
 {
-	int                                                Quantity;                                                 // 0x0000(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	EFortItemInspectionMode                            InspectMode;                                              // 0x0004(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x0005(0x0003) MISSED OFFSET
+	int                                                Quantity;                                                 // 0x0000(0x0004) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct FortniteUI.FortItemFilterDefinition
+// 0x0060
+struct FFortItemFilterDefinition
+{
+	unsigned char                                      UnknownData00[0x60];                                      // 0x0000(0x0060) MISSED OFFSET
+};
+
+// ScriptStruct FortniteUI.FortItemSorterDefinition
+// 0x0050
+struct FFortItemSorterDefinition
+{
+	unsigned char                                      UnknownData00[0x50];                                      // 0x0000(0x0050) MISSED OFFSET
 };
 
 // ScriptStruct FortniteUI.FortMaterialProgressBarSectionStyle
@@ -1380,29 +1567,6 @@ struct FFortModalContainerSizeEntry
 	float                                              ContentPadding;                                           // 0x0018(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 };
 
-// ScriptStruct FortniteUI.FortNodeStyleData
-// 0x05A8 (0x05B0 - 0x0008)
-struct FFortNodeStyleData : public FTableRowBase
-{
-	struct FFortMultiSizeBrush                         ActiveBrush;                                              // 0x0008(0x02D0) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortMultiSizeBrush                         InactiveBrush;                                            // 0x02D8(0x02D0) (Edit, BlueprintVisible, BlueprintReadOnly)
-	class UMediaSource*                                PreviewMediaSource;                                       // 0x05A8(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-};
-
-// ScriptStruct FortniteUI.FortUINodePrerequisite
-// 0x05F0
-struct FFortUINodePrerequisite
-{
-	struct FText                                       DisplayName;                                              // 0x0000(0x0018) (BlueprintVisible, BlueprintReadOnly)
-	struct FFortNodeStyleData                          Style;                                                    // 0x0018(0x05B0) (BlueprintVisible, BlueprintReadOnly)
-	bool                                               bIsNodePage;                                              // 0x05C8(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x05C9(0x0003) MISSED OFFSET
-	int                                                MinRequiredNodesInPage;                                   // 0x05CC(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	int                                                OwnedNodesInPage;                                         // 0x05D0(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x05D4(0x0004) MISSED OFFSET
-	struct FText                                       NodeType;                                                 // 0x05D8(0x0018) (BlueprintVisible, BlueprintReadOnly)
-};
-
 // ScriptStruct FortniteUI.FortUIPerkTier
 // 0x0020
 struct FFortUIPerkTier
@@ -1417,80 +1581,66 @@ struct FFortUIPerkTier
 };
 
 // ScriptStruct FortniteUI.RadialOptionData
-// 0x0090
+// 0x00A8
 struct FRadialOptionData
 {
 	struct FText                                       Label;                                                    // 0x0000(0x0018) (Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance)
-	struct FSlateBrush                                 Brush;                                                    // 0x0018(0x0078) (Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance)
-};
-
-// ScriptStruct FortniteUI.ItemDefOptionData
-// 0x0008 (0x0098 - 0x0090)
-struct FItemDefOptionData : public FRadialOptionData
-{
-	class UObject*                                     ItemDef;                                                  // 0x0090(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-};
-
-// ScriptStruct FortniteUI.SquadQuickChatOptionData
-// 0x0018 (0x00A8 - 0x0090)
-struct FSquadQuickChatOptionData : public FRadialOptionData
-{
-	struct FAthenaQuickChatActiveEntry                 ChatEntry;                                                // 0x0090(0x0018) (Edit, DisableEditOnInstance)
+	struct FSlateBrush                                 Brush;                                                    // 0x0018(0x0090) (Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance)
 };
 
 // ScriptStruct FortniteUI.BuildingCategoryOptionData
-// 0x0008 (0x0098 - 0x0090)
+// 0x0008 (0x00B0 - 0x00A8)
 struct FBuildingCategoryOptionData : public FRadialOptionData
 {
-	TEnumAsByte<EFortBuildingType>                     BuildingType;                                             // 0x0090(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0091(0x0007) MISSED OFFSET
+	TEnumAsByte<EFortBuildingType>                     BuildingType;                                             // 0x00A8(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x00A9(0x0007) MISSED OFFSET
 };
 
 // ScriptStruct FortniteUI.BuildingOptionData
-// 0x0018 (0x00A8 - 0x0090)
+// 0x0018 (0x00C0 - 0x00A8)
 struct FBuildingOptionData : public FRadialOptionData
 {
-	struct FString                                     ClassSuffix;                                              // 0x0090(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance)
-	bool                                               ClassMirrored;                                            // 0x00A0(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x00A1(0x0007) MISSED OFFSET
+	struct FString                                     ClassSuffix;                                              // 0x00A8(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance)
+	bool                                               ClassMirrored;                                            // 0x00B8(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x00B9(0x0007) MISSED OFFSET
 };
 
 // ScriptStruct FortniteUI.ItemCategoryOptionData
-// 0x0018 (0x00A8 - 0x0090)
+// 0x0018 (0x00C0 - 0x00A8)
 struct FItemCategoryOptionData : public FRadialOptionData
 {
-	struct FString                                     TemplatePrefix;                                           // 0x0090(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance)
-	TEnumAsByte<EBuildingAttachmentType>               BuildingAttachmentType;                                   // 0x00A0(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x00A1(0x0007) MISSED OFFSET
+	struct FString                                     TemplatePrefix;                                           // 0x00A8(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance)
+	TEnumAsByte<EBuildingAttachmentType>               BuildingAttachmentType;                                   // 0x00B8(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x00B9(0x0007) MISSED OFFSET
 };
 
 // ScriptStruct FortniteUI.ChatOptionData
-// 0x0018 (0x00A8 - 0x0090)
+// 0x0018 (0x00C0 - 0x00A8)
 struct FChatOptionData : public FRadialOptionData
 {
-	struct FText                                       ChatText;                                                 // 0x0090(0x0018) (Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance)
+	struct FText                                       ChatText;                                                 // 0x00A8(0x0018) (Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance)
 };
 
 // ScriptStruct FortniteUI.MapNoteOptionData
-// 0x0018 (0x00A8 - 0x0090)
+// 0x0018 (0x00C0 - 0x00A8)
 struct FMapNoteOptionData : public FRadialOptionData
 {
-	struct FText                                       MapNoteText;                                              // 0x0090(0x0018) (Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance)
+	struct FText                                       MapNoteText;                                              // 0x00A8(0x0018) (Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance)
 };
 
 // ScriptStruct FortniteUI.EmoteOptionData
-// 0x0008 (0x0098 - 0x0090)
+// 0x0008 (0x00B0 - 0x00A8)
 struct FEmoteOptionData : public FRadialOptionData
 {
-	struct FName                                       EmoteCommand;                                             // 0x0090(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FName                                       EmoteCommand;                                             // 0x00A8(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 };
 
-// ScriptStruct FortniteUI.FortSkillTreeNodeDisplayData
-// 0x02D8
-struct FFortSkillTreeNodeDisplayData
+// ScriptStruct FortniteUI.FortSwipeDetector
+// 0x0130
+struct FFortSwipeDetector
 {
-	struct FFortMultiSizeBrush                         Icon;                                                     // 0x0000(0x02D0) (Edit, BlueprintVisible, BlueprintReadOnly)
-	class UMediaSource*                                PreviewVideoMediaSource;                                  // 0x02D0(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FVector2D                                   SwipeThreshold;                                           // 0x0000(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x128];                                     // 0x0008(0x0128) MISSED OFFSET
 };
 
 // ScriptStruct FortniteUI.FortLandingPageDefenderSummaryInfo
@@ -1513,11 +1663,43 @@ struct FFortAttributeModifierAccumulation
 	float                                              Magnitude;                                                // 0x002C(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 };
 
-// ScriptStruct FortniteUI.SquadSlotSortTypes
-// 0x0010
-struct FSquadSlotSortTypes
+// ScriptStruct FortniteUI.FortSurvivorSquadSelectorButtonSummaryStats
+// 0x0070
+struct FFortSurvivorSquadSelectorButtonSummaryStats
 {
-	TArray<ESquadSlotSortType>                         SortTypes;                                                // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+	struct FName                                       SquadId;                                                  // 0x0000(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FGameplayAttribute                          FortAttribute;                                            // 0x0008(0x0020) (BlueprintVisible, BlueprintReadOnly)
+	float                                              FortAttributeValue;                                       // 0x0028(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x002C(0x0004) MISSED OFFSET
+	struct FGameplayAttribute                          FortTeamAttribute;                                        // 0x0030(0x0020) (BlueprintVisible, BlueprintReadOnly)
+	float                                              TeamFortAttributeValue;                                   // 0x0050(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	float                                              SquadPowerValue;                                          // 0x0054(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FText                                       FortAttributeName;                                        // 0x0058(0x0018) (BlueprintVisible, BlueprintReadOnly)
+};
+
+// ScriptStruct FortniteUI.FortSurvivorSquadSelectorButtonPersonalityMatches
+// 0x0370
+struct FFortSurvivorSquadSelectorButtonPersonalityMatches
+{
+	int                                                NumPersonalityMatches;                                    // 0x0000(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	int                                                TotalNonLeaderSquadMembers;                               // 0x0004(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	bool                                               HavePersonalityIcons;                                     // 0x0008(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0009(0x0007) MISSED OFFSET
+	struct FFortMultiSizeBrush                         PersonalityIcons;                                         // 0x0010(0x0360) (BlueprintVisible, BlueprintReadOnly)
+};
+
+// ScriptStruct FortniteUI.FortUISurvivorSquadStatMatch
+// 0x03A0
+struct FFortUISurvivorSquadStatMatch
+{
+	struct FFortMultiSizeBrush                         Icons;                                                    // 0x0000(0x0360) (BlueprintVisible, BlueprintReadOnly)
+	struct FText                                       MagnitudeText;                                            // 0x0360(0x0018) (BlueprintVisible, BlueprintReadOnly)
+	struct FText                                       AttributeDisplayName;                                     // 0x0378(0x0018) (BlueprintVisible, BlueprintReadOnly)
+	int                                                NumMembersMeetingCriteria;                                // 0x0390(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	int                                                NumMembersRequired;                                       // 0x0394(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	EFortUISurvivorSquadMatchType                      MatchType;                                                // 0x0398(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	EFortBuffState                                     PreviewEffect;                                            // 0x0399(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x6];                                       // 0x039A(0x0006) MISSED OFFSET
 };
 
 // ScriptStruct FortniteUI.CardPackOffer
@@ -1560,386 +1742,65 @@ struct FOpenedCardPack
 	unsigned char                                      UnknownData00[0x4];                                       // 0x000C(0x0004) MISSED OFFSET
 };
 
-// ScriptStruct FortniteUI.FortSurvivorSquadSelectorButtonSummaryStats
+// ScriptStruct FortniteUI.FortUIXpInfo
+// 0x002C
+struct FFortUIXpInfo
+{
+	int                                                InitialLevel;                                             // 0x0000(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	int                                                InitialDisplayXp;                                         // 0x0004(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FFortExperienceDelta                        ChangeInXp;                                               // 0x0008(0x0024) (BlueprintVisible, BlueprintReadOnly)
+};
+
+// ScriptStruct FortniteUI.ContentPushState
+// 0x0003
+struct FContentPushState
+{
+	bool                                               bHideHeader;                                              // 0x0000(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	bool                                               bHideFooter;                                              // 0x0001(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	bool                                               bHideChatWidget;                                          // 0x0002(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct FortniteUI.VaultContentDetails
+// 0x0018
+struct FVaultContentDetails
+{
+	struct FString                                     SearchText;                                               // 0x0000(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
+	EInventoryContentSortType                          SortType;                                                 // 0x0010(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	EFortInventoryFilter                               SubType;                                                  // 0x0011(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x6];                                       // 0x0012(0x0006) MISSED OFFSET
+};
+
+// ScriptStruct FortniteUI.FortCanvasProperties
 // 0x0070
-struct FFortSurvivorSquadSelectorButtonSummaryStats
+struct FFortCanvasProperties
 {
-	struct FName                                       SquadId;                                                  // 0x0000(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FGameplayAttribute                          FortAttribute;                                            // 0x0008(0x0020) (BlueprintVisible, BlueprintReadOnly)
-	float                                              FortAttributeValue;                                       // 0x0028(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x002C(0x0004) MISSED OFFSET
-	struct FGameplayAttribute                          FortTeamAttribute;                                        // 0x0030(0x0020) (BlueprintVisible, BlueprintReadOnly)
-	float                                              TeamFortAttributeValue;                                   // 0x0050(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	float                                              SquadPowerValue;                                          // 0x0054(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FText                                       FortAttributeName;                                        // 0x0058(0x0018) (BlueprintVisible, BlueprintReadOnly)
+	struct FMargin                                     Reserves;                                                 // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
+	bool                                               bMouseAutoPan;                                            // 0x0010(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0011(0x0003) MISSED OFFSET
+	float                                              ActiveAreaPercent;                                        // 0x0014(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	float                                              MaxZoom;                                                  // 0x0018(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	float                                              MinZoom;                                                  // 0x001C(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	float                                              ZoomIncrement;                                            // 0x0020(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	float                                              ConnectorThickness;                                       // 0x0024(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FLinearColor                                ConnectorOwnedColor;                                      // 0x0028(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FLinearColor                                ConnectorPurchasableColor;                                // 0x0038(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FLinearColor                                ConnectorNonPurchasableColor;                             // 0x0048(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	struct FLinearColor                                ConnectorTowardsSelectedColor;                            // 0x0058(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
+	class UMaterialInstanceDynamic*                    BackgroundMaterial;                                       // 0x0068(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
-// ScriptStruct FortniteUI.FortSurvivorSquadSelectorButtonPersonalityMatches
-// 0x02E0
-struct FFortSurvivorSquadSelectorButtonPersonalityMatches
+// ScriptStruct FortniteUI.FortUINodePrerequisite
+// 0x0710
+struct FFortUINodePrerequisite
 {
-	int                                                NumPersonalityMatches;                                    // 0x0000(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	int                                                TotalNonLeaderSquadMembers;                               // 0x0004(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	bool                                               HavePersonalityIcons;                                     // 0x0008(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0009(0x0007) MISSED OFFSET
-	struct FFortMultiSizeBrush                         PersonalityIcons;                                         // 0x0010(0x02D0) (BlueprintVisible, BlueprintReadOnly)
-};
-
-// ScriptStruct FortniteUI.FortUISurvivorSquadStatMatch
-// 0x0310
-struct FFortUISurvivorSquadStatMatch
-{
-	struct FFortMultiSizeBrush                         Icons;                                                    // 0x0000(0x02D0) (BlueprintVisible, BlueprintReadOnly)
-	struct FText                                       MagnitudeText;                                            // 0x02D0(0x0018) (BlueprintVisible, BlueprintReadOnly)
-	struct FText                                       AttributeDisplayName;                                     // 0x02E8(0x0018) (BlueprintVisible, BlueprintReadOnly)
-	int                                                NumMembersMeetingCriteria;                                // 0x0300(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	int                                                NumMembersRequired;                                       // 0x0304(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	EFortUISurvivorSquadMatchType                      MatchType;                                                // 0x0308(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	EFortBuffState                                     PreviewEffect;                                            // 0x0309(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x6];                                       // 0x030A(0x0006) MISSED OFFSET
-};
-
-// ScriptStruct FortniteUI.FortTabListRegistrationInfo
-// 0x00B8
-struct FFortTabListRegistrationInfo
-{
-	struct FName                                       TabNameID;                                                // 0x0000(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	bool                                               bHidden;                                                  // 0x0008(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	bool                                               bAllowedInZone;                                           // 0x0009(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x6];                                       // 0x000A(0x0006) MISSED OFFSET
-	struct FFortTabButtonLabelInfo                     TabLabelInfo;                                             // 0x0010(0x0090) (Edit, BlueprintVisible, BlueprintReadOnly)
-	class UClass*                                      TabButtonType;                                            // 0x00A0(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	class UClass*                                      TabContentType;                                           // 0x00A8(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	class UWidget*                                     CreatedTabContentWidget;                                  // 0x00B0(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
-};
-
-// ScriptStruct FortniteUI.FortSkillTreeCanvasStyle
-// 0x0034
-struct FFortSkillTreeCanvasStyle
-{
-	float                                              ConnectorThickness;                                       // 0x0000(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FLinearColor                                ConnectorOwnedColor;                                      // 0x0004(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FLinearColor                                ConnectorPurchasableColor;                                // 0x0014(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FLinearColor                                ConnectorNonPurchasableColor;                             // 0x0024(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-};
-
-// ScriptStruct FortniteUI.FortItemCard_PowerRatingBlock_Configuration
-// 0x0050
-struct FFortItemCard_PowerRatingBlock_Configuration
-{
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0000(0x0008) MISSED OFFSET
-	struct FMargin                                     CustomRatingInternalPadding;                              // 0x0008(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FVector2D                                   CustomRatingIconSize;                                     // 0x0018(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x28];                                      // 0x0020(0x0028) UNKNOWN PROPERTY: SoftClassProperty FortniteUI.FortItemCard_PowerRatingBlock_Configuration.CustomRatingTextStyle
-	struct FVector2D                                   ComparisonIndicatorSize;                                  // 0x0048(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-};
-
-// ScriptStruct FortniteUI.FortItemCard_PowerRatingBlock_PersonnelAndSchematics_Configuration
-// 0x0140 (0x0190 - 0x0050)
-struct FFortItemCard_PowerRatingBlock_PersonnelAndSchematics_Configuration : public FFortItemCard_PowerRatingBlock_Configuration
-{
-	struct FSlateBrush                                 PersonnelPowerRatingIconBrush;                            // 0x0050(0x0078) (Edit, BlueprintVisible, BlueprintReadOnly)
-	unsigned char                                      UnknownData00[0x28];                                      // 0x00C8(0x0028) UNKNOWN PROPERTY: SoftClassProperty FortniteUI.FortItemCard_PowerRatingBlock_PersonnelAndSchematics_Configuration.PersonnelPowerRatingTextStyle
-	struct FSlateBrush                                 SchematicPowerRatingIconBrush;                            // 0x00F0(0x0078) (Edit, BlueprintVisible, BlueprintReadOnly)
-	unsigned char                                      UnknownData01[0x28];                                      // 0x0168(0x0028) UNKNOWN PROPERTY: SoftClassProperty FortniteUI.FortItemCard_PowerRatingBlock_PersonnelAndSchematics_Configuration.SchematicPowerRatingTextStyle
-};
-
-// ScriptStruct FortniteUI.FortItemCard_NameplateBorder_Configuration
-// 0x0088
-struct FFortItemCard_NameplateBorder_Configuration
-{
-	struct FMargin                                     Padding;                                                  // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FSlateBrush                                 Brush;                                                    // 0x0010(0x0078) (Edit, BlueprintVisible, BlueprintReadOnly)
-};
-
-// ScriptStruct FortniteUI.FortItemCard_DefenderWeaponTypeIcon_Configuration
-// 0x0008
-struct FFortItemCard_DefenderWeaponTypeIcon_Configuration
-{
-	struct FVector2D                                   IconConstraints;                                          // 0x0000(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-};
-
-// ScriptStruct FortniteUI.FortItemCard_DetailAreaBorder_Configuration
-// 0x0014
-struct FFortItemCard_DetailAreaBorder_Configuration
-{
-	float                                              MinimumHeight;                                            // 0x0000(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FMargin                                     Padding;                                                  // 0x0004(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-};
-
-// ScriptStruct FortniteUI.FortItemCard_TierMeter_Configuration
-// 0x000C
-struct FFortItemCard_TierMeter_Configuration
-{
-	struct FVector2D                                   PipSize;                                                  // 0x0000(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	float                                              InterPipPadding;                                          // 0x0008(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-};
-
-// ScriptStruct FortniteUI.FortItemCard_XL_PersonnelAndSchematics_Configuration
-// 0x0320
-struct FFortItemCard_XL_PersonnelAndSchematics_Configuration
-{
-	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_PowerRatingBlock_PersonnelAndSchematics_Configuration PowerRatingBlock;                                         // 0x0010(0x0190) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FVector2D                                   BookmarkImageSize;                                        // 0x01A0(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FFortItemCard_NameplateBorder_Configuration Nameplate;                                                // 0x01A8(0x0088) (Edit, BlueprintVisible, BlueprintReadOnly)
-	unsigned char                                      UnknownData00[0x28];                                      // 0x0230(0x0028) UNKNOWN PROPERTY: SoftClassProperty FortniteUI.FortItemCard_XL_PersonnelAndSchematics_Configuration.ItemNameTextStyle
-	struct FVector2D                                   LeadSurvivorTypeIconSize;                                 // 0x0258(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FVector2D                                   FirstIconSlotSize;                                        // 0x0260(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	float                                              PaddingBetweenIconSlots;                                  // 0x0268(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FVector2D                                   SecondIconSlotSize;                                       // 0x026C(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FFortItemCard_DefenderWeaponTypeIcon_Configuration DefenderWeaponTypeIcon;                                   // 0x0274(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_DetailAreaBorder_Configuration DetailAreaBorder;                                         // 0x027C(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
-	float                                              RarityNameTextLeftPadding;                                // 0x0290(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x0294(0x0004) MISSED OFFSET
-	unsigned char                                      UnknownData02[0x28];                                      // 0x0294(0x0028) UNKNOWN PROPERTY: SoftClassProperty FortniteUI.FortItemCard_XL_PersonnelAndSchematics_Configuration.RarityNameTextStyle
-	float                                              ClassIconImageLeftPadding;                                // 0x02C0(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FVector2D                                   ClassIconSize;                                            // 0x02C4(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	float                                              PaddingBetweenClassIconAndName;                           // 0x02CC(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData03[0x28];                                      // 0x02D0(0x0028) UNKNOWN PROPERTY: SoftClassProperty FortniteUI.FortItemCard_XL_PersonnelAndSchematics_Configuration.ClassNameTextStyle
-	float                                              TierMeterLeftPadding;                                     // 0x02F8(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FFortItemCard_TierMeter_Configuration       TierMeter;                                                // 0x02FC(0x000C) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FMargin                                     IconSlotOverNameplatePadding;                             // 0x0308(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FVector2D                                   IconSlotOverNameplateSize;                                // 0x0318(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-};
-
-// ScriptStruct FortniteUI.FortItemCard_PowerRatingBlock_ItemInstance_Configuration
-// 0x00A0 (0x00F0 - 0x0050)
-struct FFortItemCard_PowerRatingBlock_ItemInstance_Configuration : public FFortItemCard_PowerRatingBlock_Configuration
-{
-	struct FSlateBrush                                 PowerRatingIconBrush;                                     // 0x0050(0x0078) (Edit, BlueprintVisible, BlueprintReadOnly)
-	unsigned char                                      UnknownData00[0x28];                                      // 0x00C8(0x0028) UNKNOWN PROPERTY: SoftClassProperty FortniteUI.FortItemCard_PowerRatingBlock_ItemInstance_Configuration.PowerRatingTextStyle
-};
-
-// ScriptStruct FortniteUI.FortItemCard_StackCountBlock_Configuration
-// 0x0028
-struct FFortItemCard_StackCountBlock_Configuration
-{
-	unsigned char                                      UnknownData00[0x28];                                      // 0x0000(0x0028) UNKNOWN PROPERTY: SoftClassProperty FortniteUI.FortItemCard_StackCountBlock_Configuration.TextStyle
-};
-
-// ScriptStruct FortniteUI.FortItemCard_DurabilityMeter_Configuration
-// 0x0014
-struct FFortItemCard_DurabilityMeter_Configuration
-{
-	float                                              MeterThickness;                                           // 0x0000(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FMargin                                     MeterPadding;                                             // 0x0004(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-};
-
-// ScriptStruct FortniteUI.FortItemCard_XL_ItemInstance_Configuration
-// 0x0190
-struct FFortItemCard_XL_ItemInstance_Configuration
-{
-	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FMargin                                     PowerRatingBlockPadding;                                  // 0x0010(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_PowerRatingBlock_ItemInstance_Configuration PowerRatingBlock;                                         // 0x0020(0x00F0) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_StackCountBlock_Configuration StackCountBlock;                                          // 0x0110(0x0028) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FMargin                                     TraitBoxPadding;                                          // 0x0138(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FVector2D                                   FirstTraitSize;                                           // 0x0148(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	float                                              PaddingBetweenTraitIcons;                                 // 0x0150(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FVector2D                                   SecondTraitSize;                                          // 0x0154(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FMargin                                     TierMeterPadding;                                         // 0x015C(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_TierMeter_Configuration       TierMeter;                                                // 0x016C(0x000C) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_DurabilityMeter_Configuration DurabilityMeter;                                          // 0x0178(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x018C(0x0004) MISSED OFFSET
-};
-
-// ScriptStruct FortniteUI.FortItemCard_XL_TransformKey_Configuration
-// 0x0040
-struct FFortItemCard_XL_TransformKey_Configuration
-{
-	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_StackCountBlock_Configuration StackCountBlock;                                          // 0x0010(0x0028) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FVector2D                                   TransformKeyIconSize;                                     // 0x0038(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-};
-
-// ScriptStruct FortniteUI.FortItemCard_LevelMeter_Configuration
-// 0x0014
-struct FFortItemCard_LevelMeter_Configuration
-{
-	float                                              MeterThickness;                                           // 0x0000(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FMargin                                     MeterPadding;                                             // 0x0004(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-};
-
-// ScriptStruct FortniteUI.FortItemCard_L_PersonnelAndSchematics_Configuration
-// 0x0298
-struct FFortItemCard_L_PersonnelAndSchematics_Configuration
-{
-	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_PowerRatingBlock_PersonnelAndSchematics_Configuration PowerRatingBlock;                                         // 0x0010(0x0190) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FVector2D                                   BookmarkImageSize;                                        // 0x01A0(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FFortItemCard_NameplateBorder_Configuration Nameplate;                                                // 0x01A8(0x0088) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FVector2D                                   ClassIconSize;                                            // 0x0230(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FVector2D                                   LeadSurvivorTypeIconSize;                                 // 0x0238(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FVector2D                                   FirstIconSlotSize;                                        // 0x0240(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	float                                              PaddingBetweenIconSlots;                                  // 0x0248(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FVector2D                                   SecondIconSlotSize;                                       // 0x024C(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FFortItemCard_DefenderWeaponTypeIcon_Configuration DefenderWeaponTypeIcon;                                   // 0x0254(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_DetailAreaBorder_Configuration DetailAreaBorder;                                         // 0x025C(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_LevelMeter_Configuration      LevelMeter;                                               // 0x0270(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
-	float                                              TierMeterLeftPadding;                                     // 0x0284(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FFortItemCard_TierMeter_Configuration       TierMeter;                                                // 0x0288(0x000C) (Edit, BlueprintVisible, BlueprintReadOnly)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0294(0x0004) MISSED OFFSET
-};
-
-// ScriptStruct FortniteUI.FortItemCard_L_ItemInstance_Configuration
-// 0x0190
-struct FFortItemCard_L_ItemInstance_Configuration
-{
-	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FMargin                                     PowerRatingBlockPadding;                                  // 0x0010(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_PowerRatingBlock_ItemInstance_Configuration PowerRatingBlock;                                         // 0x0020(0x00F0) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_StackCountBlock_Configuration StackCountBlock;                                          // 0x0110(0x0028) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FMargin                                     TraitBoxPadding;                                          // 0x0138(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FVector2D                                   FirstTraitSize;                                           // 0x0148(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	float                                              PaddingBetweenTraitIcons;                                 // 0x0150(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FVector2D                                   SecondTraitSize;                                          // 0x0154(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FMargin                                     TierMeterPadding;                                         // 0x015C(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_TierMeter_Configuration       TierMeter;                                                // 0x016C(0x000C) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_DurabilityMeter_Configuration DurabilityMeter;                                          // 0x0178(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x018C(0x0004) MISSED OFFSET
-};
-
-// ScriptStruct FortniteUI.FortItemCard_L_TransformKey_Configuration
-// 0x0040
-struct FFortItemCard_L_TransformKey_Configuration
-{
-	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_StackCountBlock_Configuration StackCountBlock;                                          // 0x0010(0x0028) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FVector2D                                   TransformKeyIconSize;                                     // 0x0038(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-};
-
-// ScriptStruct FortniteUI.FortItemCard_M_PersonnelAndSchematics_Configuration
-// 0x0298
-struct FFortItemCard_M_PersonnelAndSchematics_Configuration
-{
-	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_PowerRatingBlock_PersonnelAndSchematics_Configuration PowerRatingBlock;                                         // 0x0010(0x0190) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FVector2D                                   BookmarkImageSize;                                        // 0x01A0(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FFortItemCard_NameplateBorder_Configuration Nameplate;                                                // 0x01A8(0x0088) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FVector2D                                   ClassIconSize;                                            // 0x0230(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FVector2D                                   LeadSurvivorTypeIconSize;                                 // 0x0238(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FVector2D                                   FirstIconSlotSize;                                        // 0x0240(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	float                                              PaddingBetweenIconSlots;                                  // 0x0248(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FVector2D                                   SecondIconSlotSize;                                       // 0x024C(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FFortItemCard_DefenderWeaponTypeIcon_Configuration DefenderWeaponTypeIcon;                                   // 0x0254(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_DetailAreaBorder_Configuration DetailAreaBorder;                                         // 0x025C(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_LevelMeter_Configuration      LevelMeter;                                               // 0x0270(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
-	float                                              TierMeterLeftPadding;                                     // 0x0284(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FFortItemCard_TierMeter_Configuration       TierMeter;                                                // 0x0288(0x000C) (Edit, BlueprintVisible, BlueprintReadOnly)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0294(0x0004) MISSED OFFSET
-};
-
-// ScriptStruct FortniteUI.FortItemCard_M_ItemInstance_Configuration
-// 0x0190
-struct FFortItemCard_M_ItemInstance_Configuration
-{
-	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FMargin                                     PowerRatingBlockPadding;                                  // 0x0010(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_PowerRatingBlock_ItemInstance_Configuration PowerRatingBlock;                                         // 0x0020(0x00F0) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_StackCountBlock_Configuration StackCountBlock;                                          // 0x0110(0x0028) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FMargin                                     TraitBoxPadding;                                          // 0x0138(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FVector2D                                   FirstTraitSize;                                           // 0x0148(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	float                                              PaddingBetweenTraitIcons;                                 // 0x0150(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FVector2D                                   SecondTraitSize;                                          // 0x0154(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FMargin                                     TierMeterPadding;                                         // 0x015C(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_TierMeter_Configuration       TierMeter;                                                // 0x016C(0x000C) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_DurabilityMeter_Configuration DurabilityMeter;                                          // 0x0178(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x018C(0x0004) MISSED OFFSET
-};
-
-// ScriptStruct FortniteUI.FortItemCard_M_TransformKey_Configuration
-// 0x0040
-struct FFortItemCard_M_TransformKey_Configuration
-{
-	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_StackCountBlock_Configuration StackCountBlock;                                          // 0x0010(0x0028) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FVector2D                                   TransformKeyIconSize;                                     // 0x0038(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-};
-
-// ScriptStruct FortniteUI.FortItemCard_S_PersonnelAndSchematics_Configuration
-// 0x0298
-struct FFortItemCard_S_PersonnelAndSchematics_Configuration
-{
-	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_PowerRatingBlock_PersonnelAndSchematics_Configuration PowerRatingBlock;                                         // 0x0010(0x0190) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FVector2D                                   BookmarkImageSize;                                        // 0x01A0(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FFortItemCard_NameplateBorder_Configuration Nameplate;                                                // 0x01A8(0x0088) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FVector2D                                   ClassIconSize;                                            // 0x0230(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FVector2D                                   LeadSurvivorTypeIconSize;                                 // 0x0238(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FVector2D                                   FirstIconSlotSize;                                        // 0x0240(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	float                                              PaddingBetweenIconSlots;                                  // 0x0248(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FVector2D                                   SecondIconSlotSize;                                       // 0x024C(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FFortItemCard_DefenderWeaponTypeIcon_Configuration DefenderWeaponTypeIcon;                                   // 0x0254(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_DetailAreaBorder_Configuration DetailAreaBorder;                                         // 0x025C(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_LevelMeter_Configuration      LevelMeter;                                               // 0x0270(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
-	float                                              TierMeterLeftPadding;                                     // 0x0284(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FFortItemCard_TierMeter_Configuration       TierMeter;                                                // 0x0288(0x000C) (Edit, BlueprintVisible, BlueprintReadOnly)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0294(0x0004) MISSED OFFSET
-};
-
-// ScriptStruct FortniteUI.FortItemCard_S_ItemInstance_Configuration
-// 0x0180
-struct FFortItemCard_S_ItemInstance_Configuration
-{
-	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FMargin                                     PowerRatingBlockPadding;                                  // 0x0010(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_PowerRatingBlock_ItemInstance_Configuration PowerRatingBlock;                                         // 0x0020(0x00F0) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_StackCountBlock_Configuration StackCountBlock;                                          // 0x0110(0x0028) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FMargin                                     TraitBoxPadding;                                          // 0x0138(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FVector2D                                   FirstTraitSize;                                           // 0x0148(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FMargin                                     TierMeterPadding;                                         // 0x0150(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_TierMeter_Configuration       TierMeter;                                                // 0x0160(0x000C) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_DurabilityMeter_Configuration DurabilityMeter;                                          // 0x016C(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
-};
-
-// ScriptStruct FortniteUI.FortItemCard_S_TransformKey_Configuration
-// 0x0040
-struct FFortItemCard_S_TransformKey_Configuration
-{
-	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_StackCountBlock_Configuration StackCountBlock;                                          // 0x0010(0x0028) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FVector2D                                   TransformKeyIconSize;                                     // 0x0038(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-};
-
-// ScriptStruct FortniteUI.FortItemCard_XS_PersonnelAndSchematics_Configuration
-// 0x0034
-struct FFortItemCard_XS_PersonnelAndSchematics_Configuration
-{
-	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FVector2D                                   BookmarkImageSize;                                        // 0x0010(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FFortItemCard_DetailAreaBorder_Configuration DetailAreaBorder;                                         // 0x0018(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FVector2D                                   AvailableUpgradeIconSize;                                 // 0x002C(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-};
-
-// ScriptStruct FortniteUI.FortItemCard_XS_ItemInstance_Configuration
-// 0x0168
-struct FFortItemCard_XS_ItemInstance_Configuration
-{
-	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FMargin                                     PowerRatingBlockPadding;                                  // 0x0010(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_PowerRatingBlock_ItemInstance_Configuration PowerRatingBlock;                                         // 0x0020(0x00F0) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FMargin                                     TraitBoxPadding;                                          // 0x0110(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FVector2D                                   FirstTraitSize;                                           // 0x0120(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FFortItemCard_StackCountBlock_Configuration StackCountBlock;                                          // 0x0128(0x0028) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_DurabilityMeter_Configuration DurabilityMeter;                                          // 0x0150(0x0014) (Edit, BlueprintVisible, BlueprintReadOnly)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0164(0x0004) MISSED OFFSET
-};
-
-// ScriptStruct FortniteUI.FortItemCard_XS_TransformKey_Configuration
-// 0x0040
-struct FFortItemCard_XS_TransformKey_Configuration
-{
-	struct FMargin                                     BackgroundPadding;                                        // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FFortItemCard_StackCountBlock_Configuration StackCountBlock;                                          // 0x0010(0x0028) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FVector2D                                   TransformKeyIconSize;                                     // 0x0038(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-};
-
-// ScriptStruct FortniteUI.FortItemCard_XXS_ItemInstance_Configuration
-// 0x0028
-struct FFortItemCard_XXS_ItemInstance_Configuration
-{
-	struct FFortItemCard_StackCountBlock_Configuration StackCountBlock;                                          // 0x0000(0x0028) (Edit, BlueprintVisible, BlueprintReadOnly)
+	struct FText                                       DisplayName;                                              // 0x0000(0x0018) (BlueprintVisible, BlueprintReadOnly)
+	struct FFortNodeStyleData                          Style;                                                    // 0x0018(0x06D0) (BlueprintVisible, BlueprintReadOnly)
+	bool                                               bIsNodePage;                                              // 0x06E8(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x06E9(0x0003) MISSED OFFSET
+	int                                                MinRequiredNodesInPage;                                   // 0x06EC(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	int                                                OwnedNodesInPage;                                         // 0x06F0(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x06F4(0x0004) MISSED OFFSET
+	struct FText                                       NodeType;                                                 // 0x06F8(0x0018) (BlueprintVisible, BlueprintReadOnly)
 };
 
 // ScriptStruct FortniteUI.UINavigationData
@@ -1986,15 +1847,6 @@ struct FFortUINavigationRequest
 	TArray<struct FFortUINavigationOperation>          Operations;                                               // 0x0000(0x0010) (ZeroConstructor)
 };
 
-// ScriptStruct FortniteUI.FortUIXpInfo
-// 0x002C
-struct FFortUIXpInfo
-{
-	int                                                InitialLevel;                                             // 0x0000(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	int                                                InitialDisplayXp;                                         // 0x0004(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FFortExperienceDelta                        ChangeInXp;                                               // 0x0008(0x0024) (BlueprintVisible, BlueprintReadOnly)
-};
-
 // ScriptStruct FortniteUI.GridSortKey
 // 0x0018
 struct FGridSortKey
@@ -2005,19 +1857,46 @@ struct FGridSortKey
 };
 
 // ScriptStruct FortniteUI.FortAthenaItemManagementInventoryFilterTabLabelInfo
-// 0x0008 (0x0098 - 0x0090)
+// 0x0008 (0x00B0 - 0x00A8)
 struct FFortAthenaItemManagementInventoryFilterTabLabelInfo : public FFortTabButtonLabelInfo
 {
-	struct FName                                       FilterTabNameId;                                          // 0x0090(0x0008) (Edit, ZeroConstructor, EditConst, IsPlainOldData)
+	struct FName                                       FilterTabNameId;                                          // 0x00A8(0x0008) (Edit, ZeroConstructor, EditConst, IsPlainOldData)
 };
 
 // ScriptStruct FortniteUI.AthenaLeaderboardData
 // 0x0018 (0x0020 - 0x0008)
 struct FAthenaLeaderboardData : public FTableRowBase
 {
-	EFortAthenaPlaylist                                playlist;                                                 // 0x0008(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	EFortAthenaPlaylist                                Playlist;                                                 // 0x0008(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x7];                                       // 0x0009(0x0007) MISSED OFFSET
 	TArray<struct FAthenaPlaylistLeaderboardData>      Stats;                                                    // 0x0010(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+};
+
+// ScriptStruct FortniteUI.FortSquadIconData
+// 0x0360 (0x0368 - 0x0008)
+struct FFortSquadIconData : public FTableRowBase
+{
+	struct FFortMultiSizeBrush                         Brush;                                                    // 0x0008(0x0360) (Edit, BlueprintVisible, BlueprintReadOnly)
+};
+
+// ScriptStruct FortniteUI.FortDisplayModifier
+// 0x0038
+struct FFortDisplayModifier
+{
+	struct FText                                       Label;                                                    // 0x0000(0x0018) (BlueprintVisible)
+	struct FText                                       Value;                                                    // 0x0018(0x0018) (BlueprintVisible)
+	EFortStatValueDisplayType                          DisplayType;                                              // 0x0030(0x0001) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	EFortBuffState                                     BuffState;                                                // 0x0031(0x0001) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x6];                                       // 0x0032(0x0006) MISSED OFFSET
+};
+
+// ScriptStruct FortniteUI.NodeTypeData
+// 0x0010 (0x0018 - 0x0008)
+struct FNodeTypeData : public FTableRowBase
+{
+	EFortHomebaseNodeDisplayType                       NodeType;                                                 // 0x0008(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0009(0x0007) MISSED OFFSET
+	class UClass*                                      UIClass;                                                  // 0x0010(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct FortniteUI.ConsumedCriteriaData
@@ -2027,6 +1906,13 @@ struct FConsumedCriteriaData
 	float                                              PowerMod;                                                 // 0x0000(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET
 	TArray<struct FName>                               CriteriaNames;                                            // 0x0008(0x0010) (ZeroConstructor, Transient)
+};
+
+// ScriptStruct FortniteUI.FortItemCard_CustomRatingBlock_Configuration
+// 0x0020
+struct FFortItemCard_CustomRatingBlock_Configuration
+{
+	TAssetPtr<class UClass>                            TextStyle;                                                // 0x0000(0x0020) (Edit, BlueprintVisible, BlueprintReadOnly)
 };
 
 // ScriptStruct FortniteUI.AttributeRequirement
@@ -2073,6 +1959,26 @@ struct FEmptyHeroSlot
 	unsigned char                                      UnknownData00[0x2];                                       // 0x000E(0x0002) MISSED OFFSET
 };
 
+// ScriptStruct FortniteUI.FortItemTransformFilterTabLabelInfo
+// 0x00C8
+struct FFortItemTransformFilterTabLabelInfo
+{
+	struct FName                                       FilterTabNameId;                                          // 0x0000(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	struct FFortTabButtonLabelInfo                     TabButtonLabelInfo;                                       // 0x0008(0x00A8) (Edit, BlueprintVisible)
+	TArray<EFortInventoryFilter>                       ItemFilters;                                              // 0x00B0(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
+	EFortItemType                                      ItemType;                                                 // 0x00C0(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x00C1(0x0007) MISSED OFFSET
+};
+
+// ScriptStruct FortniteUI.FortRichTextStyleData
+// 0x0210 (0x0218 - 0x0008)
+struct FFortRichTextStyleData : public FTableRowBase
+{
+	struct FTextBlockStyle                             TextStyle;                                                // 0x0008(0x0208) (Edit)
+	bool                                               bHyperlinkStyle;                                          // 0x0210(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0211(0x0007) MISSED OFFSET
+};
+
 // ScriptStruct FortniteUI.FortHeroNamesData
 // 0x0030 (0x0038 - 0x0008)
 struct FFortHeroNamesData : public FTableRowBase
@@ -2080,100 +1986,6 @@ struct FFortHeroNamesData : public FTableRowBase
 	struct FString                                     FirstName;                                                // 0x0008(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
 	struct FString                                     NickName;                                                 // 0x0018(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
 	struct FString                                     LastName;                                                 // 0x0028(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-};
-
-// ScriptStruct FortniteUI.ItemDefinitionChangedStruct
-// 0x0010
-struct FItemDefinitionChangedStruct
-{
-	struct FScriptMulticastDelegate                    ChangeDelegate;                                           // 0x0000(0x0010) (ZeroConstructor, InstancedReference)
-};
-
-// ScriptStruct FortniteUI.NodeTypeData
-// 0x0010 (0x0018 - 0x0008)
-struct FNodeTypeData : public FTableRowBase
-{
-	EFortHomebaseNodeDisplayType                       NodeType;                                                 // 0x0008(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0009(0x0007) MISSED OFFSET
-	class UClass*                                      UIClass;                                                  // 0x0010(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-};
-
-// ScriptStruct FortniteUI.FortCanvasProperties
-// 0x0070
-struct FFortCanvasProperties
-{
-	struct FMargin                                     Reserves;                                                 // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly)
-	bool                                               bMouseAutoPan;                                            // 0x0010(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x0011(0x0003) MISSED OFFSET
-	float                                              ActiveAreaPercent;                                        // 0x0014(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	float                                              MaxZoom;                                                  // 0x0018(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	float                                              MinZoom;                                                  // 0x001C(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	float                                              ZoomIncrement;                                            // 0x0020(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	float                                              ConnectorThickness;                                       // 0x0024(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FLinearColor                                ConnectorOwnedColor;                                      // 0x0028(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FLinearColor                                ConnectorPurchasableColor;                                // 0x0038(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FLinearColor                                ConnectorNonPurchasableColor;                             // 0x0048(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	struct FLinearColor                                ConnectorTowardsSelectedColor;                            // 0x0058(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData)
-	class UMaterialInstanceDynamic*                    BackgroundMaterial;                                       // 0x0068(0x0008) (ZeroConstructor, IsPlainOldData)
-};
-
-// ScriptStruct FortniteUI.SquadChatOptionData
-// 0x0018 (0x00A8 - 0x0090)
-struct FSquadChatOptionData : public FRadialOptionData
-{
-	struct FText                                       ChatText;                                                 // 0x0090(0x0018) (Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance)
-};
-
-// ScriptStruct FortniteUI.FortRichTextStyleData
-// 0x01D0 (0x01D8 - 0x0008)
-struct FFortRichTextStyleData : public FTableRowBase
-{
-	struct FTextBlockStyle                             TextStyle;                                                // 0x0008(0x01C8) (Edit)
-	bool                                               bHyperlinkStyle;                                          // 0x01D0(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x01D1(0x0007) MISSED OFFSET
-};
-
-// ScriptStruct FortniteUI.FortItemTransformFilterTabLabelInfo
-// 0x00B0
-struct FFortItemTransformFilterTabLabelInfo
-{
-	struct FName                                       FilterTabNameId;                                          // 0x0000(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	struct FFortTabButtonLabelInfo                     TabButtonLabelInfo;                                       // 0x0008(0x0090) (Edit, BlueprintVisible)
-	TArray<EFortInventoryFilter>                       ItemFilters;                                              // 0x0098(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
-	EFortItemType                                      ItemType;                                                 // 0x00A8(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x00A9(0x0007) MISSED OFFSET
-};
-
-// ScriptStruct FortniteUI.FortHealthyGamingData
-// 0x0068 (0x0070 - 0x0008)
-struct FFortHealthyGamingData : public FTableRowBase
-{
-	float                                              HealthWarningToastInterval;                               // 0x0008(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x000C(0x0004) MISSED OFFSET
-	struct FText                                       HealthWarningToastDescriptionFormat;                      // 0x0010(0x0018) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FText                                       HealthWarningScreenText;                                  // 0x0028(0x0018) (Edit, BlueprintVisible, BlueprintReadOnly)
-	struct FText                                       GameplayRestrictionText;                                  // 0x0040(0x0018) (Edit, BlueprintVisible, BlueprintReadOnly)
-	float                                              GameplayRestrictionWarningTimeOffset;                     // 0x0058(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x005C(0x0004) MISSED OFFSET
-	unsigned char                                      UnknownData02[0x10];                                      // 0x005C(0x0010) UNKNOWN PROPERTY: ArrayProperty FortniteUI.FortHealthyGamingData.RatingIcons
-};
-
-// ScriptStruct FortniteUI.FortSquadIconData
-// 0x02D0 (0x02D8 - 0x0008)
-struct FFortSquadIconData : public FTableRowBase
-{
-	struct FFortMultiSizeBrush                         Brush;                                                    // 0x0008(0x02D0) (Edit, BlueprintVisible, BlueprintReadOnly)
-};
-
-// ScriptStruct FortniteUI.FortDisplayModifier
-// 0x0038
-struct FFortDisplayModifier
-{
-	struct FText                                       Label;                                                    // 0x0000(0x0018) (BlueprintVisible)
-	struct FText                                       Value;                                                    // 0x0018(0x0018) (BlueprintVisible)
-	EFortStatValueDisplayType                          DisplayType;                                              // 0x0030(0x0001) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	EFortBuffState                                     BuffState;                                                // 0x0031(0x0001) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x6];                                       // 0x0032(0x0006) MISSED OFFSET
 };
 
 }

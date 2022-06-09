@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void APlayerPawn_Commando_C::UserConstructionScript()
 // Function PlayerPawn_Commando.PlayerPawn_Commando_C.ReceivePossessed
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class AController**            NewController                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AController**            NewController                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Commando_C::ReceivePossessed(class AController** NewController)
 {
@@ -52,8 +52,8 @@ void APlayerPawn_Commando_C::ReceivePossessed(class AController** NewController)
 // Function PlayerPawn_Commando.PlayerPawn_Commando_C.GameplayCue.Abilities.Activation.Commando.Shockwave
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EGameplayCueEvent> EventType                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (Parm)
 
 void APlayerPawn_Commando_C::GameplayCue_Abilities_Activation_Commando_Shockwave(TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
 {
@@ -74,8 +74,8 @@ void APlayerPawn_Commando_C::GameplayCue_Abilities_Activation_Commando_Shockwave
 // Function PlayerPawn_Commando.PlayerPawn_Commando_C.GameplayCue.Abilities.Activation.Generic.HarvestBuff.Tier2
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EGameplayCueEvent>* EventType                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters* Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// TEnumAsByte<EGameplayCueEvent>* EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters* Parameters                     (Parm)
 
 void APlayerPawn_Commando_C::GameplayCue_Abilities_Activation_Generic_HarvestBuff_Tier2(TEnumAsByte<EGameplayCueEvent>* EventType, struct FGameplayCueParameters* Parameters)
 {
@@ -96,8 +96,8 @@ void APlayerPawn_Commando_C::GameplayCue_Abilities_Activation_Generic_HarvestBuf
 // Function PlayerPawn_Commando.PlayerPawn_Commando_C.GameplayCue.Abilities.Activation.Generic.HarvestBuff.Tier1
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EGameplayCueEvent>* EventType                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters* Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// TEnumAsByte<EGameplayCueEvent>* EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters* Parameters                     (Parm)
 
 void APlayerPawn_Commando_C::GameplayCue_Abilities_Activation_Generic_HarvestBuff_Tier1(TEnumAsByte<EGameplayCueEvent>* EventType, struct FGameplayCueParameters* Parameters)
 {
@@ -118,8 +118,8 @@ void APlayerPawn_Commando_C::GameplayCue_Abilities_Activation_Generic_HarvestBuf
 // Function PlayerPawn_Commando.PlayerPawn_Commando_C.GameplayCue.Abilities.Applied.Commando.IncendiaryRounds
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EGameplayCueEvent> EventType                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (Parm)
 
 void APlayerPawn_Commando_C::GameplayCue_Abilities_Applied_Commando_IncendiaryRounds(TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
 {
@@ -174,7 +174,7 @@ void APlayerPawn_Commando_C::ReceiveBeginPlay()
 // Function PlayerPawn_Commando.PlayerPawn_Commando_C.SelectPawn
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UAnimInstance*           AnimInst                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UAnimInstance*           AnimInst                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Commando_C::SelectPawn(class UAnimInstance* AnimInst)
 {
@@ -228,8 +228,8 @@ void APlayerPawn_Commando_C::CheckForGameState()
 // Function PlayerPawn_Commando.PlayerPawn_Commando_C.GameplayCue.Abilities.Applied.Commando.MakeItRain
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EGameplayCueEvent> EventType                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (Parm)
 
 void APlayerPawn_Commando_C::GameplayCue_Abilities_Applied_Commando_MakeItRain(TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
 {
@@ -250,7 +250,7 @@ void APlayerPawn_Commando_C::GameplayCue_Abilities_Applied_Commando_MakeItRain(T
 // Function PlayerPawn_Commando.PlayerPawn_Commando_C.ExecuteUbergraph_PlayerPawn_Commando
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Commando_C::ExecuteUbergraph_PlayerPawn_Commando(int EntryPoint)
 {

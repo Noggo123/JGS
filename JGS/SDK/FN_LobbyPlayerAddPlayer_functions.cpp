@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,27 +12,10 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function LobbyPlayerAddPlayer.LobbyPlayerAddPlayer_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void ULobbyPlayerAddPlayer_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LobbyPlayerAddPlayer.LobbyPlayerAddPlayer_C.Construct");
-
-	ULobbyPlayerAddPlayer_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function LobbyPlayerAddPlayer.LobbyPlayerAddPlayer_C.BndEvt__ButtonEmptySpot_K2Node_ComponentBoundEvent_46_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyPlayerAddPlayer_C::BndEvt__ButtonEmptySpot_K2Node_ComponentBoundEvent_46_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -52,7 +35,7 @@ void ULobbyPlayerAddPlayer_C::BndEvt__ButtonEmptySpot_K2Node_ComponentBoundEvent
 // Function LobbyPlayerAddPlayer.LobbyPlayerAddPlayer_C.BndEvt__ButtonEmptySpot_K2Node_ComponentBoundEvent_64_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyPlayerAddPlayer_C::BndEvt__ButtonEmptySpot_K2Node_ComponentBoundEvent_64_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -72,7 +55,7 @@ void ULobbyPlayerAddPlayer_C::BndEvt__ButtonEmptySpot_K2Node_ComponentBoundEvent
 // Function LobbyPlayerAddPlayer.LobbyPlayerAddPlayer_C.BndEvt__ButtonEmptySpot_K2Node_ComponentBoundEvent_76_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyPlayerAddPlayer_C::BndEvt__ButtonEmptySpot_K2Node_ComponentBoundEvent_76_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -92,7 +75,7 @@ void ULobbyPlayerAddPlayer_C::BndEvt__ButtonEmptySpot_K2Node_ComponentBoundEvent
 // Function LobbyPlayerAddPlayer.LobbyPlayerAddPlayer_C.ExecuteUbergraph_LobbyPlayerAddPlayer
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyPlayerAddPlayer_C::ExecuteUbergraph_LobbyPlayerAddPlayer(int EntryPoint)
 {

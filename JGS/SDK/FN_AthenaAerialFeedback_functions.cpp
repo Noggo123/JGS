@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,28 +12,11 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function AthenaAerialFeedback.AthenaAerialFeedback_C.Update
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UAthenaAerialFeedback_C::Update()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaAerialFeedback.AthenaAerialFeedback_C.Update");
-
-	UAthenaAerialFeedback_C_Update_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function AthenaAerialFeedback.AthenaAerialFeedback_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// float*                         InDeltaTime                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// float*                         InDeltaTime                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaAerialFeedback_C::Tick(struct FGeometry* MyGeometry, float* InDeltaTime)
 {
@@ -51,64 +34,10 @@ void UAthenaAerialFeedback_C::Tick(struct FGeometry* MyGeometry, float* InDeltaT
 }
 
 
-// Function AthenaAerialFeedback.AthenaAerialFeedback_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UAthenaAerialFeedback_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaAerialFeedback.AthenaAerialFeedback_C.Construct");
-
-	UAthenaAerialFeedback_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaAerialFeedback.AthenaAerialFeedback_C.CustomEvent_1_2
-// (BlueprintCallable, BlueprintEvent)
-
-void UAthenaAerialFeedback_C::CustomEvent_1_2()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaAerialFeedback.AthenaAerialFeedback_C.CustomEvent_1_2");
-
-	UAthenaAerialFeedback_C_CustomEvent_1_2_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaAerialFeedback.AthenaAerialFeedback_C.CustomEvent_2_3
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EAthenaGamePhaseStep           GamePhaseStep                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaAerialFeedback_C::CustomEvent_2_3(EAthenaGamePhaseStep GamePhaseStep)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaAerialFeedback.AthenaAerialFeedback_C.CustomEvent_2_3");
-
-	UAthenaAerialFeedback_C_CustomEvent_2_3_Params params;
-	params.GamePhaseStep = GamePhaseStep;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function AthenaAerialFeedback.AthenaAerialFeedback_C.ExecuteUbergraph_AthenaAerialFeedback
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaAerialFeedback_C::ExecuteUbergraph_AthenaAerialFeedback(int EntryPoint)
 {

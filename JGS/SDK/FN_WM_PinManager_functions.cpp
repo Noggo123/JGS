@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function WM_PinManager.WM_PinManager_C.CreateWorldMapPin
 // (Event, Protected, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FString*                TheaterId                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// struct FString*                TheaterId                      (Parm, ZeroConstructor)
 // class AWorldMapPin*            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 class AWorldMapPin* AWM_PinManager_C::CreateWorldMapPin(struct FString* TheaterId)
@@ -72,7 +72,7 @@ void AWM_PinManager_C::ReceiveBeginPlay()
 // Function WM_PinManager.WM_PinManager_C.ExecuteUbergraph_WM_PinManager
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AWM_PinManager_C::ExecuteUbergraph_WM_PinManager(int EntryPoint)
 {

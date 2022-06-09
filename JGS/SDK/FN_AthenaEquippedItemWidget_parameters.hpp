@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,7 @@ namespace SDK
 // Function AthenaEquippedItemWidget.AthenaEquippedItemWidget_C.GetCurrentAmmoText
 struct UAthenaEquippedItemWidget_C_GetCurrentAmmoText_Params
 {
-	int                                                CurrentAmmoCount;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                CurrentAmmoCount;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FText                                       CurrentAmmoText;                                          // (Parm, OutParm)
 };
 
@@ -29,8 +29,8 @@ struct UAthenaEquippedItemWidget_C_UpdateResourceCount_Params
 // Function AthenaEquippedItemWidget.AthenaEquippedItemWidget_C.UpdateCurrentAmmo
 struct UAthenaEquippedItemWidget_C_UpdateCurrentAmmo_Params
 {
-	int                                                LocalCount;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int                                                LocalRemaining;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                LocalCount;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                LocalRemaining;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaEquippedItemWidget.AthenaEquippedItemWidget_C.UpdateAmmoCapacity
@@ -41,7 +41,7 @@ struct UAthenaEquippedItemWidget_C_UpdateAmmoCapacity_Params
 // Function AthenaEquippedItemWidget.AthenaEquippedItemWidget_C.UpdateWidgetColor
 struct UAthenaEquippedItemWidget_C_UpdateWidgetColor_Params
 {
-	bool                                               HasAmmo;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               HasAmmo;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaEquippedItemWidget.AthenaEquippedItemWidget_C.UpdateVisibility
@@ -67,15 +67,15 @@ struct UAthenaEquippedItemWidget_C_Construct_Params
 // Function AthenaEquippedItemWidget.AthenaEquippedItemWidget_C.OnWeaponEquipped
 struct UAthenaEquippedItemWidget_C_OnWeaponEquipped_Params
 {
-	class AFortWeapon*                                 NewWeapon;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class AFortWeapon*                                 PrevWeapon;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AFortWeapon*                                 NewWeapon;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	class AFortWeapon*                                 PrevWeapon;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaEquippedItemWidget.AthenaEquippedItemWidget_C.OnLocalAmmoChanged
 struct UAthenaEquippedItemWidget_C_OnLocalAmmoChanged_Params
 {
-	int                                                LocalCount;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int                                                LocalRemaining;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                LocalCount;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                LocalRemaining;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaEquippedItemWidget.AthenaEquippedItemWidget_C.OnWorldItemsChanged
@@ -91,7 +91,7 @@ struct UAthenaEquippedItemWidget_C_OnBuildingMaterialCycled_Params
 // Function AthenaEquippedItemWidget.AthenaEquippedItemWidget_C.ExecuteUbergraph_AthenaEquippedItemWidget
 struct UAthenaEquippedItemWidget_C_ExecuteUbergraph_AthenaEquippedItemWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

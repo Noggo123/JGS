@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function SubgameSelect.SubgameSelect_C.UpdateHeaderAndFooter
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           HideHeader                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           HideFooter                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           HideHeader                     (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           HideFooter                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void USubgameSelect_C::UpdateHeaderAndFooter(bool HideHeader, bool HideFooter)
 {
@@ -37,7 +37,7 @@ void USubgameSelect_C::UpdateHeaderAndFooter(bool HideHeader, bool HideFooter)
 // Function SubgameSelect.SubgameSelect_C.PopContentWidgetInternal
 // (Event, Protected, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FContentPushState*      State                          (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FContentPushState*      State                          (Parm)
 // class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 class UWidget* USubgameSelect_C::PopContentWidgetInternal(struct FContentPushState* State)
@@ -94,7 +94,7 @@ void USubgameSelect_C::Construct()
 // Function SubgameSelect.SubgameSelect_C.OnEnterState
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// EFortUIState*                  PreviousUIState                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortUIState*                  PreviousUIState                (Parm, ZeroConstructor, IsPlainOldData)
 
 void USubgameSelect_C::OnEnterState(EFortUIState* PreviousUIState)
 {
@@ -114,8 +114,8 @@ void USubgameSelect_C::OnEnterState(EFortUIState* PreviousUIState)
 // Function SubgameSelect.SubgameSelect_C.PushContentWidgetInternal
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UWidget**                Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FContentPushState*      State                          (BlueprintVisible, BlueprintReadOnly, Parm)
+// class UWidget**                Widget                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FContentPushState*      State                          (Parm)
 
 void USubgameSelect_C::PushContentWidgetInternal(class UWidget** Widget, struct FContentPushState* State)
 {
@@ -136,7 +136,7 @@ void USubgameSelect_C::PushContentWidgetInternal(class UWidget** Widget, struct 
 // Function SubgameSelect.SubgameSelect_C.ExecuteUbergraph_SubgameSelect
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void USubgameSelect_C::ExecuteUbergraph_SubgameSelect(int EntryPoint)
 {

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -19,6 +19,12 @@ struct UKeybindWidget_C_ShowHoldBackPlate_Params
 {
 };
 
+// Function KeybindWidget.KeybindWidget_C.SetOpacity
+struct UKeybindWidget_C_SetOpacity_Params
+{
+	float                                              InOpacity;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function KeybindWidget.KeybindWidget_C.Get Bound Action
 struct UKeybindWidget_C_Get_Bound_Action_Params
 {
@@ -28,7 +34,7 @@ struct UKeybindWidget_C_Get_Bound_Action_Params
 // Function KeybindWidget.KeybindWidget_C.Set Brush Size
 struct UKeybindWidget_C_Set_Brush_Size_Params
 {
-	TEnumAsByte<EFortBrushSize>                        Brush_Size;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EFortBrushSize>                        Brush_Size;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function KeybindWidget.KeybindWidget_C.Get Brush Size
@@ -50,7 +56,7 @@ struct UKeybindWidget_C_Update_Params
 // Function KeybindWidget.KeybindWidget_C.PreConstruct
 struct UKeybindWidget_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function KeybindWidget.KeybindWidget_C.UpdateFrameSize
@@ -58,15 +64,10 @@ struct UKeybindWidget_C_UpdateFrameSize_Params
 {
 };
 
-// Function KeybindWidget.KeybindWidget_C.Destruct
-struct UKeybindWidget_C_Destruct_Params
-{
-};
-
 // Function KeybindWidget.KeybindWidget_C.ExecuteUbergraph_KeybindWidget
 struct UKeybindWidget_C_ExecuteUbergraph_KeybindWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

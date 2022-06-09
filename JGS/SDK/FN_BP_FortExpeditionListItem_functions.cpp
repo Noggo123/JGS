@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function BP_FortExpeditionListItem.BP_FortExpeditionListItem_C.Update Bang State
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortAccountItem*        Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortAccountItem*        Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionListItem_C::Update_Bang_State(class UFortAccountItem* Item)
 {
@@ -35,7 +35,7 @@ void UBP_FortExpeditionListItem_C::Update_Bang_State(class UFortAccountItem* Ite
 // Function BP_FortExpeditionListItem.BP_FortExpeditionListItem_C.Set Success Chance
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortExpeditionItem*     Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortExpeditionItem*     Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionListItem_C::Set_Success_Chance(class UFortExpeditionItem* Item)
 {
@@ -55,7 +55,7 @@ void UBP_FortExpeditionListItem_C::Set_Success_Chance(class UFortExpeditionItem*
 // Function BP_FortExpeditionListItem.BP_FortExpeditionListItem_C.Set Vehicle Icon
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortExpeditionItem*     Expedition                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortExpeditionItem*     Expedition                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionListItem_C::Set_Vehicle_Icon(class UFortExpeditionItem* Expedition)
 {
@@ -75,7 +75,7 @@ void UBP_FortExpeditionListItem_C::Set_Vehicle_Icon(class UFortExpeditionItem* E
 // Function BP_FortExpeditionListItem.BP_FortExpeditionListItem_C.Set Expedition Returns Data
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortExpeditionItem*     InputPin                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortExpeditionItem*     InputPin                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionListItem_C::Set_Expedition_Returns_Data(class UFortExpeditionItem* InputPin)
 {
@@ -95,7 +95,7 @@ void UBP_FortExpeditionListItem_C::Set_Expedition_Returns_Data(class UFortExpedi
 // Function BP_FortExpeditionListItem.BP_FortExpeditionListItem_C.Set In Progress State
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortExpeditionItem*     Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortExpeditionItem*     Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionListItem_C::Set_In_Progress_State(class UFortExpeditionItem* Item)
 {
@@ -115,7 +115,7 @@ void UBP_FortExpeditionListItem_C::Set_In_Progress_State(class UFortExpeditionIt
 // Function BP_FortExpeditionListItem.BP_FortExpeditionListItem_C.Set Remaining Expiration Time
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortExpeditionItem*     Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortExpeditionItem*     Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionListItem_C::Set_Remaining_Expiration_Time(class UFortExpeditionItem* Item)
 {
@@ -135,7 +135,7 @@ void UBP_FortExpeditionListItem_C::Set_Remaining_Expiration_Time(class UFortExpe
 // Function BP_FortExpeditionListItem.BP_FortExpeditionListItem_C.Set Rarity
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionListItem_C::Set_Rarity(class UFortItem* Item)
 {
@@ -155,7 +155,7 @@ void UBP_FortExpeditionListItem_C::Set_Rarity(class UFortItem* Item)
 // Function BP_FortExpeditionListItem.BP_FortExpeditionListItem_C.Set Rating
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortExpeditionItem*     Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortExpeditionItem*     Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionListItem_C::Set_Rating(class UFortExpeditionItem* Item)
 {
@@ -175,7 +175,7 @@ void UBP_FortExpeditionListItem_C::Set_Rating(class UFortExpeditionItem* Item)
 // Function BP_FortExpeditionListItem.BP_FortExpeditionListItem_C.Set Rewards
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionListItem_C::Set_Rewards(class UFortItem* Item)
 {
@@ -195,7 +195,7 @@ void UBP_FortExpeditionListItem_C::Set_Rewards(class UFortItem* Item)
 // Function BP_FortExpeditionListItem.BP_FortExpeditionListItem_C.Get Expedition Item Definition
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 // class UFortExpeditionItemDefinition* Item_Def                       (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionListItem_C::Get_Expedition_Item_Definition(class UFortItem* Item, class UFortExpeditionItemDefinition** Item_Def)
@@ -219,7 +219,7 @@ void UBP_FortExpeditionListItem_C::Get_Expedition_Item_Definition(class UFortIte
 // Function BP_FortExpeditionListItem.BP_FortExpeditionListItem_C.Set Name
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionListItem_C::Set_Name(class UFortItem* Item)
 {
@@ -239,7 +239,7 @@ void UBP_FortExpeditionListItem_C::Set_Name(class UFortItem* Item)
 // Function BP_FortExpeditionListItem.BP_FortExpeditionListItem_C.Setup Base Item Data
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortExpeditionItem*     Expedition                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortExpeditionItem*     Expedition                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionListItem_C::Setup_Base_Item_Data(class UFortExpeditionItem* Expedition)
 {
@@ -259,8 +259,8 @@ void UBP_FortExpeditionListItem_C::Setup_Base_Item_Data(class UFortExpeditionIte
 // Function BP_FortExpeditionListItem.BP_FortExpeditionListItem_C.SetData
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject**                InData                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonListView**        OwningList                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject**                InData                         (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonListView**        OwningList                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionListItem_C::SetData(class UObject** InData, class UCommonListView** OwningList)
 {
@@ -332,8 +332,8 @@ void UBP_FortExpeditionListItem_C::OnDeselected()
 // Function BP_FortExpeditionListItem.BP_FortExpeditionListItem_C.BndEvt__InProgressSwitcher_K2Node_ComponentBoundEvent_17_OnActiveWidgetChanged__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UWidget*                 ActiveWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            ActiveWidgetIndex              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidget*                 ActiveWidget                   (Parm, ZeroConstructor, IsPlainOldData)
+// int                            ActiveWidgetIndex              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionListItem_C::BndEvt__InProgressSwitcher_K2Node_ComponentBoundEvent_17_OnActiveWidgetChanged__DelegateSignature(class UWidget* ActiveWidget, int ActiveWidgetIndex)
 {
@@ -371,7 +371,7 @@ void UBP_FortExpeditionListItem_C::OnHovered()
 // Function BP_FortExpeditionListItem.BP_FortExpeditionListItem_C.ExecuteUbergraph_BP_FortExpeditionListItem
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionListItem_C::ExecuteUbergraph_BP_FortExpeditionListItem(int EntryPoint)
 {

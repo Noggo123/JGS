@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -39,19 +37,19 @@ struct FChatChromeMargins
 };
 
 // ScriptStruct SocialTypes.ChatChromeStyle
-// 0x06F8
+// 0x0850
 struct FChatChromeStyle
 {
-	struct FSlateBrush                                 UserListBrush;                                            // 0x0000(0x0078) (Edit)
-	struct FSlateBrush                                 ChatBackgroundBrush;                                      // 0x0078(0x0078) (Edit)
-	struct FSlateBrush                                 ChatEntryBackgroundBrush;                                 // 0x00F0(0x0078) (Edit)
-	struct FSlateBrush                                 ChannelBackgroundBrush;                                   // 0x0168(0x0078) (Edit)
-	struct FSlateBrush                                 TabBackgroundBrush;                                       // 0x01E0(0x0078) (Edit)
-	struct FButtonStyle                                TabSelectorButtonStyle;                                   // 0x0258(0x0238) (Edit)
-	struct FMargin                                     TabOptionPadding;                                         // 0x0490(0x0010) (Edit)
-	struct FMargin                                     TabContentPadding;                                        // 0x04A0(0x0010) (Edit)
-	struct FMargin                                     TabClosePadding;                                          // 0x04B0(0x0010) (Edit)
-	struct FButtonStyle                                UserListButtonStyle;                                      // 0x04C0(0x0238) (Edit)
+	struct FSlateBrush                                 UserListBrush;                                            // 0x0000(0x0090) (Edit)
+	struct FSlateBrush                                 ChatBackgroundBrush;                                      // 0x0090(0x0090) (Edit)
+	struct FSlateBrush                                 ChatEntryBackgroundBrush;                                 // 0x0120(0x0090) (Edit)
+	struct FSlateBrush                                 ChannelBackgroundBrush;                                   // 0x01B0(0x0090) (Edit)
+	struct FSlateBrush                                 TabBackgroundBrush;                                       // 0x0240(0x0090) (Edit)
+	struct FButtonStyle                                TabSelectorButtonStyle;                                   // 0x02D0(0x02A8) (Edit)
+	struct FMargin                                     TabOptionPadding;                                         // 0x0578(0x0010) (Edit)
+	struct FMargin                                     TabContentPadding;                                        // 0x0588(0x0010) (Edit)
+	struct FMargin                                     TabClosePadding;                                          // 0x0598(0x0010) (Edit)
+	struct FButtonStyle                                UserListButtonStyle;                                      // 0x05A8(0x02A8) (Edit)
 };
 
 // ScriptStruct SocialTypes.ChatColorScheme
@@ -79,52 +77,52 @@ struct FChatColorScheme
 };
 
 // ScriptStruct SocialTypes.ChatMarkupStyle
-// 0x0590
+// 0x0670
 struct FChatMarkupStyle
 {
-	struct FButtonStyle                                MarkupButtonStyle;                                        // 0x0000(0x0238) (Edit)
-	struct FTextBlockStyle                             MarkupTextStyle;                                          // 0x0238(0x01C8) (Edit)
-	struct FSlateBrush                                 MarkupBackground;                                         // 0x0400(0x0078) (Edit)
-	struct FSlateColor                                 ButtonColor;                                              // 0x0478(0x0028) (Edit)
-	struct FSlateColor                                 ButtonHoverColor;                                         // 0x04A0(0x0028) (Edit)
-	struct FSlateColor                                 TipColor;                                                 // 0x04C8(0x0028) (Edit)
-	struct FSlateBrush                                 SeperatorBrush;                                           // 0x04F0(0x0078) (Edit)
-	float                                              SeperatorThickness;                                       // 0x0568(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FMargin                                     MarkupPadding;                                            // 0x056C(0x0010) (Edit)
-	struct FMargin                                     ButtonPadding;                                            // 0x057C(0x0010) (Edit)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x058C(0x0004) MISSED OFFSET
+	struct FButtonStyle                                MarkupButtonStyle;                                        // 0x0000(0x02A8) (Edit)
+	struct FTextBlockStyle                             MarkupTextStyle;                                          // 0x02A8(0x0208) (Edit)
+	struct FSlateBrush                                 MarkupBackground;                                         // 0x04B0(0x0090) (Edit)
+	struct FSlateColor                                 ButtonColor;                                              // 0x0540(0x0028) (Edit)
+	struct FSlateColor                                 ButtonHoverColor;                                         // 0x0568(0x0028) (Edit)
+	struct FSlateColor                                 TipColor;                                                 // 0x0590(0x0028) (Edit)
+	struct FSlateBrush                                 SeperatorBrush;                                           // 0x05B8(0x0090) (Edit)
+	float                                              SeperatorThickness;                                       // 0x0648(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FMargin                                     MarkupPadding;                                            // 0x064C(0x0010) (Edit)
+	struct FMargin                                     ButtonPadding;                                            // 0x065C(0x0010) (Edit)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x066C(0x0004) MISSED OFFSET
 };
 
 // ScriptStruct SocialTypes.ChatStyle
-// 0x1170
+// 0x1490
 struct FChatStyle
 {
-	struct FEditableTextBoxStyle                       ChatEntryTextStyle;                                       // 0x0000(0x0728) (Edit)
-	struct FEditableTextBoxStyle                       ChatDisplayTextStyle;                                     // 0x0728(0x0728) (Edit)
-	struct FScrollBoxStyle                             ScrollBorderStyle;                                        // 0x0E50(0x01E8) (Edit)
-	struct FSlateBrush                                 MessageNotificationBrush;                                 // 0x1038(0x0078) (Edit)
-	struct FMargin                                     ChatEntryPadding;                                         // 0x10B0(0x0010) (Edit)
-	float                                              ChatEntryHeight;                                          // 0x10C0(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x10C4(0x0004) MISSED OFFSET
-	struct FSlateBrush                                 ChatMenuBackgroundBrush;                                  // 0x10C8(0x0078) (Edit)
-	struct FMargin                                     FriendActionPadding;                                      // 0x1140(0x0010) (Edit)
-	struct FMargin                                     FriendActionHeaderPadding;                                // 0x1150(0x0010) (Edit)
-	struct FMargin                                     FriendActionStatusMargin;                                 // 0x1160(0x0010) (Edit)
+	struct FEditableTextBoxStyle                       ChatEntryTextStyle;                                       // 0x0000(0x0870) (Edit)
+	struct FEditableTextBoxStyle                       ChatDisplayTextStyle;                                     // 0x0870(0x0870) (Edit)
+	struct FScrollBoxStyle                             ScrollBorderStyle;                                        // 0x10E0(0x0248) (Edit)
+	struct FSlateBrush                                 MessageNotificationBrush;                                 // 0x1328(0x0090) (Edit)
+	struct FMargin                                     ChatEntryPadding;                                         // 0x13B8(0x0010) (Edit)
+	float                                              ChatEntryHeight;                                          // 0x13C8(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x13CC(0x0004) MISSED OFFSET
+	struct FSlateBrush                                 ChatMenuBackgroundBrush;                                  // 0x13D0(0x0090) (Edit)
+	struct FMargin                                     FriendActionPadding;                                      // 0x1460(0x0010) (Edit)
+	struct FMargin                                     FriendActionHeaderPadding;                                // 0x1470(0x0010) (Edit)
+	struct FMargin                                     FriendActionStatusMargin;                                 // 0x1480(0x0010) (Edit)
 };
 
 // ScriptStruct SocialTypes.SocialFontStyle
-// 0x0240
+// 0x02A0
 struct FSocialFontStyle
 {
-	struct FSlateFontInfo                              FontSmall;                                                // 0x0000(0x0058) (Edit)
-	struct FSlateFontInfo                              FontSmallBold;                                            // 0x0058(0x0058) (Edit)
-	struct FSlateFontInfo                              FontNormal;                                               // 0x00B0(0x0058) (Edit)
-	struct FSlateFontInfo                              FontNormalBold;                                           // 0x0108(0x0058) (Edit)
-	struct FSlateFontInfo                              FontLarge;                                                // 0x0160(0x0058) (Edit)
-	struct FSlateFontInfo                              FontLargeBold;                                            // 0x01B8(0x0058) (Edit)
-	struct FLinearColor                                DefaultFontColor;                                         // 0x0210(0x0010) (Edit, IsPlainOldData)
-	struct FLinearColor                                InvertedFontColor;                                        // 0x0220(0x0010) (Edit, IsPlainOldData)
-	struct FLinearColor                                DefaultDullFontColor;                                     // 0x0230(0x0010) (Edit, IsPlainOldData)
+	struct FSlateFontInfo                              FontSmall;                                                // 0x0000(0x0068) (Edit)
+	struct FSlateFontInfo                              FontSmallBold;                                            // 0x0068(0x0068) (Edit)
+	struct FSlateFontInfo                              FontNormal;                                               // 0x00D0(0x0068) (Edit)
+	struct FSlateFontInfo                              FontNormalBold;                                           // 0x0138(0x0068) (Edit)
+	struct FSlateFontInfo                              FontLarge;                                                // 0x01A0(0x0068) (Edit)
+	struct FSlateFontInfo                              FontLargeBold;                                            // 0x0208(0x0068) (Edit)
+	struct FLinearColor                                DefaultFontColor;                                         // 0x0270(0x0010) (Edit, IsPlainOldData)
+	struct FLinearColor                                InvertedFontColor;                                        // 0x0280(0x0010) (Edit, IsPlainOldData)
+	struct FLinearColor                                DefaultDullFontColor;                                     // 0x0290(0x0010) (Edit, IsPlainOldData)
 };
 
 // ScriptStruct SocialTypes.SocialListMargins
@@ -170,44 +168,43 @@ struct FSocialListMargins
 };
 
 // ScriptStruct SocialTypes.SocialListStyle
-// 0x2268
+// 0x2870
 struct FSocialListStyle
 {
-	struct FButtonStyle                                GlobalChatButtonStyle;                                    // 0x0000(0x0238) (Edit)
-	struct FSlateBrush                                 GlobalChatIcon;                                           // 0x0238(0x0078) (Edit)
-	struct FButtonStyle                                FriendItemButtonStyle;                                    // 0x02B0(0x0238) (Edit)
-	struct FButtonStyle                                ConfirmButtonStyle;                                       // 0x04E8(0x0238) (Edit)
-	struct FButtonStyle                                CancelButtonStyle;                                        // 0x0720(0x0238) (Edit)
-	struct FSlateColor                                 ButtonContentColor;                                       // 0x0958(0x0028) (Edit)
-	struct FSlateColor                                 ButtonHoverContentColor;                                  // 0x0980(0x0028) (Edit)
-	struct FSlateBrush                                 ActionMenuArrowBrush;                                     // 0x09A8(0x0078) (Edit)
-	struct FSlateBrush                                 ActionMenuArrowRightBrush;                                // 0x0A20(0x0078) (Edit)
-	struct FSlateColor                                 ActionMenuBackgroundColor;                                // 0x0A98(0x0028) (Edit)
-	struct FSlateBrush                                 ToolTipArrowBrush;                                        // 0x0AC0(0x0078) (Edit)
-	struct FButtonStyle                                BackButtonStyle;                                          // 0x0B38(0x0238) (Edit)
-	struct FButtonStyle                                HeaderButtonStyle;                                        // 0x0D70(0x0238) (Edit)
-	struct FButtonStyle                                FriendListActionButtonStyle;                              // 0x0FA8(0x0238) (Edit)
-	struct FSlateBrush                                 AddFriendButtonContentBrush;                              // 0x11E0(0x0078) (Edit)
-	struct FSlateBrush                                 StatusIconBrush;                                          // 0x1258(0x0078) (Edit)
-	struct FSlateBrush                                 PCIconBrush;                                              // 0x12D0(0x0078) (Edit)
-	struct FSlateBrush                                 ConsoleIconBrush;                                         // 0x1348(0x0078) (Edit)
-	struct FSlateBrush                                 FacebookIconBrush;                                        // 0x13C0(0x0078) (Edit)
-	struct FSlateBrush                                 EpicIconBrush;                                            // 0x1438(0x0078) (Edit)
-	struct FSlateBrush                                 FriendImageBrush;                                         // 0x14B0(0x0078) (Edit)
-	struct FSlateBrush                                 OfflineBrush;                                             // 0x1528(0x0078) (Edit)
-	struct FSlateBrush                                 OnlineBrush;                                              // 0x15A0(0x0078) (Edit)
-	struct FSlateBrush                                 AwayBrush;                                                // 0x1618(0x0078) (Edit)
-	struct FSlateBrush                                 SpectateBrush;                                            // 0x1690(0x0078) (Edit)
-	struct FSlateBrush                                 FriendsContainerBackground;                               // 0x1708(0x0078) (Edit)
-	struct FSlateBrush                                 FriendsListBackground;                                    // 0x1780(0x0078) (Edit)
-	struct FEditableTextBoxStyle                       AddFriendEditableTextStyle;                               // 0x17F8(0x0728) (Edit)
-	struct FSlateBrush                                 BackBrush;                                                // 0x1F20(0x0078) (Edit)
-	struct FSlateBrush                                 SelectedOptionBrush;                                      // 0x1F98(0x0078) (Edit)
-	struct FSlateBrush                                 SettingsBrush;                                            // 0x2010(0x0078) (Edit)
-	struct FSlateBrush                                 SeperatorBrush;                                           // 0x2088(0x0078) (Edit)
-	struct FSlateBrush                                 PresenceSeperatorBrush;                                   // 0x2100(0x0078) (Edit)
-	struct FSlateBrush                                 FontSizeBrush;                                            // 0x2178(0x0078) (Edit)
-	struct FSlateBrush                                 SearchBrush;                                              // 0x21F0(0x0078) (Edit)
+	struct FButtonStyle                                GlobalChatButtonStyle;                                    // 0x0000(0x02A8) (Edit)
+	struct FSlateBrush                                 GlobalChatIcon;                                           // 0x02A8(0x0090) (Edit)
+	struct FButtonStyle                                FriendItemButtonStyle;                                    // 0x0338(0x02A8) (Edit)
+	struct FButtonStyle                                ConfirmButtonStyle;                                       // 0x05E0(0x02A8) (Edit)
+	struct FButtonStyle                                CancelButtonStyle;                                        // 0x0888(0x02A8) (Edit)
+	struct FSlateColor                                 ButtonContentColor;                                       // 0x0B30(0x0028) (Edit)
+	struct FSlateColor                                 ButtonHoverContentColor;                                  // 0x0B58(0x0028) (Edit)
+	struct FSlateBrush                                 ActionMenuArrowBrush;                                     // 0x0B80(0x0090) (Edit)
+	struct FSlateBrush                                 ActionMenuArrowRightBrush;                                // 0x0C10(0x0090) (Edit)
+	struct FSlateColor                                 ActionMenuBackgroundColor;                                // 0x0CA0(0x0028) (Edit)
+	struct FSlateBrush                                 ToolTipArrowBrush;                                        // 0x0CC8(0x0090) (Edit)
+	struct FButtonStyle                                BackButtonStyle;                                          // 0x0D58(0x02A8) (Edit)
+	struct FButtonStyle                                HeaderButtonStyle;                                        // 0x1000(0x02A8) (Edit)
+	struct FButtonStyle                                FriendListActionButtonStyle;                              // 0x12A8(0x02A8) (Edit)
+	struct FSlateBrush                                 AddFriendButtonContentBrush;                              // 0x1550(0x0090) (Edit)
+	struct FSlateBrush                                 StatusIconBrush;                                          // 0x15E0(0x0090) (Edit)
+	struct FSlateBrush                                 PCIconBrush;                                              // 0x1670(0x0090) (Edit)
+	struct FSlateBrush                                 ConsoleIconBrush;                                         // 0x1700(0x0090) (Edit)
+	struct FSlateBrush                                 EpicIconBrush;                                            // 0x1790(0x0090) (Edit)
+	struct FSlateBrush                                 FriendImageBrush;                                         // 0x1820(0x0090) (Edit)
+	struct FSlateBrush                                 OfflineBrush;                                             // 0x18B0(0x0090) (Edit)
+	struct FSlateBrush                                 OnlineBrush;                                              // 0x1940(0x0090) (Edit)
+	struct FSlateBrush                                 AwayBrush;                                                // 0x19D0(0x0090) (Edit)
+	struct FSlateBrush                                 SpectateBrush;                                            // 0x1A60(0x0090) (Edit)
+	struct FSlateBrush                                 FriendsContainerBackground;                               // 0x1AF0(0x0090) (Edit)
+	struct FSlateBrush                                 FriendsListBackground;                                    // 0x1B80(0x0090) (Edit)
+	struct FEditableTextBoxStyle                       AddFriendEditableTextStyle;                               // 0x1C10(0x0870) (Edit)
+	struct FSlateBrush                                 BackBrush;                                                // 0x2480(0x0090) (Edit)
+	struct FSlateBrush                                 SelectedOptionBrush;                                      // 0x2510(0x0090) (Edit)
+	struct FSlateBrush                                 SettingsBrush;                                            // 0x25A0(0x0090) (Edit)
+	struct FSlateBrush                                 SeperatorBrush;                                           // 0x2630(0x0090) (Edit)
+	struct FSlateBrush                                 PresenceSeperatorBrush;                                   // 0x26C0(0x0090) (Edit)
+	struct FSlateBrush                                 FontSizeBrush;                                            // 0x2750(0x0090) (Edit)
+	struct FSlateBrush                                 SearchBrush;                                              // 0x27E0(0x0090) (Edit)
 };
 
 // ScriptStruct SocialTypes.ProfanityData
@@ -225,33 +222,33 @@ struct FProfanityData
 // 0x0048
 struct FSocialSoundSchema
 {
-	struct FSlateSound                                 MessageReceivedSound;                                     // 0x0000(0x0018) (Edit)
-	struct FSlateSound                                 PartyInviteReceivedSound;                                 // 0x0018(0x0018) (Edit)
-	struct FSlateSound                                 FriendInviteReceivedSound;                                // 0x0030(0x0018) (Edit)
+	struct FSlateSound                                 MessageReceivedSound;                                     // 0x0000(0x0018) (Edit, BlueprintVisible)
+	struct FSlateSound                                 PartyInviteReceivedSound;                                 // 0x0018(0x0018) (Edit, BlueprintVisible)
+	struct FSlateSound                                 FriendInviteReceivedSound;                                // 0x0030(0x0018) (Edit, BlueprintVisible)
 };
 
 // ScriptStruct SocialTypes.SocialStyle
-// 0x5DD8
+// 0x6DE0
 struct FSocialStyle
 {
-	struct FScrollBarStyle                             ScrollBarStyle;                                           // 0x0000(0x0440) (Edit)
-	struct FButtonStyle                                ActionButtonStyle;                                        // 0x0440(0x0238) (Edit)
-	struct FSocialFontStyle                            SmallFontStyle;                                           // 0x0678(0x0240) (Edit)
-	struct FSocialFontStyle                            NormalFontStyle;                                          // 0x08B8(0x0240) (Edit)
-	struct FSocialFontStyle                            LargeFontStyle;                                           // 0x0AF8(0x0240) (Edit)
-	struct FSocialFontStyle                            ChatFontStyle;                                            // 0x0D38(0x0240) (Edit)
-	struct FCheckBoxStyle                              CheckBoxStyle;                                            // 0x0F78(0x04F0) (Edit)
-	struct FCheckBoxStyle                              RadioBoxStyle;                                            // 0x1468(0x04F0) (Edit)
-	struct FSocialListStyle                            SocialListStyle;                                          // 0x1958(0x2268) (Edit)
-	struct FSocialListMargins                          SocialListMargins;                                        // 0x3BC0(0x0200) (Edit)
-	struct FChatStyle                                  ChatStyle;                                                // 0x3DC0(0x1170) (Edit)
-	struct FChatColorScheme                            ChatColorScheme;                                          // 0x4F30(0x0120) (Edit)
-	struct FChatChromeStyle                            ChatChromeStyle;                                          // 0x5050(0x06F8) (Edit)
-	struct FChatChromeMargins                          ChatChromeMargins;                                        // 0x5748(0x0064) (Edit)
-	struct FChatChromeColorScheme                      ChatChromeColorScheme;                                    // 0x57AC(0x0050) (Edit)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x57FC(0x0004) MISSED OFFSET
-	struct FChatMarkupStyle                            ChatMarkupStyle;                                          // 0x5800(0x0590) (Edit)
-	struct FSocialSoundSchema                          SoundSchema;                                              // 0x5D90(0x0048) (Edit)
+	struct FScrollBarStyle                             ScrollBarStyle;                                           // 0x0000(0x0518) (Edit)
+	struct FButtonStyle                                ActionButtonStyle;                                        // 0x0518(0x02A8) (Edit)
+	struct FSocialFontStyle                            SmallFontStyle;                                           // 0x07C0(0x02A0) (Edit)
+	struct FSocialFontStyle                            NormalFontStyle;                                          // 0x0A60(0x02A0) (Edit)
+	struct FSocialFontStyle                            LargeFontStyle;                                           // 0x0D00(0x02A0) (Edit)
+	struct FSocialFontStyle                            ChatFontStyle;                                            // 0x0FA0(0x02A0) (Edit)
+	struct FCheckBoxStyle                              CheckBoxStyle;                                            // 0x1240(0x05E0) (Edit)
+	struct FCheckBoxStyle                              RadioBoxStyle;                                            // 0x1820(0x05E0) (Edit)
+	struct FSocialListStyle                            SocialListStyle;                                          // 0x1E00(0x2870) (Edit)
+	struct FSocialListMargins                          SocialListMargins;                                        // 0x4670(0x0200) (Edit)
+	struct FChatStyle                                  ChatStyle;                                                // 0x4870(0x1490) (Edit)
+	struct FChatColorScheme                            ChatColorScheme;                                          // 0x5D00(0x0120) (Edit)
+	struct FChatChromeStyle                            ChatChromeStyle;                                          // 0x5E20(0x0850) (Edit)
+	struct FChatChromeMargins                          ChatChromeMargins;                                        // 0x6670(0x0064) (Edit)
+	struct FChatChromeColorScheme                      ChatChromeColorScheme;                                    // 0x66D4(0x0050) (Edit)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x6724(0x0004) MISSED OFFSET
+	struct FChatMarkupStyle                            ChatMarkupStyle;                                          // 0x6728(0x0670) (Edit)
+	struct FSocialSoundSchema                          SoundSchema;                                              // 0x6D98(0x0048) (Edit)
 };
 
 }

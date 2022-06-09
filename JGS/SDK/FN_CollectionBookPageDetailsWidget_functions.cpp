@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,9 +15,9 @@ namespace SDK
 // Function CollectionBookPageDetailsWidget.CollectionBookPageDetailsWidget_C.OnPageProgressionUpdated
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// int*                           TotalFilledSlots               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int*                           TotalSlots                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortCollectionBookState*      State                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           TotalFilledSlots               (Parm, ZeroConstructor, IsPlainOldData)
+// int*                           TotalSlots                     (Parm, ZeroConstructor, IsPlainOldData)
+// EFortCollectionBookState*      State                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBookPageDetailsWidget_C::OnPageProgressionUpdated(int* TotalFilledSlots, int* TotalSlots, EFortCollectionBookState* State)
 {
@@ -39,7 +39,7 @@ void UCollectionBookPageDetailsWidget_C::OnPageProgressionUpdated(int* TotalFill
 // Function CollectionBookPageDetailsWidget.CollectionBookPageDetailsWidget_C.ExecuteUbergraph_CollectionBookPageDetailsWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBookPageDetailsWidget_C::ExecuteUbergraph_CollectionBookPageDetailsWidget(int EntryPoint)
 {

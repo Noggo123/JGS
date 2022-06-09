@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,9 +15,9 @@ namespace SDK
 // Function ItemManagementMulchModeBox.ItemManagementMulchModeBox_C.HandleLeaveInventory
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemManagementMulchModeBox_C::HandleLeaveInventory(bool* Passthrough)
+void UItemManagementMulchModeBox_C::HandleLeaveInventory(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementMulchModeBox.ItemManagementMulchModeBox_C.HandleLeaveInventory");
 
@@ -29,15 +29,15 @@ void UItemManagementMulchModeBox_C::HandleLeaveInventory(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function ItemManagementMulchModeBox.ItemManagementMulchModeBox_C.HandleCursorModeChanging
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           IsEnabled                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IsEnabled                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementMulchModeBox_C::HandleCursorModeChanging(bool IsEnabled)
 {
@@ -96,9 +96,9 @@ void UItemManagementMulchModeBox_C::HandleInfo(bool* Pass_Through)
 // Function ItemManagementMulchModeBox.ItemManagementMulchModeBox_C.HandleBack
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemManagementMulchModeBox_C::HandleBack(bool* Passthrough)
+void UItemManagementMulchModeBox_C::HandleBack(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementMulchModeBox.ItemManagementMulchModeBox_C.HandleBack");
 
@@ -110,8 +110,8 @@ void UItemManagementMulchModeBox_C::HandleBack(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -186,7 +186,7 @@ void UItemManagementMulchModeBox_C::Destruct()
 // Function ItemManagementMulchModeBox.ItemManagementMulchModeBox_C.ExecuteUbergraph_ItemManagementMulchModeBox
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementMulchModeBox_C::ExecuteUbergraph_ItemManagementMulchModeBox(int EntryPoint)
 {

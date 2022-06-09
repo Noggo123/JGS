@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function IconTextButton.IconTextButton_C.SetTextInternal
 // (Private, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   InButtonText                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   InButtonText                   (Parm)
 
 void UIconTextButton_C::SetTextInternal(const struct FText& InButtonText)
 {
@@ -69,7 +69,7 @@ void UIconTextButton_C::UpdateTextStyle()
 // Function IconTextButton.IconTextButton_C.SetContentAlignment
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EHorizontalAlignment> ContentAlignment               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EHorizontalAlignment> ContentAlignment               (Parm, ZeroConstructor, IsPlainOldData)
 
 void UIconTextButton_C::SetContentAlignment(TEnumAsByte<EHorizontalAlignment> ContentAlignment)
 {
@@ -106,7 +106,7 @@ void UIconTextButton_C::UpdateContentAlignment()
 // Function IconTextButton.IconTextButton_C.SetMouseKeyboardStyle
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UClass*                  ControllerInputStyle           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UClass*                  ControllerInputStyle           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UIconTextButton_C::SetMouseKeyboardStyle(class UClass* ControllerInputStyle)
 {
@@ -126,7 +126,7 @@ void UIconTextButton_C::SetMouseKeyboardStyle(class UClass* ControllerInputStyle
 // Function IconTextButton.IconTextButton_C.UpdateStyle
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           UsingGamepad                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           UsingGamepad                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UIconTextButton_C::UpdateStyle(bool UsingGamepad)
 {
@@ -163,7 +163,7 @@ void UIconTextButton_C::UpdateText()
 // Function IconTextButton.IconTextButton_C.SetControllerStyle
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UClass*                  ControllerInputStyle           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UClass*                  ControllerInputStyle           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UIconTextButton_C::SetControllerStyle(class UClass* ControllerInputStyle)
 {
@@ -183,7 +183,7 @@ void UIconTextButton_C::SetControllerStyle(class UClass* ControllerInputStyle)
 // Function IconTextButton.IconTextButton_C.UpdateTextAndStyle
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bUsingGamepad                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bUsingGamepad                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UIconTextButton_C::UpdateTextAndStyle(bool bUsingGamepad)
 {
@@ -220,7 +220,7 @@ void UIconTextButton_C::InitializeButton()
 // Function IconTextButton.IconTextButton_C.Set Icon
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSlateBrush             IconBrush                      (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FSlateBrush             IconBrush                      (Parm)
 
 void UIconTextButton_C::Set_Icon(const struct FSlateBrush& IconBrush)
 {
@@ -240,7 +240,7 @@ void UIconTextButton_C::Set_Icon(const struct FSlateBrush& IconBrush)
 // Function IconTextButton.IconTextButton_C.Set Text
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   ButtonText                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   ButtonText                     (Parm)
 
 void UIconTextButton_C::Set_Text(const struct FText& ButtonText)
 {
@@ -277,7 +277,7 @@ void UIconTextButton_C::OnCurrentTextStyleChanged()
 // Function IconTextButton.IconTextButton_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UIconTextButton_C::PreConstruct(bool* IsDesignTime)
 {
@@ -297,7 +297,7 @@ void UIconTextButton_C::PreConstruct(bool* IsDesignTime)
 // Function IconTextButton.IconTextButton_C.SetTabLabelInfo
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FFortTabButtonLabelInfo TabLabelInfo                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortTabButtonLabelInfo TabLabelInfo                   (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UIconTextButton_C::SetTabLabelInfo(const struct FFortTabButtonLabelInfo& TabLabelInfo)
 {
@@ -317,7 +317,7 @@ void UIconTextButton_C::SetTabLabelInfo(const struct FFortTabButtonLabelInfo& Ta
 // Function IconTextButton.IconTextButton_C.BndEvt__CommonActionWidgetAction_K2Node_ComponentBoundEvent_0_OnInputMethodChanged__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// bool                           bUsingGamepad                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bUsingGamepad                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UIconTextButton_C::BndEvt__CommonActionWidgetAction_K2Node_ComponentBoundEvent_0_OnInputMethodChanged__DelegateSignature(bool bUsingGamepad)
 {
@@ -337,7 +337,7 @@ void UIconTextButton_C::BndEvt__CommonActionWidgetAction_K2Node_ComponentBoundEv
 // Function IconTextButton.IconTextButton_C.OnTriggeredInputActionChanged
 // (Event, Protected, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FDataTableRowHandle*    NewTriggeredAction             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FDataTableRowHandle*    NewTriggeredAction             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UIconTextButton_C::OnTriggeredInputActionChanged(struct FDataTableRowHandle* NewTriggeredAction)
 {
@@ -357,7 +357,7 @@ void UIconTextButton_C::OnTriggeredInputActionChanged(struct FDataTableRowHandle
 // Function IconTextButton.IconTextButton_C.OnActionProgress
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// float*                         HeldPercent                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float*                         HeldPercent                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UIconTextButton_C::OnActionProgress(float* HeldPercent)
 {
@@ -428,7 +428,7 @@ void UIconTextButton_C::Destruct()
 // Function IconTextButton.IconTextButton_C.ExecuteUbergraph_IconTextButton
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UIconTextButton_C::ExecuteUbergraph_IconTextButton(int EntryPoint)
 {

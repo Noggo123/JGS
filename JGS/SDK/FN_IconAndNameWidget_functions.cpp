@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function IconAndNameWidget.IconAndNameWidget_C.Set Border Color
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FLinearColor            Value                          (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+// struct FLinearColor            Value                          (Parm, IsPlainOldData)
 
 void UIconAndNameWidget_C::Set_Border_Color(const struct FLinearColor& Value)
 {
@@ -69,7 +69,7 @@ void UIconAndNameWidget_C::Setup_Border()
 // Function IconAndNameWidget.IconAndNameWidget_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UIconAndNameWidget_C::PreConstruct(bool* IsDesignTime)
 {
@@ -89,7 +89,7 @@ void UIconAndNameWidget_C::PreConstruct(bool* IsDesignTime)
 // Function IconAndNameWidget.IconAndNameWidget_C.ExecuteUbergraph_IconAndNameWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UIconAndNameWidget_C::ExecuteUbergraph_IconAndNameWidget(int EntryPoint)
 {

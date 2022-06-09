@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,39 +12,17 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function Feedback.Feedback_C.SetupAutoFillPlayerFields
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FText                   KillersName                    (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FText                   SpectatingName                 (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UFeedback_C::SetupAutoFillPlayerFields(const struct FText& KillersName, const struct FText& SpectatingName)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Feedback.Feedback_C.SetupAutoFillPlayerFields");
-
-	UFeedback_C_SetupAutoFillPlayerFields_Params params;
-	params.KillersName = KillersName;
-	params.SpectatingName = SpectatingName;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function Feedback.Feedback_C.Setup For Reporting Player
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   PlayerName                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   Player_Name                    (Parm)
 
-void UFeedback_C::Setup_For_Reporting_Player(const struct FText& PlayerName)
+void UFeedback_C::Setup_For_Reporting_Player(const struct FText& Player_Name)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Feedback.Feedback_C.Setup For Reporting Player");
 
 	UFeedback_C_Setup_For_Reporting_Player_Params params;
-	params.PlayerName = PlayerName;
+	params.Player_Name = Player_Name;
 
 	auto flags = fn->FunctionFlags;
 
@@ -126,6 +104,40 @@ void UFeedback_C::BindDelegates()
 }
 
 
+// Function Feedback.Feedback_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UFeedback_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Feedback.Feedback_C.Construct");
+
+	UFeedback_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function Feedback.Feedback_C.OnInitiateDebugInfoForFeedbackComplete
+// (Event, Protected, BlueprintEvent)
+
+void UFeedback_C::OnInitiateDebugInfoForFeedbackComplete()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Feedback.Feedback_C.OnInitiateDebugInfoForFeedbackComplete");
+
+	UFeedback_C_OnInitiateDebugInfoForFeedbackComplete_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function Feedback.Feedback_C.OnBeginIntro
 // (Event, Public, BlueprintEvent)
 
@@ -146,7 +158,7 @@ void UFeedback_C::OnBeginIntro()
 // Function Feedback.Feedback_C.BndEvt__CancelButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFeedback_C::BndEvt__CancelButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -166,7 +178,7 @@ void UFeedback_C::BndEvt__CancelButton_K2Node_ComponentBoundEvent_0_CommonButton
 // Function Feedback.Feedback_C.BndEvt__SendButton_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFeedback_C::BndEvt__SendButton_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -186,7 +198,7 @@ void UFeedback_C::BndEvt__SendButton_K2Node_ComponentBoundEvent_1_CommonButtonCl
 // Function Feedback.Feedback_C.HandleTextChanged
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Text                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FText                   Text                           (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UFeedback_C::HandleTextChanged(const struct FText& Text)
 {
@@ -220,122 +232,10 @@ void UFeedback_C::OnActivated()
 }
 
 
-// Function Feedback.Feedback_C.ForceSelect_PopulateName_Killer_Button
-// (BlueprintCallable, BlueprintEvent)
-
-void UFeedback_C::ForceSelect_PopulateName_Killer_Button()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Feedback.Feedback_C.ForceSelect_PopulateName_Killer_Button");
-
-	UFeedback_C_ForceSelect_PopulateName_Killer_Button_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Feedback.Feedback_C.ForceSelect_PopulateName_Spectator_Button
-// (BlueprintCallable, BlueprintEvent)
-
-void UFeedback_C::ForceSelect_PopulateName_Spectator_Button()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Feedback.Feedback_C.ForceSelect_PopulateName_Spectator_Button");
-
-	UFeedback_C_ForceSelect_PopulateName_Spectator_Button_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Feedback.Feedback_C.BndEvt__PopulateName_Spectator_Button_K2Node_ComponentBoundEvent_629_CommonSelectedStateChanged__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           Selected                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UFeedback_C::BndEvt__PopulateName_Spectator_Button_K2Node_ComponentBoundEvent_629_CommonSelectedStateChanged__DelegateSignature(class UCommonButton* Button, bool Selected)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Feedback.Feedback_C.BndEvt__PopulateName_Spectator_Button_K2Node_ComponentBoundEvent_629_CommonSelectedStateChanged__DelegateSignature");
-
-	UFeedback_C_BndEvt__PopulateName_Spectator_Button_K2Node_ComponentBoundEvent_629_CommonSelectedStateChanged__DelegateSignature_Params params;
-	params.Button = Button;
-	params.Selected = Selected;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Feedback.Feedback_C.BndEvt__PopulateName_Killer_Button_K2Node_ComponentBoundEvent_664_CommonSelectedStateChanged__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           Selected                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UFeedback_C::BndEvt__PopulateName_Killer_Button_K2Node_ComponentBoundEvent_664_CommonSelectedStateChanged__DelegateSignature(class UCommonButton* Button, bool Selected)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Feedback.Feedback_C.BndEvt__PopulateName_Killer_Button_K2Node_ComponentBoundEvent_664_CommonSelectedStateChanged__DelegateSignature");
-
-	UFeedback_C_BndEvt__PopulateName_Killer_Button_K2Node_ComponentBoundEvent_664_CommonSelectedStateChanged__DelegateSignature_Params params;
-	params.Button = Button;
-	params.Selected = Selected;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Feedback.Feedback_C.OnInitiateDebugInfoForFeedbackComplete
-// (Event, Protected, BlueprintEvent)
-
-void UFeedback_C::OnInitiateDebugInfoForFeedbackComplete()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Feedback.Feedback_C.OnInitiateDebugInfoForFeedbackComplete");
-
-	UFeedback_C_OnInitiateDebugInfoForFeedbackComplete_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function Feedback.Feedback_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UFeedback_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Feedback.Feedback_C.Construct");
-
-	UFeedback_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function Feedback.Feedback_C.ExecuteUbergraph_Feedback
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFeedback_C::ExecuteUbergraph_Feedback(int EntryPoint)
 {

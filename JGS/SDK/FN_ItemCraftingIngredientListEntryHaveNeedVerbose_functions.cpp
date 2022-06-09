@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,7 +49,7 @@ void UItemCraftingIngredientListEntryHaveNeedVerbose_C::DoDesignTimeRandomizatio
 // Function ItemCraftingIngredientListEntryHaveNeedVerbose.ItemCraftingIngredientListEntryHaveNeedVerbose_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemCraftingIngredientListEntryHaveNeedVerbose_C::PreConstruct(bool* IsDesignTime)
 {
@@ -69,7 +69,7 @@ void UItemCraftingIngredientListEntryHaveNeedVerbose_C::PreConstruct(bool* IsDes
 // Function ItemCraftingIngredientListEntryHaveNeedVerbose.ItemCraftingIngredientListEntryHaveNeedVerbose_C.HandleDifferentItemOrQuantitySetBP
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool*                          IsBeingReset                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsBeingReset                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemCraftingIngredientListEntryHaveNeedVerbose_C::HandleDifferentItemOrQuantitySetBP(bool* IsBeingReset)
 {
@@ -89,7 +89,7 @@ void UItemCraftingIngredientListEntryHaveNeedVerbose_C::HandleDifferentItemOrQua
 // Function ItemCraftingIngredientListEntryHaveNeedVerbose.ItemCraftingIngredientListEntryHaveNeedVerbose_C.ExecuteUbergraph_ItemCraftingIngredientListEntryHaveNeedVerbose
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemCraftingIngredientListEntryHaveNeedVerbose_C::ExecuteUbergraph_ItemCraftingIngredientListEntryHaveNeedVerbose(int EntryPoint)
 {

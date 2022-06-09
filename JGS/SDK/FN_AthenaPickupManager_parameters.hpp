@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -24,6 +24,24 @@ struct UAthenaPickupManager_C_RefreshCounts_Params
 {
 };
 
+// Function AthenaPickupManager.AthenaPickupManager_C.HandleItemPickedUp
+struct UAthenaPickupManager_C_HandleItemPickedUp_Params
+{
+	class UFortWorldItem*                              NewItem;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Count;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaPickupManager.AthenaPickupManager_C.HandleMessageExpired
+struct UAthenaPickupManager_C_HandleMessageExpired_Params
+{
+	class UFortUIMessageItemWidget*                    Message_Item;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaPickupManager.AthenaPickupManager_C.TryGetNextItem
+struct UAthenaPickupManager_C_TryGetNextItem_Params
+{
+};
+
 // Function AthenaPickupManager.AthenaPickupManager_C.Construct
 struct UAthenaPickupManager_C_Construct_Params
 {
@@ -37,8 +55,8 @@ struct UAthenaPickupManager_C_HandleWorldItemsChanged_Params
 // Function AthenaPickupManager.AthenaPickupManager_C.HandleWorldItemListChanged
 struct UAthenaPickupManager_C_HandleWorldItemListChanged_Params
 {
-	TArray<class UFortWorldItem*>                      ItemsAdded;                                               // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-	TArray<class UFortWorldItem*>                      ItemsRemoved;                                             // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<class UFortWorldItem*>                      ItemsAdded;                                               // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<class UFortWorldItem*>                      ItemsRemoved;                                             // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function AthenaPickupManager.AthenaPickupManager_C.Destruct
@@ -46,22 +64,10 @@ struct UAthenaPickupManager_C_Destruct_Params
 {
 };
 
-// Function AthenaPickupManager.AthenaPickupManager_C.HandleBuildingMaterialChanged
-struct UAthenaPickupManager_C_HandleBuildingMaterialChanged_Params
-{
-};
-
-// Function AthenaPickupManager.AthenaPickupManager_C.HandleItemPickup
-struct UAthenaPickupManager_C_HandleItemPickup_Params
-{
-	class UFortWorldItem*                              NewItem;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int                                                Count;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function AthenaPickupManager.AthenaPickupManager_C.ExecuteUbergraph_AthenaPickupManager
 struct UAthenaPickupManager_C_ExecuteUbergraph_AthenaPickupManager_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

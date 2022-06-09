@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function OutpostScreenStormShieldContent.OutpostScreenStormShieldContent_C.EnablePowerBarChunk
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UImage*                  inImage                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UImage*                  inImage                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenStormShieldContent_C::EnablePowerBarChunk(class UImage* inImage)
 {
@@ -52,9 +52,9 @@ void UOutpostScreenStormShieldContent_C::CenterActiveButton()
 // Function OutpostScreenStormShieldContent.OutpostScreenStormShieldContent_C.HandleBack
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UOutpostScreenStormShieldContent_C::HandleBack(bool* Passthrough)
+void UOutpostScreenStormShieldContent_C::HandleBack(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function OutpostScreenStormShieldContent.OutpostScreenStormShieldContent_C.HandleBack");
 
@@ -66,8 +66,8 @@ void UOutpostScreenStormShieldContent_C::HandleBack(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -91,7 +91,7 @@ void UOutpostScreenStormShieldContent_C::AddInputHandlers()
 // Function OutpostScreenStormShieldContent.OutpostScreenStormShieldContent_C.SetButtonState
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           enabled_                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           enabled_                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenStormShieldContent_C::SetButtonState(bool enabled_)
 {
@@ -149,7 +149,7 @@ void UOutpostScreenStormShieldContent_C::UpdateGetHelpButton()
 // Function OutpostScreenStormShieldContent.OutpostScreenStormShieldContent_C.SetExpandShieldText
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   NewExpandText                  (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   NewExpandText                  (Parm)
 
 void UOutpostScreenStormShieldContent_C::SetExpandShieldText(const struct FText& NewExpandText)
 {
@@ -186,8 +186,8 @@ void UOutpostScreenStormShieldContent_C::Update_ExpandShieldText()
 // Function OutpostScreenStormShieldContent.OutpostScreenStormShieldContent_C.SetCoreBuilding
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortOutpostBuilding*    NewCoreBuilding                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UOutpostScreenStormShield_C* Parent_Widget                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortOutpostBuilding*    NewCoreBuilding                (Parm, ZeroConstructor, IsPlainOldData)
+// class UOutpostScreenStormShield_C* Parent_Widget                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenStormShieldContent_C::SetCoreBuilding(class AFortOutpostBuilding* NewCoreBuilding, class UOutpostScreenStormShield_C* Parent_Widget)
 {
@@ -306,8 +306,8 @@ void UOutpostScreenStormShieldContent_C::isPlayerAlone(bool* isAlone)
 // Function OutpostScreenStormShieldContent.OutpostScreenStormShieldContent_C.ResrouceProgress_Wood
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            NewParam                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            NewParam1                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            NewParam                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            NewParam1                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenStormShieldContent_C::ResrouceProgress_Wood(int NewParam, int NewParam1)
 {
@@ -425,7 +425,7 @@ void UOutpostScreenStormShieldContent_C::UpdateEnabledStates()
 // Function OutpostScreenStormShieldContent.OutpostScreenStormShieldContent_C.BndEvt__Upgrade_Button_K2Node_ComponentBoundEvent_158_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenStormShieldContent_C::BndEvt__Upgrade_Button_K2Node_ComponentBoundEvent_158_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -462,8 +462,8 @@ void UOutpostScreenStormShieldContent_C::OutpostIsDefined_Event()
 // Function OutpostScreenStormShieldContent.OutpostScreenStormShieldContent_C.BndEvt__AllowFriendsOfFriendsButton_K2Node_ComponentBoundEvent_243_CommonSelectedStateChanged__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           Selected                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Selected                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenStormShieldContent_C::BndEvt__AllowFriendsOfFriendsButton_K2Node_ComponentBoundEvent_243_CommonSelectedStateChanged__DelegateSignature(class UCommonButton* Button, bool Selected)
 {
@@ -484,7 +484,7 @@ void UOutpostScreenStormShieldContent_C::BndEvt__AllowFriendsOfFriendsButton_K2N
 // Function OutpostScreenStormShieldContent.OutpostScreenStormShieldContent_C.ExecuteUbergraph_OutpostScreenStormShieldContent
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenStormShieldContent_C::ExecuteUbergraph_OutpostScreenStormShieldContent(int EntryPoint)
 {

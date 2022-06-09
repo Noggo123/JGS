@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function HUD-TeamMemberInfo.HUD-TeamMemberInfo_C.SetHealth
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          Value                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Value                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_TeamMemberInfo_C::SetHealth(float Value)
 {
@@ -35,7 +35,7 @@ void UHUD_TeamMemberInfo_C::SetHealth(float Value)
 // Function HUD-TeamMemberInfo.HUD-TeamMemberInfo_C.Update
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     UpdatedMemberInfo              (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortTeamMemberInfo     UpdatedMemberInfo              (Parm)
 
 void UHUD_TeamMemberInfo_C::Update(const struct FFortTeamMemberInfo& UpdatedMemberInfo)
 {
@@ -72,7 +72,7 @@ void UHUD_TeamMemberInfo_C::Construct()
 // Function HUD-TeamMemberInfo.HUD-TeamMemberInfo_C.ExecuteUbergraph_HUD-TeamMemberInfo
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_TeamMemberInfo_C::ExecuteUbergraph_HUD_TeamMemberInfo(int EntryPoint)
 {

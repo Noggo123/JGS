@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,7 @@ namespace SDK
 // Function HeroSquadBonuses.HeroSquadBonuses_C.OnSquadSlotSelected
 struct UHeroSquadBonuses_C_OnSquadSlotSelected_Params
 {
-	int                                                SquadSlotIndex;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                SquadSlotIndex;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

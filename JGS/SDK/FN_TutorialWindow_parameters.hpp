@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,19 +17,19 @@ namespace SDK
 // Function TutorialWindow.TutorialWindow_C.SetDescription
 struct UTutorialWindow_C_SetDescription_Params
 {
-	struct FText                                       Description;                                              // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FText                                       Description;                                              // (Parm)
 };
 
 // Function TutorialWindow.TutorialWindow_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature
 struct UTutorialWindow_C_BndEvt__IconTextButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TutorialWindow.TutorialWindow_C.ExecuteUbergraph_TutorialWindow
 struct UTutorialWindow_C_ExecuteUbergraph_TutorialWindow_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TutorialWindow.TutorialWindow_C.OnRequestRetry__DelegateSignature

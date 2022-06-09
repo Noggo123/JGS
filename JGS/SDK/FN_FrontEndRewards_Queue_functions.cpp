@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,7 +49,7 @@ void UFrontEndRewards_Queue_C::StartInitAnimation()
 // Function FrontEndRewards_Queue.FrontEndRewards_Queue_C.SlideIcon
 // (Private, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class URewardsIcon_C*          Icon                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class URewardsIcon_C*          Icon                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_Queue_C::SlideIcon(class URewardsIcon_C* Icon)
 {
@@ -103,7 +103,7 @@ void UFrontEndRewards_Queue_C::TickIconSlide()
 // Function FrontEndRewards_Queue.FrontEndRewards_Queue_C.HandleIconHideAnimationFinished
 // (Private, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class URewardsIcon_C*          Icon                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class URewardsIcon_C*          Icon                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_Queue_C::HandleIconHideAnimationFinished(class URewardsIcon_C* Icon)
 {
@@ -223,8 +223,8 @@ void UFrontEndRewards_Queue_C::DequeueReward(class UFortRewardNotificationData**
 // Function FrontEndRewards_Queue.FrontEndRewards_Queue_C.QueueReward
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortRewardNotificationData* RewardItem                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortRewardNotificationData* RewardItem                     (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 // class URewardsIcon_C*          OutIcon                        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_Queue_C::QueueReward(class UFortRewardNotificationData* RewardItem, bool IsDesignTime, class URewardsIcon_C** OutIcon)
@@ -249,7 +249,7 @@ void UFrontEndRewards_Queue_C::QueueReward(class UFortRewardNotificationData* Re
 // Function FrontEndRewards_Queue.FrontEndRewards_Queue_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_Queue_C::PreConstruct(bool* IsDesignTime)
 {
@@ -269,7 +269,7 @@ void UFrontEndRewards_Queue_C::PreConstruct(bool* IsDesignTime)
 // Function FrontEndRewards_Queue.FrontEndRewards_Queue_C.ExecuteUbergraph_FrontEndRewards_Queue
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_Queue_C::ExecuteUbergraph_FrontEndRewards_Queue(int EntryPoint)
 {

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,10 +15,10 @@ namespace SDK
 // Function HordeWaveAlertWidget.HordeWaveAlertWidget_C.OnWaveStarted
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   LevelText                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// int                            Level                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   WaveText                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// int                            WaveNum                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   LevelText                      (ConstParm, Parm, OutParm, ReferenceParm)
+// int                            Level                          (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   WaveText                       (ConstParm, Parm, OutParm, ReferenceParm)
+// int                            WaveNum                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHordeWaveAlertWidget_C::OnWaveStarted(const struct FText& LevelText, int Level, const struct FText& WaveText, int WaveNum)
 {
@@ -41,8 +41,8 @@ void UHordeWaveAlertWidget_C::OnWaveStarted(const struct FText& LevelText, int L
 // Function HordeWaveAlertWidget.HordeWaveAlertWidget_C.OnWaveCompleted
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Wave                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// TArray<struct FFortItemInstanceQuantityPair> Rewards                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// int                            Wave                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// TArray<struct FFortItemInstanceQuantityPair> Rewards                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UHordeWaveAlertWidget_C::OnWaveCompleted(int Wave, TArray<struct FFortItemInstanceQuantityPair> Rewards)
 {
@@ -63,7 +63,7 @@ void UHordeWaveAlertWidget_C::OnWaveCompleted(int Wave, TArray<struct FFortItemI
 // Function HordeWaveAlertWidget.HordeWaveAlertWidget_C.OnHordeTierInitialized_Event_0_1
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FFortItemInstanceQuantityPair> Items                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<struct FFortItemInstanceQuantityPair> Items                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UHordeWaveAlertWidget_C::OnHordeTierInitialized_Event_0_1(TArray<struct FFortItemInstanceQuantityPair> Items)
 {
@@ -83,7 +83,7 @@ void UHordeWaveAlertWidget_C::OnHordeTierInitialized_Event_0_1(TArray<struct FFo
 // Function HordeWaveAlertWidget.HordeWaveAlertWidget_C.OnWaveModifiersAdded
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UFortGameplayModifierItemDefinition*> Modifiers                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UFortGameplayModifierItemDefinition*> Modifiers                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UHordeWaveAlertWidget_C::OnWaveModifiersAdded(TArray<class UFortGameplayModifierItemDefinition*> Modifiers)
 {
@@ -205,7 +205,7 @@ void UHordeWaveAlertWidget_C::OnAppearanceDisappearanceAnimComplete_Quick()
 // Function HordeWaveAlertWidget.HordeWaveAlertWidget_C.ExecuteUbergraph_HordeWaveAlertWidget
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHordeWaveAlertWidget_C::ExecuteUbergraph_HordeWaveAlertWidget(int EntryPoint)
 {

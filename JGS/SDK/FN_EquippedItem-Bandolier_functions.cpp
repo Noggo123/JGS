@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function EquippedItem-Bandolier.EquippedItem-Bandolier_C.UpdateCapacity
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Capacity                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UFortAmmoItemDefinition* AmmoData                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Capacity                       (Parm, ZeroConstructor, IsPlainOldData)
+// class UFortAmmoItemDefinition* AmmoData                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UEquippedItem_Bandolier_C::UpdateCapacity(int Capacity, class UFortAmmoItemDefinition* AmmoData)
 {
@@ -37,8 +37,8 @@ void UEquippedItem_Bandolier_C::UpdateCapacity(int Capacity, class UFortAmmoItem
 // Function EquippedItem-Bandolier.EquippedItem-Bandolier_C.UpdateCurrent
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Current                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UFortAmmoItemDefinition* AmmoData                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Current                        (Parm, ZeroConstructor, IsPlainOldData)
+// class UFortAmmoItemDefinition* AmmoData                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UEquippedItem_Bandolier_C::UpdateCurrent(int Current, class UFortAmmoItemDefinition* AmmoData)
 {

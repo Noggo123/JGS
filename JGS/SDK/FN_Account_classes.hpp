@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class Account.OnlineAccountCommon
-// 0x0878 (0x08A0 - 0x0028)
+// 0x07D8 (0x0800 - 0x0028)
 class UOnlineAccountCommon : public UObject
 {
 public:
@@ -29,27 +27,11 @@ public:
 	unsigned char                                      UnknownData02[0x1];                                       // 0x0071(0x0001) MISSED OFFSET
 	bool                                               bUseGameSubAccessRedemption;                              // 0x0072(0x0001) (ZeroConstructor, Config, IsPlainOldData)
 	bool                                               bAllowHomeSharingAccess;                                  // 0x0073(0x0001) (ZeroConstructor, Config, IsPlainOldData)
-	unsigned char                                      UnknownData03[0x82C];                                     // 0x0074(0x082C) MISSED OFFSET
+	unsigned char                                      UnknownData03[0x78C];                                     // 0x0074(0x078C) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindClass("Class Account.OnlineAccountCommon");
-		return ptr;
-	}
-
-};
-
-
-// Class Account.ExternalAccountProvider
-// 0x0010 (0x0038 - 0x0028)
-class UExternalAccountProvider : public UObject
-{
-public:
-	TArray<struct FExternalAccountServiceConfig>       Services;                                                 // 0x0028(0x0010) (ZeroConstructor, Config)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Account.ExternalAccountProvider");
 		return ptr;
 	}
 

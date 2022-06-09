@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -155,14 +153,14 @@ public:
 
 
 // Class PhysXVehicles.TireConfig
-// 0x0020 (0x0050 - 0x0030)
+// 0x0020 (0x0048 - 0x0028)
 class UTireConfig : public UDataAsset
 {
 public:
-	float                                              FrictionScale;                                            // 0x0030(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0034(0x0004) MISSED OFFSET
-	TArray<struct FTireConfigMaterialFriction>         TireFrictionScales;                                       // 0x0038(0x0010) (Edit, ZeroConstructor)
-	unsigned char                                      UnknownData01[0x8];                                       // 0x0048(0x0008) MISSED OFFSET
+	float                                              FrictionScale;                                            // 0x0028(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x002C(0x0004) MISSED OFFSET
+	TArray<struct FTireConfigMaterialFriction>         TireFrictionScales;                                       // 0x0030(0x0010) (Edit, ZeroConstructor)
+	unsigned char                                      UnknownData01[0x8];                                       // 0x0040(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -174,13 +172,13 @@ public:
 
 
 // Class PhysXVehicles.VehicleAnimInstance
-// 0x0540 (0x0910 - 0x03D0)
+// 0x0498 (0x07F0 - 0x0358)
 class UVehicleAnimInstance : public UAnimInstance
 {
 public:
-	unsigned char                                      UnknownData00[0x530];                                     // 0x03D0(0x0530) MISSED OFFSET
-	class UWheeledVehicleMovementComponent*            WheeledVehicleMovementComponent;                          // 0x0900(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x8];                                       // 0x0908(0x0008) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x488];                                     // 0x0358(0x0488) MISSED OFFSET
+	class UWheeledVehicleMovementComponent*            WheeledVehicleMovementComponent;                          // 0x07E0(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x8];                                       // 0x07E8(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -194,7 +192,7 @@ public:
 
 
 // Class PhysXVehicles.VehicleWheel
-// 0x00C8 (0x00F0 - 0x0028)
+// 0x00C0 (0x00E8 - 0x0028)
 class UVehicleWheel : public UObject
 {
 public:
@@ -220,24 +218,21 @@ public:
 	float                                              SuspensionMaxDrop;                                        // 0x007C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	float                                              SuspensionNaturalFrequency;                               // 0x0080(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	float                                              SuspensionDampingRatio;                                   // 0x0084(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EWheelSweepType>                       SweepType;                                                // 0x0088(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x3];                                       // 0x0089(0x0003) MISSED OFFSET
-	float                                              MaxBrakeTorque;                                           // 0x008C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              MaxHandBrakeTorque;                                       // 0x0090(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData03[0x4];                                       // 0x0094(0x0004) MISSED OFFSET
-	class UWheeledVehicleMovementComponent*            VehicleSim;                                               // 0x0098(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
-	int                                                WheelIndex;                                               // 0x00A0(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
-	float                                              DebugLongSlip;                                            // 0x00A4(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
-	float                                              DebugLatSlip;                                             // 0x00A8(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
-	float                                              DebugNormalizedTireLoad;                                  // 0x00AC(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
-	unsigned char                                      UnknownData04[0x4];                                       // 0x00B0(0x0004) MISSED OFFSET
-	float                                              DebugWheelTorque;                                         // 0x00B4(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
-	float                                              DebugLongForce;                                           // 0x00B8(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
-	float                                              DebugLatForce;                                            // 0x00BC(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
-	struct FVector                                     Location;                                                 // 0x00C0(0x000C) (Transient, IsPlainOldData)
-	struct FVector                                     OldLocation;                                              // 0x00CC(0x000C) (Transient, IsPlainOldData)
-	struct FVector                                     Velocity;                                                 // 0x00D8(0x000C) (Transient, IsPlainOldData)
-	unsigned char                                      UnknownData05[0xC];                                       // 0x00E4(0x000C) MISSED OFFSET
+	float                                              MaxBrakeTorque;                                           // 0x0088(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              MaxHandBrakeTorque;                                       // 0x008C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	class UWheeledVehicleMovementComponent*            VehicleSim;                                               // 0x0090(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
+	int                                                WheelIndex;                                               // 0x0098(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
+	float                                              DebugLongSlip;                                            // 0x009C(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
+	float                                              DebugLatSlip;                                             // 0x00A0(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
+	float                                              DebugNormalizedTireLoad;                                  // 0x00A4(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x4];                                       // 0x00A8(0x0004) MISSED OFFSET
+	float                                              DebugWheelTorque;                                         // 0x00AC(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
+	float                                              DebugLongForce;                                           // 0x00B0(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
+	float                                              DebugLatForce;                                            // 0x00B4(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
+	struct FVector                                     Location;                                                 // 0x00B8(0x000C) (Transient, IsPlainOldData)
+	struct FVector                                     OldLocation;                                              // 0x00C4(0x000C) (Transient, IsPlainOldData)
+	struct FVector                                     Velocity;                                                 // 0x00D0(0x000C) (Transient, IsPlainOldData)
+	unsigned char                                      UnknownData03[0xC];                                       // 0x00DC(0x000C) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -246,7 +241,6 @@ public:
 	}
 
 
-	bool IsInAir();
 	float GetSuspensionOffset();
 	float GetSteerAngle();
 	float GetRotationAngle();
@@ -254,12 +248,12 @@ public:
 
 
 // Class PhysXVehicles.WheeledVehicle
-// 0x0010 (0x03D8 - 0x03C8)
+// 0x0010 (0x03F8 - 0x03E8)
 class AWheeledVehicle : public APawn
 {
 public:
-	class USkeletalMeshComponent*                      Mesh;                                                     // 0x03C8(0x0008) (Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData)
-	class UWheeledVehicleMovementComponent*            VehicleMovement;                                          // 0x03D0(0x0008) (Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData)
+	class USkeletalMeshComponent*                      Mesh;                                                     // 0x03E8(0x0008) (Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData)
+	class UWheeledVehicleMovementComponent*            VehicleMovement;                                          // 0x03F0(0x0008) (Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

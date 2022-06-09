@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,11 +17,16 @@ namespace SDK
 // Function AthenaHitPointBar.AthenaHitPointBar_C.UpdateDBNOState
 struct UAthenaHitPointBar_C_UpdateDBNOState_Params
 {
-	bool                                               bIsDBNO;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bIsDBNO;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaHitPointBar.AthenaHitPointBar_C.UpdateHealthType
 struct UAthenaHitPointBar_C_UpdateHealthType_Params
+{
+};
+
+// Function AthenaHitPointBar.AthenaHitPointBar_C.UpdateVolatileForUpdate
+struct UAthenaHitPointBar_C_UpdateVolatileForUpdate_Params
 {
 };
 
@@ -40,6 +45,12 @@ struct UAthenaHitPointBar_C_Initialize_Bar_Params
 {
 };
 
+// Function AthenaHitPointBar.AthenaHitPointBar_C.UpdateCurrentValueWithoutReason
+struct UAthenaHitPointBar_C_UpdateCurrentValueWithoutReason_Params
+{
+	float                                              Current;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function AthenaHitPointBar.AthenaHitPointBar_C.Update Fill Bar
 struct UAthenaHitPointBar_C_Update_Fill_Bar_Params
 {
@@ -48,14 +59,20 @@ struct UAthenaHitPointBar_C_Update_Fill_Bar_Params
 // Function AthenaHitPointBar.AthenaHitPointBar_C.UpdateCurrentValue
 struct UAthenaHitPointBar_C_UpdateCurrentValue_Params
 {
-	float                                              Current;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	EFortHitPointModificationReason                    Reason;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Current;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	EFortHitPointModificationReason                    Reason;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaHitPointBar.AthenaHitPointBar_C.UpdateMaxValue
 struct UAthenaHitPointBar_C_UpdateMaxValue_Params
 {
-	float                                              Max;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Max;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaHitPointBar.AthenaHitPointBar_C.PreConstruct
+struct UAthenaHitPointBar_C_PreConstruct_Params
+{
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaHitPointBar.AthenaHitPointBar_C.Construct
@@ -63,40 +80,17 @@ struct UAthenaHitPointBar_C_Construct_Params
 {
 };
 
-// Function AthenaHitPointBar.AthenaHitPointBar_C.PreConstruct
-struct UAthenaHitPointBar_C_PreConstruct_Params
+// Function AthenaHitPointBar.AthenaHitPointBar_C.Tick
+struct UAthenaHitPointBar_C_Tick_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function AthenaHitPointBar.AthenaHitPointBar_C.Destruct
-struct UAthenaHitPointBar_C_Destruct_Params
-{
-};
-
-// Function AthenaHitPointBar.AthenaHitPointBar_C.OnMaxValueChanged
-struct UAthenaHitPointBar_C_OnMaxValueChanged_Params
-{
-	float*                                             Value;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function AthenaHitPointBar.AthenaHitPointBar_C.OnValueChangedWithReason
-struct UAthenaHitPointBar_C_OnValueChangedWithReason_Params
-{
-	float*                                             Value;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	EFortHitPointModificationReason*                   Reason;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function AthenaHitPointBar.AthenaHitPointBar_C.OnDBNOStateChanged
-struct UAthenaHitPointBar_C_OnDBNOStateChanged_Params
-{
-	bool*                                              IsDBNO;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FGeometry*                                  MyGeometry;                                               // (Parm, IsPlainOldData)
+	float*                                             InDeltaTime;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaHitPointBar.AthenaHitPointBar_C.ExecuteUbergraph_AthenaHitPointBar
 struct UAthenaHitPointBar_C_ExecuteUbergraph_AthenaHitPointBar_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

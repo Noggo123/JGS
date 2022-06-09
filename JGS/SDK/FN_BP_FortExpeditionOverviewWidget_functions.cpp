@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,16 +12,16 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.Get Mcp Relative Utc Now
+// Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.Get Utc Now Offset
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FDateTime               UtcNow                         (Parm, OutParm)
+// struct FTimespan               ReturnValue                    (Parm, OutParm, ReturnParm)
 
-void UBP_FortExpeditionOverviewWidget_C::Get_Mcp_Relative_Utc_Now(struct FDateTime* UtcNow)
+struct FTimespan UBP_FortExpeditionOverviewWidget_C::Get_Utc_Now_Offset()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.Get Mcp Relative Utc Now");
+	static auto fn = UObject::FindObject<UFunction>("Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.Get Utc Now Offset");
 
-	UBP_FortExpeditionOverviewWidget_C_Get_Mcp_Relative_Utc_Now_Params params;
+	UBP_FortExpeditionOverviewWidget_C_Get_Utc_Now_Offset_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -29,15 +29,14 @@ void UBP_FortExpeditionOverviewWidget_C::Get_Mcp_Relative_Utc_Now(struct FDateTi
 
 	fn->FunctionFlags = flags;
 
-	if (UtcNow != nullptr)
-		*UtcNow = params.UtcNow;
+	return params.ReturnValue;
 }
 
 
 // Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.Set List Sort Type
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortExpeditionListSort        InSortType                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortExpeditionListSort        InSortType                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionOverviewWidget_C::Set_List_Sort_Type(EFortExpeditionListSort InSortType)
 {
@@ -57,7 +56,7 @@ void UBP_FortExpeditionOverviewWidget_C::Set_List_Sort_Type(EFortExpeditionListS
 // Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.Should Disable Build Expedition Action
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UFortExpeditionItem*     Expedition                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortExpeditionItem*     Expedition                     (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           Disable                        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionOverviewWidget_C::Should_Disable_Build_Expedition_Action(class UFortExpeditionItem* Expedition, bool* Disable)
@@ -81,7 +80,7 @@ void UBP_FortExpeditionOverviewWidget_C::Should_Disable_Build_Expedition_Action(
 // Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.Try to Build Expedition
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortExpeditionItem*     Expedition                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortExpeditionItem*     Expedition                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionOverviewWidget_C::Try_to_Build_Expedition(class UFortExpeditionItem* Expedition)
 {
@@ -101,7 +100,7 @@ void UBP_FortExpeditionOverviewWidget_C::Try_to_Build_Expedition(class UFortExpe
 // Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.Try to Abandon Expedition
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortExpeditionItem*     Expedition                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortExpeditionItem*     Expedition                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionOverviewWidget_C::Try_to_Abandon_Expedition(class UFortExpeditionItem* Expedition)
 {
@@ -121,7 +120,7 @@ void UBP_FortExpeditionOverviewWidget_C::Try_to_Abandon_Expedition(class UFortEx
 // Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.Update Active Input For Selected Item
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortExpeditionItem*     InputObject                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortExpeditionItem*     InputObject                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionOverviewWidget_C::Update_Active_Input_For_Selected_Item(class UFortExpeditionItem* InputObject)
 {
@@ -175,9 +174,9 @@ void UBP_FortExpeditionOverviewWidget_C::Update_List_View_Area()
 // Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.HandleCollectExpeditionAction
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UBP_FortExpeditionOverviewWidget_C::HandleCollectExpeditionAction(bool* Passthrough)
+void UBP_FortExpeditionOverviewWidget_C::HandleCollectExpeditionAction(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.HandleCollectExpeditionAction");
 
@@ -189,17 +188,17 @@ void UBP_FortExpeditionOverviewWidget_C::HandleCollectExpeditionAction(bool* Pas
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.HandleAbandonExpeditionAction
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UBP_FortExpeditionOverviewWidget_C::HandleAbandonExpeditionAction(bool* Passthrough)
+void UBP_FortExpeditionOverviewWidget_C::HandleAbandonExpeditionAction(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.HandleAbandonExpeditionAction");
 
@@ -211,17 +210,17 @@ void UBP_FortExpeditionOverviewWidget_C::HandleAbandonExpeditionAction(bool* Pas
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.HandleBuildExpeditionAction
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UBP_FortExpeditionOverviewWidget_C::HandleBuildExpeditionAction(bool* Passthrough)
+void UBP_FortExpeditionOverviewWidget_C::HandleBuildExpeditionAction(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.HandleBuildExpeditionAction");
 
@@ -233,15 +232,15 @@ void UBP_FortExpeditionOverviewWidget_C::HandleBuildExpeditionAction(bool* Passt
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.Determine Active Input Action
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortExpeditionItem*     InItem                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortExpeditionItem*     InItem                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionOverviewWidget_C::Determine_Active_Input_Action(class UFortExpeditionItem* InItem)
 {
@@ -278,7 +277,7 @@ void UBP_FortExpeditionOverviewWidget_C::Hide_All_Input_Actions()
 // Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.Set Current Tab Name
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionOverviewWidget_C::Set_Current_Tab_Name(const struct FName& TabId)
 {
@@ -332,7 +331,7 @@ void UBP_FortExpeditionOverviewWidget_C::FireCollectCompletedExpedition()
 // Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.Setup Expedition Details Widget
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortExpeditionItem*     Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortExpeditionItem*     Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionOverviewWidget_C::Setup_Expedition_Details_Widget(class UFortExpeditionItem* Item)
 {
@@ -369,7 +368,7 @@ void UBP_FortExpeditionOverviewWidget_C::Construct()
 // Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.OnExpeditionTabSelected
 // (Event, Protected, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FName*                  TabNameID                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FName*                  TabNameID                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
 void UBP_FortExpeditionOverviewWidget_C::OnExpeditionTabSelected(struct FName* TabNameID)
 {
@@ -406,8 +405,8 @@ void UBP_FortExpeditionOverviewWidget_C::HandleAbandonExpedition()
 // Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.BndEvt__ExpeditionTabList_K2Node_ComponentBoundEvent_10_OnTabButtonCreated__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionOverviewWidget_C::BndEvt__ExpeditionTabList_K2Node_ComponentBoundEvent_10_OnTabButtonCreated__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton)
 {
@@ -462,7 +461,7 @@ void UBP_FortExpeditionOverviewWidget_C::OnExpeditionOverviewRefresh()
 // Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.BndEvt__ExpeditionListView_K2Node_ComponentBoundEvent_3_OnExpeditionListItemSelected__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UFortExpeditionItem*     Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortExpeditionItem*     Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionOverviewWidget_C::BndEvt__ExpeditionListView_K2Node_ComponentBoundEvent_3_OnExpeditionListItemSelected__DelegateSignature(class UFortExpeditionItem* Item)
 {
@@ -499,7 +498,7 @@ void UBP_FortExpeditionOverviewWidget_C::HandleOnListViewRefreshed()
 // Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.BndEvt__ExpeditionListView_K2Node_ComponentBoundEvent_12_OnItemClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UObject*                 Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionOverviewWidget_C::BndEvt__ExpeditionListView_K2Node_ComponentBoundEvent_12_OnItemClicked__DelegateSignature(class UObject* Item)
 {
@@ -519,7 +518,7 @@ void UBP_FortExpeditionOverviewWidget_C::BndEvt__ExpeditionListView_K2Node_Compo
 // Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.BndEvt__ExpeditionListView_K2Node_ComponentBoundEvent_38_OnItemHovered__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UObject*                 Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionOverviewWidget_C::BndEvt__ExpeditionListView_K2Node_ComponentBoundEvent_38_OnItemHovered__DelegateSignature(class UObject* Item)
 {
@@ -539,7 +538,7 @@ void UBP_FortExpeditionOverviewWidget_C::BndEvt__ExpeditionListView_K2Node_Compo
 // Function BP_FortExpeditionOverviewWidget.BP_FortExpeditionOverviewWidget_C.ExecuteUbergraph_BP_FortExpeditionOverviewWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionOverviewWidget_C::ExecuteUbergraph_BP_FortExpeditionOverviewWidget(int EntryPoint)
 {

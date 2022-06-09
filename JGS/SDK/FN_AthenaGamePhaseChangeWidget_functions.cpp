@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,37 +12,17 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function AthenaGamePhaseChangeWidget.AthenaGamePhaseChangeWidget_C.PlayIntroAnimation
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EAthenaGamePhaseStep           Step                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaGamePhaseChangeWidget_C::PlayIntroAnimation(EAthenaGamePhaseStep Step)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaGamePhaseChangeWidget.AthenaGamePhaseChangeWidget_C.PlayIntroAnimation");
-
-	UAthenaGamePhaseChangeWidget_C_PlayIntroAnimation_Params params;
-	params.Step = Step;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function AthenaGamePhaseChangeWidget.AthenaGamePhaseChangeWidget_C.PlayGamePhaseAlertSound
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EAthenaGamePhaseStep           Step                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EAthenaGamePhaseStep           Index                          (Parm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaGamePhaseChangeWidget_C::PlayGamePhaseAlertSound(EAthenaGamePhaseStep Step)
+void UAthenaGamePhaseChangeWidget_C::PlayGamePhaseAlertSound(EAthenaGamePhaseStep Index)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaGamePhaseChangeWidget.AthenaGamePhaseChangeWidget_C.PlayGamePhaseAlertSound");
 
 	UAthenaGamePhaseChangeWidget_C_PlayGamePhaseAlertSound_Params params;
-	params.Step = Step;
+	params.Index = Index;
 
 	auto flags = fn->FunctionFlags;
 
@@ -55,9 +35,9 @@ void UAthenaGamePhaseChangeWidget_C::PlayGamePhaseAlertSound(EAthenaGamePhaseSte
 // Function AthenaGamePhaseChangeWidget.AthenaGamePhaseChangeWidget_C.UpdateMessaging
 // (Event, Protected, HasOutParms, BlueprintEvent)
 // Parameters:
-// EAthenaGamePhaseStep*          Step                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText*                  MESSAGE                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FText*                  TimeText                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// EAthenaGamePhaseStep*          Step                           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText*                  MESSAGE                        (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FText*                  TimeText                       (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UAthenaGamePhaseChangeWidget_C::UpdateMessaging(EAthenaGamePhaseStep* Step, struct FText* MESSAGE, struct FText* TimeText)
 {
@@ -79,7 +59,7 @@ void UAthenaGamePhaseChangeWidget_C::UpdateMessaging(EAthenaGamePhaseStep* Step,
 // Function AthenaGamePhaseChangeWidget.AthenaGamePhaseChangeWidget_C.OnAnimationFinished
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation**       Animation                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidgetAnimation**       Animation                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaGamePhaseChangeWidget_C::OnAnimationFinished(class UWidgetAnimation** Animation)
 {
@@ -99,7 +79,7 @@ void UAthenaGamePhaseChangeWidget_C::OnAnimationFinished(class UWidgetAnimation*
 // Function AthenaGamePhaseChangeWidget.AthenaGamePhaseChangeWidget_C.GamePhaseStepChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// EAthenaGamePhaseStep*          Step                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EAthenaGamePhaseStep*          Step                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaGamePhaseChangeWidget_C::GamePhaseStepChanged(EAthenaGamePhaseStep* Step)
 {
@@ -119,7 +99,7 @@ void UAthenaGamePhaseChangeWidget_C::GamePhaseStepChanged(EAthenaGamePhaseStep* 
 // Function AthenaGamePhaseChangeWidget.AthenaGamePhaseChangeWidget_C.ExecuteUbergraph_AthenaGamePhaseChangeWidget
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaGamePhaseChangeWidget_C::ExecuteUbergraph_AthenaGamePhaseChangeWidget(int EntryPoint)
 {

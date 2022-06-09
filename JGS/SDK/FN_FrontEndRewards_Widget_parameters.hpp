@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,7 +22,7 @@ struct UFrontEndRewards_Widget_C_HandleOnMissionRewardsClaimFailed_Params
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.DebugPrintChoiceReward
 struct UFrontEndRewards_Widget_C_DebugPrintChoiceReward_Params
 {
-	class UObject*                                     Object;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UObject*                                     Object;                                                   // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.SafePop
@@ -38,7 +38,7 @@ struct UFrontEndRewards_Widget_C_TriggerUpdateWhenDone_Params
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HandleOnMissionAlertRewardsClaimed
 struct UFrontEndRewards_Widget_C_HandleOnMissionAlertRewardsClaimed_Params
 {
-	TArray<struct FFortItemInstanceQuantityPair>       Rewards;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<struct FFortItemInstanceQuantityPair>       Rewards;                                                  // (Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.ClaimMissionAlertRewards
@@ -59,13 +59,13 @@ struct UFrontEndRewards_Widget_C_InitRewardsQueue_Params
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.InitializeRewardsData
 struct UFrontEndRewards_Widget_C_InitializeRewardsData_Params
 {
-	struct FFrontEndRewards_Definition                 FrontEndRewards_Definition;                               // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FFrontEndRewards_Definition                 FrontEndRewards_Definition;                               // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.InitAdditionalRewards
 struct UFrontEndRewards_Widget_C_InitAdditionalRewards_Params
 {
-	struct FFrontEndRewards_Definition                 Definition;                                               // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FFrontEndRewards_Definition                 Definition;                                               // (Parm)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HandleBorderShown
@@ -116,7 +116,7 @@ struct UFrontEndRewards_Widget_C_OpenReward_Params
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.PopulateChoiceRewardsWidgetFromCardList
 struct UFrontEndRewards_Widget_C_PopulateChoiceRewardsWidgetFromCardList_Params
 {
-	TArray<class URewards_ItemCard_C*>                 Cards;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<class URewards_ItemCard_C*>                 Cards;                                                    // (Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HandleCurrentRewardTransitionOutComplete
@@ -137,36 +137,36 @@ struct UFrontEndRewards_Widget_C_InitSubWidgets_Params
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HandleOnMissionRewardsClaimed
 struct UFrontEndRewards_Widget_C_HandleOnMissionRewardsClaimed_Params
 {
-	TArray<struct FFortItemInstanceQuantityPair>       Rewards;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<struct FFortItemInstanceQuantityPair>       Rewards;                                                  // (Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.PopulateListRewardsWidgetFromCardList
 struct UFrontEndRewards_Widget_C_PopulateListRewardsWidgetFromCardList_Params
 {
-	TArray<class URewards_ItemCard_C*>                 Cards;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<class URewards_ItemCard_C*>                 Cards;                                                    // (Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HandleOnCollectionBookRewardsClaimed
 struct UFrontEndRewards_Widget_C_HandleOnCollectionBookRewardsClaimed_Params
 {
-	struct FFortCollectionBookRewards                  RewardRequested;                                          // (BlueprintVisible, BlueprintReadOnly, Parm)
-	bool                                               Success;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	TArray<struct FFortItemInstanceQuantityPair>       ActualRewards;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	struct FFortCollectionBookRewards                  RewardRequested;                                          // (Parm)
+	bool                                               Success;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	TArray<struct FFortItemInstanceQuantityPair>       ActualRewards;                                            // (Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HandleOnQuestRewardsClaimed
 struct UFrontEndRewards_Widget_C_HandleOnQuestRewardsClaimed_Params
 {
-	class UFortQuestItem*                              Quest;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	TArray<struct FFortItemInstanceQuantityPair>       Rewards;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	class UFortQuestItem*                              Quest;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	TArray<struct FFortItemInstanceQuantityPair>       Rewards;                                                  // (Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.ClaimCollectionBookChoiceReward
 struct UFrontEndRewards_Widget_C_ClaimCollectionBookChoiceReward_Params
 {
-	class UFortRewardNotificationData*                 NotificationData;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int                                                SelectionIndex;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UFortItem*                                   Item;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortRewardNotificationData*                 NotificationData;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                SelectionIndex;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.ClaimCollectionBookRewards
@@ -217,51 +217,51 @@ struct UFrontEndRewards_Widget_C_ClaimMissionRewards_Params
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.CreateCardsFromItemInstanceQuantityList
 struct UFrontEndRewards_Widget_C_CreateCardsFromItemInstanceQuantityList_Params
 {
-	TArray<struct FFortItemInstanceQuantityPair>       Items;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<struct FFortItemInstanceQuantityPair>       Items;                                                    // (Parm, OutParm, ZeroConstructor, ReferenceParm)
 	TArray<class URewards_ItemCard_C*>                 Cards;                                                    // (Parm, OutParm, ZeroConstructor)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.CreateCardsFromItemQuantityList
 struct UFrontEndRewards_Widget_C_CreateCardsFromItemQuantityList_Params
 {
-	TArray<struct FFortItemQuantityPair>               Items;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<struct FFortItemQuantityPair>               Items;                                                    // (Parm, OutParm, ZeroConstructor, ReferenceParm)
 	TArray<class URewards_ItemCard_C*>                 Cards;                                                    // (Parm, OutParm, ZeroConstructor)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.CreateCardsFromItemList
 struct UFrontEndRewards_Widget_C_CreateCardsFromItemList_Params
 {
-	TArray<class UFortItem*>                           Items;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-	TArray<TEnumAsByte<EFortInventoryType>>            ItemInventoryTypeList;                                    // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<class UFortItem*>                           Items;                                                    // (Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<TEnumAsByte<EFortInventoryType>>            ItemInventoryTypeList;                                    // (Parm, OutParm, ZeroConstructor, ReferenceParm)
 	TArray<class URewards_ItemCard_C*>                 Cards;                                                    // (Parm, OutParm, ZeroConstructor)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.ClaimQuestChoiceReward
 struct UFrontEndRewards_Widget_C_ClaimQuestChoiceReward_Params
 {
-	class UFortRewardNotificationData*                 NotificationData;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int                                                SelectionIndex;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UFortItem*                                   Item;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortRewardNotificationData*                 NotificationData;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                SelectionIndex;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HandleChoiceRewardSelected
 struct UFrontEndRewards_Widget_C_HandleChoiceRewardSelected_Params
 {
-	int                                                RewardIndex;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UFortItem*                                   Item;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                RewardIndex;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.InitInitialRewards
 struct UFrontEndRewards_Widget_C_InitInitialRewards_Params
 {
-	struct FFrontEndRewards_Definition                 Definition;                                               // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FFrontEndRewards_Definition                 Definition;                                               // (Parm)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HandleExpeditionCompleted
 struct UFrontEndRewards_Widget_C_HandleExpeditionCompleted_Params
 {
-	bool                                               Succeeded;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	TArray<struct FFortItemInstanceQuantityPair>       Rewards;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	bool                                               Succeeded;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	TArray<struct FFortItemInstanceQuantityPair>       Rewards;                                                  // (Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.Cleanup
@@ -302,7 +302,7 @@ struct UFrontEndRewards_Widget_C_PopNextReward_Params
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.DropReward
 struct UFrontEndRewards_Widget_C_DropReward_Params
 {
-	class UFortRewardNotificationData*                 InReward;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortRewardNotificationData*                 InReward;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HandleCurrentRewardDisplayed
@@ -348,13 +348,13 @@ struct UFrontEndRewards_Widget_C_OnPrimaryActionHidden_Params
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.OnPrimaryActionTextChanged
 struct UFrontEndRewards_Widget_C_OnPrimaryActionTextChanged_Params
 {
-	struct FText*                                      Text;                                                     // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FText*                                      Text;                                                     // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.BndEvt__ButtonOpen_K2Node_ComponentBoundEvent_26_CommonButtonClicked__DelegateSignature
 struct UFrontEndRewards_Widget_C_BndEvt__ButtonOpen_K2Node_ComponentBoundEvent_26_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.Construct
@@ -370,7 +370,7 @@ struct UFrontEndRewards_Widget_C_OnActivated_Params
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.HideStarburst
 struct UFrontEndRewards_Widget_C_HideStarburst_Params
 {
-	float                                              Delay;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Delay;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.OnDeactivated
@@ -381,7 +381,7 @@ struct UFrontEndRewards_Widget_C_OnDeactivated_Params
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.InspectItem
 struct UFrontEndRewards_Widget_C_InspectItem_Params
 {
-	class UFortItem**                                  ItemToInspect;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItem**                                  ItemToInspect;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.IntroSequence
@@ -402,25 +402,19 @@ struct UFrontEndRewards_Widget_C_OnMatchmakingOrLobbyStarted_Params
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.ExecuteUbergraph_FrontEndRewards_Widget
 struct UFrontEndRewards_Widget_C_ExecuteUbergraph_FrontEndRewards_Widget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.OnRewardsIgnored__DelegateSignature
-struct UFrontEndRewards_Widget_C_OnRewardsIgnored__DelegateSignature_Params
-{
-	class UFrontEndRewards_Widget_C*                   RewardsWidget;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.OnRewardsClaimError__DelegateSignature
 struct UFrontEndRewards_Widget_C_OnRewardsClaimError__DelegateSignature_Params
 {
-	class UFrontEndRewards_Widget_C*                   RewardsWidget;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFrontEndRewards_Widget_C*                   RewardsWidget;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.OnRewardsClaimed__DelegateSignature
 struct UFrontEndRewards_Widget_C_OnRewardsClaimed__DelegateSignature_Params
 {
-	class UFrontEndRewards_Widget_C*                   RewardsWidget;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFrontEndRewards_Widget_C*                   RewardsWidget;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.OnComplete__DelegateSignature

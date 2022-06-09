@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function PanelButton.PanelButton_C.UpdateStyle
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bUsingGamepad                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bUsingGamepad                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPanelButton_C::UpdateStyle(bool bUsingGamepad)
 {
@@ -69,7 +69,7 @@ void UPanelButton_C::UpdateTextAndStyle()
 // Function PanelButton.PanelButton_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPanelButton_C::PreConstruct(bool* IsDesignTime)
 {
@@ -89,7 +89,7 @@ void UPanelButton_C::PreConstruct(bool* IsDesignTime)
 // Function PanelButton.PanelButton_C.BndEvt__CommonActionWidgetAction_K2Node_ComponentBoundEvent_0_OnInputMethodChanged__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// bool                           bUsingGamepad                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bUsingGamepad                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPanelButton_C::BndEvt__CommonActionWidgetAction_K2Node_ComponentBoundEvent_0_OnInputMethodChanged__DelegateSignature(bool bUsingGamepad)
 {
@@ -109,7 +109,7 @@ void UPanelButton_C::BndEvt__CommonActionWidgetAction_K2Node_ComponentBoundEvent
 // Function PanelButton.PanelButton_C.OnTriggeredInputActionChanged
 // (Event, Protected, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FDataTableRowHandle*    NewTriggeredAction             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FDataTableRowHandle*    NewTriggeredAction             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPanelButton_C::OnTriggeredInputActionChanged(struct FDataTableRowHandle* NewTriggeredAction)
 {
@@ -129,7 +129,7 @@ void UPanelButton_C::OnTriggeredInputActionChanged(struct FDataTableRowHandle* N
 // Function PanelButton.PanelButton_C.OnActionProgress
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// float*                         HeldPercent                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float*                         HeldPercent                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPanelButton_C::OnActionProgress(float* HeldPercent)
 {
@@ -217,7 +217,7 @@ void UPanelButton_C::OnUnhovered()
 // Function PanelButton.PanelButton_C.ExecuteUbergraph_PanelButton
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPanelButton_C::ExecuteUbergraph_PanelButton(int EntryPoint)
 {

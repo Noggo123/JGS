@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,25 +17,25 @@ namespace SDK
 // Function EulaWidget.EulaWidget_C.SetViewOnly
 struct UEulaWidget_C_SetViewOnly_Params
 {
-	bool                                               bViewOnly;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bViewOnly;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function EulaWidget.EulaWidget_C.SetEulaText
 struct UEulaWidget_C_SetEulaText_Params
 {
-	struct FText                                       EULA;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FText                                       Eula;                                                     // (Parm)
 };
 
 // Function EulaWidget.EulaWidget_C.BndEvt__IconTextButton_0_K2Node_ComponentBoundEvent_44_CommonButtonClicked__DelegateSignature
 struct UEulaWidget_C_BndEvt__IconTextButton_0_K2Node_ComponentBoundEvent_44_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function EulaWidget.EulaWidget_C.BndEvt__ConfirmButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature
 struct UEulaWidget_C_BndEvt__ConfirmButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function EulaWidget.EulaWidget_C.Destruct
@@ -51,13 +51,13 @@ struct UEulaWidget_C_Construct_Params
 // Function EulaWidget.EulaWidget_C.ExecuteUbergraph_EulaWidget
 struct UEulaWidget_C_ExecuteUbergraph_EulaWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function EulaWidget.EulaWidget_C.OnEulaResponse__DelegateSignature
 struct UEulaWidget_C_OnEulaResponse__DelegateSignature_Params
 {
-	bool                                               Accepted;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Accepted;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

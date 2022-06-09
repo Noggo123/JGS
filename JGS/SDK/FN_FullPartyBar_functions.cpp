@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function FullPartyBar.FullPartyBar_C.GetTooltipStat
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag            Token                          (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FGameplayTag            Token                          (ConstParm, Parm)
 // struct FFortDisplayAttribute   OutDisplayAttribute            (Parm, OutParm)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -165,7 +165,7 @@ void UFullPartyBar_C::GetTotalNumFriendCodes(int* Num_Codes)
 // Function FullPartyBar.FullPartyBar_C.isTeammateSlotPopulated
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            inSlotNUmber                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            inSlotNUmber                   (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 bool UFullPartyBar_C::isTeammateSlotPopulated(int inSlotNUmber)
@@ -205,18 +205,16 @@ void UFullPartyBar_C::OpenPartyPrivacy()
 // Function FullPartyBar.FullPartyBar_C.HandlePartybarUIFeatureChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortUIFeature                 Feature                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortUIFeatureState            FeatureState                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortUIFeatureStateReason      Reason                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortUIFeature                 Feature                        (Parm, ZeroConstructor, IsPlainOldData)
+// EFortUIFeatureState            FeatureState                   (Parm, ZeroConstructor, IsPlainOldData)
 
-void UFullPartyBar_C::HandlePartybarUIFeatureChanged(EFortUIFeature Feature, EFortUIFeatureState FeatureState, EFortUIFeatureStateReason Reason)
+void UFullPartyBar_C::HandlePartybarUIFeatureChanged(EFortUIFeature Feature, EFortUIFeatureState FeatureState)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function FullPartyBar.FullPartyBar_C.HandlePartybarUIFeatureChanged");
 
 	UFullPartyBar_C_HandlePartybarUIFeatureChanged_Params params;
 	params.Feature = Feature;
 	params.FeatureState = FeatureState;
-	params.Reason = Reason;
 
 	auto flags = fn->FunctionFlags;
 
@@ -280,7 +278,7 @@ void UFullPartyBar_C::Construct()
 // Function FullPartyBar.FullPartyBar_C.BndEvt__LocalPlayer_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFullPartyBar_C::BndEvt__LocalPlayer_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -300,7 +298,7 @@ void UFullPartyBar_C::BndEvt__LocalPlayer_K2Node_ComponentBoundEvent_15_CommonBu
 // Function FullPartyBar.FullPartyBar_C.BndEvt__RemotePlayer1_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFullPartyBar_C::BndEvt__RemotePlayer1_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -320,7 +318,7 @@ void UFullPartyBar_C::BndEvt__RemotePlayer1_K2Node_ComponentBoundEvent_0_CommonB
 // Function FullPartyBar.FullPartyBar_C.BndEvt__RemotePlayer2_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFullPartyBar_C::BndEvt__RemotePlayer2_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -340,7 +338,7 @@ void UFullPartyBar_C::BndEvt__RemotePlayer2_K2Node_ComponentBoundEvent_1_CommonB
 // Function FullPartyBar.FullPartyBar_C.BndEvt__RemotePlayer3_K2Node_ComponentBoundEvent_2_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFullPartyBar_C::BndEvt__RemotePlayer3_K2Node_ComponentBoundEvent_2_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -377,7 +375,7 @@ void UFullPartyBar_C::Destruct()
 // Function FullPartyBar.FullPartyBar_C.BndEvt__RemotePlayer1_K2Node_ComponentBoundEvent_8_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFullPartyBar_C::BndEvt__RemotePlayer1_K2Node_ComponentBoundEvent_8_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -397,7 +395,7 @@ void UFullPartyBar_C::BndEvt__RemotePlayer1_K2Node_ComponentBoundEvent_8_CommonB
 // Function FullPartyBar.FullPartyBar_C.BndEvt__RemotePlayer1_K2Node_ComponentBoundEvent_9_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFullPartyBar_C::BndEvt__RemotePlayer1_K2Node_ComponentBoundEvent_9_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -417,7 +415,7 @@ void UFullPartyBar_C::BndEvt__RemotePlayer1_K2Node_ComponentBoundEvent_9_CommonB
 // Function FullPartyBar.FullPartyBar_C.BndEvt__RemotePlayer2_K2Node_ComponentBoundEvent_10_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFullPartyBar_C::BndEvt__RemotePlayer2_K2Node_ComponentBoundEvent_10_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -437,7 +435,7 @@ void UFullPartyBar_C::BndEvt__RemotePlayer2_K2Node_ComponentBoundEvent_10_Common
 // Function FullPartyBar.FullPartyBar_C.BndEvt__RemotePlayer3_K2Node_ComponentBoundEvent_11_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFullPartyBar_C::BndEvt__RemotePlayer3_K2Node_ComponentBoundEvent_11_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -457,7 +455,7 @@ void UFullPartyBar_C::BndEvt__RemotePlayer3_K2Node_ComponentBoundEvent_11_Common
 // Function FullPartyBar.FullPartyBar_C.BndEvt__RemotePlayer3_K2Node_ComponentBoundEvent_12_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFullPartyBar_C::BndEvt__RemotePlayer3_K2Node_ComponentBoundEvent_12_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -477,7 +475,7 @@ void UFullPartyBar_C::BndEvt__RemotePlayer3_K2Node_ComponentBoundEvent_12_Common
 // Function FullPartyBar.FullPartyBar_C.BndEvt__RemotePlayer2_K2Node_ComponentBoundEvent_13_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFullPartyBar_C::BndEvt__RemotePlayer2_K2Node_ComponentBoundEvent_13_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -497,7 +495,7 @@ void UFullPartyBar_C::BndEvt__RemotePlayer2_K2Node_ComponentBoundEvent_13_Common
 // Function FullPartyBar.FullPartyBar_C.BndEvt__LocalPlayer_K2Node_ComponentBoundEvent_14_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFullPartyBar_C::BndEvt__LocalPlayer_K2Node_ComponentBoundEvent_14_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -517,7 +515,7 @@ void UFullPartyBar_C::BndEvt__LocalPlayer_K2Node_ComponentBoundEvent_14_CommonBu
 // Function FullPartyBar.FullPartyBar_C.ExecuteUbergraph_FullPartyBar
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFullPartyBar_C::ExecuteUbergraph_FullPartyBar(int EntryPoint)
 {
@@ -537,7 +535,7 @@ void UFullPartyBar_C::ExecuteUbergraph_FullPartyBar(int EntryPoint)
 // Function FullPartyBar.FullPartyBar_C.OnButtonHovered__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   HelpText                       (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   HelpText                       (Parm)
 
 void UFullPartyBar_C::OnButtonHovered__DelegateSignature(const struct FText& HelpText)
 {

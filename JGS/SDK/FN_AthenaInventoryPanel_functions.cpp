@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,281 +12,11 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function AthenaInventoryPanel.AthenaInventoryPanel_C.OnMouseButtonDownBorder
-// (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FGeometry               MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent           MouseEvent                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FEventReply             ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FEventReply UAthenaInventoryPanel_C::OnMouseButtonDownBorder(const struct FGeometry& MyGeometry, struct FPointerEvent* MouseEvent)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.OnMouseButtonDownBorder");
-
-	UAthenaInventoryPanel_C_OnMouseButtonDownBorder_Params params;
-	params.MyGeometry = MyGeometry;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (MouseEvent != nullptr)
-		*MouseEvent = params.MouseEvent;
-
-	return params.ReturnValue;
-}
-
-
-// Function AthenaInventoryPanel.AthenaInventoryPanel_C.HandleDropHalf
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaInventoryPanel_C::HandleDropHalf(bool* Passthrough)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.HandleDropHalf");
-
-	UAthenaInventoryPanel_C_HandleDropHalf_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
-}
-
-
-// Function AthenaInventoryPanel.AthenaInventoryPanel_C.RegisterDropHalf
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaInventoryPanel_C::RegisterDropHalf()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.RegisterDropHalf");
-
-	UAthenaInventoryPanel_C_RegisterDropHalf_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaInventoryPanel.AthenaInventoryPanel_C.CanDrop
-// (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UObject*                 Object                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FPointerEvent           Input                          (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UAthenaInventoryPanel_C::CanDrop(class UObject* Object, struct FPointerEvent* Input)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.CanDrop");
-
-	UAthenaInventoryPanel_C_CanDrop_Params params;
-	params.Object = Object;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Input != nullptr)
-		*Input = params.Input;
-
-	return params.ReturnValue;
-}
-
-
-// Function AthenaInventoryPanel.AthenaInventoryPanel_C.OnDragOver
-// (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent*          PointerEvent                   (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UDragDropOperation**     Operation                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UAthenaInventoryPanel_C::OnDragOver(struct FGeometry* MyGeometry, struct FPointerEvent* PointerEvent, class UDragDropOperation** Operation)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.OnDragOver");
-
-	UAthenaInventoryPanel_C_OnDragOver_Params params;
-	params.MyGeometry = MyGeometry;
-	params.PointerEvent = PointerEvent;
-	params.Operation = Operation;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function AthenaInventoryPanel.AthenaInventoryPanel_C.OnDrop
-// (BlueprintCosmetic, Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent*          PointerEvent                   (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UDragDropOperation**     Operation                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UAthenaInventoryPanel_C::OnDrop(struct FGeometry* MyGeometry, struct FPointerEvent* PointerEvent, class UDragDropOperation** Operation)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.OnDrop");
-
-	UAthenaInventoryPanel_C_OnDrop_Params params;
-	params.MyGeometry = MyGeometry;
-	params.PointerEvent = PointerEvent;
-	params.Operation = Operation;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function AthenaInventoryPanel.AthenaInventoryPanel_C.RefreshItemDetails
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UFortItem*               ItemToDetail                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaInventoryPanel_C::RefreshItemDetails(class UFortItem* ItemToDetail)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.RefreshItemDetails");
-
-	UAthenaInventoryPanel_C_RefreshItemDetails_Params params;
-	params.ItemToDetail = ItemToDetail;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaInventoryPanel.AthenaInventoryPanel_C.RegisterMove
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaInventoryPanel_C::RegisterMove()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.RegisterMove");
-
-	UAthenaInventoryPanel_C_RegisterMove_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaInventoryPanel.AthenaInventoryPanel_C.FocusFirstEquipSlot
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaInventoryPanel_C::FocusFirstEquipSlot()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.FocusFirstEquipSlot");
-
-	UAthenaInventoryPanel_C_FocusFirstEquipSlot_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaInventoryPanel.AthenaInventoryPanel_C.NavAmmo
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EUINavigation                  Navigation                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UWidget* UAthenaInventoryPanel_C::NavAmmo(EUINavigation Navigation)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.NavAmmo");
-
-	UAthenaInventoryPanel_C_NavAmmo_Params params;
-	params.Navigation = Navigation;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function AthenaInventoryPanel.AthenaInventoryPanel_C.NavResources
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EUINavigation                  Navigation                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UWidget* UAthenaInventoryPanel_C::NavResources(EUINavigation Navigation)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.NavResources");
-
-	UAthenaInventoryPanel_C_NavResources_Params params;
-	params.Navigation = Navigation;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function AthenaInventoryPanel.AthenaInventoryPanel_C.NavEquipment
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EUINavigation                  Navigation                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UWidget* UAthenaInventoryPanel_C::NavEquipment(EUINavigation Navigation)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.NavEquipment");
-
-	UAthenaInventoryPanel_C_NavEquipment_Params params;
-	params.Navigation = Navigation;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
 // Function AthenaInventoryPanel.AthenaInventoryPanel_C.HandleDropItemConfirmationCallback
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            ChosenQuantity                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            ChosenQuantity                 (Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaInventoryPanel_C::HandleDropItemConfirmationCallback(int ChosenQuantity, class UFortItem* Item)
 {
@@ -324,8 +54,8 @@ void UAthenaInventoryPanel_C::DestroyQuantitySelectorWidget()
 // Function AthenaInventoryPanel.AthenaInventoryPanel_C.CreateQuantitySelectorWidget
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortWorldItem*          Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   ConfirmationText               (BlueprintVisible, BlueprintReadOnly, Parm)
+// class UFortWorldItem*          Item                           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   ConfirmationText               (Parm)
 
 void UAthenaInventoryPanel_C::CreateQuantitySelectorWidget(class UFortWorldItem* Item, const struct FText& ConfirmationText)
 {
@@ -343,11 +73,28 @@ void UAthenaInventoryPanel_C::CreateQuantitySelectorWidget(class UFortWorldItem*
 }
 
 
+// Function AthenaInventoryPanel.AthenaInventoryPanel_C.RefocusOnInventory
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UAthenaInventoryPanel_C::RefocusOnInventory()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.RefocusOnInventory");
+
+	UAthenaInventoryPanel_C_RefocusOnInventory_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AthenaInventoryPanel.AthenaInventoryPanel_C.DropItem
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortWorldItem*          Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            Quantity                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortWorldItem*          Item                           (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Quantity                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaInventoryPanel_C::DropItem(class UFortWorldItem* Item, int Quantity)
 {
@@ -368,9 +115,9 @@ void UAthenaInventoryPanel_C::DropItem(class UFortWorldItem* Item, int Quantity)
 // Function AthenaInventoryPanel.AthenaInventoryPanel_C.HandleDrop
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaInventoryPanel_C::HandleDrop(bool* Passthrough)
+void UAthenaInventoryPanel_C::HandleDrop(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.HandleDrop");
 
@@ -382,8 +129,8 @@ void UAthenaInventoryPanel_C::HandleDrop(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -395,6 +142,26 @@ void UAthenaInventoryPanel_C::RegisterDrop()
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.RegisterDrop");
 
 	UAthenaInventoryPanel_C_RegisterDrop_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaInventoryPanel.AthenaInventoryPanel_C.PerformEquip
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaInventoryPanel_C::PerformEquip(class UFortItem* Item)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.PerformEquip");
+
+	UAthenaInventoryPanel_C_PerformEquip_Params params;
+	params.Item = Item;
 
 	auto flags = fn->FunctionFlags;
 
@@ -438,6 +205,45 @@ void UAthenaInventoryPanel_C::TrySetupInputHandling()
 }
 
 
+// Function AthenaInventoryPanel.AthenaInventoryPanel_C.HandleEquip
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaInventoryPanel_C::HandleEquip(bool* PassThrough)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.HandleEquip");
+
+	UAthenaInventoryPanel_C_HandleEquip_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
+}
+
+
+// Function AthenaInventoryPanel.AthenaInventoryPanel_C.RegisterEquip
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UAthenaInventoryPanel_C::RegisterEquip()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.RegisterEquip");
+
+	UAthenaInventoryPanel_C_RegisterEquip_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AthenaInventoryPanel.AthenaInventoryPanel_C.RegisterBack
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
@@ -458,9 +264,9 @@ void UAthenaInventoryPanel_C::RegisterBack()
 // Function AthenaInventoryPanel.AthenaInventoryPanel_C.HandleClose
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaInventoryPanel_C::HandleClose(bool* Passthrough)
+void UAthenaInventoryPanel_C::HandleClose(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.HandleClose");
 
@@ -472,15 +278,71 @@ void UAthenaInventoryPanel_C::HandleClose(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
+}
+
+
+// Function AthenaInventoryPanel.AthenaInventoryPanel_C.GetSelectedEquipSlot
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            Slot                           (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaInventoryPanel_C::GetSelectedEquipSlot(int* Slot)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.GetSelectedEquipSlot");
+
+	UAthenaInventoryPanel_C_GetSelectedEquipSlot_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Slot != nullptr)
+		*Slot = params.Slot;
+}
+
+
+// Function AthenaInventoryPanel.AthenaInventoryPanel_C.ProcessSlotAction
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UAthenaInventoryPanel_C::ProcessSlotAction()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.ProcessSlotAction");
+
+	UAthenaInventoryPanel_C_ProcessSlotAction_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaInventoryPanel.AthenaInventoryPanel_C.UpdateEquipSlots
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UAthenaInventoryPanel_C::UpdateEquipSlots()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.UpdateEquipSlots");
+
+	UAthenaInventoryPanel_C_UpdateEquipSlots_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
 }
 
 
 // Function AthenaInventoryPanel.AthenaInventoryPanel_C.HandleQuickBarChangedBP
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// EFortQuickBars*                QuickBarType                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortQuickBars*                QuickBarType                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaInventoryPanel_C::HandleQuickBarChangedBP(EFortQuickBars* QuickBarType)
 {
@@ -514,45 +376,6 @@ void UAthenaInventoryPanel_C::OnActivated()
 }
 
 
-// Function AthenaInventoryPanel.AthenaInventoryPanel_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UAthenaInventoryPanel_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.Construct");
-
-	UAthenaInventoryPanel_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaInventoryPanel.AthenaInventoryPanel_C.OnDragLeave
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// struct FPointerEvent*          PointerEvent                   (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UDragDropOperation**     Operation                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaInventoryPanel_C::OnDragLeave(struct FPointerEvent* PointerEvent, class UDragDropOperation** Operation)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.OnDragLeave");
-
-	UAthenaInventoryPanel_C_OnDragLeave_Params params;
-	params.PointerEvent = PointerEvent;
-	params.Operation = Operation;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function AthenaInventoryPanel.AthenaInventoryPanel_C.OnDeactivated
 // (Event, Protected, BlueprintEvent)
 
@@ -573,7 +396,7 @@ void UAthenaInventoryPanel_C::OnDeactivated()
 // Function AthenaInventoryPanel.AthenaInventoryPanel_C.RequestEquip
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UFortItem**              Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem**              Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaInventoryPanel_C::RequestEquip(class UFortItem** Item)
 {
@@ -590,10 +413,130 @@ void UAthenaInventoryPanel_C::RequestEquip(class UFortItem** Item)
 }
 
 
-// Function AthenaInventoryPanel.AthenaInventoryPanel_C.ExecuteUbergraph_AthenaInventoryPanel
-// (HasDefaults)
+// Function AthenaInventoryPanel.AthenaInventoryPanel_C.OnInventoryItemSelected
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem**              Item                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaInventoryPanel_C::OnInventoryItemSelected(class UFortItem** Item)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.OnInventoryItemSelected");
+
+	UAthenaInventoryPanel_C_OnInventoryItemSelected_Params params;
+	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaInventoryPanel.AthenaInventoryPanel_C.BndEvt__EquipSlot1_K2Node_ComponentBoundEvent_1_OnEquipRequested__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// int                            SlotIndex                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaInventoryPanel_C::BndEvt__EquipSlot1_K2Node_ComponentBoundEvent_1_OnEquipRequested__DelegateSignature(int SlotIndex)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.BndEvt__EquipSlot1_K2Node_ComponentBoundEvent_1_OnEquipRequested__DelegateSignature");
+
+	UAthenaInventoryPanel_C_BndEvt__EquipSlot1_K2Node_ComponentBoundEvent_1_OnEquipRequested__DelegateSignature_Params params;
+	params.SlotIndex = SlotIndex;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaInventoryPanel.AthenaInventoryPanel_C.BndEvt__EquipSlot2_K2Node_ComponentBoundEvent_3_OnEquipRequested__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// int                            SlotIndex                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaInventoryPanel_C::BndEvt__EquipSlot2_K2Node_ComponentBoundEvent_3_OnEquipRequested__DelegateSignature(int SlotIndex)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.BndEvt__EquipSlot2_K2Node_ComponentBoundEvent_3_OnEquipRequested__DelegateSignature");
+
+	UAthenaInventoryPanel_C_BndEvt__EquipSlot2_K2Node_ComponentBoundEvent_3_OnEquipRequested__DelegateSignature_Params params;
+	params.SlotIndex = SlotIndex;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaInventoryPanel.AthenaInventoryPanel_C.BndEvt__EquipSlot3_K2Node_ComponentBoundEvent_6_OnEquipRequested__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// int                            SlotIndex                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaInventoryPanel_C::BndEvt__EquipSlot3_K2Node_ComponentBoundEvent_6_OnEquipRequested__DelegateSignature(int SlotIndex)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.BndEvt__EquipSlot3_K2Node_ComponentBoundEvent_6_OnEquipRequested__DelegateSignature");
+
+	UAthenaInventoryPanel_C_BndEvt__EquipSlot3_K2Node_ComponentBoundEvent_6_OnEquipRequested__DelegateSignature_Params params;
+	params.SlotIndex = SlotIndex;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaInventoryPanel.AthenaInventoryPanel_C.BndEvt__EquipSlot4_K2Node_ComponentBoundEvent_10_OnEquipRequested__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// int                            SlotIndex                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaInventoryPanel_C::BndEvt__EquipSlot4_K2Node_ComponentBoundEvent_10_OnEquipRequested__DelegateSignature(int SlotIndex)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.BndEvt__EquipSlot4_K2Node_ComponentBoundEvent_10_OnEquipRequested__DelegateSignature");
+
+	UAthenaInventoryPanel_C_BndEvt__EquipSlot4_K2Node_ComponentBoundEvent_10_OnEquipRequested__DelegateSignature_Params params;
+	params.SlotIndex = SlotIndex;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaInventoryPanel.AthenaInventoryPanel_C.BndEvt__EquipSlot5_K2Node_ComponentBoundEvent_15_OnEquipRequested__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// int                            SlotIndex                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaInventoryPanel_C::BndEvt__EquipSlot5_K2Node_ComponentBoundEvent_15_OnEquipRequested__DelegateSignature(int SlotIndex)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryPanel.AthenaInventoryPanel_C.BndEvt__EquipSlot5_K2Node_ComponentBoundEvent_15_OnEquipRequested__DelegateSignature");
+
+	UAthenaInventoryPanel_C_BndEvt__EquipSlot5_K2Node_ComponentBoundEvent_15_OnEquipRequested__DelegateSignature_Params params;
+	params.SlotIndex = SlotIndex;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaInventoryPanel.AthenaInventoryPanel_C.ExecuteUbergraph_AthenaInventoryPanel
+// ()
+// Parameters:
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaInventoryPanel_C::ExecuteUbergraph_AthenaInventoryPanel(int EntryPoint)
 {

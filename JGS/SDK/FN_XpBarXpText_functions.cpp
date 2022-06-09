@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,7 +37,7 @@ void UXpBarXpText_C::Get_Skill_Points_For_Next_Level(int* Next_Level_Skill_Point
 // Function XpBarXpText.XpBarXpText_C.Update Xp Text
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortPublicAccountInfo  Account_Info                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortPublicAccountInfo  Account_Info                   (Parm)
 
 void UXpBarXpText_C::Update_Xp_Text(const struct FFortPublicAccountInfo& Account_Info)
 {
@@ -74,7 +74,7 @@ void UXpBarXpText_C::Construct()
 // Function XpBarXpText.XpBarXpText_C.HandleAccountUpdate
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortPublicAccountInfo  NewInfo                        (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortPublicAccountInfo  NewInfo                        (Parm)
 
 void UXpBarXpText_C::HandleAccountUpdate(const struct FFortPublicAccountInfo& NewInfo)
 {
@@ -94,7 +94,7 @@ void UXpBarXpText_C::HandleAccountUpdate(const struct FFortPublicAccountInfo& Ne
 // Function XpBarXpText.XpBarXpText_C.ExecuteUbergraph_XpBarXpText
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UXpBarXpText_C::ExecuteUbergraph_XpBarXpText(int EntryPoint)
 {

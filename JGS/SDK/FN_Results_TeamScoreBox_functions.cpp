@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -83,9 +83,9 @@ void UResults_TeamScoreBox_C::FlashTextType()
 // Function Results_TeamScoreBox.Results_TeamScoreBox_C.Initialize
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EFortUIScoreType>  ScoreType                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            Score                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          PlayRate                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EFortUIScoreType>  ScoreType                      (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Score                          (Parm, ZeroConstructor, IsPlainOldData)
+// float                          PlayRate                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeamScoreBox_C::Initialize(TEnumAsByte<EFortUIScoreType> ScoreType, int Score, float PlayRate)
 {
@@ -192,7 +192,7 @@ void UResults_TeamScoreBox_C::BndEvt__Anim_Intro_K2Node_ComponentBoundEvent_0_On
 // Function Results_TeamScoreBox.Results_TeamScoreBox_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeamScoreBox_C::PreConstruct(bool* IsDesignTime)
 {
@@ -280,8 +280,8 @@ void UResults_TeamScoreBox_C::Stop_Count_Down_Absorption()
 // Function Results_TeamScoreBox.Results_TeamScoreBox_C.BndEvt__TextScore_K2Node_ComponentBoundEvent_0_OnInterpolationEnded__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonNumericTextBlock* NumericTextBlock               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           HadCompleted                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonNumericTextBlock* NumericTextBlock               (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           HadCompleted                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeamScoreBox_C::BndEvt__TextScore_K2Node_ComponentBoundEvent_0_OnInterpolationEnded__DelegateSignature(class UCommonNumericTextBlock* NumericTextBlock, bool HadCompleted)
 {
@@ -302,7 +302,7 @@ void UResults_TeamScoreBox_C::BndEvt__TextScore_K2Node_ComponentBoundEvent_0_OnI
 // Function Results_TeamScoreBox.Results_TeamScoreBox_C.ExecuteUbergraph_Results_TeamScoreBox
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeamScoreBox_C::ExecuteUbergraph_Results_TeamScoreBox(int EntryPoint)
 {

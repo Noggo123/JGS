@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,8 +32,8 @@ void UReticleStatusWidget_C::Construct()
 // Function ReticleStatusWidget.ReticleStatusWidget_C.OnUnableToPerformAction
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTagContainer   FailedReason                   (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FText                   FailureText                    (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FGameplayTagContainer   FailedReason                   (Parm)
+// struct FText                   FailureText                    (Parm)
 
 void UReticleStatusWidget_C::OnUnableToPerformAction(const struct FGameplayTagContainer& FailedReason, const struct FText& FailureText)
 {
@@ -54,7 +54,7 @@ void UReticleStatusWidget_C::OnUnableToPerformAction(const struct FGameplayTagCo
 // Function ReticleStatusWidget.ReticleStatusWidget_C.ExecuteUbergraph_ReticleStatusWidget
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UReticleStatusWidget_C::ExecuteUbergraph_ReticleStatusWidget(int EntryPoint)
 {

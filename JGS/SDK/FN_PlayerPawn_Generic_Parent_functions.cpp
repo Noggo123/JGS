@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,9 +15,9 @@ namespace SDK
 // Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.Teleport
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayCueParameters  GameplayCueParameters          (BlueprintVisible, BlueprintReadOnly, Parm)
-// bool                           TeleportOut_                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          Default_PlayLength             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  GameplayCueParameters          (Parm)
+// bool                           TeleportOut_                   (Parm, ZeroConstructor, IsPlainOldData)
+// float                          Default_PlayLength             (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Generic_Parent_C::Teleport(const struct FGameplayCueParameters& GameplayCueParameters, bool TeleportOut_, float Default_PlayLength)
 {
@@ -56,8 +56,8 @@ void APlayerPawn_Generic_Parent_C::UserConstructionScript()
 // Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.GameplayCue.Teleport.Out
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EGameplayCueEvent> EventType                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (Parm)
 
 void APlayerPawn_Generic_Parent_C::GameplayCue_Teleport_Out(TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
 {
@@ -95,8 +95,8 @@ void APlayerPawn_Generic_Parent_C::ReceiveBeginPlay()
 // Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.GameplayCue.Teleport.In
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EGameplayCueEvent> EventType                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// TEnumAsByte<EGameplayCueEvent> EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters  Parameters                     (Parm)
 
 void APlayerPawn_Generic_Parent_C::GameplayCue_Teleport_In(TEnumAsByte<EGameplayCueEvent> EventType, const struct FGameplayCueParameters& Parameters)
 {
@@ -117,7 +117,7 @@ void APlayerPawn_Generic_Parent_C::GameplayCue_Teleport_In(TEnumAsByte<EGameplay
 // Function PlayerPawn_Generic_Parent.PlayerPawn_Generic_Parent_C.ExecuteUbergraph_PlayerPawn_Generic_Parent
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void APlayerPawn_Generic_Parent_C::ExecuteUbergraph_PlayerPawn_Generic_Parent(int EntryPoint)
 {

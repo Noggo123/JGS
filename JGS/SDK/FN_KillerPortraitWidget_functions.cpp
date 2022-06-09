@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function KillerPortraitWidget.KillerPortraitWidget_C.Init
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortKillerVisualInfo   KillerVisualInfo               (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortKillerVisualInfo   KillerVisualInfo               (Parm, OutParm, ReferenceParm)
 
 void UKillerPortraitWidget_C::Init(struct FFortKillerVisualInfo* KillerVisualInfo)
 {

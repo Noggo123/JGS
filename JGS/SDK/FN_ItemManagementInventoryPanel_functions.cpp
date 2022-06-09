@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,27 +12,10 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.UpdateStorageTextVisbility
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UItemManagementInventoryPanel_C::UpdateStorageTextVisbility()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.UpdateStorageTextVisbility");
-
-	UItemManagementInventoryPanel_C_UpdateStorageTextVisbility_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.PrepOpeningInventory
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   ActionName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ActionName                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementInventoryPanel_C::PrepOpeningInventory(const struct FName& ActionName)
 {
@@ -52,7 +35,7 @@ void UItemManagementInventoryPanel_C::PrepOpeningInventory(const struct FName& A
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.SelectTrapByItem
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           Success                        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementInventoryPanel_C::SelectTrapByItem(class UFortItem* Item, bool* Success)
@@ -76,7 +59,7 @@ void UItemManagementInventoryPanel_C::SelectTrapByItem(class UFortItem* Item, bo
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.SelectTrapByTag
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag            Tag                            (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FGameplayTag            Tag                            (Parm)
 // bool                           Success                        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementInventoryPanel_C::SelectTrapByTag(const struct FGameplayTag& Tag, bool* Success)
@@ -94,6 +77,65 @@ void UItemManagementInventoryPanel_C::SelectTrapByTag(const struct FGameplayTag&
 
 	if (Success != nullptr)
 		*Success = params.Success;
+}
+
+
+// Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.HandleMulchQuantityCallback
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            Quantity                       (Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementInventoryPanel_C::HandleMulchQuantityCallback(int Quantity, class UFortItem* Item)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.HandleMulchQuantityCallback");
+
+	UItemManagementInventoryPanel_C_HandleMulchQuantityCallback_Params params;
+	params.Quantity = Quantity;
+	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.DestroyMulchQuantitySelector
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UItemManagementInventoryPanel_C::DestroyMulchQuantitySelector()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.DestroyMulchQuantitySelector");
+
+	UItemManagementInventoryPanel_C_DestroyMulchQuantitySelector_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.CreateMulchQuantitySelector
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementInventoryPanel_C::CreateMulchQuantitySelector(class UFortItem* Item)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.CreateMulchQuantitySelector");
+
+	UItemManagementInventoryPanel_C_CreateMulchQuantitySelector_Params params;
+	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
 }
 
 
@@ -292,7 +334,7 @@ void UItemManagementInventoryPanel_C::HandleDifferentSortTypeSetBP()
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.BndEvt__SortTypeButton_K2Node_ComponentBoundEvent_36_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementInventoryPanel_C::BndEvt__SortTypeButton_K2Node_ComponentBoundEvent_36_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -380,8 +422,8 @@ void UItemManagementInventoryPanel_C::Destruct()
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.BndEvt__CraftingTileView_K2Node_ComponentBoundEvent_126_OnListViewItemSelected__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UObject*                 Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bIsSelected                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 Item                           (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bIsSelected                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementInventoryPanel_C::BndEvt__CraftingTileView_K2Node_ComponentBoundEvent_126_OnListViewItemSelected__DelegateSignature(class UObject* Item, bool bIsSelected)
 {
@@ -419,7 +461,7 @@ void UItemManagementInventoryPanel_C::HandleDifferentFrontendInventoryFilterSetB
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.HandleQuickBarChangedBP
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// EFortQuickBars*                QuickBarType                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortQuickBars*                QuickBarType                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementInventoryPanel_C::HandleQuickBarChangedBP(EFortQuickBars* QuickBarType)
 {
@@ -436,10 +478,30 @@ void UItemManagementInventoryPanel_C::HandleQuickBarChangedBP(EFortQuickBars* Qu
 }
 
 
+// Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.HandleMulchQuantitySelection
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UFortItem**              Item                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementInventoryPanel_C::HandleMulchQuantitySelection(class UFortItem** Item)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.HandleMulchQuantitySelection");
+
+	UItemManagementInventoryPanel_C_HandleMulchQuantitySelection_Params params;
+	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.BndEvt__SortTypeButtonWorldItems_K2Node_ComponentBoundEvent_282_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementInventoryPanel_C::BndEvt__SortTypeButtonWorldItems_K2Node_ComponentBoundEvent_282_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -459,9 +521,9 @@ void UItemManagementInventoryPanel_C::BndEvt__SortTypeButtonWorldItems_K2Node_Co
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.HandleCursorModeChangedBP
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool*                          bCursorModeEnabled             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName*                  ActionName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UUserWidget**            CursorModeContentWidget        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          bCursorModeEnabled             (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName*                  ActionName                     (Parm, ZeroConstructor, IsPlainOldData)
+// class UUserWidget**            CursorModeContentWidget        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementInventoryPanel_C::HandleCursorModeChangedBP(bool* bCursorModeEnabled, struct FName* ActionName, class UUserWidget** CursorModeContentWidget)
 {
@@ -483,7 +545,7 @@ void UItemManagementInventoryPanel_C::HandleCursorModeChangedBP(bool* bCursorMod
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.ExecuteUbergraph_ItemManagementInventoryPanel
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementInventoryPanel_C::ExecuteUbergraph_ItemManagementInventoryPanel(int EntryPoint)
 {

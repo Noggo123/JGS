@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,7 +37,7 @@ void UErrorEntry_C::Center_on_Widget(bool* Did_Center)
 // Function ErrorEntry.ErrorEntry_C.SetErrorInfo
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortErrorInfo          ErrorInfo                      (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortErrorInfo          ErrorInfo                      (Parm)
 
 void UErrorEntry_C::SetErrorInfo(const struct FFortErrorInfo& ErrorInfo)
 {
@@ -96,7 +96,7 @@ void UErrorEntry_C::Construct()
 // Function ErrorEntry.ErrorEntry_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_65_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UErrorEntry_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_65_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -116,7 +116,7 @@ void UErrorEntry_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_65_CommonB
 // Function ErrorEntry.ErrorEntry_C.ExecuteUbergraph_ErrorEntry
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UErrorEntry_C::ExecuteUbergraph_ErrorEntry(int EntryPoint)
 {

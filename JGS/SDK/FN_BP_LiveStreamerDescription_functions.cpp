@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,7 +37,7 @@ void UBP_LiveStreamerDescription_C::GetBroadcasterName(struct FText* Broadcaster
 // Function BP_LiveStreamerDescription.BP_LiveStreamerDescription_C.SetViewerQuestText
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   NewText                        (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   NewText                        (Parm)
 
 void UBP_LiveStreamerDescription_C::SetViewerQuestText(const struct FText& NewText)
 {
@@ -113,7 +113,7 @@ void UBP_LiveStreamerDescription_C::Is_Viewer_Quest(bool* ViewerQuest)
 // Function BP_LiveStreamerDescription.BP_LiveStreamerDescription_C.Update Visibility
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortQuestItemDefinition* Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortQuestItemDefinition* Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_LiveStreamerDescription_C::Update_Visibility(class UFortQuestItemDefinition* Item)
 {
@@ -133,7 +133,7 @@ void UBP_LiveStreamerDescription_C::Update_Visibility(class UFortQuestItemDefini
 // Function BP_LiveStreamerDescription.BP_LiveStreamerDescription_C.Set Quest
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortQuestItem*          Quest                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortQuestItem*          Quest                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_LiveStreamerDescription_C::Set_Quest(class UFortQuestItem* Quest)
 {

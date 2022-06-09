@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,50 +12,71 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.GetPawnFromInstigator
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AActor*                  InActor                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class AFortPlayerPawn*         OutPawn                        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.OnCancelled_07DF210D46EDFA929CDBFFB162E8E4CF
+// (BlueprintCallable, BlueprintEvent)
 
-void UGAB_GenericApplyKnockback_C::GetPawnFromInstigator(class AActor* InActor, class AFortPlayerPawn** OutPawn)
+void UGAB_GenericApplyKnockback_C::OnCancelled_07DF210D46EDFA929CDBFFB162E8E4CF()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.GetPawnFromInstigator");
+	static auto fn = UObject::FindObject<UFunction>("Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.OnCancelled_07DF210D46EDFA929CDBFFB162E8E4CF");
 
-	UGAB_GenericApplyKnockback_C_GetPawnFromInstigator_Params params;
-	params.InActor = InActor;
+	UGAB_GenericApplyKnockback_C_OnCancelled_07DF210D46EDFA929CDBFFB162E8E4CF_Params params;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (OutPawn != nullptr)
-		*OutPawn = params.OutPawn;
 }
 
 
-// Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.CalculateImpulseDirection
-// (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AFortPlayerPawn*         InPawn                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FVector                 ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
+// Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.OnInterrupted_07DF210D46EDFA929CDBFFB162E8E4CF
+// (BlueprintCallable, BlueprintEvent)
 
-struct FVector UGAB_GenericApplyKnockback_C::CalculateImpulseDirection(class AFortPlayerPawn* InPawn)
+void UGAB_GenericApplyKnockback_C::OnInterrupted_07DF210D46EDFA929CDBFFB162E8E4CF()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.CalculateImpulseDirection");
+	static auto fn = UObject::FindObject<UFunction>("Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.OnInterrupted_07DF210D46EDFA929CDBFFB162E8E4CF");
 
-	UGAB_GenericApplyKnockback_C_CalculateImpulseDirection_Params params;
-	params.InPawn = InPawn;
+	UGAB_GenericApplyKnockback_C_OnInterrupted_07DF210D46EDFA929CDBFFB162E8E4CF_Params params;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+}
 
-	return params.ReturnValue;
+
+// Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.OnBlendOut_07DF210D46EDFA929CDBFFB162E8E4CF
+// (BlueprintCallable, BlueprintEvent)
+
+void UGAB_GenericApplyKnockback_C::OnBlendOut_07DF210D46EDFA929CDBFFB162E8E4CF()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.OnBlendOut_07DF210D46EDFA929CDBFFB162E8E4CF");
+
+	UGAB_GenericApplyKnockback_C_OnBlendOut_07DF210D46EDFA929CDBFFB162E8E4CF_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.OnCompleted_07DF210D46EDFA929CDBFFB162E8E4CF
+// (BlueprintCallable, BlueprintEvent)
+
+void UGAB_GenericApplyKnockback_C::OnCompleted_07DF210D46EDFA929CDBFFB162E8E4CF()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.OnCompleted_07DF210D46EDFA929CDBFFB162E8E4CF");
+
+	UGAB_GenericApplyKnockback_C_OnCompleted_07DF210D46EDFA929CDBFFB162E8E4CF_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
 }
 
 
@@ -331,65 +352,14 @@ void UGAB_GenericApplyKnockback_C::OnCompleted_8FC7071F40FA26EA05D9688FB3E623A0(
 }
 
 
-// Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.OnCancelled_07DF210D46EDFA929CDBFFB162E8E4CF
-// (BlueprintCallable, BlueprintEvent)
+// Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.K2_OnEndAbility
+// (Event, Protected, BlueprintEvent)
 
-void UGAB_GenericApplyKnockback_C::OnCancelled_07DF210D46EDFA929CDBFFB162E8E4CF()
+void UGAB_GenericApplyKnockback_C::K2_OnEndAbility()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.OnCancelled_07DF210D46EDFA929CDBFFB162E8E4CF");
+	static auto fn = UObject::FindObject<UFunction>("Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.K2_OnEndAbility");
 
-	UGAB_GenericApplyKnockback_C_OnCancelled_07DF210D46EDFA929CDBFFB162E8E4CF_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.OnInterrupted_07DF210D46EDFA929CDBFFB162E8E4CF
-// (BlueprintCallable, BlueprintEvent)
-
-void UGAB_GenericApplyKnockback_C::OnInterrupted_07DF210D46EDFA929CDBFFB162E8E4CF()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.OnInterrupted_07DF210D46EDFA929CDBFFB162E8E4CF");
-
-	UGAB_GenericApplyKnockback_C_OnInterrupted_07DF210D46EDFA929CDBFFB162E8E4CF_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.OnBlendOut_07DF210D46EDFA929CDBFFB162E8E4CF
-// (BlueprintCallable, BlueprintEvent)
-
-void UGAB_GenericApplyKnockback_C::OnBlendOut_07DF210D46EDFA929CDBFFB162E8E4CF()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.OnBlendOut_07DF210D46EDFA929CDBFFB162E8E4CF");
-
-	UGAB_GenericApplyKnockback_C_OnBlendOut_07DF210D46EDFA929CDBFFB162E8E4CF_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.OnCompleted_07DF210D46EDFA929CDBFFB162E8E4CF
-// (BlueprintCallable, BlueprintEvent)
-
-void UGAB_GenericApplyKnockback_C::OnCompleted_07DF210D46EDFA929CDBFFB162E8E4CF()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.OnCompleted_07DF210D46EDFA929CDBFFB162E8E4CF");
-
-	UGAB_GenericApplyKnockback_C_OnCompleted_07DF210D46EDFA929CDBFFB162E8E4CF_Params params;
+	UGAB_GenericApplyKnockback_C_K2_OnEndAbility_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -436,7 +406,7 @@ void UGAB_GenericApplyKnockback_C::SetupMontageSectionsAndOrientDirection()
 // Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.OnPawnLanded
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FHitResult              Hit                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
+// struct FHitResult              Hit                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
 
 void UGAB_GenericApplyKnockback_C::OnPawnLanded(const struct FHitResult& Hit)
 {
@@ -456,10 +426,10 @@ void UGAB_GenericApplyKnockback_C::OnPawnLanded(const struct FHitResult& Hit)
 // Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.OnHitPawn
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                  SelfActor                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class AActor*                  OtherActor                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FVector                 NormalImpulse                  (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FHitResult              Hit                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
+// class AActor*                  SelfActor                      (Parm, ZeroConstructor, IsPlainOldData)
+// class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector                 NormalImpulse                  (Parm, IsPlainOldData)
+// struct FHitResult              Hit                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
 
 void UGAB_GenericApplyKnockback_C::OnHitPawn(class AActor* SelfActor, class AActor* OtherActor, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
 {
@@ -470,46 +440,6 @@ void UGAB_GenericApplyKnockback_C::OnHitPawn(class AActor* SelfActor, class AAct
 	params.OtherActor = OtherActor;
 	params.NormalImpulse = NormalImpulse;
 	params.Hit = Hit;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.K2_ActivateAbilityFromEvent
-// (Event, Protected, HasOutParms, BlueprintEvent)
-// Parameters:
-// struct FGameplayEventData*     EventData                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-
-void UGAB_GenericApplyKnockback_C::K2_ActivateAbilityFromEvent(struct FGameplayEventData* EventData)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.K2_ActivateAbilityFromEvent");
-
-	UGAB_GenericApplyKnockback_C_K2_ActivateAbilityFromEvent_Params params;
-	params.EventData = EventData;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.K2_OnEndAbility
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool*                          bWasCancelled                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UGAB_GenericApplyKnockback_C::K2_OnEndAbility(bool* bWasCancelled)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.K2_OnEndAbility");
-
-	UGAB_GenericApplyKnockback_C_K2_OnEndAbility_Params params;
-	params.bWasCancelled = bWasCancelled;
 
 	auto flags = fn->FunctionFlags;
 
@@ -536,10 +466,30 @@ void UGAB_GenericApplyKnockback_C::DebugLine()
 }
 
 
+// Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.K2_ActivateAbilityFromEvent
+// (Event, Protected, HasOutParms, BlueprintEvent)
+// Parameters:
+// struct FGameplayEventData*     EventData                      (ConstParm, Parm, OutParm, ReferenceParm)
+
+void UGAB_GenericApplyKnockback_C::K2_ActivateAbilityFromEvent(struct FGameplayEventData* EventData)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.K2_ActivateAbilityFromEvent");
+
+	UGAB_GenericApplyKnockback_C_K2_ActivateAbilityFromEvent_Params params;
+	params.EventData = EventData;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function GAB_GenericApplyKnockback.GAB_GenericApplyKnockback_C.ExecuteUbergraph_GAB_GenericApplyKnockback
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UGAB_GenericApplyKnockback_C::ExecuteUbergraph_GAB_GenericApplyKnockback(int EntryPoint)
 {

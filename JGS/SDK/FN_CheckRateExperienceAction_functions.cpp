@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,9 +32,9 @@ void ACheckRateExperienceAction_C::UserConstructionScript()
 // Function CheckRateExperienceAction.CheckRateExperienceAction_C.HandleClientEvent_FinishedModalQueue
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 EventSource                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 EventFocus                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FFortClientEvent        ClientEvent                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class UObject*                 EventSource                    (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 EventFocus                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortClientEvent        ClientEvent                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void ACheckRateExperienceAction_C::HandleClientEvent_FinishedModalQueue(class UObject* EventSource, class UObject* EventFocus, const struct FFortClientEvent& ClientEvent)
 {
@@ -56,7 +56,7 @@ void ACheckRateExperienceAction_C::HandleClientEvent_FinishedModalQueue(class UO
 // Function CheckRateExperienceAction.CheckRateExperienceAction_C.Execute
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FFortScriptedActionParams* Params                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortScriptedActionParams* Params                         (ConstParm, Parm, OutParm, ReferenceParm)
 
 void ACheckRateExperienceAction_C::Execute(struct FFortScriptedActionParams* Params)
 {
@@ -76,7 +76,7 @@ void ACheckRateExperienceAction_C::Execute(struct FFortScriptedActionParams* Par
 // Function CheckRateExperienceAction.CheckRateExperienceAction_C.ExecuteUbergraph_CheckRateExperienceAction
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ACheckRateExperienceAction_C::ExecuteUbergraph_CheckRateExperienceAction(int EntryPoint)
 {

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UOutpostScreenCanEditPanel_C::CenterWidget()
 // Function OutpostScreenCanEditPanel.OutpostScreenCanEditPanel_C.SetMasterSwitch
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bCanEdit                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bCanEdit                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenCanEditPanel_C::SetMasterSwitch(bool bCanEdit)
 {
@@ -52,7 +52,7 @@ void UOutpostScreenCanEditPanel_C::SetMasterSwitch(bool bCanEdit)
 // Function OutpostScreenCanEditPanel.OutpostScreenCanEditPanel_C.Init
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortPlayerControllerOutpost* InOutpostOwner                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortPlayerControllerOutpost* InOutpostOwner                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenCanEditPanel_C::Init(class AFortPlayerControllerOutpost* InOutpostOwner)
 {
@@ -72,8 +72,8 @@ void UOutpostScreenCanEditPanel_C::Init(class AFortPlayerControllerOutpost* InOu
 // Function OutpostScreenCanEditPanel.OutpostScreenCanEditPanel_C.BndEvt__MasterSwitchButton_K2Node_ComponentBoundEvent_407_FortSelectedStateChanged__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UFortBaseButton*         Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           Selected                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortBaseButton*         Button                         (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Selected                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenCanEditPanel_C::BndEvt__MasterSwitchButton_K2Node_ComponentBoundEvent_407_FortSelectedStateChanged__DelegateSignature(class UFortBaseButton* Button, bool Selected)
 {
@@ -111,7 +111,7 @@ void UOutpostScreenCanEditPanel_C::Construct()
 // Function OutpostScreenCanEditPanel.OutpostScreenCanEditPanel_C.HandleJoined
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     NewTeamMemberInfo              (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortTeamMemberInfo     NewTeamMemberInfo              (Parm)
 
 void UOutpostScreenCanEditPanel_C::HandleJoined(const struct FFortTeamMemberInfo& NewTeamMemberInfo)
 {
@@ -131,7 +131,7 @@ void UOutpostScreenCanEditPanel_C::HandleJoined(const struct FFortTeamMemberInfo
 // Function OutpostScreenCanEditPanel.OutpostScreenCanEditPanel_C.HandleRemoved
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenCanEditPanel_C::HandleRemoved(int PlayerIndex)
 {
@@ -151,8 +151,8 @@ void UOutpostScreenCanEditPanel_C::HandleRemoved(int PlayerIndex)
 // Function OutpostScreenCanEditPanel.OutpostScreenCanEditPanel_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_71_CommonSelectedStateChanged__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           Selected                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Selected                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenCanEditPanel_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_71_CommonSelectedStateChanged__DelegateSignature(class UCommonButton* Button, bool Selected)
 {
@@ -173,7 +173,7 @@ void UOutpostScreenCanEditPanel_C::BndEvt__IconTextButton_K2Node_ComponentBoundE
 // Function OutpostScreenCanEditPanel.OutpostScreenCanEditPanel_C.PartyUpdated
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     PlayerInfo                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortTeamMemberInfo     PlayerInfo                     (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UOutpostScreenCanEditPanel_C::PartyUpdated(const struct FFortTeamMemberInfo& PlayerInfo)
 {
@@ -193,7 +193,7 @@ void UOutpostScreenCanEditPanel_C::PartyUpdated(const struct FFortTeamMemberInfo
 // Function OutpostScreenCanEditPanel.OutpostScreenCanEditPanel_C.ExecuteUbergraph_OutpostScreenCanEditPanel
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOutpostScreenCanEditPanel_C::ExecuteUbergraph_OutpostScreenCanEditPanel(int EntryPoint)
 {

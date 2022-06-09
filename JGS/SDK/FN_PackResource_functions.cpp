@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,44 +12,10 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function PackResource.PackResource_C.TryUpdateCount
-// (Private, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UPackResource_C::TryUpdateCount()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PackResource.PackResource_C.TryUpdateCount");
-
-	UPackResource_C_TryUpdateCount_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PackResource.PackResource_C.TryUpdateBackground
-// (Private, BlueprintCallable, BlueprintEvent)
-
-void UPackResource_C::TryUpdateBackground()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PackResource.PackResource_C.TryUpdateBackground");
-
-	UPackResource_C_TryUpdateBackground_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function PackResource.PackResource_C.UpdateType
-// (Private, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EFortResourceType> ResourceType                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EFortResourceType> ResourceType                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPackResource_C::UpdateType(TEnumAsByte<EFortResourceType> ResourceType)
 {
@@ -67,7 +33,7 @@ void UPackResource_C::UpdateType(TEnumAsByte<EFortResourceType> ResourceType)
 
 
 // Function PackResource.PackResource_C.UpdateCount
-// (Public, BlueprintCallable, BlueprintEvent)
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
 void UPackResource_C::UpdateCount()
 {
@@ -103,7 +69,7 @@ void UPackResource_C::Construct()
 // Function PackResource.PackResource_C.ExecuteUbergraph_PackResource
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPackResource_C::ExecuteUbergraph_PackResource(int EntryPoint)
 {

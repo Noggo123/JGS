@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -22,19 +20,6 @@ enum class EBeaconConnectionState : uint8_t
 	Pending                        = 2,
 	Open                           = 3,
 	EBeaconConnectionState_MAX     = 4
-};
-
-
-// Enum OnlineSubsystemUtils.EClientRequestType
-enum class EClientRequestType : uint8_t
-{
-	NonePending                    = 0,
-	ExistingSessionReservation     = 1,
-	ReservationUpdate              = 2,
-	EmptyServerReservation         = 3,
-	Reconnect                      = 4,
-	Abandon                        = 5,
-	EClientRequestType_MAX         = 6
 };
 
 
@@ -60,29 +45,42 @@ enum class EPartyReservationResult : uint8_t
 };
 
 
+// Enum OnlineSubsystemUtils.EClientRequestType
+enum class EClientRequestType : uint8_t
+{
+	NonePending                    = 0,
+	ExistingSessionReservation     = 1,
+	ReservationUpdate              = 2,
+	EmptyServerReservation         = 3,
+	Reconnect                      = 4,
+	Abandon                        = 5,
+	EClientRequestType_MAX         = 6
+};
+
+
 
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
 
 // ScriptStruct OnlineSubsystemUtils.PlayerReservation
-// 0x0040
+// 0x0030
 struct FPlayerReservation
 {
-	struct FUniqueNetIdRepl                            UniqueId;                                                 // 0x0000(0x0028) (Transient)
-	struct FString                                     ValidationStr;                                            // 0x0028(0x0010) (ZeroConstructor, Transient)
-	float                                              ElapsedTime;                                              // 0x0038(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x003C(0x0004) MISSED OFFSET
+	struct FUniqueNetIdRepl                            UniqueId;                                                 // 0x0000(0x0018) (Transient)
+	struct FString                                     ValidationStr;                                            // 0x0018(0x0010) (ZeroConstructor, Transient)
+	float                                              ElapsedTime;                                              // 0x0028(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x002C(0x0004) MISSED OFFSET
 };
 
 // ScriptStruct OnlineSubsystemUtils.PartyReservation
-// 0x0040
+// 0x0030
 struct FPartyReservation
 {
 	int                                                TeamNum;                                                  // 0x0000(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET
-	struct FUniqueNetIdRepl                            PartyLeader;                                              // 0x0008(0x0028) (Transient)
-	TArray<struct FPlayerReservation>                  PartyMembers;                                             // 0x0030(0x0010) (ZeroConstructor, Transient)
+	struct FUniqueNetIdRepl                            PartyLeader;                                              // 0x0008(0x0018) (Transient)
+	TArray<struct FPlayerReservation>                  PartyMembers;                                             // 0x0020(0x0010) (ZeroConstructor, Transient)
 };
 
 // ScriptStruct OnlineSubsystemUtils.BlueprintSessionResult

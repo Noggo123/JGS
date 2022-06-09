@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function TutorialWindow.TutorialWindow_C.SetDescription
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Description                    (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   Description                    (Parm)
 
 void UTutorialWindow_C::SetDescription(const struct FText& Description)
 {
@@ -35,7 +35,7 @@ void UTutorialWindow_C::SetDescription(const struct FText& Description)
 // Function TutorialWindow.TutorialWindow_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTutorialWindow_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -55,7 +55,7 @@ void UTutorialWindow_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_0_Comm
 // Function TutorialWindow.TutorialWindow_C.ExecuteUbergraph_TutorialWindow
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTutorialWindow_C::ExecuteUbergraph_TutorialWindow(int EntryPoint)
 {

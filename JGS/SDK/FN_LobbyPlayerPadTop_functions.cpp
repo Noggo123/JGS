@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,88 +12,10 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.UpdateMicIcon
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ULobbyPlayerPadTop_C::UpdateMicIcon()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.UpdateMicIcon");
-
-	ULobbyPlayerPadTop_C_UpdateMicIcon_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.HandlePlayerStoppedTalking
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ULobbyPlayerPadTop_C::HandlePlayerStoppedTalking()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.HandlePlayerStoppedTalking");
-
-	ULobbyPlayerPadTop_C_HandlePlayerStoppedTalking_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.HandlePlayerMutingChanged
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FUniqueNetIdRepl        UniqueId                       (BlueprintVisible, BlueprintReadOnly, Parm)
-// bool                           IsTalking                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void ULobbyPlayerPadTop_C::HandlePlayerMutingChanged(const struct FUniqueNetIdRepl& UniqueId, bool IsTalking)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.HandlePlayerMutingChanged");
-
-	ULobbyPlayerPadTop_C_HandlePlayerMutingChanged_Params params;
-	params.UniqueId = UniqueId;
-	params.IsTalking = IsTalking;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.HandlePlayerTalkingChanged
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FUniqueNetIdRepl        UniqueId                       (BlueprintVisible, BlueprintReadOnly, Parm)
-// bool                           IsTalking                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void ULobbyPlayerPadTop_C::HandlePlayerTalkingChanged(const struct FUniqueNetIdRepl& UniqueId, bool IsTalking)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.HandlePlayerTalkingChanged");
-
-	ULobbyPlayerPadTop_C_HandlePlayerTalkingChanged_Params params;
-	params.UniqueId = UniqueId;
-	params.IsTalking = IsTalking;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.RefreshReadyState
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Ready                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Ready                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyPlayerPadTop_C::RefreshReadyState(bool Ready)
 {
@@ -113,8 +35,8 @@ void ULobbyPlayerPadTop_C::RefreshReadyState(bool Ready)
 // Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.OnAthenaReadyStateChanged
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        Member_Id                      (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// bool                           Ready                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FUniqueNetIdRepl        Member_Id                      (Parm, OutParm, ReferenceParm)
+// bool                           Ready                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyPlayerPadTop_C::OnAthenaReadyStateChanged(bool Ready, struct FUniqueNetIdRepl* Member_Id)
 {
@@ -137,7 +59,7 @@ void ULobbyPlayerPadTop_C::OnAthenaReadyStateChanged(bool Ready, struct FUniqueN
 // Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.OnLobbyPlayerUnhovered
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyPlayerPadTop_C::OnLobbyPlayerUnhovered(int PlayerIndex)
 {
@@ -157,7 +79,7 @@ void ULobbyPlayerPadTop_C::OnLobbyPlayerUnhovered(int PlayerIndex)
 // Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.Initialize
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyPlayerPadTop_C::Initialize(int PlayerIndex)
 {
@@ -194,7 +116,7 @@ void ULobbyPlayerPadTop_C::InitializeContextEvents()
 // Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.OnLobbyPlayerHovered
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyPlayerPadTop_C::OnLobbyPlayerHovered(int PlayerIndex)
 {
@@ -214,7 +136,7 @@ void ULobbyPlayerPadTop_C::OnLobbyPlayerHovered(int PlayerIndex)
 // Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.SetTeamMemberInfo
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     TeamMemberInfo                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortTeamMemberInfo     TeamMemberInfo                 (Parm)
 
 void ULobbyPlayerPadTop_C::SetTeamMemberInfo(const struct FFortTeamMemberInfo& TeamMemberInfo)
 {
@@ -265,10 +187,27 @@ void ULobbyPlayerPadTop_C::RefreshPlayerName()
 }
 
 
+// Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.RefreshHomeBasePower
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ULobbyPlayerPadTop_C::RefreshHomeBasePower()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.RefreshHomeBasePower");
+
+	ULobbyPlayerPadTop_C_RefreshHomeBasePower_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyPlayerPadTop_C::PreConstruct(bool* IsDesignTime)
 {
@@ -322,8 +261,8 @@ void ULobbyPlayerPadTop_C::OnLobbyStarted()
 // Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.OnUpdateLobbyPlayerPadTop
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        PlayerNetId                    (BlueprintVisible, BlueprintReadOnly, Parm)
-// bool                           bIsReady                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FUniqueNetIdRepl        PlayerNetId                    (Parm)
+// bool                           bIsReady                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyPlayerPadTop_C::OnUpdateLobbyPlayerPadTop(const struct FUniqueNetIdRepl& PlayerNetId, bool bIsReady)
 {
@@ -361,7 +300,7 @@ void ULobbyPlayerPadTop_C::OnLobbyDisconnected()
 // Function LobbyPlayerPadTop.LobbyPlayerPadTop_C.ExecuteUbergraph_LobbyPlayerPadTop
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyPlayerPadTop_C::ExecuteUbergraph_LobbyPlayerPadTop(int EntryPoint)
 {

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,7 @@ namespace SDK
 // Function ItemManagementCompareModeBox.ItemManagementCompareModeBox_C.HandleBack
 struct UItemManagementCompareModeBox_C_HandleBack_Params
 {
-	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               PassThrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemManagementCompareModeBox.ItemManagementCompareModeBox_C.UpdateFocusedItems
@@ -53,7 +53,7 @@ struct UItemManagementCompareModeBox_C_OnDeactivated_Params
 // Function ItemManagementCompareModeBox.ItemManagementCompareModeBox_C.ExecuteUbergraph_ItemManagementCompareModeBox
 struct UItemManagementCompareModeBox_C_ExecuteUbergraph_ItemManagementCompareModeBox_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

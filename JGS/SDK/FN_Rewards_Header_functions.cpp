@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,9 +49,9 @@ void URewards_Header_C::SetQuestNameText()
 // Function Rewards_Header.Rewards_Header_C.PopulateFromRewardType
 // (Private, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFrontEndRewardType            Selection                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// ECollectionBookRewardType      CollectionBookRewardType       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   RewardDetailText               (BlueprintVisible, BlueprintReadOnly, Parm)
+// EFrontEndRewardType            Selection                      (Parm, ZeroConstructor, IsPlainOldData)
+// ECollectionBookRewardType      CollectionBookRewardType       (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   RewardDetailText               (Parm)
 
 void URewards_Header_C::PopulateFromRewardType(EFrontEndRewardType Selection, ECollectionBookRewardType CollectionBookRewardType, const struct FText& RewardDetailText)
 {
@@ -124,7 +124,7 @@ void URewards_Header_C::SetMissionLootLevelText()
 // Function Rewards_Header.Rewards_Header_C.PopulateFromReward
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortRewardNotificationData* InReward                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortRewardNotificationData* InReward                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewards_Header_C::PopulateFromReward(class UFortRewardNotificationData* InReward)
 {
@@ -144,7 +144,7 @@ void URewards_Header_C::PopulateFromReward(class UFortRewardNotificationData* In
 // Function Rewards_Header.Rewards_Header_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewards_Header_C::PreConstruct(bool* IsDesignTime)
 {
@@ -164,7 +164,7 @@ void URewards_Header_C::PreConstruct(bool* IsDesignTime)
 // Function Rewards_Header.Rewards_Header_C.ExecuteUbergraph_Rewards_Header
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void URewards_Header_C::ExecuteUbergraph_Rewards_Header(int EntryPoint)
 {

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,13 +17,13 @@ namespace SDK
 // Function Results_TeamTotalScore.Results_TeamTotalScore_C.InitializeConvertScorePlayRate
 struct UResults_TeamTotalScore_C_InitializeConvertScorePlayRate_Params
 {
-	float                                              PlayRate;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              PlayRate;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeamTotalScore.Results_TeamTotalScore_C.InitializeCountScorePlayRate
 struct UResults_TeamTotalScore_C_InitializeCountScorePlayRate_Params
 {
-	float                                              PlayRate;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              PlayRate;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeamTotalScore.Results_TeamTotalScore_C.SetSkippingToConvertScoreEnd
@@ -49,7 +49,7 @@ struct UResults_TeamTotalScore_C_SkipToCountScoreFinalState_Params
 // Function Results_TeamTotalScore.Results_TeamTotalScore_C.Initialize
 struct UResults_TeamTotalScore_C_Initialize_Params
 {
-	class UFortUIScoreReport*                          Score_Report;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortUIScoreReport*                          Score_Report;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeamTotalScore.Results_TeamTotalScore_C.Count Score Sequence
@@ -65,7 +65,7 @@ struct UResults_TeamTotalScore_C_Count_Score_Intro_Sequence_Params
 // Function Results_TeamTotalScore.Results_TeamTotalScore_C.PreConstruct
 struct UResults_TeamTotalScore_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeamTotalScore.Results_TeamTotalScore_C.Convert Score Intro Sequence
@@ -96,14 +96,14 @@ struct UResults_TeamTotalScore_C_Teleport_Pad_Intro_Sequence_Params
 // Function Results_TeamTotalScore.Results_TeamTotalScore_C.BndEvt__TextTotalScore_K2Node_ComponentBoundEvent_0_OnInterpolationEnded__DelegateSignature
 struct UResults_TeamTotalScore_C_BndEvt__TextTotalScore_K2Node_ComponentBoundEvent_0_OnInterpolationEnded__DelegateSignature_Params
 {
-	class UCommonNumericTextBlock*                     NumericTextBlock;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               HadCompleted;                                             // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonNumericTextBlock*                     NumericTextBlock;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               HadCompleted;                                             // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeamTotalScore.Results_TeamTotalScore_C.ExecuteUbergraph_Results_TeamTotalScore
 struct UResults_TeamTotalScore_C_ExecuteUbergraph_Results_TeamTotalScore_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeamTotalScore.Results_TeamTotalScore_C.Count Score Finished__DelegateSignature

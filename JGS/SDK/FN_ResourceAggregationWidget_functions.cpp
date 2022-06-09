@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -66,7 +66,7 @@ void UResourceAggregationWidget_C::TriggerAggregateAnimation()
 // Function ResourceAggregationWidget.ResourceAggregationWidget_C.UpdateAggregateResourceCollected
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               InPotentialResource            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               InPotentialResource            (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResourceAggregationWidget_C::UpdateAggregateResourceCollected(class UFortItem* InPotentialResource)
 {
@@ -86,8 +86,8 @@ void UResourceAggregationWidget_C::UpdateAggregateResourceCollected(class UFortI
 // Function ResourceAggregationWidget.ResourceAggregationWidget_C.ResetSourceOfResource
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ABuildingSMActor*        InResourceObject               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UFortItem*               InPotentialResource            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class ABuildingSMActor*        InResourceObject               (Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               InPotentialResource            (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResourceAggregationWidget_C::ResetSourceOfResource(class ABuildingSMActor* InResourceObject, class UFortItem* InPotentialResource)
 {
@@ -108,10 +108,10 @@ void UResourceAggregationWidget_C::ResetSourceOfResource(class ABuildingSMActor*
 // Function ResourceAggregationWidget.ResourceAggregationWidget_C.HandleDamagedResourceObject
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ABuildingSMActor*        DamagedResourceObject          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UFortItem*               PotentialResource              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           Destroyed                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           WeakpointDamage                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class ABuildingSMActor*        DamagedResourceObject          (Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               PotentialResource              (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Destroyed                      (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           WeakpointDamage                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResourceAggregationWidget_C::HandleDamagedResourceObject(class ABuildingSMActor* DamagedResourceObject, class UFortItem* PotentialResource, bool Destroyed, bool WeakpointDamage)
 {
@@ -151,7 +151,7 @@ void UResourceAggregationWidget_C::Construct()
 // Function ResourceAggregationWidget.ResourceAggregationWidget_C.ExecuteUbergraph_ResourceAggregationWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResourceAggregationWidget_C::ExecuteUbergraph_ResourceAggregationWidget(int EntryPoint)
 {

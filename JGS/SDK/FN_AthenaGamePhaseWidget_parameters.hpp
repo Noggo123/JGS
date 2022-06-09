@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,16 +14,22 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function AthenaGamePhaseWidget.AthenaGamePhaseWidget_C.OnGamePhaseStepChanged
-struct UAthenaGamePhaseWidget_C_OnGamePhaseStepChanged_Params
+// Function AthenaGamePhaseWidget.AthenaGamePhaseWidget_C.Construct
+struct UAthenaGamePhaseWidget_C_Construct_Params
 {
-	EAthenaGamePhaseStep*                              GamePhaseStep;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaGamePhaseWidget.AthenaGamePhaseWidget_C.Tick
+struct UAthenaGamePhaseWidget_C_Tick_Params
+{
+	struct FGeometry*                                  MyGeometry;                                               // (Parm, IsPlainOldData)
+	float*                                             InDeltaTime;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaGamePhaseWidget.AthenaGamePhaseWidget_C.ExecuteUbergraph_AthenaGamePhaseWidget
 struct UAthenaGamePhaseWidget_C_ExecuteUbergraph_AthenaGamePhaseWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

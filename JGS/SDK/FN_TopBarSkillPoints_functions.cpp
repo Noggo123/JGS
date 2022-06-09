@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,91 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function TopBarSkillPoints.TopBarSkillPoints_C.HandleItemCountChanged
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UFortItemDefinition*     Definition                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            Delta                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UTopBarSkillPoints_C::HandleItemCountChanged(class UFortItemDefinition* Definition, int Delta)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TopBarSkillPoints.TopBarSkillPoints_C.HandleItemCountChanged");
-
-	UTopBarSkillPoints_C_HandleItemCountChanged_Params params;
-	params.Definition = Definition;
-	params.Delta = Delta;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function TopBarSkillPoints.TopBarSkillPoints_C.HandleLocalAccountInfoChanged
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FFortPrivateAccountInfo NewInfo                        (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UTopBarSkillPoints_C::HandleLocalAccountInfoChanged(const struct FFortPrivateAccountInfo& NewInfo)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TopBarSkillPoints.TopBarSkillPoints_C.HandleLocalAccountInfoChanged");
-
-	UTopBarSkillPoints_C_HandleLocalAccountInfoChanged_Params params;
-	params.NewInfo = NewInfo;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function TopBarSkillPoints.TopBarSkillPoints_C.GetMissionRewardBadgeTooltipWidget
-// (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UWidget* UTopBarSkillPoints_C::GetMissionRewardBadgeTooltipWidget()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TopBarSkillPoints.TopBarSkillPoints_C.GetMissionRewardBadgeTooltipWidget");
-
-	UTopBarSkillPoints_C_GetMissionRewardBadgeTooltipWidget_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function TopBarSkillPoints.TopBarSkillPoints_C.Has Mission Reward Boost
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           Result                         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UTopBarSkillPoints_C::Has_Mission_Reward_Boost(bool* Result)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TopBarSkillPoints.TopBarSkillPoints_C.Has Mission Reward Boost");
-
-	UTopBarSkillPoints_C_Has_Mission_Reward_Boost_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Result != nullptr)
-		*Result = params.Result;
-}
-
 
 // Function TopBarSkillPoints.TopBarSkillPoints_C.GetFounderBadgetTooltipWidget
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
@@ -186,7 +101,7 @@ void UTopBarSkillPoints_C::Has_Founder_Badge(bool* Result)
 // Function TopBarSkillPoints.TopBarSkillPoints_C.HandleRemotePlayerRemoved
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            RemovedIndex                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            RemovedIndex                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTopBarSkillPoints_C::HandleRemotePlayerRemoved(int RemovedIndex)
 {
@@ -206,7 +121,7 @@ void UTopBarSkillPoints_C::HandleRemotePlayerRemoved(int RemovedIndex)
 // Function TopBarSkillPoints.TopBarSkillPoints_C.HandleOnTeamMemberStateChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     NewMemberState                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortTeamMemberInfo     NewMemberState                 (Parm)
 
 void UTopBarSkillPoints_C::HandleOnTeamMemberStateChanged(const struct FFortTeamMemberInfo& NewMemberState)
 {
@@ -383,7 +298,7 @@ void UTopBarSkillPoints_C::Update_Boosts()
 // Function TopBarSkillPoints.TopBarSkillPoints_C.UpdateAccountInfo
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortPublicAccountInfo  Info                           (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortPublicAccountInfo  Info                           (Parm)
 
 void UTopBarSkillPoints_C::UpdateAccountInfo(const struct FFortPublicAccountInfo& Info)
 {
@@ -420,7 +335,7 @@ void UTopBarSkillPoints_C::Construct()
 // Function TopBarSkillPoints.TopBarSkillPoints_C.Xp Boost Changed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            BoostAmount                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            BoostAmount                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTopBarSkillPoints_C::Xp_Boost_Changed(int BoostAmount)
 {
@@ -440,7 +355,7 @@ void UTopBarSkillPoints_C::Xp_Boost_Changed(int BoostAmount)
 // Function TopBarSkillPoints.TopBarSkillPoints_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_36_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTopBarSkillPoints_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_36_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -528,7 +443,7 @@ void UTopBarSkillPoints_C::Destruct()
 // Function TopBarSkillPoints.TopBarSkillPoints_C.ExecuteUbergraph_TopBarSkillPoints
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTopBarSkillPoints_C::ExecuteUbergraph_TopBarSkillPoints(int EntryPoint)
 {

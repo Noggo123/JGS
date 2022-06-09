@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,9 +15,9 @@ namespace SDK
 // Function PinnedSchematicItemWidget.PinnedSchematicItemWidget_C.HandleCursorModeChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           CursorModeEnabled              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ActionName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UUserWidget*             CursorModeContentWidget        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           CursorModeEnabled              (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ActionName                     (Parm, ZeroConstructor, IsPlainOldData)
+// class UUserWidget*             CursorModeContentWidget        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPinnedSchematicItemWidget_C::HandleCursorModeChanged(bool CursorModeEnabled, const struct FName& ActionName, class UUserWidget* CursorModeContentWidget)
 {
@@ -73,9 +73,9 @@ void UPinnedSchematicItemWidget_C::ClearPinnedSchematic()
 // Function PinnedSchematicItemWidget.PinnedSchematicItemWidget_C.HandleItemChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           ItemChanged                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           AmmoChanged                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           IngredientsChanged             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ItemChanged                    (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           AmmoChanged                    (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IngredientsChanged             (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPinnedSchematicItemWidget_C::HandleItemChanged(bool ItemChanged, bool AmmoChanged, bool IngredientsChanged)
 {
@@ -114,8 +114,8 @@ void UPinnedSchematicItemWidget_C::SetupIngredients()
 // Function PinnedSchematicItemWidget.PinnedSchematicItemWidget_C.HandleWorldItemListChanged
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UFortWorldItem*>  ItemsAdded                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// TArray<class UFortWorldItem*>  ItemsRemoved                   (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UFortWorldItem*>  ItemsAdded                     (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UFortWorldItem*>  ItemsRemoved                   (Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UPinnedSchematicItemWidget_C::HandleWorldItemListChanged(TArray<class UFortWorldItem*>* ItemsAdded, TArray<class UFortWorldItem*>* ItemsRemoved)
 {
@@ -139,7 +139,7 @@ void UPinnedSchematicItemWidget_C::HandleWorldItemListChanged(TArray<class UFort
 // Function PinnedSchematicItemWidget.PinnedSchematicItemWidget_C.HandleOnSchematicUnlocked
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortSchematicItem*      Schematic                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortSchematicItem*      Schematic                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPinnedSchematicItemWidget_C::HandleOnSchematicUnlocked(class UFortSchematicItem* Schematic)
 {
@@ -176,7 +176,7 @@ void UPinnedSchematicItemWidget_C::BindDelegates()
 // Function PinnedSchematicItemWidget.PinnedSchematicItemWidget_C.SetPinnedSchematic
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortSchematicItem*      NewPinnedSchematic             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortSchematicItem*      NewPinnedSchematic             (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPinnedSchematicItemWidget_C::SetPinnedSchematic(class UFortSchematicItem* NewPinnedSchematic)
 {
@@ -213,7 +213,7 @@ void UPinnedSchematicItemWidget_C::Refresh()
 // Function PinnedSchematicItemWidget.PinnedSchematicItemWidget_C.PinButton_Clicked
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortBaseButton*         NewParam                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortBaseButton*         NewParam                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPinnedSchematicItemWidget_C::PinButton_Clicked(class UFortBaseButton* NewParam)
 {
@@ -233,7 +233,7 @@ void UPinnedSchematicItemWidget_C::PinButton_Clicked(class UFortBaseButton* NewP
 // Function PinnedSchematicItemWidget.PinnedSchematicItemWidget_C.ExecuteUbergraph_PinnedSchematicItemWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPinnedSchematicItemWidget_C::ExecuteUbergraph_PinnedSchematicItemWidget(int EntryPoint)
 {

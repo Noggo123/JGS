@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -134,7 +134,7 @@ void UFrontEndRewards_Expedition_C::SetBrushFromExpedition()
 // Function FrontEndRewards_Expedition.FrontEndRewards_Expedition_C.PopulateFromExpedition
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortExpeditionItem*     Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortExpeditionItem*     Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_Expedition_C::PopulateFromExpedition(class UFortExpeditionItem* Item)
 {
@@ -188,9 +188,9 @@ void UFrontEndRewards_Expedition_C::TransitionOutBegin()
 // Function FrontEndRewards_Expedition.FrontEndRewards_Expedition_C.OnCollectExpeditionCompleted
 // (Event, Protected, HasOutParms, BlueprintEvent)
 // Parameters:
-// class UFortExpeditionItem**    Expedition                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool*                          bSucceeded                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// TArray<struct FFortItemInstanceQuantityPair>* Rewards                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// class UFortExpeditionItem**    Expedition                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          bSucceeded                     (Parm, ZeroConstructor, IsPlainOldData)
+// TArray<struct FFortItemInstanceQuantityPair>* Rewards                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UFrontEndRewards_Expedition_C::OnCollectExpeditionCompleted(class UFortExpeditionItem** Expedition, bool* bSucceeded, TArray<struct FFortItemInstanceQuantityPair>* Rewards)
 {
@@ -246,7 +246,7 @@ void UFrontEndRewards_Expedition_C::Construct()
 // Function FrontEndRewards_Expedition.FrontEndRewards_Expedition_C.ExecuteUbergraph_FrontEndRewards_Expedition
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_Expedition_C::ExecuteUbergraph_FrontEndRewards_Expedition(int EntryPoint)
 {
@@ -266,8 +266,8 @@ void UFrontEndRewards_Expedition_C::ExecuteUbergraph_FrontEndRewards_Expedition(
 // Function FrontEndRewards_Expedition.FrontEndRewards_Expedition_C.OnExpeditionCompleted__DelegateSignature
 // (Public, Delegate, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Succeeded                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// TArray<struct FFortItemInstanceQuantityPair> Rewards                        (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// bool                           Succeeded                      (Parm, ZeroConstructor, IsPlainOldData)
+// TArray<struct FFortItemInstanceQuantityPair> Rewards                        (Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UFrontEndRewards_Expedition_C::OnExpeditionCompleted__DelegateSignature(bool Succeeded, TArray<struct FFortItemInstanceQuantityPair>* Rewards)
 {

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,26 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function TabGameOptionsHud.TabGameOptionsHud_C.Set Settings Tooltip
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCommonTextBlock*        Tooltip_To_Display             (Parm, ZeroConstructor, IsPlainOldData)
+
+void UTabGameOptionsHud_C::Set_Settings_Tooltip(class UCommonTextBlock* Tooltip_To_Display)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function TabGameOptionsHud.TabGameOptionsHud_C.Set Settings Tooltip");
+
+	UTabGameOptionsHud_C_Set_Settings_Tooltip_Params params;
+	params.Tooltip_To_Display = Tooltip_To_Display;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function TabGameOptionsHud.TabGameOptionsHud_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -66,7 +86,7 @@ void UTabGameOptionsHud_C::CenterOnTab()
 // Function TabGameOptionsHud.TabGameOptionsHud_C.BndEvt__HUDCommonListView_K2Node_ComponentBoundEvent_37_OnListViewItemWidgetCreated__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UUserWidget*             Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UUserWidget*             Widget                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTabGameOptionsHud_C::BndEvt__HUDCommonListView_K2Node_ComponentBoundEvent_37_OnListViewItemWidgetCreated__DelegateSignature(class UUserWidget* Widget)
 {
@@ -86,8 +106,8 @@ void UTabGameOptionsHud_C::BndEvt__HUDCommonListView_K2Node_ComponentBoundEvent_
 // Function TabGameOptionsHud.TabGameOptionsHud_C.HUD Changed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Selected_Index                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayTag            Gameplay_Tag                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// int                            Selected_Index                 (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayTag            Gameplay_Tag                   (Parm)
 
 void UTabGameOptionsHud_C::HUD_Changed(int Selected_Index, const struct FGameplayTag& Gameplay_Tag)
 {
@@ -108,7 +128,7 @@ void UTabGameOptionsHud_C::HUD_Changed(int Selected_Index, const struct FGamepla
 // Function TabGameOptionsHud.TabGameOptionsHud_C.ExecuteUbergraph_TabGameOptionsHud
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTabGameOptionsHud_C::ExecuteUbergraph_TabGameOptionsHud(int EntryPoint)
 {

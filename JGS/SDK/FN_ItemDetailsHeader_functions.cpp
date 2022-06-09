@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -63,6 +63,26 @@ void UItemDetailsHeader_C::Construct()
 }
 
 
+// Function ItemDetailsHeader.ItemDetailsHeader_C.PreConstruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Parameters:
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemDetailsHeader_C::PreConstruct(bool* IsDesignTime)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemDetailsHeader.ItemDetailsHeader_C.PreConstruct");
+
+	UItemDetailsHeader_C_PreConstruct_Params params;
+	params.IsDesignTime = IsDesignTime;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function ItemDetailsHeader.ItemDetailsHeader_C.HandleDifferentItemToDetailSet
 // (Event, Protected, BlueprintEvent)
 
@@ -100,7 +120,7 @@ void UItemDetailsHeader_C::HandleDifferentItemToCompareSet()
 // Function ItemDetailsHeader.ItemDetailsHeader_C.ExecuteUbergraph_ItemDetailsHeader
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemDetailsHeader_C::ExecuteUbergraph_ItemDetailsHeader(int EntryPoint)
 {

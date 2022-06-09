@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function ItemCraftingIngredientList.ItemCraftingIngredientList_C.GetIngredients
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 Item                           (Parm, ZeroConstructor, IsPlainOldData)
 // TArray<struct FFortItemQuantityPair> ReturnIngredients              (Parm, OutParm, ZeroConstructor)
 
 void UItemCraftingIngredientList_C::GetIngredients(class UObject* Item, TArray<struct FFortItemQuantityPair>* ReturnIngredients)
@@ -39,7 +39,7 @@ void UItemCraftingIngredientList_C::GetIngredients(class UObject* Item, TArray<s
 // Function ItemCraftingIngredientList.ItemCraftingIngredientList_C.SetItemToCompare
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               ItemToCompare                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               ItemToCompare                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemCraftingIngredientList_C::SetItemToCompare(class UFortItem* ItemToCompare)
 {
@@ -59,7 +59,7 @@ void UItemCraftingIngredientList_C::SetItemToCompare(class UFortItem* ItemToComp
 // Function ItemCraftingIngredientList.ItemCraftingIngredientList_C.ItemNeedsInventoryTracking
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           NeedsTracking                  (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UItemCraftingIngredientList_C::ItemNeedsInventoryTracking(class UFortItem* Item, bool* NeedsTracking)
@@ -83,9 +83,9 @@ void UItemCraftingIngredientList_C::ItemNeedsInventoryTracking(class UFortItem* 
 // Function ItemCraftingIngredientList.ItemCraftingIngredientList_C.HandleItemChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           ItemChanged                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           AmmoChanged                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           IngredientsChanged             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ItemChanged                    (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           AmmoChanged                    (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IngredientsChanged             (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemCraftingIngredientList_C::HandleItemChanged(bool ItemChanged, bool AmmoChanged, bool IngredientsChanged)
 {
@@ -121,11 +121,28 @@ void UItemCraftingIngredientList_C::RefreshInventoryTracking()
 }
 
 
+// Function ItemCraftingIngredientList.ItemCraftingIngredientList_C.HandleWorldItemsChanged
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UItemCraftingIngredientList_C::HandleWorldItemsChanged()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemCraftingIngredientList.ItemCraftingIngredientList_C.HandleWorldItemsChanged");
+
+	UItemCraftingIngredientList_C_HandleWorldItemsChanged_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function ItemCraftingIngredientList.ItemCraftingIngredientList_C.HandleWorldItemListChanged
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UFortWorldItem*>  ItemsAdded                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// TArray<class UFortWorldItem*>  ItemsRemoved                   (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UFortWorldItem*>  ItemsAdded                     (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UFortWorldItem*>  ItemsRemoved                   (Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UItemCraftingIngredientList_C::HandleWorldItemListChanged(TArray<class UFortWorldItem*>* ItemsAdded, TArray<class UFortWorldItem*>* ItemsRemoved)
 {
@@ -166,7 +183,7 @@ void UItemCraftingIngredientList_C::Refresh()
 // Function ItemCraftingIngredientList.ItemCraftingIngredientList_C.SetItemToRepresent
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemCraftingIngredientList_C::SetItemToRepresent(class UFortItem* Item)
 {
@@ -183,10 +200,47 @@ void UItemCraftingIngredientList_C::SetItemToRepresent(class UFortItem* Item)
 }
 
 
+// Function ItemCraftingIngredientList.ItemCraftingIngredientList_C.DoDesignTimeRandomization
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UItemCraftingIngredientList_C::DoDesignTimeRandomization()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemCraftingIngredientList.ItemCraftingIngredientList_C.DoDesignTimeRandomization");
+
+	UItemCraftingIngredientList_C_DoDesignTimeRandomization_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemCraftingIngredientList.ItemCraftingIngredientList_C.PreConstruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Parameters:
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemCraftingIngredientList_C::PreConstruct(bool* IsDesignTime)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemCraftingIngredientList.ItemCraftingIngredientList_C.PreConstruct");
+
+	UItemCraftingIngredientList_C_PreConstruct_Params params;
+	params.IsDesignTime = IsDesignTime;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function ItemCraftingIngredientList.ItemCraftingIngredientList_C.AddListEntry
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UFortItemQuantityListEntryBase** ListEntry                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItemQuantityListEntryBase** ListEntry                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemCraftingIngredientList_C::AddListEntry(class UFortItemQuantityListEntryBase** ListEntry)
 {
@@ -206,7 +260,7 @@ void UItemCraftingIngredientList_C::AddListEntry(class UFortItemQuantityListEntr
 // Function ItemCraftingIngredientList.ItemCraftingIngredientList_C.ExecuteUbergraph_ItemCraftingIngredientList
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemCraftingIngredientList_C::ExecuteUbergraph_ItemCraftingIngredientList(int EntryPoint)
 {

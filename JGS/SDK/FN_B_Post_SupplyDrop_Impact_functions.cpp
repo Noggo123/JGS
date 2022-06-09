@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -66,11 +66,11 @@ void AB_Post_SupplyDrop_Impact_C::Timeline_0__UpdateFunc()
 // Function B_Post_SupplyDrop_Impact.B_Post_SupplyDrop_Impact_C.SpawnPostFX
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          PostFX_BoxScaleDyn             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FVector                 PostFX_CamShakeLoc             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// bool                           PostFX_UseCamShake             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          PostFX_DeactivateDelay         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           PostFX_UseForceFeedback        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          PostFX_BoxScaleDyn             (Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector                 PostFX_CamShakeLoc             (Parm, IsPlainOldData)
+// bool                           PostFX_UseCamShake             (Parm, ZeroConstructor, IsPlainOldData)
+// float                          PostFX_DeactivateDelay         (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           PostFX_UseForceFeedback        (Parm, ZeroConstructor, IsPlainOldData)
 
 void AB_Post_SupplyDrop_Impact_C::SpawnPostFX(float PostFX_BoxScaleDyn, const struct FVector& PostFX_CamShakeLoc, bool PostFX_UseCamShake, float PostFX_DeactivateDelay, bool PostFX_UseForceFeedback)
 {
@@ -94,7 +94,7 @@ void AB_Post_SupplyDrop_Impact_C::SpawnPostFX(float PostFX_BoxScaleDyn, const st
 // Function B_Post_SupplyDrop_Impact.B_Post_SupplyDrop_Impact_C.ExecuteUbergraph_B_Post_SupplyDrop_Impact
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AB_Post_SupplyDrop_Impact_C::ExecuteUbergraph_B_Post_SupplyDrop_Impact(int EntryPoint)
 {

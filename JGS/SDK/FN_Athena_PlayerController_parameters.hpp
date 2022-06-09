@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,13 +14,6 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function Athena_PlayerController.Athena_PlayerController_C.IsLocalPlayerFriendsWithSquadMember
-struct AAthena_PlayerController_C_IsLocalPlayerFriendsWithSquadMember_Params
-{
-	class AFortPlayerState**                           SquadMember;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
 // Function Athena_PlayerController.Athena_PlayerController_C.UserConstructionScript
 struct AAthena_PlayerController_C_UserConstructionScript_Params
 {
@@ -31,6 +24,12 @@ struct AAthena_PlayerController_C_ReceiveBeginPlay_Params
 {
 };
 
+// Function Athena_PlayerController.Athena_PlayerController_C.ReceiveTick
+struct AAthena_PlayerController_C_ReceiveTick_Params
+{
+	float*                                             DeltaSeconds;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function Athena_PlayerController.Athena_PlayerController_C.PlayWinEffects
 struct AAthena_PlayerController_C_PlayWinEffects_Params
 {
@@ -39,7 +38,7 @@ struct AAthena_PlayerController_C_PlayWinEffects_Params
 // Function Athena_PlayerController.Athena_PlayerController_C.ExecuteUbergraph_Athena_PlayerController
 struct AAthena_PlayerController_C_ExecuteUbergraph_Athena_PlayerController_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

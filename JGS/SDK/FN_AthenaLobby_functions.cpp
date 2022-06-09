@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,87 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function AthenaLobby.AthenaLobby_C.OnInputCustomMatchmaking
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           bPassThrough                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaLobby_C::OnInputCustomMatchmaking(bool* bPassThrough)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobby.AthenaLobby_C.OnInputCustomMatchmaking");
-
-	UAthenaLobby_C_OnInputCustomMatchmaking_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (bPassThrough != nullptr)
-		*bPassThrough = params.bPassThrough;
-}
-
-
-// Function AthenaLobby.AthenaLobby_C.HighlightsCountChanged
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int                            NewParam                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaLobby_C::HighlightsCountChanged(int NewParam)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobby.AthenaLobby_C.HighlightsCountChanged");
-
-	UAthenaLobby_C_HighlightsCountChanged_Params params;
-	params.NewParam = NewParam;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaLobby.AthenaLobby_C.ShowModalNews
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaLobby_C::ShowModalNews()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobby.AthenaLobby_C.ShowModalNews");
-
-	UAthenaLobby_C_ShowModalNews_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaLobby.AthenaLobby_C.OnInputNews
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           bPassThrough                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaLobby_C::OnInputNews(bool* bPassThrough)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobby.AthenaLobby_C.OnInputNews");
-
-	UAthenaLobby_C_OnInputNews_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (bPassThrough != nullptr)
-		*bPassThrough = params.bPassThrough;
-}
-
 
 // Function AthenaLobby.AthenaLobby_C.OnInputFillChangeGamepad
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
@@ -140,7 +59,7 @@ void UAthenaLobby_C::OnInputPlaylistChangeGamepad(bool* bCommited)
 // Function AthenaLobby.AthenaLobby_C.IsLocalPlayer
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// int                            PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           IsLocalPlayer                  (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaLobby_C::IsLocalPlayer(int PlayerIndex, bool* IsLocalPlayer)
@@ -164,7 +83,7 @@ void UAthenaLobby_C::IsLocalPlayer(int PlayerIndex, bool* IsLocalPlayer)
 // Function AthenaLobby.AthenaLobby_C.OnSelect
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaLobby_C::OnSelect(int PlayerIndex)
 {
@@ -206,7 +125,7 @@ void UAthenaLobby_C::CanNavigatePlayers(bool* bCanNavigatePlayers)
 // Function AthenaLobby.AthenaLobby_C.SetHoveredPlayer
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaLobby_C::SetHoveredPlayer(int PlayerIndex)
 {
@@ -316,7 +235,7 @@ void UAthenaLobby_C::InitializeInput()
 // Function AthenaLobby.AthenaLobby_C.OnLobbyPlayerPadUnhovered
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaLobby_C::OnLobbyPlayerPadUnhovered(int PlayerIndex)
 {
@@ -336,7 +255,7 @@ void UAthenaLobby_C::OnLobbyPlayerPadUnhovered(int PlayerIndex)
 // Function AthenaLobby.AthenaLobby_C.OnLobbyPlayerPadHovered
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaLobby_C::OnLobbyPlayerPadHovered(int PlayerIndex)
 {
@@ -356,7 +275,7 @@ void UAthenaLobby_C::OnLobbyPlayerPadHovered(int PlayerIndex)
 // Function AthenaLobby.AthenaLobby_C.OnLobbyPlayerGadgetsClicked
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaLobby_C::OnLobbyPlayerGadgetsClicked(int PlayerIndex)
 {
@@ -376,7 +295,7 @@ void UAthenaLobby_C::OnLobbyPlayerGadgetsClicked(int PlayerIndex)
 // Function AthenaLobby.AthenaLobby_C.OnLobbyEmptyPlayerClicked
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaLobby_C::OnLobbyEmptyPlayerClicked(int PlayerIndex)
 {
@@ -430,8 +349,8 @@ void UAthenaLobby_C::RefreshLaunch()
 // Function AthenaLobby.AthenaLobby_C.OnMouseButtonDown
 // (BlueprintCosmetic, Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent           MouseEvent                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// struct FPointerEvent*          MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
 // struct FEventReply             ReturnValue                    (Parm, OutParm, ReturnParm)
 
 struct FEventReply UAthenaLobby_C::OnMouseButtonDown(struct FGeometry* MyGeometry, struct FPointerEvent* MouseEvent)
@@ -440,15 +359,13 @@ struct FEventReply UAthenaLobby_C::OnMouseButtonDown(struct FGeometry* MyGeometr
 
 	UAthenaLobby_C_OnMouseButtonDown_Params params;
 	params.MyGeometry = MyGeometry;
+	params.MouseEvent = MouseEvent;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (MouseEvent != nullptr)
-		*MouseEvent = params.MouseEvent;
 
 	return params.ReturnValue;
 }
@@ -595,15 +512,12 @@ void UAthenaLobby_C::OnInputCancel(bool* bCommited)
 
 // Function AthenaLobby.AthenaLobby_C.RefreshPlayerHeroes
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int                            UpdatedPlayerIndex             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaLobby_C::RefreshPlayerHeroes(int UpdatedPlayerIndex)
+void UAthenaLobby_C::RefreshPlayerHeroes()
 {
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobby.AthenaLobby_C.RefreshPlayerHeroes");
 
 	UAthenaLobby_C_RefreshPlayerHeroes_Params params;
-	params.UpdatedPlayerIndex = UpdatedPlayerIndex;
 
 	auto flags = fn->FunctionFlags;
 
@@ -616,7 +530,7 @@ void UAthenaLobby_C::RefreshPlayerHeroes(int UpdatedPlayerIndex)
 // Function AthenaLobby.AthenaLobby_C.OnTeamMemberStateChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     TeamMemberInfo                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortTeamMemberInfo     TeamMemberInfo                 (Parm)
 
 void UAthenaLobby_C::OnTeamMemberStateChanged(const struct FFortTeamMemberInfo& TeamMemberInfo)
 {
@@ -636,7 +550,7 @@ void UAthenaLobby_C::OnTeamMemberStateChanged(const struct FFortTeamMemberInfo& 
 // Function AthenaLobby.AthenaLobby_C.OnTeamMemberRemoved
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            EmptySlot                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EmptySlot                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaLobby_C::OnTeamMemberRemoved(int EmptySlot)
 {
@@ -656,7 +570,7 @@ void UAthenaLobby_C::OnTeamMemberRemoved(int EmptySlot)
 // Function AthenaLobby.AthenaLobby_C.OnTeamMemberAdded
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     TeamMemberInfo                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortTeamMemberInfo     TeamMemberInfo                 (Parm)
 
 void UAthenaLobby_C::OnTeamMemberAdded(const struct FFortTeamMemberInfo& TeamMemberInfo)
 {
@@ -675,15 +589,12 @@ void UAthenaLobby_C::OnTeamMemberAdded(const struct FFortTeamMemberInfo& TeamMem
 
 // Function AthenaLobby.AthenaLobby_C.Refresh
 // (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int                            UpdatedPlayerIndex             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaLobby_C::Refresh(int UpdatedPlayerIndex)
+void UAthenaLobby_C::Refresh()
 {
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobby.AthenaLobby_C.Refresh");
 
 	UAthenaLobby_C_Refresh_Params params;
-	params.UpdatedPlayerIndex = UpdatedPlayerIndex;
 
 	auto flags = fn->FunctionFlags;
 
@@ -713,8 +624,8 @@ void UAthenaLobby_C::Initialize()
 // Function AthenaLobby.AthenaLobby_C.DialogResult_156754AE468EF93DCA2009A412591BA7
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortDialogResult              Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ResultName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortDialogResult              Result                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ResultName                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaLobby_C::DialogResult_156754AE468EF93DCA2009A412591BA7(EFortDialogResult Result, const struct FName& ResultName)
 {
@@ -732,45 +643,11 @@ void UAthenaLobby_C::DialogResult_156754AE468EF93DCA2009A412591BA7(EFortDialogRe
 }
 
 
-// Function AthenaLobby.AthenaLobby_C.OnFailure_DA5E62624D068772EA890193344BA4AE
-// (BlueprintCallable, BlueprintEvent)
-
-void UAthenaLobby_C::OnFailure_DA5E62624D068772EA890193344BA4AE()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobby.AthenaLobby_C.OnFailure_DA5E62624D068772EA890193344BA4AE");
-
-	UAthenaLobby_C_OnFailure_DA5E62624D068772EA890193344BA4AE_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaLobby.AthenaLobby_C.OnSuccess_DA5E62624D068772EA890193344BA4AE
-// (BlueprintCallable, BlueprintEvent)
-
-void UAthenaLobby_C::OnSuccess_DA5E62624D068772EA890193344BA4AE()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobby.AthenaLobby_C.OnSuccess_DA5E62624D068772EA890193344BA4AE");
-
-	UAthenaLobby_C_OnSuccess_DA5E62624D068772EA890193344BA4AE_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function AthenaLobby.AthenaLobby_C.BndEvt__SwitcherDetails_K2Node_ComponentBoundEvent_0_OnActiveWidgetChanged__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UWidget*                 ActiveWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            ActiveWidgetIndex              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidget*                 ActiveWidget                   (Parm, ZeroConstructor, IsPlainOldData)
+// int                            ActiveWidgetIndex              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaLobby_C::BndEvt__SwitcherDetails_K2Node_ComponentBoundEvent_0_OnActiveWidgetChanged__DelegateSignature(class UWidget* ActiveWidget, int ActiveWidgetIndex)
 {
@@ -788,17 +665,14 @@ void UAthenaLobby_C::BndEvt__SwitcherDetails_K2Node_ComponentBoundEvent_0_OnActi
 }
 
 
-// Function AthenaLobby.AthenaLobby_C.OnEndCursorOverPlayer
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// int*                           PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// Function AthenaLobby.AthenaLobby_C.Event Abandon
+// (BlueprintCallable, BlueprintEvent)
 
-void UAthenaLobby_C::OnEndCursorOverPlayer(int* PlayerIndex)
+void UAthenaLobby_C::Event_Abandon()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobby.AthenaLobby_C.OnEndCursorOverPlayer");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobby.AthenaLobby_C.Event Abandon");
 
-	UAthenaLobby_C_OnEndCursorOverPlayer_Params params;
-	params.PlayerIndex = PlayerIndex;
+	UAthenaLobby_C_Event_Abandon_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -808,14 +682,17 @@ void UAthenaLobby_C::OnEndCursorOverPlayer(int* PlayerIndex)
 }
 
 
-// Function AthenaLobby.AthenaLobby_C.Event Abandon
-// (BlueprintCallable, BlueprintEvent)
+// Function AthenaLobby.AthenaLobby_C.OnEndCursorOverPlayer
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int*                           PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaLobby_C::Event_Abandon()
+void UAthenaLobby_C::OnEndCursorOverPlayer(int* PlayerIndex)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobby.AthenaLobby_C.Event Abandon");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobby.AthenaLobby_C.OnEndCursorOverPlayer");
 
-	UAthenaLobby_C_Event_Abandon_Params params;
+	UAthenaLobby_C_OnEndCursorOverPlayer_Params params;
+	params.PlayerIndex = PlayerIndex;
 
 	auto flags = fn->FunctionFlags;
 
@@ -862,7 +739,7 @@ void UAthenaLobby_C::OnNavigationRight()
 // Function AthenaLobby.AthenaLobby_C.BndEvt__ButtonTMPTEST_K2Node_ComponentBoundEvent_198_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaLobby_C::BndEvt__ButtonTMPTEST_K2Node_ComponentBoundEvent_198_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -870,63 +747,6 @@ void UAthenaLobby_C::BndEvt__ButtonTMPTEST_K2Node_ComponentBoundEvent_198_Common
 
 	UAthenaLobby_C_BndEvt__ButtonTMPTEST_K2Node_ComponentBoundEvent_198_CommonButtonClicked__DelegateSignature_Params params;
 	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaLobby.AthenaLobby_C.OnPlayerClicked
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int*                           PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaLobby_C::OnPlayerClicked(int* PlayerIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobby.AthenaLobby_C.OnPlayerClicked");
-
-	UAthenaLobby_C_OnPlayerClicked_Params params;
-	params.PlayerIndex = PlayerIndex;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaLobby.AthenaLobby_C.OnBeginCursorOverPlayer
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// int*                           PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaLobby_C::OnBeginCursorOverPlayer(int* PlayerIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobby.AthenaLobby_C.OnBeginCursorOverPlayer");
-
-	UAthenaLobby_C_OnBeginCursorOverPlayer_Params params;
-	params.PlayerIndex = PlayerIndex;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaLobby.AthenaLobby_C.BndEvt__PlayerPanel_K2Node_ComponentBoundEvent_308_OnClosed__DelegateSignature
-// (BlueprintEvent)
-
-void UAthenaLobby_C::BndEvt__PlayerPanel_K2Node_ComponentBoundEvent_308_OnClosed__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobby.AthenaLobby_C.BndEvt__PlayerPanel_K2Node_ComponentBoundEvent_308_OnClosed__DelegateSignature");
-
-	UAthenaLobby_C_BndEvt__PlayerPanel_K2Node_ComponentBoundEvent_308_OnClosed__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -970,54 +790,17 @@ void UAthenaLobby_C::OnActivated()
 }
 
 
-// Function AthenaLobby.AthenaLobby_C.BndEvt__ShadowPlayHighlights_K2Node_ComponentBoundEvent_116_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaLobby_C::BndEvt__ShadowPlayHighlights_K2Node_ComponentBoundEvent_116_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobby.AthenaLobby_C.BndEvt__ShadowPlayHighlights_K2Node_ComponentBoundEvent_116_CommonButtonClicked__DelegateSignature");
-
-	UAthenaLobby_C_BndEvt__ShadowPlayHighlights_K2Node_ComponentBoundEvent_116_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaLobby.AthenaLobby_C.OnUpdateSocialImportButtonText
-// (Event, Public, HasOutParms, BlueprintEvent)
-// Parameters:
-// struct FText*                  NewText                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-
-void UAthenaLobby_C::OnUpdateSocialImportButtonText(struct FText* NewText)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobby.AthenaLobby_C.OnUpdateSocialImportButtonText");
-
-	UAthenaLobby_C_OnUpdateSocialImportButtonText_Params params;
-	params.NewText = NewText;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaLobby.AthenaLobby_C.ShowAthenaStoreToast
+// Function AthenaLobby.AthenaLobby_C.OnPlayerClicked
 // (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int*                           PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaLobby_C::ShowAthenaStoreToast()
+void UAthenaLobby_C::OnPlayerClicked(int* PlayerIndex)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobby.AthenaLobby_C.ShowAthenaStoreToast");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobby.AthenaLobby_C.OnPlayerClicked");
 
-	UAthenaLobby_C_ShowAthenaStoreToast_Params params;
+	UAthenaLobby_C_OnPlayerClicked_Params params;
+	params.PlayerIndex = PlayerIndex;
 
 	auto flags = fn->FunctionFlags;
 
@@ -1027,17 +810,34 @@ void UAthenaLobby_C::ShowAthenaStoreToast()
 }
 
 
-// Function AthenaLobby.AthenaLobby_C.NewsPanelClosed
-// (BlueprintCallable, BlueprintEvent)
+// Function AthenaLobby.AthenaLobby_C.OnBeginCursorOverPlayer
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// class UCommonActivatablePanel* Panel                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaLobby_C::NewsPanelClosed(class UCommonActivatablePanel* Panel)
+void UAthenaLobby_C::OnBeginCursorOverPlayer(int* PlayerIndex)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobby.AthenaLobby_C.NewsPanelClosed");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobby.AthenaLobby_C.OnBeginCursorOverPlayer");
 
-	UAthenaLobby_C_NewsPanelClosed_Params params;
-	params.Panel = Panel;
+	UAthenaLobby_C_OnBeginCursorOverPlayer_Params params;
+	params.PlayerIndex = PlayerIndex;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaLobby.AthenaLobby_C.BndEvt__PlayerPanel_K2Node_ComponentBoundEvent_308_OnClosed__DelegateSignature
+// (BlueprintEvent)
+
+void UAthenaLobby_C::BndEvt__PlayerPanel_K2Node_ComponentBoundEvent_308_OnClosed__DelegateSignature()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaLobby.AthenaLobby_C.BndEvt__PlayerPanel_K2Node_ComponentBoundEvent_308_OnClosed__DelegateSignature");
+
+	UAthenaLobby_C_BndEvt__PlayerPanel_K2Node_ComponentBoundEvent_308_OnClosed__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -1048,9 +848,9 @@ void UAthenaLobby_C::NewsPanelClosed(class UCommonActivatablePanel* Panel)
 
 
 // Function AthenaLobby.AthenaLobby_C.ExecuteUbergraph_AthenaLobby
-// (HasDefaults)
+// ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaLobby_C::ExecuteUbergraph_AthenaLobby(int EntryPoint)
 {

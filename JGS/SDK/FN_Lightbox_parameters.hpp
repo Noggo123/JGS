@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,7 +22,7 @@ struct ULightbox_C_RemoveContent_Params
 // Function Lightbox.Lightbox_C.AddContent
 struct ULightbox_C_AddContent_Params
 {
-	class UCommonUserWidget*                           Content;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonUserWidget*                           Content;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Lightbox.Lightbox_C.Outro
@@ -53,7 +53,7 @@ struct ULightbox_C_BndEvt__FadeOut_K2Node_ComponentBoundEvent_1_OnWidgetAnimatio
 // Function Lightbox.Lightbox_C.ExecuteUbergraph_Lightbox
 struct ULightbox_C_ExecuteUbergraph_Lightbox_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Lightbox.Lightbox_C.OutroEnded__DelegateSignature

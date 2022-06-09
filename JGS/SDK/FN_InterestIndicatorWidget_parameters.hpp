@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,28 +17,28 @@ namespace SDK
 // Function InterestIndicatorWidget.InterestIndicatorWidget_C.RemovePointOfInterest
 struct UInterestIndicatorWidget_C_RemovePointOfInterest_Params
 {
-	class AActor*                                      PointOfInterest;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AActor*                                      PointOfInterest;                                          // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               Removed;                                                  // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function InterestIndicatorWidget.InterestIndicatorWidget_C.InitPointOfInterest
 struct UInterestIndicatorWidget_C_InitPointOfInterest_Params
 {
-	class AActor*                                      PointOfInterest;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FText                                       DisplayText;                                              // (BlueprintVisible, BlueprintReadOnly, Parm)
-	class UTexture2D*                                  DisplayImage;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class AActor*                                      PointOfInterest;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FText                                       DisplayText;                                              // (Parm)
+	class UTexture2D*                                  DisplayImage;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function InterestIndicatorWidget.InterestIndicatorWidget_C.SetDisplayImage
 struct UInterestIndicatorWidget_C_SetDisplayImage_Params
 {
-	class UTexture2D*                                  Icon;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UTexture2D*                                  Icon;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function InterestIndicatorWidget.InterestIndicatorWidget_C.SetDisplayText
 struct UInterestIndicatorWidget_C_SetDisplayText_Params
 {
-	struct FText                                       Description;                                              // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FText                                       Description;                                              // (Parm)
 };
 
 // Function InterestIndicatorWidget.InterestIndicatorWidget_C.Construct
@@ -54,7 +54,7 @@ struct UInterestIndicatorWidget_C_Destruct_Params
 // Function InterestIndicatorWidget.InterestIndicatorWidget_C.ExecuteUbergraph_InterestIndicatorWidget
 struct UInterestIndicatorWidget_C_ExecuteUbergraph_InterestIndicatorWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

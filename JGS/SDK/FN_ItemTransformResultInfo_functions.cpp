@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -82,7 +82,7 @@ int UItemTransformResultInfo_C::CalculateNextTier()
 // Function ItemTransformResultInfo.ItemTransformResultInfo_C.GetPointsForTier
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// int                            Tier                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Tier                           (Parm, ZeroConstructor, IsPlainOldData)
 // int                            Points                         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformResultInfo_C::GetPointsForTier(int Tier, int* Points)
@@ -145,7 +145,7 @@ void UItemTransformResultInfo_C::CalculateCurrentSacrificePoints(int* TotalSacri
 // Function ItemTransformResultInfo.ItemTransformResultInfo_C.UpdateSacrificeInfo
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UFortItem*>       SacrificeItems                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UFortItem*>       SacrificeItems                 (Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UItemTransformResultInfo_C::UpdateSacrificeInfo(TArray<class UFortItem*>* SacrificeItems)
 {
@@ -184,7 +184,7 @@ void UItemTransformResultInfo_C::UpdateSacrificePointsBar()
 // Function ItemTransformResultInfo.ItemTransformResultInfo_C.SetKeyToRepresent
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Key                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Key                            (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformResultInfo_C::SetKeyToRepresent(class UFortItem* Key)
 {
@@ -204,7 +204,7 @@ void UItemTransformResultInfo_C::SetKeyToRepresent(class UFortItem* Key)
 // Function ItemTransformResultInfo.ItemTransformResultInfo_C.BndEvt__TransformButton_K2Node_ComponentBoundEvent_4_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformResultInfo_C::BndEvt__TransformButton_K2Node_ComponentBoundEvent_4_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -241,7 +241,7 @@ void UItemTransformResultInfo_C::Construct()
 // Function ItemTransformResultInfo.ItemTransformResultInfo_C.ExecuteUbergraph_ItemTransformResultInfo
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformResultInfo_C::ExecuteUbergraph_ItemTransformResultInfo(int EntryPoint)
 {
@@ -261,7 +261,7 @@ void UItemTransformResultInfo_C::ExecuteUbergraph_ItemTransformResultInfo(int En
 // Function ItemTransformResultInfo.ItemTransformResultInfo_C.OnUpdateSacrificeInfo__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           TransformActive                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           TransformActive                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformResultInfo_C::OnUpdateSacrificeInfo__DelegateSignature(bool TransformActive)
 {
@@ -281,8 +281,8 @@ void UItemTransformResultInfo_C::OnUpdateSacrificeInfo__DelegateSignature(bool T
 // Function ItemTransformResultInfo.ItemTransformResultInfo_C.OnTransformConfirmed__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            SacrificePoints                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            CurrentTier                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            SacrificePoints                (Parm, ZeroConstructor, IsPlainOldData)
+// int                            CurrentTier                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemTransformResultInfo_C::OnTransformConfirmed__DelegateSignature(int SacrificePoints, int CurrentTier)
 {

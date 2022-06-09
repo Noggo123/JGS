@@ -1,40 +1,16 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------
 //Classes
 //---------------------------------------------------------------------------
-
-// Class Hotfix.OnlineHotfixManager
-// 0x03A8 (0x03D0 - 0x0028)
-class UOnlineHotfixManager : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0x368];                                     // 0x0028(0x0368) MISSED OFFSET
-	struct FString                                     OSSName;                                                  // 0x0390(0x0010) (ZeroConstructor, Config)
-	struct FString                                     HotfixManagerClassName;                                   // 0x03A0(0x0010) (ZeroConstructor, Config)
-	struct FString                                     DebugPrefix;                                              // 0x03B0(0x0010) (ZeroConstructor, Config)
-	TArray<class UObject*>                             AssetsHotfixedFromIniFiles;                               // 0x03C0(0x0010) (ZeroConstructor, Transient)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Hotfix.OnlineHotfixManager");
-		return ptr;
-	}
-
-
-	void StartHotfixProcess();
-};
-
 
 // Class Hotfix.UpdateManager
 // 0x0248 (0x0270 - 0x0028)
@@ -66,6 +42,28 @@ public:
 		return ptr;
 	}
 
+};
+
+
+// Class Hotfix.OnlineHotfixManager
+// 0x03A8 (0x03D0 - 0x0028)
+class UOnlineHotfixManager : public UObject
+{
+public:
+	unsigned char                                      UnknownData00[0x368];                                     // 0x0028(0x0368) MISSED OFFSET
+	struct FString                                     OSSName;                                                  // 0x0390(0x0010) (ZeroConstructor, Config)
+	struct FString                                     HotfixManagerClassName;                                   // 0x03A0(0x0010) (ZeroConstructor, Config)
+	struct FString                                     DebugPrefix;                                              // 0x03B0(0x0010) (ZeroConstructor, Config)
+	TArray<class UObject*>                             AssetsHotfixedFromIniFiles;                               // 0x03C0(0x0010) (ZeroConstructor, Transient)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class Hotfix.OnlineHotfixManager");
+		return ptr;
+	}
+
+
+	void StartHotfixProcess();
 };
 
 

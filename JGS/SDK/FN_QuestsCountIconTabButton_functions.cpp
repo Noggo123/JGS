@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,31 +12,11 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.SetTutorialNameID
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FName                   InTutorialBangID               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UQuestsCountIconTabButton_C::SetTutorialNameID(const struct FName& InTutorialBangID)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.SetTutorialNameID");
-
-	UQuestsCountIconTabButton_C_SetTutorialNameID_Params params;
-	params.InTutorialBangID = InTutorialBangID;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.Update Bang State
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bBangEnabled                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            Count                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bBangEnabled                   (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Count                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestsCountIconTabButton_C::Update_Bang_State(bool bBangEnabled, int Count)
 {
@@ -74,7 +54,7 @@ void UQuestsCountIconTabButton_C::Update_Text()
 // Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.SetTutorialBorderStyle
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UClass*                  BorderStyle                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UClass*                  BorderStyle                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestsCountIconTabButton_C::SetTutorialBorderStyle(class UClass* BorderStyle)
 {
@@ -111,7 +91,7 @@ void UQuestsCountIconTabButton_C::ShowText()
 // Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.Set Icon
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSlateBrush             IconBrush                      (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FSlateBrush             IconBrush                      (Parm)
 
 void UQuestsCountIconTabButton_C::Set_Icon(const struct FSlateBrush& IconBrush)
 {
@@ -131,7 +111,7 @@ void UQuestsCountIconTabButton_C::Set_Icon(const struct FSlateBrush& IconBrush)
 // Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.Set Text
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   ButtonText                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   ButtonText                     (Parm)
 
 void UQuestsCountIconTabButton_C::Set_Text(const struct FText& ButtonText)
 {
@@ -168,7 +148,7 @@ void UQuestsCountIconTabButton_C::OnCurrentTextStyleChanged()
 // Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestsCountIconTabButton_C::PreConstruct(bool* IsDesignTime)
 {
@@ -188,7 +168,7 @@ void UQuestsCountIconTabButton_C::PreConstruct(bool* IsDesignTime)
 // Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.SetTabLabelInfo
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FFortTabButtonLabelInfo TabLabelInfo                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortTabButtonLabelInfo TabLabelInfo                   (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UQuestsCountIconTabButton_C::SetTabLabelInfo(const struct FFortTabButtonLabelInfo& TabLabelInfo)
 {
@@ -307,44 +287,10 @@ void UQuestsCountIconTabButton_C::Handle_Quest_Count_Updated()
 }
 
 
-// Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.OnEnabled
-// (Event, Protected, BlueprintEvent)
-
-void UQuestsCountIconTabButton_C::OnEnabled()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.OnEnabled");
-
-	UQuestsCountIconTabButton_C_OnEnabled_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.OnDisabled
-// (Event, Protected, BlueprintEvent)
-
-void UQuestsCountIconTabButton_C::OnDisabled()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.OnDisabled");
-
-	UQuestsCountIconTabButton_C_OnDisabled_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function QuestsCountIconTabButton.QuestsCountIconTabButton_C.ExecuteUbergraph_QuestsCountIconTabButton
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestsCountIconTabButton_C::ExecuteUbergraph_QuestsCountIconTabButton(int EntryPoint)
 {

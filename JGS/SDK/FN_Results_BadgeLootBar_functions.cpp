@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function Results_BadgeLootBar.Results_BadgeLootBar_C.GetNextLootLevelPoints
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// int                            LootPoints                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            LootPoints                     (Parm, ZeroConstructor, IsPlainOldData)
 // int                            NextLootLevelPoints            (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UResults_BadgeLootBar_C::GetNextLootLevelPoints(int LootPoints, int* NextLootLevelPoints)
@@ -73,7 +73,7 @@ void UResults_BadgeLootBar_C::SetSkippingToEnd()
 // Function Results_BadgeLootBar.Results_BadgeLootBar_C.PlayAnimationCommon
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*        Animation                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidgetAnimation*        Animation                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_BadgeLootBar_C::PlayAnimationCommon(class UWidgetAnimation* Animation)
 {
@@ -93,7 +93,7 @@ void UResults_BadgeLootBar_C::PlayAnimationCommon(class UWidgetAnimation* Animat
 // Function Results_BadgeLootBar.Results_BadgeLootBar_C.GetBadgePoints
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UResults_Badge_C*        Badge                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UResults_Badge_C*        Badge                          (Parm, ZeroConstructor, IsPlainOldData)
 // int                            Points                         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UResults_BadgeLootBar_C::GetBadgePoints(class UResults_Badge_C* Badge, int* Points)
@@ -117,7 +117,7 @@ void UResults_BadgeLootBar_C::GetBadgePoints(class UResults_Badge_C* Badge, int*
 // Function Results_BadgeLootBar.Results_BadgeLootBar_C.SetLootLevel
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Level                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Level                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_BadgeLootBar_C::SetLootLevel(int Level)
 {
@@ -137,7 +137,7 @@ void UResults_BadgeLootBar_C::SetLootLevel(int Level)
 // Function Results_BadgeLootBar.Results_BadgeLootBar_C.Initialize
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          PlayRate                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          PlayRate                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_BadgeLootBar_C::Initialize(float PlayRate)
 {
@@ -225,7 +225,7 @@ void UResults_BadgeLootBar_C::BndEvt__Anim_LevelUp_K2Node_ComponentBoundEvent_4_
 // Function Results_BadgeLootBar.Results_BadgeLootBar_C.Add Badge Points Sequence
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UResults_Badge_C*        Badge                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UResults_Badge_C*        Badge                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_BadgeLootBar_C::Add_Badge_Points_Sequence(class UResults_Badge_C* Badge)
 {
@@ -296,7 +296,7 @@ void UResults_BadgeLootBar_C::Construct()
 // Function Results_BadgeLootBar.Results_BadgeLootBar_C.ExecuteUbergraph_Results_BadgeLootBar
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_BadgeLootBar_C::ExecuteUbergraph_Results_BadgeLootBar(int EntryPoint)
 {

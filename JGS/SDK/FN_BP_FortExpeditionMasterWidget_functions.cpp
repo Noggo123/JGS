@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,9 +15,9 @@ namespace SDK
 // Function BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C.HandleSortExpeditionListAction
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UBP_FortExpeditionMasterWidget_C::HandleSortExpeditionListAction(bool* Passthrough)
+void UBP_FortExpeditionMasterWidget_C::HandleSortExpeditionListAction(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C.HandleSortExpeditionListAction");
 
@@ -29,15 +29,15 @@ void UBP_FortExpeditionMasterWidget_C::HandleSortExpeditionListAction(bool* Pass
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C.Disable Input Action
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FDataTableRowHandle     InputActionRow                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FDataTableRowHandle     InputActionRow                 (Parm)
 
 void UBP_FortExpeditionMasterWidget_C::Disable_Input_Action(const struct FDataTableRowHandle& InputActionRow)
 {
@@ -57,9 +57,9 @@ void UBP_FortExpeditionMasterWidget_C::Disable_Input_Action(const struct FDataTa
 // Function BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C.HandleCollectExpeditionAction
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UBP_FortExpeditionMasterWidget_C::HandleCollectExpeditionAction(bool* Passthrough)
+void UBP_FortExpeditionMasterWidget_C::HandleCollectExpeditionAction(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C.HandleCollectExpeditionAction");
 
@@ -71,17 +71,17 @@ void UBP_FortExpeditionMasterWidget_C::HandleCollectExpeditionAction(bool* Passt
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C.HandleAbandonExpeditionAction
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UBP_FortExpeditionMasterWidget_C::HandleAbandonExpeditionAction(bool* Passthrough)
+void UBP_FortExpeditionMasterWidget_C::HandleAbandonExpeditionAction(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C.HandleAbandonExpeditionAction");
 
@@ -93,17 +93,17 @@ void UBP_FortExpeditionMasterWidget_C::HandleAbandonExpeditionAction(bool* Passt
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C.HandleBuildExpeditionAction
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UBP_FortExpeditionMasterWidget_C::HandleBuildExpeditionAction(bool* Passthrough)
+void UBP_FortExpeditionMasterWidget_C::HandleBuildExpeditionAction(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C.HandleBuildExpeditionAction");
 
@@ -115,8 +115,8 @@ void UBP_FortExpeditionMasterWidget_C::HandleBuildExpeditionAction(bool* Passthr
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -140,7 +140,7 @@ void UBP_FortExpeditionMasterWidget_C::Present_Reward_UI()
 // Function BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C.Show Input Action
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FDataTableRowHandle     InputActionRow                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FDataTableRowHandle     InputActionRow                 (Parm)
 
 void UBP_FortExpeditionMasterWidget_C::Show_Input_Action(const struct FDataTableRowHandle& InputActionRow)
 {
@@ -160,7 +160,7 @@ void UBP_FortExpeditionMasterWidget_C::Show_Input_Action(const struct FDataTable
 // Function BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C.Hide Input Action
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FDataTableRowHandle     InputActionRow                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FDataTableRowHandle     InputActionRow                 (Parm)
 
 void UBP_FortExpeditionMasterWidget_C::Hide_Input_Action(const struct FDataTableRowHandle& InputActionRow)
 {
@@ -231,9 +231,9 @@ void UBP_FortExpeditionMasterWidget_C::Setup_Input_Action_Handlers()
 // Function BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C.Handle Back
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UBP_FortExpeditionMasterWidget_C::Handle_Back(bool* Passthrough)
+void UBP_FortExpeditionMasterWidget_C::Handle_Back(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C.Handle Back");
 
@@ -245,8 +245,8 @@ void UBP_FortExpeditionMasterWidget_C::Handle_Back(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -338,7 +338,7 @@ void UBP_FortExpeditionMasterWidget_C::OnActivated()
 // Function BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C.ExecuteUbergraph_BP_FortExpeditionMasterWidget
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortExpeditionMasterWidget_C::ExecuteUbergraph_BP_FortExpeditionMasterWidget(int EntryPoint)
 {

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function GamepadMappingInfo.GamepadMappingInfo_C.HandleConfigChanged
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Mode                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            Config                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Mode                           (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Config                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UGamepadMappingInfo_C::HandleConfigChanged(int Mode, int Config)
 {
@@ -37,8 +37,8 @@ void UGamepadMappingInfo_C::HandleConfigChanged(int Mode, int Config)
 // Function GamepadMappingInfo.GamepadMappingInfo_C.HandleConfigChanged_Athena
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Mode                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            Config                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Mode                           (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Config                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UGamepadMappingInfo_C::HandleConfigChanged_Athena(int Mode, int Config)
 {
@@ -59,8 +59,8 @@ void UGamepadMappingInfo_C::HandleConfigChanged_Athena(int Mode, int Config)
 // Function GamepadMappingInfo.GamepadMappingInfo_C.OnConfigChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Mode                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            Config                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Mode                           (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Config                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UGamepadMappingInfo_C::OnConfigChanged(int Mode, int Config)
 {
@@ -81,9 +81,9 @@ void UGamepadMappingInfo_C::OnConfigChanged(int Mode, int Config)
 // Function GamepadMappingInfo.GamepadMappingInfo_C.Update Displayed Mapping
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            platform                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            Mode                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            Configuration                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            platform                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Mode                           (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Configuration                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UGamepadMappingInfo_C::Update_Displayed_Mapping(int platform, int Mode, int Configuration)
 {

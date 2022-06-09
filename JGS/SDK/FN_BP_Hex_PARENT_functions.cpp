@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,34 +12,12 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.HasPinnedQuest
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// bool                           Pinned                         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void ABP_Hex_PARENT_C::HasPinnedQuest(bool* Pinned)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.HasPinnedQuest");
-
-	ABP_Hex_PARENT_C_HasPinnedQuest_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Pinned != nullptr)
-		*Pinned = params.Pinned;
-}
-
-
 // Function BP_Hex_PARENT.BP_Hex_PARENT_C.HandleUpdatingBannerMesh
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class USceneComponent*         Target                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UFortQuestItemDefinition* CompletedQuest                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UMaterialInstanceDynamic* Material_Instance_Dynamic      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class USceneComponent*         Target                         (Parm, ZeroConstructor, IsPlainOldData)
+// class UFortQuestItemDefinition* CompletedQuest                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// class UMaterialInstanceDynamic* Material_Instance_Dynamic      (Parm, ZeroConstructor, IsPlainOldData)
 
 void ABP_Hex_PARENT_C::HandleUpdatingBannerMesh(class USceneComponent* Target, class UFortQuestItemDefinition* CompletedQuest, class UMaterialInstanceDynamic* Material_Instance_Dynamic)
 {
@@ -59,7 +37,7 @@ void ABP_Hex_PARENT_C::HandleUpdatingBannerMesh(class USceneComponent* Target, c
 
 
 // Function BP_Hex_PARENT.BP_Hex_PARENT_C.HandleMissionAlert
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 
 void ABP_Hex_PARENT_C::HandleMissionAlert()
 {
@@ -78,15 +56,15 @@ void ABP_Hex_PARENT_C::HandleMissionAlert()
 // Function BP_Hex_PARENT.BP_Hex_PARENT_C.GroundSliceSettings
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UMaterialInstanceDynamic* SourceMaterial                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UTexture2D*              TileTypeA                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UTexture2D*              TileTypeB                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          TileIsSameRegionA              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          TileIsSameRegionB              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          TileIsHiddenA                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          TileIsHiddenB                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          TileExistsA                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          TileExistsB                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UMaterialInstanceDynamic* SourceMaterial                 (Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture2D*              TileTypeA                      (Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture2D*              TileTypeB                      (Parm, ZeroConstructor, IsPlainOldData)
+// float                          TileIsSameRegionA              (Parm, ZeroConstructor, IsPlainOldData)
+// float                          TileIsSameRegionB              (Parm, ZeroConstructor, IsPlainOldData)
+// float                          TileIsHiddenA                  (Parm, ZeroConstructor, IsPlainOldData)
+// float                          TileIsHiddenB                  (Parm, ZeroConstructor, IsPlainOldData)
+// float                          TileExistsA                    (Parm, ZeroConstructor, IsPlainOldData)
+// float                          TileExistsB                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void ABP_Hex_PARENT_C::GroundSliceSettings(class UMaterialInstanceDynamic* SourceMaterial, class UTexture2D* TileTypeA, class UTexture2D* TileTypeB, float TileIsSameRegionA, float TileIsSameRegionB, float TileIsHiddenA, float TileIsHiddenB, float TileExistsA, float TileExistsB)
 {
@@ -199,8 +177,8 @@ void ABP_Hex_PARENT_C::Timeline_12__UpdateFunc()
 // Function BP_Hex_PARENT.BP_Hex_PARENT_C.HandleTeamPowerChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            TeamPower                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            PersonalPower                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            TeamPower                      (Parm, ZeroConstructor, IsPlainOldData)
+// int                            PersonalPower                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void ABP_Hex_PARENT_C::HandleTeamPowerChanged(int TeamPower, int PersonalPower)
 {
@@ -255,8 +233,8 @@ void ABP_Hex_PARENT_C::OnInitializeTile()
 // Function BP_Hex_PARENT.BP_Hex_PARENT_C.HandleFrontendCameraChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFrontEndCamera                NewCamera                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFrontEndCamera                OldCamera                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFrontEndCamera                NewCamera                      (Parm, ZeroConstructor, IsPlainOldData)
+// EFrontEndCamera                OldCamera                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void ABP_Hex_PARENT_C::HandleFrontendCameraChanged(EFrontEndCamera NewCamera, EFrontEndCamera OldCamera)
 {
@@ -342,6 +320,23 @@ void ABP_Hex_PARENT_C::ForceDefocus()
 }
 
 
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnMissionDataUpdated
+// (Event, Public, BlueprintEvent)
+
+void ABP_Hex_PARENT_C::OnMissionDataUpdated()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnMissionDataUpdated");
+
+	ABP_Hex_PARENT_C_OnMissionDataUpdated_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function BP_Hex_PARENT.BP_Hex_PARENT_C.CheckForPinnedInLevel
 // (BlueprintCallable, BlueprintEvent)
 
@@ -359,14 +354,14 @@ void ABP_Hex_PARENT_C::CheckForPinnedInLevel()
 }
 
 
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnMissionDataUpdated
-// (Event, Public, BlueprintEvent)
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnDefocus
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void ABP_Hex_PARENT_C::OnMissionDataUpdated()
+void ABP_Hex_PARENT_C::OnDefocus()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnMissionDataUpdated");
+	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnDefocus");
 
-	ABP_Hex_PARENT_C_OnMissionDataUpdated_Params params;
+	ABP_Hex_PARENT_C_OnDefocus_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -393,14 +388,14 @@ void ABP_Hex_PARENT_C::RetryTileInitialized()
 }
 
 
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnDefocus
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.RetryUpdatesPaused
+// (BlueprintCallable, BlueprintEvent)
 
-void ABP_Hex_PARENT_C::OnDefocus()
+void ABP_Hex_PARENT_C::RetryUpdatesPaused()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnDefocus");
+	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.RetryUpdatesPaused");
 
-	ABP_Hex_PARENT_C_OnDefocus_Params params;
+	ABP_Hex_PARENT_C_RetryUpdatesPaused_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -444,14 +439,14 @@ void ABP_Hex_PARENT_C::OnHostDeselect()
 }
 
 
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.SetMissionPowerLevelDependencies
-// (BlueprintCallable, BlueprintEvent)
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnHostSelect
+// (Event, Public, BlueprintEvent)
 
-void ABP_Hex_PARENT_C::SetMissionPowerLevelDependencies()
+void ABP_Hex_PARENT_C::OnHostSelect()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.SetMissionPowerLevelDependencies");
+	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnHostSelect");
 
-	ABP_Hex_PARENT_C_SetMissionPowerLevelDependencies_Params params;
+	ABP_Hex_PARENT_C_OnHostSelect_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -461,14 +456,14 @@ void ABP_Hex_PARENT_C::SetMissionPowerLevelDependencies()
 }
 
 
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnHostSelect
-// (Event, Public, BlueprintEvent)
+// Function BP_Hex_PARENT.BP_Hex_PARENT_C.SetMissionPowerLevelDependencies
+// (BlueprintCallable, BlueprintEvent)
 
-void ABP_Hex_PARENT_C::OnHostSelect()
+void ABP_Hex_PARENT_C::SetMissionPowerLevelDependencies()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.OnHostSelect");
+	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.SetMissionPowerLevelDependencies");
 
-	ABP_Hex_PARENT_C_OnHostSelect_Params params;
+	ABP_Hex_PARENT_C_SetMissionPowerLevelDependencies_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -532,10 +527,10 @@ void ABP_Hex_PARENT_C::ReceiveBeginPlay()
 // Function BP_Hex_PARENT.BP_Hex_PARENT_C.MissionLightning
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   EventName                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          EmitterTime                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FVector                 Location                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FVector                 Velocity                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+// struct FName                   EventName                      (Parm, ZeroConstructor, IsPlainOldData)
+// float                          EmitterTime                    (Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector                 Location                       (Parm, IsPlainOldData)
+// struct FVector                 Velocity                       (Parm, IsPlainOldData)
 
 void ABP_Hex_PARENT_C::MissionLightning(const struct FName& EventName, float EmitterTime, const struct FVector& Location, const struct FVector& Velocity)
 {
@@ -558,12 +553,12 @@ void ABP_Hex_PARENT_C::MissionLightning(const struct FName& EventName, float Emi
 // Function BP_Hex_PARENT.BP_Hex_PARENT_C.MissionLightningOff
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   EventName                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          EmitterTime                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            ParticleTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FVector                 Location                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FVector                 Velocity                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FVector                 Direction                      (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+// struct FName                   EventName                      (Parm, ZeroConstructor, IsPlainOldData)
+// float                          EmitterTime                    (Parm, ZeroConstructor, IsPlainOldData)
+// int                            ParticleTime                   (Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector                 Location                       (Parm, IsPlainOldData)
+// struct FVector                 Velocity                       (Parm, IsPlainOldData)
+// struct FVector                 Direction                      (Parm, IsPlainOldData)
 
 void ABP_Hex_PARENT_C::MissionLightningOff(const struct FName& EventName, float EmitterTime, int ParticleTime, const struct FVector& Location, const struct FVector& Velocity, const struct FVector& Direction)
 {
@@ -585,27 +580,10 @@ void ABP_Hex_PARENT_C::MissionLightningOff(const struct FName& EventName, float 
 }
 
 
-// Function BP_Hex_PARENT.BP_Hex_PARENT_C.Unpause Updates
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Hex_PARENT_C::Unpause_Updates()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Hex_PARENT.BP_Hex_PARENT_C.Unpause Updates");
-
-	ABP_Hex_PARENT_C_Unpause_Updates_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function BP_Hex_PARENT.BP_Hex_PARENT_C.ExecuteUbergraph_BP_Hex_PARENT
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ABP_Hex_PARENT_C::ExecuteUbergraph_BP_Hex_PARENT(int EntryPoint)
 {

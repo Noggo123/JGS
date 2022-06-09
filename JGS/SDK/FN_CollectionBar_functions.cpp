@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function CollectionBar.CollectionBar_C.SetIcon
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSlateBrush             InIcon                         (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FSlateBrush             InIcon                         (Parm)
 
 void UCollectionBar_C::SetIcon(const struct FSlateBrush& InIcon)
 {
@@ -57,7 +57,7 @@ void UCollectionBar_C::IsAchievedCountInRange(bool* bIsInRange)
 // Function CollectionBar.CollectionBar_C.SetAchievedCount
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            InAchievedCount                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            InAchievedCount                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBar_C::SetAchievedCount(int InAchievedCount)
 {
@@ -94,7 +94,7 @@ void UCollectionBar_C::Update()
 // Function CollectionBar.CollectionBar_C.GetProgressBarPercentage
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            AchievedCount                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            AchievedCount                  (Parm, ZeroConstructor, IsPlainOldData)
 // float                          Percentage                     (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBar_C::GetProgressBarPercentage(int AchievedCount, float* Percentage)
@@ -135,7 +135,7 @@ void UCollectionBar_C::Construct()
 // Function CollectionBar.CollectionBar_C.ExecuteUbergraph_CollectionBar
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBar_C::ExecuteUbergraph_CollectionBar(int EntryPoint)
 {

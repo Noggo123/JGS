@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -169,10 +169,27 @@ void UQuestTrackerSubEntry_C::PostCompletionDelay()
 }
 
 
+// Function QuestTrackerSubEntry.QuestTrackerSubEntry_C.OnSetup
+// (Event, Protected, BlueprintEvent)
+
+void UQuestTrackerSubEntry_C::OnSetup()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function QuestTrackerSubEntry.QuestTrackerSubEntry_C.OnSetup");
+
+	UQuestTrackerSubEntry_C_OnSetup_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function QuestTrackerSubEntry.QuestTrackerSubEntry_C.ExecuteUbergraph_QuestTrackerSubEntry
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestTrackerSubEntry_C::ExecuteUbergraph_QuestTrackerSubEntry(int EntryPoint)
 {

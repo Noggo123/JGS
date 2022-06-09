@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,221 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function OptionsMenu.OptionsMenu_C.ApplySettings
-// (Private, BlueprintCallable, BlueprintEvent)
-
-void UOptionsMenu_C::ApplySettings()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.ApplySettings");
-
-	UOptionsMenu_C_ApplySettings_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenu.OptionsMenu_C.DoResetHUDOptionsToDefault
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UOptionsMenu_C::DoResetHUDOptionsToDefault()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.DoResetHUDOptionsToDefault");
-
-	UOptionsMenu_C_DoResetHUDOptionsToDefault_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenu.OptionsMenu_C.DoResetGameOptionsToDefault
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UOptionsMenu_C::DoResetGameOptionsToDefault()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.DoResetGameOptionsToDefault");
-
-	UOptionsMenu_C_DoResetGameOptionsToDefault_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenu.OptionsMenu_C.HandleTabGameOptionsActionHandlerStates
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UOptionsMenu_C::HandleTabGameOptionsActionHandlerStates()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.HandleTabGameOptionsActionHandlerStates");
-
-	UOptionsMenu_C_HandleTabGameOptionsActionHandlerStates_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenu.OptionsMenu_C.HandleTabAccountLinkageActionHandlerStates
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UOptionsMenu_C::HandleTabAccountLinkageActionHandlerStates()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.HandleTabAccountLinkageActionHandlerStates");
-
-	UOptionsMenu_C_HandleTabAccountLinkageActionHandlerStates_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenu.OptionsMenu_C.HandleTabGamepadConfigActionHandlerStates
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UOptionsMenu_C::HandleTabGamepadConfigActionHandlerStates()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.HandleTabGamepadConfigActionHandlerStates");
-
-	UOptionsMenu_C_HandleTabGamepadConfigActionHandlerStates_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenu.OptionsMenu_C.HandleTabFortAudioOptionsActionHandlerStates
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UOptionsMenu_C::HandleTabFortAudioOptionsActionHandlerStates()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.HandleTabFortAudioOptionsActionHandlerStates");
-
-	UOptionsMenu_C_HandleTabFortAudioOptionsActionHandlerStates_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenu.OptionsMenu_C.HandleTabVideoOptionsActionHandlerStates
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UOptionsMenu_C::HandleTabVideoOptionsActionHandlerStates()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.HandleTabVideoOptionsActionHandlerStates");
-
-	UOptionsMenu_C_HandleTabVideoOptionsActionHandlerStates_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenu.OptionsMenu_C.HandleTabBrightnessOptionsActionHandlerStates
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UOptionsMenu_C::HandleTabBrightnessOptionsActionHandlerStates()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.HandleTabBrightnessOptionsActionHandlerStates");
-
-	UOptionsMenu_C_HandleTabBrightnessOptionsActionHandlerStates_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenu.OptionsMenu_C.HandleTabInputOptionsActionHandlerStates
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UTabInputOptions_C*      TabInputOptionsActor           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UOptionsMenu_C::HandleTabInputOptionsActionHandlerStates(class UTabInputOptions_C* TabInputOptionsActor)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.HandleTabInputOptionsActionHandlerStates");
-
-	UOptionsMenu_C_HandleTabInputOptionsActionHandlerStates_Params params;
-	params.TabInputOptionsActor = TabInputOptionsActor;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenu.OptionsMenu_C.HandleTabGameOptionsResetActionHandlerStates
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int                            ActiveWidgetIndex              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UOptionsMenu_C::HandleTabGameOptionsResetActionHandlerStates(int ActiveWidgetIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.HandleTabGameOptionsResetActionHandlerStates");
-
-	UOptionsMenu_C_HandleTabGameOptionsResetActionHandlerStates_Params params;
-	params.ActiveWidgetIndex = ActiveWidgetIndex;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenu.OptionsMenu_C.HandleResetGameOptionsToDefault
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UOptionsMenu_C::HandleResetGameOptionsToDefault(bool* Passthrough)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.HandleResetGameOptionsToDefault");
-
-	UOptionsMenu_C_HandleResetGameOptionsToDefault_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
-}
-
 
 // Function OptionsMenu.OptionsMenu_C.CenterOnActiveTab
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -247,9 +32,9 @@ void UOptionsMenu_C::CenterOnActiveTab()
 // Function OptionsMenu.OptionsMenu_C.Handle Reset HUD Default
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UOptionsMenu_C::Handle_Reset_HUD_Default(bool* Passthrough)
+void UOptionsMenu_C::Handle_Reset_HUD_Default(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.Handle Reset HUD Default");
 
@@ -261,8 +46,8 @@ void UOptionsMenu_C::Handle_Reset_HUD_Default(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -286,9 +71,9 @@ void UOptionsMenu_C::SetBackground()
 // Function OptionsMenu.OptionsMenu_C.AddTab
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UClass*                  WidgetClass                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   DisplayName                    (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FName                   NameId                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UClass*                  WidgetClass                    (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   DisplayName                    (Parm)
+// struct FName                   NameId                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenu_C::AddTab(class UClass* WidgetClass, const struct FText& DisplayName, const struct FName& NameId)
 {
@@ -310,7 +95,7 @@ void UOptionsMenu_C::AddTab(class UClass* WidgetClass, const struct FText& Displ
 // Function OptionsMenu.OptionsMenu_C.HandleCursorModeChanging
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           IsEnabled                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IsEnabled                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenu_C::HandleCursorModeChanging(bool IsEnabled)
 {
@@ -330,9 +115,9 @@ void UOptionsMenu_C::HandleCursorModeChanging(bool IsEnabled)
 // Function OptionsMenu.OptionsMenu_C.Handle Toggle Mode
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UOptionsMenu_C::Handle_Toggle_Mode(bool* Passthrough)
+void UOptionsMenu_C::Handle_Toggle_Mode(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.Handle Toggle Mode");
 
@@ -344,8 +129,8 @@ void UOptionsMenu_C::Handle_Toggle_Mode(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -369,9 +154,9 @@ void UOptionsMenu_C::Set_Input_Action_Handlers()
 // Function OptionsMenu.OptionsMenu_C.HandleBack
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UOptionsMenu_C::HandleBack(bool* Passthrough)
+void UOptionsMenu_C::HandleBack(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.HandleBack");
 
@@ -383,17 +168,17 @@ void UOptionsMenu_C::HandleBack(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function OptionsMenu.OptionsMenu_C.Handle Reset
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UOptionsMenu_C::Handle_Reset(bool* Passthrough)
+void UOptionsMenu_C::Handle_Reset(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.Handle Reset");
 
@@ -405,17 +190,17 @@ void UOptionsMenu_C::Handle_Reset(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function OptionsMenu.OptionsMenu_C.Handle Reset Default
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UOptionsMenu_C::Handle_Reset_Default(bool* Passthrough)
+void UOptionsMenu_C::Handle_Reset_Default(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.Handle Reset Default");
 
@@ -427,17 +212,17 @@ void UOptionsMenu_C::Handle_Reset_Default(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function OptionsMenu.OptionsMenu_C.Handle Apply
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UOptionsMenu_C::Handle_Apply(bool* Passthrough)
+void UOptionsMenu_C::Handle_Apply(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.Handle Apply");
 
@@ -449,16 +234,16 @@ void UOptionsMenu_C::Handle_Apply(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function OptionsMenu.OptionsMenu_C.OnPreviewKeyDown
 // (Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FKeyEvent*              InKeyEvent                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// struct FKeyEvent*              InKeyEvent                     (Parm)
 // struct FEventReply             ReturnValue                    (Parm, OutParm, ReturnParm)
 
 struct FEventReply UOptionsMenu_C::OnPreviewKeyDown(struct FGeometry* MyGeometry, struct FKeyEvent* InKeyEvent)
@@ -482,8 +267,8 @@ struct FEventReply UOptionsMenu_C::OnPreviewKeyDown(struct FGeometry* MyGeometry
 // Function OptionsMenu.OptionsMenu_C.OnMouseWheel
 // (BlueprintCosmetic, Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent           MouseEvent                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// struct FPointerEvent*          MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
 // struct FEventReply             ReturnValue                    (Parm, OutParm, ReturnParm)
 
 struct FEventReply UOptionsMenu_C::OnMouseWheel(struct FGeometry* MyGeometry, struct FPointerEvent* MouseEvent)
@@ -492,15 +277,13 @@ struct FEventReply UOptionsMenu_C::OnMouseWheel(struct FGeometry* MyGeometry, st
 
 	UOptionsMenu_C_OnMouseWheel_Params params;
 	params.MyGeometry = MyGeometry;
+	params.MouseEvent = MouseEvent;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (MouseEvent != nullptr)
-		*MouseEvent = params.MouseEvent;
 
 	return params.ReturnValue;
 }
@@ -509,8 +292,8 @@ struct FEventReply UOptionsMenu_C::OnMouseWheel(struct FGeometry* MyGeometry, st
 // Function OptionsMenu.OptionsMenu_C.OnPreviewMouseButtonDown
 // (BlueprintCosmetic, Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent           MouseEvent                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// struct FPointerEvent*          MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
 // struct FEventReply             ReturnValue                    (Parm, OutParm, ReturnParm)
 
 struct FEventReply UOptionsMenu_C::OnPreviewMouseButtonDown(struct FGeometry* MyGeometry, struct FPointerEvent* MouseEvent)
@@ -519,15 +302,13 @@ struct FEventReply UOptionsMenu_C::OnPreviewMouseButtonDown(struct FGeometry* My
 
 	UOptionsMenu_C_OnPreviewMouseButtonDown_Params params;
 	params.MyGeometry = MyGeometry;
+	params.MouseEvent = MouseEvent;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (MouseEvent != nullptr)
-		*MouseEvent = params.MouseEvent;
 
 	return params.ReturnValue;
 }
@@ -541,28 +322,6 @@ void UOptionsMenu_C::Initialize()
 	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.Initialize");
 
 	UOptionsMenu_C_Initialize_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenu.OptionsMenu_C.DialogResult_360436EF48DEEFB10FA2CAA85B0BEA8F
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EFortDialogResult              Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ResultName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UOptionsMenu_C::DialogResult_360436EF48DEEFB10FA2CAA85B0BEA8F(EFortDialogResult Result, const struct FName& ResultName)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.DialogResult_360436EF48DEEFB10FA2CAA85B0BEA8F");
-
-	UOptionsMenu_C_DialogResult_360436EF48DEEFB10FA2CAA85B0BEA8F_Params params;
-	params.Result = Result;
-	params.ResultName = ResultName;
 
 	auto flags = fn->FunctionFlags;
 
@@ -592,8 +351,8 @@ void UOptionsMenu_C::Construct()
 // Function OptionsMenu.OptionsMenu_C.BndEvt__CurrentTabSwitcher_K2Node_ComponentBoundEvent_13_OnActiveWidgetChanged__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UWidget*                 ActiveWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            ActiveWidgetIndex              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidget*                 ActiveWidget                   (Parm, ZeroConstructor, IsPlainOldData)
+// int                            ActiveWidgetIndex              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenu_C::BndEvt__CurrentTabSwitcher_K2Node_ComponentBoundEvent_13_OnActiveWidgetChanged__DelegateSignature(class UWidget* ActiveWidget, int ActiveWidgetIndex)
 {
@@ -614,8 +373,8 @@ void UOptionsMenu_C::BndEvt__CurrentTabSwitcher_K2Node_ComponentBoundEvent_13_On
 // Function OptionsMenu.OptionsMenu_C.Enable Overlay Input
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Accept_Input                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   Overlay_Text                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// bool                           Accept_Input                   (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Overlay_Text                   (Parm)
 
 void UOptionsMenu_C::Enable_Overlay_Input(bool Accept_Input, const struct FText& Overlay_Text)
 {
@@ -636,7 +395,7 @@ void UOptionsMenu_C::Enable_Overlay_Input(bool Accept_Input, const struct FText&
 // Function OptionsMenu.OptionsMenu_C.Enable Overlay Video
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Accept_Input                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Accept_Input                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenu_C::Enable_Overlay_Video(bool Accept_Input)
 {
@@ -673,7 +432,7 @@ void UOptionsMenu_C::Disable_Overlay()
 // Function OptionsMenu.OptionsMenu_C.BndEvt__VideoSettingsAccept_K2Node_ComponentBoundEvent_22_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenu_C::BndEvt__VideoSettingsAccept_K2Node_ComponentBoundEvent_22_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -693,7 +452,7 @@ void UOptionsMenu_C::BndEvt__VideoSettingsAccept_K2Node_ComponentBoundEvent_22_C
 // Function OptionsMenu.OptionsMenu_C.BndEvt__VideoSettingsCancel_K2Node_ComponentBoundEvent_43_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenu_C::BndEvt__VideoSettingsCancel_K2Node_ComponentBoundEvent_43_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -781,7 +540,7 @@ void UOptionsMenu_C::Disable_Overlay_Input()
 // Function OptionsMenu.OptionsMenu_C.Gamepad Changed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Gamepad_Enabled                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Gamepad_Enabled                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenu_C::Gamepad_Changed(bool Gamepad_Enabled)
 {
@@ -801,8 +560,8 @@ void UOptionsMenu_C::Gamepad_Changed(bool Gamepad_Enabled)
 // Function OptionsMenu.OptionsMenu_C.BndEvt__SettingsTabs_K2Node_ComponentBoundEvent_95_OnTabButtonCreated__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenu_C::BndEvt__SettingsTabs_K2Node_ComponentBoundEvent_95_OnTabButtonCreated__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton)
 {
@@ -840,7 +599,7 @@ void UOptionsMenu_C::HandleBenchmarkComplete()
 // Function OptionsMenu.OptionsMenu_C.BndEvt__LanguageOk_K2Node_ComponentBoundEvent_112_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenu_C::BndEvt__LanguageOk_K2Node_ComponentBoundEvent_112_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -874,180 +633,10 @@ void UOptionsMenu_C::HandleSettingsErrorMessageClosed()
 }
 
 
-// Function OptionsMenu.OptionsMenu_C.OnHandleBack
-// (BlueprintCallable, BlueprintEvent)
-
-void UOptionsMenu_C::OnHandleBack()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.OnHandleBack");
-
-	UOptionsMenu_C_OnHandleBack_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenu.OptionsMenu_C.TabGameOptions_OnActiveWidgetChanged_Bind
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UWidget*                 ActiveWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            ActiveWidgetIndex              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UOptionsMenu_C::TabGameOptions_OnActiveWidgetChanged_Bind(class UWidget* ActiveWidget, int ActiveWidgetIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.TabGameOptions_OnActiveWidgetChanged_Bind");
-
-	UOptionsMenu_C_TabGameOptions_OnActiveWidgetChanged_Bind_Params params;
-	params.ActiveWidget = ActiveWidget;
-	params.ActiveWidgetIndex = ActiveWidgetIndex;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenu.OptionsMenu_C.BndEvt__ResetGameOptionsToDefaultYes_K2Node_ComponentBoundEvent_461_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UOptionsMenu_C::BndEvt__ResetGameOptionsToDefaultYes_K2Node_ComponentBoundEvent_461_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.BndEvt__ResetGameOptionsToDefaultYes_K2Node_ComponentBoundEvent_461_CommonButtonClicked__DelegateSignature");
-
-	UOptionsMenu_C_BndEvt__ResetGameOptionsToDefaultYes_K2Node_ComponentBoundEvent_461_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenu.OptionsMenu_C.BndEvt__ResetGameOptionsToDefaultNo_K2Node_ComponentBoundEvent_484_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UOptionsMenu_C::BndEvt__ResetGameOptionsToDefaultNo_K2Node_ComponentBoundEvent_484_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.BndEvt__ResetGameOptionsToDefaultNo_K2Node_ComponentBoundEvent_484_CommonButtonClicked__DelegateSignature");
-
-	UOptionsMenu_C_BndEvt__ResetGameOptionsToDefaultNo_K2Node_ComponentBoundEvent_484_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenu.OptionsMenu_C.BndEvt__ResetHUDOptionsToDefaultYes_K2Node_ComponentBoundEvent_508_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UOptionsMenu_C::BndEvt__ResetHUDOptionsToDefaultYes_K2Node_ComponentBoundEvent_508_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.BndEvt__ResetHUDOptionsToDefaultYes_K2Node_ComponentBoundEvent_508_CommonButtonClicked__DelegateSignature");
-
-	UOptionsMenu_C_BndEvt__ResetHUDOptionsToDefaultYes_K2Node_ComponentBoundEvent_508_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenu.OptionsMenu_C.BndEvt__ResetHUDOptionsToDefaultNo_K2Node_ComponentBoundEvent_533_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UOptionsMenu_C::BndEvt__ResetHUDOptionsToDefaultNo_K2Node_ComponentBoundEvent_533_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.BndEvt__ResetHUDOptionsToDefaultNo_K2Node_ComponentBoundEvent_533_CommonButtonClicked__DelegateSignature");
-
-	UOptionsMenu_C_BndEvt__ResetHUDOptionsToDefaultNo_K2Node_ComponentBoundEvent_533_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenu.OptionsMenu_C.ShowResetGameOptionsToDefaultMessage
-// (BlueprintCallable, BlueprintEvent)
-
-void UOptionsMenu_C::ShowResetGameOptionsToDefaultMessage()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.ShowResetGameOptionsToDefaultMessage");
-
-	UOptionsMenu_C_ShowResetGameOptionsToDefaultMessage_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenu.OptionsMenu_C.ShowResetHUDOptionToDefaultMessage
-// (BlueprintCallable, BlueprintEvent)
-
-void UOptionsMenu_C::ShowResetHUDOptionToDefaultMessage()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.ShowResetHUDOptionToDefaultMessage");
-
-	UOptionsMenu_C_ShowResetHUDOptionToDefaultMessage_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenu.OptionsMenu_C.HandleSettingsSaveComplete
-// (Event, Protected, BlueprintEvent)
-
-void UOptionsMenu_C::HandleSettingsSaveComplete()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenu.OptionsMenu_C.HandleSettingsSaveComplete");
-
-	UOptionsMenu_C_HandleSettingsSaveComplete_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function OptionsMenu.OptionsMenu_C.ExecuteUbergraph_OptionsMenu
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenu_C::ExecuteUbergraph_OptionsMenu(int EntryPoint)
 {

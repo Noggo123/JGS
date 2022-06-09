@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -117,7 +117,7 @@ void UQuestInfo_Widget_C::InitDesignView()
 // Function QuestInfo_Widget.QuestInfo_Widget_C.PopulateFromQuest
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortQuestItem*          InQuest                        (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// class UFortQuestItem*          InQuest                        (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
 void UQuestInfo_Widget_C::PopulateFromQuest(class UFortQuestItem** InQuest)
 {
@@ -156,7 +156,7 @@ void UQuestInfo_Widget_C::Construct()
 // Function QuestInfo_Widget.QuestInfo_Widget_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestInfo_Widget_C::PreConstruct(bool* IsDesignTime)
 {
@@ -176,7 +176,7 @@ void UQuestInfo_Widget_C::PreConstruct(bool* IsDesignTime)
 // Function QuestInfo_Widget.QuestInfo_Widget_C.ExecuteUbergraph_QuestInfo_Widget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestInfo_Widget_C::ExecuteUbergraph_QuestInfo_Widget(int EntryPoint)
 {

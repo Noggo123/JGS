@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function LeaderboardRowWidget.LeaderboardRowWidget_C.Refresh
 // (Private, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortLeaderboardRowProxyInstance* RowObject                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortLeaderboardRowProxyInstance* RowObject                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULeaderboardRowWidget_C::Refresh(class UFortLeaderboardRowProxyInstance* RowObject)
 {
@@ -35,7 +35,7 @@ void ULeaderboardRowWidget_C::Refresh(class UFortLeaderboardRowProxyInstance* Ro
 // Function LeaderboardRowWidget.LeaderboardRowWidget_C.SetDataDirect
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortLeaderboardRowProxyInstance* NewData                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortLeaderboardRowProxyInstance* NewData                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULeaderboardRowWidget_C::SetDataDirect(class UFortLeaderboardRowProxyInstance* NewData)
 {
@@ -72,7 +72,7 @@ void ULeaderboardRowWidget_C::OnLeaderboardEntryDataSet()
 // Function LeaderboardRowWidget.LeaderboardRowWidget_C.ExecuteUbergraph_LeaderboardRowWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULeaderboardRowWidget_C::ExecuteUbergraph_LeaderboardRowWidget(int EntryPoint)
 {

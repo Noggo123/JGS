@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,7 @@ namespace SDK
 // Function ItemTransformKeyInfo.ItemTransformKeyInfo_C.SetKeyToRepresent
 struct UItemTransformKeyInfo_C_SetKeyToRepresent_Params
 {
-	class UFortItem*                                   Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItem*                                   Key;                                                      // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemTransformKeyInfo.ItemTransformKeyInfo_C.Construct
@@ -28,7 +28,7 @@ struct UItemTransformKeyInfo_C_Construct_Params
 // Function ItemTransformKeyInfo.ItemTransformKeyInfo_C.ExecuteUbergraph_ItemTransformKeyInfo
 struct UItemTransformKeyInfo_C_ExecuteUbergraph_ItemTransformKeyInfo_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

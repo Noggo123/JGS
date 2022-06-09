@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -100,7 +100,7 @@ void USK_M_MED_Head_01_Skeleton_AnimBP_C::BlueprintInitializeAnimation()
 // Function SK_M_MED_Head_01_Skeleton_AnimBP.SK_M_MED_Head_01_Skeleton_AnimBP_C.ExecuteUbergraph_SK_M_MED_Head_01_Skeleton_AnimBP
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void USK_M_MED_Head_01_Skeleton_AnimBP_C::ExecuteUbergraph_SK_M_MED_Head_01_Skeleton_AnimBP(int EntryPoint)
 {

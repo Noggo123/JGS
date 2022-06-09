@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Function ItemDetailsStackCounter.ItemDetailsStackCounter_C.Refresh Visibility
-// (Private, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 
 void UItemDetailsStackCounter_C::Refresh_Visibility()
 {
@@ -29,14 +29,39 @@ void UItemDetailsStackCounter_C::Refresh_Visibility()
 }
 
 
-// Function ItemDetailsStackCounter.ItemDetailsStackCounter_C.Update Stack Count
-// (Private, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function ItemDetailsStackCounter.ItemDetailsStackCounter_C.Set Stack Count
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            Count                          (Parm, ZeroConstructor, IsPlainOldData)
 
-void UItemDetailsStackCounter_C::Update_Stack_Count()
+void UItemDetailsStackCounter_C::Set_Stack_Count(int Count)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ItemDetailsStackCounter.ItemDetailsStackCounter_C.Update Stack Count");
+	static auto fn = UObject::FindObject<UFunction>("Function ItemDetailsStackCounter.ItemDetailsStackCounter_C.Set Stack Count");
 
-	UItemDetailsStackCounter_C_Update_Stack_Count_Params params;
+	UItemDetailsStackCounter_C_Set_Stack_Count_Params params;
+	params.Count = Count;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemDetailsStackCounter.ItemDetailsStackCounter_C.Update
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TEnumAsByte<EFortBrushSize>    Brush_Size                     (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Count                          (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemDetailsStackCounter_C::Update(TEnumAsByte<EFortBrushSize> Brush_Size, int Count)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemDetailsStackCounter.ItemDetailsStackCounter_C.Update");
+
+	UItemDetailsStackCounter_C_Update_Params params;
+	params.Brush_Size = Brush_Size;
+	params.Count = Count;
 
 	auto flags = fn->FunctionFlags;
 
@@ -49,7 +74,7 @@ void UItemDetailsStackCounter_C::Update_Stack_Count()
 // Function ItemDetailsStackCounter.ItemDetailsStackCounter_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemDetailsStackCounter_C::PreConstruct(bool* IsDesignTime)
 {
@@ -83,68 +108,10 @@ void UItemDetailsStackCounter_C::Construct()
 }
 
 
-// Function ItemDetailsStackCounter.ItemDetailsStackCounter_C.HandlePreDifferentItemToDetailSet
-// (Event, Protected, BlueprintEvent)
-
-void UItemDetailsStackCounter_C::HandlePreDifferentItemToDetailSet()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemDetailsStackCounter.ItemDetailsStackCounter_C.HandlePreDifferentItemToDetailSet");
-
-	UItemDetailsStackCounter_C_HandlePreDifferentItemToDetailSet_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemDetailsStackCounter.ItemDetailsStackCounter_C.HandlePostDifferentItemToDetailSet
-// (Event, Protected, BlueprintEvent)
-
-void UItemDetailsStackCounter_C::HandlePostDifferentItemToDetailSet()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemDetailsStackCounter.ItemDetailsStackCounter_C.HandlePostDifferentItemToDetailSet");
-
-	UItemDetailsStackCounter_C_HandlePostDifferentItemToDetailSet_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemDetailsStackCounter.ItemDetailsStackCounter_C.HandleOnItemChanged
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           bItemChanged                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bAmmoChanged                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bIngredientsChanged            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UItemDetailsStackCounter_C::HandleOnItemChanged(bool bItemChanged, bool bAmmoChanged, bool bIngredientsChanged)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemDetailsStackCounter.ItemDetailsStackCounter_C.HandleOnItemChanged");
-
-	UItemDetailsStackCounter_C_HandleOnItemChanged_Params params;
-	params.bItemChanged = bItemChanged;
-	params.bAmmoChanged = bAmmoChanged;
-	params.bIngredientsChanged = bIngredientsChanged;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function ItemDetailsStackCounter.ItemDetailsStackCounter_C.ExecuteUbergraph_ItemDetailsStackCounter
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemDetailsStackCounter_C::ExecuteUbergraph_ItemDetailsStackCounter(int EntryPoint)
 {

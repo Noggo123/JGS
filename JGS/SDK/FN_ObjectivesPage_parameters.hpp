@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,26 +23,26 @@ struct UObjectivesPage_C_MissionHasModifiers_Params
 // Function ObjectivesPage.ObjectivesPage_C.ConfigureModifiersView
 struct UObjectivesPage_C_ConfigureModifiersView_Params
 {
-	bool                                               ShowModifiers;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ShowModifiers;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ObjectivesPage.ObjectivesPage_C.HandleInventory
 struct UObjectivesPage_C_HandleInventory_Params
 {
-	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               PassThrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ObjectivesPage.ObjectivesPage_C.HandleSelectedButtonChanged
 struct UObjectivesPage_C_HandleSelectedButtonChanged_Params
 {
-	class UCommonButton*                               InButton;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	int                                                InButtonIndex;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               InButton;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                InButtonIndex;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ObjectivesPage.ObjectivesPage_C.HandleBack
 struct UObjectivesPage_C_HandleBack_Params
 {
-	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               PassThrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ObjectivesPage.ObjectivesPage_C.Construct
@@ -63,13 +63,13 @@ struct UObjectivesPage_C_Destruct_Params
 // Function ObjectivesPage.ObjectivesPage_C.OnActiveGameplayModifiersChanged_Event_0_1
 struct UObjectivesPage_C_OnActiveGameplayModifiersChanged_Event_0_1_Params
 {
-	TArray<class UFortGameplayModifierItemDefinition*> AppliedModifiers;                                         // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<class UFortGameplayModifierItemDefinition*> AppliedModifiers;                                         // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function ObjectivesPage.ObjectivesPage_C.ExecuteUbergraph_ObjectivesPage
 struct UObjectivesPage_C_ExecuteUbergraph_ObjectivesPage_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

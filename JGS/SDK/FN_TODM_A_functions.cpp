@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -202,7 +202,7 @@ void ATODM_A_C::ReceiveBeginPlay()
 // Function TODM_A.TODM_A_C.DisableLightAndFog
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Enable                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Enable                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void ATODM_A_C::DisableLightAndFog(bool Enable)
 {
@@ -239,7 +239,7 @@ void ATODM_A_C::EnableHDRRendering()
 // Function TODM_A.TODM_A_C.ExecuteUbergraph_TODM_A
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ATODM_A_C::ExecuteUbergraph_TODM_A(int EntryPoint)
 {

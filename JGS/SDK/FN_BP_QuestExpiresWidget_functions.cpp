@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,7 +37,7 @@ void UBP_QuestExpiresWidget_C::GetFortPC(class AFortPlayerController** AsFort_Pl
 // Function BP_QuestExpiresWidget.BP_QuestExpiresWidget_C.Refresh Expiration Timer
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortQuestItem*          Quest                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortQuestItem*          Quest                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_QuestExpiresWidget_C::Refresh_Expiration_Timer(class UFortQuestItem* Quest)
 {
@@ -57,7 +57,7 @@ void UBP_QuestExpiresWidget_C::Refresh_Expiration_Timer(class UFortQuestItem* Qu
 // Function BP_QuestExpiresWidget.BP_QuestExpiresWidget_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_QuestExpiresWidget_C::PreConstruct(bool* IsDesignTime)
 {
@@ -77,7 +77,7 @@ void UBP_QuestExpiresWidget_C::PreConstruct(bool* IsDesignTime)
 // Function BP_QuestExpiresWidget.BP_QuestExpiresWidget_C.SetData
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortQuestItem**         InItem                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortQuestItem**         InItem                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_QuestExpiresWidget_C::SetData(class UFortQuestItem** InItem)
 {
@@ -114,7 +114,7 @@ void UBP_QuestExpiresWidget_C::OnQuestExpirationUpdated()
 // Function BP_QuestExpiresWidget.BP_QuestExpiresWidget_C.ExecuteUbergraph_BP_QuestExpiresWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_QuestExpiresWidget_C::ExecuteUbergraph_BP_QuestExpiresWidget(int EntryPoint)
 {

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function GA_DefaultPlayer_Stunned.GA_DefaultPlayer_Stunned_C.Completed_3C8EA97E467ED88E163FF0B4F830736D
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FGameplayTag            ApplicationTag                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FGameplayTag            ApplicationTag                 (Parm)
 
 void UGA_DefaultPlayer_Stunned_C::Completed_3C8EA97E467ED88E163FF0B4F830736D(const struct FGameplayAbilityTargetDataHandle& TargetData, const struct FGameplayTag& ApplicationTag)
 {
@@ -37,8 +37,8 @@ void UGA_DefaultPlayer_Stunned_C::Completed_3C8EA97E467ED88E163FF0B4F830736D(con
 // Function GA_DefaultPlayer_Stunned.GA_DefaultPlayer_Stunned_C.Cancelled_3C8EA97E467ED88E163FF0B4F830736D
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FGameplayTag            ApplicationTag                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FGameplayTag            ApplicationTag                 (Parm)
 
 void UGA_DefaultPlayer_Stunned_C::Cancelled_3C8EA97E467ED88E163FF0B4F830736D(const struct FGameplayAbilityTargetDataHandle& TargetData, const struct FGameplayTag& ApplicationTag)
 {
@@ -59,8 +59,8 @@ void UGA_DefaultPlayer_Stunned_C::Cancelled_3C8EA97E467ED88E163FF0B4F830736D(con
 // Function GA_DefaultPlayer_Stunned.GA_DefaultPlayer_Stunned_C.Triggered_3C8EA97E467ED88E163FF0B4F830736D
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FGameplayTag            ApplicationTag                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FGameplayAbilityTargetDataHandle TargetData                     (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FGameplayTag            ApplicationTag                 (Parm)
 
 void UGA_DefaultPlayer_Stunned_C::Triggered_3C8EA97E467ED88E163FF0B4F830736D(const struct FGameplayAbilityTargetDataHandle& TargetData, const struct FGameplayTag& ApplicationTag)
 {
@@ -199,15 +199,12 @@ void UGA_DefaultPlayer_Stunned_C::K2_ActivateAbility()
 
 // Function GA_DefaultPlayer_Stunned.GA_DefaultPlayer_Stunned_C.K2_OnEndAbility
 // (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool*                          bWasCancelled                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
 
-void UGA_DefaultPlayer_Stunned_C::K2_OnEndAbility(bool* bWasCancelled)
+void UGA_DefaultPlayer_Stunned_C::K2_OnEndAbility()
 {
 	static auto fn = UObject::FindObject<UFunction>("Function GA_DefaultPlayer_Stunned.GA_DefaultPlayer_Stunned_C.K2_OnEndAbility");
 
 	UGA_DefaultPlayer_Stunned_C_K2_OnEndAbility_Params params;
-	params.bWasCancelled = bWasCancelled;
 
 	auto flags = fn->FunctionFlags;
 
@@ -288,7 +285,7 @@ void UGA_DefaultPlayer_Stunned_C::SoulSuckEndCheck()
 // Function GA_DefaultPlayer_Stunned.GA_DefaultPlayer_Stunned_C.ExecuteUbergraph_GA_DefaultPlayer_Stunned
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UGA_DefaultPlayer_Stunned_C::ExecuteUbergraph_GA_DefaultPlayer_Stunned(int EntryPoint)
 {

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,62 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.ResetTeslaHackParticles
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void APartyDisplayManagerBP_C::ResetTeslaHackParticles()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.ResetTeslaHackParticles");
-
-	APartyDisplayManagerBP_C_ResetTeslaHackParticles_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.SetupPrefabVisuals
-// (Private, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void APartyDisplayManagerBP_C::SetupPrefabVisuals()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.SetupPrefabVisuals");
-
-	APartyDisplayManagerBP_C_SetupPrefabVisuals_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.GetMeshForCurrentDisplayedItem
-// (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UMeshComponent*          OutDisplayedMesh               (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void APartyDisplayManagerBP_C::GetMeshForCurrentDisplayedItem(class UMeshComponent** OutDisplayedMesh)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.GetMeshForCurrentDisplayedItem");
-
-	APartyDisplayManagerBP_C_GetMeshForCurrentDisplayedItem_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (OutDisplayedMesh != nullptr)
-		*OutDisplayedMesh = params.OutDisplayedMesh;
-}
-
 
 // Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.GetItemDefinitionToShow
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
@@ -93,9 +37,9 @@ void APartyDisplayManagerBP_C::GetItemDefinitionToShow(class UFortItemDefinition
 // Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.SetUIOverrideVisuals
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UTexture2D*              Large_Texture                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UFortItemDefinition*     Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortRarity                    Rarity                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture2D*              Large_Texture                  (Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItemDefinition*     Item                           (Parm, ZeroConstructor, IsPlainOldData)
+// EFortRarity                    Rarity                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void APartyDisplayManagerBP_C::SetUIOverrideVisuals(class UTexture2D* Large_Texture, class UFortItemDefinition* Item, EFortRarity Rarity)
 {
@@ -117,7 +61,7 @@ void APartyDisplayManagerBP_C::SetUIOverrideVisuals(class UTexture2D* Large_Text
 // Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.GetWeaponPlacementTransform
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FTransform              ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
+// struct FTransform              ReturnValue                    (ConstParm, Parm, OutParm, ReturnParm, IsPlainOldData)
 
 struct FTransform APartyDisplayManagerBP_C::GetWeaponPlacementTransform()
 {
@@ -155,7 +99,7 @@ void APartyDisplayManagerBP_C::UpdatePreviewMeshTransforms()
 // Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.GetItemPreviewOffset
 // (Private, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UFortItemDefinition*     ItemDefinition                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItemDefinition*     ItemDefinition                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FTransform              ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
 
 struct FTransform APartyDisplayManagerBP_C::GetItemPreviewOffset(class UFortItemDefinition* ItemDefinition)
@@ -199,7 +143,7 @@ struct FTransform APartyDisplayManagerBP_C::GetPreviewMeshWorldTransform()
 // Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.SetupStaticMeshVisuals
 // (Private, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UStaticMesh*             NewMesh                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UStaticMesh*             NewMesh                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void APartyDisplayManagerBP_C::SetupStaticMeshVisuals(class UStaticMesh* NewMesh)
 {
@@ -219,7 +163,7 @@ void APartyDisplayManagerBP_C::SetupStaticMeshVisuals(class UStaticMesh* NewMesh
 // Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.SetupSkeletalMeshVisuals
 // (Private, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class USkeletalMesh*           NewMesh                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class USkeletalMesh*           NewMesh                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void APartyDisplayManagerBP_C::SetupSkeletalMeshVisuals(class USkeletalMesh* NewMesh)
 {
@@ -375,7 +319,7 @@ void APartyDisplayManagerBP_C::HideLoading()
 // Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.ShowItem
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class UFortItem**              ItemToView                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem**              ItemToView                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void APartyDisplayManagerBP_C::ShowItem(class UFortItem** ItemToView)
 {
@@ -463,10 +407,10 @@ void APartyDisplayManagerBP_C::PerformScaleMeshFX()
 // Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.HandleLoadingAssetsForItemCompleted
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// class UFortItem**              ItemWhoseAssetsWereLoaded      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// TArray<class UObject*>*        LoadedAssets                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// class UFortItemDefinition**    ItemWhoseAssetsWereLoaded      (Parm, ZeroConstructor, IsPlainOldData)
+// TArray<class UObject*>*        LoadedAssets                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
-void APartyDisplayManagerBP_C::HandleLoadingAssetsForItemCompleted(class UFortItem** ItemWhoseAssetsWereLoaded, TArray<class UObject*>* LoadedAssets)
+void APartyDisplayManagerBP_C::HandleLoadingAssetsForItemCompleted(class UFortItemDefinition** ItemWhoseAssetsWereLoaded, TArray<class UObject*>* LoadedAssets)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.HandleLoadingAssetsForItemCompleted");
 
@@ -485,7 +429,7 @@ void APartyDisplayManagerBP_C::HandleLoadingAssetsForItemCompleted(class UFortIt
 // Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float*                         DeltaSeconds                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float*                         DeltaSeconds                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void APartyDisplayManagerBP_C::ReceiveTick(float* DeltaSeconds)
 {
@@ -505,7 +449,7 @@ void APartyDisplayManagerBP_C::ReceiveTick(float* DeltaSeconds)
 // Function PartyDisplayManagerBP.PartyDisplayManagerBP_C.ExecuteUbergraph_PartyDisplayManagerBP
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void APartyDisplayManagerBP_C::ExecuteUbergraph_PartyDisplayManagerBP(int EntryPoint)
 {

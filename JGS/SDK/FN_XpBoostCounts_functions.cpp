@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,7 +49,7 @@ void UXpBoostCounts_C::Construct()
 // Function XpBoostCounts.XpBoostCounts_C.HandleAccountUpdate
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortPublicAccountInfo  NewInfo                        (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortPublicAccountInfo  NewInfo                        (Parm)
 
 void UXpBoostCounts_C::HandleAccountUpdate(const struct FFortPublicAccountInfo& NewInfo)
 {
@@ -69,7 +69,7 @@ void UXpBoostCounts_C::HandleAccountUpdate(const struct FFortPublicAccountInfo& 
 // Function XpBoostCounts.XpBoostCounts_C.Xp Boost Changed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            BoostAmount                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            BoostAmount                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UXpBoostCounts_C::Xp_Boost_Changed(int BoostAmount)
 {
@@ -89,7 +89,7 @@ void UXpBoostCounts_C::Xp_Boost_Changed(int BoostAmount)
 // Function XpBoostCounts.XpBoostCounts_C.ExecuteUbergraph_XpBoostCounts
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UXpBoostCounts_C::ExecuteUbergraph_XpBoostCounts(int EntryPoint)
 {

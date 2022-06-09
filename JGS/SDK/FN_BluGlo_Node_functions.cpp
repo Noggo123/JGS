@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function BluGlo_Node.BluGlo_Node_C.BlueprintGetInteractionString
 // (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// class AFortPawn**              InteractingPawn                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortPawn**              InteractingPawn                (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // struct FText                   ReturnValue                    (Parm, OutParm, ReturnParm)
 
 struct FText ABluGlo_Node_C::BlueprintGetInteractionString(class AFortPawn** InteractingPawn)
@@ -55,7 +55,7 @@ void ABluGlo_Node_C::OnRep_CanInteract()
 // Function BluGlo_Node.BluGlo_Node_C.BlueprintCanInteract
 // (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
-// class AFortPawn**              InteractingPawn                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortPawn**              InteractingPawn                (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 bool ABluGlo_Node_C::BlueprintCanInteract(class AFortPawn** InteractingPawn)
@@ -180,7 +180,7 @@ void ABluGlo_Node_C::ReceiveBeginPlay()
 // Function BluGlo_Node.BluGlo_Node_C.BlueprintOnInteract
 // (BlueprintAuthorityOnly, Event, Public, BlueprintEvent)
 // Parameters:
-// class AFortPawn**              InteractingPawn                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortPawn**              InteractingPawn                (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
 void ABluGlo_Node_C::BlueprintOnInteract(class AFortPawn** InteractingPawn)
 {
@@ -200,25 +200,25 @@ void ABluGlo_Node_C::BlueprintOnInteract(class AFortPawn** InteractingPawn)
 // Function BluGlo_Node.BluGlo_Node_C.HandleMissionEvent_LocateBluGlo
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGuid                   InMissionGuid                  (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FGameplayTagContainer   ObjectiveHandle                (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UFortMissionEventParams* Params                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           DO_NOT_USE_THIS_OR_VARIABLES_BELOW (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 EventFocus                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UDataAsset*              EventContent                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class AActor*                  EventInstigator                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            GenericInt                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          GenericFloat                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   GenericText                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FGameplayTagContainer   GameplayTags                   (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FFortMissionEvent       MissionEvent                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGuid                   MissionGuid                    (Parm, IsPlainOldData)
+// struct FGameplayTagContainer   ObjectiveHandle                (Parm)
+// class UFortMissionEventParams* Params                         (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           DO_NOT_USE_THIS_OR_VARIABLES_BELOW (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 EventFocus                     (Parm, ZeroConstructor, IsPlainOldData)
+// class UDataAsset*              EventContent                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// class AActor*                  EventInstigator                (Parm, ZeroConstructor, IsPlainOldData)
+// int                            GenericInt                     (Parm, ZeroConstructor, IsPlainOldData)
+// float                          GenericFloat                   (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   GenericText                    (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FGameplayTagContainer   GameplayTags                   (Parm)
+// struct FFortMissionEvent       MissionEvent                   (ConstParm, Parm, OutParm, ReferenceParm)
 
-void ABluGlo_Node_C::HandleMissionEvent_LocateBluGlo(const struct FGuid& InMissionGuid, const struct FGameplayTagContainer& ObjectiveHandle, class UFortMissionEventParams* Params, bool DO_NOT_USE_THIS_OR_VARIABLES_BELOW, class UObject* EventFocus, class UDataAsset* EventContent, class AActor* EventInstigator, int GenericInt, float GenericFloat, const struct FText& GenericText, const struct FGameplayTagContainer& GameplayTags, const struct FFortMissionEvent& MissionEvent)
+void ABluGlo_Node_C::HandleMissionEvent_LocateBluGlo(const struct FGuid& MissionGuid, const struct FGameplayTagContainer& ObjectiveHandle, class UFortMissionEventParams* Params, bool DO_NOT_USE_THIS_OR_VARIABLES_BELOW, class UObject* EventFocus, class UDataAsset* EventContent, class AActor* EventInstigator, int GenericInt, float GenericFloat, const struct FText& GenericText, const struct FGameplayTagContainer& GameplayTags, const struct FFortMissionEvent& MissionEvent)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function BluGlo_Node.BluGlo_Node_C.HandleMissionEvent_LocateBluGlo");
 
 	ABluGlo_Node_C_HandleMissionEvent_LocateBluGlo_Params params;
-	params.InMissionGuid = InMissionGuid;
+	params.MissionGuid = MissionGuid;
 	params.ObjectiveHandle = ObjectiveHandle;
 	params.Params = Params;
 	params.DO_NOT_USE_THIS_OR_VARIABLES_BELOW = DO_NOT_USE_THIS_OR_VARIABLES_BELOW;
@@ -242,8 +242,8 @@ void ABluGlo_Node_C::HandleMissionEvent_LocateBluGlo(const struct FGuid& InMissi
 // Function BluGlo_Node.BluGlo_Node_C.ShowSpawnTrail
 // (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                 StartLocation                  (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// float                          AnimDelay                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector                 StartLocation                  (Parm, IsPlainOldData)
+// float                          AnimDelay                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void ABluGlo_Node_C::ShowSpawnTrail(const struct FVector& StartLocation, float AnimDelay)
 {
@@ -264,7 +264,7 @@ void ABluGlo_Node_C::ShowSpawnTrail(const struct FVector& StartLocation, float A
 // Function BluGlo_Node.BluGlo_Node_C.ExecuteUbergraph_BluGlo_Node
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ABluGlo_Node_C::ExecuteUbergraph_BluGlo_Node(int EntryPoint)
 {

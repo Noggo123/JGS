@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -53,22 +53,20 @@ class UWidget* UMTXButton_C::Get_Button_ToolTipWidget_0_1()
 // Function MTXButton.MTXButton_C.UpdateAmount
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortPrivateAccountInfo FortPrivateAccountInfo         (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortPrivateAccountInfo FortPrivateAccountInfo         (ConstParm, Parm, OutParm, ReferenceParm)
 
-void UMTXButton_C::UpdateAmount(struct FFortPrivateAccountInfo* FortPrivateAccountInfo)
+void UMTXButton_C::UpdateAmount(const struct FFortPrivateAccountInfo& FortPrivateAccountInfo)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function MTXButton.MTXButton_C.UpdateAmount");
 
 	UMTXButton_C_UpdateAmount_Params params;
+	params.FortPrivateAccountInfo = FortPrivateAccountInfo;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (FortPrivateAccountInfo != nullptr)
-		*FortPrivateAccountInfo = params.FortPrivateAccountInfo;
 }
 
 
@@ -92,7 +90,7 @@ void UMTXButton_C::Construct()
 // Function MTXButton.MTXButton_C.HandleLocalAccountInfoChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortPrivateAccountInfo NewInfo                        (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortPrivateAccountInfo NewInfo                        (Parm)
 
 void UMTXButton_C::HandleLocalAccountInfoChanged(const struct FFortPrivateAccountInfo& NewInfo)
 {
@@ -112,7 +110,7 @@ void UMTXButton_C::HandleLocalAccountInfoChanged(const struct FFortPrivateAccoun
 // Function MTXButton.MTXButton_C.BndEvt__VBucksButton_K2Node_ComponentBoundEvent_5_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMTXButton_C::BndEvt__VBucksButton_K2Node_ComponentBoundEvent_5_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -132,7 +130,7 @@ void UMTXButton_C::BndEvt__VBucksButton_K2Node_ComponentBoundEvent_5_CommonButto
 // Function MTXButton.MTXButton_C.HandleInputActionChnaged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bUsingGamepad                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bUsingGamepad                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMTXButton_C::HandleInputActionChnaged(bool bUsingGamepad)
 {
@@ -169,7 +167,7 @@ void UMTXButton_C::Destruct()
 // Function MTXButton.MTXButton_C.ExecuteUbergraph_MTXButton
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMTXButton_C::ExecuteUbergraph_MTXButton(int EntryPoint)
 {

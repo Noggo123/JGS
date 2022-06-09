@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function TT_SupplyDrop.TT_SupplyDrop_C.InitializeAbilityInstanceInternal
 // (Event, Protected, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// class UGameplayAbility**       AbilityInstance                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UFortTooltipContext**    Context                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UGameplayAbility**       AbilityInstance                (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortTooltipContext**    Context                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
 void UTT_SupplyDrop_C::InitializeAbilityInstanceInternal(class UGameplayAbility** AbilityInstance, class UFortTooltipContext** Context)
 {
@@ -37,20 +37,22 @@ void UTT_SupplyDrop_C::InitializeAbilityInstanceInternal(class UGameplayAbility*
 // Function TT_SupplyDrop.TT_SupplyDrop_C.GetTextForTokenFromAbilityInstanceInternal
 // (Event, Protected, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// class UGameplayAbility**       AbilityInstance                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayTag            Tag                            (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// class UFortTooltipContext**    Context                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayTag            Token                          (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class UGameplayAbility**       AbilityInstance                (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayTag*           Tag                            (ConstParm, Parm, OutParm, ReferenceParm)
+// class UFortTooltipContext**    Context                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayTag*           Token                          (ConstParm, Parm, OutParm, ReferenceParm)
 // struct FText                   OutText                        (Parm, OutParm)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UTT_SupplyDrop_C::GetTextForTokenFromAbilityInstanceInternal(class UGameplayAbility** AbilityInstance, class UFortTooltipContext** Context, struct FGameplayTag* Tag, struct FGameplayTag* Token, struct FText* OutText)
+bool UTT_SupplyDrop_C::GetTextForTokenFromAbilityInstanceInternal(class UGameplayAbility** AbilityInstance, struct FGameplayTag* Tag, class UFortTooltipContext** Context, struct FGameplayTag* Token, struct FText* OutText)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function TT_SupplyDrop.TT_SupplyDrop_C.GetTextForTokenFromAbilityInstanceInternal");
 
 	UTT_SupplyDrop_C_GetTextForTokenFromAbilityInstanceInternal_Params params;
 	params.AbilityInstance = AbilityInstance;
+	params.Tag = Tag;
 	params.Context = Context;
+	params.Token = Token;
 
 	auto flags = fn->FunctionFlags;
 
@@ -58,10 +60,6 @@ bool UTT_SupplyDrop_C::GetTextForTokenFromAbilityInstanceInternal(class UGamepla
 
 	fn->FunctionFlags = flags;
 
-	if (Tag != nullptr)
-		*Tag = params.Tag;
-	if (Token != nullptr)
-		*Token = params.Token;
 	if (OutText != nullptr)
 		*OutText = params.OutText;
 

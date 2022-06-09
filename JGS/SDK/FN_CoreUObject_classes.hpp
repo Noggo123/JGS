@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -61,12 +59,12 @@ public:
 		for (int i = 0; i < GetGlobalObjects()->Num(); ++i)
 		{
 			auto object = GetGlobalObjects()->GetByIndex(i);
-
+	
 			if (object == nullptr)
 			{
 				continue;
 			}
-
+	
 			if (object->GetFullName() == name)
 			{
 				return reinterpret_cast<UClass*>(object);
@@ -91,7 +89,7 @@ public:
 
 	inline void ProcessEvent(class UFunction* function, void* parms)
 	{
-		return GetVFunction<void(*)(UObject*, class UFunction*, void*)>(this, 64)(this, function, parms);
+		return GetVFunction<void(*)(UObject*, class UFunction*, void*)>(this, 62)(this, function, parms);
 	}
 
 
@@ -199,11 +197,11 @@ public:
 
 
 // Class CoreUObject.Package
-// 0x0070 (0x0098 - 0x0028)
+// 0x0130 (0x0158 - 0x0028)
 class UPackage : public UObject
 {
 public:
-	unsigned char                                      UnknownData00[0x70];                                      // 0x0028(0x0070) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x130];                                     // 0x0028(0x0130) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -215,11 +213,17 @@ public:
 
 
 // Class CoreUObject.Class
-// 0x0170 (0x01F8 - 0x0088)
+// 0x01C8 (0x0250 - 0x0088)
 class UClass : public UStruct
 {
 public:
-	unsigned char                                      UnknownData00[0x170];                                     // 0x0088(0x0170) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x1C8];                                     // 0x0088(0x01C8) MISSED OFFSET
+
+	template<typename T>
+	inline T* CreateDefaultObject()
+	{
+		return static_cast<T*>(CreateDefaultObject());
+	}
 
 	static UClass* StaticClass()
 	{
@@ -229,7 +233,7 @@ public:
 
 	inline UObject* CreateDefaultObject()
 	{
-		return GetVFunction<UObject*(*)(UClass*)>(this, 100)(this);
+		return GetVFunction<UObject*(*)(UClass*)>(this, 99)(this);
 	}
 
 };
@@ -278,11 +282,11 @@ public:
 
 
 // Class CoreUObject.DynamicClass
-// 0x0068 (0x0260 - 0x01F8)
+// 0x0068 (0x02B8 - 0x0250)
 class UDynamicClass : public UClass
 {
 public:
-	unsigned char                                      UnknownData00[0x68];                                      // 0x01F8(0x0068) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x68];                                      // 0x0250(0x0068) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -358,11 +362,11 @@ public:
 
 
 // Class CoreUObject.LinkerPlaceholderClass
-// 0x01A0 (0x0398 - 0x01F8)
+// 0x01A0 (0x03F0 - 0x0250)
 class ULinkerPlaceholderClass : public UClass
 {
 public:
-	unsigned char                                      UnknownData00[0x1A0];                                     // 0x01F8(0x01A0) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x1A0];                                     // 0x0250(0x01A0) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -463,6 +467,37 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindClass("Class CoreUObject.ObjectPropertyBase");
+		return ptr;
+	}
+
+};
+
+
+// Class CoreUObject.AssetObjectProperty
+// 0x0000 (0x0078 - 0x0078)
+class UAssetObjectProperty : public UObjectPropertyBase
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class CoreUObject.AssetObjectProperty");
+		return ptr;
+	}
+
+};
+
+
+// Class CoreUObject.AssetClassProperty
+// 0x0008 (0x0080 - 0x0078)
+class UAssetClassProperty : public UAssetObjectProperty
+{
+public:
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0078(0x0008) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class CoreUObject.AssetClassProperty");
 		return ptr;
 	}
 
@@ -741,37 +776,6 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindClass("Class CoreUObject.SetProperty");
-		return ptr;
-	}
-
-};
-
-
-// Class CoreUObject.SoftObjectProperty
-// 0x0000 (0x0078 - 0x0078)
-class USoftObjectProperty : public UObjectPropertyBase
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.SoftObjectProperty");
-		return ptr;
-	}
-
-};
-
-
-// Class CoreUObject.SoftClassProperty
-// 0x0008 (0x0080 - 0x0078)
-class USoftClassProperty : public USoftObjectProperty
-{
-public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0078(0x0008) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.SoftClassProperty");
 		return ptr;
 	}
 

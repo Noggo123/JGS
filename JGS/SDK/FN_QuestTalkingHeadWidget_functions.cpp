@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UQuestTalkingHeadWidget_C::UpdateVisibility()
 // Function QuestTalkingHeadWidget.QuestTalkingHeadWidget_C.HandleShouldBlockSubtitlePortraitChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           ShouldBlockSubtitlePortrait    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ShouldBlockSubtitlePortrait    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestTalkingHeadWidget_C::HandleShouldBlockSubtitlePortraitChanged(bool ShouldBlockSubtitlePortrait)
 {
@@ -69,10 +69,10 @@ void UQuestTalkingHeadWidget_C::HandleTalkingHeadEnd()
 // Function QuestTalkingHeadWidget.QuestTalkingHeadWidget_C.HandleTalkingHeadBegin
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UTexture2D*              Image                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   Title                          (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FText                   Subtitle                       (BlueprintVisible, BlueprintReadOnly, Parm)
-// EFortAnnouncementDisplayPreference DisplayPreference              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture2D*              Image                          (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Title                          (Parm)
+// struct FText                   Subtitle                       (Parm)
+// EFortAnnouncementDisplayPreference DisplayPreference              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestTalkingHeadWidget_C::HandleTalkingHeadBegin(class UTexture2D* Image, const struct FText& Title, const struct FText& Subtitle, EFortAnnouncementDisplayPreference DisplayPreference)
 {
@@ -95,7 +95,7 @@ void UQuestTalkingHeadWidget_C::HandleTalkingHeadBegin(class UTexture2D* Image, 
 // Function QuestTalkingHeadWidget.QuestTalkingHeadWidget_C.SetTalkingHeadSubtitle
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Subtitle                       (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   Subtitle                       (Parm)
 
 void UQuestTalkingHeadWidget_C::SetTalkingHeadSubtitle(const struct FText& Subtitle)
 {
@@ -115,7 +115,7 @@ void UQuestTalkingHeadWidget_C::SetTalkingHeadSubtitle(const struct FText& Subti
 // Function QuestTalkingHeadWidget.QuestTalkingHeadWidget_C.SetTalkingHeadName
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Title                          (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   Title                          (Parm)
 
 void UQuestTalkingHeadWidget_C::SetTalkingHeadName(const struct FText& Title)
 {
@@ -135,7 +135,7 @@ void UQuestTalkingHeadWidget_C::SetTalkingHeadName(const struct FText& Title)
 // Function QuestTalkingHeadWidget.QuestTalkingHeadWidget_C.SetTalkingHeadImage
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UTexture2D*              Icon                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UTexture2D*              Icon                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestTalkingHeadWidget_C::SetTalkingHeadImage(class UTexture2D* Icon)
 {
@@ -172,7 +172,7 @@ void UQuestTalkingHeadWidget_C::Construct()
 // Function QuestTalkingHeadWidget.QuestTalkingHeadWidget_C.ExecuteUbergraph_QuestTalkingHeadWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestTalkingHeadWidget_C::ExecuteUbergraph_QuestTalkingHeadWidget(int EntryPoint)
 {

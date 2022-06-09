@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -100,7 +100,7 @@ void UTabGamePadConfig_C::Construct()
 // Function TabGamePadConfig.TabGamePadConfig_C.Configuration Changed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Selected_Index                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Selected_Index                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTabGamePadConfig_C::Configuration_Changed(int Selected_Index)
 {
@@ -137,7 +137,7 @@ void UTabGamePadConfig_C::CenterOnTab()
 // Function TabGamePadConfig.TabGamePadConfig_C.Gamepad Config Changed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Selected_Index                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Selected_Index                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTabGamePadConfig_C::Gamepad_Config_Changed(int Selected_Index)
 {
@@ -174,7 +174,7 @@ void UTabGamePadConfig_C::UpdateOptionsTab()
 // Function TabGamePadConfig.TabGamePadConfig_C.ControllerPlatformConfigChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Selected_Index                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Selected_Index                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTabGamePadConfig_C::ControllerPlatformConfigChanged(int Selected_Index)
 {
@@ -194,7 +194,7 @@ void UTabGamePadConfig_C::ControllerPlatformConfigChanged(int Selected_Index)
 // Function TabGamePadConfig.TabGamePadConfig_C.ExecuteUbergraph_TabGamePadConfig
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTabGamePadConfig_C::ExecuteUbergraph_TabGamePadConfig(int EntryPoint)
 {

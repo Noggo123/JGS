@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,7 @@ namespace SDK
 // Function Car_Copper.Car_Copper_C.toggle light visibility
 struct ACar_Copper_C_toggle_light_visibility_Params
 {
-	bool                                               bNewVisibility;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bNewVisibility;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Car_Copper.Car_Copper_C.Randomize the target brightness levels
@@ -28,22 +28,22 @@ struct ACar_Copper_C_Randomize_the_target_brightness_levels_Params
 // Function Car_Copper.Car_Copper_C.Set Light Brightness
 struct ACar_Copper_C_Set_Light_Brightness_Params
 {
-	float                                              _0_1_Intensity;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               Include_Second_Emissive_Channel;                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              _0_1_Intensity;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Include_Second_Emissive_Channel;                          // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Car_Copper.Car_Copper_C.MaterialEditorSine
 struct ACar_Copper_C_MaterialEditorSine_Params
 {
-	float                                              Look_up_value;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Period;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Look_up_value;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Period;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Car_Copper.Car_Copper_C.SetCarAlarmEnabledBasedOnLocation
 struct ACar_Copper_C_SetCarAlarmEnabledBasedOnLocation_Params
 {
-	struct FVector                                     Location;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+	struct FVector                                     Location;                                                 // (Parm, IsPlainOldData)
 	bool                                               NewParam;                                                 // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
@@ -106,14 +106,14 @@ struct ACar_Copper_C_ReceiveBeginPlay_Params
 // Function Car_Copper.Car_Copper_C.ReceiveHit
 struct ACar_Copper_C_ReceiveHit_Params
 {
-	class UPrimitiveComponent**                        MyComp;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class AActor**                                     Other;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UPrimitiveComponent**                        OtherComp;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool*                                              bSelfMoved;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector*                                    HitLocation;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	struct FVector*                                    HitNormal;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	struct FVector*                                    NormalImpulse;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	struct FHitResult*                                 Hit;                                                      // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	class UPrimitiveComponent**                        MyComp;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	class AActor**                                     Other;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent**                        OtherComp;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              bSelfMoved;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector*                                    HitLocation;                                              // (Parm, IsPlainOldData)
+	struct FVector*                                    HitNormal;                                                // (Parm, IsPlainOldData)
+	struct FVector*                                    NormalImpulse;                                            // (Parm, IsPlainOldData)
+	struct FHitResult*                                 Hit;                                                      // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
 };
 
 // Function Car_Copper.Car_Copper_C.StartSirenLight
@@ -134,43 +134,43 @@ struct ACar_Copper_C_TriggerLowHealthParticleEffect_Params
 // Function Car_Copper.Car_Copper_C.OnDeathPlayEffects
 struct ACar_Copper_C_OnDeathPlayEffects_Params
 {
-	float*                                             Damage;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayTagContainer*                      DamageTags;                                               // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	struct FVector*                                    Momentum;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	struct FHitResult*                                 HitInfo;                                                  // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	class AFortPawn**                                  InstigatedBy;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class AActor**                                     DamageCauser;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayEffectContextHandle*               EffectContext;                                            // (BlueprintVisible, BlueprintReadOnly, Parm)
+	float*                                             Damage;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayTagContainer*                      DamageTags;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	struct FVector*                                    Momentum;                                                 // (Parm, IsPlainOldData)
+	struct FHitResult*                                 HitInfo;                                                  // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	class AFortPawn**                                  InstigatedBy;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	class AActor**                                     DamageCauser;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayEffectContextHandle*               EffectContext;                                            // (Parm)
 };
 
 // Function Car_Copper.Car_Copper_C.OnDamagePlayEffects
 struct ACar_Copper_C_OnDamagePlayEffects_Params
 {
-	float*                                             Damage;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayTagContainer*                      DamageTags;                                               // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	struct FVector*                                    Momentum;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	struct FHitResult*                                 HitInfo;                                                  // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	class AFortPawn**                                  InstigatedBy;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class AActor**                                     DamageCauser;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayEffectContextHandle*               EffectContext;                                            // (BlueprintVisible, BlueprintReadOnly, Parm)
+	float*                                             Damage;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayTagContainer*                      DamageTags;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	struct FVector*                                    Momentum;                                                 // (Parm, IsPlainOldData)
+	struct FHitResult*                                 HitInfo;                                                  // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	class AFortPawn**                                  InstigatedBy;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	class AActor**                                     DamageCauser;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayEffectContextHandle*               EffectContext;                                            // (Parm)
 };
 
 // Function Car_Copper.Car_Copper_C.ReceiveEndPlay
 struct ACar_Copper_C_ReceiveEndPlay_Params
 {
-	TEnumAsByte<EEndPlayReason>*                       EndPlayReason;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EEndPlayReason>*                       EndPlayReason;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Car_Copper.Car_Copper_C.OnDamageServer
 struct ACar_Copper_C_OnDamageServer_Params
 {
-	float*                                             Damage;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayTagContainer*                      DamageTags;                                               // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	struct FVector*                                    Momentum;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	struct FHitResult*                                 HitInfo;                                                  // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	class AController**                                InstigatedBy;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class AActor**                                     DamageCauser;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayEffectContextHandle*               EffectContext;                                            // (BlueprintVisible, BlueprintReadOnly, Parm)
+	float*                                             Damage;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayTagContainer*                      DamageTags;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	struct FVector*                                    Momentum;                                                 // (Parm, IsPlainOldData)
+	struct FHitResult*                                 HitInfo;                                                  // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	class AController**                                InstigatedBy;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	class AActor**                                     DamageCauser;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayEffectContextHandle*               EffectContext;                                            // (Parm)
 };
 
 // Function Car_Copper.Car_Copper_C.FireOffCarAlarm
@@ -181,7 +181,7 @@ struct ACar_Copper_C_FireOffCarAlarm_Params
 // Function Car_Copper.Car_Copper_C.OnBounceAnimationUpdate
 struct ACar_Copper_C_OnBounceAnimationUpdate_Params
 {
-	struct FFortBounceData*                            Data;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FFortBounceData*                            Data;                                                     // (Parm)
 };
 
 // Function Car_Copper.Car_Copper_C.Hit Bounce Finished
@@ -197,7 +197,7 @@ struct ACar_Copper_C_Player_jump_based_bounce__Params
 // Function Car_Copper.Car_Copper_C.ExecuteUbergraph_Car_Copper
 struct ACar_Copper_C_ExecuteUbergraph_Car_Copper_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

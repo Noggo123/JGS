@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -19,29 +17,6 @@ namespace SDK
 struct FLevelSequenceObjectReferenceMap
 {
 	unsigned char                                      UnknownData00[0x50];                                      // 0x0000(0x0050) MISSED OFFSET
-};
-
-// ScriptStruct LevelSequence.LevelSequenceBindingReference
-// 0x0038
-struct FLevelSequenceBindingReference
-{
-	struct FString                                     PackageName;                                              // 0x0000(0x0010) (ZeroConstructor, Deprecated)
-	struct FSoftObjectPath                             ExternalObjectPath;                                       // 0x0010(0x0018)
-	struct FString                                     ObjectPath;                                               // 0x0028(0x0010) (ZeroConstructor)
-};
-
-// ScriptStruct LevelSequence.LevelSequenceBindingReferenceArray
-// 0x0010
-struct FLevelSequenceBindingReferenceArray
-{
-	TArray<struct FLevelSequenceBindingReference>      References;                                               // 0x0000(0x0010) (ZeroConstructor)
-};
-
-// ScriptStruct LevelSequence.LevelSequenceBindingReferences
-// 0x0050
-struct FLevelSequenceBindingReferences
-{
-	TMap<struct FGuid, struct FLevelSequenceBindingReferenceArray> BindingIdToReferences;                                    // 0x0000(0x0050) (ZeroConstructor)
 };
 
 // ScriptStruct LevelSequence.LevelSequenceObject
@@ -64,7 +39,7 @@ struct FLevelSequenceSnapshotSettings
 };
 
 // ScriptStruct LevelSequence.LevelSequencePlayerSnapshot
-// 0x0058
+// 0x0050
 struct FLevelSequencePlayerSnapshot
 {
 	struct FText                                       MasterName;                                               // 0x0000(0x0018) (Edit, BlueprintVisible, BlueprintReadOnly, EditConst)
@@ -75,8 +50,13 @@ struct FLevelSequencePlayerSnapshot
 	unsigned char                                      UnknownData01[0x4];                                       // 0x003C(0x0004) MISSED OFFSET
 	class UCameraComponent*                            CameraComponent;                                          // 0x0040(0x0008) (Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData)
 	struct FLevelSequenceSnapshotSettings              Settings;                                                 // 0x0048(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, EditConst)
-	struct FMovieSceneSequenceID                       ShotID;                                                   // 0x0050(0x0004)
-	unsigned char                                      UnknownData02[0x4];                                       // 0x0054(0x0004) MISSED OFFSET
+};
+
+// ScriptStruct LevelSequence.LevelSequenceObjectReference
+// 0x0020
+struct FLevelSequenceObjectReference
+{
+	unsigned char                                      UnknownData00[0x20];                                      // 0x0000(0x0020) MISSED OFFSET
 };
 
 // ScriptStruct LevelSequence.BoundActorProxy
@@ -84,13 +64,6 @@ struct FLevelSequencePlayerSnapshot
 struct FBoundActorProxy
 {
 	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
-};
-
-// ScriptStruct LevelSequence.LevelSequenceLegacyObjectReference
-// 0x0020
-struct FLevelSequenceLegacyObjectReference
-{
-	unsigned char                                      UnknownData00[0x20];                                      // 0x0000(0x0020) MISSED OFFSET
 };
 
 }

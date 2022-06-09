@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass GCN_Commando_Warcry.GCN_Commando_Warcry_C
-// 0x0000 (0x0490 - 0x0490)
+// 0x0000 (0x0468 - 0x0468)
 class AGCN_Commando_Warcry_C : public AFortGameplayCueNotify_Looping
 {
 public:

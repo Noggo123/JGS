@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,17 +12,58 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.DBNOStateChanged
-// (Event, Protected, BlueprintEvent)
+// Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.On Team Reviving Changed
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool*                          bDBNO                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// TArray<bool>                   Team_Reviving                  (Parm, OutParm, ZeroConstructor, ReferenceParm)
 
-void UAthenaTeamMemberIndicator_C::DBNOStateChanged(bool* bDBNO)
+void UAthenaTeamMemberIndicator_C::On_Team_Reviving_Changed(TArray<bool>* Team_Reviving)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.DBNOStateChanged");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.On Team Reviving Changed");
 
-	UAthenaTeamMemberIndicator_C_DBNOStateChanged_Params params;
-	params.bDBNO = bDBNO;
+	UAthenaTeamMemberIndicator_C_On_Team_Reviving_Changed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Team_Reviving != nullptr)
+		*Team_Reviving = params.Team_Reviving;
+}
+
+
+// Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.On Team DBNO Changed
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<bool>                   DBNOStates                     (Parm, OutParm, ZeroConstructor, ReferenceParm)
+
+void UAthenaTeamMemberIndicator_C::On_Team_DBNO_Changed(TArray<bool>* DBNOStates)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.On Team DBNO Changed");
+
+	UAthenaTeamMemberIndicator_C_On_Team_DBNO_Changed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (DBNOStates != nullptr)
+		*DBNOStates = params.DBNOStates;
+}
+
+
+// Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UAthenaTeamMemberIndicator_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.Construct");
+
+	UAthenaTeamMemberIndicator_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -32,17 +73,19 @@ void UAthenaTeamMemberIndicator_C::DBNOStateChanged(bool* bDBNO)
 }
 
 
-// Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.TalkingStateChanged
-// (Event, Protected, BlueprintEvent)
+// Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.Tick
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          bTalking                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// float*                         InDeltaTime                    (Parm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaTeamMemberIndicator_C::TalkingStateChanged(bool* bTalking)
+void UAthenaTeamMemberIndicator_C::Tick(struct FGeometry* MyGeometry, float* InDeltaTime)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.TalkingStateChanged");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.Tick");
 
-	UAthenaTeamMemberIndicator_C_TalkingStateChanged_Params params;
-	params.bTalking = bTalking;
+	UAthenaTeamMemberIndicator_C_Tick_Params params;
+	params.MyGeometry = MyGeometry;
+	params.InDeltaTime = InDeltaTime;
 
 	auto flags = fn->FunctionFlags;
 
@@ -52,17 +95,14 @@ void UAthenaTeamMemberIndicator_C::TalkingStateChanged(bool* bTalking)
 }
 
 
-// Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.BeingRevivedStateChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool*                          bReviving                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.Destruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void UAthenaTeamMemberIndicator_C::BeingRevivedStateChanged(bool* bReviving)
+void UAthenaTeamMemberIndicator_C::Destruct()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.BeingRevivedStateChanged");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.Destruct");
 
-	UAthenaTeamMemberIndicator_C_BeingRevivedStateChanged_Params params;
-	params.bReviving = bReviving;
+	UAthenaTeamMemberIndicator_C_Destruct_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -72,17 +112,14 @@ void UAthenaTeamMemberIndicator_C::BeingRevivedStateChanged(bool* bReviving)
 }
 
 
-// Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.PlayerNameChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// struct FString*                PlayerName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.Update Pawn
+// (BlueprintCallable, BlueprintEvent)
 
-void UAthenaTeamMemberIndicator_C::PlayerNameChanged(struct FString* PlayerName)
+void UAthenaTeamMemberIndicator_C::Update_Pawn()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.PlayerNameChanged");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.Update Pawn");
 
-	UAthenaTeamMemberIndicator_C_PlayerNameChanged_Params params;
-	params.PlayerName = PlayerName;
+	UAthenaTeamMemberIndicator_C_Update_Pawn_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -95,7 +132,7 @@ void UAthenaTeamMemberIndicator_C::PlayerNameChanged(struct FString* PlayerName)
 // Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.ExecuteUbergraph_AthenaTeamMemberIndicator
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaTeamMemberIndicator_C::ExecuteUbergraph_AthenaTeamMemberIndicator(int EntryPoint)
 {

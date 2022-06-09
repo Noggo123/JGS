@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function Results_TeamTotalScore.Results_TeamTotalScore_C.InitializeConvertScorePlayRate
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          PlayRate                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          PlayRate                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeamTotalScore_C::InitializeConvertScorePlayRate(float PlayRate)
 {
@@ -35,7 +35,7 @@ void UResults_TeamTotalScore_C::InitializeConvertScorePlayRate(float PlayRate)
 // Function Results_TeamTotalScore.Results_TeamTotalScore_C.InitializeCountScorePlayRate
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          PlayRate                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          PlayRate                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeamTotalScore_C::InitializeCountScorePlayRate(float PlayRate)
 {
@@ -123,7 +123,7 @@ void UResults_TeamTotalScore_C::SkipToCountScoreFinalState()
 // Function Results_TeamTotalScore.Results_TeamTotalScore_C.Initialize
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortUIScoreReport*      Score_Report                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortUIScoreReport*      Score_Report                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeamTotalScore_C::Initialize(class UFortUIScoreReport* Score_Report)
 {
@@ -177,7 +177,7 @@ void UResults_TeamTotalScore_C::Count_Score_Intro_Sequence()
 // Function Results_TeamTotalScore.Results_TeamTotalScore_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeamTotalScore_C::PreConstruct(bool* IsDesignTime)
 {
@@ -282,8 +282,8 @@ void UResults_TeamTotalScore_C::Teleport_Pad_Intro_Sequence()
 // Function Results_TeamTotalScore.Results_TeamTotalScore_C.BndEvt__TextTotalScore_K2Node_ComponentBoundEvent_0_OnInterpolationEnded__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonNumericTextBlock* NumericTextBlock               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           HadCompleted                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonNumericTextBlock* NumericTextBlock               (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           HadCompleted                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeamTotalScore_C::BndEvt__TextTotalScore_K2Node_ComponentBoundEvent_0_OnInterpolationEnded__DelegateSignature(class UCommonNumericTextBlock* NumericTextBlock, bool HadCompleted)
 {
@@ -304,7 +304,7 @@ void UResults_TeamTotalScore_C::BndEvt__TextTotalScore_K2Node_ComponentBoundEven
 // Function Results_TeamTotalScore.Results_TeamTotalScore_C.ExecuteUbergraph_Results_TeamTotalScore
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeamTotalScore_C::ExecuteUbergraph_Results_TeamTotalScore(int EntryPoint)
 {

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,9 +15,9 @@ namespace SDK
 // Function LoginResultWIdget.LoginResultWIdget_C.SetResultsData
 // (Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Title                          (BlueprintVisible, BlueprintReadOnly, Parm)
-// bool                           bShowError                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   Description                    (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   Title                          (Parm)
+// bool                           bShowError                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Description                    (Parm)
 
 void ULoginResultWIdget_C::SetResultsData(const struct FText& Title, bool bShowError, const struct FText& Description)
 {
@@ -39,7 +39,7 @@ void ULoginResultWIdget_C::SetResultsData(const struct FText& Title, bool bShowE
 // Function LoginResultWIdget.LoginResultWIdget_C.SetDescription
 // (Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Description                    (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   Description                    (Parm)
 
 void ULoginResultWIdget_C::SetDescription(const struct FText& Description)
 {
@@ -59,8 +59,8 @@ void ULoginResultWIdget_C::SetDescription(const struct FText& Description)
 // Function LoginResultWIdget.LoginResultWIdget_C.SetTitle
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Title                          (BlueprintVisible, BlueprintReadOnly, Parm)
-// bool                           bShowError                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Title                          (Parm)
+// bool                           bShowError                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULoginResultWIdget_C::SetTitle(const struct FText& Title, bool bShowError)
 {
@@ -81,7 +81,7 @@ void ULoginResultWIdget_C::SetTitle(const struct FText& Title, bool bShowError)
 // Function LoginResultWIdget.LoginResultWIdget_C.BndEvt__ContinueButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULoginResultWIdget_C::BndEvt__ContinueButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -118,7 +118,7 @@ void ULoginResultWIdget_C::Construct()
 // Function LoginResultWIdget.LoginResultWIdget_C.ExecuteUbergraph_LoginResultWIdget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULoginResultWIdget_C::ExecuteUbergraph_LoginResultWIdget(int EntryPoint)
 {

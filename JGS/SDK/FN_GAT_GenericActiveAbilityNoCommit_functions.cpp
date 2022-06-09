@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UGAT_GenericActiveAbilityNoCommit_C::K2_ActivateAbility()
 // Function GAT_GenericActiveAbilityNoCommit.GAT_GenericActiveAbilityNoCommit_C.ExecuteUbergraph_GAT_GenericActiveAbilityNoCommit
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UGAT_GenericActiveAbilityNoCommit_C::ExecuteUbergraph_GAT_GenericActiveAbilityNoCommit(int EntryPoint)
 {

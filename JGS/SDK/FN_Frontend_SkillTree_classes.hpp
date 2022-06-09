@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass Frontend_SkillTree.Frontend_SkillTree_C
-// 0x0000 (0x0380 - 0x0380)
+// 0x0000 (0x03A0 - 0x03A0)
 class AFrontend_SkillTree_C : public AFortLevelScriptActor
 {
 public:

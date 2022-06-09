@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass GE_Map_Commando_Defense_ShieldStrength_ShieldRegen.GE_Map_Commando_Defense_ShieldStrength_ShieldRegen_C
-// 0x0000 (0x0670 - 0x0670)
+// 0x0000 (0x0660 - 0x0660)
 class UGE_Map_Commando_Defense_ShieldStrength_ShieldRegen_C : public UGE_Map_Resistance_To_Shield_C
 {
 public:

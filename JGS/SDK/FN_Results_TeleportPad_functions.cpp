@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -88,8 +88,8 @@ void UResults_TeleportPad_C::Focus()
 // Function Results_TeleportPad.Results_TeleportPad_C.Initialize
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortUIScoreReport*      InScoreReport                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortCompletionResult          CompletionResult               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortUIScoreReport*      InScoreReport                  (Parm, ZeroConstructor, IsPlainOldData)
+// EFortCompletionResult          CompletionResult               (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeleportPad_C::Initialize(class UFortUIScoreReport* InScoreReport, EFortCompletionResult CompletionResult)
 {
@@ -297,7 +297,7 @@ void UResults_TeleportPad_C::OnExitTimerFinished()
 // Function Results_TeleportPad.Results_TeleportPad_C.OnExitTimeRemainingUpdated
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int*                           TimeRemainingSeconds           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           TimeRemainingSeconds           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeleportPad_C::OnExitTimeRemainingUpdated(int* TimeRemainingSeconds)
 {
@@ -317,7 +317,7 @@ void UResults_TeleportPad_C::OnExitTimeRemainingUpdated(int* TimeRemainingSecond
 // Function Results_TeleportPad.Results_TeleportPad_C.OnExitTimePercentagePassedUpdated
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float*                         Percent                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float*                         Percent                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeleportPad_C::OnExitTimePercentagePassedUpdated(float* Percent)
 {
@@ -337,8 +337,8 @@ void UResults_TeleportPad_C::OnExitTimePercentagePassedUpdated(float* Percent)
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__TeleportPad1_K2Node_ComponentBoundEvent_35_OnAddFriendClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        TargetId                       (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FString                 TargetName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// struct FUniqueNetIdRepl        TargetId                       (Parm)
+// struct FString                 TargetName                     (Parm, ZeroConstructor)
 
 void UResults_TeleportPad_C::BndEvt__TeleportPad1_K2Node_ComponentBoundEvent_35_OnAddFriendClicked__DelegateSignature(const struct FUniqueNetIdRepl& TargetId, const struct FString& TargetName)
 {
@@ -359,8 +359,8 @@ void UResults_TeleportPad_C::BndEvt__TeleportPad1_K2Node_ComponentBoundEvent_35_
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__TeleportPad2_K2Node_ComponentBoundEvent_0_OnAddFriendClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        TargetId                       (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FString                 TargetName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// struct FUniqueNetIdRepl        TargetId                       (Parm)
+// struct FString                 TargetName                     (Parm, ZeroConstructor)
 
 void UResults_TeleportPad_C::BndEvt__TeleportPad2_K2Node_ComponentBoundEvent_0_OnAddFriendClicked__DelegateSignature(const struct FUniqueNetIdRepl& TargetId, const struct FString& TargetName)
 {
@@ -381,8 +381,8 @@ void UResults_TeleportPad_C::BndEvt__TeleportPad2_K2Node_ComponentBoundEvent_0_O
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__TeleportPad3_K2Node_ComponentBoundEvent_1_OnAddFriendClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        TargetId                       (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FString                 TargetName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// struct FUniqueNetIdRepl        TargetId                       (Parm)
+// struct FString                 TargetName                     (Parm, ZeroConstructor)
 
 void UResults_TeleportPad_C::BndEvt__TeleportPad3_K2Node_ComponentBoundEvent_1_OnAddFriendClicked__DelegateSignature(const struct FUniqueNetIdRepl& TargetId, const struct FString& TargetName)
 {
@@ -403,8 +403,8 @@ void UResults_TeleportPad_C::BndEvt__TeleportPad3_K2Node_ComponentBoundEvent_1_O
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__TeleportPad4_K2Node_ComponentBoundEvent_2_OnAddFriendClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        TargetId                       (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FString                 TargetName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// struct FUniqueNetIdRepl        TargetId                       (Parm)
+// struct FString                 TargetName                     (Parm, ZeroConstructor)
 
 void UResults_TeleportPad_C::BndEvt__TeleportPad4_K2Node_ComponentBoundEvent_2_OnAddFriendClicked__DelegateSignature(const struct FUniqueNetIdRepl& TargetId, const struct FString& TargetName)
 {
@@ -425,8 +425,8 @@ void UResults_TeleportPad_C::BndEvt__TeleportPad4_K2Node_ComponentBoundEvent_2_O
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__TeleportPad1_K2Node_ComponentBoundEvent_3_OnUpVoteClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        TargetId                       (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FString                 TargetName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// struct FUniqueNetIdRepl        TargetId                       (Parm)
+// struct FString                 TargetName                     (Parm, ZeroConstructor)
 
 void UResults_TeleportPad_C::BndEvt__TeleportPad1_K2Node_ComponentBoundEvent_3_OnUpVoteClicked__DelegateSignature(const struct FUniqueNetIdRepl& TargetId, const struct FString& TargetName)
 {
@@ -447,8 +447,8 @@ void UResults_TeleportPad_C::BndEvt__TeleportPad1_K2Node_ComponentBoundEvent_3_O
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__TeleportPad2_K2Node_ComponentBoundEvent_4_OnUpVoteClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        TargetId                       (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FString                 TargetName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// struct FUniqueNetIdRepl        TargetId                       (Parm)
+// struct FString                 TargetName                     (Parm, ZeroConstructor)
 
 void UResults_TeleportPad_C::BndEvt__TeleportPad2_K2Node_ComponentBoundEvent_4_OnUpVoteClicked__DelegateSignature(const struct FUniqueNetIdRepl& TargetId, const struct FString& TargetName)
 {
@@ -469,8 +469,8 @@ void UResults_TeleportPad_C::BndEvt__TeleportPad2_K2Node_ComponentBoundEvent_4_O
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__TeleportPad3_K2Node_ComponentBoundEvent_5_OnUpVoteClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        TargetId                       (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FString                 TargetName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// struct FUniqueNetIdRepl        TargetId                       (Parm)
+// struct FString                 TargetName                     (Parm, ZeroConstructor)
 
 void UResults_TeleportPad_C::BndEvt__TeleportPad3_K2Node_ComponentBoundEvent_5_OnUpVoteClicked__DelegateSignature(const struct FUniqueNetIdRepl& TargetId, const struct FString& TargetName)
 {
@@ -491,8 +491,8 @@ void UResults_TeleportPad_C::BndEvt__TeleportPad3_K2Node_ComponentBoundEvent_5_O
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__TeleportPad4_K2Node_ComponentBoundEvent_6_OnUpVoteClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        TargetId                       (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FString                 TargetName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// struct FUniqueNetIdRepl        TargetId                       (Parm)
+// struct FString                 TargetName                     (Parm, ZeroConstructor)
 
 void UResults_TeleportPad_C::BndEvt__TeleportPad4_K2Node_ComponentBoundEvent_6_OnUpVoteClicked__DelegateSignature(const struct FUniqueNetIdRepl& TargetId, const struct FString& TargetName)
 {
@@ -513,7 +513,7 @@ void UResults_TeleportPad_C::BndEvt__TeleportPad4_K2Node_ComponentBoundEvent_6_O
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__ButtonReturnHome_K2Node_ComponentBoundEvent_2_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeleportPad_C::BndEvt__ButtonReturnHome_K2Node_ComponentBoundEvent_2_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -533,7 +533,7 @@ void UResults_TeleportPad_C::BndEvt__ButtonReturnHome_K2Node_ComponentBoundEvent
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__Pad1_K2Node_ComponentBoundEvent_4_OnTeleportPadIntroFinished__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UResults_TeleportPadPlayer_C* TeleportPadPlayer              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UResults_TeleportPadPlayer_C* TeleportPadPlayer              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeleportPad_C::BndEvt__Pad1_K2Node_ComponentBoundEvent_4_OnTeleportPadIntroFinished__DelegateSignature(class UResults_TeleportPadPlayer_C* TeleportPadPlayer)
 {
@@ -553,7 +553,7 @@ void UResults_TeleportPad_C::BndEvt__Pad1_K2Node_ComponentBoundEvent_4_OnTelepor
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__Pad2_K2Node_ComponentBoundEvent_5_OnTeleportPadIntroFinished__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UResults_TeleportPadPlayer_C* TeleportPadPlayer              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UResults_TeleportPadPlayer_C* TeleportPadPlayer              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeleportPad_C::BndEvt__Pad2_K2Node_ComponentBoundEvent_5_OnTeleportPadIntroFinished__DelegateSignature(class UResults_TeleportPadPlayer_C* TeleportPadPlayer)
 {
@@ -573,7 +573,7 @@ void UResults_TeleportPad_C::BndEvt__Pad2_K2Node_ComponentBoundEvent_5_OnTelepor
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__Pad3_K2Node_ComponentBoundEvent_6_OnTeleportPadIntroFinished__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UResults_TeleportPadPlayer_C* TeleportPadPlayer              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UResults_TeleportPadPlayer_C* TeleportPadPlayer              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeleportPad_C::BndEvt__Pad3_K2Node_ComponentBoundEvent_6_OnTeleportPadIntroFinished__DelegateSignature(class UResults_TeleportPadPlayer_C* TeleportPadPlayer)
 {
@@ -593,7 +593,7 @@ void UResults_TeleportPad_C::BndEvt__Pad3_K2Node_ComponentBoundEvent_6_OnTelepor
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__Pad4_K2Node_ComponentBoundEvent_7_OnTeleportPadIntroFinished__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UResults_TeleportPadPlayer_C* TeleportPadPlayer              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UResults_TeleportPadPlayer_C* TeleportPadPlayer              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeleportPad_C::BndEvt__Pad4_K2Node_ComponentBoundEvent_7_OnTeleportPadIntroFinished__DelegateSignature(class UResults_TeleportPadPlayer_C* TeleportPadPlayer)
 {
@@ -613,7 +613,7 @@ void UResults_TeleportPad_C::BndEvt__Pad4_K2Node_ComponentBoundEvent_7_OnTelepor
 // Function Results_TeleportPad.Results_TeleportPad_C.ExecuteUbergraph_Results_TeleportPad
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeleportPad_C::ExecuteUbergraph_Results_TeleportPad(int EntryPoint)
 {
@@ -633,8 +633,8 @@ void UResults_TeleportPad_C::ExecuteUbergraph_Results_TeleportPad(int EntryPoint
 // Function Results_TeleportPad.Results_TeleportPad_C.OnUpVoteClicked__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        TargetId                       (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FString                 TargetName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// struct FUniqueNetIdRepl        TargetId                       (Parm)
+// struct FString                 TargetName                     (Parm, ZeroConstructor)
 
 void UResults_TeleportPad_C::OnUpVoteClicked__DelegateSignature(const struct FUniqueNetIdRepl& TargetId, const struct FString& TargetName)
 {
@@ -655,8 +655,8 @@ void UResults_TeleportPad_C::OnUpVoteClicked__DelegateSignature(const struct FUn
 // Function Results_TeleportPad.Results_TeleportPad_C.OnAddFriendClicked__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        TargetId                       (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FString                 TargetName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// struct FUniqueNetIdRepl        TargetId                       (Parm)
+// struct FString                 TargetName                     (Parm, ZeroConstructor)
 
 void UResults_TeleportPad_C::OnAddFriendClicked__DelegateSignature(const struct FUniqueNetIdRepl& TargetId, const struct FString& TargetName)
 {

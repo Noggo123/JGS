@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,8 +37,8 @@ void UMainTabsScreen_C::Determine_If_Any_non_MTX_offers_are_purchasable(bool* Sh
 // Function MainTabsScreen.MainTabsScreen_C.CheckDisplayCriteria
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// TEnumAsByte<EStoreOfferCosts>  InCustomStoreOfferCost         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FCardPackOffer          InCardPackOffer                (BlueprintVisible, BlueprintReadOnly, Parm)
+// TEnumAsByte<EStoreOfferCosts>  InCustomStoreOfferCost         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FCardPackOffer          InCardPackOffer                (Parm)
 // bool                           bPassedDisplayCriteria         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UMainTabsScreen_C::CheckDisplayCriteria(TEnumAsByte<EStoreOfferCosts> InCustomStoreOfferCost, const struct FCardPackOffer& InCardPackOffer, bool* bPassedDisplayCriteria)
@@ -63,7 +63,7 @@ void UMainTabsScreen_C::CheckDisplayCriteria(TEnumAsByte<EStoreOfferCosts> InCus
 // Function MainTabsScreen.MainTabsScreen_C.GetCustomStoreOfferCost
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FCardPackOffer          InCardPackOffer                (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FCardPackOffer          InCardPackOffer                (Parm)
 // TEnumAsByte<EStoreOfferCosts>  OutCustomStoreOfferCost        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UMainTabsScreen_C::GetCustomStoreOfferCost(const struct FCardPackOffer& InCardPackOffer, TEnumAsByte<EStoreOfferCosts>* OutCustomStoreOfferCost)
@@ -87,7 +87,7 @@ void UMainTabsScreen_C::GetCustomStoreOfferCost(const struct FCardPackOffer& InC
 // Function MainTabsScreen.MainTabsScreen_C.CheckHighestPriorityOffer
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FCardPackOffer>  inOfferArray                   (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<struct FCardPackOffer>  inOfferArray                   (Parm, OutParm, ZeroConstructor, ReferenceParm)
 // struct FCardPackOffer          outPriorityOffer               (Parm, OutParm)
 // bool                           FoundOffer                     (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
@@ -158,7 +158,7 @@ bool UMainTabsScreen_C::Is_Transform_Feature_Unlocked()
 // Function MainTabsScreen.MainTabsScreen_C.HandleCardPackStore
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMainTabsScreen_C::HandleCardPackStore(const struct FName& TabId)
 {
@@ -178,14 +178,14 @@ void UMainTabsScreen_C::HandleCardPackStore(const struct FName& TabId)
 // Function MainTabsScreen.MainTabsScreen_C.HandleMtxStore
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   Tab_Id                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   Tab_ID                         (Parm, ZeroConstructor, IsPlainOldData)
 
-void UMainTabsScreen_C::HandleMtxStore(const struct FName& Tab_Id)
+void UMainTabsScreen_C::HandleMtxStore(const struct FName& Tab_ID)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function MainTabsScreen.MainTabsScreen_C.HandleMtxStore");
 
 	UMainTabsScreen_C_HandleMtxStore_Params params;
-	params.Tab_Id = Tab_Id;
+	params.Tab_ID = Tab_ID;
 
 	auto flags = fn->FunctionFlags;
 
@@ -215,7 +215,7 @@ void UMainTabsScreen_C::Handle_Unclaimed_Resources_Updated()
 // Function MainTabsScreen.MainTabsScreen_C.Toggle Unclaimed Research Timer
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Enable                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Enable                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMainTabsScreen_C::Toggle_Unclaimed_Research_Timer(bool Enable)
 {
@@ -257,7 +257,7 @@ void UMainTabsScreen_C::Determine_Unclaimed_Resources_at_Threshold(bool* Result)
 // Function MainTabsScreen.MainTabsScreen_C.Are Any Nodes Available For Purchase
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   NodePageId                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   NodePageId                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 bool UMainTabsScreen_C::Are_Any_Nodes_Available_For_Purchase(const struct FName& NodePageId)
@@ -280,7 +280,7 @@ bool UMainTabsScreen_C::Are_Any_Nodes_Available_For_Purchase(const struct FName&
 // Function MainTabsScreen.MainTabsScreen_C.Update Skills Tab Button Bang
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   Tab                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   Tab                            (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMainTabsScreen_C::Update_Skills_Tab_Button_Bang(const struct FName& Tab)
 {
@@ -300,7 +300,7 @@ void UMainTabsScreen_C::Update_Skills_Tab_Button_Bang(const struct FName& Tab)
 // Function MainTabsScreen.MainTabsScreen_C.Update Store Tab Button Bang
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   Tab                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   Tab                            (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMainTabsScreen_C::Update_Store_Tab_Button_Bang(const struct FName& Tab)
 {
@@ -386,7 +386,7 @@ void UMainTabsScreen_C::Get_FortPC(class AFortPlayerController** FortPC)
 // Function MainTabsScreen.MainTabsScreen_C.Get Item from Transform Seen State
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortAccountItem*        TransformKey                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortAccountItem*        TransformKey                   (Parm, ZeroConstructor, IsPlainOldData)
 // class UFortAccountItem*        OutItem                        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UMainTabsScreen_C::Get_Item_from_Transform_Seen_State(class UFortAccountItem* TransformKey, class UFortAccountItem** OutItem)
@@ -410,7 +410,7 @@ void UMainTabsScreen_C::Get_Item_from_Transform_Seen_State(class UFortAccountIte
 // Function MainTabsScreen.MainTabsScreen_C.Update Armory Tab Button Bang
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   Tab                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   Tab                            (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMainTabsScreen_C::Update_Armory_Tab_Button_Bang(const struct FName& Tab)
 {
@@ -430,7 +430,7 @@ void UMainTabsScreen_C::Update_Armory_Tab_Button_Bang(const struct FName& Tab)
 // Function MainTabsScreen.MainTabsScreen_C.Update Quest Tab Button Bang
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   Tab                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   Tab                            (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMainTabsScreen_C::Update_Quest_Tab_Button_Bang(const struct FName& Tab)
 {
@@ -450,7 +450,7 @@ void UMainTabsScreen_C::Update_Quest_Tab_Button_Bang(const struct FName& Tab)
 // Function MainTabsScreen.MainTabsScreen_C.Update Tab Button Bangs
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   InTab                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   InTab                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMainTabsScreen_C::Update_Tab_Button_Bangs(const struct FName& InTab)
 {
@@ -470,7 +470,7 @@ void UMainTabsScreen_C::Update_Tab_Button_Bangs(const struct FName& InTab)
 // Function MainTabsScreen.MainTabsScreen_C.Update Hero Tab Button Bang
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   Tab                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   Tab                            (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMainTabsScreen_C::Update_Hero_Tab_Button_Bang(const struct FName& Tab)
 {
@@ -490,7 +490,7 @@ void UMainTabsScreen_C::Update_Hero_Tab_Button_Bang(const struct FName& Tab)
 // Function MainTabsScreen.MainTabsScreen_C.Update Squad Tab Button Bang
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   Tab                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   Tab                            (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMainTabsScreen_C::Update_Squad_Tab_Button_Bang(const struct FName& Tab)
 {
@@ -510,7 +510,7 @@ void UMainTabsScreen_C::Update_Squad_Tab_Button_Bang(const struct FName& Tab)
 // Function MainTabsScreen.MainTabsScreen_C.HandleTabSelected
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   TabName                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabName                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMainTabsScreen_C::HandleTabSelected(const struct FName& TabName)
 {
@@ -530,8 +530,8 @@ void UMainTabsScreen_C::HandleTabSelected(const struct FName& TabName)
 // Function MainTabsScreen.MainTabsScreen_C.HandleTabCreated
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMainTabsScreen_C::HandleTabCreated(const struct FName& TabId, class UCommonButton* TabButton)
 {
@@ -569,8 +569,8 @@ void UMainTabsScreen_C::OnActivated()
 // Function MainTabsScreen.MainTabsScreen_C.CustomEvent
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton*           TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           TabButton                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMainTabsScreen_C::CustomEvent(const struct FName& TabId, class UCommonButton* TabButton)
 {
@@ -659,7 +659,7 @@ void UMainTabsScreen_C::Destruct()
 // Function MainTabsScreen.MainTabsScreen_C.OnQuestSeen_Event_0_1
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortQuestItem*          Quest                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortQuestItem*          Quest                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMainTabsScreen_C::OnQuestSeen_Event_0_1(class UFortQuestItem* Quest)
 {
@@ -696,7 +696,7 @@ void UMainTabsScreen_C::SquadSlotMarkedAsSeen_Event_0_1()
 // Function MainTabsScreen.MainTabsScreen_C.HandleMainTabSelected
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// struct FName*                  TabNameID                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName*                  TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMainTabsScreen_C::HandleMainTabSelected(struct FName* TabNameID)
 {
@@ -716,8 +716,8 @@ void UMainTabsScreen_C::HandleMainTabSelected(struct FName* TabNameID)
 // Function MainTabsScreen.MainTabsScreen_C.HandleMainTabCreated
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// struct FName*                  TabNameID                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonButton**          TabButton                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName*                  TabNameID                      (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton**          TabButton                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMainTabsScreen_C::HandleMainTabCreated(struct FName* TabNameID, class UCommonButton** TabButton)
 {
@@ -738,7 +738,7 @@ void UMainTabsScreen_C::HandleMainTabCreated(struct FName* TabNameID, class UCom
 // Function MainTabsScreen.MainTabsScreen_C.ExecuteUbergraph_MainTabsScreen
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMainTabsScreen_C::ExecuteUbergraph_MainTabsScreen(int EntryPoint)
 {

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -100,8 +100,8 @@ void AB_GoinCommandoWeapon_C::ReceiveBeginPlay()
 // Function B_GoinCommandoWeapon.B_GoinCommandoWeapon_C.OnPlayWeaponFireFX
 // (BlueprintCosmetic, Event, Protected, BlueprintEvent)
 // Parameters:
-// bool*                          bPersistentFire                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool*                          bSecondaryFire                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          bPersistentFire                (Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          bSecondaryFire                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void AB_GoinCommandoWeapon_C::OnPlayWeaponFireFX(bool* bPersistentFire, bool* bSecondaryFire)
 {
@@ -122,9 +122,9 @@ void AB_GoinCommandoWeapon_C::OnPlayWeaponFireFX(bool* bPersistentFire, bool* bS
 // Function B_GoinCommandoWeapon.B_GoinCommandoWeapon_C.OnPlayImpactFX
 // (Event, Protected, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FHitResult*             HitResult                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData)
-// TEnumAsByte<EPhysicalSurface>* ImpactPhysicalSurface          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UParticleSystemComponent** SpawnedPSC                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FHitResult*             HitResult                      (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+// TEnumAsByte<EPhysicalSurface>* ImpactPhysicalSurface          (Parm, ZeroConstructor, IsPlainOldData)
+// class UParticleSystemComponent** SpawnedPSC                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AB_GoinCommandoWeapon_C::OnPlayImpactFX(struct FHitResult* HitResult, TEnumAsByte<EPhysicalSurface>* ImpactPhysicalSurface, class UParticleSystemComponent** SpawnedPSC)
 {
@@ -180,8 +180,8 @@ void AB_GoinCommandoWeapon_C::OnChargeDown()
 // Function B_GoinCommandoWeapon.B_GoinCommandoWeapon_C.OnInitCosmeticAlterations
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// struct FFortCosmeticModification* CosmeticMod                    (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UMaterialInstanceDynamic** DynamicMaterialInstance        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortCosmeticModification* CosmeticMod                    (Parm)
+// class UMaterialInstanceDynamic** DynamicMaterialInstance        (Parm, ZeroConstructor, IsPlainOldData)
 
 void AB_GoinCommandoWeapon_C::OnInitCosmeticAlterations(struct FFortCosmeticModification* CosmeticMod, class UMaterialInstanceDynamic** DynamicMaterialInstance)
 {
@@ -202,7 +202,7 @@ void AB_GoinCommandoWeapon_C::OnInitCosmeticAlterations(struct FFortCosmeticModi
 // Function B_GoinCommandoWeapon.B_GoinCommandoWeapon_C.ExecuteUbergraph_B_GoinCommandoWeapon
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AB_GoinCommandoWeapon_C::ExecuteUbergraph_B_GoinCommandoWeapon(int EntryPoint)
 {

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -36,7 +36,7 @@ struct FText UStatusWidget_C::UpdateLoginStatusText()
 // Function StatusWidget.StatusWidget_C.SetStatusText
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Status                         (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   Status                         (Parm)
 
 void UStatusWidget_C::SetStatusText(const struct FText& Status)
 {
@@ -56,7 +56,7 @@ void UStatusWidget_C::SetStatusText(const struct FText& Status)
 // Function StatusWidget.StatusWidget_C.SetTitleText
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   TitleText                      (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   TitleText                      (Parm)
 
 void UStatusWidget_C::SetTitleText(const struct FText& TitleText)
 {
@@ -110,7 +110,7 @@ void UStatusWidget_C::Destruct()
 // Function StatusWidget.StatusWidget_C.ExecuteUbergraph_StatusWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UStatusWidget_C::ExecuteUbergraph_StatusWidget(int EntryPoint)
 {

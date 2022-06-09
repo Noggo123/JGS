@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,46 +12,12 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function HUD.HUD_C.PrepareMgmtMenu
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UHUD_C::PrepareMgmtMenu()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HUD.HUD_C.PrepareMgmtMenu");
-
-	UHUD_C_PrepareMgmtMenu_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HUD.HUD_C.OpenSocialMenu
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UHUD_C::OpenSocialMenu()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HUD.HUD_C.OpenSocialMenu");
-
-	UHUD_C_OpenSocialMenu_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function HUD.HUD_C.CheckHUDElementVisibility
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTagContainer   HiddenHUDElementTags           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FGameplayTag            HUDElementTagToCheck           (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UWidget*                 HUDElement                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FGameplayTagContainer   HiddenHUDElementTags           (Parm, OutParm, ReferenceParm)
+// struct FGameplayTag            HUDElementTagToCheck           (Parm)
+// class UWidget*                 HUDElement                     (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
 void UHUD_C::CheckHUDElementVisibility(const struct FGameplayTag& HUDElementTagToCheck, struct FGameplayTagContainer* HiddenHUDElementTags, class UWidget** HUDElement)
 {
@@ -76,7 +42,7 @@ void UHUD_C::CheckHUDElementVisibility(const struct FGameplayTag& HUDElementTagT
 // Function HUD.HUD_C.OnHUDElementVisibilityChanged
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTagContainer   HiddenHUDElementTags           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGameplayTagContainer   HiddenHUDElementTags           (Parm, OutParm, ReferenceParm)
 
 void UHUD_C::OnHUDElementVisibilityChanged(struct FGameplayTagContainer* HiddenHUDElementTags)
 {
@@ -98,7 +64,7 @@ void UHUD_C::OnHUDElementVisibilityChanged(struct FGameplayTagContainer* HiddenH
 // Function HUD.HUD_C.OnManagementTabSelected
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   TabName                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabName                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_C::OnManagementTabSelected(const struct FName& TabName)
 {
@@ -118,7 +84,7 @@ void UHUD_C::OnManagementTabSelected(const struct FName& TabName)
 // Function HUD.HUD_C.PopContentWidgetInternal
 // (Event, Protected, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FContentPushState*      State                          (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FContentPushState*      State                          (Parm)
 // class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 class UWidget* UHUD_C::PopContentWidgetInternal(struct FContentPushState* State)
@@ -158,7 +124,7 @@ void UHUD_C::CreateInterestIndicatorWidget()
 // Function HUD.HUD_C.HandleOnPointOfInterestRemoved
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                  PointOfInterest                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AActor*                  PointOfInterest                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_C::HandleOnPointOfInterestRemoved(class AActor* PointOfInterest)
 {
@@ -178,9 +144,9 @@ void UHUD_C::HandleOnPointOfInterestRemoved(class AActor* PointOfInterest)
 // Function HUD.HUD_C.HandleOnPointOfInterestAdded
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                  PointOfInterest                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   DisplayText                    (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UTexture2D*              DisplayImage                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AActor*                  PointOfInterest                (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   DisplayText                    (Parm)
+// class UTexture2D*              DisplayImage                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_C::HandleOnPointOfInterestAdded(class AActor* PointOfInterest, const struct FText& DisplayText, class UTexture2D* DisplayImage)
 {
@@ -202,9 +168,9 @@ void UHUD_C::HandleOnPointOfInterestAdded(class AActor* PointOfInterest, const s
 // Function HUD.HUD_C.ShowPicker
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortPickerMode                Mode                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            InitialOption                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           IgnoreFirstAccept              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortPickerMode                Mode                           (Parm, ZeroConstructor, IsPlainOldData)
+// int                            InitialOption                  (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IgnoreFirstAccept              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_C::ShowPicker(EFortPickerMode Mode, int InitialOption, bool IgnoreFirstAccept)
 {
@@ -243,7 +209,7 @@ void UHUD_C::OnHordeTierCompleteWidgetFinished()
 // Function HUD.HUD_C.HandleHordeTierComplete
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortCompletionResult          Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortCompletionResult          Result                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_C::HandleHordeTierComplete(EFortCompletionResult Result)
 {
@@ -280,7 +246,7 @@ void UHUD_C::HandleFocusChat()
 // Function HUD.HUD_C.ToggleTopLevelMenu
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Show                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Show                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_C::ToggleTopLevelMenu(bool Show)
 {
@@ -300,7 +266,7 @@ void UHUD_C::ToggleTopLevelMenu(bool Show)
 // Function HUD.HUD_C.ToggleChat
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Show                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Show                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_C::ToggleChat(bool Show)
 {
@@ -320,7 +286,7 @@ void UHUD_C::ToggleChat(bool Show)
 // Function HUD.HUD_C.SetPersistentHUDContentVisibility
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Visible                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Visible                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_C::SetPersistentHUDContentVisibility(bool Visible)
 {
@@ -340,7 +306,7 @@ void UHUD_C::SetPersistentHUDContentVisibility(bool Visible)
 // Function HUD.HUD_C.HandleIndicatorModeChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           InidicatorsEnabled             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           InidicatorsEnabled             (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_C::HandleIndicatorModeChanged(bool InidicatorsEnabled)
 {
@@ -360,8 +326,8 @@ void UHUD_C::HandleIndicatorModeChanged(bool InidicatorsEnabled)
 // Function HUD.HUD_C.SetCursorModeContent
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UUserWidget*             CustomWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ActionName                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// class UUserWidget*             CustomWidget                   (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ActionName                     (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
 void UHUD_C::SetCursorModeContent(class UUserWidget* CustomWidget, struct FName* ActionName)
 {
@@ -401,7 +367,7 @@ void UHUD_C::SetGameMode()
 // Function HUD.HUD_C.OnPlayerTargetingChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           IsTargeting                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IsTargeting                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_C::OnPlayerTargetingChanged(bool IsTargeting)
 {
@@ -497,8 +463,8 @@ void UHUD_C::SetQuickbarSizes()
 // Function HUD.HUD_C.HandleQuickbarSlotFocusSlotChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortQuickBars                 Quickbar_Index                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            Slot                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortQuickBars                 Quickbar_Index                 (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Slot                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_C::HandleQuickbarSlotFocusSlotChanged(EFortQuickBars Quickbar_Index, int Slot)
 {
@@ -519,9 +485,9 @@ void UHUD_C::HandleQuickbarSlotFocusSlotChanged(EFortQuickBars Quickbar_Index, i
 // Function HUD.HUD_C.HandleCursorModeChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           IsEnabled                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ActionName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UUserWidget*             CursorModeContentCustomWidget  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IsEnabled                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ActionName                     (Parm, ZeroConstructor, IsPlainOldData)
+// class UUserWidget*             CursorModeContentCustomWidget  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_C::HandleCursorModeChanged(bool IsEnabled, const struct FName& ActionName, class UUserWidget* CursorModeContentCustomWidget)
 {
@@ -577,7 +543,7 @@ void UHUD_C::OnConfirmed_0E0300084F8A9EB1D6CB5E836DBF8C7A()
 // Function HUD.HUD_C.OnEnterState
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// EFortUIState*                  PreviousUIState                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortUIState*                  PreviousUIState                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_C::OnEnterState(EFortUIState* PreviousUIState)
 {
@@ -597,7 +563,7 @@ void UHUD_C::OnEnterState(EFortUIState* PreviousUIState)
 // Function HUD.HUD_C.QuestsCompleted
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UFortQuestItem*>  Quests                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UFortQuestItem*>  Quests                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UHUD_C::QuestsCompleted(TArray<class UFortQuestItem*> Quests)
 {
@@ -634,7 +600,7 @@ void UHUD_C::Construct()
 // Function HUD.HUD_C.LoadingScreenChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bVisible                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bVisible                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_C::LoadingScreenChanged(bool bVisible)
 {
@@ -654,7 +620,7 @@ void UHUD_C::LoadingScreenChanged(bool bVisible)
 // Function HUD.HUD_C.EndOfDayRecapStarted
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FEndOfDayRecap          EndOfDayRecap                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FEndOfDayRecap          EndOfDayRecap                  (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UHUD_C::EndOfDayRecapStarted(const struct FEndOfDayRecap& EndOfDayRecap)
 {
@@ -691,8 +657,8 @@ void UHUD_C::EndOfDayRecapEnded()
 // Function HUD.HUD_C.PushContentWidgetInternal
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UWidget**                Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FContentPushState*      State                          (BlueprintVisible, BlueprintReadOnly, Parm)
+// class UWidget**                Widget                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FContentPushState*      State                          (Parm)
 
 void UHUD_C::PushContentWidgetInternal(class UWidget** Widget, struct FContentPushState* State)
 {
@@ -730,7 +696,7 @@ void UHUD_C::Destruct()
 // Function HUD.HUD_C.HandleInputMethodChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           UsingGamepad                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           UsingGamepad                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_C::HandleInputMethodChanged(bool UsingGamepad)
 {
@@ -781,27 +747,10 @@ void UHUD_C::BndEvt__BP_FortLiveStreamGrantWindowExpires_K2Node_ComponentBoundEv
 }
 
 
-// Function HUD.HUD_C.RequestOpenSocialMenu
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void UHUD_C::RequestOpenSocialMenu()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function HUD.HUD_C.RequestOpenSocialMenu");
-
-	UHUD_C_RequestOpenSocialMenu_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function HUD.HUD_C.ExecuteUbergraph_HUD
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHUD_C::ExecuteUbergraph_HUD(int EntryPoint)
 {

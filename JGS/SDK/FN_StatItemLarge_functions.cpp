@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,10 +15,10 @@ namespace SDK
 // Function StatItemLarge.StatItemLarge_C.UpdateValue
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          NewValue                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          CurrentValue                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortStatValueDisplayType      DisplayType                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortBuffState                 BuffState                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          NewValue                       (Parm, ZeroConstructor, IsPlainOldData)
+// float                          CurrentValue                   (Parm, ZeroConstructor, IsPlainOldData)
+// EFortStatValueDisplayType      DisplayType                    (Parm, ZeroConstructor, IsPlainOldData)
+// EFortBuffState                 BuffState                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UStatItemLarge_C::UpdateValue(float NewValue, float CurrentValue, EFortStatValueDisplayType DisplayType, EFortBuffState BuffState)
 {
@@ -131,7 +131,7 @@ void UStatItemLarge_C::DisplayAttributeChanged()
 // Function StatItemLarge.StatItemLarge_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UStatItemLarge_C::PreConstruct(bool* IsDesignTime)
 {
@@ -185,7 +185,7 @@ void UStatItemLarge_C::PreviewEnded()
 // Function StatItemLarge.StatItemLarge_C.ValueChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float*                         Delta                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float*                         Delta                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UStatItemLarge_C::ValueChanged(float* Delta)
 {
@@ -205,7 +205,7 @@ void UStatItemLarge_C::ValueChanged(float* Delta)
 // Function StatItemLarge.StatItemLarge_C.ExecuteUbergraph_StatItemLarge
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UStatItemLarge_C::ExecuteUbergraph_StatItemLarge(int EntryPoint)
 {

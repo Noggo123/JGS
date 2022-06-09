@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -70,51 +70,47 @@ void UBP_FortLiveStreamGrantWindowExpires_C::Update_Name_Text()
 // Function BP_FortLiveStreamGrantWindowExpires.BP_FortLiveStreamGrantWindowExpires_C.Update Expiration Text
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FTimespan               Timespan                       (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FTimespan               Timespan                       (ConstParm, Parm, OutParm, ReferenceParm)
 
-void UBP_FortLiveStreamGrantWindowExpires_C::Update_Expiration_Text(struct FTimespan* Timespan)
+void UBP_FortLiveStreamGrantWindowExpires_C::Update_Expiration_Text(const struct FTimespan& Timespan)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function BP_FortLiveStreamGrantWindowExpires.BP_FortLiveStreamGrantWindowExpires_C.Update Expiration Text");
 
 	UBP_FortLiveStreamGrantWindowExpires_C_Update_Expiration_Text_Params params;
+	params.Timespan = Timespan;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (Timespan != nullptr)
-		*Timespan = params.Timespan;
 }
 
 
 // Function BP_FortLiveStreamGrantWindowExpires.BP_FortLiveStreamGrantWindowExpires_C.Set Stream Brush
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSlateBrush             InBrush                        (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FSlateBrush             InBrush                        (ConstParm, Parm, OutParm, ReferenceParm)
 
-void UBP_FortLiveStreamGrantWindowExpires_C::Set_Stream_Brush(struct FSlateBrush* InBrush)
+void UBP_FortLiveStreamGrantWindowExpires_C::Set_Stream_Brush(const struct FSlateBrush& InBrush)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function BP_FortLiveStreamGrantWindowExpires.BP_FortLiveStreamGrantWindowExpires_C.Set Stream Brush");
 
 	UBP_FortLiveStreamGrantWindowExpires_C_Set_Stream_Brush_Params params;
+	params.InBrush = InBrush;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (InBrush != nullptr)
-		*InBrush = params.InBrush;
 }
 
 
 // Function BP_FortLiveStreamGrantWindowExpires.BP_FortLiveStreamGrantWindowExpires_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortLiveStreamGrantWindowExpires_C::PreConstruct(bool* IsDesignTime)
 {
@@ -151,7 +147,7 @@ void UBP_FortLiveStreamGrantWindowExpires_C::Construct()
 // Function BP_FortLiveStreamGrantWindowExpires.BP_FortLiveStreamGrantWindowExpires_C.OnLiveStreamingQuestWindowStarts_Event_0_1
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          Seconds                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Seconds                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortLiveStreamGrantWindowExpires_C::OnLiveStreamingQuestWindowStarts_Event_0_1(float Seconds)
 {
@@ -188,7 +184,7 @@ void UBP_FortLiveStreamGrantWindowExpires_C::OnLiveStreamingQuestWindowEnds_Even
 // Function BP_FortLiveStreamGrantWindowExpires.BP_FortLiveStreamGrantWindowExpires_C.OnLiveStreamingQuestWindowSelectedViewers_Event_0_1
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FText>           Names                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<struct FText>           Names                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UBP_FortLiveStreamGrantWindowExpires_C::OnLiveStreamingQuestWindowSelectedViewers_Event_0_1(TArray<struct FText> Names)
 {
@@ -276,7 +272,7 @@ void UBP_FortLiveStreamGrantWindowExpires_C::TextFadedOut()
 // Function BP_FortLiveStreamGrantWindowExpires.BP_FortLiveStreamGrantWindowExpires_C.ExecuteUbergraph_BP_FortLiveStreamGrantWindowExpires
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_FortLiveStreamGrantWindowExpires_C::ExecuteUbergraph_BP_FortLiveStreamGrantWindowExpires(int EntryPoint)
 {

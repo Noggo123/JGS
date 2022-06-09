@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function PlayerInfo.PlayerInfo_C.UpdateLocalPlayerInfo
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     Player_Info                    (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortTeamMemberInfo     Player_Info                    (Parm, OutParm, ReferenceParm)
 
 void UPlayerInfo_C::UpdateLocalPlayerInfo(struct FFortTeamMemberInfo* Player_Info)
 {
@@ -54,7 +54,7 @@ void UPlayerInfo_C::Construct()
 // Function PlayerInfo.PlayerInfo_C.HandlePlayerStateChanged
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     PlayerInfo                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortTeamMemberInfo     PlayerInfo                     (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPlayerInfo_C::HandlePlayerStateChanged(const struct FFortTeamMemberInfo& PlayerInfo)
 {
@@ -91,7 +91,7 @@ void UPlayerInfo_C::Destruct()
 // Function PlayerInfo.PlayerInfo_C.ExecuteUbergraph_PlayerInfo
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPlayerInfo_C::ExecuteUbergraph_PlayerInfo(int EntryPoint)
 {

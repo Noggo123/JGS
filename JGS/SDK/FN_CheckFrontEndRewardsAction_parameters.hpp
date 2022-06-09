@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,12 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
-
-// Function CheckFrontEndRewardsAction.CheckFrontEndRewardsAction_C.HandleRewardsIgnored
-struct ACheckFrontEndRewardsAction_C_HandleRewardsIgnored_Params
-{
-	class UFrontEndRewards_Widget_C*                   RewardsWidget;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
 
 // Function CheckFrontEndRewardsAction.CheckFrontEndRewardsAction_C.CanShowFrontendRewards
 struct ACheckFrontEndRewardsAction_C_CanShowFrontendRewards_Params
@@ -40,7 +34,7 @@ struct ACheckFrontEndRewardsAction_C_PopulateMissionAlertRewards_Params
 // Function CheckFrontEndRewardsAction.CheckFrontEndRewardsAction_C.HandleRewardsClaimError
 struct ACheckFrontEndRewardsAction_C_HandleRewardsClaimError_Params
 {
-	class UFrontEndRewards_Widget_C*                   RewardsWidget;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFrontEndRewards_Widget_C*                   RewardsWidget;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function CheckFrontEndRewardsAction.CheckFrontEndRewardsAction_C.Clear
@@ -51,7 +45,7 @@ struct ACheckFrontEndRewardsAction_C_Clear_Params
 // Function CheckFrontEndRewardsAction.CheckFrontEndRewardsAction_C.HandleRewardsClaimed
 struct ACheckFrontEndRewardsAction_C_HandleRewardsClaimed_Params
 {
-	class UFrontEndRewards_Widget_C*                   RewardsWidget;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFrontEndRewards_Widget_C*                   RewardsWidget;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function CheckFrontEndRewardsAction.CheckFrontEndRewardsAction_C.PopulateCollectionBookRewards
@@ -72,7 +66,7 @@ struct ACheckFrontEndRewardsAction_C_OpenFrontEndRewards_Params
 // Function CheckFrontEndRewardsAction.CheckFrontEndRewardsAction_C.PopulateUnseenQuests
 struct ACheckFrontEndRewardsAction_C_PopulateUnseenQuests_Params
 {
-	EFortQuestType                                     QuestType;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	EFortQuestType                                     QuestType;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function CheckFrontEndRewardsAction.CheckFrontEndRewardsAction_C.GetCompletedQuests
@@ -109,13 +103,13 @@ struct ACheckFrontEndRewardsAction_C_UserConstructionScript_Params
 // Function CheckFrontEndRewardsAction.CheckFrontEndRewardsAction_C.Execute
 struct ACheckFrontEndRewardsAction_C_Execute_Params
 {
-	struct FFortScriptedActionParams*                  Params;                                                   // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FFortScriptedActionParams*                  Params;                                                   // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function CheckFrontEndRewardsAction.CheckFrontEndRewardsAction_C.ExecuteUbergraph_CheckFrontEndRewardsAction
 struct ACheckFrontEndRewardsAction_C_ExecuteUbergraph_CheckFrontEndRewardsAction_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

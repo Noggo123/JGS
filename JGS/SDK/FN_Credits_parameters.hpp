@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,13 +32,13 @@ struct UCredits_C_ScrollCredits_Params
 // Function Credits.Credits_C.ToggleScrollTimer
 struct UCredits_C_ToggleScrollTimer_Params
 {
-	bool                                               EnableTimer;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               EnableTimer;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Credits.Credits_C.HandleBack
 struct UCredits_C_HandleBack_Params
 {
-	bool                                               Passthrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               PassThrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Credits.Credits_C.HandleFadeInFinished
@@ -64,7 +64,7 @@ struct UCredits_C_Construct_Params
 // Function Credits.Credits_C.ExecuteUbergraph_Credits
 struct UCredits_C_ExecuteUbergraph_Credits_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

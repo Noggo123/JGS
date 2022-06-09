@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,14 +12,14 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function BP_BannerEditorTile.BP_BannerEditorTile_C.Mark Item As Seen
+// Function BP_BannerEditorTile.BP_BannerEditorTile_C.Mark Item as Seen
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void UBP_BannerEditorTile_C::Mark_Item_As_Seen()
+void UBP_BannerEditorTile_C::Mark_Item_as_Seen()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_BannerEditorTile.BP_BannerEditorTile_C.Mark Item As Seen");
+	static auto fn = UObject::FindObject<UFunction>("Function BP_BannerEditorTile.BP_BannerEditorTile_C.Mark Item as Seen");
 
-	UBP_BannerEditorTile_C_Mark_Item_As_Seen_Params params;
+	UBP_BannerEditorTile_C_Mark_Item_as_Seen_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -49,8 +49,8 @@ void UBP_BannerEditorTile_C::Update_Bang_State()
 // Function BP_BannerEditorTile.BP_BannerEditorTile_C.SetData
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject**                InData                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonListView**        OwningList                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject**                InData                         (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonListView**        OwningList                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_BannerEditorTile_C::SetData(class UObject** InData, class UCommonListView** OwningList)
 {
@@ -88,7 +88,7 @@ void UBP_BannerEditorTile_C::Construct()
 // Function BP_BannerEditorTile.BP_BannerEditorTile_C.HandleBannerIconLoadGuardFinished
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 Object                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 Object                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_BannerEditorTile_C::HandleBannerIconLoadGuardFinished(class UObject* Object)
 {
@@ -142,7 +142,7 @@ void UBP_BannerEditorTile_C::OnHovered()
 // Function BP_BannerEditorTile.BP_BannerEditorTile_C.ExecuteUbergraph_BP_BannerEditorTile
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBP_BannerEditorTile_C::ExecuteUbergraph_BP_BannerEditorTile(int EntryPoint)
 {

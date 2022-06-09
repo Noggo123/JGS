@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,15 +13,15 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass CheckFrontEndRewardsAction.CheckFrontEndRewardsAction_C
-// 0x005A (0x0422 - 0x03C8)
+// 0x005A (0x0442 - 0x03E8)
 class ACheckFrontEndRewardsAction_C : public AFortScriptedAction
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x03C8(0x0008) (Transient, DuplicateTransient)
-	class USceneComponent*                             DefaultSceneRoot;                                         // 0x03D0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	struct FFrontEndRewards_Definition                 RewardsDefinition;                                        // 0x03D8(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
-	bool                                               ShowRewardsWidget;                                        // 0x0420(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      NewVar_0_1;                                               // 0x0421(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x03E8(0x0008) (Transient, DuplicateTransient)
+	class USceneComponent*                             DefaultSceneRoot;                                         // 0x03F0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	struct FFrontEndRewards_Definition                 RewardsDefinition;                                        // 0x03F8(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                               ShowRewardsWidget;                                        // 0x0440(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      NewVar_0_1;                                               // 0x0441(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -32,7 +30,6 @@ public:
 	}
 
 
-	void HandleRewardsIgnored(class UFrontEndRewards_Widget_C* RewardsWidget);
 	bool CanShowFrontendRewards();
 	void Is_FrontEndRewards_Running(bool* bRunning);
 	void PopulateMissionAlertRewards();

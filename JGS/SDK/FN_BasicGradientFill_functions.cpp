@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function BasicGradientFill.BasicGradientFill_C.Set Brush Size
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector2D               Brush_Size                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+// struct FVector2D               Brush_Size                     (Parm, IsPlainOldData)
 
 void UBasicGradientFill_C::Set_Brush_Size(const struct FVector2D& Brush_Size)
 {
@@ -35,9 +35,9 @@ void UBasicGradientFill_C::Set_Brush_Size(const struct FVector2D& Brush_Size)
 // Function BasicGradientFill.BasicGradientFill_C.Set Fill
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FLinearColor            Color_1                        (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FLinearColor            Color_2                        (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// float                          Rotation__0___1_               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FLinearColor            Color_1                        (Parm, IsPlainOldData)
+// struct FLinearColor            Color_2                        (Parm, IsPlainOldData)
+// float                          Rotation__0___1_               (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBasicGradientFill_C::Set_Fill(const struct FLinearColor& Color_1, const struct FLinearColor& Color_2, float Rotation__0___1_)
 {
@@ -59,7 +59,7 @@ void UBasicGradientFill_C::Set_Fill(const struct FLinearColor& Color_1, const st
 // Function BasicGradientFill.BasicGradientFill_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBasicGradientFill_C::PreConstruct(bool* IsDesignTime)
 {
@@ -79,7 +79,7 @@ void UBasicGradientFill_C::PreConstruct(bool* IsDesignTime)
 // Function BasicGradientFill.BasicGradientFill_C.ExecuteUbergraph_BasicGradientFill
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBasicGradientFill_C::ExecuteUbergraph_BasicGradientFill(int EntryPoint)
 {

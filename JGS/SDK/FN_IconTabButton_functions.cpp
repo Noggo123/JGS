@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,34 +12,10 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function IconTabButton.IconTabButton_C.SetChangeIconColorWhenSelected
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           ChangeColorWhenSelected        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FSlateColor             SelectedColor                  (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FSlateColor             UnselectedColor                (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UIconTabButton_C::SetChangeIconColorWhenSelected(bool ChangeColorWhenSelected, const struct FSlateColor& SelectedColor, const struct FSlateColor& UnselectedColor)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function IconTabButton.IconTabButton_C.SetChangeIconColorWhenSelected");
-
-	UIconTabButton_C_SetChangeIconColorWhenSelected_Params params;
-	params.ChangeColorWhenSelected = ChangeColorWhenSelected;
-	params.SelectedColor = SelectedColor;
-	params.UnselectedColor = UnselectedColor;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function IconTabButton.IconTabButton_C.Update Bang State
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bBangEnabled                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bBangEnabled                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UIconTabButton_C::Update_Bang_State(bool bBangEnabled)
 {
@@ -59,7 +35,7 @@ void UIconTabButton_C::Update_Bang_State(bool bBangEnabled)
 // Function IconTabButton.IconTabButton_C.SetTutorialBorderStyle
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UClass*                  BorderStyle                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UClass*                  BorderStyle                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UIconTabButton_C::SetTutorialBorderStyle(class UClass* BorderStyle)
 {
@@ -96,7 +72,7 @@ void UIconTabButton_C::ShowText()
 // Function IconTabButton.IconTabButton_C.Set Icon
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSlateBrush             IconBrush                      (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FSlateBrush             IconBrush                      (Parm)
 
 void UIconTabButton_C::Set_Icon(const struct FSlateBrush& IconBrush)
 {
@@ -116,7 +92,7 @@ void UIconTabButton_C::Set_Icon(const struct FSlateBrush& IconBrush)
 // Function IconTabButton.IconTabButton_C.Set Text
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   ButtonText                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   ButtonText                     (Parm)
 
 void UIconTabButton_C::Set_Text(const struct FText& ButtonText)
 {
@@ -136,7 +112,7 @@ void UIconTabButton_C::Set_Text(const struct FText& ButtonText)
 // Function IconTabButton.IconTabButton_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UIconTabButton_C::PreConstruct(bool* IsDesignTime)
 {
@@ -153,10 +129,27 @@ void UIconTabButton_C::PreConstruct(bool* IsDesignTime)
 }
 
 
+// Function IconTabButton.IconTabButton_C.OnCurrentTextStyleChanged
+// (Event, Protected, BlueprintEvent)
+
+void UIconTabButton_C::OnCurrentTextStyleChanged()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function IconTabButton.IconTabButton_C.OnCurrentTextStyleChanged");
+
+	UIconTabButton_C_OnCurrentTextStyleChanged_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function IconTabButton.IconTabButton_C.SetTabLabelInfo
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FFortTabButtonLabelInfo TabLabelInfo                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortTabButtonLabelInfo TabLabelInfo                   (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UIconTabButton_C::SetTabLabelInfo(const struct FFortTabButtonLabelInfo& TabLabelInfo)
 {
@@ -292,27 +285,10 @@ void UIconTabButton_C::OnDisabled()
 }
 
 
-// Function IconTabButton.IconTabButton_C.OnCurrentTextStyleChanged
-// (Event, Protected, BlueprintEvent)
-
-void UIconTabButton_C::OnCurrentTextStyleChanged()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function IconTabButton.IconTabButton_C.OnCurrentTextStyleChanged");
-
-	UIconTabButton_C_OnCurrentTextStyleChanged_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function IconTabButton.IconTabButton_C.ExecuteUbergraph_IconTabButton
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UIconTabButton_C::ExecuteUbergraph_IconTabButton(int EntryPoint)
 {

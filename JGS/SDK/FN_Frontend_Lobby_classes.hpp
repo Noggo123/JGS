@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,13 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass Frontend_Lobby.Frontend_Lobby_C
-// 0x0018 (0x0398 - 0x0380)
+// 0x0008 (0x03A8 - 0x03A0)
 class AFrontend_Lobby_C : public AFortLevelScriptActor
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0380(0x0008) (Transient, DuplicateTransient)
-	struct FName                                       CurrentBackgroundLevelName;                               // 0x0388(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FName                                       NewBackgroundLevelName;                                   // 0x0390(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x03A0(0x0008) (Transient, DuplicateTransient)
 
 	static UClass* StaticClass()
 	{
@@ -30,7 +26,6 @@ public:
 	}
 
 
-	void OnBackgroundChanged();
 	void ReceiveBeginPlay();
 	void ExecuteUbergraph_Frontend_Lobby(int EntryPoint);
 };

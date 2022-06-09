@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function BasicInteractionWidget.BasicInteractionWidget_C.UpdateDescription
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Description                    (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   Description                    (Parm)
 
 void UBasicInteractionWidget_C::UpdateDescription(const struct FText& Description)
 {
@@ -69,7 +69,7 @@ void UBasicInteractionWidget_C::Construct()
 // Function BasicInteractionWidget.BasicInteractionWidget_C.ExecuteUbergraph_BasicInteractionWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBasicInteractionWidget_C::ExecuteUbergraph_BasicInteractionWidget(int EntryPoint)
 {

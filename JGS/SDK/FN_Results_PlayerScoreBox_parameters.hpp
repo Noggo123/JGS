@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,7 +23,7 @@ struct UResults_PlayerScoreBox_C_GetIsValidScoreBox_Params
 // Function Results_PlayerScoreBox.Results_PlayerScoreBox_C.SetIsValidScoreBox
 struct UResults_PlayerScoreBox_C_SetIsValidScoreBox_Params
 {
-	bool                                               bIsValidScoreBox;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bIsValidScoreBox;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_PlayerScoreBox.Results_PlayerScoreBox_C.SetSkippingToEnd
@@ -34,20 +34,20 @@ struct UResults_PlayerScoreBox_C_SetSkippingToEnd_Params
 // Function Results_PlayerScoreBox.Results_PlayerScoreBox_C.SetIsBestScore
 struct UResults_PlayerScoreBox_C_SetIsBestScore_Params
 {
-	bool                                               bIsBestScore;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bIsBestScore;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_PlayerScoreBox.Results_PlayerScoreBox_C.Initialize
 struct UResults_PlayerScoreBox_C_Initialize_Params
 {
-	int                                                Score;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	float                                              PlayRate;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Score;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              PlayRate;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_PlayerScoreBox.Results_PlayerScoreBox_C.PreConstruct
 struct UResults_PlayerScoreBox_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_PlayerScoreBox.Results_PlayerScoreBox_C.Intro Sequence
@@ -73,14 +73,14 @@ struct UResults_PlayerScoreBox_C_Skipped_Count_Interpolation_Params
 // Function Results_PlayerScoreBox.Results_PlayerScoreBox_C.BndEvt__TextScore_K2Node_ComponentBoundEvent_0_OnInterpolationEnded__DelegateSignature
 struct UResults_PlayerScoreBox_C_BndEvt__TextScore_K2Node_ComponentBoundEvent_0_OnInterpolationEnded__DelegateSignature_Params
 {
-	class UCommonNumericTextBlock*                     NumericTextBlock;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               HadCompleted;                                             // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonNumericTextBlock*                     NumericTextBlock;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               HadCompleted;                                             // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_PlayerScoreBox.Results_PlayerScoreBox_C.ExecuteUbergraph_Results_PlayerScoreBox
 struct UResults_PlayerScoreBox_C_ExecuteUbergraph_Results_PlayerScoreBox_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,8 +32,8 @@ void UFrontEndRewardWrapperWidget_C::IntroAnimation()
 // Function FrontEndRewardWrapperWidget.FrontEndRewardWrapperWidget_C.AddToWrapper
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidget*                 Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   DisplayName                    (BlueprintVisible, BlueprintReadOnly, Parm)
+// class UWidget*                 Widget                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   DisplayName                    (Parm)
 
 void UFrontEndRewardWrapperWidget_C::AddToWrapper(class UWidget* Widget, const struct FText& DisplayName)
 {
@@ -88,7 +88,7 @@ void UFrontEndRewardWrapperWidget_C::Go_Trigger()
 // Function FrontEndRewardWrapperWidget.FrontEndRewardWrapperWidget_C.ExecuteUbergraph_FrontEndRewardWrapperWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewardWrapperWidget_C::ExecuteUbergraph_FrontEndRewardWrapperWidget(int EntryPoint)
 {

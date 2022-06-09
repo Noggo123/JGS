@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -40,41 +38,6 @@ enum class EEnvQueryStatus : uint8_t
 };
 
 
-// Enum AIModule.EAISenseNotifyType
-enum class EAISenseNotifyType : uint8_t
-{
-	OnEveryPerception              = 0,
-	OnPerceptionChange             = 1,
-	EAISenseNotifyType_MAX         = 2
-};
-
-
-// Enum AIModule.EAITaskPriority
-enum class EAITaskPriority : uint8_t
-{
-	Lowest                         = 0,
-	Low                            = 1,
-	AutonomousAI                   = 2,
-	High                           = 3,
-	Ultimate                       = 4,
-	EAITaskPriority_MAX            = 5
-};
-
-
-// Enum AIModule.EGenericAICheck
-enum class EGenericAICheck : uint8_t
-{
-	Less                           = 0,
-	LessOrEqual                    = 1,
-	Equal                          = 2,
-	NotEqual                       = 3,
-	GreaterOrEqual                 = 4,
-	Greater                        = 5,
-	IsTrue                         = 6,
-	MAX                            = 7
-};
-
-
 // Enum AIModule.EAILockSource
 enum class EAILockSource : uint8_t
 {
@@ -82,7 +45,8 @@ enum class EAILockSource : uint8_t
 	Logic                          = 1,
 	Script                         = 2,
 	Gameplay                       = 3,
-	MAX                            = 4
+	MAX                            = 4,
+	EAILockSource_MAX              = 5
 };
 
 
@@ -94,7 +58,8 @@ enum class EAIRequestPriority : uint8_t
 	HardScript                     = 2,
 	Reaction                       = 3,
 	Ultimate                       = 4,
-	MAX                            = 5
+	MAX                            = 5,
+	EAIRequestPriority_MAX         = 6
 };
 
 
@@ -131,7 +96,8 @@ enum class EPawnActionAbortState : uint8_t
 	MarkPendingAbort               = 2,
 	LatentAbortInProgress          = 3,
 	AbortDone                      = 4,
-	MAX                            = 5
+	MAX                            = 5,
+	EPawnActionAbortState_MAX      = 6
 };
 
 
@@ -141,7 +107,8 @@ enum class EFAIDistanceType : uint8_t
 	Distance3D                     = 0,
 	Distance2D                     = 1,
 	DistanceZ                      = 2,
-	MAX                            = 3
+	MAX                            = 3,
+	FAIDistanceType_MAX            = 4
 };
 
 
@@ -151,7 +118,72 @@ enum class EAIOptionFlag : uint8_t
 	Default                        = 0,
 	Enable                         = 1,
 	Disable                        = 2,
-	MAX                            = 3
+	MAX                            = 3,
+	EAIOptionFlag_MAX              = 4
+};
+
+
+// Enum AIModule.EPathFollowingRequestResult
+enum class EPathFollowingRequestResult : uint8_t
+{
+	Failed                         = 0,
+	AlreadyAtGoal                  = 1,
+	RequestSuccessful              = 2,
+	EPathFollowingRequestResult_MAX = 3
+};
+
+
+// Enum AIModule.EPathFollowingAction
+enum class EPathFollowingAction : uint8_t
+{
+	Error                          = 0,
+	NoMove                         = 1,
+	DirectMove                     = 2,
+	PartialPath                    = 3,
+	PathToGoal                     = 4,
+	EPathFollowingAction_MAX       = 5
+};
+
+
+// Enum AIModule.EPathFollowingStatus
+enum class EPathFollowingStatus : uint8_t
+{
+	Idle                           = 0,
+	Waiting                        = 1,
+	Paused                         = 2,
+	Moving                         = 3,
+	EPathFollowingStatus_MAX       = 4
+};
+
+
+// Enum AIModule.ETeamAttitude
+enum class ETeamAttitude : uint8_t
+{
+	Friendly                       = 0,
+	Neutral                        = 1,
+	Hostile                        = 2,
+	ETeamAttitude_MAX              = 3
+};
+
+
+// Enum AIModule.EAISenseNotifyType
+enum class EAISenseNotifyType : uint8_t
+{
+	OnEveryPerception              = 0,
+	OnPerceptionChange             = 1,
+	EAISenseNotifyType_MAX         = 2
+};
+
+
+// Enum AIModule.EAITaskPriority
+enum class EAITaskPriority : uint8_t
+{
+	Lowest                         = 0,
+	Low                            = 1,
+	AutonomousAI                   = 2,
+	High                           = 3,
+	Ultimate                       = 4,
+	EAITaskPriority_MAX            = 5
 };
 
 
@@ -174,6 +206,27 @@ enum class EBTNodeResult : uint8_t
 	Aborted                        = 2,
 	InProgress                     = 3,
 	EBTNodeResult_MAX              = 4
+};
+
+
+// Enum AIModule.EBTDecoratorLogic
+enum class EBTDecoratorLogic : uint8_t
+{
+	Invalid                        = 0,
+	Test                           = 1,
+	And                            = 2,
+	Or                             = 3,
+	Not                            = 4,
+	EBTDecoratorLogic_MAX          = 5
+};
+
+
+// Enum AIModule.EBTChildIndex
+enum class EBTChildIndex : uint8_t
+{
+	FirstNode                      = 0,
+	TaskNode                       = 1,
+	EBTChildIndex_MAX              = 2
 };
 
 
@@ -210,36 +263,6 @@ enum class EBasicKeyOperation : uint8_t
 };
 
 
-// Enum AIModule.EBTParallelMode
-enum class EBTParallelMode : uint8_t
-{
-	AbortBackground                = 0,
-	WaitForBackground              = 1,
-	EBTParallelMode_MAX            = 2
-};
-
-
-// Enum AIModule.EBTDecoratorLogic
-enum class EBTDecoratorLogic : uint8_t
-{
-	Invalid                        = 0,
-	Test                           = 1,
-	And                            = 2,
-	Or                             = 3,
-	Not                            = 4,
-	EBTDecoratorLogic_MAX          = 5
-};
-
-
-// Enum AIModule.EBTChildIndex
-enum class EBTChildIndex : uint8_t
-{
-	FirstNode                      = 0,
-	TaskNode                       = 1,
-	EBTChildIndex_MAX              = 2
-};
-
-
 // Enum AIModule.EBTBlackboardRestart
 enum class EBTBlackboardRestart : uint8_t
 {
@@ -265,54 +288,6 @@ enum class EPathExistanceQueryType : uint8_t
 	HierarchicalQuery              = 1,
 	RegularPathFinding             = 2,
 	EPathExistanceQueryType_MAX    = 3
-};
-
-
-// Enum AIModule.EPointOnCircleSpacingMethod
-enum class EPointOnCircleSpacingMethod : uint8_t
-{
-	BySpaceBetween                 = 0,
-	ByNumberOfPoints               = 1,
-	EPointOnCircleSpacingMethod_MAX = 2
-};
-
-
-// Enum AIModule.EEQSNormalizationType
-enum class EEQSNormalizationType : uint8_t
-{
-	Absolute                       = 0,
-	RelativeToScores               = 1,
-	EEQSNormalizationType_MAX      = 2
-};
-
-
-// Enum AIModule.EEnvTestDistance
-enum class EEnvTestDistance : uint8_t
-{
-	Distance3D                     = 0,
-	Distance2D                     = 1,
-	DistanceZ                      = 2,
-	DistanceAbsoluteZ              = 3,
-	EEnvTestDistance_MAX           = 4
-};
-
-
-// Enum AIModule.EEnvTestDot
-enum class EEnvTestDot : uint8_t
-{
-	Dot3D                          = 0,
-	Dot2D                          = 1,
-	EEnvTestDot_MAX                = 2
-};
-
-
-// Enum AIModule.EEnvTestPathfinding
-enum class EEnvTestPathfinding : uint8_t
-{
-	PathExist                      = 0,
-	PathCost                       = 1,
-	PathLength                     = 2,
-	EEnvTestPathfinding_MAX        = 3
 };
 
 
@@ -373,7 +348,7 @@ enum class EAIParamType : uint8_t
 	Float                          = 0,
 	Int                            = 1,
 	Bool                           = 2,
-	MAX                            = 3
+	EAIParamType_MAX               = 3
 };
 
 
@@ -473,6 +448,63 @@ enum class EEnvTestPurpose : uint8_t
 };
 
 
+// Enum AIModule.EBTParallelMode
+enum class EBTParallelMode : uint8_t
+{
+	AbortBackground                = 0,
+	WaitForBackground              = 1,
+	EBTParallelMode_MAX            = 2
+};
+
+
+// Enum AIModule.EPointOnCircleSpacingMethod
+enum class EPointOnCircleSpacingMethod : uint8_t
+{
+	BySpaceBetween                 = 0,
+	ByNumberOfPoints               = 1,
+	EPointOnCircleSpacingMethod_MAX = 2
+};
+
+
+// Enum AIModule.EEQSNormalizationType
+enum class EEQSNormalizationType : uint8_t
+{
+	Absolute                       = 0,
+	RelativeToScores               = 1,
+	EEQSNormalizationType_MAX      = 2
+};
+
+
+// Enum AIModule.EEnvTestDistance
+enum class EEnvTestDistance : uint8_t
+{
+	Distance3D                     = 0,
+	Distance2D                     = 1,
+	DistanceZ                      = 2,
+	DistanceAbsoluteZ              = 3,
+	EEnvTestDistance_MAX           = 4
+};
+
+
+// Enum AIModule.EEnvTestDot
+enum class EEnvTestDot : uint8_t
+{
+	Dot3D                          = 0,
+	Dot2D                          = 1,
+	EEnvTestDot_MAX                = 2
+};
+
+
+// Enum AIModule.EEnvTestPathfinding
+enum class EEnvTestPathfinding : uint8_t
+{
+	PathExist                      = 0,
+	PathCost                       = 1,
+	PathLength                     = 2,
+	EEnvTestPathfinding_MAX        = 3
+};
+
+
 // Enum AIModule.EEnvQueryHightlightMode
 enum class EEnvQueryHightlightMode : uint8_t
 {
@@ -480,49 +512,6 @@ enum class EEnvQueryHightlightMode : uint8_t
 	Best5Pct                       = 1,
 	Best25Pct                      = 2,
 	EEnvQueryHightlightMode_MAX    = 3
-};
-
-
-// Enum AIModule.ETeamAttitude
-enum class ETeamAttitude : uint8_t
-{
-	Friendly                       = 0,
-	Neutral                        = 1,
-	Hostile                        = 2,
-	ETeamAttitude_MAX              = 3
-};
-
-
-// Enum AIModule.EPathFollowingRequestResult
-enum class EPathFollowingRequestResult : uint8_t
-{
-	Failed                         = 0,
-	AlreadyAtGoal                  = 1,
-	RequestSuccessful              = 2,
-	EPathFollowingRequestResult_MAX = 3
-};
-
-
-// Enum AIModule.EPathFollowingAction
-enum class EPathFollowingAction : uint8_t
-{
-	Error                          = 0,
-	NoMove                         = 1,
-	DirectMove                     = 2,
-	PartialPath                    = 3,
-	PathToGoal                     = 4,
-	EPathFollowingAction_MAX       = 5
-};
-
-
-// Enum AIModule.EPathFollowingStatus
-enum class EPathFollowingStatus : uint8_t
-{
-	Idle                           = 0,
-	Waiting                        = 1,
-	Paused                         = 2,
-	Moving                         = 3,
-	EPathFollowingStatus_MAX       = 4
 };
 
 
@@ -558,14 +547,6 @@ enum class EPawnActionMoveMode : uint8_t
 //Script Structs
 //---------------------------------------------------------------------------
 
-// ScriptStruct AIModule.AIMoveRequest
-// 0x0040
-struct FAIMoveRequest
-{
-	class AActor*                                      GoalActor;                                                // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x38];                                      // 0x0008(0x0038) MISSED OFFSET
-};
-
 // ScriptStruct AIModule.AIStimulus
 // 0x0048
 struct FAIStimulus
@@ -591,6 +572,14 @@ struct FActorPerceptionBlueprintInfo
 	TArray<struct FAIStimulus>                         LastSensedStimuli;                                        // 0x0008(0x0010) (BlueprintVisible, ZeroConstructor)
 	unsigned char                                      bIsHostile : 1;                                           // 0x0018(0x0001) (BlueprintVisible)
 	unsigned char                                      UnknownData00[0x7];                                       // 0x0019(0x0007) MISSED OFFSET
+};
+
+// ScriptStruct AIModule.AIMoveRequest
+// 0x0040
+struct FAIMoveRequest
+{
+	class AActor*                                      GoalActor;                                                // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x38];                                      // 0x0008(0x0038) MISSED OFFSET
 };
 
 // ScriptStruct AIModule.BlackboardKeySelector
@@ -786,6 +775,16 @@ struct FBTDecoratorLogic
 	uint16_t                                           Number;                                                   // 0x0002(0x0002) (ZeroConstructor, IsPlainOldData)
 };
 
+// ScriptStruct AIModule.BTCompositeChild
+// 0x0030
+struct FBTCompositeChild
+{
+	class UBTCompositeNode*                            ChildComposite;                                           // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	class UBTTaskNode*                                 ChildTask;                                                // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
+	TArray<class UBTDecorator*>                        Decorators;                                               // 0x0010(0x0010) (ZeroConstructor)
+	TArray<struct FBTDecoratorLogic>                   DecoratorOps;                                             // 0x0020(0x0010) (ZeroConstructor)
+};
+
 // ScriptStruct AIModule.BehaviorTreeTemplateInfo
 // 0x0018
 struct FBehaviorTreeTemplateInfo
@@ -803,16 +802,6 @@ struct FBlackboardEntry
 	class UBlackboardKeyType*                          KeyType;                                                  // 0x0008(0x0008) (Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
 	unsigned char                                      bInstanceSynced : 1;                                      // 0x0010(0x0001) (Edit)
 	unsigned char                                      UnknownData00[0x7];                                       // 0x0011(0x0007) MISSED OFFSET
-};
-
-// ScriptStruct AIModule.BTCompositeChild
-// 0x0030
-struct FBTCompositeChild
-{
-	class UBTCompositeNode*                            ChildComposite;                                           // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
-	class UBTTaskNode*                                 ChildTask;                                                // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
-	TArray<class UBTDecorator*>                        Decorators;                                               // 0x0010(0x0010) (ZeroConstructor)
-	TArray<struct FBTDecoratorLogic>                   DecoratorOps;                                             // 0x0020(0x0010) (ZeroConstructor)
 };
 
 // ScriptStruct AIModule.AIDynamicParam
@@ -888,6 +877,13 @@ struct FPawnActionEvent
 	unsigned char                                      UnknownData00[0x10];                                      // 0x0008(0x0010) MISSED OFFSET
 };
 
+// ScriptStruct AIModule.GenericTeamId
+// 0x0001
+struct FGenericTeamId
+{
+	unsigned char                                      TeamId;                                                   // 0x0000(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+};
+
 // ScriptStruct AIModule.AIDataProviderStructValue
 // 0x0010 (0x0030 - 0x0020)
 struct FAIDataProviderStructValue : public FAIDataProviderValue
@@ -904,16 +900,6 @@ struct FAISightEvent
 	class AActor*                                      Observer;                                                 // 0x0010(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
-// ScriptStruct AIModule.EnvQueryRequest
-// 0x0068
-struct FEnvQueryRequest
-{
-	class UEnvQuery*                                   QueryTemplate;                                            // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
-	class UObject*                                     Owner;                                                    // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
-	class UWorld*                                      World;                                                    // 0x0010(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x50];                                      // 0x0018(0x0050) MISSED OFFSET
-};
-
 // ScriptStruct AIModule.EnvQueryResult
 // 0x0040
 struct FEnvQueryResult
@@ -926,11 +912,14 @@ struct FEnvQueryResult
 	unsigned char                                      UnknownData02[0xC];                                       // 0x0034(0x000C) MISSED OFFSET
 };
 
-// ScriptStruct AIModule.GenericTeamId
-// 0x0001
-struct FGenericTeamId
+// ScriptStruct AIModule.EnvQueryRequest
+// 0x0068
+struct FEnvQueryRequest
 {
-	unsigned char                                      TeamId;                                                   // 0x0000(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UEnvQuery*                                   QueryTemplate;                                            // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	class UObject*                                     Owner;                                                    // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
+	class UWorld*                                      World;                                                    // 0x0010(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x50];                                      // 0x0018(0x0050) MISSED OFFSET
 };
 
 }

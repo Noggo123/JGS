@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,7 +49,7 @@ void UAccountLinkingWindow_C::HideLinkOptions()
 // Function AccountLinkingWindow.AccountLinkingWindow_C.SetLinkedAccountNeedsPurchase
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bInLinkedAccountNeedsPurchase  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bInLinkedAccountNeedsPurchase  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAccountLinkingWindow_C::SetLinkedAccountNeedsPurchase(bool bInLinkedAccountNeedsPurchase)
 {
@@ -117,40 +117,6 @@ void UAccountLinkingWindow_C::OnAccountCreatedAndLinked_2B6C467D495BF62E436C79B3
 }
 
 
-// Function AccountLinkingWindow.AccountLinkingWindow_C.OnAccountNotCreated_9EEEC6E44BF7A7C172929DA05184702A
-// (BlueprintCallable, BlueprintEvent)
-
-void UAccountLinkingWindow_C::OnAccountNotCreated_9EEEC6E44BF7A7C172929DA05184702A()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AccountLinkingWindow.AccountLinkingWindow_C.OnAccountNotCreated_9EEEC6E44BF7A7C172929DA05184702A");
-
-	UAccountLinkingWindow_C_OnAccountNotCreated_9EEEC6E44BF7A7C172929DA05184702A_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AccountLinkingWindow.AccountLinkingWindow_C.OnAccountCreated_9EEEC6E44BF7A7C172929DA05184702A
-// (BlueprintCallable, BlueprintEvent)
-
-void UAccountLinkingWindow_C::OnAccountCreated_9EEEC6E44BF7A7C172929DA05184702A()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AccountLinkingWindow.AccountLinkingWindow_C.OnAccountCreated_9EEEC6E44BF7A7C172929DA05184702A");
-
-	UAccountLinkingWindow_C_OnAccountCreated_9EEEC6E44BF7A7C172929DA05184702A_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function AccountLinkingWindow.AccountLinkingWindow_C.OnNotPurchased_3B76089F4EB5000544C7BD8B10E707CF
 // (BlueprintCallable, BlueprintEvent)
 
@@ -185,14 +151,14 @@ void UAccountLinkingWindow_C::OnPurchased_3B76089F4EB5000544C7BD8B10E707CF()
 }
 
 
-// Function AccountLinkingWindow.AccountLinkingWindow_C.OnCodeRedeemCanceled_E9B5F30942BE3B295E62309A2EB8DA8D
+// Function AccountLinkingWindow.AccountLinkingWindow_C.OnAccountNotCreated_9EEEC6E44BF7A7C172929DA05184702A
 // (BlueprintCallable, BlueprintEvent)
 
-void UAccountLinkingWindow_C::OnCodeRedeemCanceled_E9B5F30942BE3B295E62309A2EB8DA8D()
+void UAccountLinkingWindow_C::OnAccountNotCreated_9EEEC6E44BF7A7C172929DA05184702A()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AccountLinkingWindow.AccountLinkingWindow_C.OnCodeRedeemCanceled_E9B5F30942BE3B295E62309A2EB8DA8D");
+	static auto fn = UObject::FindObject<UFunction>("Function AccountLinkingWindow.AccountLinkingWindow_C.OnAccountNotCreated_9EEEC6E44BF7A7C172929DA05184702A");
 
-	UAccountLinkingWindow_C_OnCodeRedeemCanceled_E9B5F30942BE3B295E62309A2EB8DA8D_Params params;
+	UAccountLinkingWindow_C_OnAccountNotCreated_9EEEC6E44BF7A7C172929DA05184702A_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -202,14 +168,14 @@ void UAccountLinkingWindow_C::OnCodeRedeemCanceled_E9B5F30942BE3B295E62309A2EB8D
 }
 
 
-// Function AccountLinkingWindow.AccountLinkingWindow_C.OnCodeRedeemComplete_E9B5F30942BE3B295E62309A2EB8DA8D
+// Function AccountLinkingWindow.AccountLinkingWindow_C.OnAccountCreated_9EEEC6E44BF7A7C172929DA05184702A
 // (BlueprintCallable, BlueprintEvent)
 
-void UAccountLinkingWindow_C::OnCodeRedeemComplete_E9B5F30942BE3B295E62309A2EB8DA8D()
+void UAccountLinkingWindow_C::OnAccountCreated_9EEEC6E44BF7A7C172929DA05184702A()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AccountLinkingWindow.AccountLinkingWindow_C.OnCodeRedeemComplete_E9B5F30942BE3B295E62309A2EB8DA8D");
+	static auto fn = UObject::FindObject<UFunction>("Function AccountLinkingWindow.AccountLinkingWindow_C.OnAccountCreated_9EEEC6E44BF7A7C172929DA05184702A");
 
-	UAccountLinkingWindow_C_OnCodeRedeemComplete_E9B5F30942BE3B295E62309A2EB8DA8D_Params params;
+	UAccountLinkingWindow_C_OnAccountCreated_9EEEC6E44BF7A7C172929DA05184702A_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -253,17 +219,31 @@ void UAccountLinkingWindow_C::OnShowLinkOrBuyAccessScreen_6FD0DEB74DEF4060FC743C
 }
 
 
-// Function AccountLinkingWindow.AccountLinkingWindow_C.BndEvt__ButtonLogInFromPurchase_K2Node_ComponentBoundEvent_464_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// Function AccountLinkingWindow.AccountLinkingWindow_C.OnCodeRedeemCanceled_E9B5F30942BE3B295E62309A2EB8DA8D
+// (BlueprintCallable, BlueprintEvent)
 
-void UAccountLinkingWindow_C::BndEvt__ButtonLogInFromPurchase_K2Node_ComponentBoundEvent_464_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
+void UAccountLinkingWindow_C::OnCodeRedeemCanceled_E9B5F30942BE3B295E62309A2EB8DA8D()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AccountLinkingWindow.AccountLinkingWindow_C.BndEvt__ButtonLogInFromPurchase_K2Node_ComponentBoundEvent_464_CommonButtonClicked__DelegateSignature");
+	static auto fn = UObject::FindObject<UFunction>("Function AccountLinkingWindow.AccountLinkingWindow_C.OnCodeRedeemCanceled_E9B5F30942BE3B295E62309A2EB8DA8D");
 
-	UAccountLinkingWindow_C_BndEvt__ButtonLogInFromPurchase_K2Node_ComponentBoundEvent_464_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
+	UAccountLinkingWindow_C_OnCodeRedeemCanceled_E9B5F30942BE3B295E62309A2EB8DA8D_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AccountLinkingWindow.AccountLinkingWindow_C.OnCodeRedeemComplete_E9B5F30942BE3B295E62309A2EB8DA8D
+// (BlueprintCallable, BlueprintEvent)
+
+void UAccountLinkingWindow_C::OnCodeRedeemComplete_E9B5F30942BE3B295E62309A2EB8DA8D()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AccountLinkingWindow.AccountLinkingWindow_C.OnCodeRedeemComplete_E9B5F30942BE3B295E62309A2EB8DA8D");
+
+	UAccountLinkingWindow_C_OnCodeRedeemComplete_E9B5F30942BE3B295E62309A2EB8DA8D_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -276,7 +256,7 @@ void UAccountLinkingWindow_C::BndEvt__ButtonLogInFromPurchase_K2Node_ComponentBo
 // Function AccountLinkingWindow.AccountLinkingWindow_C.BndEvt__ButtonNoThanks_K2Node_ComponentBoundEvent_447_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAccountLinkingWindow_C::BndEvt__ButtonNoThanks_K2Node_ComponentBoundEvent_447_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -293,10 +273,30 @@ void UAccountLinkingWindow_C::BndEvt__ButtonNoThanks_K2Node_ComponentBoundEvent_
 }
 
 
+// Function AccountLinkingWindow.AccountLinkingWindow_C.BndEvt__ButtonLogInFromPurchase_K2Node_ComponentBoundEvent_464_CommonButtonClicked__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void UAccountLinkingWindow_C::BndEvt__ButtonLogInFromPurchase_K2Node_ComponentBoundEvent_464_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AccountLinkingWindow.AccountLinkingWindow_C.BndEvt__ButtonLogInFromPurchase_K2Node_ComponentBoundEvent_464_CommonButtonClicked__DelegateSignature");
+
+	UAccountLinkingWindow_C_BndEvt__ButtonLogInFromPurchase_K2Node_ComponentBoundEvent_464_CommonButtonClicked__DelegateSignature_Params params;
+	params.Button = Button;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AccountLinkingWindow.AccountLinkingWindow_C.BndEvt__ButtonLogIn_K2Node_ComponentBoundEvent_431_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAccountLinkingWindow_C::BndEvt__ButtonLogIn_K2Node_ComponentBoundEvent_431_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -316,7 +316,7 @@ void UAccountLinkingWindow_C::BndEvt__ButtonLogIn_K2Node_ComponentBoundEvent_431
 // Function AccountLinkingWindow.AccountLinkingWindow_C.BndEvt__ButtonSignUp_K2Node_ComponentBoundEvent_416_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAccountLinkingWindow_C::BndEvt__ButtonSignUp_K2Node_ComponentBoundEvent_416_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -336,7 +336,7 @@ void UAccountLinkingWindow_C::BndEvt__ButtonSignUp_K2Node_ComponentBoundEvent_41
 // Function AccountLinkingWindow.AccountLinkingWindow_C.BndEvt__ButtonSkipSignInSignIn_K2Node_ComponentBoundEvent_444_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAccountLinkingWindow_C::BndEvt__ButtonSkipSignInSignIn_K2Node_ComponentBoundEvent_444_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -356,7 +356,7 @@ void UAccountLinkingWindow_C::BndEvt__ButtonSkipSignInSignIn_K2Node_ComponentBou
 // Function AccountLinkingWindow.AccountLinkingWindow_C.BndEvt__ButtonSkipSignInLogIn_K2Node_ComponentBoundEvent_463_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAccountLinkingWindow_C::BndEvt__ButtonSkipSignInLogIn_K2Node_ComponentBoundEvent_463_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -376,7 +376,7 @@ void UAccountLinkingWindow_C::BndEvt__ButtonSkipSignInLogIn_K2Node_ComponentBoun
 // Function AccountLinkingWindow.AccountLinkingWindow_C.BndEvt__ButtonSkipSignInNoThanks_K2Node_ComponentBoundEvent_483_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAccountLinkingWindow_C::BndEvt__ButtonSkipSignInNoThanks_K2Node_ComponentBoundEvent_483_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -481,7 +481,7 @@ void UAccountLinkingWindow_C::StartSignup()
 // Function AccountLinkingWindow.AccountLinkingWindow_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAccountLinkingWindow_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -518,7 +518,7 @@ void UAccountLinkingWindow_C::OnActivated()
 // Function AccountLinkingWindow.AccountLinkingWindow_C.BndEvt__IconTextButton_0_K2Node_ComponentBoundEvent_305_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAccountLinkingWindow_C::BndEvt__IconTextButton_0_K2Node_ComponentBoundEvent_305_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -552,23 +552,6 @@ void UAccountLinkingWindow_C::Destruct()
 }
 
 
-// Function AccountLinkingWindow.AccountLinkingWindow_C.HandleNewPurchaseReceipt
-// (BlueprintCallable, BlueprintEvent)
-
-void UAccountLinkingWindow_C::HandleNewPurchaseReceipt()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AccountLinkingWindow.AccountLinkingWindow_C.HandleNewPurchaseReceipt");
-
-	UAccountLinkingWindow_C_HandleNewPurchaseReceipt_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function AccountLinkingWindow.AccountLinkingWindow_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
@@ -586,10 +569,27 @@ void UAccountLinkingWindow_C::Construct()
 }
 
 
+// Function AccountLinkingWindow.AccountLinkingWindow_C.HandleNewPurchaseReceipt
+// (BlueprintCallable, BlueprintEvent)
+
+void UAccountLinkingWindow_C::HandleNewPurchaseReceipt()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AccountLinkingWindow.AccountLinkingWindow_C.HandleNewPurchaseReceipt");
+
+	UAccountLinkingWindow_C_HandleNewPurchaseReceipt_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AccountLinkingWindow.AccountLinkingWindow_C.BndEvt__ButtonPurchasePack_K2Node_ComponentBoundEvent_175_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAccountLinkingWindow_C::BndEvt__ButtonPurchasePack_K2Node_ComponentBoundEvent_175_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -609,7 +609,7 @@ void UAccountLinkingWindow_C::BndEvt__ButtonPurchasePack_K2Node_ComponentBoundEv
 // Function AccountLinkingWindow.AccountLinkingWindow_C.ExecuteUbergraph_AccountLinkingWindow
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAccountLinkingWindow_C::ExecuteUbergraph_AccountLinkingWindow(int EntryPoint)
 {
@@ -663,7 +663,7 @@ void UAccountLinkingWindow_C::OnPopStatus__DelegateSignature()
 // Function AccountLinkingWindow.AccountLinkingWindow_C.OnPushStatus__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   StatusText                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   StatusText                     (Parm)
 
 void UAccountLinkingWindow_C::OnPushStatus__DelegateSignature(const struct FText& StatusText)
 {
@@ -683,7 +683,7 @@ void UAccountLinkingWindow_C::OnPushStatus__DelegateSignature(const struct FText
 // Function AccountLinkingWindow.AccountLinkingWindow_C.OnAccountLinkingFailed__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   FailReason                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   FailReason                     (Parm)
 
 void UAccountLinkingWindow_C::OnAccountLinkingFailed__DelegateSignature(const struct FText& FailReason)
 {

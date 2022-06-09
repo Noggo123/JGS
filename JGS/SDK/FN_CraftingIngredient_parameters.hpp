@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,7 +17,7 @@ namespace SDK
 // Function CraftingIngredient.CraftingIngredient_C.ShowDivider
 struct UCraftingIngredient_C_ShowDivider_Params
 {
-	bool                                               Show;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Show;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function CraftingIngredient.CraftingIngredient_C.Get Tooltip
@@ -39,7 +39,7 @@ struct UCraftingIngredient_C_Construct_Params
 // Function CraftingIngredient.CraftingIngredient_C.ExecuteUbergraph_CraftingIngredient
 struct UCraftingIngredient_C_ExecuteUbergraph_CraftingIngredient_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

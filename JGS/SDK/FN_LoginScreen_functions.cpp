@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,156 +12,6 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function LoginScreen.LoginScreen_C.ShowNewAccountWarningModal
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void ULoginScreen_C::ShowNewAccountWarningModal(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.ShowNewAccountWarningModal");
-
-	ULoginScreen_C_ShowNewAccountWarningModal_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LoginScreen.LoginScreen_C.ShowRedirectToEpicAccount
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EFortLoginAccountType          LoginType                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void ULoginScreen_C::ShowRedirectToEpicAccount(EFortLoginAccountType LoginType)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.ShowRedirectToEpicAccount");
-
-	ULoginScreen_C_ShowRedirectToEpicAccount_Params params;
-	params.LoginType = LoginType;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LoginScreen.LoginScreen_C.ShowLoginCredentialSelect
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ULoginScreen_C::ShowLoginCredentialSelect()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.ShowLoginCredentialSelect");
-
-	ULoginScreen_C_ShowLoginCredentialSelect_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LoginScreen.LoginScreen_C.ShowPlayedBeforeSelect
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ULoginScreen_C::ShowPlayedBeforeSelect()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.ShowPlayedBeforeSelect");
-
-	ULoginScreen_C_ShowPlayedBeforeSelect_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LoginScreen.LoginScreen_C.ShowExternalLogin
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UWidget*                 NativeWidget                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void ULoginScreen_C::ShowExternalLogin(class UWidget* NativeWidget)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.ShowExternalLogin");
-
-	ULoginScreen_C_ShowExternalLogin_Params params;
-	params.NativeWidget = NativeWidget;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LoginScreen.LoginScreen_C.DismissWebLogin
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ULoginScreen_C::DismissWebLogin()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.DismissWebLogin");
-
-	ULoginScreen_C_DismissWebLogin_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LoginScreen.LoginScreen_C.CloseWebLogin
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           bWasClosed                     (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void ULoginScreen_C::CloseWebLogin(bool* bWasClosed)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.CloseWebLogin");
-
-	ULoginScreen_C_CloseWebLogin_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (bWasClosed != nullptr)
-		*bWasClosed = params.bWasClosed;
-}
-
-
-// Function LoginScreen.LoginScreen_C.ShowHealthWarning
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ULoginScreen_C::ShowHealthWarning()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.ShowHealthWarning");
-
-	ULoginScreen_C_ShowHealthWarning_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function LoginScreen.LoginScreen_C.SafePopContent
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -170,6 +20,23 @@ void ULoginScreen_C::SafePopContent()
 	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.SafePopContent");
 
 	ULoginScreen_C_SafePopContent_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function LoginScreen.LoginScreen_C.ShowAccountSelectWindow
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ULoginScreen_C::ShowAccountSelectWindow()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.ShowAccountSelectWindow");
+
+	ULoginScreen_C_ShowAccountSelectWindow_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -250,7 +117,7 @@ void ULoginScreen_C::RollbackToSplashScreen()
 // Function LoginScreen.LoginScreen_C.PopContentWidgetInternal
 // (Event, Protected, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FContentPushState*      State                          (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FContentPushState*      State                          (Parm)
 // class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 class UWidget* ULoginScreen_C::PopContentWidgetInternal(struct FContentPushState* State)
@@ -311,25 +178,23 @@ class UWidget* ULoginScreen_C::GetLoginMenu()
 // Function LoginScreen.LoginScreen_C.OnMouseButtonUp_MenuBorder
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry               MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent           MouseEvent                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGeometry               MyGeometry                     (Parm, IsPlainOldData)
+// struct FPointerEvent           MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
 // struct FEventReply             ReturnValue                    (Parm, OutParm, ReturnParm)
 
-struct FEventReply ULoginScreen_C::OnMouseButtonUp_MenuBorder(const struct FGeometry& MyGeometry, struct FPointerEvent* MouseEvent)
+struct FEventReply ULoginScreen_C::OnMouseButtonUp_MenuBorder(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.OnMouseButtonUp_MenuBorder");
 
 	ULoginScreen_C_OnMouseButtonUp_MenuBorder_Params params;
 	params.MyGeometry = MyGeometry;
+	params.MouseEvent = MouseEvent;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (MouseEvent != nullptr)
-		*MouseEvent = params.MouseEvent;
 
 	return params.ReturnValue;
 }
@@ -394,8 +259,8 @@ void ULoginScreen_C::ShouldShowBenchmark(bool* Return_Value)
 // Function LoginScreen.LoginScreen_C.ShowEulaWindow
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Text                           (BlueprintVisible, BlueprintReadOnly, Parm)
-// bool                           ViewOnly                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Text                           (Parm)
+// bool                           ViewOnly                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULoginScreen_C::ShowEulaWindow(const struct FText& Text, bool ViewOnly)
 {
@@ -416,7 +281,7 @@ void ULoginScreen_C::ShowEulaWindow(const struct FText& Text, bool ViewOnly)
 // Function LoginScreen.LoginScreen_C.SetResultsDescription
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Description                    (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   Description                    (Parm)
 
 void ULoginScreen_C::SetResultsDescription(const struct FText& Description)
 {
@@ -436,8 +301,8 @@ void ULoginScreen_C::SetResultsDescription(const struct FText& Description)
 // Function LoginScreen.LoginScreen_C.SetResultTitle
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Title                          (BlueprintVisible, BlueprintReadOnly, Parm)
-// bool                           bShowError                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Title                          (Parm)
+// bool                           bShowError                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULoginScreen_C::SetResultTitle(const struct FText& Title, bool bShowError)
 {
@@ -458,12 +323,11 @@ void ULoginScreen_C::SetResultTitle(const struct FText& Title, bool bShowError)
 // Function LoginScreen.LoginScreen_C.ShowResultWindow
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Title                          (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FText                   Description                    (BlueprintVisible, BlueprintReadOnly, Parm)
-// bool                           bShowError                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bLoggedOut                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Title                          (Parm)
+// struct FText                   Description                    (Parm)
+// bool                           bShowError                     (Parm, ZeroConstructor, IsPlainOldData)
 
-void ULoginScreen_C::ShowResultWindow(const struct FText& Title, const struct FText& Description, bool bShowError, bool bLoggedOut)
+void ULoginScreen_C::ShowResultWindow(const struct FText& Title, const struct FText& Description, bool bShowError)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.ShowResultWindow");
 
@@ -471,7 +335,6 @@ void ULoginScreen_C::ShowResultWindow(const struct FText& Title, const struct FT
 	params.Title = Title;
 	params.Description = Description;
 	params.bShowError = bShowError;
-	params.bLoggedOut = bLoggedOut;
 
 	auto flags = fn->FunctionFlags;
 
@@ -501,7 +364,7 @@ void ULoginScreen_C::ToggleLoginMenu()
 // Function LoginScreen.LoginScreen_C.UpdateStatusTitle
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Title                          (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   Title                          (Parm)
 
 void ULoginScreen_C::UpdateStatusTitle(const struct FText& Title)
 {
@@ -521,7 +384,7 @@ void ULoginScreen_C::UpdateStatusTitle(const struct FText& Title)
 // Function LoginScreen.LoginScreen_C.ShowAccountLinkingWindow
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           InLinkedAccountNeedsPurchase   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           InLinkedAccountNeedsPurchase   (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULoginScreen_C::ShowAccountLinkingWindow(bool InLinkedAccountNeedsPurchase)
 {
@@ -541,7 +404,7 @@ void ULoginScreen_C::ShowAccountLinkingWindow(bool InLinkedAccountNeedsPurchase)
 // Function LoginScreen.LoginScreen_C.ShowStatusWindow
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   StatusText                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   StatusText                     (Parm)
 
 void ULoginScreen_C::ShowStatusWindow(const struct FText& StatusText)
 {
@@ -561,14 +424,36 @@ void ULoginScreen_C::ShowStatusWindow(const struct FText& StatusText)
 // Function LoginScreen.LoginScreen_C.ShowSignInWindow
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           DirectSignin                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           DirectSignIn                   (Parm, ZeroConstructor, IsPlainOldData)
 
-void ULoginScreen_C::ShowSignInWindow(bool DirectSignin)
+void ULoginScreen_C::ShowSignInWindow(bool DirectSignIn)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.ShowSignInWindow");
 
 	ULoginScreen_C_ShowSignInWindow_Params params;
-	params.DirectSignin = DirectSignin;
+	params.DirectSignIn = DirectSignIn;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function LoginScreen.LoginScreen_C.DialogResult_EE7DC32F44B9651770AED08101A03510
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EFortDialogResult              Result                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ResultName                     (Parm, ZeroConstructor, IsPlainOldData)
+
+void ULoginScreen_C::DialogResult_EE7DC32F44B9651770AED08101A03510(EFortDialogResult Result, const struct FName& ResultName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.DialogResult_EE7DC32F44B9651770AED08101A03510");
+
+	ULoginScreen_C_DialogResult_EE7DC32F44B9651770AED08101A03510_Params params;
+	params.Result = Result;
+	params.ResultName = ResultName;
 
 	auto flags = fn->FunctionFlags;
 
@@ -581,8 +466,8 @@ void ULoginScreen_C::ShowSignInWindow(bool DirectSignin)
 // Function LoginScreen.LoginScreen_C.DialogResult_B952A8754B3836D2151B4981F531542E
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortDialogResult              Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ResultName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortDialogResult              Result                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ResultName                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULoginScreen_C::DialogResult_B952A8754B3836D2151B4981F531542E(EFortDialogResult Result, const struct FName& ResultName)
 {
@@ -600,10 +485,47 @@ void ULoginScreen_C::DialogResult_B952A8754B3836D2151B4981F531542E(EFortDialogRe
 }
 
 
+// Function LoginScreen.LoginScreen_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void ULoginScreen_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.Construct");
+
+	ULoginScreen_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function LoginScreen.LoginScreen_C.OnPatchingComplete
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool*                          bProceed                       (Parm, ZeroConstructor, IsPlainOldData)
+
+void ULoginScreen_C::OnPatchingComplete(bool* bProceed)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.OnPatchingComplete");
+
+	ULoginScreen_C_OnPatchingComplete_Params params;
+	params.bProceed = bProceed;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function LoginScreen.LoginScreen_C.OnEnterState
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// EFortUIState*                  PreviousUIState                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortUIState*                  PreviousUIState                (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULoginScreen_C::OnEnterState(EFortUIState* PreviousUIState)
 {
@@ -623,7 +545,7 @@ void ULoginScreen_C::OnEnterState(EFortUIState* PreviousUIState)
 // Function LoginScreen.LoginScreen_C.OnExitState
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// EFortUIState*                  NextUIState                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortUIState*                  NextUIState                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULoginScreen_C::OnExitState(EFortUIState* NextUIState)
 {
@@ -643,18 +565,16 @@ void ULoginScreen_C::OnExitState(EFortUIState* NextUIState)
 // Function LoginScreen.LoginScreen_C.HandleOnStartLogin
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FString                 LoginEmail                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-// struct FString                 LoginPassword                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
-// EExternalAccountType           Account_Type                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FString                 LoginEmail                     (Parm, ZeroConstructor)
+// struct FString                 LoginPassword                  (Parm, ZeroConstructor)
 
-void ULoginScreen_C::HandleOnStartLogin(const struct FString& LoginEmail, const struct FString& LoginPassword, EExternalAccountType Account_Type)
+void ULoginScreen_C::HandleOnStartLogin(const struct FString& LoginEmail, const struct FString& LoginPassword)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.HandleOnStartLogin");
 
 	ULoginScreen_C_HandleOnStartLogin_Params params;
 	params.LoginEmail = LoginEmail;
 	params.LoginPassword = LoginPassword;
-	params.Account_Type = Account_Type;
 
 	auto flags = fn->FunctionFlags;
 
@@ -667,7 +587,7 @@ void ULoginScreen_C::HandleOnStartLogin(const struct FString& LoginEmail, const 
 // Function LoginScreen.LoginScreen_C.OnLoginFailed
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FText*                  Reason                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FText*                  Reason                         (ConstParm, Parm, OutParm, ReferenceParm)
 
 void ULoginScreen_C::OnLoginFailed(struct FText* Reason)
 {
@@ -704,7 +624,7 @@ void ULoginScreen_C::OnLoginSuceeded()
 // Function LoginScreen.LoginScreen_C.OnEulaAvailable
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FText*                  EulaText                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FText*                  EulaText                       (ConstParm, Parm, OutParm, ReferenceParm)
 
 void ULoginScreen_C::OnEulaAvailable(struct FText* EulaText)
 {
@@ -721,30 +641,10 @@ void ULoginScreen_C::OnEulaAvailable(struct FText* EulaText)
 }
 
 
-// Function LoginScreen.LoginScreen_C.OnPatchingComplete
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool*                          bProceed                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void ULoginScreen_C::OnPatchingComplete(bool* bProceed)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.OnPatchingComplete");
-
-	ULoginScreen_C_OnPatchingComplete_Params params;
-	params.bProceed = bProceed;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function LoginScreen.LoginScreen_C.HandleEulaResponse
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Accepted                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Accepted                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULoginScreen_C::HandleEulaResponse(bool Accepted)
 {
@@ -798,7 +698,7 @@ void ULoginScreen_C::HandlerBenchmarkFlow()
 // Function LoginScreen.LoginScreen_C.AccountLinking_PushStatus
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   StatusText                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   StatusText                     (Parm)
 
 void ULoginScreen_C::AccountLinking_PushStatus(const struct FText& StatusText)
 {
@@ -835,7 +735,7 @@ void ULoginScreen_C::AccountLinking_PopStatus()
 // Function LoginScreen.LoginScreen_C.AccountLinking_LinkingFailed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   FailReason                     (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   FailReason                     (Parm)
 
 void ULoginScreen_C::AccountLinking_LinkingFailed(const struct FText& FailReason)
 {
@@ -906,8 +806,8 @@ void ULoginScreen_C::OnSplashScreenClosed()
 // Function LoginScreen.LoginScreen_C.PushContentWidgetInternal
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UWidget**                Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FContentPushState*      State                          (BlueprintVisible, BlueprintReadOnly, Parm)
+// class UWidget**                Widget                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FContentPushState*      State                          (Parm)
 
 void ULoginScreen_C::PushContentWidgetInternal(class UWidget** Widget, struct FContentPushState* State)
 {
@@ -942,27 +842,10 @@ void ULoginScreen_C::OnLogoutComplete()
 }
 
 
-// Function LoginScreen.LoginScreen_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void ULoginScreen_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.Construct");
-
-	ULoginScreen_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function LoginScreen.LoginScreen_C.BndEvt__IconTextButton_K2Node_ComponentBoundEvent_20_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULoginScreen_C::BndEvt__IconTextButton_K2Node_ComponentBoundEvent_20_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -1016,7 +899,7 @@ void ULoginScreen_C::HandleViewOnlyClose()
 // Function LoginScreen.LoginScreen_C.OnNeedsPurchaseOrAccountLinking
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          bLinkedAccountNeedsPurchase    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          bLinkedAccountNeedsPurchase    (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULoginScreen_C::OnNeedsPurchaseOrAccountLinking(bool* bLinkedAccountNeedsPurchase)
 {
@@ -1033,10 +916,47 @@ void ULoginScreen_C::OnNeedsPurchaseOrAccountLinking(bool* bLinkedAccountNeedsPu
 }
 
 
+// Function LoginScreen.LoginScreen_C.OnDisplayErrorComplete
+// (Event, Public, BlueprintEvent)
+
+void ULoginScreen_C::OnDisplayErrorComplete()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.OnDisplayErrorComplete");
+
+	ULoginScreen_C_OnDisplayErrorComplete_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function LoginScreen.LoginScreen_C.HandleOnLoginAccountTypeSelected
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EFortLoginAccountType          LoginAccountType               (Parm, ZeroConstructor, IsPlainOldData)
+
+void ULoginScreen_C::HandleOnLoginAccountTypeSelected(EFortLoginAccountType LoginAccountType)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.HandleOnLoginAccountTypeSelected");
+
+	ULoginScreen_C_HandleOnLoginAccountTypeSelected_Params params;
+	params.LoginAccountType = LoginAccountType;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function LoginScreen.LoginScreen_C.OnPostLoginLogoutComplete
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FText*                  Reason                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FText*                  Reason                         (ConstParm, Parm, OutParm, ReferenceParm)
 
 void ULoginScreen_C::OnPostLoginLogoutComplete(struct FText* Reason)
 {
@@ -1056,9 +976,9 @@ void ULoginScreen_C::OnPostLoginLogoutComplete(struct FText* Reason)
 // Function LoginScreen.LoginScreen_C.OnShowLoginMessage
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// bool*                          bShow                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText*                  Tile                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FText*                  Body                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// bool*                          bShow                          (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText*                  Tile                           (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FText*                  Body                           (ConstParm, Parm, OutParm, ReferenceParm)
 
 void ULoginScreen_C::OnShowLoginMessage(bool* bShow, struct FText* Tile, struct FText* Body)
 {
@@ -1077,232 +997,10 @@ void ULoginScreen_C::OnShowLoginMessage(bool* bShow, struct FText* Tile, struct 
 }
 
 
-// Function LoginScreen.LoginScreen_C.HandleLoggedOutErrorDismissed
-// (BlueprintCallable, BlueprintEvent)
-
-void ULoginScreen_C::HandleLoggedOutErrorDismissed()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.HandleLoggedOutErrorDismissed");
-
-	ULoginScreen_C_HandleLoggedOutErrorDismissed_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LoginScreen.LoginScreen_C.OnLoggedOutWithError
-// (Event, Public, HasOutParms, BlueprintEvent)
-// Parameters:
-// struct FText*                  ErrorText                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-
-void ULoginScreen_C::OnLoggedOutWithError(struct FText* ErrorText)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.OnLoggedOutWithError");
-
-	ULoginScreen_C_OnLoggedOutWithError_Params params;
-	params.ErrorText = ErrorText;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LoginScreen.LoginScreen_C.Event Closed MOTD
-// (BlueprintCallable, BlueprintEvent)
-
-void ULoginScreen_C::Event_Closed_MOTD()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.Event Closed MOTD");
-
-	ULoginScreen_C_Event_Closed_MOTD_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LoginScreen.LoginScreen_C.OnShowHealthWarning
-// (Event, Public, BlueprintEvent)
-
-void ULoginScreen_C::OnShowHealthWarning()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.OnShowHealthWarning");
-
-	ULoginScreen_C_OnShowHealthWarning_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LoginScreen.LoginScreen_C.OnWebLoginDisplay
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UWidget*                 WebWidget                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void ULoginScreen_C::OnWebLoginDisplay(class UWidget* WebWidget)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.OnWebLoginDisplay");
-
-	ULoginScreen_C_OnWebLoginDisplay_Params params;
-	params.WebWidget = WebWidget;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LoginScreen.LoginScreen_C.OnWebLoginClosed
-// (BlueprintCallable, BlueprintEvent)
-
-void ULoginScreen_C::OnWebLoginClosed()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.OnWebLoginClosed");
-
-	ULoginScreen_C_OnWebLoginClosed_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LoginScreen.LoginScreen_C.HandlePlayedBeforeSelected
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           PlayedBefore                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void ULoginScreen_C::HandlePlayedBeforeSelected(bool PlayedBefore)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.HandlePlayedBeforeSelected");
-
-	ULoginScreen_C_HandlePlayedBeforeSelected_Params params;
-	params.PlayedBefore = PlayedBefore;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LoginScreen.LoginScreen_C.TempBackEvent
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void ULoginScreen_C::TempBackEvent(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.TempBackEvent");
-
-	ULoginScreen_C_TempBackEvent_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LoginScreen.LoginScreen_C.HandleEpicAccountSelected
-// (BlueprintCallable, BlueprintEvent)
-
-void ULoginScreen_C::HandleEpicAccountSelected()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.HandleEpicAccountSelected");
-
-	ULoginScreen_C_HandleEpicAccountSelected_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LoginScreen.LoginScreen_C.HandleNewAccountCreation
-// (BlueprintCallable, BlueprintEvent)
-
-void ULoginScreen_C::HandleNewAccountCreation()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.HandleNewAccountCreation");
-
-	ULoginScreen_C_HandleNewAccountCreation_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LoginScreen.LoginScreen_C.HandleCredentialSelected
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EFortLoginAccountType          ChosenCredential               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void ULoginScreen_C::HandleCredentialSelected(EFortLoginAccountType ChosenCredential)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.HandleCredentialSelected");
-
-	ULoginScreen_C_HandleCredentialSelected_Params params;
-	params.ChosenCredential = ChosenCredential;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LoginScreen.LoginScreen_C.HandleEpicAccountForward
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EFortLoginAccountType          platform                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void ULoginScreen_C::HandleEpicAccountForward(EFortLoginAccountType platform)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LoginScreen.LoginScreen_C.HandleEpicAccountForward");
-
-	ULoginScreen_C_HandleEpicAccountForward_Params params;
-	params.platform = platform;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function LoginScreen.LoginScreen_C.ExecuteUbergraph_LoginScreen
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULoginScreen_C::ExecuteUbergraph_LoginScreen(int EntryPoint)
 {

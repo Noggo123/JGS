@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -26,8 +26,8 @@ struct UItemTransformKeyPickerTileButton_C_Get_Transform_Key_Catalysts_Params
 	struct FGameplayTagContainer                       ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
-// Function ItemTransformKeyPickerTileButton.ItemTransformKeyPickerTileButton_C.Mark Item As Seen
-struct UItemTransformKeyPickerTileButton_C_Mark_Item_As_Seen_Params
+// Function ItemTransformKeyPickerTileButton.ItemTransformKeyPickerTileButton_C.Mark Item as Seen
+struct UItemTransformKeyPickerTileButton_C_Mark_Item_as_Seen_Params
 {
 };
 
@@ -51,8 +51,8 @@ struct UItemTransformKeyPickerTileButton_C_Update_Bang_State_Params
 // Function ItemTransformKeyPickerTileButton.ItemTransformKeyPickerTileButton_C.SetData
 struct UItemTransformKeyPickerTileButton_C_SetData_Params
 {
-	class UObject**                                    InData;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonListView**                            OwningList;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UObject**                                    InData;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonListView**                            OwningList;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemTransformKeyPickerTileButton.ItemTransformKeyPickerTileButton_C.OnSelected
@@ -68,7 +68,7 @@ struct UItemTransformKeyPickerTileButton_C_OnHovered_Params
 // Function ItemTransformKeyPickerTileButton.ItemTransformKeyPickerTileButton_C.ExecuteUbergraph_ItemTransformKeyPickerTileButton
 struct UItemTransformKeyPickerTileButton_C_ExecuteUbergraph_ItemTransformKeyPickerTileButton_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

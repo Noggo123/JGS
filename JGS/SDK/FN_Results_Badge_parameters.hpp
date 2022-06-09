@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ struct UResults_Badge_C_SetSkippingToEnd_Params
 // Function Results_Badge.Results_Badge_C.Initialize
 struct UResults_Badge_C_Initialize_Params
 {
-	float                                              PlayRate;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              PlayRate;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_Badge.Results_Badge_C.HasValidItem
@@ -44,7 +44,7 @@ struct UResults_Badge_C_HasValidItem_Params
 // Function Results_Badge.Results_Badge_C.SetItem
 struct UResults_Badge_C_SetItem_Params
 {
-	class UFortItem*                                   Item;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_Badge.Results_Badge_C.Intro Sequence
@@ -65,7 +65,7 @@ struct UResults_Badge_C_BndEvt__Anim_Convert_K2Node_ComponentBoundEvent_1_OnWidg
 // Function Results_Badge.Results_Badge_C.PreConstruct
 struct UResults_Badge_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_Badge.Results_Badge_C.Reset Sequence
@@ -76,7 +76,7 @@ struct UResults_Badge_C_Reset_Sequence_Params
 // Function Results_Badge.Results_Badge_C.ExecuteUbergraph_Results_Badge
 struct UResults_Badge_C_ExecuteUbergraph_Results_Badge_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_Badge.Results_Badge_C.ConvertFinished__DelegateSignature

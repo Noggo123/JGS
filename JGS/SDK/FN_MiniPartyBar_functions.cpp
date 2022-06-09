@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -36,8 +36,8 @@ class UWidget* UMiniPartyBar_C::Get_Banners_Tooltip_Widget()
 // Function MiniPartyBar.MiniPartyBar_C.HandlePartybarUIFeatureChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortUIFeature                 Feature                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortUIFeatureState            FeatureState                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortUIFeature                 Feature                        (Parm, ZeroConstructor, IsPlainOldData)
+// EFortUIFeatureState            FeatureState                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMiniPartyBar_C::HandlePartybarUIFeatureChanged(EFortUIFeature Feature, EFortUIFeatureState FeatureState)
 {
@@ -75,7 +75,7 @@ void UMiniPartyBar_C::Construct()
 // Function MiniPartyBar.MiniPartyBar_C.BndEvt__ButtonLocalPlayer_K2Node_ComponentBoundEvent_81_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMiniPartyBar_C::BndEvt__ButtonLocalPlayer_K2Node_ComponentBoundEvent_81_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -95,7 +95,7 @@ void UMiniPartyBar_C::BndEvt__ButtonLocalPlayer_K2Node_ComponentBoundEvent_81_Co
 // Function MiniPartyBar.MiniPartyBar_C.ExecuteUbergraph_MiniPartyBar
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UMiniPartyBar_C::ExecuteUbergraph_MiniPartyBar(int EntryPoint)
 {

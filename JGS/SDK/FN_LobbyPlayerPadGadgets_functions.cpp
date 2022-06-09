@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function LobbyPlayerPadGadgets.LobbyPlayerPadGadgets_C.Initialize
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyPlayerPadGadgets_C::Initialize(int PlayerIndex)
 {
@@ -52,8 +52,8 @@ void ULobbyPlayerPadGadgets_C::OnInputClicked()
 // Function LobbyPlayerPadGadgets.LobbyPlayerPadGadgets_C.OnMouseButtonDown
 // (BlueprintCosmetic, Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent           MouseEvent                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// struct FPointerEvent*          MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
 // struct FEventReply             ReturnValue                    (Parm, OutParm, ReturnParm)
 
 struct FEventReply ULobbyPlayerPadGadgets_C::OnMouseButtonDown(struct FGeometry* MyGeometry, struct FPointerEvent* MouseEvent)
@@ -62,15 +62,13 @@ struct FEventReply ULobbyPlayerPadGadgets_C::OnMouseButtonDown(struct FGeometry*
 
 	ULobbyPlayerPadGadgets_C_OnMouseButtonDown_Params params;
 	params.MyGeometry = MyGeometry;
+	params.MouseEvent = MouseEvent;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (MouseEvent != nullptr)
-		*MouseEvent = params.MouseEvent;
 
 	return params.ReturnValue;
 }
@@ -79,7 +77,7 @@ struct FEventReply ULobbyPlayerPadGadgets_C::OnMouseButtonDown(struct FGeometry*
 // Function LobbyPlayerPadGadgets.LobbyPlayerPadGadgets_C.Refresh
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     TeamMemberInfo                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortTeamMemberInfo     TeamMemberInfo                 (Parm)
 
 void ULobbyPlayerPadGadgets_C::Refresh(const struct FFortTeamMemberInfo& TeamMemberInfo)
 {
@@ -99,8 +97,8 @@ void ULobbyPlayerPadGadgets_C::Refresh(const struct FFortTeamMemberInfo& TeamMem
 // Function LobbyPlayerPadGadgets.LobbyPlayerPadGadgets_C.OnMouseEnter
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent*          MouseEvent                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// struct FPointerEvent*          MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
 
 void ULobbyPlayerPadGadgets_C::OnMouseEnter(struct FGeometry* MyGeometry, struct FPointerEvent* MouseEvent)
 {
@@ -121,7 +119,7 @@ void ULobbyPlayerPadGadgets_C::OnMouseEnter(struct FGeometry* MyGeometry, struct
 // Function LobbyPlayerPadGadgets.LobbyPlayerPadGadgets_C.OnMouseLeave
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FPointerEvent*          MouseEvent                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FPointerEvent*          MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
 
 void ULobbyPlayerPadGadgets_C::OnMouseLeave(struct FPointerEvent* MouseEvent)
 {
@@ -141,7 +139,7 @@ void ULobbyPlayerPadGadgets_C::OnMouseLeave(struct FPointerEvent* MouseEvent)
 // Function LobbyPlayerPadGadgets.LobbyPlayerPadGadgets_C.ExecuteUbergraph_LobbyPlayerPadGadgets
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyPlayerPadGadgets_C::ExecuteUbergraph_LobbyPlayerPadGadgets(int EntryPoint)
 {

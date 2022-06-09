@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -83,7 +83,7 @@ void UAthenaStatsTab_C::OnActivated()
 // Function AthenaStatsTab.AthenaStatsTab_C.OnQueryFinished
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          bWasSuccessful                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          bWasSuccessful                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaStatsTab_C::OnQueryFinished(bool* bWasSuccessful)
 {
@@ -103,7 +103,7 @@ void UAthenaStatsTab_C::OnQueryFinished(bool* bWasSuccessful)
 // Function AthenaStatsTab.AthenaStatsTab_C.BndEvt__StatsTabList_K2Node_ComponentBoundEvent_0_OnTabSelected__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FName                   TabId                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaStatsTab_C::BndEvt__StatsTabList_K2Node_ComponentBoundEvent_0_OnTabSelected__DelegateSignature(const struct FName& TabId)
 {
@@ -157,7 +157,7 @@ void UAthenaStatsTab_C::OnDeactivated()
 // Function AthenaStatsTab.AthenaStatsTab_C.ExecuteUbergraph_AthenaStatsTab
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaStatsTab_C::ExecuteUbergraph_AthenaStatsTab(int EntryPoint)
 {

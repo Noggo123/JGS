@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,8 +17,8 @@ namespace SDK
 // Function ThreatPostProcessManagerAndParticleBlueprint.ThreatPostProcessManagerAndParticleBlueprint_C.CalculatePlayerPositionNearBox
 struct AThreatPostProcessManagerAndParticleBlueprint_C_CalculatePlayerPositionNearBox_Params
 {
-	struct FVector                                     BoxMin;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	struct FVector                                     BoxMax;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+	struct FVector                                     BoxMin;                                                   // (Parm, IsPlainOldData)
+	struct FVector                                     BoxMax;                                                   // (Parm, IsPlainOldData)
 	float                                              VolumePlayerCoveragePercentage;                           // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -40,13 +40,13 @@ struct AThreatPostProcessManagerAndParticleBlueprint_C_Ramp_Up_down_values_on_de
 // Function ThreatPostProcessManagerAndParticleBlueprint.ThreatPostProcessManagerAndParticleBlueprint_C.ReceiveTick
 struct AThreatPostProcessManagerAndParticleBlueprint_C_ReceiveTick_Params
 {
-	float*                                             DeltaSeconds;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float*                                             DeltaSeconds;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ThreatPostProcessManagerAndParticleBlueprint.ThreatPostProcessManagerAndParticleBlueprint_C.OnThreatCloudsChanged
 struct AThreatPostProcessManagerAndParticleBlueprint_C_OnThreatCloudsChanged_Params
 {
-	TArray<struct FThreatLocationInfo>*                ThreatLocationInfo;                                       // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<struct FThreatLocationInfo>*                ThreatLocationInfo;                                       // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function ThreatPostProcessManagerAndParticleBlueprint.ThreatPostProcessManagerAndParticleBlueprint_C.OnWorldReady
@@ -72,7 +72,7 @@ struct AThreatPostProcessManagerAndParticleBlueprint_C_ForceUpdateLensEffect_Par
 // Function ThreatPostProcessManagerAndParticleBlueprint.ThreatPostProcessManagerAndParticleBlueprint_C.ExecuteUbergraph_ThreatPostProcessManagerAndParticleBlueprint
 struct AThreatPostProcessManagerAndParticleBlueprint_C_ExecuteUbergraph_ThreatPostProcessManagerAndParticleBlueprint_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ThreatPostProcessManagerAndParticleBlueprint.ThreatPostProcessManagerAndParticleBlueprint_C.NewEventDispatcher0__DelegateSignature

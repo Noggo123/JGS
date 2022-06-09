@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,14 +32,14 @@ struct UDeathWidget_C_OnRespawnTimerUpdate_Params
 // Function DeathWidget.DeathWidget_C.ConfigureRespawnTimer
 struct UDeathWidget_C_ConfigureRespawnTimer_Params
 {
-	float                                              ServerRespawnTime;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	float                                              ServerResurrectTime;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ServerRespawnTime;                                        // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ServerResurrectTime;                                      // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function DeathWidget.DeathWidget_C.OnPawnDied
 struct UDeathWidget_C_OnPawnDied_Params
 {
-	struct FFortPlayerDeathReport                      DeathReport;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FFortPlayerDeathReport                      DeathReport;                                              // (Parm, OutParm, ReferenceParm)
 };
 
 // Function DeathWidget.DeathWidget_C.OnPawnSpawned
@@ -55,7 +55,7 @@ struct UDeathWidget_C_Construct_Params
 // Function DeathWidget.DeathWidget_C.ExecuteUbergraph_DeathWidget
 struct UDeathWidget_C_ExecuteUbergraph_DeathWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

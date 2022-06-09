@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function XpBoostQuantities.XpBoostQuantities_C.ScaledRestBalance
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// int                            AmountToLevel                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            AmountToLevel                  (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 int UXpBoostQuantities_C::ScaledRestBalance(int AmountToLevel)
@@ -38,7 +38,7 @@ int UXpBoostQuantities_C::ScaledRestBalance(int AmountToLevel)
 // Function XpBoostQuantities.XpBoostQuantities_C.ScaledBoostBalance
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// int                            AmountToLevel                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            AmountToLevel                  (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 int UXpBoostQuantities_C::ScaledBoostBalance(int AmountToLevel)
@@ -95,7 +95,7 @@ void UXpBoostQuantities_C::Construct()
 // Function XpBoostQuantities.XpBoostQuantities_C.HandleAccountUpdate
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortPublicAccountInfo  NewInfo                        (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortPublicAccountInfo  NewInfo                        (Parm)
 
 void UXpBoostQuantities_C::HandleAccountUpdate(const struct FFortPublicAccountInfo& NewInfo)
 {
@@ -115,7 +115,7 @@ void UXpBoostQuantities_C::HandleAccountUpdate(const struct FFortPublicAccountIn
 // Function XpBoostQuantities.XpBoostQuantities_C.Xp Boost Changed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            BoostAmount                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            BoostAmount                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UXpBoostQuantities_C::Xp_Boost_Changed(int BoostAmount)
 {
@@ -135,7 +135,7 @@ void UXpBoostQuantities_C::Xp_Boost_Changed(int BoostAmount)
 // Function XpBoostQuantities.XpBoostQuantities_C.ExecuteUbergraph_XpBoostQuantities
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UXpBoostQuantities_C::ExecuteUbergraph_XpBoostQuantities(int EntryPoint)
 {

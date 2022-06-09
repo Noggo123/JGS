@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -27,7 +27,7 @@ struct UFrontEndRewards_Queue_C_StartInitAnimation_Params
 // Function FrontEndRewards_Queue.FrontEndRewards_Queue_C.SlideIcon
 struct UFrontEndRewards_Queue_C_SlideIcon_Params
 {
-	class URewardsIcon_C*                              Icon;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class URewardsIcon_C*                              Icon;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function FrontEndRewards_Queue.FrontEndRewards_Queue_C.StartDequeueAnimation
@@ -43,7 +43,7 @@ struct UFrontEndRewards_Queue_C_TickIconSlide_Params
 // Function FrontEndRewards_Queue.FrontEndRewards_Queue_C.HandleIconHideAnimationFinished
 struct UFrontEndRewards_Queue_C_HandleIconHideAnimationFinished_Params
 {
-	class URewardsIcon_C*                              Icon;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class URewardsIcon_C*                              Icon;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function FrontEndRewards_Queue.FrontEndRewards_Queue_C.PopIcon
@@ -77,21 +77,21 @@ struct UFrontEndRewards_Queue_C_DequeueReward_Params
 // Function FrontEndRewards_Queue.FrontEndRewards_Queue_C.QueueReward
 struct UFrontEndRewards_Queue_C_QueueReward_Params
 {
-	class UFortRewardNotificationData*                 RewardItem;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortRewardNotificationData*                 RewardItem;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 	class URewardsIcon_C*                              OutIcon;                                                  // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function FrontEndRewards_Queue.FrontEndRewards_Queue_C.PreConstruct
 struct UFrontEndRewards_Queue_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function FrontEndRewards_Queue.FrontEndRewards_Queue_C.ExecuteUbergraph_FrontEndRewards_Queue
 struct UFrontEndRewards_Queue_C_ExecuteUbergraph_FrontEndRewards_Queue_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

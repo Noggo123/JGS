@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -30,13 +30,72 @@ void UAthenaPickupManager_C::UpdateKeybinds()
 
 
 // Function AthenaPickupManager.AthenaPickupManager_C.RefreshCounts
-// (Public, BlueprintCallable, BlueprintEvent)
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
 void UAthenaPickupManager_C::RefreshCounts()
 {
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaPickupManager.AthenaPickupManager_C.RefreshCounts");
 
 	UAthenaPickupManager_C_RefreshCounts_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaPickupManager.AthenaPickupManager_C.HandleItemPickedUp
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortWorldItem*          NewItem                        (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Count                          (Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaPickupManager_C::HandleItemPickedUp(class UFortWorldItem* NewItem, int Count)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaPickupManager.AthenaPickupManager_C.HandleItemPickedUp");
+
+	UAthenaPickupManager_C_HandleItemPickedUp_Params params;
+	params.NewItem = NewItem;
+	params.Count = Count;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaPickupManager.AthenaPickupManager_C.HandleMessageExpired
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortUIMessageItemWidget* Message_Item                   (Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaPickupManager_C::HandleMessageExpired(class UFortUIMessageItemWidget* Message_Item)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaPickupManager.AthenaPickupManager_C.HandleMessageExpired");
+
+	UAthenaPickupManager_C_HandleMessageExpired_Params params;
+	params.Message_Item = Message_Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaPickupManager.AthenaPickupManager_C.TryGetNextItem
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UAthenaPickupManager_C::TryGetNextItem()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaPickupManager.AthenaPickupManager_C.TryGetNextItem");
+
+	UAthenaPickupManager_C_TryGetNextItem_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -83,8 +142,8 @@ void UAthenaPickupManager_C::HandleWorldItemsChanged()
 // Function AthenaPickupManager.AthenaPickupManager_C.HandleWorldItemListChanged
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UFortWorldItem*>  ItemsAdded                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// TArray<class UFortWorldItem*>  ItemsRemoved                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UFortWorldItem*>  ItemsAdded                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UFortWorldItem*>  ItemsRemoved                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UAthenaPickupManager_C::HandleWorldItemListChanged(TArray<class UFortWorldItem*> ItemsAdded, TArray<class UFortWorldItem*> ItemsRemoved)
 {
@@ -119,49 +178,10 @@ void UAthenaPickupManager_C::Destruct()
 }
 
 
-// Function AthenaPickupManager.AthenaPickupManager_C.HandleBuildingMaterialChanged
-// (BlueprintCallable, BlueprintEvent)
-
-void UAthenaPickupManager_C::HandleBuildingMaterialChanged()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaPickupManager.AthenaPickupManager_C.HandleBuildingMaterialChanged");
-
-	UAthenaPickupManager_C_HandleBuildingMaterialChanged_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaPickupManager.AthenaPickupManager_C.HandleItemPickup
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UFortWorldItem*          NewItem                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            Count                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaPickupManager_C::HandleItemPickup(class UFortWorldItem* NewItem, int Count)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaPickupManager.AthenaPickupManager_C.HandleItemPickup");
-
-	UAthenaPickupManager_C_HandleItemPickup_Params params;
-	params.NewItem = NewItem;
-	params.Count = Count;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function AthenaPickupManager.AthenaPickupManager_C.ExecuteUbergraph_AthenaPickupManager
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaPickupManager_C::ExecuteUbergraph_AthenaPickupManager(int EntryPoint)
 {

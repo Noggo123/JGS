@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,30 +12,10 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.UpdateScrollHintVisibility
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           IsUsingGamepad                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UFrontEndRewards_ListRewards_C::UpdateScrollHintVisibility(bool IsUsingGamepad)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.UpdateScrollHintVisibility");
-
-	UFrontEndRewards_ListRewards_C_UpdateScrollHintVisibility_Params params;
-	params.IsUsingGamepad = IsUsingGamepad;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.Get Item Description
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Object                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Object                         (Parm, ZeroConstructor, IsPlainOldData)
 // struct FText                   OutDescription                 (Parm, OutParm)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -62,8 +42,8 @@ bool UFrontEndRewards_ListRewards_C::Get_Item_Description(class UFortItem* Objec
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.Set DisplayName and Description Widget
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   Description                    (BlueprintVisible, BlueprintReadOnly, Parm)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Description                    (Parm)
 
 void UFrontEndRewards_ListRewards_C::Set_DisplayName_and_Description_Widget(class UFortItem* Item, const struct FText& Description)
 {
@@ -237,7 +217,7 @@ void UFrontEndRewards_ListRewards_C::EnableInputActions()
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.PopulateFromCardsList
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class URewards_ItemCard_C*> Cards                          (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class URewards_ItemCard_C*> Cards                          (Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UFrontEndRewards_ListRewards_C::PopulateFromCardsList(TArray<class URewards_ItemCard_C*>* Cards)
 {
@@ -376,7 +356,7 @@ void UFrontEndRewards_ListRewards_C::HandleOutroAnimFinished()
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.SelectCard
 // (Private, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            InNewIndex                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            InNewIndex                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_ListRewards_C::SelectCard(int InNewIndex)
 {
@@ -396,7 +376,7 @@ void UFrontEndRewards_ListRewards_C::SelectCard(int InNewIndex)
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.SetCardSelected
 // (Private, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class URewards_ItemCard_C*     Card                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class URewards_ItemCard_C*     Card                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_ListRewards_C::SetCardSelected(class URewards_ItemCard_C* Card)
 {
@@ -416,7 +396,7 @@ void UFrontEndRewards_ListRewards_C::SetCardSelected(class URewards_ItemCard_C* 
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.HandleCardClicked
 // (Private, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class URewards_ItemCard_C*     Card                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class URewards_ItemCard_C*     Card                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_ListRewards_C::HandleCardClicked(class URewards_ItemCard_C* Card)
 {
@@ -453,8 +433,8 @@ void UFrontEndRewards_ListRewards_C::ClearCards()
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.PlayCardSlide
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class URewards_ItemCard_C*     RewardsItemCard                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          StaggerDelay                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class URewards_ItemCard_C*     RewardsItemCard                (Parm, ZeroConstructor, IsPlainOldData)
+// float                          StaggerDelay                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_ListRewards_C::PlayCardSlide(class URewards_ItemCard_C* RewardsItemCard, float StaggerDelay)
 {
@@ -492,8 +472,8 @@ void UFrontEndRewards_ListRewards_C::SetItemDescription()
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.SetCardAlignment
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidget*                 CardWidget                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            SelectionIndex                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidget*                 CardWidget                     (Parm, ZeroConstructor, IsPlainOldData)
+// int                            SelectionIndex                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_ListRewards_C::SetCardAlignment(class UWidget* CardWidget, int SelectionIndex)
 {
@@ -531,7 +511,7 @@ void UFrontEndRewards_ListRewards_C::SelectPreviousCard()
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.HandleLastSlideAnimFinished
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class URewards_ItemCard_C*     RewardsItemCard                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class URewards_ItemCard_C*     RewardsItemCard                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_ListRewards_C::HandleLastSlideAnimFinished(class URewards_ItemCard_C* RewardsItemCard)
 {
@@ -551,8 +531,8 @@ void UFrontEndRewards_ListRewards_C::HandleLastSlideAnimFinished(class URewards_
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.GetCardAlignment
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            CardQueueIndex                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            CardListIndex                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            CardQueueIndex                 (Parm, ZeroConstructor, IsPlainOldData)
+// int                            CardListIndex                  (Parm, ZeroConstructor, IsPlainOldData)
 // struct FVector2D               Alignment                      (Parm, OutParm, IsPlainOldData)
 // struct FAnchors                Anchors                        (Parm, OutParm)
 // float                          Scale                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
@@ -612,7 +592,7 @@ void UFrontEndRewards_ListRewards_C::SelectNextCard()
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.AddCard
 // (Private, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class URewards_ItemCard_C*     Card                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class URewards_ItemCard_C*     Card                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_ListRewards_C::AddCard(class URewards_ItemCard_C* Card)
 {
@@ -649,7 +629,7 @@ void UFrontEndRewards_ListRewards_C::InitDesignView()
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_ListRewards_C::PreConstruct(bool* IsDesignTime)
 {
@@ -819,30 +799,10 @@ void UFrontEndRewards_ListRewards_C::OnPrimaryAction()
 }
 
 
-// Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.BndEvt__ActionWidgetScroll_K2Node_ComponentBoundEvent_5_OnInputMethodChanged__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// bool                           bUsingGamepad                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UFrontEndRewards_ListRewards_C::BndEvt__ActionWidgetScroll_K2Node_ComponentBoundEvent_5_OnInputMethodChanged__DelegateSignature(bool bUsingGamepad)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.BndEvt__ActionWidgetScroll_K2Node_ComponentBoundEvent_5_OnInputMethodChanged__DelegateSignature");
-
-	UFrontEndRewards_ListRewards_C_BndEvt__ActionWidgetScroll_K2Node_ComponentBoundEvent_5_OnInputMethodChanged__DelegateSignature_Params params;
-	params.bUsingGamepad = bUsingGamepad;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function FrontEndRewards_ListRewards.FrontEndRewards_ListRewards_C.ExecuteUbergraph_FrontEndRewards_ListRewards
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFrontEndRewards_ListRewards_C::ExecuteUbergraph_FrontEndRewards_ListRewards(int EntryPoint)
 {

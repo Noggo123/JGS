@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -96,28 +96,11 @@ class UObject* UOptionsMenuHudRotator_C::GetData()
 }
 
 
-// Function OptionsMenuHudRotator.OptionsMenuHudRotator_C.UpdateSize
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UOptionsMenuHudRotator_C::UpdateSize()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuHudRotator.OptionsMenuHudRotator_C.UpdateSize");
-
-	UOptionsMenuHudRotator_C_UpdateSize_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function OptionsMenuHudRotator.OptionsMenuHudRotator_C.OnFocusReceived
 // (BlueprintCosmetic, Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FFocusEvent*            InFocusEvent                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// struct FFocusEvent*            InFocusEvent                   (Parm)
 // struct FEventReply             ReturnValue                    (Parm, OutParm, ReturnParm)
 
 struct FEventReply UOptionsMenuHudRotator_C::OnFocusReceived(struct FGeometry* MyGeometry, struct FFocusEvent* InFocusEvent)
@@ -141,7 +124,7 @@ struct FEventReply UOptionsMenuHudRotator_C::OnFocusReceived(struct FGeometry* M
 // Function OptionsMenuHudRotator.OptionsMenuHudRotator_C.Update Options
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FText>           NewParam                       (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<struct FText>           NewParam                       (Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UOptionsMenuHudRotator_C::Update_Options(TArray<struct FText>* NewParam)
 {
@@ -180,7 +163,7 @@ void UOptionsMenuHudRotator_C::Center_on_Widget()
 // Function OptionsMenuHudRotator.OptionsMenuHudRotator_C.Update Row Selector
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Currently_Selected             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Currently_Selected             (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenuHudRotator_C::Update_Row_Selector(int Currently_Selected)
 {
@@ -251,7 +234,7 @@ void UOptionsMenuHudRotator_C::Private_OnExpanderArrowShiftClicked()
 // Function OptionsMenuHudRotator.OptionsMenuHudRotator_C.RegisterOnClicked
 // (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FScriptDelegate         Callback                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// struct FScriptDelegate         Callback                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UOptionsMenuHudRotator_C::RegisterOnClicked(const struct FScriptDelegate& Callback)
 {
@@ -271,7 +254,7 @@ void UOptionsMenuHudRotator_C::RegisterOnClicked(const struct FScriptDelegate& C
 // Function OptionsMenuHudRotator.OptionsMenuHudRotator_C.SetExpanded
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bExpanded                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bExpanded                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenuHudRotator_C::SetExpanded(bool bExpanded)
 {
@@ -291,7 +274,7 @@ void UOptionsMenuHudRotator_C::SetExpanded(bool bExpanded)
 // Function OptionsMenuHudRotator.OptionsMenuHudRotator_C.SetIndexInList
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            InIndexInList                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            InIndexInList                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenuHudRotator_C::SetIndexInList(int InIndexInList)
 {
@@ -311,7 +294,7 @@ void UOptionsMenuHudRotator_C::SetIndexInList(int InIndexInList)
 // Function OptionsMenuHudRotator.OptionsMenuHudRotator_C.SetSelected
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bSelected                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bSelected                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenuHudRotator_C::SetSelected(bool bSelected)
 {
@@ -382,7 +365,7 @@ void UOptionsMenuHudRotator_C::Construct()
 // Function OptionsMenuHudRotator.OptionsMenuHudRotator_C.OnMouseLeave
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FPointerEvent*          MouseEvent                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FPointerEvent*          MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UOptionsMenuHudRotator_C::OnMouseLeave(struct FPointerEvent* MouseEvent)
 {
@@ -402,8 +385,8 @@ void UOptionsMenuHudRotator_C::OnMouseLeave(struct FPointerEvent* MouseEvent)
 // Function OptionsMenuHudRotator.OptionsMenuHudRotator_C.OnMouseEnter
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent*          MouseEvent                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// struct FPointerEvent*          MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UOptionsMenuHudRotator_C::OnMouseEnter(struct FGeometry* MyGeometry, struct FPointerEvent* MouseEvent)
 {
@@ -424,7 +407,7 @@ void UOptionsMenuHudRotator_C::OnMouseEnter(struct FGeometry* MyGeometry, struct
 // Function OptionsMenuHudRotator.OptionsMenuHudRotator_C.BndEvt__TextRotator_K2Node_ComponentBoundEvent_5_OnRotated__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// int                            Value                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Value                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenuHudRotator_C::BndEvt__TextRotator_K2Node_ComponentBoundEvent_5_OnRotated__DelegateSignature(int Value)
 {
@@ -444,8 +427,8 @@ void UOptionsMenuHudRotator_C::BndEvt__TextRotator_K2Node_ComponentBoundEvent_5_
 // Function OptionsMenuHudRotator.OptionsMenuHudRotator_C.SetData
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 InData                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UCommonListView*         OwningList                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 InData                         (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonListView*         OwningList                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenuHudRotator_C::SetData(class UObject* InData, class UCommonListView* OwningList)
 {
@@ -463,50 +446,10 @@ void UOptionsMenuHudRotator_C::SetData(class UObject* InData, class UCommonListV
 }
 
 
-// Function OptionsMenuHudRotator.OptionsMenuHudRotator_C.BndEvt__ButtonLeft_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UOptionsMenuHudRotator_C::BndEvt__ButtonLeft_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuHudRotator.OptionsMenuHudRotator_C.BndEvt__ButtonLeft_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature");
-
-	UOptionsMenuHudRotator_C_BndEvt__ButtonLeft_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OptionsMenuHudRotator.OptionsMenuHudRotator_C.BndEvt__ButtonRight_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UOptionsMenuHudRotator_C::BndEvt__ButtonRight_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuHudRotator.OptionsMenuHudRotator_C.BndEvt__ButtonRight_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature");
-
-	UOptionsMenuHudRotator_C_BndEvt__ButtonRight_K2Node_ComponentBoundEvent_15_CommonButtonClicked__DelegateSignature_Params params;
-	params.Button = Button;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function OptionsMenuHudRotator.OptionsMenuHudRotator_C.ExecuteUbergraph_OptionsMenuHudRotator
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UOptionsMenuHudRotator_C::ExecuteUbergraph_OptionsMenuHudRotator(int EntryPoint)
 {
@@ -526,8 +469,8 @@ void UOptionsMenuHudRotator_C::ExecuteUbergraph_OptionsMenuHudRotator(int EntryP
 // Function OptionsMenuHudRotator.OptionsMenuHudRotator_C.Selection Changed__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Selected_Index                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayTag            Gameplay_Tag                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// int                            Selected_Index                 (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayTag            Gameplay_Tag                   (Parm)
 
 void UOptionsMenuHudRotator_C::Selection_Changed__DelegateSignature(int Selected_Index, const struct FGameplayTag& Gameplay_Tag)
 {

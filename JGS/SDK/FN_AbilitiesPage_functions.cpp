@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,9 +15,9 @@ namespace SDK
 // Function AbilitiesPage.AbilitiesPage_C.HandleInventory
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UAbilitiesPage_C::HandleInventory(bool* Passthrough)
+void UAbilitiesPage_C::HandleInventory(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function AbilitiesPage.AbilitiesPage_C.HandleInventory");
 
@@ -29,15 +29,15 @@ void UAbilitiesPage_C::HandleInventory(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function AbilitiesPage.AbilitiesPage_C.UpdateAbilityMovie
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortGadgetItemDefinition* inGadgetItemDef                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortGadgetItemDefinition* inGadgetItemDef                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAbilitiesPage_C::UpdateAbilityMovie(class UFortGadgetItemDefinition* inGadgetItemDef)
 {
@@ -74,7 +74,7 @@ void UAbilitiesPage_C::InitializeAbilityTiles()
 // Function AbilitiesPage.AbilitiesPage_C.AddTilesToButtonGroup
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UVerticalBox*            ButtonContainer                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UVerticalBox*            ButtonContainer                (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAbilitiesPage_C::AddTilesToButtonGroup(class UVerticalBox* ButtonContainer)
 {
@@ -94,8 +94,8 @@ void UAbilitiesPage_C::AddTilesToButtonGroup(class UVerticalBox* ButtonContainer
 // Function AbilitiesPage.AbilitiesPage_C.HandleSelectedButtonChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonButton*           InSelectedButton               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            InSelectedButtonIndex          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           InSelectedButton               (Parm, ZeroConstructor, IsPlainOldData)
+// int                            InSelectedButtonIndex          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAbilitiesPage_C::HandleSelectedButtonChanged(class UCommonButton* InSelectedButton, int InSelectedButtonIndex)
 {
@@ -116,7 +116,7 @@ void UAbilitiesPage_C::HandleSelectedButtonChanged(class UCommonButton* InSelect
 // Function AbilitiesPage.AbilitiesPage_C.OnAbilitySelected
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonButton*           AbilityButton                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           AbilityButton                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAbilitiesPage_C::OnAbilitySelected(class UCommonButton* AbilityButton)
 {
@@ -136,9 +136,9 @@ void UAbilitiesPage_C::OnAbilitySelected(class UCommonButton* AbilityButton)
 // Function AbilitiesPage.AbilitiesPage_C.HandleBack
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UAbilitiesPage_C::HandleBack(bool* Passthrough)
+void UAbilitiesPage_C::HandleBack(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function AbilitiesPage.AbilitiesPage_C.HandleBack");
 
@@ -150,8 +150,8 @@ void UAbilitiesPage_C::HandleBack(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -175,7 +175,7 @@ void UAbilitiesPage_C::OnActivated()
 // Function AbilitiesPage.AbilitiesPage_C.OnQuickbarContentsChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortQuickBars                 QuickbarIndex                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortQuickBars                 QuickbarIndex                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAbilitiesPage_C::OnQuickbarContentsChanged(EFortQuickBars QuickbarIndex)
 {
@@ -229,7 +229,7 @@ void UAbilitiesPage_C::OnDeactivated()
 // Function AbilitiesPage.AbilitiesPage_C.ExecuteUbergraph_AbilitiesPage
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAbilitiesPage_C::ExecuteUbergraph_AbilitiesPage(int EntryPoint)
 {

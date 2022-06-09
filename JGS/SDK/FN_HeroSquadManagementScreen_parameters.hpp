@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,30 +14,10 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function HeroSquadManagementScreen.HeroSquadManagementScreen_C.HandlePickerHideAni
-struct UHeroSquadManagementScreen_C_HandlePickerHideAni_Params
-{
-};
-
-// Function HeroSquadManagementScreen.HeroSquadManagementScreen_C.HandleHideSlotInfoAni
-struct UHeroSquadManagementScreen_C_HandleHideSlotInfoAni_Params
-{
-};
-
-// Function HeroSquadManagementScreen.HeroSquadManagementScreen_C.HandlePickerShowAni
-struct UHeroSquadManagementScreen_C_HandlePickerShowAni_Params
-{
-};
-
-// Function HeroSquadManagementScreen.HeroSquadManagementScreen_C.HandleShowSlotInfoAni
-struct UHeroSquadManagementScreen_C_HandleShowSlotInfoAni_Params
-{
-};
-
 // Function HeroSquadManagementScreen.HeroSquadManagementScreen_C.UpdateSquadSlotInfoPanel
 struct UHeroSquadManagementScreen_C_UpdateSquadSlotInfoPanel_Params
 {
-	int                                                SquadSlotIndex;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                SquadSlotIndex;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function HeroSquadManagementScreen.HeroSquadManagementScreen_C.Update Hero Squad Bonus Highlight State
@@ -58,8 +38,8 @@ struct UHeroSquadManagementScreen_C_HideSlotInfo_Params
 // Function HeroSquadManagementScreen.HeroSquadManagementScreen_C.ShowSlotInfo
 struct UHeroSquadManagementScreen_C_ShowSlotInfo_Params
 {
-	struct FText                                       HeaderText;                                               // (BlueprintVisible, BlueprintReadOnly, Parm)
-	struct FText                                       BodyText;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FText                                       HeaderText;                                               // (Parm)
+	struct FText                                       BodyText;                                                 // (Parm)
 };
 
 // Function HeroSquadManagementScreen.HeroSquadManagementScreen_C.HandleClosePicker
@@ -107,13 +87,13 @@ struct UHeroSquadManagementScreen_C_HandleSquadSlotPickerHidden_Params
 // Function HeroSquadManagementScreen.HeroSquadManagementScreen_C.BndEvt__SquadSlotsView_K2Node_ComponentBoundEvent_2_OnDifferentSquadSlotSelected__DelegateSignature
 struct UHeroSquadManagementScreen_C_BndEvt__SquadSlotsView_K2Node_ComponentBoundEvent_2_OnDifferentSquadSlotSelected__DelegateSignature_Params
 {
-	int                                                SquadSlotIndex;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                SquadSlotIndex;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function HeroSquadManagementScreen.HeroSquadManagementScreen_C.ExecuteUbergraph_HeroSquadManagementScreen
 struct UHeroSquadManagementScreen_C_ExecuteUbergraph_HeroSquadManagementScreen_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

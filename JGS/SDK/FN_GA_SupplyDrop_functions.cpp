@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function GA_SupplyDrop.GA_SupplyDrop_C.SetTierFiveData
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Condition                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Condition                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UGA_SupplyDrop_C::SetTierFiveData(bool Condition)
 {
@@ -35,7 +35,7 @@ void UGA_SupplyDrop_C::SetTierFiveData(bool Condition)
 // Function GA_SupplyDrop.GA_SupplyDrop_C.SetTierFourData
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Condition                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Condition                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UGA_SupplyDrop_C::SetTierFourData(bool Condition)
 {
@@ -55,7 +55,7 @@ void UGA_SupplyDrop_C::SetTierFourData(bool Condition)
 // Function GA_SupplyDrop.GA_SupplyDrop_C.SetTierThreeData
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Condition                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Condition                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UGA_SupplyDrop_C::SetTierThreeData(bool Condition)
 {
@@ -75,7 +75,7 @@ void UGA_SupplyDrop_C::SetTierThreeData(bool Condition)
 // Function GA_SupplyDrop.GA_SupplyDrop_C.SetTierTwoData
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Conditions                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Conditions                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UGA_SupplyDrop_C::SetTierTwoData(bool Conditions)
 {
@@ -95,7 +95,7 @@ void UGA_SupplyDrop_C::SetTierTwoData(bool Conditions)
 // Function GA_SupplyDrop.GA_SupplyDrop_C.SetTierOneData
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Condition                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Condition                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UGA_SupplyDrop_C::SetTierOneData(bool Condition)
 {
@@ -115,7 +115,7 @@ void UGA_SupplyDrop_C::SetTierOneData(bool Condition)
 // Function GA_SupplyDrop.GA_SupplyDrop_C.Setup_Ability
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UAbilitySystemComponent* AbilitySystemComponentRef      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UAbilitySystemComponent* AbilitySystemComponentRef      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UGA_SupplyDrop_C::Setup_Ability(class UAbilitySystemComponent* AbilitySystemComponentRef)
 {
@@ -169,7 +169,7 @@ void UGA_SupplyDrop_C::K2_ActivateAbility()
 // Function GA_SupplyDrop.GA_SupplyDrop_C.ExecuteUbergraph_GA_SupplyDrop
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UGA_SupplyDrop_C::ExecuteUbergraph_GA_SupplyDrop(int EntryPoint)
 {

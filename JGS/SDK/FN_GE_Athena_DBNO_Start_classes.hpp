@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass GE_Athena_DBNO_Start.GE_Athena_DBNO_Start_C
-// 0x0000 (0x0670 - 0x0670)
+// 0x0000 (0x0660 - 0x0660)
 class UGE_Athena_DBNO_Start_C : public UGE_Map_Fortitude_To_Health_C
 {
 public:

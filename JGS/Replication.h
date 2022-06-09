@@ -23,7 +23,8 @@ namespace Replication
 	inline static __int64 (*SetChannelActor)(UActorChannel*, AActor*);
 	inline static void (*CallPreReplication)(AActor*, UNetDriver*);
 	inline static void (*SendClientAdjustment)(APlayerController*);
-	inline static void (*ActorChannelClose)(UActorChannel*);
+	inline static void (*ActorChannelClose)(UActorChannel*, __int64 /*Not used*/, __int64 /*Not used*/, __int64 /*Used once for getname so i will just use the actor*/);
+	inline static bool (*IsNetRelevantFor)(AActor*, AActor*, AActor*, FVector&);
 
 	UActorChannel* ReplicateToClient(AActor* InActor, UNetConnection* InConnection)
 	{
@@ -169,15 +170,21 @@ namespace Replication
 			}
 		}
 
-		FreeInternal((__int64)Actors.Data);
+		FreeInternal((void*)Actors.Data);
 		Actors.Data = 0;
 		Actors.Count = 0;
 		Actors.Max = 0;
 	}
 
+	bool IsActorRelevantToConnection(AActor* Actor, UNetConnection* NetConnection)
+	{
+		auto ActorLocation = NetConnection->ViewTarget->K2_GetActorLocation();
+		return IsNetRelevantFor(Actor, NetConnection->ViewTarget, NetConnection->ViewTarget, ActorLocation);
+	}
+
 	void ReplicateActors(UNetDriver* NetDriver)
 	{
-		++* (DWORD*)(__int64(NetDriver) + 712);
+		++*(DWORD*)(__int64(NetDriver) + 648);
 
 		auto NumClientsToTick = PrepConnections(NetDriver);
 
@@ -218,17 +225,29 @@ namespace Replication
 				if (!ActorInfo->Actor)
 					continue;
 
-				auto Channel = FindChannel(ActorInfo->Actor, Connection);
+				auto Actor = ActorInfo->Actor;
 
-				if (!Channel)
-					Channel = ReplicateToClient(ActorInfo->Actor, Connection);
+				auto Channel = FindChannel(Actor, Connection);
 
-				if (Channel)
+				const bool bIsRelevant = IsActorRelevantToConnection(ActorInfo->Actor, Connection);
+
+				if (!Actor->bAlwaysRelevant && !Actor->bNetUseOwnerRelevancy && !Actor->bOnlyRelevantToOwner)
 				{
-					if (ReplicateActor(Channel))
+					auto Viewer = Connection->ViewTarget;
+					auto Loc = Viewer->K2_GetActorLocation();
+					if (!IsNetRelevantFor(Actor, Viewer, Connection->ViewTarget, Loc))
 					{
+						if (Channel)
+							ActorChannelClose(Channel, 0, 0, 0);
+						continue;
 					}
 				}
+
+				if (!Channel)
+					Channel = ReplicateToClient(Actor, Connection);
+
+				if (Channel)
+					ReplicateActor(Channel);
 			}
 		}
 
@@ -246,5 +265,6 @@ namespace Replication
 		CallPreReplication = decltype(CallPreReplication)(BaseAddress + Offsets::CallPreReplication);
 		SendClientAdjustment = decltype(SendClientAdjustment)(BaseAddress + Offsets::SendClientAdjustment);
 		ActorChannelClose = decltype(ActorChannelClose)(BaseAddress + Offsets::ActorChannelClose);
+		IsNetRelevantFor = decltype(IsNetRelevantFor)(BaseAddress + Offsets::IsNetRelevantFor);
 	}
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -47,23 +47,23 @@ struct UItemAttributesDetailWidget_C_HandlePreDifferentItemToCompareWithSet_Para
 // Function ItemAttributesDetailWidget.ItemAttributesDetailWidget_C.HandleItemToDetailChanged
 struct UItemAttributesDetailWidget_C_HandleItemToDetailChanged_Params
 {
-	bool                                               bItemChanged;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bAmmoChanged;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bIngredientsChanged;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bItemChanged;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bAmmoChanged;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bIngredientsChanged;                                      // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemAttributesDetailWidget.ItemAttributesDetailWidget_C.HandleItemToCompareWithChanged
 struct UItemAttributesDetailWidget_C_HandleItemToCompareWithChanged_Params
 {
-	bool                                               bItemChanged;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bAmmoChanged;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bIngredientsChanged;                                      // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bItemChanged;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bAmmoChanged;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bIngredientsChanged;                                      // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemAttributesDetailWidget.ItemAttributesDetailWidget_C.ExecuteUbergraph_ItemAttributesDetailWidget
 struct UItemAttributesDetailWidget_C_ExecuteUbergraph_ItemAttributesDetailWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

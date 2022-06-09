@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function ScoreBadgeProviderMission.ScoreBadgeProviderMission_C.GetTotalScore
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EStatCategory                  ScoreCategory                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EStatCategory                  ScoreCategory                  (Parm, ZeroConstructor, IsPlainOldData)
 // int                            Score                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UScoreBadgeProviderMission_C::GetTotalScore(EStatCategory ScoreCategory, int* Score)
@@ -39,7 +39,7 @@ void UScoreBadgeProviderMission_C::GetTotalScore(EStatCategory ScoreCategory, in
 // Function ScoreBadgeProviderMission.ScoreBadgeProviderMission_C.GetScoreBadgeInfos
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EStatCategory                  ScoreCategory                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EStatCategory                  ScoreCategory                  (Parm, ZeroConstructor, IsPlainOldData)
 // TArray<struct FCollectionMissionBadgeDisplayInfo> BadgeInfos                     (Parm, OutParm, ZeroConstructor)
 
 void UScoreBadgeProviderMission_C::GetScoreBadgeInfos(EStatCategory ScoreCategory, TArray<struct FCollectionMissionBadgeDisplayInfo>* BadgeInfos)

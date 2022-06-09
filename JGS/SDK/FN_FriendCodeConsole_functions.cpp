@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UFriendCodeConsole_C::Construct()
 // Function FriendCodeConsole.FriendCodeConsole_C.OnSendFriendCodeMessageComplete
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bMessageSent                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bMessageSent                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFriendCodeConsole_C::OnSendFriendCodeMessageComplete(bool bMessageSent)
 {
@@ -69,7 +69,7 @@ void UFriendCodeConsole_C::OnClicked()
 // Function FriendCodeConsole.FriendCodeConsole_C.ExecuteUbergraph_FriendCodeConsole
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFriendCodeConsole_C::ExecuteUbergraph_FriendCodeConsole(int EntryPoint)
 {

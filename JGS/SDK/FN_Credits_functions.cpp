@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -66,7 +66,7 @@ void UCredits_C::ScrollCredits()
 // Function Credits.Credits_C.ToggleScrollTimer
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           EnableTimer                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           EnableTimer                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCredits_C::ToggleScrollTimer(bool EnableTimer)
 {
@@ -86,9 +86,9 @@ void UCredits_C::ToggleScrollTimer(bool EnableTimer)
 // Function Credits.Credits_C.HandleBack
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UCredits_C::HandleBack(bool* Passthrough)
+void UCredits_C::HandleBack(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Credits.Credits_C.HandleBack");
 
@@ -100,8 +100,8 @@ void UCredits_C::HandleBack(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -176,7 +176,7 @@ void UCredits_C::Construct()
 // Function Credits.Credits_C.ExecuteUbergraph_Credits
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCredits_C::ExecuteUbergraph_Credits(int EntryPoint)
 {

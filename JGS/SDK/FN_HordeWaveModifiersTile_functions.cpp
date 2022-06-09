@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UHordeWaveModifiersTile_C::PlayIntro()
 // Function HordeWaveModifiersTile.HordeWaveModifiersTile_C.SetModifierItem
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               ModifierItem                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               ModifierItem                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHordeWaveModifiersTile_C::SetModifierItem(class UFortItem* ModifierItem)
 {
@@ -69,7 +69,7 @@ void UHordeWaveModifiersTile_C::OnAnimReadyForNextModifier()
 // Function HordeWaveModifiersTile.HordeWaveModifiersTile_C.SetData
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 InData                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 InData                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHordeWaveModifiersTile_C::SetData(class UObject* InData)
 {
@@ -89,7 +89,7 @@ void UHordeWaveModifiersTile_C::SetData(class UObject* InData)
 // Function HordeWaveModifiersTile.HordeWaveModifiersTile_C.ExecuteUbergraph_HordeWaveModifiersTile
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UHordeWaveModifiersTile_C::ExecuteUbergraph_HordeWaveModifiersTile(int EntryPoint)
 {

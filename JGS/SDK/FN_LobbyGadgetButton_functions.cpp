@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,23 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function LobbyGadgetButton.LobbyGadgetButton_C.Focus
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ULobbyGadgetButton_C::Focus()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function LobbyGadgetButton.LobbyGadgetButton_C.Focus");
-
-	ULobbyGadgetButton_C_Focus_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function LobbyGadgetButton.LobbyGadgetButton_C.GetLocked
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
@@ -54,7 +37,7 @@ void ULobbyGadgetButton_C::GetLocked(bool* bLocked)
 // Function LobbyGadgetButton.LobbyGadgetButton_C.SetLocked
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bLocked                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bLocked                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyGadgetButton_C::SetLocked(bool bLocked)
 {
@@ -96,7 +79,7 @@ void ULobbyGadgetButton_C::GetGadgetItem(class UFortWorldItem** GadgetItem)
 // Function LobbyGadgetButton.LobbyGadgetButton_C.Refresh
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortWorldItem*          WorldItem                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortWorldItem*          WorldItem                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyGadgetButton_C::Refresh(class UFortWorldItem* WorldItem)
 {
@@ -116,7 +99,7 @@ void ULobbyGadgetButton_C::Refresh(class UFortWorldItem* WorldItem)
 // Function LobbyGadgetButton.LobbyGadgetButton_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyGadgetButton_C::PreConstruct(bool* IsDesignTime)
 {
@@ -136,7 +119,7 @@ void ULobbyGadgetButton_C::PreConstruct(bool* IsDesignTime)
 // Function LobbyGadgetButton.LobbyGadgetButton_C.BndEvt__Button_K2Node_ComponentBoundEvent_81_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyGadgetButton_C::BndEvt__Button_K2Node_ComponentBoundEvent_81_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -156,7 +139,7 @@ void ULobbyGadgetButton_C::BndEvt__Button_K2Node_ComponentBoundEvent_81_CommonBu
 // Function LobbyGadgetButton.LobbyGadgetButton_C.BndEvt__Button_K2Node_ComponentBoundEvent_96_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyGadgetButton_C::BndEvt__Button_K2Node_ComponentBoundEvent_96_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -176,7 +159,7 @@ void ULobbyGadgetButton_C::BndEvt__Button_K2Node_ComponentBoundEvent_96_CommonBu
 // Function LobbyGadgetButton.LobbyGadgetButton_C.ExecuteUbergraph_LobbyGadgetButton
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyGadgetButton_C::ExecuteUbergraph_LobbyGadgetButton(int EntryPoint)
 {
@@ -196,7 +179,7 @@ void ULobbyGadgetButton_C::ExecuteUbergraph_LobbyGadgetButton(int EntryPoint)
 // Function LobbyGadgetButton.LobbyGadgetButton_C.OnButtonHovered__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ULobbyGadgetButton_C*    GadgetButton                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class ULobbyGadgetButton_C*    GadgetButton                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyGadgetButton_C::OnButtonHovered__DelegateSignature(class ULobbyGadgetButton_C* GadgetButton)
 {
@@ -216,7 +199,7 @@ void ULobbyGadgetButton_C::OnButtonHovered__DelegateSignature(class ULobbyGadget
 // Function LobbyGadgetButton.LobbyGadgetButton_C.OnButtonClicked__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ULobbyGadgetButton_C*    GadgetButton                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class ULobbyGadgetButton_C*    GadgetButton                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void ULobbyGadgetButton_C::OnButtonClicked__DelegateSignature(class ULobbyGadgetButton_C* GadgetButton)
 {

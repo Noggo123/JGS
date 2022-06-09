@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -80,6 +80,26 @@ void UTabBrightnessOptions_C::Construct()
 }
 
 
+// Function TabBrightnessOptions.TabBrightnessOptions_C.BndEvt__MouseSensitivity_K2Node_ComponentBoundEvent_0_SliderChanged__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// float                          Slider_Value                   (Parm, ZeroConstructor, IsPlainOldData)
+
+void UTabBrightnessOptions_C::BndEvt__MouseSensitivity_K2Node_ComponentBoundEvent_0_SliderChanged__DelegateSignature(float Slider_Value)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function TabBrightnessOptions.TabBrightnessOptions_C.BndEvt__MouseSensitivity_K2Node_ComponentBoundEvent_0_SliderChanged__DelegateSignature");
+
+	UTabBrightnessOptions_C_BndEvt__MouseSensitivity_K2Node_ComponentBoundEvent_0_SliderChanged__DelegateSignature_Params params;
+	params.Slider_Value = Slider_Value;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function TabBrightnessOptions.TabBrightnessOptions_C.UpdateOptionsTab
 // (Event, Protected, BlueprintCallable, BlueprintEvent)
 
@@ -114,30 +134,10 @@ void UTabBrightnessOptions_C::CenterOnTab()
 }
 
 
-// Function TabBrightnessOptions.TabBrightnessOptions_C.BndEvt__OptionsMenuSlider_K2Node_ComponentBoundEvent_10_SliderChanged__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// float                          Slider_Value                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UTabBrightnessOptions_C::BndEvt__OptionsMenuSlider_K2Node_ComponentBoundEvent_10_SliderChanged__DelegateSignature(float Slider_Value)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TabBrightnessOptions.TabBrightnessOptions_C.BndEvt__OptionsMenuSlider_K2Node_ComponentBoundEvent_10_SliderChanged__DelegateSignature");
-
-	UTabBrightnessOptions_C_BndEvt__OptionsMenuSlider_K2Node_ComponentBoundEvent_10_SliderChanged__DelegateSignature_Params params;
-	params.Slider_Value = Slider_Value;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function TabBrightnessOptions.TabBrightnessOptions_C.ExecuteUbergraph_TabBrightnessOptions
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTabBrightnessOptions_C::ExecuteUbergraph_TabBrightnessOptions(int EntryPoint)
 {

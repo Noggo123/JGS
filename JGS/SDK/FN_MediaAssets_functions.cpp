@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,16 +12,18 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function MediaAssets.MediaSource.Validate
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function MediaAssets.MediaOverlays.GetTexts
+// (Final, Native, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// TArray<struct FMediaPlayerOverlay> OutTexts                       (Parm, OutParm, ZeroConstructor)
+// struct FTimespan               Time                           (Parm)
 
-bool UMediaSource::Validate()
+void UMediaOverlays::GetTexts(const struct FTimespan& Time, TArray<struct FMediaPlayerOverlay>* OutTexts)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaSource.Validate");
+	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaOverlays.GetTexts");
 
-	UMediaSource_Validate_Params params;
+	UMediaOverlays_GetTexts_Params params;
+	params.Time = Time;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -30,20 +32,23 @@ bool UMediaSource::Validate()
 
 	fn->FunctionFlags = flags;
 
-	return params.ReturnValue;
+	if (OutTexts != nullptr)
+		*OutTexts = params.OutTexts;
 }
 
 
-// Function MediaAssets.MediaSource.GetUrl
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function MediaAssets.MediaOverlays.GetSubtitles
+// (Final, Native, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FString                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
+// TArray<struct FMediaPlayerOverlay> OutSubtitles                   (Parm, OutParm, ZeroConstructor)
+// struct FTimespan               Time                           (Parm)
 
-struct FString UMediaSource::GetUrl()
+void UMediaOverlays::GetSubtitles(const struct FTimespan& Time, TArray<struct FMediaPlayerOverlay>* OutSubtitles)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaSource.GetUrl");
+	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaOverlays.GetSubtitles");
 
-	UMediaSource_GetUrl_Params params;
+	UMediaOverlays_GetSubtitles_Params params;
+	params.Time = Time;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -52,43 +57,23 @@ struct FString UMediaSource::GetUrl()
 
 	fn->FunctionFlags = flags;
 
-	return params.ReturnValue;
+	if (OutSubtitles != nullptr)
+		*OutSubtitles = params.OutSubtitles;
 }
 
 
-// Function MediaAssets.FileMediaSource.SetFilePath
-// (Final, Native, Public, BlueprintCallable)
+// Function MediaAssets.MediaOverlays.GetCaptions
+// (Final, Native, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FString                 Path                           (Parm, ZeroConstructor)
+// TArray<struct FMediaPlayerOverlay> OutCaptions                    (Parm, OutParm, ZeroConstructor)
+// struct FTimespan               Time                           (Parm)
 
-void UFileMediaSource::SetFilePath(const struct FString& Path)
+void UMediaOverlays::GetCaptions(const struct FTimespan& Time, TArray<struct FMediaPlayerOverlay>* OutCaptions)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.FileMediaSource.SetFilePath");
+	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaOverlays.GetCaptions");
 
-	UFileMediaSource_SetFilePath_Params params;
-	params.Path = Path;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function MediaAssets.MediaBlueprintFunctionLibrary.EnumerateWebcamCaptureDevices
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
-// Parameters:
-// TArray<struct FMediaCaptureDevice> OutDevices                     (Parm, OutParm, ZeroConstructor)
-// int                            Filter                         (Parm, ZeroConstructor, IsPlainOldData)
-
-void UMediaBlueprintFunctionLibrary::STATIC_EnumerateWebcamCaptureDevices(int Filter, TArray<struct FMediaCaptureDevice>* OutDevices)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaBlueprintFunctionLibrary.EnumerateWebcamCaptureDevices");
-
-	UMediaBlueprintFunctionLibrary_EnumerateWebcamCaptureDevices_Params params;
-	params.Filter = Filter;
+	UMediaOverlays_GetCaptions_Params params;
+	params.Time = Time;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -97,58 +82,8 @@ void UMediaBlueprintFunctionLibrary::STATIC_EnumerateWebcamCaptureDevices(int Fi
 
 	fn->FunctionFlags = flags;
 
-	if (OutDevices != nullptr)
-		*OutDevices = params.OutDevices;
-}
-
-
-// Function MediaAssets.MediaBlueprintFunctionLibrary.EnumerateVideoCaptureDevices
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
-// Parameters:
-// TArray<struct FMediaCaptureDevice> OutDevices                     (Parm, OutParm, ZeroConstructor)
-// int                            Filter                         (Parm, ZeroConstructor, IsPlainOldData)
-
-void UMediaBlueprintFunctionLibrary::STATIC_EnumerateVideoCaptureDevices(int Filter, TArray<struct FMediaCaptureDevice>* OutDevices)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaBlueprintFunctionLibrary.EnumerateVideoCaptureDevices");
-
-	UMediaBlueprintFunctionLibrary_EnumerateVideoCaptureDevices_Params params;
-	params.Filter = Filter;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (OutDevices != nullptr)
-		*OutDevices = params.OutDevices;
-}
-
-
-// Function MediaAssets.MediaBlueprintFunctionLibrary.EnumerateAudioCaptureDevices
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
-// Parameters:
-// TArray<struct FMediaCaptureDevice> OutDevices                     (Parm, OutParm, ZeroConstructor)
-// int                            Filter                         (Parm, ZeroConstructor, IsPlainOldData)
-
-void UMediaBlueprintFunctionLibrary::STATIC_EnumerateAudioCaptureDevices(int Filter, TArray<struct FMediaCaptureDevice>* OutDevices)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaBlueprintFunctionLibrary.EnumerateAudioCaptureDevices");
-
-	UMediaBlueprintFunctionLibrary_EnumerateAudioCaptureDevices_Params params;
-	params.Filter = Filter;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (OutDevices != nullptr)
-		*OutDevices = params.OutDevices;
+	if (OutCaptions != nullptr)
+		*OutCaptions = params.OutCaptions;
 }
 
 
@@ -222,20 +157,17 @@ bool UMediaPlayer::SupportsRate(float Rate, bool Unthinned)
 }
 
 
-// Function MediaAssets.MediaPlayer.SetViewRotation
-// (Final, Native, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// Function MediaAssets.MediaPlayer.SetVideoTexture
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FRotator                Rotation                       (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-// bool                           Absolute                       (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// class UMediaTexture*           NewTexture                     (Parm, ZeroConstructor, IsPlainOldData)
 
-bool UMediaPlayer::SetViewRotation(const struct FRotator& Rotation, bool Absolute)
+void UMediaPlayer::SetVideoTexture(class UMediaTexture* NewTexture)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.SetViewRotation");
+	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.SetVideoTexture");
 
-	UMediaPlayer_SetViewRotation_Params params;
-	params.Rotation = Rotation;
-	params.Absolute = Absolute;
+	UMediaPlayer_SetVideoTexture_Params params;
+	params.NewTexture = NewTexture;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -243,27 +175,20 @@ bool UMediaPlayer::SetViewRotation(const struct FRotator& Rotation, bool Absolut
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
-// Function MediaAssets.MediaPlayer.SetViewField
+// Function MediaAssets.MediaPlayer.SetSoundWave
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                          Horizontal                     (Parm, ZeroConstructor, IsPlainOldData)
-// float                          Vertical                       (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           Absolute                       (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// class UMediaSoundWave*         NewSoundWave                   (Parm, ZeroConstructor, IsPlainOldData)
 
-bool UMediaPlayer::SetViewField(float Horizontal, float Vertical, bool Absolute)
+void UMediaPlayer::SetSoundWave(class UMediaSoundWave* NewSoundWave)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.SetViewField");
+	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.SetSoundWave");
 
-	UMediaPlayer_SetViewField_Params params;
-	params.Horizontal = Horizontal;
-	params.Vertical = Vertical;
-	params.Absolute = Absolute;
+	UMediaPlayer_SetSoundWave_Params params;
+	params.NewSoundWave = NewSoundWave;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -271,64 +196,6 @@ bool UMediaPlayer::SetViewField(float Horizontal, float Vertical, bool Absolute)
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MediaAssets.MediaPlayer.SetVideoTrackFrameRate
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int                            TrackIndex                     (Parm, ZeroConstructor, IsPlainOldData)
-// int                            FormatIndex                    (Parm, ZeroConstructor, IsPlainOldData)
-// float                          FrameRate                      (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UMediaPlayer::SetVideoTrackFrameRate(int TrackIndex, int FormatIndex, float FrameRate)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.SetVideoTrackFrameRate");
-
-	UMediaPlayer_SetVideoTrackFrameRate_Params params;
-	params.TrackIndex = TrackIndex;
-	params.FormatIndex = FormatIndex;
-	params.FrameRate = FrameRate;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MediaAssets.MediaPlayer.SetTrackFormat
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EMediaPlayerTrack              TrackType                      (Parm, ZeroConstructor, IsPlainOldData)
-// int                            TrackIndex                     (Parm, ZeroConstructor, IsPlainOldData)
-// int                            FormatIndex                    (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UMediaPlayer::SetTrackFormat(EMediaPlayerTrack TrackType, int TrackIndex, int FormatIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.SetTrackFormat");
-
-	UMediaPlayer_SetTrackFormat_Params params;
-	params.TrackType = TrackType;
-	params.TrackIndex = TrackIndex;
-	params.FormatIndex = FormatIndex;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
@@ -353,6 +220,27 @@ bool UMediaPlayer::SetRate(float Rate)
 	fn->FunctionFlags = flags;
 
 	return params.ReturnValue;
+}
+
+
+// Function MediaAssets.MediaPlayer.SetOverlays
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UMediaOverlays*          NewOverlays                    (Parm, ZeroConstructor, IsPlainOldData)
+
+void UMediaPlayer::SetOverlays(class UMediaOverlays* NewOverlays)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.SetOverlays");
+
+	UMediaPlayer_SetOverlays_Params params;
+	params.NewOverlays = NewOverlays;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
 }
 
 
@@ -815,246 +703,6 @@ bool UMediaPlayer::IsLooping()
 }
 
 
-// Function MediaAssets.MediaPlayer.IsConnecting
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UMediaPlayer::IsConnecting()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.IsConnecting");
-
-	UMediaPlayer_IsConnecting_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MediaAssets.MediaPlayer.IsBuffering
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UMediaPlayer::IsBuffering()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.IsBuffering");
-
-	UMediaPlayer_IsBuffering_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MediaAssets.MediaPlayer.HasError
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UMediaPlayer::HasError()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.HasError");
-
-	UMediaPlayer_HasError_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MediaAssets.MediaPlayer.GetViewRotation
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FRotator                ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
-
-struct FRotator UMediaPlayer::GetViewRotation()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.GetViewRotation");
-
-	UMediaPlayer_GetViewRotation_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MediaAssets.MediaPlayer.GetVideoTrackType
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int                            TrackIndex                     (Parm, ZeroConstructor, IsPlainOldData)
-// int                            FormatIndex                    (Parm, ZeroConstructor, IsPlainOldData)
-// struct FString                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
-
-struct FString UMediaPlayer::GetVideoTrackType(int TrackIndex, int FormatIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.GetVideoTrackType");
-
-	UMediaPlayer_GetVideoTrackType_Params params;
-	params.TrackIndex = TrackIndex;
-	params.FormatIndex = FormatIndex;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MediaAssets.MediaPlayer.GetVideoTrackFrameRates
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int                            TrackIndex                     (Parm, ZeroConstructor, IsPlainOldData)
-// int                            FormatIndex                    (Parm, ZeroConstructor, IsPlainOldData)
-// struct FFloatRange             ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FFloatRange UMediaPlayer::GetVideoTrackFrameRates(int TrackIndex, int FormatIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.GetVideoTrackFrameRates");
-
-	UMediaPlayer_GetVideoTrackFrameRates_Params params;
-	params.TrackIndex = TrackIndex;
-	params.FormatIndex = FormatIndex;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MediaAssets.MediaPlayer.GetVideoTrackFrameRate
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int                            TrackIndex                     (Parm, ZeroConstructor, IsPlainOldData)
-// int                            FormatIndex                    (Parm, ZeroConstructor, IsPlainOldData)
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-float UMediaPlayer::GetVideoTrackFrameRate(int TrackIndex, int FormatIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.GetVideoTrackFrameRate");
-
-	UMediaPlayer_GetVideoTrackFrameRate_Params params;
-	params.TrackIndex = TrackIndex;
-	params.FormatIndex = FormatIndex;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MediaAssets.MediaPlayer.GetVideoTrackDimensions
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int                            TrackIndex                     (Parm, ZeroConstructor, IsPlainOldData)
-// int                            FormatIndex                    (Parm, ZeroConstructor, IsPlainOldData)
-// struct FIntPoint               ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
-
-struct FIntPoint UMediaPlayer::GetVideoTrackDimensions(int TrackIndex, int FormatIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.GetVideoTrackDimensions");
-
-	UMediaPlayer_GetVideoTrackDimensions_Params params;
-	params.TrackIndex = TrackIndex;
-	params.FormatIndex = FormatIndex;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MediaAssets.MediaPlayer.GetVideoTrackAspectRatio
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int                            TrackIndex                     (Parm, ZeroConstructor, IsPlainOldData)
-// int                            FormatIndex                    (Parm, ZeroConstructor, IsPlainOldData)
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-float UMediaPlayer::GetVideoTrackAspectRatio(int TrackIndex, int FormatIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.GetVideoTrackAspectRatio");
-
-	UMediaPlayer_GetVideoTrackAspectRatio_Params params;
-	params.TrackIndex = TrackIndex;
-	params.FormatIndex = FormatIndex;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MediaAssets.MediaPlayer.GetVerticalFieldOfView
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-float UMediaPlayer::GetVerticalFieldOfView()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.GetVerticalFieldOfView");
-
-	UMediaPlayer_GetVerticalFieldOfView_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
 // Function MediaAssets.MediaPlayer.GetUrl
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -1089,32 +737,6 @@ struct FString UMediaPlayer::GetTrackLanguage(EMediaPlayerTrack TrackType, int T
 	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.GetTrackLanguage");
 
 	UMediaPlayer_GetTrackLanguage_Params params;
-	params.TrackType = TrackType;
-	params.TrackIndex = TrackIndex;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MediaAssets.MediaPlayer.GetTrackFormat
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EMediaPlayerTrack              TrackType                      (Parm, ZeroConstructor, IsPlainOldData)
-// int                            TrackIndex                     (Parm, ZeroConstructor, IsPlainOldData)
-// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-int UMediaPlayer::GetTrackFormat(EMediaPlayerTrack TrackType, int TrackIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.GetTrackFormat");
-
-	UMediaPlayer_GetTrackFormat_Params params;
 	params.TrackType = TrackType;
 	params.TrackIndex = TrackIndex;
 
@@ -1177,31 +799,6 @@ struct FTimespan UMediaPlayer::GetTime()
 }
 
 
-// Function MediaAssets.MediaPlayer.GetSupportedRates
-// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<struct FFloatRange>     OutRates                       (Parm, OutParm, ZeroConstructor)
-// bool                           Unthinned                      (Parm, ZeroConstructor, IsPlainOldData)
-
-void UMediaPlayer::GetSupportedRates(bool Unthinned, TArray<struct FFloatRange>* OutRates)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.GetSupportedRates");
-
-	UMediaPlayer_GetSupportedRates_Params params;
-	params.Unthinned = Unthinned;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (OutRates != nullptr)
-		*OutRates = params.OutRates;
-}
-
-
 // Function MediaAssets.MediaPlayer.GetSelectedTrack
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -1226,6 +823,30 @@ int UMediaPlayer::GetSelectedTrack(EMediaPlayerTrack TrackType)
 }
 
 
+// Function MediaAssets.MediaPlayer.GetReverseRates
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           Unthinned                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FFloatRange             ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FFloatRange UMediaPlayer::GetReverseRates(bool Unthinned)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.GetReverseRates");
+
+	UMediaPlayer_GetReverseRates_Params params;
+	params.Unthinned = Unthinned;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
 // Function MediaAssets.MediaPlayer.GetRate
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -1236,50 +857,6 @@ float UMediaPlayer::GetRate()
 	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.GetRate");
 
 	UMediaPlayer_GetRate_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MediaAssets.MediaPlayer.GetPlaylistIndex
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-int UMediaPlayer::GetPlaylistIndex()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.GetPlaylistIndex");
-
-	UMediaPlayer_GetPlaylistIndex_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MediaAssets.MediaPlayer.GetPlaylist
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UMediaPlaylist*          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UMediaPlaylist* UMediaPlayer::GetPlaylist()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.GetPlaylist");
-
-	UMediaPlayer_GetPlaylist_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -1338,64 +915,18 @@ int UMediaPlayer::GetNumTracks(EMediaPlayerTrack TrackType)
 }
 
 
-// Function MediaAssets.MediaPlayer.GetNumTrackFormats
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function MediaAssets.MediaPlayer.GetForwardRates
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// EMediaPlayerTrack              TrackType                      (Parm, ZeroConstructor, IsPlainOldData)
-// int                            TrackIndex                     (Parm, ZeroConstructor, IsPlainOldData)
-// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// bool                           Unthinned                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FFloatRange             ReturnValue                    (Parm, OutParm, ReturnParm)
 
-int UMediaPlayer::GetNumTrackFormats(EMediaPlayerTrack TrackType, int TrackIndex)
+struct FFloatRange UMediaPlayer::GetForwardRates(bool Unthinned)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.GetNumTrackFormats");
+	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.GetForwardRates");
 
-	UMediaPlayer_GetNumTrackFormats_Params params;
-	params.TrackType = TrackType;
-	params.TrackIndex = TrackIndex;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MediaAssets.MediaPlayer.GetMediaName
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FText                   ReturnValue                    (Parm, OutParm, ReturnParm)
-
-struct FText UMediaPlayer::GetMediaName()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.GetMediaName");
-
-	UMediaPlayer_GetMediaName_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MediaAssets.MediaPlayer.GetHorizontalFieldOfView
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-float UMediaPlayer::GetHorizontalFieldOfView()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.GetHorizontalFieldOfView");
-
-	UMediaPlayer_GetHorizontalFieldOfView_Params params;
+	UMediaPlayer_GetForwardRates_Params params;
+	params.Unthinned = Unthinned;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -1440,84 +971,6 @@ struct FName UMediaPlayer::GetDesiredPlayerName()
 	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.GetDesiredPlayerName");
 
 	UMediaPlayer_GetDesiredPlayerName_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MediaAssets.MediaPlayer.GetAudioTrackType
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int                            TrackIndex                     (Parm, ZeroConstructor, IsPlainOldData)
-// int                            FormatIndex                    (Parm, ZeroConstructor, IsPlainOldData)
-// struct FString                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
-
-struct FString UMediaPlayer::GetAudioTrackType(int TrackIndex, int FormatIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.GetAudioTrackType");
-
-	UMediaPlayer_GetAudioTrackType_Params params;
-	params.TrackIndex = TrackIndex;
-	params.FormatIndex = FormatIndex;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MediaAssets.MediaPlayer.GetAudioTrackSampleRate
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int                            TrackIndex                     (Parm, ZeroConstructor, IsPlainOldData)
-// int                            FormatIndex                    (Parm, ZeroConstructor, IsPlainOldData)
-// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-int UMediaPlayer::GetAudioTrackSampleRate(int TrackIndex, int FormatIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.GetAudioTrackSampleRate");
-
-	UMediaPlayer_GetAudioTrackSampleRate_Params params;
-	params.TrackIndex = TrackIndex;
-	params.FormatIndex = FormatIndex;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MediaAssets.MediaPlayer.GetAudioTrackChannels
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int                            TrackIndex                     (Parm, ZeroConstructor, IsPlainOldData)
-// int                            FormatIndex                    (Parm, ZeroConstructor, IsPlainOldData)
-// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-int UMediaPlayer::GetAudioTrackChannels(int TrackIndex, int FormatIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlayer.GetAudioTrackChannels");
-
-	UMediaPlayer_GetAudioTrackChannels_Params params;
-	params.TrackIndex = TrackIndex;
-	params.FormatIndex = FormatIndex;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -1618,39 +1071,12 @@ bool UMediaPlayer::CanPause()
 }
 
 
-// Function MediaAssets.MediaPlaylist.Replace
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
-// class UMediaSource*            Replacement                    (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UMediaPlaylist::Replace(int Index, class UMediaSource* Replacement)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlaylist.Replace");
-
-	UMediaPlaylist_Replace_Params params;
-	params.Index = Index;
-	params.Replacement = Replacement;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
 // Function MediaAssets.MediaPlaylist.RemoveAt
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UMediaPlaylist::RemoveAt(int Index)
+void UMediaPlaylist::RemoveAt(int Index)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlaylist.RemoveAt");
 
@@ -1663,8 +1089,6 @@ bool UMediaPlaylist::RemoveAt(int Index)
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
@@ -1672,9 +1096,8 @@ bool UMediaPlaylist::RemoveAt(int Index)
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class UMediaSource*            MediaSource                    (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UMediaPlaylist::Remove(class UMediaSource* MediaSource)
+void UMediaPlaylist::Remove(class UMediaSource* MediaSource)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlaylist.Remove");
 
@@ -1687,8 +1110,6 @@ bool UMediaPlaylist::Remove(class UMediaSource* MediaSource)
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
@@ -1740,10 +1161,10 @@ void UMediaPlaylist::Insert(class UMediaSource* MediaSource, int Index)
 // Function MediaAssets.MediaPlaylist.GetRandom
 // (Final, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
-// int                            OutIndex                       (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// int                            InOutIndex                     (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 // class UMediaSource*            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-class UMediaSource* UMediaPlaylist::GetRandom(int* OutIndex)
+class UMediaSource* UMediaPlaylist::GetRandom(int* InOutIndex)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlaylist.GetRandom");
 
@@ -1756,8 +1177,8 @@ class UMediaSource* UMediaPlaylist::GetRandom(int* OutIndex)
 
 	fn->FunctionFlags = flags;
 
-	if (OutIndex != nullptr)
-		*OutIndex = params.OutIndex;
+	if (InOutIndex != nullptr)
+		*InOutIndex = params.InOutIndex;
 
 	return params.ReturnValue;
 }
@@ -1839,61 +1260,12 @@ class UMediaSource* UMediaPlaylist::Get(int Index)
 }
 
 
-// Function MediaAssets.MediaPlaylist.AddUrl
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FString                 URL                            (Parm, ZeroConstructor)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UMediaPlaylist::AddUrl(const struct FString& URL)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlaylist.AddUrl");
-
-	UMediaPlaylist_AddUrl_Params params;
-	params.URL = URL;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MediaAssets.MediaPlaylist.AddFile
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FString                 FilePath                       (Parm, ZeroConstructor)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UMediaPlaylist::AddFile(const struct FString& FilePath)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlaylist.AddFile");
-
-	UMediaPlaylist_AddFile_Params params;
-	params.FilePath = FilePath;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
 // Function MediaAssets.MediaPlaylist.Add
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class UMediaSource*            MediaSource                    (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UMediaPlaylist::Add(class UMediaSource* MediaSource)
+void UMediaPlaylist::Add(class UMediaSource* MediaSource)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaPlaylist.Add");
 
@@ -1906,43 +1278,20 @@ bool UMediaPlaylist::Add(class UMediaSource* MediaSource)
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
-// Function MediaAssets.MediaSoundComponent.SetMediaPlayer
+// Function MediaAssets.FileMediaSource.SetFilePath
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class UMediaPlayer*            NewMediaPlayer                 (Parm, ZeroConstructor, IsPlainOldData)
+// struct FString                 Path                           (Parm, ZeroConstructor)
 
-void UMediaSoundComponent::SetMediaPlayer(class UMediaPlayer* NewMediaPlayer)
+void UFileMediaSource::SetFilePath(const struct FString& Path)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaSoundComponent.SetMediaPlayer");
+	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.FileMediaSource.SetFilePath");
 
-	UMediaSoundComponent_SetMediaPlayer_Params params;
-	params.NewMediaPlayer = NewMediaPlayer;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function MediaAssets.MediaTexture.SetMediaPlayer
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UMediaPlayer*            NewMediaPlayer                 (Parm, ZeroConstructor, IsPlainOldData)
-
-void UMediaTexture::SetMediaPlayer(class UMediaPlayer* NewMediaPlayer)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaTexture.SetMediaPlayer");
-
-	UMediaTexture_SetMediaPlayer_Params params;
-	params.NewMediaPlayer = NewMediaPlayer;
+	UFileMediaSource_SetFilePath_Params params;
+	params.Path = Path;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -1963,28 +1312,6 @@ int UMediaTexture::GetWidth()
 	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaTexture.GetWidth");
 
 	UMediaTexture_GetWidth_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function MediaAssets.MediaTexture.GetMediaPlayer
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UMediaPlayer*            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class UMediaPlayer* UMediaTexture::GetMediaPlayer()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MediaAssets.MediaTexture.GetMediaPlayer");
-
-	UMediaTexture_GetMediaPlayer_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;

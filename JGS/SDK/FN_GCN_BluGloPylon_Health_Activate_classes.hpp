@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,11 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass GCN_BluGloPylon_Health_Activate.GCN_BluGloPylon_Health_Activate_C
-// 0x0008 (0x0498 - 0x0490)
+// 0x0008 (0x0470 - 0x0468)
 class AGCN_BluGloPylon_Health_Activate_C : public AFortGameplayCueNotify_Looping
 {
 public:
-	class UTexture*                                    IconTexture;                                              // 0x0490(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UTexture*                                    IconTexture;                                              // 0x0468(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,19 +12,88 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function GameplayTags.BlueprintGameplayTagLibrary.RemoveGameplayTag
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Function GameplayTags.GameplayTagAssetInterface.HasMatchingGameplayTag
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayTagContainer   TagContainer                   (Parm, OutParm, ReferenceParm)
-// struct FGameplayTag            Tag                            (Parm)
+// struct FGameplayTag            TagToCheck                     (Parm)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UBlueprintGameplayTagLibrary::STATIC_RemoveGameplayTag(const struct FGameplayTag& Tag, struct FGameplayTagContainer* TagContainer)
+bool UGameplayTagAssetInterface::HasMatchingGameplayTag(const struct FGameplayTag& TagToCheck)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayTags.BlueprintGameplayTagLibrary.RemoveGameplayTag");
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayTags.GameplayTagAssetInterface.HasMatchingGameplayTag");
 
-	UBlueprintGameplayTagLibrary_RemoveGameplayTag_Params params;
-	params.Tag = Tag;
+	UGameplayTagAssetInterface_HasMatchingGameplayTag_Params params;
+	params.TagToCheck = TagToCheck;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayTags.GameplayTagAssetInterface.HasAnyMatchingGameplayTags
+// (Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FGameplayTagContainer   TagContainer                   (ConstParm, Parm, OutParm, ReferenceParm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UGameplayTagAssetInterface::HasAnyMatchingGameplayTags(const struct FGameplayTagContainer& TagContainer)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayTags.GameplayTagAssetInterface.HasAnyMatchingGameplayTags");
+
+	UGameplayTagAssetInterface_HasAnyMatchingGameplayTags_Params params;
+	params.TagContainer = TagContainer;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayTags.GameplayTagAssetInterface.HasAllMatchingGameplayTags
+// (Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FGameplayTagContainer   TagContainer                   (ConstParm, Parm, OutParm, ReferenceParm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UGameplayTagAssetInterface::HasAllMatchingGameplayTags(const struct FGameplayTagContainer& TagContainer)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayTags.GameplayTagAssetInterface.HasAllMatchingGameplayTags");
+
+	UGameplayTagAssetInterface_HasAllMatchingGameplayTags_Params params;
+	params.TagContainer = TagContainer;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayTags.GameplayTagAssetInterface.GetOwnedGameplayTags
+// (Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FGameplayTagContainer   TagContainer                   (Parm, OutParm)
+
+void UGameplayTagAssetInterface::GetOwnedGameplayTags(struct FGameplayTagContainer* TagContainer)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayTags.GameplayTagAssetInterface.GetOwnedGameplayTags");
+
+	UGameplayTagAssetInterface_GetOwnedGameplayTags_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -35,8 +104,6 @@ bool UBlueprintGameplayTagLibrary::STATIC_RemoveGameplayTag(const struct FGamepl
 
 	if (TagContainer != nullptr)
 		*TagContainer = params.TagContainer;
-
-	return params.ReturnValue;
 }
 
 
@@ -733,13 +800,41 @@ void UBlueprintGameplayTagLibrary::STATIC_AppendGameplayTagContainers(const stru
 }
 
 
-// Function GameplayTags.BlueprintGameplayTagLibrary.AddGameplayTag
+// Function GameplayTags.BlueprintGameplayTagLibrary.AddGameplayTagToContainer
 // (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // struct FGameplayTagContainer   TagContainer                   (Parm, OutParm, ReferenceParm)
+// struct FGameplayTag            Tag                            (ConstParm, Parm, OutParm, ReferenceParm)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UBlueprintGameplayTagLibrary::STATIC_AddGameplayTagToContainer(const struct FGameplayTag& Tag, struct FGameplayTagContainer* TagContainer)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GameplayTags.BlueprintGameplayTagLibrary.AddGameplayTagToContainer");
+
+	UBlueprintGameplayTagLibrary_AddGameplayTagToContainer_Params params;
+	params.Tag = Tag;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (TagContainer != nullptr)
+		*TagContainer = params.TagContainer;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayTags.BlueprintGameplayTagLibrary.AddGameplayTag
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FGameplayTagContainer   InOutTagContainer              (Parm, OutParm, ReferenceParm)
 // struct FGameplayTag            Tag                            (Parm)
 
-void UBlueprintGameplayTagLibrary::STATIC_AddGameplayTag(const struct FGameplayTag& Tag, struct FGameplayTagContainer* TagContainer)
+void UBlueprintGameplayTagLibrary::STATIC_AddGameplayTag(const struct FGameplayTag& Tag, struct FGameplayTagContainer* InOutTagContainer)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function GameplayTags.BlueprintGameplayTagLibrary.AddGameplayTag");
 
@@ -753,103 +848,8 @@ void UBlueprintGameplayTagLibrary::STATIC_AddGameplayTag(const struct FGameplayT
 
 	fn->FunctionFlags = flags;
 
-	if (TagContainer != nullptr)
-		*TagContainer = params.TagContainer;
-}
-
-
-// Function GameplayTags.GameplayTagAssetInterface.HasMatchingGameplayTag
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FGameplayTag            TagToCheck                     (Parm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UGameplayTagAssetInterface::HasMatchingGameplayTag(const struct FGameplayTag& TagToCheck)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayTags.GameplayTagAssetInterface.HasMatchingGameplayTag");
-
-	UGameplayTagAssetInterface_HasMatchingGameplayTag_Params params;
-	params.TagToCheck = TagToCheck;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayTags.GameplayTagAssetInterface.HasAnyMatchingGameplayTags
-// (Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FGameplayTagContainer   TagContainer                   (ConstParm, Parm, OutParm, ReferenceParm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UGameplayTagAssetInterface::HasAnyMatchingGameplayTags(const struct FGameplayTagContainer& TagContainer)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayTags.GameplayTagAssetInterface.HasAnyMatchingGameplayTags");
-
-	UGameplayTagAssetInterface_HasAnyMatchingGameplayTags_Params params;
-	params.TagContainer = TagContainer;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayTags.GameplayTagAssetInterface.HasAllMatchingGameplayTags
-// (Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FGameplayTagContainer   TagContainer                   (ConstParm, Parm, OutParm, ReferenceParm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UGameplayTagAssetInterface::HasAllMatchingGameplayTags(const struct FGameplayTagContainer& TagContainer)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayTags.GameplayTagAssetInterface.HasAllMatchingGameplayTags");
-
-	UGameplayTagAssetInterface_HasAllMatchingGameplayTags_Params params;
-	params.TagContainer = TagContainer;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function GameplayTags.GameplayTagAssetInterface.GetOwnedGameplayTags
-// (Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FGameplayTagContainer   TagContainer                   (Parm, OutParm)
-
-void UGameplayTagAssetInterface::GetOwnedGameplayTags(struct FGameplayTagContainer* TagContainer)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GameplayTags.GameplayTagAssetInterface.GetOwnedGameplayTags");
-
-	UGameplayTagAssetInterface_GetOwnedGameplayTags_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (TagContainer != nullptr)
-		*TagContainer = params.TagContainer;
+	if (InOutTagContainer != nullptr)
+		*InOutTagContainer = params.InOutTagContainer;
 }
 
 

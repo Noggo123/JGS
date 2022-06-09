@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,9 +17,9 @@ namespace SDK
 // Function Results_BonusXpType.Results_BonusXpType_C.setInformation
 struct UResults_BonusXpType_C_setInformation_Params
 {
-	int                                                InXPAmount;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FText                                       PlayerName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm)
-	struct FName                                       InType;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                InXPAmount;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FText                                       PlayerName;                                               // (Parm)
+	struct FName                                       InType;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_BonusXpType.Results_BonusXpType_C.Construct
@@ -30,13 +30,13 @@ struct UResults_BonusXpType_C_Construct_Params
 // Function Results_BonusXpType.Results_BonusXpType_C.PreConstruct
 struct UResults_BonusXpType_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_BonusXpType.Results_BonusXpType_C.ExecuteUbergraph_Results_BonusXpType
 struct UResults_BonusXpType_C_ExecuteUbergraph_Results_BonusXpType_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

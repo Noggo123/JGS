@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -855,6 +855,42 @@ class ULogoutCallbackProxy* ULogoutCallbackProxy::STATIC_Logout(class UObject* W
 }
 
 
+// Function OnlineSubsystemUtils.TestBeaconClient.ServerPong
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+
+void ATestBeaconClient::ServerPong()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OnlineSubsystemUtils.TestBeaconClient.ServerPong");
+
+	ATestBeaconClient_ServerPong_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function OnlineSubsystemUtils.TestBeaconClient.ClientPing
+// (Net, NetReliable, Native, Event, Public, NetClient)
+
+void ATestBeaconClient::ClientPing()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function OnlineSubsystemUtils.TestBeaconClient.ClientPing");
+
+	ATestBeaconClient_ClientPing_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function OnlineSubsystemUtils.QuitMatchCallbackProxy.QuitMatch
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -910,42 +946,6 @@ class UShowLoginUICallbackProxy* UShowLoginUICallbackProxy::STATIC_ShowExternalL
 	fn->FunctionFlags = flags;
 
 	return params.ReturnValue;
-}
-
-
-// Function OnlineSubsystemUtils.TestBeaconClient.ServerPong
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
-
-void ATestBeaconClient::ServerPong()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OnlineSubsystemUtils.TestBeaconClient.ServerPong");
-
-	ATestBeaconClient_ServerPong_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function OnlineSubsystemUtils.TestBeaconClient.ClientPing
-// (Net, NetReliable, Native, Event, Public, NetClient)
-
-void ATestBeaconClient::ClientPing()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function OnlineSubsystemUtils.TestBeaconClient.ClientPing");
-
-	ATestBeaconClient_ClientPing_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
 }
 
 

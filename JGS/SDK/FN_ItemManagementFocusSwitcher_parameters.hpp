@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -27,8 +27,8 @@ struct UItemManagementFocusSwitcher_C_DeferFocusSwitch_Params
 // Function ItemManagementFocusSwitcher.ItemManagementFocusSwitcher_C.OnFocusReceived
 struct UItemManagementFocusSwitcher_C_OnFocusReceived_Params
 {
-	struct FGeometry*                                  MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	struct FFocusEvent*                                InFocusEvent;                                             // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FGeometry*                                  MyGeometry;                                               // (Parm, IsPlainOldData)
+	struct FFocusEvent*                                InFocusEvent;                                             // (Parm)
 	struct FEventReply                                 ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 

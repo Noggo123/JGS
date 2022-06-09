@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,22 +14,25 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
+// Function LevelSequence.LevelSequencePlayer.CreateLevelSequencePlayer
+struct ULevelSequencePlayer_CreateLevelSequencePlayer_Params
+{
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	class ULevelSequence*                              LevelSequence;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FMovieSceneSequencePlaybackSettings         Settings;                                                 // (Parm)
+	class ULevelSequencePlayer*                        ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
 // Function LevelSequence.LevelSequenceActor.SetSequence
 struct ALevelSequenceActor_SetSequence_Params
 {
 	class ULevelSequence*                              InSequence;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function LevelSequence.LevelSequenceActor.SetEventReceivers
-struct ALevelSequenceActor_SetEventReceivers_Params
-{
-	TArray<class AActor*>                              AdditionalReceivers;                                      // (Parm, ZeroConstructor)
-};
-
 // Function LevelSequence.LevelSequenceActor.SetBinding
 struct ALevelSequenceActor_SetBinding_Params
 {
-	struct FMovieSceneObjectBindingID                  Binding;                                                  // (Parm)
+	struct FMovieSceneObjectBindingPtr                 Binding;                                                  // (Parm)
 	TArray<class AActor*>                              Actors;                                                   // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 	bool                                               bAllowBindingsFromAsset;                                  // (Parm, ZeroConstructor, IsPlainOldData)
 };
@@ -42,28 +45,27 @@ struct ALevelSequenceActor_ResetBindings_Params
 // Function LevelSequence.LevelSequenceActor.ResetBinding
 struct ALevelSequenceActor_ResetBinding_Params
 {
-	struct FMovieSceneObjectBindingID                  Binding;                                                  // (Parm)
+	struct FMovieSceneObjectBindingPtr                 Binding;                                                  // (Parm)
 };
 
 // Function LevelSequence.LevelSequenceActor.RemoveBinding
 struct ALevelSequenceActor_RemoveBinding_Params
 {
-	struct FMovieSceneObjectBindingID                  Binding;                                                  // (Parm)
+	struct FMovieSceneObjectBindingPtr                 Binding;                                                  // (Parm)
 	class AActor*                                      Actor;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function LevelSequence.LevelSequenceActor.GetSequence
 struct ALevelSequenceActor_GetSequence_Params
 {
-	bool                                               bLoad;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bInitializePlayer;                                        // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Load;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 	class ULevelSequence*                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function LevelSequence.LevelSequenceActor.AddBinding
 struct ALevelSequenceActor_AddBinding_Params
 {
-	struct FMovieSceneObjectBindingID                  Binding;                                                  // (Parm)
+	struct FMovieSceneObjectBindingPtr                 Binding;                                                  // (Parm)
 	class AActor*                                      Actor;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               bAllowBindingsFromAsset;                                  // (Parm, ZeroConstructor, IsPlainOldData)
 };
@@ -78,16 +80,6 @@ struct ULevelSequenceBurnIn_SetSettings_Params
 struct ULevelSequenceBurnIn_GetSettingsClass_Params
 {
 	class UClass*                                      ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function LevelSequence.LevelSequencePlayer.CreateLevelSequencePlayer
-struct ULevelSequencePlayer_CreateLevelSequencePlayer_Params
-{
-	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	class ULevelSequence*                              LevelSequence;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FMovieSceneSequencePlaybackSettings         Settings;                                                 // (Parm)
-	class ALevelSequenceActor*                         OutActor;                                                 // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-	class ULevelSequencePlayer*                        ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 }

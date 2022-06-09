@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -67,7 +67,7 @@ struct UDefaultSkillNode_C_HandleSkillTreeNodeStateChanged_Params
 // Function DefaultSkillNode.DefaultSkillNode_C.PreConstruct
 struct UDefaultSkillNode_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function DefaultSkillNode.DefaultSkillNode_C.OnUnhovered
@@ -93,7 +93,7 @@ struct UDefaultSkillNode_C_OnDeselected_Params
 // Function DefaultSkillNode.DefaultSkillNode_C.ExecuteUbergraph_DefaultSkillNode
 struct UDefaultSkillNode_C_ExecuteUbergraph_DefaultSkillNode_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

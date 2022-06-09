@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,10 +15,10 @@ namespace SDK
 // Function PerkTierWidgetNew.PerkTierWidgetNew_C.InitializeSettings
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bIncludeName                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bIncludeDescription            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// TEnumAsByte<EFortBrushSize>    IconSize                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FFortUIPerkTier         FortPerkTier                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// bool                           bIncludeName                   (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bIncludeDescription            (Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EFortBrushSize>    IconSize                       (Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortUIPerkTier         FortPerkTier                   (Parm)
 
 void UPerkTierWidgetNew_C::InitializeSettings(bool bIncludeName, bool bIncludeDescription, TEnumAsByte<EFortBrushSize> IconSize, const struct FFortUIPerkTier& FortPerkTier)
 {
@@ -58,8 +58,8 @@ void UPerkTierWidgetNew_C::Construct()
 // Function PerkTierWidgetNew.PerkTierWidgetNew_C.OnGeneratePerk
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// struct FFortUIPerk*            Perk                           (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UFortPerkWidget_NUI**    PerkWidget                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortUIPerk*            Perk                           (Parm)
+// class UFortPerkWidget_NUI**    PerkWidget                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPerkTierWidgetNew_C::OnGeneratePerk(struct FFortUIPerk* Perk, class UFortPerkWidget_NUI** PerkWidget)
 {
@@ -80,7 +80,7 @@ void UPerkTierWidgetNew_C::OnGeneratePerk(struct FFortUIPerk* Perk, class UFortP
 // Function PerkTierWidgetNew.PerkTierWidgetNew_C.ExecuteUbergraph_PerkTierWidgetNew
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPerkTierWidgetNew_C::ExecuteUbergraph_PerkTierWidgetNew(int EntryPoint)
 {

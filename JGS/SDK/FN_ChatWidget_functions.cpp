@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,9 +49,9 @@ void UChatWidget_C::BindDelegates()
 // Function ChatWidget.ChatWidget_C.HandleCursorModeChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bEnabled                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ActionName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UUserWidget*             Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bEnabled                       (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ActionName                     (Parm, ZeroConstructor, IsPlainOldData)
+// class UUserWidget*             Widget                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UChatWidget_C::HandleCursorModeChanged(bool bEnabled, const struct FName& ActionName, class UUserWidget* Widget)
 {
@@ -73,18 +73,16 @@ void UChatWidget_C::HandleCursorModeChanged(bool bEnabled, const struct FName& A
 // Function ChatWidget.ChatWidget_C.HandleShowChatWindow
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortUIFeature                 Feature                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortUIFeatureState            FeatureState                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortUIFeatureStateReason      FeatureStateReason             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortUIFeature                 Feature                        (Parm, ZeroConstructor, IsPlainOldData)
+// EFortUIFeatureState            FeatureState                   (Parm, ZeroConstructor, IsPlainOldData)
 
-void UChatWidget_C::HandleShowChatWindow(EFortUIFeature Feature, EFortUIFeatureState FeatureState, EFortUIFeatureStateReason FeatureStateReason)
+void UChatWidget_C::HandleShowChatWindow(EFortUIFeature Feature, EFortUIFeatureState FeatureState)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ChatWidget.ChatWidget_C.HandleShowChatWindow");
 
 	UChatWidget_C_HandleShowChatWindow_Params params;
 	params.Feature = Feature;
 	params.FeatureState = FeatureState;
-	params.FeatureStateReason = FeatureStateReason;
 
 	auto flags = fn->FunctionFlags;
 
@@ -97,7 +95,7 @@ void UChatWidget_C::HandleShowChatWindow(EFortUIFeature Feature, EFortUIFeatureS
 // Function ChatWidget.ChatWidget_C.HandeChatEnteredEvent
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bEnteringChat                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bEnteringChat                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UChatWidget_C::HandeChatEnteredEvent(bool bEnteringChat)
 {
@@ -117,7 +115,7 @@ void UChatWidget_C::HandeChatEnteredEvent(bool bEnteringChat)
 // Function ChatWidget.ChatWidget_C.UpdateChatUserListIcon
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Open                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Open                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UChatWidget_C::UpdateChatUserListIcon(bool Open)
 {
@@ -137,7 +135,7 @@ void UChatWidget_C::UpdateChatUserListIcon(bool Open)
 // Function ChatWidget.ChatWidget_C.Set Chat Shortcut Visibility
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// ESlateVisibility               New_Visibility                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// ESlateVisibility               New_Visibility                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UChatWidget_C::Set_Chat_Shortcut_Visibility(ESlateVisibility New_Visibility)
 {
@@ -157,7 +155,7 @@ void UChatWidget_C::Set_Chat_Shortcut_Visibility(ESlateVisibility New_Visibility
 // Function ChatWidget.ChatWidget_C.Set Chat Visibility
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// ESlateVisibility               New_Visibility                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// ESlateVisibility               New_Visibility                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UChatWidget_C::Set_Chat_Visibility(ESlateVisibility New_Visibility)
 {
@@ -177,7 +175,7 @@ void UChatWidget_C::Set_Chat_Visibility(ESlateVisibility New_Visibility)
 // Function ChatWidget.ChatWidget_C.BndEvt__ConsoleChatShortcut_K2Node_ComponentBoundEvent_14_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UChatWidget_C::BndEvt__ConsoleChatShortcut_K2Node_ComponentBoundEvent_14_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -197,7 +195,7 @@ void UChatWidget_C::BndEvt__ConsoleChatShortcut_K2Node_ComponentBoundEvent_14_Co
 // Function ChatWidget.ChatWidget_C.BndEvt__FortChat_K2Node_ComponentBoundEvent_66_OnChatEnteredDelegate__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// bool                           bEnteringChat                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bEnteringChat                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UChatWidget_C::BndEvt__FortChat_K2Node_ComponentBoundEvent_66_OnChatEnteredDelegate__DelegateSignature(bool bEnteringChat)
 {
@@ -217,7 +215,7 @@ void UChatWidget_C::BndEvt__FortChat_K2Node_ComponentBoundEvent_66_OnChatEntered
 // Function ChatWidget.ChatWidget_C.BndEvt__FortChat_K2Node_ComponentBoundEvent_0_OnUserListChangedDelegate__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// bool                           bOpen                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bOpen                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UChatWidget_C::BndEvt__FortChat_K2Node_ComponentBoundEvent_0_OnUserListChangedDelegate__DelegateSignature(bool bOpen)
 {
@@ -254,7 +252,7 @@ void UChatWidget_C::Construct()
 // Function ChatWidget.ChatWidget_C.HandleInputMethodChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bUsingGamepad                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bUsingGamepad                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UChatWidget_C::HandleInputMethodChanged(bool bUsingGamepad)
 {
@@ -291,7 +289,7 @@ void UChatWidget_C::Destruct()
 // Function ChatWidget.ChatWidget_C.ExecuteUbergraph_ChatWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UChatWidget_C::ExecuteUbergraph_ChatWidget(int EntryPoint)
 {

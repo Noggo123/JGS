@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function News.News_C.UpdateInfoPanel
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   BodyText                       (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   BodyText                       (Parm)
 
 void UNews_C::UpdateInfoPanel(const struct FText& BodyText)
 {
@@ -52,9 +52,9 @@ void UNews_C::Init()
 // Function News.News_C.PopulateEntries
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           isEmpty                        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           IsEmpty                        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UNews_C::PopulateEntries(bool* isEmpty)
+void UNews_C::PopulateEntries(bool* IsEmpty)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function News.News_C.PopulateEntries");
 
@@ -66,15 +66,15 @@ void UNews_C::PopulateEntries(bool* isEmpty)
 
 	fn->FunctionFlags = flags;
 
-	if (isEmpty != nullptr)
-		*isEmpty = params.isEmpty;
+	if (IsEmpty != nullptr)
+		*IsEmpty = params.IsEmpty;
 }
 
 
 // Function News.News_C.AddEntry
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   inEntryText                    (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   inEntryText                    (Parm)
 
 void UNews_C::AddEntry(const struct FText& inEntryText)
 {
@@ -94,7 +94,7 @@ void UNews_C::AddEntry(const struct FText& inEntryText)
 // Function News.News_C.BndEvt__CloseButton_K2Node_ComponentBoundEvent_21_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UNews_C::BndEvt__CloseButton_K2Node_ComponentBoundEvent_21_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -131,7 +131,7 @@ void UNews_C::Construct()
 // Function News.News_C.ExecuteUbergraph_News
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UNews_C::ExecuteUbergraph_News(int EntryPoint)
 {

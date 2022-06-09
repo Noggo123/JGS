@@ -5,12 +5,15 @@
 
 #pragma comment(lib, "minhook/minhook.lib")
 
+#pragma comment(lib, "ChilkatRelDll_x64.lib")
+
 #include "SDK.hpp"
 
 using namespace SDK;
 
 #include "Globals.h"
 #include "Util.h"
+#include "Discord.h"
 
 #include "Offsets.h"
 
@@ -28,16 +31,16 @@ DWORD WINAPI MainThread(LPVOID)
     LOG("Setting Up!");
 
     auto BaseAddr = Util::BaseAddress();
-    auto GObjectsAddress = BaseAddr + 0x44E5CE0;
-    auto FNameToStringAddress = BaseAddr + 0xC79B10;
-    auto FreeMemoryAddress = BaseAddr + 0xBBCEB0;
+    auto GObjectsAddress = BaseAddr + 0x6661390;
+    auto FNameToStringAddress = BaseAddr + 0x1302390;
+    auto FreeMemoryAddress = BaseAddr + 0x1233210;
 
     SDK::UObject::GObjects = decltype(SDK::UObject::GObjects)(GObjectsAddress);
     SDK::FNameToString = decltype(SDK::FNameToString)(FNameToStringAddress);
     SDK::FreeInternal = decltype(SDK::FreeInternal)(FreeMemoryAddress);
 
-    Hooks::SpawnActorInternal = decltype(Hooks::SpawnActorInternal)(BaseAddr + Offsets::SpawnActor);
-    Hooks::InternalTryActivateAbility = decltype(Hooks::InternalTryActivateAbility)(BaseAddr + Offsets::InternalTryActivateAbility);
+    //Hooks::SpawnActorInternal = decltype(Hooks::SpawnActorInternal)(BaseAddr + Offsets::SpawnActor);
+    Hooks::InternalTryActivateAbilityLong = decltype(Hooks::InternalTryActivateAbilityLong)(BaseAddr + Offsets::InternalTryActivateAbility);
 
     auto FortEngine = SDK::UObject::FindObject<UFortEngine>("FortEngine_");
     Globals::FortEngine = FortEngine;
@@ -45,9 +48,10 @@ DWORD WINAPI MainThread(LPVOID)
     Globals::GPS = reinterpret_cast<UGameplayStatics*>(UGameplayStatics::StaticClass());
     Globals::PC = reinterpret_cast<AFortPlayerController*>(FortEngine->GameInstance->LocalPlayers[0]->PlayerController);
     Globals::MathLib = reinterpret_cast<UKismetMathLibrary*>(UKismetMathLibrary::StaticClass());
+    Globals::SystemLib = reinterpret_cast<UKismetSystemLibrary*>(UKismetSystemLibrary::StaticClass());
 
-    Globals::HeadPart = UObject::FindObject<UCustomCharacterPart>("CustomCharacterPart F_Med_Head1.F_Med_Head1");
-    Globals::BodyPart = UObject::FindObject<UCustomCharacterPart>("CustomCharacterPart F_Med_Soldier_01.F_Med_Soldier_01");
+    Globals::HeadPart = FindObjectFast<UCustomCharacterPart>("/Game/Characters/CharacterParts/Female/Medium/Heads/F_Med_Head1.F_Med_Head1");
+    Globals::BodyPart = FindObjectFast<UCustomCharacterPart>("/Game/Characters/CharacterParts/Female/Medium/Bodies/F_Med_Soldier_01.F_Med_Soldier_01");
 
     auto NewConsole = Globals::GPS->STATIC_SpawnObject(UFortConsole::StaticClass(), FortEngine->GameViewport);
     FortEngine->GameViewport->ViewportConsole = (UFortConsole*)(NewConsole);
@@ -56,6 +60,10 @@ DWORD WINAPI MainThread(LPVOID)
     FortEngine->GameInstance->LocalPlayers[0]->PlayerController->CheatManager = (UCheatManager*)(NewCheatManager);
 
     MH_Initialize();
+
+    LoadLootPools();
+
+    Discord::UpdateStatus("Server is now loading map...");
 
     Globals::PC->SwitchLevel(TEXT("Athena_Terrain"));
 

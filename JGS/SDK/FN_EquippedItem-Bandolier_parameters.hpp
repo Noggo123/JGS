@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,15 +17,15 @@ namespace SDK
 // Function EquippedItem-Bandolier.EquippedItem-Bandolier_C.UpdateCapacity
 struct UEquippedItem_Bandolier_C_UpdateCapacity_Params
 {
-	int                                                Capacity;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UFortAmmoItemDefinition*                     AmmoData;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Capacity;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	class UFortAmmoItemDefinition*                     AmmoData;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function EquippedItem-Bandolier.EquippedItem-Bandolier_C.UpdateCurrent
 struct UEquippedItem_Bandolier_C_UpdateCurrent_Params
 {
-	int                                                Current;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UFortAmmoItemDefinition*                     AmmoData;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Current;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	class UFortAmmoItemDefinition*                     AmmoData;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,8 +17,8 @@ namespace SDK
 // Function PotentialResourceWidget.PotentialResourceWidget_C.ShowPotentialResource
 struct UPotentialResourceWidget_C_ShowPotentialResource_Params
 {
-	class UFortItem*                                   PotentialResource;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bWeakpointDamage;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItem*                                   PotentialResource;                                        // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bWeakpointDamage;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function PotentialResourceWidget.PotentialResourceWidget_C.SetupFont
@@ -29,7 +29,7 @@ struct UPotentialResourceWidget_C_SetupFont_Params
 // Function PotentialResourceWidget.PotentialResourceWidget_C.GetResourceCountAsText
 struct UPotentialResourceWidget_C_GetResourceCountAsText_Params
 {
-	class UFortItem*                                   Resource;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItem*                                   Resource;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FText                                       Result;                                                   // (Parm, OutParm)
 };
 
@@ -51,7 +51,7 @@ struct UPotentialResourceWidget_C_HandleTranslateAndFadeUpFinished_Params
 // Function PotentialResourceWidget.PotentialResourceWidget_C.ExecuteUbergraph_PotentialResourceWidget
 struct UPotentialResourceWidget_C_ExecuteUbergraph_PotentialResourceWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function PotentialResourceWidget.PotentialResourceWidget_C.FinishedShowing__DelegateSignature

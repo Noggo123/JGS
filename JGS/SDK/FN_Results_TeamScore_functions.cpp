@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -66,8 +66,8 @@ void UResults_TeamScore_C::SkipToFinalState()
 // Function Results_TeamScore.Results_TeamScore_C.Initialize
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortUIScoreReport*      ScoreReport                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UResults_TeamTotalScore_C* TeamTotalScore                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortUIScoreReport*      ScoreReport                    (Parm, ZeroConstructor, IsPlainOldData)
+// class UResults_TeamTotalScore_C* TeamTotalScore                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeamScore_C::Initialize(class UFortUIScoreReport* ScoreReport, class UResults_TeamTotalScore_C* TeamTotalScore)
 {
@@ -241,7 +241,7 @@ void UResults_TeamScore_C::Skip()
 // Function Results_TeamScore.Results_TeamScore_C.BndEvt__ButtonContinue_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeamScore_C::BndEvt__ButtonContinue_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -278,7 +278,7 @@ void UResults_TeamScore_C::BndEvt__Anim_ContinueButtonIntro_K2Node_ComponentBoun
 // Function Results_TeamScore.Results_TeamScore_C.ExecuteUbergraph_Results_TeamScore
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_TeamScore_C::ExecuteUbergraph_Results_TeamScore(int EntryPoint)
 {

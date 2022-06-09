@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,27 +12,10 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function XpBoostRow.XpBoostRow_C.Update Boost Amount
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UXpBoostRow_C::Update_Boost_Amount()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function XpBoostRow.XpBoostRow_C.Update Boost Amount");
-
-	UXpBoostRow_C_Update_Boost_Amount_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function XpBoostRow.XpBoostRow_C.HasBoost
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UFortAccountItemDefinition* AccountItemDef                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortAccountItemDefinition* AccountItemDef                 (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           Result                         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void UXpBoostRow_C::HasBoost(class UFortAccountItemDefinition* AccountItemDef, bool* Result)
@@ -90,8 +73,8 @@ void UXpBoostRow_C::Center_On_Row()
 // Function XpBoostRow.XpBoostRow_C.Update Party Member
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Row_Has_Party_Member           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FFortTeamMemberInfo     Party_Members_Info             (BlueprintVisible, BlueprintReadOnly, Parm)
+// bool                           Row_Has_Party_Member           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortTeamMemberInfo     Party_Members_Info             (Parm)
 
 void UXpBoostRow_C::Update_Party_Member(bool Row_Has_Party_Member, const struct FFortTeamMemberInfo& Party_Members_Info)
 {
@@ -129,8 +112,8 @@ void UXpBoostRow_C::OnMCPRequestComplete_13866D8D449A2AA167E306B6A172BD62()
 // Function XpBoostRow.XpBoostRow_C.DialogResult_9BF60C804C82DAA0C1A2839132130883
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortDialogResult              Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ResultName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortDialogResult              Result                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ResultName                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UXpBoostRow_C::DialogResult_9BF60C804C82DAA0C1A2839132130883(EFortDialogResult Result, const struct FName& ResultName)
 {
@@ -151,8 +134,8 @@ void UXpBoostRow_C::DialogResult_9BF60C804C82DAA0C1A2839132130883(EFortDialogRes
 // Function XpBoostRow.XpBoostRow_C.DialogResult_8D859C4A4CE7EC02F6B02CA6729E58B0
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortDialogResult              Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ResultName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortDialogResult              Result                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ResultName                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UXpBoostRow_C::DialogResult_8D859C4A4CE7EC02F6B02CA6729E58B0(EFortDialogResult Result, const struct FName& ResultName)
 {
@@ -190,7 +173,7 @@ void UXpBoostRow_C::OnMCPRequestComplete_59B43F5044B96A114CC64595A3818F3C()
 // Function XpBoostRow.XpBoostRow_C.BndEvt__GiveXPButton_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UXpBoostRow_C::BndEvt__GiveXPButton_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -207,30 +190,10 @@ void UXpBoostRow_C::BndEvt__GiveXPButton_K2Node_ComponentBoundEvent_1_CommonButt
 }
 
 
-// Function XpBoostRow.XpBoostRow_C.OnPlayerInfoChanged
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// struct FFortTeamMemberInfo*    NewInfo                        (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UXpBoostRow_C::OnPlayerInfoChanged(struct FFortTeamMemberInfo* NewInfo)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function XpBoostRow.XpBoostRow_C.OnPlayerInfoChanged");
-
-	UXpBoostRow_C_OnPlayerInfoChanged_Params params;
-	params.NewInfo = NewInfo;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function XpBoostRow.XpBoostRow_C.ExecuteUbergraph_XpBoostRow
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UXpBoostRow_C::ExecuteUbergraph_XpBoostRow(int EntryPoint)
 {
@@ -247,14 +210,17 @@ void UXpBoostRow_C::ExecuteUbergraph_XpBoostRow(int EntryPoint)
 }
 
 
-// Function XpBoostRow.XpBoostRow_C.Boost Amount Changed__DelegateSignature
+// Function XpBoostRow.XpBoostRow_C.Give Boost Clicked__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FUniqueNetIdRepl        Player_To_Boost                (Parm)
 
-void UXpBoostRow_C::Boost_Amount_Changed__DelegateSignature()
+void UXpBoostRow_C::Give_Boost_Clicked__DelegateSignature(const struct FUniqueNetIdRepl& Player_To_Boost)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function XpBoostRow.XpBoostRow_C.Boost Amount Changed__DelegateSignature");
+	static auto fn = UObject::FindObject<UFunction>("Function XpBoostRow.XpBoostRow_C.Give Boost Clicked__DelegateSignature");
 
-	UXpBoostRow_C_Boost_Amount_Changed__DelegateSignature_Params params;
+	UXpBoostRow_C_Give_Boost_Clicked__DelegateSignature_Params params;
+	params.Player_To_Boost = Player_To_Boost;
 
 	auto flags = fn->FunctionFlags;
 

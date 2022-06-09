@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,10 +37,10 @@ struct UJournalQuestRewardDetails_C_HandleOnEndSpokenDialog_Params
 // Function JournalQuestRewardDetails.JournalQuestRewardDetails_C.HandleOnBeginSpokenDialog
 struct UJournalQuestRewardDetails_C_HandleOnBeginSpokenDialog_Params
 {
-	class UTexture2D*                                  Image;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FText                                       Title;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm)
-	struct FText                                       Subtitle;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
-	EFortAnnouncementDisplayPreference                 DisplayPreference;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UTexture2D*                                  Image;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FText                                       Title;                                                    // (Parm)
+	struct FText                                       Subtitle;                                                 // (Parm)
+	EFortAnnouncementDisplayPreference                 DisplayPreference;                                        // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function JournalQuestRewardDetails.JournalQuestRewardDetails_C.Setup
@@ -61,7 +61,7 @@ struct UJournalQuestRewardDetails_C_HandleCurrentQuestChangedBP_Params
 // Function JournalQuestRewardDetails.JournalQuestRewardDetails_C.ExecuteUbergraph_JournalQuestRewardDetails
 struct UJournalQuestRewardDetails_C_ExecuteUbergraph_JournalQuestRewardDetails_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

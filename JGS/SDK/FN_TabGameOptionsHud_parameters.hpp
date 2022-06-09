@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function TabGameOptionsHud.TabGameOptionsHud_C.Set Settings Tooltip
+struct UTabGameOptionsHud_C_Set_Settings_Tooltip_Params
+{
+	class UCommonTextBlock*                            Tooltip_To_Display;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function TabGameOptionsHud.TabGameOptionsHud_C.Construct
 struct UTabGameOptionsHud_C_Construct_Params
@@ -32,20 +38,20 @@ struct UTabGameOptionsHud_C_CenterOnTab_Params
 // Function TabGameOptionsHud.TabGameOptionsHud_C.BndEvt__HUDCommonListView_K2Node_ComponentBoundEvent_37_OnListViewItemWidgetCreated__DelegateSignature
 struct UTabGameOptionsHud_C_BndEvt__HUDCommonListView_K2Node_ComponentBoundEvent_37_OnListViewItemWidgetCreated__DelegateSignature_Params
 {
-	class UUserWidget*                                 Widget;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UUserWidget*                                 Widget;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TabGameOptionsHud.TabGameOptionsHud_C.HUD Changed
 struct UTabGameOptionsHud_C_HUD_Changed_Params
 {
-	int                                                Selected_Index;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FGameplayTag                                Gameplay_Tag;                                             // (BlueprintVisible, BlueprintReadOnly, Parm)
+	int                                                Selected_Index;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGameplayTag                                Gameplay_Tag;                                             // (Parm)
 };
 
 // Function TabGameOptionsHud.TabGameOptionsHud_C.ExecuteUbergraph_TabGameOptionsHud
 struct UTabGameOptionsHud_C_ExecuteUbergraph_TabGameOptionsHud_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

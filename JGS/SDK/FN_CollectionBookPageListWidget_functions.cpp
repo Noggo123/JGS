@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,38 +12,16 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function CollectionBookPageListWidget.CollectionBookPageListWidget_C.UpdatePageCompletionWidget
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int                            FilledSlots                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            TotalSlots                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UCollectionBookPageListWidget_C::UpdatePageCompletionWidget(int FilledSlots, int TotalSlots)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CollectionBookPageListWidget.CollectionBookPageListWidget_C.UpdatePageCompletionWidget");
-
-	UCollectionBookPageListWidget_C_UpdatePageCompletionWidget_Params params;
-	params.FilledSlots = FilledSlots;
-	params.TotalSlots = TotalSlots;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function CollectionBookPageListWidget.CollectionBookPageListWidget_C.UpdateAvailableSlotsWidget
+// Function CollectionBookPageListWidget.CollectionBookPageListWidget_C.Update Available Slots Widget
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            NumAvailableSlots              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            NumAvailableSlots              (Parm, ZeroConstructor, IsPlainOldData)
 
-void UCollectionBookPageListWidget_C::UpdateAvailableSlotsWidget(int NumAvailableSlots)
+void UCollectionBookPageListWidget_C::Update_Available_Slots_Widget(int NumAvailableSlots)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function CollectionBookPageListWidget.CollectionBookPageListWidget_C.UpdateAvailableSlotsWidget");
+	static auto fn = UObject::FindObject<UFunction>("Function CollectionBookPageListWidget.CollectionBookPageListWidget_C.Update Available Slots Widget");
 
-	UCollectionBookPageListWidget_C_UpdateAvailableSlotsWidget_Params params;
+	UCollectionBookPageListWidget_C_Update_Available_Slots_Widget_Params params;
 	params.NumAvailableSlots = NumAvailableSlots;
 
 	auto flags = fn->FunctionFlags;
@@ -74,7 +52,7 @@ void UCollectionBookPageListWidget_C::UpdateAvailableSlotsBorderColors()
 // Function CollectionBookPageListWidget.CollectionBookPageListWidget_C.SetupAsCategory
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UFortCollectionBookCategory** Category                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortCollectionBookCategory** Category                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBookPageListWidget_C::SetupAsCategory(class UFortCollectionBookCategory** Category)
 {
@@ -94,7 +72,7 @@ void UCollectionBookPageListWidget_C::SetupAsCategory(class UFortCollectionBookC
 // Function CollectionBookPageListWidget.CollectionBookPageListWidget_C.SetupAsPage
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UFortCollectionBookPage** Page                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortCollectionBookPage** Page                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBookPageListWidget_C::SetupAsPage(class UFortCollectionBookPage** Page)
 {
@@ -114,7 +92,7 @@ void UCollectionBookPageListWidget_C::SetupAsPage(class UFortCollectionBookPage*
 // Function CollectionBookPageListWidget.CollectionBookPageListWidget_C.OnExpansionChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool*                          bExpanded                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          bExpanded                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBookPageListWidget_C::OnExpansionChanged(bool* bExpanded)
 {
@@ -134,7 +112,7 @@ void UCollectionBookPageListWidget_C::OnExpansionChanged(bool* bExpanded)
 // Function CollectionBookPageListWidget.CollectionBookPageListWidget_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBookPageListWidget_C::PreConstruct(bool* IsDesignTime)
 {
@@ -154,19 +132,15 @@ void UCollectionBookPageListWidget_C::PreConstruct(bool* IsDesignTime)
 // Function CollectionBookPageListWidget.CollectionBookPageListWidget_C.OnPageDetailsUpdated
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// int*                           AvailableSlots                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int*                           FilledSlots                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int*                           TotalSlots                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortCollectionBookState*      State                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int*                           NumAvailableSlots              (Parm, ZeroConstructor, IsPlainOldData)
+// EFortCollectionBookState*      State                          (Parm, ZeroConstructor, IsPlainOldData)
 
-void UCollectionBookPageListWidget_C::OnPageDetailsUpdated(int* AvailableSlots, int* FilledSlots, int* TotalSlots, EFortCollectionBookState* State)
+void UCollectionBookPageListWidget_C::OnPageDetailsUpdated(int* NumAvailableSlots, EFortCollectionBookState* State)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function CollectionBookPageListWidget.CollectionBookPageListWidget_C.OnPageDetailsUpdated");
 
 	UCollectionBookPageListWidget_C_OnPageDetailsUpdated_Params params;
-	params.AvailableSlots = AvailableSlots;
-	params.FilledSlots = FilledSlots;
-	params.TotalSlots = TotalSlots;
+	params.NumAvailableSlots = NumAvailableSlots;
 	params.State = State;
 
 	auto flags = fn->FunctionFlags;
@@ -180,8 +154,8 @@ void UCollectionBookPageListWidget_C::OnPageDetailsUpdated(int* AvailableSlots, 
 // Function CollectionBookPageListWidget.CollectionBookPageListWidget_C.OnSelectionChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonButton*           ThisButton                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bSelected                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           ThisButton                     (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bSelected                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBookPageListWidget_C::OnSelectionChanged(class UCommonButton* ThisButton, bool bSelected)
 {
@@ -199,34 +173,10 @@ void UCollectionBookPageListWidget_C::OnSelectionChanged(class UCommonButton* Th
 }
 
 
-// Function CollectionBookPageListWidget.CollectionBookPageListWidget_C.OnCategoryDetailsUpdated
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// int*                           AvailableSlots                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int*                           FilledSlots                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int*                           TotalSlots                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UCollectionBookPageListWidget_C::OnCategoryDetailsUpdated(int* AvailableSlots, int* FilledSlots, int* TotalSlots)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function CollectionBookPageListWidget.CollectionBookPageListWidget_C.OnCategoryDetailsUpdated");
-
-	UCollectionBookPageListWidget_C_OnCategoryDetailsUpdated_Params params;
-	params.AvailableSlots = AvailableSlots;
-	params.FilledSlots = FilledSlots;
-	params.TotalSlots = TotalSlots;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function CollectionBookPageListWidget.CollectionBookPageListWidget_C.ExecuteUbergraph_CollectionBookPageListWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UCollectionBookPageListWidget_C::ExecuteUbergraph_CollectionBookPageListWidget(int EntryPoint)
 {

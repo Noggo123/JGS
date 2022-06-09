@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -38,8 +38,8 @@ struct UResults_TeleportPad_C_Focus_Params
 // Function Results_TeleportPad.Results_TeleportPad_C.Initialize
 struct UResults_TeleportPad_C_Initialize_Params
 {
-	class UFortUIScoreReport*                          InScoreReport;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	EFortCompletionResult                              CompletionResult;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortUIScoreReport*                          InScoreReport;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+	EFortCompletionResult                              CompletionResult;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeleportPad.Results_TeleportPad_C.Team Score Screen Intro
@@ -100,119 +100,119 @@ struct UResults_TeleportPad_C_OnExitTimerFinished_Params
 // Function Results_TeleportPad.Results_TeleportPad_C.OnExitTimeRemainingUpdated
 struct UResults_TeleportPad_C_OnExitTimeRemainingUpdated_Params
 {
-	int*                                               TimeRemainingSeconds;                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int*                                               TimeRemainingSeconds;                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeleportPad.Results_TeleportPad_C.OnExitTimePercentagePassedUpdated
 struct UResults_TeleportPad_C_OnExitTimePercentagePassedUpdated_Params
 {
-	float*                                             Percent;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float*                                             Percent;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__TeleportPad1_K2Node_ComponentBoundEvent_35_OnAddFriendClicked__DelegateSignature
 struct UResults_TeleportPad_C_BndEvt__TeleportPad1_K2Node_ComponentBoundEvent_35_OnAddFriendClicked__DelegateSignature_Params
 {
-	struct FUniqueNetIdRepl                            TargetId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
-	struct FString                                     TargetName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	struct FUniqueNetIdRepl                            TargetId;                                                 // (Parm)
+	struct FString                                     TargetName;                                               // (Parm, ZeroConstructor)
 };
 
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__TeleportPad2_K2Node_ComponentBoundEvent_0_OnAddFriendClicked__DelegateSignature
 struct UResults_TeleportPad_C_BndEvt__TeleportPad2_K2Node_ComponentBoundEvent_0_OnAddFriendClicked__DelegateSignature_Params
 {
-	struct FUniqueNetIdRepl                            TargetId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
-	struct FString                                     TargetName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	struct FUniqueNetIdRepl                            TargetId;                                                 // (Parm)
+	struct FString                                     TargetName;                                               // (Parm, ZeroConstructor)
 };
 
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__TeleportPad3_K2Node_ComponentBoundEvent_1_OnAddFriendClicked__DelegateSignature
 struct UResults_TeleportPad_C_BndEvt__TeleportPad3_K2Node_ComponentBoundEvent_1_OnAddFriendClicked__DelegateSignature_Params
 {
-	struct FUniqueNetIdRepl                            TargetId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
-	struct FString                                     TargetName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	struct FUniqueNetIdRepl                            TargetId;                                                 // (Parm)
+	struct FString                                     TargetName;                                               // (Parm, ZeroConstructor)
 };
 
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__TeleportPad4_K2Node_ComponentBoundEvent_2_OnAddFriendClicked__DelegateSignature
 struct UResults_TeleportPad_C_BndEvt__TeleportPad4_K2Node_ComponentBoundEvent_2_OnAddFriendClicked__DelegateSignature_Params
 {
-	struct FUniqueNetIdRepl                            TargetId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
-	struct FString                                     TargetName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	struct FUniqueNetIdRepl                            TargetId;                                                 // (Parm)
+	struct FString                                     TargetName;                                               // (Parm, ZeroConstructor)
 };
 
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__TeleportPad1_K2Node_ComponentBoundEvent_3_OnUpVoteClicked__DelegateSignature
 struct UResults_TeleportPad_C_BndEvt__TeleportPad1_K2Node_ComponentBoundEvent_3_OnUpVoteClicked__DelegateSignature_Params
 {
-	struct FUniqueNetIdRepl                            TargetId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
-	struct FString                                     TargetName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	struct FUniqueNetIdRepl                            TargetId;                                                 // (Parm)
+	struct FString                                     TargetName;                                               // (Parm, ZeroConstructor)
 };
 
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__TeleportPad2_K2Node_ComponentBoundEvent_4_OnUpVoteClicked__DelegateSignature
 struct UResults_TeleportPad_C_BndEvt__TeleportPad2_K2Node_ComponentBoundEvent_4_OnUpVoteClicked__DelegateSignature_Params
 {
-	struct FUniqueNetIdRepl                            TargetId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
-	struct FString                                     TargetName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	struct FUniqueNetIdRepl                            TargetId;                                                 // (Parm)
+	struct FString                                     TargetName;                                               // (Parm, ZeroConstructor)
 };
 
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__TeleportPad3_K2Node_ComponentBoundEvent_5_OnUpVoteClicked__DelegateSignature
 struct UResults_TeleportPad_C_BndEvt__TeleportPad3_K2Node_ComponentBoundEvent_5_OnUpVoteClicked__DelegateSignature_Params
 {
-	struct FUniqueNetIdRepl                            TargetId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
-	struct FString                                     TargetName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	struct FUniqueNetIdRepl                            TargetId;                                                 // (Parm)
+	struct FString                                     TargetName;                                               // (Parm, ZeroConstructor)
 };
 
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__TeleportPad4_K2Node_ComponentBoundEvent_6_OnUpVoteClicked__DelegateSignature
 struct UResults_TeleportPad_C_BndEvt__TeleportPad4_K2Node_ComponentBoundEvent_6_OnUpVoteClicked__DelegateSignature_Params
 {
-	struct FUniqueNetIdRepl                            TargetId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
-	struct FString                                     TargetName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	struct FUniqueNetIdRepl                            TargetId;                                                 // (Parm)
+	struct FString                                     TargetName;                                               // (Parm, ZeroConstructor)
 };
 
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__ButtonReturnHome_K2Node_ComponentBoundEvent_2_CommonButtonClicked__DelegateSignature
 struct UResults_TeleportPad_C_BndEvt__ButtonReturnHome_K2Node_ComponentBoundEvent_2_CommonButtonClicked__DelegateSignature_Params
 {
-	class UCommonButton*                               Button;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__Pad1_K2Node_ComponentBoundEvent_4_OnTeleportPadIntroFinished__DelegateSignature
 struct UResults_TeleportPad_C_BndEvt__Pad1_K2Node_ComponentBoundEvent_4_OnTeleportPadIntroFinished__DelegateSignature_Params
 {
-	class UResults_TeleportPadPlayer_C*                TeleportPadPlayer;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UResults_TeleportPadPlayer_C*                TeleportPadPlayer;                                        // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__Pad2_K2Node_ComponentBoundEvent_5_OnTeleportPadIntroFinished__DelegateSignature
 struct UResults_TeleportPad_C_BndEvt__Pad2_K2Node_ComponentBoundEvent_5_OnTeleportPadIntroFinished__DelegateSignature_Params
 {
-	class UResults_TeleportPadPlayer_C*                TeleportPadPlayer;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UResults_TeleportPadPlayer_C*                TeleportPadPlayer;                                        // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__Pad3_K2Node_ComponentBoundEvent_6_OnTeleportPadIntroFinished__DelegateSignature
 struct UResults_TeleportPad_C_BndEvt__Pad3_K2Node_ComponentBoundEvent_6_OnTeleportPadIntroFinished__DelegateSignature_Params
 {
-	class UResults_TeleportPadPlayer_C*                TeleportPadPlayer;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UResults_TeleportPadPlayer_C*                TeleportPadPlayer;                                        // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeleportPad.Results_TeleportPad_C.BndEvt__Pad4_K2Node_ComponentBoundEvent_7_OnTeleportPadIntroFinished__DelegateSignature
 struct UResults_TeleportPad_C_BndEvt__Pad4_K2Node_ComponentBoundEvent_7_OnTeleportPadIntroFinished__DelegateSignature_Params
 {
-	class UResults_TeleportPadPlayer_C*                TeleportPadPlayer;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UResults_TeleportPadPlayer_C*                TeleportPadPlayer;                                        // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeleportPad.Results_TeleportPad_C.ExecuteUbergraph_Results_TeleportPad
 struct UResults_TeleportPad_C_ExecuteUbergraph_Results_TeleportPad_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Results_TeleportPad.Results_TeleportPad_C.OnUpVoteClicked__DelegateSignature
 struct UResults_TeleportPad_C_OnUpVoteClicked__DelegateSignature_Params
 {
-	struct FUniqueNetIdRepl                            TargetId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
-	struct FString                                     TargetName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	struct FUniqueNetIdRepl                            TargetId;                                                 // (Parm)
+	struct FString                                     TargetName;                                               // (Parm, ZeroConstructor)
 };
 
 // Function Results_TeleportPad.Results_TeleportPad_C.OnAddFriendClicked__DelegateSignature
 struct UResults_TeleportPad_C_OnAddFriendClicked__DelegateSignature_Params
 {
-	struct FUniqueNetIdRepl                            TargetId;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm)
-	struct FString                                     TargetName;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+	struct FUniqueNetIdRepl                            TargetId;                                                 // (Parm)
+	struct FString                                     TargetName;                                               // (Parm, ZeroConstructor)
 };
 
 // Function Results_TeleportPad.Results_TeleportPad_C.OnExitClicked__DelegateSignature

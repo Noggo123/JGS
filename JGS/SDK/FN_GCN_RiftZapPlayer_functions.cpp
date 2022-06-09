@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function GCN_RiftZapPlayer.GCN_RiftZapPlayer_C.OnExecute
 // (Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
-// class AActor**                 MyTarget                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters  Parameters                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class AActor**                 MyTarget                       (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters* Parameters                     (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
 bool UGCN_RiftZapPlayer_C::OnExecute(class AActor** MyTarget, struct FGameplayCueParameters* Parameters)
@@ -25,15 +25,13 @@ bool UGCN_RiftZapPlayer_C::OnExecute(class AActor** MyTarget, struct FGameplayCu
 
 	UGCN_RiftZapPlayer_C_OnExecute_Params params;
 	params.MyTarget = MyTarget;
+	params.Parameters = Parameters;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (Parameters != nullptr)
-		*Parameters = params.Parameters;
 
 	return params.ReturnValue;
 }

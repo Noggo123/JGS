@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,51 +12,12 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function StoreMain_Root.StoreMain_Root_C.HandleRedeem
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           bPassThrough                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UStoreMain_Root_C::HandleRedeem(bool* bPassThrough)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StoreMain_Root.StoreMain_Root_C.HandleRedeem");
-
-	UStoreMain_Root_C_HandleRedeem_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (bPassThrough != nullptr)
-		*bPassThrough = params.bPassThrough;
-}
-
-
-// Function StoreMain_Root.StoreMain_Root_C.InitInputActions
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UStoreMain_Root_C::InitInputActions()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StoreMain_Root.StoreMain_Root_C.InitInputActions");
-
-	UStoreMain_Root_C_InitInputActions_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function StoreMain_Root.StoreMain_Root_C.HandleBack
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UStoreMain_Root_C::HandleBack(bool* Passthrough)
+void UStoreMain_Root_C::HandleBack(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function StoreMain_Root.StoreMain_Root_C.HandleBack");
 
@@ -68,8 +29,8 @@ void UStoreMain_Root_C::HandleBack(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -149,7 +110,7 @@ void UStoreMain_Root_C::SetFocus()
 // Function StoreMain_Root.StoreMain_Root_C.AddOffer
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortMtxStoreOfferBase*  MtxOffer                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortMtxStoreOfferBase*  MtxOffer                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UStoreMain_Root_C::AddOffer(class UFortMtxStoreOfferBase* MtxOffer)
 {
@@ -203,7 +164,7 @@ void UStoreMain_Root_C::OnActivated()
 // Function StoreMain_Root.StoreMain_Root_C.OnMtxOfferGenerated
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class UFortMtxStoreOfferBase** MtxOffer                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortMtxStoreOfferBase** MtxOffer                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UStoreMain_Root_C::OnMtxOfferGenerated(class UFortMtxStoreOfferBase** MtxOffer)
 {
@@ -306,9 +267,9 @@ void UStoreMain_Root_C::Construct()
 
 
 // Function StoreMain_Root.StoreMain_Root_C.ExecuteUbergraph_StoreMain_Root
-// ()
+// (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UStoreMain_Root_C::ExecuteUbergraph_StoreMain_Root(int EntryPoint)
 {

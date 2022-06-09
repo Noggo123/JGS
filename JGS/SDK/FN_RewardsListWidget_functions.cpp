@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,8 +32,8 @@ void URewardsListWidget_C::PresentAllRewards()
 // Function RewardsListWidget.RewardsListWidget_C.CreateRewardWrapper
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UHomeScreenQuestRewardItem_C* Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FText                   DisplayName                    (BlueprintVisible, BlueprintReadOnly, Parm)
+// class UHomeScreenQuestRewardItem_C* Item                           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   DisplayName                    (Parm)
 // class UFrontEndRewardWrapperWidget_C* OutputPin                      (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void URewardsListWidget_C::CreateRewardWrapper(class UHomeScreenQuestRewardItem_C* Item, const struct FText& DisplayName, class UFrontEndRewardWrapperWidget_C** OutputPin)
@@ -58,14 +58,15 @@ void URewardsListWidget_C::CreateRewardWrapper(class UHomeScreenQuestRewardItem_
 // Function RewardsListWidget.RewardsListWidget_C.CreateReward
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortItemInstanceQuantityPair FortItemInstanceQuantityPair   (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// bool                           Selectable                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortItemInstanceQuantityPair FortItemInstanceQuantityPair   (ConstParm, Parm, OutParm, ReferenceParm)
+// bool                           Selectable                     (Parm, ZeroConstructor, IsPlainOldData)
 
-void URewardsListWidget_C::CreateReward(bool Selectable, struct FFortItemInstanceQuantityPair* FortItemInstanceQuantityPair)
+void URewardsListWidget_C::CreateReward(const struct FFortItemInstanceQuantityPair& FortItemInstanceQuantityPair, bool Selectable)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function RewardsListWidget.RewardsListWidget_C.CreateReward");
 
 	URewardsListWidget_C_CreateReward_Params params;
+	params.FortItemInstanceQuantityPair = FortItemInstanceQuantityPair;
 	params.Selectable = Selectable;
 
 	auto flags = fn->FunctionFlags;
@@ -73,9 +74,6 @@ void URewardsListWidget_C::CreateReward(bool Selectable, struct FFortItemInstanc
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (FortItemInstanceQuantityPair != nullptr)
-		*FortItemInstanceQuantityPair = params.FortItemInstanceQuantityPair;
 }
 
 
@@ -99,8 +97,8 @@ void URewardsListWidget_C::PresentNextReward()
 // Function RewardsListWidget.RewardsListWidget_C.PopulateRewards
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FFortItemInstanceQuantityPair> Rewards                        (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// TArray<struct FFortItemInstanceQuantityPair> SelectableRewards              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<struct FFortItemInstanceQuantityPair> Rewards                        (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<struct FFortItemInstanceQuantityPair> SelectableRewards              (Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void URewardsListWidget_C::PopulateRewards(TArray<struct FFortItemInstanceQuantityPair>* Rewards, TArray<struct FFortItemInstanceQuantityPair>* SelectableRewards)
 {

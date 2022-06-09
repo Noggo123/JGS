@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function EquippedItemWidget.EquippedItemWidget_C.GetCurrentAmmoText
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
-// int                            CurrentAmmoCount               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            CurrentAmmoCount               (Parm, ZeroConstructor, IsPlainOldData)
 // struct FText                   CurrentAmmoText                (Parm, OutParm)
 
 void UEquippedItemWidget_C::GetCurrentAmmoText(int CurrentAmmoCount, struct FText* CurrentAmmoText)
@@ -56,8 +56,8 @@ void UEquippedItemWidget_C::UpdateResourceCount()
 // Function EquippedItemWidget.EquippedItemWidget_C.UpdateCurrentAmmo
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            LocalCount                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            LocalRemaining                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            LocalCount                     (Parm, ZeroConstructor, IsPlainOldData)
+// int                            LocalRemaining                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UEquippedItemWidget_C::UpdateCurrentAmmo(int LocalCount, int LocalRemaining)
 {
@@ -95,7 +95,7 @@ void UEquippedItemWidget_C::UpdateAmmoCapacity()
 // Function EquippedItemWidget.EquippedItemWidget_C.UpdateWidgetColor
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           HasAmmo                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           HasAmmo                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UEquippedItemWidget_C::UpdateWidgetColor(bool HasAmmo)
 {
@@ -183,8 +183,8 @@ void UEquippedItemWidget_C::Construct()
 // Function EquippedItemWidget.EquippedItemWidget_C.OnWeaponEquipped
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AFortWeapon*             NewWeapon                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class AFortWeapon*             PrevWeapon                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AFortWeapon*             NewWeapon                      (Parm, ZeroConstructor, IsPlainOldData)
+// class AFortWeapon*             PrevWeapon                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UEquippedItemWidget_C::OnWeaponEquipped(class AFortWeapon* NewWeapon, class AFortWeapon* PrevWeapon)
 {
@@ -205,8 +205,8 @@ void UEquippedItemWidget_C::OnWeaponEquipped(class AFortWeapon* NewWeapon, class
 // Function EquippedItemWidget.EquippedItemWidget_C.OnLocalAmmoChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            LocalCount                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            LocalRemaining                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            LocalCount                     (Parm, ZeroConstructor, IsPlainOldData)
+// int                            LocalRemaining                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void UEquippedItemWidget_C::OnLocalAmmoChanged(int LocalCount, int LocalRemaining)
 {
@@ -261,7 +261,7 @@ void UEquippedItemWidget_C::OnBuildingMaterialCycled()
 // Function EquippedItemWidget.EquippedItemWidget_C.ExecuteUbergraph_EquippedItemWidget
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UEquippedItemWidget_C::ExecuteUbergraph_EquippedItemWidget(int EntryPoint)
 {

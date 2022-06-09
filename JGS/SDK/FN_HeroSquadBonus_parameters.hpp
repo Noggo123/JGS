@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,7 +23,7 @@ struct UHeroSquadBonus_C_Get_ToolTipWidget_Params
 // Function HeroSquadBonus.HeroSquadBonus_C.SetBackgroundGlow
 struct UHeroSquadBonus_C_SetBackgroundGlow_Params
 {
-	bool                                               GlowBackground;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               GlowBackground;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function HeroSquadBonus.HeroSquadBonus_C.UpdateSquadBonusIconState
@@ -39,7 +39,7 @@ struct UHeroSquadBonus_C_UpdateBonusPerk_Params
 // Function HeroSquadBonus.HeroSquadBonus_C.PreConstruct
 struct UHeroSquadBonus_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function HeroSquadBonus.HeroSquadBonus_C.OnPerkUpdated
@@ -55,7 +55,7 @@ struct UHeroSquadBonus_C_Construct_Params
 // Function HeroSquadBonus.HeroSquadBonus_C.ExecuteUbergraph_HeroSquadBonus
 struct UHeroSquadBonus_C_ExecuteUbergraph_HeroSquadBonus_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

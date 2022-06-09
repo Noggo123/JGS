@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function FullPartyMemberConnected.FullPartyMemberConnected_C.UpdateDimensions
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector2D               NewDimensions                  (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+// struct FVector2D               NewDimensions                  (Parm, IsPlainOldData)
 
 void UFullPartyMemberConnected_C::UpdateDimensions(const struct FVector2D& NewDimensions)
 {
@@ -35,7 +35,7 @@ void UFullPartyMemberConnected_C::UpdateDimensions(const struct FVector2D& NewDi
 // Function FullPartyMemberConnected.FullPartyMemberConnected_C.UpdateMemberInfo
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     NewMemberInfo                  (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortTeamMemberInfo     NewMemberInfo                  (Parm)
 
 void UFullPartyMemberConnected_C::UpdateMemberInfo(const struct FFortTeamMemberInfo& NewMemberInfo)
 {
@@ -55,7 +55,7 @@ void UFullPartyMemberConnected_C::UpdateMemberInfo(const struct FFortTeamMemberI
 // Function FullPartyMemberConnected.FullPartyMemberConnected_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFullPartyMemberConnected_C::PreConstruct(bool* IsDesignTime)
 {
@@ -92,7 +92,7 @@ void UFullPartyMemberConnected_C::Construct()
 // Function FullPartyMemberConnected.FullPartyMemberConnected_C.ExecuteUbergraph_FullPartyMemberConnected
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFullPartyMemberConnected_C::ExecuteUbergraph_FullPartyMemberConnected(int EntryPoint)
 {

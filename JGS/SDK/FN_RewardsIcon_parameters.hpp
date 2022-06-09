@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,8 +37,8 @@ struct URewardsIcon_C_PlayShowAnimation_Params
 // Function RewardsIcon.RewardsIcon_C.On_ImageIcon_MouseButtonDown_0_1
 struct URewardsIcon_C_On_ImageIcon_MouseButtonDown_0_1_Params
 {
-	struct FGeometry                                   MyGeometry;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-	struct FPointerEvent                               MouseEvent;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FGeometry                                   MyGeometry;                                               // (Parm, IsPlainOldData)
+	struct FPointerEvent                               MouseEvent;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
 	struct FEventReply                                 ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -87,20 +87,20 @@ struct URewardsIcon_C_GetScale_Params
 // Function RewardsIcon.RewardsIcon_C.SetScale
 struct URewardsIcon_C_SetScale_Params
 {
-	float                                              Scale;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Scale;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function RewardsIcon.RewardsIcon_C.PopulateFromLootLevel
 struct URewardsIcon_C_PopulateFromLootLevel_Params
 {
-	int                                                LootLevel;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                LootLevel;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 	class UTexture2D*                                  Texture;                                                  // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function RewardsIcon.RewardsIcon_C.PlaySlideAnimation
 struct URewardsIcon_C_PlaySlideAnimation_Params
 {
-	float                                              TargetTranslation;                                        // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              TargetTranslation;                                        // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function RewardsIcon.RewardsIcon_C.TickSlideAnimation
@@ -126,7 +126,7 @@ struct URewardsIcon_C_HandleHideAnimationFinished_Params
 // Function RewardsIcon.RewardsIcon_C.PopulateFromReward
 struct URewardsIcon_C_PopulateFromReward_Params
 {
-	class UFortRewardNotificationData*                 InRewardItem;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortRewardNotificationData*                 InRewardItem;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function RewardsIcon.RewardsIcon_C.Cleanup
@@ -147,19 +147,19 @@ struct URewardsIcon_C_Construct_Params
 // Function RewardsIcon.RewardsIcon_C.PreConstruct
 struct URewardsIcon_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function RewardsIcon.RewardsIcon_C.whiteFadeOut
 struct URewardsIcon_C_whiteFadeOut_Params
 {
-	float                                              Percent;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              Percent;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function RewardsIcon.RewardsIcon_C.ExecuteUbergraph_RewardsIcon
 struct URewardsIcon_C_ExecuteUbergraph_RewardsIcon_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function RewardsIcon.RewardsIcon_C.OnImageClicked__DelegateSignature
@@ -170,19 +170,19 @@ struct URewardsIcon_C_OnImageClicked__DelegateSignature_Params
 // Function RewardsIcon.RewardsIcon_C.OnMaterializeAnimationFinished__DelegateSignature
 struct URewardsIcon_C_OnMaterializeAnimationFinished__DelegateSignature_Params
 {
-	class URewardsIcon_C*                              Icon;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class URewardsIcon_C*                              Icon;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function RewardsIcon.RewardsIcon_C.OnDisperseAnimationFinished__DelegateSignature
 struct URewardsIcon_C_OnDisperseAnimationFinished__DelegateSignature_Params
 {
-	class URewardsIcon_C*                              Icon;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class URewardsIcon_C*                              Icon;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function RewardsIcon.RewardsIcon_C.OnSlideAnimationFinished__DelegateSignature
 struct URewardsIcon_C_OnSlideAnimationFinished__DelegateSignature_Params
 {
-	class URewardsIcon_C*                              Icon;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class URewardsIcon_C*                              Icon;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

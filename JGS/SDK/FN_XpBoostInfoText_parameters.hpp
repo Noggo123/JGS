@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -27,19 +27,19 @@ struct UXpBoostInfoText_C_Construct_Params
 // Function XpBoostInfoText.XpBoostInfoText_C.HandleAccountUpdate
 struct UXpBoostInfoText_C_HandleAccountUpdate_Params
 {
-	struct FFortPublicAccountInfo                      NewInfo;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FFortPublicAccountInfo                      NewInfo;                                                  // (Parm)
 };
 
 // Function XpBoostInfoText.XpBoostInfoText_C.Xp Boost Changed
 struct UXpBoostInfoText_C_Xp_Boost_Changed_Params
 {
-	int                                                BoostAmount;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                BoostAmount;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function XpBoostInfoText.XpBoostInfoText_C.ExecuteUbergraph_XpBoostInfoText
 struct UXpBoostInfoText_C_ExecuteUbergraph_XpBoostInfoText_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

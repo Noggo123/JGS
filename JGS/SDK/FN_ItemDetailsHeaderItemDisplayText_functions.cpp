@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -34,23 +34,6 @@ void UItemDetailsHeaderItemDisplayText_C::GetDisplayName(struct FText* DisplayNa
 }
 
 
-// Function ItemDetailsHeaderItemDisplayText.ItemDetailsHeaderItemDisplayText_C.HandlePostDifferentItemToDetailSet
-// (Event, Protected, BlueprintEvent)
-
-void UItemDetailsHeaderItemDisplayText_C::HandlePostDifferentItemToDetailSet()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemDetailsHeaderItemDisplayText.ItemDetailsHeaderItemDisplayText_C.HandlePostDifferentItemToDetailSet");
-
-	UItemDetailsHeaderItemDisplayText_C_HandlePostDifferentItemToDetailSet_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function ItemDetailsHeaderItemDisplayText.ItemDetailsHeaderItemDisplayText_C.HandlePostDifferentItemToCompareWithSet
 // (Event, Protected, BlueprintEvent)
 
@@ -68,10 +51,27 @@ void UItemDetailsHeaderItemDisplayText_C::HandlePostDifferentItemToCompareWithSe
 }
 
 
+// Function ItemDetailsHeaderItemDisplayText.ItemDetailsHeaderItemDisplayText_C.HandlePostDifferentItemToDetailSet
+// (Event, Protected, BlueprintEvent)
+
+void UItemDetailsHeaderItemDisplayText_C::HandlePostDifferentItemToDetailSet()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemDetailsHeaderItemDisplayText.ItemDetailsHeaderItemDisplayText_C.HandlePostDifferentItemToDetailSet");
+
+	UItemDetailsHeaderItemDisplayText_C_HandlePostDifferentItemToDetailSet_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function ItemDetailsHeaderItemDisplayText.ItemDetailsHeaderItemDisplayText_C.ExecuteUbergraph_ItemDetailsHeaderItemDisplayText
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemDetailsHeaderItemDisplayText_C::ExecuteUbergraph_ItemDetailsHeaderItemDisplayText(int EntryPoint)
 {

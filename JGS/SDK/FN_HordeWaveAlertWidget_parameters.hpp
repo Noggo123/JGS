@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,29 +17,29 @@ namespace SDK
 // Function HordeWaveAlertWidget.HordeWaveAlertWidget_C.OnWaveStarted
 struct UHordeWaveAlertWidget_C_OnWaveStarted_Params
 {
-	struct FText                                       LevelText;                                                // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	int                                                Level;                                                    // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FText                                       WaveText;                                                 // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	int                                                WaveNum;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FText                                       LevelText;                                                // (ConstParm, Parm, OutParm, ReferenceParm)
+	int                                                Level;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FText                                       WaveText;                                                 // (ConstParm, Parm, OutParm, ReferenceParm)
+	int                                                WaveNum;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function HordeWaveAlertWidget.HordeWaveAlertWidget_C.OnWaveCompleted
 struct UHordeWaveAlertWidget_C_OnWaveCompleted_Params
 {
-	int                                                Wave;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	TArray<struct FFortItemInstanceQuantityPair>       Rewards;                                                  // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	int                                                Wave;                                                     // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+	TArray<struct FFortItemInstanceQuantityPair>       Rewards;                                                  // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function HordeWaveAlertWidget.HordeWaveAlertWidget_C.OnHordeTierInitialized_Event_0_1
 struct UHordeWaveAlertWidget_C_OnHordeTierInitialized_Event_0_1_Params
 {
-	TArray<struct FFortItemInstanceQuantityPair>       Items;                                                    // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<struct FFortItemInstanceQuantityPair>       Items;                                                    // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function HordeWaveAlertWidget.HordeWaveAlertWidget_C.OnWaveModifiersAdded
 struct UHordeWaveAlertWidget_C_OnWaveModifiersAdded_Params
 {
-	TArray<class UFortGameplayModifierItemDefinition*> Modifiers;                                                // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TArray<class UFortGameplayModifierItemDefinition*> Modifiers;                                                // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function HordeWaveAlertWidget.HordeWaveAlertWidget_C.Construct
@@ -75,7 +75,7 @@ struct UHordeWaveAlertWidget_C_OnAppearanceDisappearanceAnimComplete_Quick_Param
 // Function HordeWaveAlertWidget.HordeWaveAlertWidget_C.ExecuteUbergraph_HordeWaveAlertWidget
 struct UHordeWaveAlertWidget_C_ExecuteUbergraph_HordeWaveAlertWidget_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

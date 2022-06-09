@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,34 +12,12 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function FriendCodePC.FriendCodePC_C.GetCodeText
+// Function FriendCodePC.FriendCodePC_C.GetFriendCodeUrl
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // struct FText                   Result                         (Parm, OutParm)
 
-void UFriendCodePC_C::GetCodeText(struct FText* Result)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function FriendCodePC.FriendCodePC_C.GetCodeText");
-
-	UFriendCodePC_C_GetCodeText_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Result != nullptr)
-		*Result = params.Result;
-}
-
-
-// Function FriendCodePC.FriendCodePC_C.GetFriendCodeUrl
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// struct FString                 Result                         (Parm, OutParm, ZeroConstructor)
-
-void UFriendCodePC_C::GetFriendCodeUrl(struct FString* Result)
+void UFriendCodePC_C::GetFriendCodeUrl(struct FText* Result)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function FriendCodePC.FriendCodePC_C.GetFriendCodeUrl");
 
@@ -76,8 +54,8 @@ void UFriendCodePC_C::Construct()
 // Function FriendCodePC.FriendCodePC_C.OnMouseEnter
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent*          MouseEvent                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// struct FPointerEvent*          MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UFriendCodePC_C::OnMouseEnter(struct FGeometry* MyGeometry, struct FPointerEvent* MouseEvent)
 {
@@ -98,7 +76,7 @@ void UFriendCodePC_C::OnMouseEnter(struct FGeometry* MyGeometry, struct FPointer
 // Function FriendCodePC.FriendCodePC_C.OnMouseLeave
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FPointerEvent*          MouseEvent                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FPointerEvent*          MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UFriendCodePC_C::OnMouseLeave(struct FPointerEvent* MouseEvent)
 {
@@ -135,7 +113,7 @@ void UFriendCodePC_C::OnClicked()
 // Function FriendCodePC.FriendCodePC_C.ExecuteUbergraph_FriendCodePC
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UFriendCodePC_C::ExecuteUbergraph_FriendCodePC(int EntryPoint)
 {

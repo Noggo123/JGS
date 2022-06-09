@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -19,11 +19,6 @@ struct UMenuScreen_Commando_C_EvaluateGraphExposedInputs_ExecuteUbergraph_MenuSc
 {
 };
 
-// Function MenuScreen_Commando.MenuScreen_Commando_C.EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScreen_Commando_AnimGraphNode_ModifyBone_E4328FA745CE2162C4FC048495DF6B7C
-struct UMenuScreen_Commando_C_EvaluateGraphExposedInputs_ExecuteUbergraph_MenuScreen_Commando_AnimGraphNode_ModifyBone_E4328FA745CE2162C4FC048495DF6B7C_Params
-{
-};
-
 // Function MenuScreen_Commando.MenuScreen_Commando_C.AnimNotify_playFacialAnim
 struct UMenuScreen_Commando_C_AnimNotify_playFacialAnim_Params
 {
@@ -39,16 +34,10 @@ struct UMenuScreen_Commando_C_AnimNotify_LeftB_Params
 {
 };
 
-// Function MenuScreen_Commando.MenuScreen_Commando_C.BlueprintUpdateAnimation
-struct UMenuScreen_Commando_C_BlueprintUpdateAnimation_Params
-{
-	float*                                             DeltaTimeX;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function MenuScreen_Commando.MenuScreen_Commando_C.ExecuteUbergraph_MenuScreen_Commando
 struct UMenuScreen_Commando_C_ExecuteUbergraph_MenuScreen_Commando_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MenuScreen_Commando.MenuScreen_Commando_C.MenuScreenDispatcher__DelegateSignature

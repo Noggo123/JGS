@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -41,14 +41,14 @@ struct UMessageCenterListItem_C_GetData_Params
 // Function MessageCenterListItem.MessageCenterListItem_C.ShowText
 struct UMessageCenterListItem_C_ShowText_Params
 {
-	struct FText                                       Text;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm)
-	class UCommonTextBlock*                            TextBlock;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	struct FText                                       Text;                                                     // (Parm)
+	class UCommonTextBlock*                            TextBlock;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MessageCenterListItem.MessageCenterListItem_C.SetMessage
 struct UMessageCenterListItem_C_SetMessage_Params
 {
-	class UFortUINotification*                         MESSAGE;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortUINotification*                         MESSAGE;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MessageCenterListItem.MessageCenterListItem_C.OnAcquireFromPool
@@ -69,19 +69,19 @@ struct UMessageCenterListItem_C_Private_OnExpanderArrowShiftClicked_Params
 // Function MessageCenterListItem.MessageCenterListItem_C.RegisterOnClicked
 struct UMessageCenterListItem_C_RegisterOnClicked_Params
 {
-	struct FScriptDelegate                             Callback;                                                 // (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	struct FScriptDelegate                             Callback;                                                 // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 };
 
 // Function MessageCenterListItem.MessageCenterListItem_C.SetExpanded
 struct UMessageCenterListItem_C_SetExpanded_Params
 {
-	bool                                               bExpanded;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bExpanded;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MessageCenterListItem.MessageCenterListItem_C.SetIndexInList
 struct UMessageCenterListItem_C_SetIndexInList_Params
 {
-	int                                                InIndexInList;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                InIndexInList;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MessageCenterListItem.MessageCenterListItem_C.ToggleExpansion
@@ -97,8 +97,8 @@ struct UMessageCenterListItem_C_Reset_Params
 // Function MessageCenterListItem.MessageCenterListItem_C.SetData
 struct UMessageCenterListItem_C_SetData_Params
 {
-	class UObject*                                     InData;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonListView*                             OwningList;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UObject*                                     InData;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonListView*                             OwningList;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MessageCenterListItem.MessageCenterListItem_C.Construct
@@ -109,13 +109,13 @@ struct UMessageCenterListItem_C_Construct_Params
 // Function MessageCenterListItem.MessageCenterListItem_C.SetSelected
 struct UMessageCenterListItem_C_SetSelected_Params
 {
-	bool                                               bSelected;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bSelected;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MessageCenterListItem.MessageCenterListItem_C.ExecuteUbergraph_MessageCenterListItem
 struct UMessageCenterListItem_C_ExecuteUbergraph_MessageCenterListItem_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

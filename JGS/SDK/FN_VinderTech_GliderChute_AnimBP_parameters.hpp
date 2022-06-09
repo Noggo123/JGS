@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -29,11 +29,6 @@ struct UVinderTech_GliderChute_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergr
 {
 };
 
-// Function VinderTech_GliderChute_AnimBP.VinderTech_GliderChute_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_GliderChute_AnimBP_AnimGraphNode_SequencePlayer_2133C7F047F09F18A630588EBA7E4D65
-struct UVinderTech_GliderChute_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_GliderChute_AnimBP_AnimGraphNode_SequencePlayer_2133C7F047F09F18A630588EBA7E4D65_Params
-{
-};
-
 // Function VinderTech_GliderChute_AnimBP.VinderTech_GliderChute_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_GliderChute_AnimBP_AnimGraphNode_BlendSpacePlayer_7E66AFF7488A41D3156C3C9367D0163D
 struct UVinderTech_GliderChute_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_VinderTech_GliderChute_AnimBP_AnimGraphNode_BlendSpacePlayer_7E66AFF7488A41D3156C3C9367D0163D_Params
 {
@@ -47,13 +42,13 @@ struct UVinderTech_GliderChute_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergr
 // Function VinderTech_GliderChute_AnimBP.VinderTech_GliderChute_AnimBP_C.BlueprintUpdateAnimation
 struct UVinderTech_GliderChute_AnimBP_C_BlueprintUpdateAnimation_Params
 {
-	float*                                             DeltaTimeX;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float*                                             DeltaTimeX;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function VinderTech_GliderChute_AnimBP.VinderTech_GliderChute_AnimBP_C.ExecuteUbergraph_VinderTech_GliderChute_AnimBP
 struct UVinderTech_GliderChute_AnimBP_C_ExecuteUbergraph_VinderTech_GliderChute_AnimBP_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

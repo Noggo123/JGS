@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function SkillTreeBPLibrary.SkillTreeBPLibrary_C.GetSkillTreeNodeIconSizeByMagnitude
 // (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// EFortHomebaseNodeMagnitude     Node_Magnitude                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortHomebaseNodeMagnitude     Node_Magnitude                 (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // TEnumAsByte<EFortBrushSize>    Icon_Size                      (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void USkillTreeBPLibrary_C::STATIC_GetSkillTreeNodeIconSizeByMagnitude(EFortHomebaseNodeMagnitude Node_Magnitude, class UObject* __WorldContext, TEnumAsByte<EFortBrushSize>* Icon_Size)
@@ -41,8 +41,8 @@ void USkillTreeBPLibrary_C::STATIC_GetSkillTreeNodeIconSizeByMagnitude(EFortHome
 // Function SkillTreeBPLibrary.SkillTreeBPLibrary_C.GetSkillTreeNodeShapeByDisplayType
 // (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// EFortHomebaseNodeDisplayType   Display_Type                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortHomebaseNodeDisplayType   Display_Type                   (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           IsSquare                       (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 // bool                           IsExitNode                     (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
@@ -70,10 +70,10 @@ void USkillTreeBPLibrary_C::STATIC_GetSkillTreeNodeShapeByDisplayType(EFortHomeb
 // Function SkillTreeBPLibrary.SkillTreeBPLibrary_C.GetSkillTreeNodeSizeByMagnitude
 // (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// EFortHomebaseNodeMagnitude     Node_Magnitude                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFortHomebaseNodeDisplayType   Display_Type                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 World_Context                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortHomebaseNodeMagnitude     Node_Magnitude                 (Parm, ZeroConstructor, IsPlainOldData)
+// EFortHomebaseNodeDisplayType   Display_Type                   (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 World_Context                  (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // float                          Size                           (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
 void USkillTreeBPLibrary_C::STATIC_GetSkillTreeNodeSizeByMagnitude(EFortHomebaseNodeMagnitude Node_Magnitude, EFortHomebaseNodeDisplayType Display_Type, class UObject* World_Context, class UObject* __WorldContext, float* Size)
@@ -100,10 +100,10 @@ void USkillTreeBPLibrary_C::STATIC_GetSkillTreeNodeSizeByMagnitude(EFortHomebase
 // Function SkillTreeBPLibrary.SkillTreeBPLibrary_C.UpdateSkillTreeNodeMaterial_DynamicData
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 World_Context                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UMaterialInstanceDynamic* Material                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FHomebaseNodeState      NodeState                      (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 World_Context                  (Parm, ZeroConstructor, IsPlainOldData)
+// class UMaterialInstanceDynamic* Material                       (Parm, ZeroConstructor, IsPlainOldData)
+// struct FHomebaseNodeState      NodeState                      (Parm)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void USkillTreeBPLibrary_C::STATIC_UpdateSkillTreeNodeMaterial_DynamicData(class UObject* World_Context, class UMaterialInstanceDynamic* Material, const struct FHomebaseNodeState& NodeState, class UObject* __WorldContext)
 {
@@ -126,15 +126,16 @@ void USkillTreeBPLibrary_C::STATIC_UpdateSkillTreeNodeMaterial_DynamicData(class
 // Function SkillTreeBPLibrary.SkillTreeBPLibrary_C.GetSkillTreeNodeCostTint
 // (Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FHomebaseNode           HomebaseNode                   (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FHomebaseNode           HomebaseNode                   (ConstParm, Parm, OutParm, ReferenceParm)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            NodeTintColour                 (Parm, OutParm, IsPlainOldData)
 
-void USkillTreeBPLibrary_C::STATIC_GetSkillTreeNodeCostTint(class UObject* __WorldContext, struct FHomebaseNode* HomebaseNode, struct FLinearColor* NodeTintColour)
+void USkillTreeBPLibrary_C::STATIC_GetSkillTreeNodeCostTint(const struct FHomebaseNode& HomebaseNode, class UObject* __WorldContext, struct FLinearColor* NodeTintColour)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function SkillTreeBPLibrary.SkillTreeBPLibrary_C.GetSkillTreeNodeCostTint");
 
 	USkillTreeBPLibrary_C_GetSkillTreeNodeCostTint_Params params;
+	params.HomebaseNode = HomebaseNode;
 	params.__WorldContext = __WorldContext;
 
 	auto flags = fn->FunctionFlags;
@@ -143,8 +144,6 @@ void USkillTreeBPLibrary_C::STATIC_GetSkillTreeNodeCostTint(class UObject* __Wor
 
 	fn->FunctionFlags = flags;
 
-	if (HomebaseNode != nullptr)
-		*HomebaseNode = params.HomebaseNode;
 	if (NodeTintColour != nullptr)
 		*NodeTintColour = params.NodeTintColour;
 }
@@ -153,20 +152,21 @@ void USkillTreeBPLibrary_C::STATIC_GetSkillTreeNodeCostTint(class UObject* __Wor
 // Function SkillTreeBPLibrary.SkillTreeBPLibrary_C.UpdateSkillTreeNodeMaterial_StaticData
 // (Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                 World_Context                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UMaterialInstanceDynamic* Material                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FHomebaseNode           NodeData                       (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FFortSkillTreeNodeDisplayData DisplayData                    (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 __WorldContext                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 World_Context                  (Parm, ZeroConstructor, IsPlainOldData)
+// class UMaterialInstanceDynamic* Material                       (Parm, ZeroConstructor, IsPlainOldData)
+// struct FHomebaseNode           NodeData                       (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FFortSkillTreeNodeDisplayData DisplayData                    (Parm)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 
-void USkillTreeBPLibrary_C::STATIC_UpdateSkillTreeNodeMaterial_StaticData(class UObject* World_Context, class UMaterialInstanceDynamic* Material, const struct FFortSkillTreeNodeDisplayData& DisplayData, class UCommonButton* Button, class UObject* __WorldContext, struct FHomebaseNode* NodeData)
+void USkillTreeBPLibrary_C::STATIC_UpdateSkillTreeNodeMaterial_StaticData(class UObject* World_Context, class UMaterialInstanceDynamic* Material, const struct FHomebaseNode& NodeData, const struct FFortSkillTreeNodeDisplayData& DisplayData, class UCommonButton* Button, class UObject* __WorldContext)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function SkillTreeBPLibrary.SkillTreeBPLibrary_C.UpdateSkillTreeNodeMaterial_StaticData");
 
 	USkillTreeBPLibrary_C_UpdateSkillTreeNodeMaterial_StaticData_Params params;
 	params.World_Context = World_Context;
 	params.Material = Material;
+	params.NodeData = NodeData;
 	params.DisplayData = DisplayData;
 	params.Button = Button;
 	params.__WorldContext = __WorldContext;
@@ -176,9 +176,6 @@ void USkillTreeBPLibrary_C::STATIC_UpdateSkillTreeNodeMaterial_StaticData(class 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (NodeData != nullptr)
-		*NodeData = params.NodeData;
 }
 
 

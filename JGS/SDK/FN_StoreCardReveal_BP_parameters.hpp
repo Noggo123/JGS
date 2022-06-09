@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,14 +17,14 @@ namespace SDK
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.RarityEnumToText
 struct AStoreCardReveal_BP_C_RarityEnumToText_Params
 {
-	EFortRarity                                        InRarity;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	EFortRarity                                        InRarity;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FText                                       OutRarity;                                                // (Parm, OutParm)
 };
 
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.IsDefender
 struct AStoreCardReveal_BP_C_IsDefender_Params
 {
-	class UFortAccountItemDefinition*                  Object;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortAccountItemDefinition*                  Object;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               IsDefender;                                               // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 	struct FText                                       Result;                                                   // (Parm, OutParm)
 };
@@ -32,13 +32,13 @@ struct AStoreCardReveal_BP_C_IsDefender_Params
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.SetText_CCB
 struct AStoreCardReveal_BP_C_SetText_CCB_Params
 {
-	bool                                               Hide;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Hide;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.SetText_CCA
 struct AStoreCardReveal_BP_C_SetText_CCA_Params
 {
-	bool                                               Hide;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Hide;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.UserConstructionScript
@@ -256,72 +256,77 @@ struct AStoreCardReveal_BP_C_TL_CardMoveToScreen__UpdateFunc_Params
 {
 };
 
-// Function StoreCardReveal_BP.StoreCardReveal_BP_C.OnLoaded_90006C1C471D136EF3B142B7181AC990
-struct AStoreCardReveal_BP_C_OnLoaded_90006C1C471D136EF3B142B7181AC990_Params
-{
-	class UObject*                                     Loaded;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function StoreCardReveal_BP.StoreCardReveal_BP_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_3_4
-struct AStoreCardReveal_BP_C_InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_3_4_Params
-{
-	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
-};
-
-// Function StoreCardReveal_BP.StoreCardReveal_BP_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_2_3
-struct AStoreCardReveal_BP_C_InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_2_3_Params
-{
-	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
-};
-
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.OnLoaded_EFC62B084995CBCCD64787B5C4EF30E6
 struct AStoreCardReveal_BP_C_OnLoaded_EFC62B084995CBCCD64787B5C4EF30E6_Params
 {
-	class UObject*                                     Loaded;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UObject*                                     Loaded;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function StoreCardReveal_BP.StoreCardReveal_BP_C.OnLoaded_90006C1C471D136EF3B142B7181AC990
+struct AStoreCardReveal_BP_C_OnLoaded_90006C1C471D136EF3B142B7181AC990_Params
+{
+	class UObject*                                     Loaded;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function StoreCardReveal_BP.StoreCardReveal_BP_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_7_8
+struct AStoreCardReveal_BP_C_InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_7_8_Params
+{
+	struct FKey                                        Key;                                                      // (Parm)
+};
+
+// Function StoreCardReveal_BP.StoreCardReveal_BP_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_6_7
+struct AStoreCardReveal_BP_C_InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_6_7_Params
+{
+	struct FKey                                        Key;                                                      // (Parm)
 };
 
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.OnLoaded_EFC62B084995CBCCD64787B51198EA0F
 struct AStoreCardReveal_BP_C_OnLoaded_EFC62B084995CBCCD64787B51198EA0F_Params
 {
-	class UObject*                                     Loaded;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UObject*                                     Loaded;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function StoreCardReveal_BP.StoreCardReveal_BP_C.InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_5_6
+struct AStoreCardReveal_BP_C_InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_5_6_Params
+{
+	struct FKey                                        Key;                                                      // (Parm)
 };
 
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.OnLoaded_90006C1C471D136EF3B142B7CD6D1379
 struct AStoreCardReveal_BP_C_OnLoaded_90006C1C471D136EF3B142B7CD6D1379_Params
 {
-	class UObject*                                     Loaded;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function StoreCardReveal_BP.StoreCardReveal_BP_C.InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_1_2
-struct AStoreCardReveal_BP_C_InpActEvt_Gamepad_RightTrigger_K2Node_InputKeyEvent_1_2_Params
-{
-	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
+	class UObject*                                     Loaded;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.InpTchEvt_Released
 struct AStoreCardReveal_BP_C_InpTchEvt_Released_Params
 {
-	TEnumAsByte<ETouchIndex>                           FingerIndex;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     Location;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+	TEnumAsByte<ETouchIndex>                           FingerIndex;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     Location;                                                 // (Parm, IsPlainOldData)
 };
 
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.InpTchEvt_Pressed
 struct AStoreCardReveal_BP_C_InpTchEvt_Pressed_Params
 {
-	TEnumAsByte<ETouchIndex>                           FingerIndex;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     Location;                                                 // (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+	TEnumAsByte<ETouchIndex>                           FingerIndex;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     Location;                                                 // (Parm, IsPlainOldData)
 };
 
-// Function StoreCardReveal_BP.StoreCardReveal_BP_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_0_1
-struct AStoreCardReveal_BP_C_InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_0_1_Params
+// Function StoreCardReveal_BP.StoreCardReveal_BP_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_4_5
+struct AStoreCardReveal_BP_C_InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_4_5_Params
 {
-	struct FKey                                        Key;                                                      // (BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FKey                                        Key;                                                      // (Parm)
+};
+
+// Function StoreCardReveal_BP.StoreCardReveal_BP_C.InitiatePinata
+struct AStoreCardReveal_BP_C_InitiatePinata_Params
+{
 };
 
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.OnStoreStateChanged
 struct AStoreCardReveal_BP_C_OnStoreStateChanged_Params
 {
-	EFortStoreState                                    NewStoreState;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	EFortStoreState                                    NewStoreState;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.StartPackOpen
@@ -402,15 +407,15 @@ struct AStoreCardReveal_BP_C_ChoiceMadeStart_Params
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.BndEvt__S_ChoiceCardA_K2Node_ComponentBoundEvent_0_ComponentOnClickedSignature__DelegateSignature
 struct AStoreCardReveal_BP_C_BndEvt__S_ChoiceCardA_K2Node_ComponentBoundEvent_0_ComponentOnClickedSignature__DelegateSignature_Params
 {
-	class UPrimitiveComponent*                         TouchedComponent;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FKey                                        ButtonPressed;                                            // (BlueprintVisible, BlueprintReadOnly, Parm)
+	class UPrimitiveComponent*                         TouchedComponent;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FKey                                        ButtonPressed;                                            // (Parm)
 };
 
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.BndEvt__S_ChoiceCardB_K2Node_ComponentBoundEvent_1_ComponentOnClickedSignature__DelegateSignature
 struct AStoreCardReveal_BP_C_BndEvt__S_ChoiceCardB_K2Node_ComponentBoundEvent_1_ComponentOnClickedSignature__DelegateSignature_Params
 {
-	class UPrimitiveComponent*                         TouchedComponent;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	struct FKey                                        ButtonPressed;                                            // (BlueprintVisible, BlueprintReadOnly, Parm)
+	class UPrimitiveComponent*                         TouchedComponent;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FKey                                        ButtonPressed;                                            // (Parm)
 };
 
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.SkipBackRevealForChoicePack
@@ -446,13 +451,13 @@ struct AStoreCardReveal_BP_C_Stop_CC_HoverAnims_Params
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.OnBeginCursorOver_ChoiceCardA
 struct AStoreCardReveal_BP_C_OnBeginCursorOver_ChoiceCardA_Params
 {
-	class UPrimitiveComponent*                         TouchedComponent;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent*                         TouchedComponent;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.OnEndCursorOver_ChoiceCardA
 struct AStoreCardReveal_BP_C_OnEndCursorOver_ChoiceCardA_Params
 {
-	class UPrimitiveComponent*                         TouchedComponent;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent*                         TouchedComponent;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.HoverStart-CC-A
@@ -468,13 +473,13 @@ struct AStoreCardReveal_BP_C_HoverEnd_CC_A_Params
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.OnBeginCursorOver_ChoiceCardB
 struct AStoreCardReveal_BP_C_OnBeginCursorOver_ChoiceCardB_Params
 {
-	class UPrimitiveComponent*                         TouchedComponent;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent*                         TouchedComponent;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.OnEndCursorOver_ChoiceCardB
 struct AStoreCardReveal_BP_C_OnEndCursorOver_ChoiceCardB_Params
 {
-	class UPrimitiveComponent*                         TouchedComponent;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent*                         TouchedComponent;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.HoverStart-CC-B
@@ -535,13 +540,13 @@ struct AStoreCardReveal_BP_C_ReadyForCardToCome_Params
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.InpAxisEvt_MoveRight_Gamepad_K2Node_InputAxisEvent_0_1
 struct AStoreCardReveal_BP_C_InpAxisEvt_MoveRight_Gamepad_K2Node_InputAxisEvent_0_1_Params
 {
-	float                                              AxisValue;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	float                                              AxisValue;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.Handle Input Mode Changed
 struct AStoreCardReveal_BP_C_Handle_Input_Mode_Changed_Params
 {
-	bool                                               bUsingGamepad;                                            // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bUsingGamepad;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.ExitPackStore
@@ -552,15 +557,15 @@ struct AStoreCardReveal_BP_C_ExitPackStore_Params
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.BndEvt__S-ChoiceCardA_K2Node_ComponentBoundEvent_0_ComponentOnInputTouchEndSignature__DelegateSignature
 struct AStoreCardReveal_BP_C_BndEvt__S_ChoiceCardA_K2Node_ComponentBoundEvent_0_ComponentOnInputTouchEndSignature__DelegateSignature_Params
 {
-	TEnumAsByte<ETouchIndex>                           FingerIndex;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UPrimitiveComponent*                         TouchedComponent;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ETouchIndex>                           FingerIndex;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent*                         TouchedComponent;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.BndEvt__S-ChoiceCardB_K2Node_ComponentBoundEvent_1_ComponentOnInputTouchEndSignature__DelegateSignature
 struct AStoreCardReveal_BP_C_BndEvt__S_ChoiceCardB_K2Node_ComponentBoundEvent_1_ComponentOnInputTouchEndSignature__DelegateSignature_Params
 {
-	TEnumAsByte<ETouchIndex>                           FingerIndex;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	class UPrimitiveComponent*                         TouchedComponent;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ETouchIndex>                           FingerIndex;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent*                         TouchedComponent;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.ResetGamepadInput
@@ -596,18 +601,13 @@ struct AStoreCardReveal_BP_C_CCRarityColorReady_Params
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.InpAxisEvt_MoveRight_K2Node_InputAxisEvent_40_41
 struct AStoreCardReveal_BP_C_InpAxisEvt_MoveRight_K2Node_InputAxisEvent_40_41_Params
 {
-	float                                              AxisValue;                                                // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function StoreCardReveal_BP.StoreCardReveal_BP_C.InitiatePinata
-struct AStoreCardReveal_BP_C_InitiatePinata_Params
-{
+	float                                              AxisValue;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function StoreCardReveal_BP.StoreCardReveal_BP_C.ExecuteUbergraph_StoreCardReveal_BP
 struct AStoreCardReveal_BP_C_ExecuteUbergraph_StoreCardReveal_BP_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

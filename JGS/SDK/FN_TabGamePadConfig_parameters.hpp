@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -42,7 +42,7 @@ struct UTabGamePadConfig_C_Construct_Params
 // Function TabGamePadConfig.TabGamePadConfig_C.Configuration Changed
 struct UTabGamePadConfig_C_Configuration_Changed_Params
 {
-	int                                                Selected_Index;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Selected_Index;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TabGamePadConfig.TabGamePadConfig_C.CenterOnTab
@@ -53,7 +53,7 @@ struct UTabGamePadConfig_C_CenterOnTab_Params
 // Function TabGamePadConfig.TabGamePadConfig_C.Gamepad Config Changed
 struct UTabGamePadConfig_C_Gamepad_Config_Changed_Params
 {
-	int                                                Selected_Index;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Selected_Index;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TabGamePadConfig.TabGamePadConfig_C.UpdateOptionsTab
@@ -64,13 +64,13 @@ struct UTabGamePadConfig_C_UpdateOptionsTab_Params
 // Function TabGamePadConfig.TabGamePadConfig_C.ControllerPlatformConfigChanged
 struct UTabGamePadConfig_C_ControllerPlatformConfigChanged_Params
 {
-	int                                                Selected_Index;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Selected_Index;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TabGamePadConfig.TabGamePadConfig_C.ExecuteUbergraph_TabGamePadConfig
 struct UTabGamePadConfig_C_ExecuteUbergraph_TabGamePadConfig_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

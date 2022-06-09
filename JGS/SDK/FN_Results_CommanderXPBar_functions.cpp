@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -75,8 +75,8 @@ void UResults_CommanderXPBar_C::GetHoveredProgressBarSection(struct FName* XpSec
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.UpdateProgressBarPercent
 // (Protected, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FName                   ParameterName                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          ProgressBarPercent             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ParameterName                  (Parm, ZeroConstructor, IsPlainOldData)
+// float                          ProgressBarPercent             (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_CommanderXPBar_C::UpdateProgressBarPercent(const struct FName& ParameterName, float ProgressBarPercent)
 {
@@ -148,7 +148,7 @@ void UResults_CommanderXPBar_C::clearXpBar()
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.PlayAnimationCommon
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*        Animation                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidgetAnimation*        Animation                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_CommanderXPBar_C::PlayAnimationCommon(class UWidgetAnimation* Animation)
 {
@@ -202,8 +202,8 @@ void UResults_CommanderXPBar_C::SetSkippingToEnd()
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.Initialize
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortUIScoreReport*      InScoreReport                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// float                          PlayRate                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortUIScoreReport*      InScoreReport                  (Parm, ZeroConstructor, IsPlainOldData)
+// float                          PlayRate                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_CommanderXPBar_C::Initialize(class UFortUIScoreReport* InScoreReport, float PlayRate)
 {
@@ -309,7 +309,7 @@ void UResults_CommanderXPBar_C::On_Count_Finished()
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_CommanderXPBar_C::PreConstruct(bool* IsDesignTime)
 {
@@ -346,7 +346,7 @@ void UResults_CommanderXPBar_C::Construct()
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.ExecuteUbergraph_Results_CommanderXPBar
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_CommanderXPBar_C::ExecuteUbergraph_Results_CommanderXPBar(int EntryPoint)
 {
@@ -400,7 +400,7 @@ void UResults_CommanderXPBar_C::IntroFinished__DelegateSignature()
 // Function Results_CommanderXPBar.Results_CommanderXPBar_C.LeveledUp__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            NewLevel                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            NewLevel                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UResults_CommanderXPBar_C::LeveledUp__DelegateSignature(int NewLevel)
 {

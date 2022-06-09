@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function ItemDetailsHeaderTagListText.ItemDetailsHeaderTagListText_C.FormatItemDisplayTags
 // (Private, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// TArray<struct FText>           TagTexts                       (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<struct FText>           TagTexts                       (Parm, OutParm, ZeroConstructor, ReferenceParm)
 // struct FText                   FormatedText                   (Parm, OutParm)
 
 void UItemDetailsHeaderTagListText_C::FormatItemDisplayTags(TArray<struct FText>* TagTexts, struct FText* FormatedText)
@@ -71,10 +71,27 @@ void UItemDetailsHeaderTagListText_C::HandlePostDifferentItemToCompareWithSet()
 }
 
 
+// Function ItemDetailsHeaderTagListText.ItemDetailsHeaderTagListText_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UItemDetailsHeaderTagListText_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemDetailsHeaderTagListText.ItemDetailsHeaderTagListText_C.Construct");
+
+	UItemDetailsHeaderTagListText_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function ItemDetailsHeaderTagListText.ItemDetailsHeaderTagListText_C.ExecuteUbergraph_ItemDetailsHeaderTagListText
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemDetailsHeaderTagListText_C::ExecuteUbergraph_ItemDetailsHeaderTagListText(int EntryPoint)
 {

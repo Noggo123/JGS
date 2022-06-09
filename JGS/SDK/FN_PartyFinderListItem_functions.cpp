@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,7 +49,7 @@ void UPartyFinderListItem_C::UpdateStateText()
 // Function PartyFinderListItem.PartyFinderListItem_C.SetupExpansion
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Expanded                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Expanded                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPartyFinderListItem_C::SetupExpansion(bool Expanded)
 {
@@ -137,7 +137,7 @@ void UPartyFinderListItem_C::OnSocialItemSet()
 // Function PartyFinderListItem.PartyFinderListItem_C.ExpansionChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool*                          bExpanded                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          bExpanded                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPartyFinderListItem_C::ExpansionChanged(bool* bExpanded)
 {
@@ -191,7 +191,7 @@ void UPartyFinderListItem_C::Destruct()
 // Function PartyFinderListItem.PartyFinderListItem_C.ExecuteUbergraph_PartyFinderListItem
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPartyFinderListItem_C::ExecuteUbergraph_PartyFinderListItem(int EntryPoint)
 {

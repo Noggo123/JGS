@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,8 +15,8 @@ namespace SDK
 // Function QuestProgressWidget.QuestProgressWidget_C.Update
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Required                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            Achieved                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Required                       (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Achieved                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void UQuestProgressWidget_C::Update(int Required, int Achieved)
 {

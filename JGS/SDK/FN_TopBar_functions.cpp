@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,77 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function TopBar.TopBar_C.HandleSocialPanelAnimComplete
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UTopBar_C::HandleSocialPanelAnimComplete()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TopBar.TopBar_C.HandleSocialPanelAnimComplete");
-
-	UTopBar_C_HandleSocialPanelAnimComplete_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function TopBar.TopBar_C.HandleMainMenuAnimComplete
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UTopBar_C::HandleMainMenuAnimComplete()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TopBar.TopBar_C.HandleMainMenuAnimComplete");
-
-	UTopBar_C_HandleMainMenuAnimComplete_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function TopBar.TopBar_C.CloseSocialMenu
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UTopBar_C::CloseSocialMenu()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TopBar.TopBar_C.CloseSocialMenu");
-
-	UTopBar_C_CloseSocialMenu_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function TopBar.TopBar_C.Set Header Visibility
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           Visibility                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UTopBar_C::Set_Header_Visibility(bool Visibility)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TopBar.TopBar_C.Set Header Visibility");
-
-	UTopBar_C_Set_Header_Visibility_Params params;
-	params.Visibility = Visibility;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function TopBar.TopBar_C.ConfigureVisibleItemsForSubGame
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -213,7 +142,7 @@ class UWidget* UTopBar_C::GetFriendsTooltipWidget()
 // Function TopBar.TopBar_C.HandleActiveInvitesCountChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            ActiveInvitesCount             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            ActiveInvitesCount             (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTopBar_C::HandleActiveInvitesCountChanged(int ActiveInvitesCount)
 {
@@ -233,8 +162,8 @@ void UTopBar_C::HandleActiveInvitesCountChanged(int ActiveInvitesCount)
 // Function TopBar.TopBar_C.HandleAccountPickerResult
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            ControllerIndex                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           UserSwitched                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            ControllerIndex                (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           UserSwitched                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTopBar_C::HandleAccountPickerResult(int ControllerIndex, bool UserSwitched)
 {
@@ -272,7 +201,7 @@ void UTopBar_C::UnbindActiveFriendsCountChangedEvent()
 // Function TopBar.TopBar_C.HandleActiveFriendsCountChanged
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            ActiveFriendsCount             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            ActiveFriendsCount             (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTopBar_C::HandleActiveFriendsCountChanged(int ActiveFriendsCount)
 {
@@ -326,9 +255,9 @@ void UTopBar_C::BindSwitchProfileAction()
 // Function TopBar.TopBar_C.HandleSwitchProfileAction
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UTopBar_C::HandleSwitchProfileAction(bool* Passthrough)
+void UTopBar_C::HandleSwitchProfileAction(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function TopBar.TopBar_C.HandleSwitchProfileAction");
 
@@ -340,15 +269,15 @@ void UTopBar_C::HandleSwitchProfileAction(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
 // Function TopBar.TopBar_C.HandleFeatureSwitchOp
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortUIFeature                 Feature                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortUIFeature                 Feature                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTopBar_C::HandleFeatureSwitchOp(EFortUIFeature Feature)
 {
@@ -416,6 +345,27 @@ void UTopBar_C::ForceMenuOpen()
 }
 
 
+// Function TopBar.TopBar_C.GetSocialMenuContent
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class UWidget* UTopBar_C::GetSocialMenuContent()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function TopBar.TopBar_C.GetSocialMenuContent");
+
+	UTopBar_C_GetSocialMenuContent_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
 // Function TopBar.TopBar_C.CreateWidgets
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -436,9 +386,9 @@ void UTopBar_C::CreateWidgets()
 // Function TopBar.TopBar_C.HandleCloseAction
 // (Private, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Passthrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UTopBar_C::HandleCloseAction(bool* Passthrough)
+void UTopBar_C::HandleCloseAction(bool* PassThrough)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function TopBar.TopBar_C.HandleCloseAction");
 
@@ -450,8 +400,8 @@ void UTopBar_C::HandleCloseAction(bool* Passthrough)
 
 	fn->FunctionFlags = flags;
 
-	if (Passthrough != nullptr)
-		*Passthrough = params.Passthrough;
+	if (PassThrough != nullptr)
+		*PassThrough = params.PassThrough;
 }
 
 
@@ -509,8 +459,8 @@ void UTopBar_C::OpenMainMenu()
 // Function TopBar.TopBar_C.DialogResult_32D813B145A5E184B01A15AABE16B774
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortDialogResult              Result                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ResultName                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortDialogResult              Result                         (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   ResultName                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTopBar_C::DialogResult_32D813B145A5E184B01A15AABE16B774(EFortDialogResult Result, const struct FName& ResultName)
 {
@@ -616,7 +566,7 @@ void UTopBar_C::BndEvt__MainMenu_K2Node_ComponentBoundEvent_48_OnRequestShowFeed
 // Function TopBar.TopBar_C.BndEvt__Social_K2Node_ComponentBoundEvent_64_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTopBar_C::BndEvt__Social_K2Node_ComponentBoundEvent_64_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -636,7 +586,7 @@ void UTopBar_C::BndEvt__Social_K2Node_ComponentBoundEvent_64_CommonButtonClicked
 // Function TopBar.TopBar_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTopBar_C::PreConstruct(bool* IsDesignTime)
 {
@@ -644,6 +594,23 @@ void UTopBar_C::PreConstruct(bool* IsDesignTime)
 
 	UTopBar_C_PreConstruct_Params params;
 	params.IsDesignTime = IsDesignTime;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function TopBar.TopBar_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UTopBar_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function TopBar.TopBar_C.Construct");
+
+	UTopBar_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -673,7 +640,7 @@ void UTopBar_C::Destruct()
 // Function TopBar.TopBar_C.OnAnimationFinished
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation**       Animation                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UWidgetAnimation**       Animation                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
 void UTopBar_C::OnAnimationFinished(class UWidgetAnimation** Animation)
 {
@@ -727,7 +694,7 @@ void UTopBar_C::BndEvt__BP_FortLiveStreamGrantWindowExpires_K2Node_ComponentBoun
 // Function TopBar.TopBar_C.ShowSocialConfirmation
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   MESSAGE                        (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   MESSAGE                        (Parm)
 
 void UTopBar_C::ShowSocialConfirmation(const struct FText& MESSAGE)
 {
@@ -764,7 +731,7 @@ void UTopBar_C::On_Power_Increased()
 // Function TopBar.TopBar_C.BndEvt__MainMenuButton_K2Node_ComponentBoundEvent_70_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTopBar_C::BndEvt__MainMenuButton_K2Node_ComponentBoundEvent_70_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -781,98 +748,10 @@ void UTopBar_C::BndEvt__MainMenuButton_K2Node_ComponentBoundEvent_70_CommonButto
 }
 
 
-// Function TopBar.TopBar_C.AddIconToScreen
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class UCommonLazyImage**       Image                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UTopBar_C::AddIconToScreen(class UCommonLazyImage** Image)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TopBar.TopBar_C.AddIconToScreen");
-
-	UTopBar_C_AddIconToScreen_Params params;
-	params.Image = Image;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function TopBar.TopBar_C.ManualToggleMainMenu
-// (BlueprintCallable, BlueprintEvent)
-
-void UTopBar_C::ManualToggleMainMenu()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TopBar.TopBar_C.ManualToggleMainMenu");
-
-	UTopBar_C_ManualToggleMainMenu_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function TopBar.TopBar_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UTopBar_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TopBar.TopBar_C.Construct");
-
-	UTopBar_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function TopBar.TopBar_C.BndEvt__MainMenu_K2Node_ComponentBoundEvent_0_OnRequestShowSocialWidget__DelegateSignature
-// (BlueprintEvent)
-
-void UTopBar_C::BndEvt__MainMenu_K2Node_ComponentBoundEvent_0_OnRequestShowSocialWidget__DelegateSignature()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TopBar.TopBar_C.BndEvt__MainMenu_K2Node_ComponentBoundEvent_0_OnRequestShowSocialWidget__DelegateSignature");
-
-	UTopBar_C_BndEvt__MainMenu_K2Node_ComponentBoundEvent_0_OnRequestShowSocialWidget__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function TopBar.TopBar_C.On Social Panel Closed
-// (BlueprintCallable, BlueprintEvent)
-
-void UTopBar_C::On_Social_Panel_Closed()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TopBar.TopBar_C.On Social Panel Closed");
-
-	UTopBar_C_On_Social_Panel_Closed_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function TopBar.TopBar_C.ExecuteUbergraph_TopBar
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTopBar_C::ExecuteUbergraph_TopBar(int EntryPoint)
 {
@@ -909,7 +788,7 @@ void UTopBar_C::OpenAccountPicker__DelegateSignature()
 // Function TopBar.TopBar_C.MainMenuStateChanged__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Open                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Open                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UTopBar_C::MainMenuStateChanged__DelegateSignature(bool Open)
 {

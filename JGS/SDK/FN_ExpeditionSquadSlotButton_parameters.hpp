@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,6 +14,11 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
+// Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.Send to Skill Tree
+struct UExpeditionSquadSlotButton_C_Send_to_Skill_Tree_Params
+{
+};
+
 // Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.Get Squad Data
 struct UExpeditionSquadSlotButton_C_Get_Squad_Data_Params
 {
@@ -25,7 +30,12 @@ struct UExpeditionSquadSlotButton_C_Get_Squad_Data_Params
 // Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.PreConstruct
 struct UExpeditionSquadSlotButton_C_PreConstruct_Params
 {
-	bool*                                              IsDesignTime;                                             // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.OnClicked
+struct UExpeditionSquadSlotButton_C_OnClicked_Params
+{
 };
 
 // Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.SquadSlotWidgetUpdated
@@ -38,37 +48,20 @@ struct UExpeditionSquadSlotButton_C_HandlePostDifferentSquadSlotSetBP_Params
 {
 };
 
+// Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.OnDoubleClicked
+struct UExpeditionSquadSlotButton_C_OnDoubleClicked_Params
+{
+};
+
 // Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.OnSelected
 struct UExpeditionSquadSlotButton_C_OnSelected_Params
 {
 };
 
-// Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.BndEvt__PopupMenuAnchor_K2Node_ComponentBoundEvent_3_OnMenuOpenChangedEvent__DelegateSignature
-struct UExpeditionSquadSlotButton_C_BndEvt__PopupMenuAnchor_K2Node_ComponentBoundEvent_3_OnMenuOpenChangedEvent__DelegateSignature_Params
-{
-	bool                                               bIsOpen;                                                  // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.Construct
-struct UExpeditionSquadSlotButton_C_Construct_Params
-{
-};
-
-// Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.Destruct
-struct UExpeditionSquadSlotButton_C_Destruct_Params
-{
-};
-
-// Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.Open Squad Slot
-struct UExpeditionSquadSlotButton_C_Open_Squad_Slot_Params
-{
-	int                                                SquadSlotIndex;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.ExecuteUbergraph_ExpeditionSquadSlotButton
 struct UExpeditionSquadSlotButton_C_ExecuteUbergraph_ExpeditionSquadSlotButton_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.OnSquadSlotOpened__DelegateSignature
@@ -79,13 +72,13 @@ struct UExpeditionSquadSlotButton_C_OnSquadSlotOpened__DelegateSignature_Params
 // Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.OnSquadSlotUpdated__DelegateSignature
 struct UExpeditionSquadSlotButton_C_OnSquadSlotUpdated__DelegateSignature_Params
 {
-	class UFortItem*                                   Item;                                                     // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ExpeditionSquadSlotButton.ExpeditionSquadSlotButton_C.OnSquadSlotSelected__DelegateSignature
 struct UExpeditionSquadSlotButton_C_OnSquadSlotSelected__DelegateSignature_Params
 {
-	int                                                SquadSlotIndex;                                           // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                SquadSlotIndex;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

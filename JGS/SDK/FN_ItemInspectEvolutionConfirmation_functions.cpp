@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,6 +20,26 @@ void UItemInspectEvolutionConfirmation_C::SetEvolutionRestrictions()
 	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectEvolutionConfirmation.ItemInspectEvolutionConfirmation_C.SetEvolutionRestrictions");
 
 	UItemInspectEvolutionConfirmation_C_SetEvolutionRestrictions_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemInspectEvolutionConfirmation.ItemInspectEvolutionConfirmation_C.UnselectOtherEvolutions
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            SelectedIndex                  (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemInspectEvolutionConfirmation_C::UnselectOtherEvolutions(int SelectedIndex)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectEvolutionConfirmation.ItemInspectEvolutionConfirmation_C.UnselectOtherEvolutions");
+
+	UItemInspectEvolutionConfirmation_C_UnselectOtherEvolutions_Params params;
+	params.SelectedIndex = SelectedIndex;
 
 	auto flags = fn->FunctionFlags;
 
@@ -139,8 +159,8 @@ void UItemInspectEvolutionConfirmation_C::SetupEvolutionOptions()
 // Function ItemInspectEvolutionConfirmation.ItemInspectEvolutionConfirmation_C.HandleEvolutionOptionSelected
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            RecipeIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+// int                            RecipeIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemInspectEvolutionConfirmation_C::HandleEvolutionOptionSelected(class UFortItem* Item, int RecipeIndex)
 {
@@ -158,11 +178,53 @@ void UItemInspectEvolutionConfirmation_C::HandleEvolutionOptionSelected(class UF
 }
 
 
+// Function ItemInspectEvolutionConfirmation.ItemInspectEvolutionConfirmation_C.HandleEvolutionOptionUnhovered
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemInspectEvolutionConfirmation_C::HandleEvolutionOptionUnhovered(class UFortItem* Item)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectEvolutionConfirmation.ItemInspectEvolutionConfirmation_C.HandleEvolutionOptionUnhovered");
+
+	UItemInspectEvolutionConfirmation_C_HandleEvolutionOptionUnhovered_Params params;
+	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemInspectEvolutionConfirmation.ItemInspectEvolutionConfirmation_C.HandleEvolutionOptionHovered
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+// int                            RecipeIndex                    (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemInspectEvolutionConfirmation_C::HandleEvolutionOptionHovered(class UFortItem* Item, int RecipeIndex)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectEvolutionConfirmation.ItemInspectEvolutionConfirmation_C.HandleEvolutionOptionHovered");
+
+	UItemInspectEvolutionConfirmation_C_HandleEvolutionOptionHovered_Params params;
+	params.Item = Item;
+	params.RecipeIndex = RecipeIndex;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function ItemInspectEvolutionConfirmation.ItemInspectEvolutionConfirmation_C.SetEvolutionToRepresent
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            EvolutionIndex                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UFortItem*               EvolutionItem                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EvolutionIndex                 (Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               EvolutionItem                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemInspectEvolutionConfirmation_C::SetEvolutionToRepresent(int EvolutionIndex, class UFortItem* EvolutionItem)
 {
@@ -183,7 +245,7 @@ void UItemInspectEvolutionConfirmation_C::SetEvolutionToRepresent(int EvolutionI
 // Function ItemInspectEvolutionConfirmation.ItemInspectEvolutionConfirmation_C.SetItemToRepresent
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemInspectEvolutionConfirmation_C::SetItemToRepresent(class UFortItem* Item)
 {
@@ -203,7 +265,7 @@ void UItemInspectEvolutionConfirmation_C::SetItemToRepresent(class UFortItem* It
 // Function ItemInspectEvolutionConfirmation.ItemInspectEvolutionConfirmation_C.BndEvt__UpgradeConfirmButton_K2Node_ComponentBoundEvent_2_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemInspectEvolutionConfirmation_C::BndEvt__UpgradeConfirmButton_K2Node_ComponentBoundEvent_2_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -220,27 +282,10 @@ void UItemInspectEvolutionConfirmation_C::BndEvt__UpgradeConfirmButton_K2Node_Co
 }
 
 
-// Function ItemInspectEvolutionConfirmation.ItemInspectEvolutionConfirmation_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UItemInspectEvolutionConfirmation_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemInspectEvolutionConfirmation.ItemInspectEvolutionConfirmation_C.Construct");
-
-	UItemInspectEvolutionConfirmation_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function ItemInspectEvolutionConfirmation.ItemInspectEvolutionConfirmation_C.ExecuteUbergraph_ItemInspectEvolutionConfirmation
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemInspectEvolutionConfirmation_C::ExecuteUbergraph_ItemInspectEvolutionConfirmation(int EntryPoint)
 {
@@ -260,8 +305,8 @@ void UItemInspectEvolutionConfirmation_C::ExecuteUbergraph_ItemInspectEvolutionC
 // Function ItemInspectEvolutionConfirmation.ItemInspectEvolutionConfirmation_C.OnEvolutionOptionSelected__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            RecipeIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+// int                            RecipeIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemInspectEvolutionConfirmation_C::OnEvolutionOptionSelected__DelegateSignature(class UFortItem* Item, int RecipeIndex)
 {
@@ -282,7 +327,7 @@ void UItemInspectEvolutionConfirmation_C::OnEvolutionOptionSelected__DelegateSig
 // Function ItemInspectEvolutionConfirmation.ItemInspectEvolutionConfirmation_C.OnEvolutionOptionUnhovered__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemInspectEvolutionConfirmation_C::OnEvolutionOptionUnhovered__DelegateSignature(class UFortItem* Item)
 {
@@ -302,7 +347,7 @@ void UItemInspectEvolutionConfirmation_C::OnEvolutionOptionUnhovered__DelegateSi
 // Function ItemInspectEvolutionConfirmation.ItemInspectEvolutionConfirmation_C.OnEvolutionOptionHovered__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               Item                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemInspectEvolutionConfirmation_C::OnEvolutionOptionHovered__DelegateSignature(class UFortItem* Item)
 {

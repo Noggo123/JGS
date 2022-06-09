@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -29,23 +29,6 @@ void AFortnitePartyBackdrop_Camera_C::UserConstructionScript()
 }
 
 
-// Function FortnitePartyBackdrop_Camera.FortnitePartyBackdrop_Camera_C.OnActivated
-// (Event, Public, BlueprintEvent)
-
-void AFortnitePartyBackdrop_Camera_C::OnActivated()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function FortnitePartyBackdrop_Camera.FortnitePartyBackdrop_Camera_C.OnActivated");
-
-	AFortnitePartyBackdrop_Camera_C_OnActivated_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function FortnitePartyBackdrop_Camera.FortnitePartyBackdrop_Camera_C.OnDeactivated
 // (Event, Public, BlueprintEvent)
 
@@ -63,10 +46,27 @@ void AFortnitePartyBackdrop_Camera_C::OnDeactivated()
 }
 
 
+// Function FortnitePartyBackdrop_Camera.FortnitePartyBackdrop_Camera_C.OnActivated
+// (Event, Public, BlueprintEvent)
+
+void AFortnitePartyBackdrop_Camera_C::OnActivated()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function FortnitePartyBackdrop_Camera.FortnitePartyBackdrop_Camera_C.OnActivated");
+
+	AFortnitePartyBackdrop_Camera_C_OnActivated_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function FortnitePartyBackdrop_Camera.FortnitePartyBackdrop_Camera_C.ExecuteUbergraph_FortnitePartyBackdrop_Camera
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AFortnitePartyBackdrop_Camera_C::ExecuteUbergraph_FortnitePartyBackdrop_Camera(int EntryPoint)
 {

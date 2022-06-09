@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function VaultWeaponPlacementHelper.VaultWeaponPlacementHelper_C.OnLobbyPlayerUnhovered
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void AVaultWeaponPlacementHelper_C::OnLobbyPlayerUnhovered(int PlayerIndex)
 {
@@ -33,11 +33,9 @@ void AVaultWeaponPlacementHelper_C::OnLobbyPlayerUnhovered(int PlayerIndex)
 
 
 // Function VaultWeaponPlacementHelper.VaultWeaponPlacementHelper_C.GetFrontendAnimInstance
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UFrontendAnimInstance*   AsFrontend_Anim_Instance       (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void AVaultWeaponPlacementHelper_C::GetFrontendAnimInstance(class UFrontendAnimInstance** AsFrontend_Anim_Instance)
+void AVaultWeaponPlacementHelper_C::GetFrontendAnimInstance()
 {
 	static auto fn = UObject::FindObject<UFunction>("Function VaultWeaponPlacementHelper.VaultWeaponPlacementHelper_C.GetFrontendAnimInstance");
 
@@ -48,16 +46,13 @@ void AVaultWeaponPlacementHelper_C::GetFrontendAnimInstance(class UFrontendAnimI
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (AsFrontend_Anim_Instance != nullptr)
-		*AsFrontend_Anim_Instance = params.AsFrontend_Anim_Instance;
 }
 
 
 // Function VaultWeaponPlacementHelper.VaultWeaponPlacementHelper_C.OnTeamMemberStateChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     TeamMemberInfo                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortTeamMemberInfo     TeamMemberInfo                 (Parm)
 
 void AVaultWeaponPlacementHelper_C::OnTeamMemberStateChanged(const struct FFortTeamMemberInfo& TeamMemberInfo)
 {
@@ -77,7 +72,7 @@ void AVaultWeaponPlacementHelper_C::OnTeamMemberStateChanged(const struct FFortT
 // Function VaultWeaponPlacementHelper.VaultWeaponPlacementHelper_C.OnTeamMemberRemoved
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            TeamMemberInfo                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            TeamMemberInfo                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void AVaultWeaponPlacementHelper_C::OnTeamMemberRemoved(int TeamMemberInfo)
 {
@@ -97,7 +92,7 @@ void AVaultWeaponPlacementHelper_C::OnTeamMemberRemoved(int TeamMemberInfo)
 // Function VaultWeaponPlacementHelper.VaultWeaponPlacementHelper_C.OnTeamMemberAdded
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFortTeamMemberInfo     TeamMemberInfo                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortTeamMemberInfo     TeamMemberInfo                 (Parm)
 
 void AVaultWeaponPlacementHelper_C::OnTeamMemberAdded(const struct FFortTeamMemberInfo& TeamMemberInfo)
 {
@@ -117,8 +112,8 @@ void AVaultWeaponPlacementHelper_C::OnTeamMemberAdded(const struct FFortTeamMemb
 // Function VaultWeaponPlacementHelper.VaultWeaponPlacementHelper_C.OnFrontEndCameraChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFrontEndCamera                NewCamera                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// EFrontEndCamera                OldCamera                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFrontEndCamera                NewCamera                      (Parm, ZeroConstructor, IsPlainOldData)
+// EFrontEndCamera                OldCamera                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void AVaultWeaponPlacementHelper_C::OnFrontEndCameraChanged(EFrontEndCamera NewCamera, EFrontEndCamera OldCamera)
 {
@@ -190,7 +185,7 @@ void AVaultWeaponPlacementHelper_C::InitializeContextEvents()
 // Function VaultWeaponPlacementHelper.VaultWeaponPlacementHelper_C.OnLobbyPlayerSelected
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void AVaultWeaponPlacementHelper_C::OnLobbyPlayerSelected(int PlayerIndex)
 {
@@ -210,7 +205,7 @@ void AVaultWeaponPlacementHelper_C::OnLobbyPlayerSelected(int PlayerIndex)
 // Function VaultWeaponPlacementHelper.VaultWeaponPlacementHelper_C.OnLobbyPlayerHovered
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            PlayerIndex                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            PlayerIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void AVaultWeaponPlacementHelper_C::OnLobbyPlayerHovered(int PlayerIndex)
 {
@@ -281,7 +276,7 @@ void AVaultWeaponPlacementHelper_C::ItemRez()
 // Function VaultWeaponPlacementHelper.VaultWeaponPlacementHelper_C.ExecuteUbergraph_VaultWeaponPlacementHelper
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AVaultWeaponPlacementHelper_C::ExecuteUbergraph_VaultWeaponPlacementHelper(int EntryPoint)
 {

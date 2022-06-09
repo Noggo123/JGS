@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function RejoinWindow.RejoinWindow_C.OnButtonClicked
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void URejoinWindow_C::OnButtonClicked(class UCommonButton* Button)
 {
@@ -69,7 +69,7 @@ void URejoinWindow_C::InitializeRejoinWindow()
 // Function RejoinWindow.RejoinWindow_C.ShowInitalScreen
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          TimeoutSeconds                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          TimeoutSeconds                 (Parm, ZeroConstructor, IsPlainOldData)
 
 void URejoinWindow_C::ShowInitalScreen(float TimeoutSeconds)
 {
@@ -89,9 +89,9 @@ void URejoinWindow_C::ShowInitalScreen(float TimeoutSeconds)
 // Function RejoinWindow.RejoinWindow_C.ShowRetryScreen
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Failure                        (BlueprintVisible, BlueprintReadOnly, Parm)
-// float                          TimeoutSeconds                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           AllowRetry                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Failure                        (Parm)
+// float                          TimeoutSeconds                 (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           AllowRetry                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void URejoinWindow_C::ShowRetryScreen(const struct FText& Failure, float TimeoutSeconds, bool AllowRetry)
 {
@@ -147,7 +147,7 @@ void URejoinWindow_C::OnTimeoutTimeReached()
 // Function RejoinWindow.RejoinWindow_C.ExecuteUbergraph_RejoinWindow
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void URejoinWindow_C::ExecuteUbergraph_RejoinWindow(int EntryPoint)
 {

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,7 +32,7 @@ void UBluGloRequestHandler_C::BuildLocationsRandomly()
 // Function BluGloRequestHandler.BluGloRequestHandler_C.BuildLocationsFromQueryLocations
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FVector>         QueryResultLocations           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<struct FVector>         QueryResultLocations           (Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UBluGloRequestHandler_C::BuildLocationsFromQueryLocations(TArray<struct FVector>* QueryResultLocations)
 {
@@ -54,8 +54,8 @@ void UBluGloRequestHandler_C::BuildLocationsFromQueryLocations(TArray<struct FVe
 // Function BluGloRequestHandler.BluGloRequestHandler_C.EQSQueryFinished
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UEnvQueryInstanceBlueprintWrapper* QueryInstance                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// TEnumAsByte<EEnvQueryStatus>   QueryStatus                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UEnvQueryInstanceBlueprintWrapper* QueryInstance                  (Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EEnvQueryStatus>   QueryStatus                    (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBluGloRequestHandler_C::EQSQueryFinished(class UEnvQueryInstanceBlueprintWrapper* QueryInstance, TEnumAsByte<EEnvQueryStatus> QueryStatus)
 {
@@ -76,9 +76,9 @@ void UBluGloRequestHandler_C::EQSQueryFinished(class UEnvQueryInstanceBlueprintW
 // Function BluGloRequestHandler.BluGloRequestHandler_C.InitializeBluGloRequestHandler
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            NumBluGloToSpawn               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class AActor*                  ActorToSpawnFrom               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FVector                 LocationToSpawnFromIfActorInvalid (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
+// int                            NumBluGloToSpawn               (Parm, ZeroConstructor, IsPlainOldData)
+// class AActor*                  ActorToSpawnFrom               (Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector                 LocationToSpawnFromIfActorInvalid (Parm, IsPlainOldData)
 
 void UBluGloRequestHandler_C::InitializeBluGloRequestHandler(int NumBluGloToSpawn, class AActor* ActorToSpawnFrom, const struct FVector& LocationToSpawnFromIfActorInvalid)
 {
@@ -100,7 +100,7 @@ void UBluGloRequestHandler_C::InitializeBluGloRequestHandler(int NumBluGloToSpaw
 // Function BluGloRequestHandler.BluGloRequestHandler_C.ExecuteUbergraph_BluGloRequestHandler
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBluGloRequestHandler_C::ExecuteUbergraph_BluGloRequestHandler(int EntryPoint)
 {
@@ -120,11 +120,11 @@ void UBluGloRequestHandler_C::ExecuteUbergraph_BluGloRequestHandler(int EntryPoi
 // Function BluGloRequestHandler.BluGloRequestHandler_C.OnBluGloQueryFinished__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                  ActorToSpawnFrom               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FVector                 LocationToSpawnFromIfActorInvalid (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// TEnumAsByte<EEnvQueryStatus>   QueryStatus                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// class UEnvQueryInstanceBlueprintWrapper* QueryInstance                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// int                            NumBluGloToSpawn               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class AActor*                  ActorToSpawnFrom               (Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector                 LocationToSpawnFromIfActorInvalid (Parm, IsPlainOldData)
+// TEnumAsByte<EEnvQueryStatus>   QueryStatus                    (Parm, ZeroConstructor, IsPlainOldData)
+// class UEnvQueryInstanceBlueprintWrapper* QueryInstance                  (Parm, ZeroConstructor, IsPlainOldData)
+// int                            NumBluGloToSpawn               (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBluGloRequestHandler_C::OnBluGloQueryFinished__DelegateSignature(class AActor* ActorToSpawnFrom, const struct FVector& LocationToSpawnFromIfActorInvalid, TEnumAsByte<EEnvQueryStatus> QueryStatus, class UEnvQueryInstanceBlueprintWrapper* QueryInstance, int NumBluGloToSpawn)
 {

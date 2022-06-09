@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -59,7 +59,7 @@ void ACheckExpeditionRewardsAction_C::Is_FrontEndRewards_Running(bool* bRunning)
 // Function CheckExpeditionRewardsAction.CheckExpeditionRewardsAction_C.HandleRewardsClaimError
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFrontEndRewards_Widget_C* RewardsWidget                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFrontEndRewards_Widget_C* RewardsWidget                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void ACheckExpeditionRewardsAction_C::HandleRewardsClaimError(class UFrontEndRewards_Widget_C* RewardsWidget)
 {
@@ -96,7 +96,7 @@ void ACheckExpeditionRewardsAction_C::Clear()
 // Function CheckExpeditionRewardsAction.CheckExpeditionRewardsAction_C.HandleRewardsClaimed
 // (Private, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFrontEndRewards_Widget_C* RewardsWidget                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFrontEndRewards_Widget_C* RewardsWidget                  (Parm, ZeroConstructor, IsPlainOldData)
 
 void ACheckExpeditionRewardsAction_C::HandleRewardsClaimed(class UFrontEndRewards_Widget_C* RewardsWidget)
 {
@@ -240,7 +240,7 @@ void ACheckExpeditionRewardsAction_C::UserConstructionScript()
 // Function CheckExpeditionRewardsAction.CheckExpeditionRewardsAction_C.Execute
 // (Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FFortScriptedActionParams* Params                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FFortScriptedActionParams* Params                         (ConstParm, Parm, OutParm, ReferenceParm)
 
 void ACheckExpeditionRewardsAction_C::Execute(struct FFortScriptedActionParams* Params)
 {
@@ -277,7 +277,7 @@ void ACheckExpeditionRewardsAction_C::Handle_Rewards_Running()
 // Function CheckExpeditionRewardsAction.CheckExpeditionRewardsAction_C.ExecuteUbergraph_CheckExpeditionRewardsAction
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void ACheckExpeditionRewardsAction_C::ExecuteUbergraph_CheckExpeditionRewardsAction(int EntryPoint)
 {

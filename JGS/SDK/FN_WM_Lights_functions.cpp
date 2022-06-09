@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,7 +49,7 @@ void AWM_Lights_C::ReceiveBeginPlay()
 // Function WM_Lights.WM_Lights_C.WM-Lightcontrol
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           TurnOn                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           TurnOn                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void AWM_Lights_C::WM_Lightcontrol(bool TurnOn)
 {
@@ -69,7 +69,7 @@ void AWM_Lights_C::WM_Lightcontrol(bool TurnOn)
 // Function WM_Lights.WM_Lights_C.ExecuteUbergraph_WM_Lights
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AWM_Lights_C::ExecuteUbergraph_WM_Lights(int EntryPoint)
 {

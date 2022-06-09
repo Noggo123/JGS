@@ -1,29 +1,16 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------
 //Enums
 //---------------------------------------------------------------------------
-
-// Enum Landscape.ELandscapeSetupErrors
-enum class ELandscapeSetupErrors : uint8_t
-{
-	LSE_None                       = 0,
-	LSE_NoLandscapeInfo            = 1,
-	LSE_CollsionXY                 = 2,
-	LSE_NoLayerInfo                = 3,
-	LSE_MAX                        = 4
-};
-
 
 // Enum Landscape.ELandscapeGizmoType
 enum class ELandscapeGizmoType : uint8_t
@@ -81,6 +68,17 @@ enum class ELandscapeImportAlphamapType : uint8_t
 	Additive                       = 0,
 	Layered                        = 1,
 	ELandscapeImportAlphamapType_MAX = 2
+};
+
+
+// Enum Landscape.ELandscapeSetupErrors
+enum class ELandscapeSetupErrors : uint8_t
+{
+	LSE_None                       = 0,
+	LSE_NoLandscapeInfo            = 1,
+	LSE_CollsionXY                 = 2,
+	LSE_NoLayerInfo                = 3,
+	LSE_MAX                        = 4
 };
 
 
@@ -163,17 +161,17 @@ struct FGrassVariety
 	bool                                               bUseLandscapeLightmap;                                    // 0x003E(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
 	struct FLightingChannels                           LightingChannels;                                         // 0x003F(0x0001) (Edit)
 	bool                                               bReceivesDecals;                                          // 0x0040(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	bool                                               bCastDynamicShadow;                                       // 0x0041(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x6];                                       // 0x0042(0x0006) MISSED OFFSET
+	unsigned char                                      UnknownData02[0x7];                                       // 0x0041(0x0007) MISSED OFFSET
 };
 
-// ScriptStruct Landscape.LandscapeSplineConnection
-// 0x0010
-struct FLandscapeSplineConnection
+// ScriptStruct Landscape.LandscapeSplineSegmentConnection
+// 0x0018
+struct FLandscapeSplineSegmentConnection
 {
-	class ULandscapeSplineSegment*                     Segment;                                                  // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      End : 1;                                                  // 0x0008(0x0001)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0009(0x0007) MISSED OFFSET
+	class ULandscapeSplineControlPoint*                ControlPoint;                                             // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	float                                              TangentLen;                                               // 0x0008(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x000C(0x0004) MISSED OFFSET
+	struct FName                                       SocketName;                                               // 0x0010(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct Landscape.LandscapeSplineInterpPoint
@@ -188,14 +186,13 @@ struct FLandscapeSplineInterpPoint
 	float                                              StartEndFalloff;                                          // 0x003C(0x0004) (ZeroConstructor, IsPlainOldData)
 };
 
-// ScriptStruct Landscape.LandscapeSplineSegmentConnection
-// 0x0018
-struct FLandscapeSplineSegmentConnection
+// ScriptStruct Landscape.LandscapeSplineConnection
+// 0x0010
+struct FLandscapeSplineConnection
 {
-	class ULandscapeSplineControlPoint*                ControlPoint;                                             // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
-	float                                              TangentLen;                                               // 0x0008(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x000C(0x0004) MISSED OFFSET
-	struct FName                                       SocketName;                                               // 0x0010(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class ULandscapeSplineSegment*                     Segment;                                                  // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      End : 1;                                                  // 0x0008(0x0001)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0009(0x0007) MISSED OFFSET
 };
 
 // ScriptStruct Landscape.GrassInput
@@ -220,19 +217,6 @@ struct FLayerBlendInput
 	struct FVector                                     ConstLayerInput;                                          // 0x0084(0x000C) (Edit, IsPlainOldData)
 	float                                              ConstHeightInput;                                         // 0x0090(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData01[0x4];                                       // 0x0094(0x0004) MISSED OFFSET
-};
-
-// ScriptStruct Landscape.LandscapeEditToolRenderData
-// 0x0028
-struct FLandscapeEditToolRenderData
-{
-	class UMaterialInterface*                          ToolMaterial;                                             // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
-	class UMaterialInterface*                          GizmoMaterial;                                            // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
-	int                                                SelectedType;                                             // 0x0010(0x0004) (ZeroConstructor, IsPlainOldData)
-	int                                                DebugChannelR;                                            // 0x0014(0x0004) (ZeroConstructor, IsPlainOldData)
-	int                                                DebugChannelG;                                            // 0x0018(0x0004) (ZeroConstructor, IsPlainOldData)
-	int                                                DebugChannelB;                                            // 0x001C(0x0004) (ZeroConstructor, IsPlainOldData)
-	class UTexture2D*                                  DataTexture;                                              // 0x0020(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct Landscape.GizmoSelectData
@@ -278,6 +262,24 @@ struct FLandscapeWeightmapUsage
 	class ULandscapeComponent*                         ChannelUsage[0x4];                                        // 0x0000(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
+// ScriptStruct Landscape.LandscapeSplineMeshEntry
+// 0x0038
+struct FLandscapeSplineMeshEntry
+{
+	class UStaticMesh*                                 Mesh;                                                     // 0x0000(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	TArray<class UMaterialInterface*>                  MaterialOverrides;                                        // 0x0008(0x0010) (Edit, ZeroConstructor)
+	unsigned char                                      bCenterH : 1;                                             // 0x0018(0x0001) (Edit)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0019(0x0003) MISSED OFFSET
+	struct FVector2D                                   CenterAdjust;                                             // 0x001C(0x0008) (Edit, IsPlainOldData)
+	unsigned char                                      bScaleToWidth : 1;                                        // 0x0024(0x0001) (Edit)
+	unsigned char                                      UnknownData01[0x3];                                       // 0x0025(0x0003) MISSED OFFSET
+	struct FVector                                     Scale;                                                    // 0x0028(0x000C) (Edit, IsPlainOldData)
+	TEnumAsByte<ELandscapeSplineMeshOrientation>       Orientation;                                              // 0x0034(0x0001) (ZeroConstructor, Deprecated, IsPlainOldData)
+	TEnumAsByte<ESplineMeshAxis>                       ForwardAxis;                                              // 0x0035(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESplineMeshAxis>                       UpAxis;                                                   // 0x0036(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x1];                                       // 0x0037(0x0001) MISSED OFFSET
+};
+
 // ScriptStruct Landscape.ForeignWorldSplineData
 // 0x0001
 struct FForeignWorldSplineData
@@ -297,24 +299,6 @@ struct FForeignSplineSegmentData
 struct FForeignControlPointData
 {
 	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
-};
-
-// ScriptStruct Landscape.LandscapeSplineMeshEntry
-// 0x0038
-struct FLandscapeSplineMeshEntry
-{
-	class UStaticMesh*                                 Mesh;                                                     // 0x0000(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	TArray<class UMaterialInterface*>                  MaterialOverrides;                                        // 0x0008(0x0010) (Edit, ZeroConstructor)
-	unsigned char                                      bCenterH : 1;                                             // 0x0018(0x0001) (Edit)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x0019(0x0003) MISSED OFFSET
-	struct FVector2D                                   CenterAdjust;                                             // 0x001C(0x0008) (Edit, IsPlainOldData)
-	unsigned char                                      bScaleToWidth : 1;                                        // 0x0024(0x0001) (Edit)
-	unsigned char                                      UnknownData01[0x3];                                       // 0x0025(0x0003) MISSED OFFSET
-	struct FVector                                     Scale;                                                    // 0x0028(0x000C) (Edit, IsPlainOldData)
-	TEnumAsByte<ELandscapeSplineMeshOrientation>       Orientation;                                              // 0x0034(0x0001) (ZeroConstructor, Deprecated, IsPlainOldData)
-	TEnumAsByte<ESplineMeshAxis>                       ForwardAxis;                                              // 0x0035(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESplineMeshAxis>                       UpAxis;                                                   // 0x0036(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x1];                                       // 0x0037(0x0001) MISSED OFFSET
 };
 
 }

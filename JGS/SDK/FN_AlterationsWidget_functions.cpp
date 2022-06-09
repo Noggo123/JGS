@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,23 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function AlterationsWidget.AlterationsWidget_C.UpdatePerksMessage
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UAlterationsWidget_C::UpdatePerksMessage()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AlterationsWidget.AlterationsWidget_C.UpdatePerksMessage");
-
-	UAlterationsWidget_C_UpdatePerksMessage_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function AlterationsWidget.AlterationsWidget_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -49,7 +32,7 @@ void UAlterationsWidget_C::Construct()
 // Function AlterationsWidget.AlterationsWidget_C.OnGenerateAlteration
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// struct FFortUIAlteration*      AlterationInfo                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FFortUIAlteration*      AlterationInfo                 (Parm)
 
 void UAlterationsWidget_C::OnGenerateAlteration(struct FFortUIAlteration* AlterationInfo)
 {
@@ -120,7 +103,7 @@ void UAlterationsWidget_C::OnStateChanged()
 // Function AlterationsWidget.AlterationsWidget_C.ExecuteUbergraph_AlterationsWidget
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAlterationsWidget_C::ExecuteUbergraph_AlterationsWidget(int EntryPoint)
 {

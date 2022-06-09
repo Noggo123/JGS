@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,7 +22,7 @@ struct UTeamScoreDetailsContent_C_TrimUnusedRows_Params
 // Function TeamScoreDetailsContent.TeamScoreDetailsContent_C.SetRowData
 struct UTeamScoreDetailsContent_C_SetRowData_Params
 {
-	int                                                RowIdx;                                                   // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                RowIdx;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function TeamScoreDetailsContent.TeamScoreDetailsContent_C.Construct
@@ -38,7 +38,7 @@ struct UTeamScoreDetailsContent_C_OnScoreReportChanged_Params
 // Function TeamScoreDetailsContent.TeamScoreDetailsContent_C.ExecuteUbergraph_TeamScoreDetailsContent
 struct UTeamScoreDetailsContent_C_ExecuteUbergraph_TeamScoreDetailsContent_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

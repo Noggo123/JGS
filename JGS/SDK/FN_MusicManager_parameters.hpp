@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -27,9 +27,9 @@ struct AMusicManager_C_UserConstructionScript_Params
 // Function MusicManager.MusicManager_C.OnDayPhaseChanged
 struct AMusicManager_C_OnDayPhaseChanged_Params
 {
-	TEnumAsByte<EFortDayPhase>*                        CurrentDayPhase;                                          // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EFortDayPhase>*                        PreviousDayPhase;                                         // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-	bool*                                              bAtCreation;                                              // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EFortDayPhase>*                        CurrentDayPhase;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EFortDayPhase>*                        PreviousDayPhase;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+	bool*                                              bAtCreation;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MusicManager.MusicManager_C.OnUpdateMusic
@@ -60,7 +60,7 @@ struct AMusicManager_C_StopMusic_Params
 // Function MusicManager.MusicManager_C.ExecuteUbergraph_MusicManager
 struct AMusicManager_C_ExecuteUbergraph_MusicManager_Params
 {
-	int                                                EntryPoint;                                               // (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+	int                                                EntryPoint;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,40 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function ToastWidget.ToastWidget_C.ApplyAdditionalStyling
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UToastWidget_C::ApplyAdditionalStyling()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ToastWidget.ToastWidget_C.ApplyAdditionalStyling");
-
-	UToastWidget_C_ApplyAdditionalStyling_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ToastWidget.ToastWidget_C.SetImage
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UToastWidget_C::SetImage()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ToastWidget.ToastWidget_C.SetImage");
-
-	UToastWidget_C_SetImage_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function ToastWidget.ToastWidget_C.GetOpenButtonVisibility
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
@@ -87,8 +53,8 @@ void UToastWidget_C::StartIntro()
 // Function ToastWidget.ToastWidget_C.ShowText
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Text                           (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UCommonTextBlock*        TextBlock                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Text                           (Parm)
+// class UCommonTextBlock*        TextBlock                      (Parm, ZeroConstructor, IsPlainOldData)
 
 void UToastWidget_C::ShowText(const struct FText& Text, class UCommonTextBlock* TextBlock)
 {
@@ -109,7 +75,7 @@ void UToastWidget_C::ShowText(const struct FText& Text, class UCommonTextBlock* 
 // Function ToastWidget.ToastWidget_C.SetToast
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortUINotification*     Toast                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UFortUINotification*     Toast                          (Parm, ZeroConstructor, IsPlainOldData)
 
 void UToastWidget_C::SetToast(class UFortUINotification* Toast)
 {
@@ -197,8 +163,8 @@ void UToastWidget_C::HandleAnimationDelay()
 // Function ToastWidget.ToastWidget_C.OnMouseEnter
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FGeometry*              MyGeometry                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData)
-// struct FPointerEvent*          MouseEvent                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGeometry*              MyGeometry                     (Parm, IsPlainOldData)
+// struct FPointerEvent*          MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UToastWidget_C::OnMouseEnter(struct FGeometry* MyGeometry, struct FPointerEvent* MouseEvent)
 {
@@ -219,7 +185,7 @@ void UToastWidget_C::OnMouseEnter(struct FGeometry* MyGeometry, struct FPointerE
 // Function ToastWidget.ToastWidget_C.OnMouseLeave
 // (BlueprintCosmetic, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:
-// struct FPointerEvent*          MouseEvent                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FPointerEvent*          MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UToastWidget_C::OnMouseLeave(struct FPointerEvent* MouseEvent)
 {
@@ -239,7 +205,7 @@ void UToastWidget_C::OnMouseLeave(struct FPointerEvent* MouseEvent)
 // Function ToastWidget.ToastWidget_C.BndEvt__OpenButton_K2Node_ComponentBoundEvent_5_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButton*           Button                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonButton*           Button                         (Parm, ZeroConstructor, IsPlainOldData)
 
 void UToastWidget_C::BndEvt__OpenButton_K2Node_ComponentBoundEvent_5_CommonButtonClicked__DelegateSignature(class UCommonButton* Button)
 {
@@ -259,7 +225,7 @@ void UToastWidget_C::BndEvt__OpenButton_K2Node_ComponentBoundEvent_5_CommonButto
 // Function ToastWidget.ToastWidget_C.ExecuteUbergraph_ToastWidget
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UToastWidget_C::ExecuteUbergraph_ToastWidget(int EntryPoint)
 {

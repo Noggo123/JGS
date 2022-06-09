@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,23 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function PerkWidgetNew.PerkWidgetNew_C.UpdatePerk
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UPerkWidgetNew_C::UpdatePerk()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PerkWidgetNew.PerkWidgetNew_C.UpdatePerk");
-
-	UPerkWidgetNew_C_UpdatePerk_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function PerkWidgetNew.PerkWidgetNew_C.Get_OverlayAbilityPerk_ToolTipWidget
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
@@ -53,12 +36,12 @@ class UWidget* UPerkWidgetNew_C::Get_OverlayAbilityPerk_ToolTipWidget()
 // Function PerkWidgetNew.PerkWidgetNew_C.InitializeSettings
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           bIncludeName                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bIncludeDescription            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// TEnumAsByte<EFortBrushSize>    IconSize                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// bool                           bUseLargeFormatName            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-// struct FFortUIPerk             Perk                           (BlueprintVisible, BlueprintReadOnly, Parm)
-// bool                           ShowMouseTooltips              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bIncludeName                   (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bIncludeDescription            (Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EFortBrushSize>    IconSize                       (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bUseLargeFormatName            (Parm, ZeroConstructor, IsPlainOldData)
+// struct FFortUIPerk             Perk                           (Parm)
+// bool                           ShowMouseTooltips              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPerkWidgetNew_C::InitializeSettings(bool bIncludeName, bool bIncludeDescription, TEnumAsByte<EFortBrushSize> IconSize, bool bUseLargeFormatName, const struct FFortUIPerk& Perk, bool ShowMouseTooltips)
 {
@@ -290,7 +273,7 @@ void UPerkWidgetNew_C::InitializeBasicPerk()
 // Function PerkWidgetNew.PerkWidgetNew_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPerkWidgetNew_C::PreConstruct(bool* IsDesignTime)
 {
@@ -307,10 +290,27 @@ void UPerkWidgetNew_C::PreConstruct(bool* IsDesignTime)
 }
 
 
+// Function PerkWidgetNew.PerkWidgetNew_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UPerkWidgetNew_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PerkWidgetNew.PerkWidgetNew_C.Construct");
+
+	UPerkWidgetNew_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function PerkWidgetNew.PerkWidgetNew_C.ExecuteUbergraph_PerkWidgetNew
 // (HasDefaults)
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UPerkWidgetNew_C::ExecuteUbergraph_PerkWidgetNew(int EntryPoint)
 {

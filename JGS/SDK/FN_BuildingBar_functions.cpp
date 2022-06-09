@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function BuildingBar.BuildingBar_C.UpdateBuildingTrap
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ABuildingTrap*           BuildingTrap                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// class ABuildingTrap*           BuildingTrap                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBuildingBar_C::UpdateBuildingTrap(class ABuildingTrap* BuildingTrap)
 {
@@ -35,7 +35,7 @@ void UBuildingBar_C::UpdateBuildingTrap(class ABuildingTrap* BuildingTrap)
 // Function BuildingBar.BuildingBar_C.Set Display Mode
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EFortBuildingInteraction       Display_Mode                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// EFortBuildingInteraction       Display_Mode                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBuildingBar_C::Set_Display_Mode(EFortBuildingInteraction Display_Mode)
 {
@@ -72,7 +72,7 @@ void UBuildingBar_C::Update_Durability_Text()
 // Function BuildingBar.BuildingBar_C.Update Current Durability Value
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          CurrentDurability              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          CurrentDurability              (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBuildingBar_C::Update_Current_Durability_Value(float CurrentDurability)
 {
@@ -92,7 +92,7 @@ void UBuildingBar_C::Update_Current_Durability_Value(float CurrentDurability)
 // Function BuildingBar.BuildingBar_C.Update Max Durability Value
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          Max                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Max                            (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBuildingBar_C::Update_Max_Durability_Value(float Max)
 {
@@ -129,7 +129,7 @@ void UBuildingBar_C::Initialize_Bar()
 // Function BuildingBar.BuildingBar_C.Set Timer
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Enabled                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Enabled                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBuildingBar_C::Set_Timer(bool Enabled)
 {
@@ -200,7 +200,7 @@ void UBuildingBar_C::Update_HP_Fill_Bar()
 // Function BuildingBar.BuildingBar_C.Update Current HP Value
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          Current                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Current                        (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBuildingBar_C::Update_Current_HP_Value(float Current)
 {
@@ -220,7 +220,7 @@ void UBuildingBar_C::Update_Current_HP_Value(float Current)
 // Function BuildingBar.BuildingBar_C.Update Max HP Value
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                          Max                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// float                          Max                            (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBuildingBar_C::Update_Max_HP_Value(float Max)
 {
@@ -240,7 +240,7 @@ void UBuildingBar_C::Update_Max_HP_Value(float Max)
 // Function BuildingBar.BuildingBar_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBuildingBar_C::PreConstruct(bool* IsDesignTime)
 {
@@ -277,7 +277,7 @@ void UBuildingBar_C::Destruct()
 // Function BuildingBar.BuildingBar_C.ExecuteUbergraph_BuildingBar
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UBuildingBar_C::ExecuteUbergraph_BuildingBar(int EntryPoint)
 {

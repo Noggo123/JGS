@@ -1,12 +1,10 @@
 #pragma once
 
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
-
-#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -35,8 +33,8 @@ public:
 class UShaderPlatformQualitySettings : public UObject
 {
 public:
-	struct FMaterialQualityOverrides                   QualityOverrides[0x3];                                    // 0x0028(0x0007) (Edit, Config)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x003D(0x0003) MISSED OFFSET
+	struct FMaterialQualityOverrides                   QualityOverrides[0x3];                                    // 0x0028(0x0006) (Edit, Config)
+	unsigned char                                      UnknownData00[0x6];                                       // 0x003A(0x0006) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

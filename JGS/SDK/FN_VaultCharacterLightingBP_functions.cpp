@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,26 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.SwitchMobileLighting
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           Visibilty                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void AVaultCharacterLightingBP_C::SwitchMobileLighting(bool Visibilty)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.SwitchMobileLighting");
-
-	AVaultCharacterLightingBP_C_SwitchMobileLighting_Params params;
-	params.Visibilty = Visibilty;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -52,7 +32,7 @@ void AVaultCharacterLightingBP_C::UserConstructionScript()
 // Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.LightControl
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           NewParam                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           NewParam                       (Parm, ZeroConstructor, IsPlainOldData)
 
 void AVaultCharacterLightingBP_C::LightControl(bool NewParam)
 {
@@ -89,7 +69,7 @@ void AVaultCharacterLightingBP_C::ReceiveBeginPlay()
 // Function VaultCharacterLightingBP.VaultCharacterLightingBP_C.ExecuteUbergraph_VaultCharacterLightingBP
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void AVaultCharacterLightingBP_C::ExecuteUbergraph_VaultCharacterLightingBP(int EntryPoint)
 {

@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 // Function AthenaStatsRow.AthenaStatsRow_C.SetStatValueAsText
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   StatValue                      (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FText                   StatValue                      (Parm)
 
 void UAthenaStatsRow_C::SetStatValueAsText(const struct FText& StatValue)
 {
@@ -35,7 +35,7 @@ void UAthenaStatsRow_C::SetStatValueAsText(const struct FText& StatValue)
 // Function AthenaStatsRow.AthenaStatsRow_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool*                          IsDesignTime                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaStatsRow_C::PreConstruct(bool* IsDesignTime)
 {
@@ -55,7 +55,7 @@ void UAthenaStatsRow_C::PreConstruct(bool* IsDesignTime)
 // Function AthenaStatsRow.AthenaStatsRow_C.ExecuteUbergraph_AthenaStatsRow
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UAthenaStatsRow_C::ExecuteUbergraph_AthenaStatsRow(int EntryPoint)
 {

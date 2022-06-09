@@ -1,4 +1,4 @@
-// Fortnite (2.4.2) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -63,14 +63,14 @@ void UItemManagementInventoryLimitStatusIndicator_C::RefreshWorldInventoryStatus
 }
 
 
-// Function ItemManagementInventoryLimitStatusIndicator.ItemManagementInventoryLimitStatusIndicator_C.TrackAccountInventory
+// Function ItemManagementInventoryLimitStatusIndicator.ItemManagementInventoryLimitStatusIndicator_C.TrackVaultInventory
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void UItemManagementInventoryLimitStatusIndicator_C::TrackAccountInventory()
+void UItemManagementInventoryLimitStatusIndicator_C::TrackVaultInventory()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementInventoryLimitStatusIndicator.ItemManagementInventoryLimitStatusIndicator_C.TrackAccountInventory");
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementInventoryLimitStatusIndicator.ItemManagementInventoryLimitStatusIndicator_C.TrackVaultInventory");
 
-	UItemManagementInventoryLimitStatusIndicator_C_TrackAccountInventory_Params params;
+	UItemManagementInventoryLimitStatusIndicator_C_TrackVaultInventory_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -151,8 +151,8 @@ void UItemManagementInventoryLimitStatusIndicator_C::Destruct()
 // Function ItemManagementInventoryLimitStatusIndicator.ItemManagementInventoryLimitStatusIndicator_C.HandleWorldItemListChanged
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UFortWorldItem*>  ItemsAdded                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// TArray<class UFortWorldItem*>  ItemsRemoved                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UFortWorldItem*>  ItemsAdded                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UFortWorldItem*>  ItemsRemoved                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UItemManagementInventoryLimitStatusIndicator_C::HandleWorldItemListChanged(TArray<class UFortWorldItem*> ItemsAdded, TArray<class UFortWorldItem*> ItemsRemoved)
 {
@@ -173,8 +173,8 @@ void UItemManagementInventoryLimitStatusIndicator_C::HandleWorldItemListChanged(
 // Function ItemManagementInventoryLimitStatusIndicator.ItemManagementInventoryLimitStatusIndicator_C.HandleOutpostItemListChanged
 // (HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UFortWorldItem*>  ItemsAdded                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-// TArray<class UFortWorldItem*>  ItemsRemoved                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UFortWorldItem*>  ItemsAdded                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// TArray<class UFortWorldItem*>  ItemsRemoved                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void UItemManagementInventoryLimitStatusIndicator_C::HandleOutpostItemListChanged(TArray<class UFortWorldItem*> ItemsAdded, TArray<class UFortWorldItem*> ItemsRemoved)
 {
@@ -192,64 +192,10 @@ void UItemManagementInventoryLimitStatusIndicator_C::HandleOutpostItemListChange
 }
 
 
-// Function ItemManagementInventoryLimitStatusIndicator.ItemManagementInventoryLimitStatusIndicator_C.HandleDeployableBaseInventoryChanged
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class ADeployableBasePlot*     Plot                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
-
-void UItemManagementInventoryLimitStatusIndicator_C::HandleDeployableBaseInventoryChanged(class ADeployableBasePlot* Plot)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementInventoryLimitStatusIndicator.ItemManagementInventoryLimitStatusIndicator_C.HandleDeployableBaseInventoryChanged");
-
-	UItemManagementInventoryLimitStatusIndicator_C_HandleDeployableBaseInventoryChanged_Params params;
-	params.Plot = Plot;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemManagementInventoryLimitStatusIndicator.ItemManagementInventoryLimitStatusIndicator_C.HandleMcpWorldItemsChanged
-// (BlueprintCallable, BlueprintEvent)
-
-void UItemManagementInventoryLimitStatusIndicator_C::HandleMcpWorldItemsChanged()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementInventoryLimitStatusIndicator.ItemManagementInventoryLimitStatusIndicator_C.HandleMcpWorldItemsChanged");
-
-	UItemManagementInventoryLimitStatusIndicator_C_HandleMcpWorldItemsChanged_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemManagementInventoryLimitStatusIndicator.ItemManagementInventoryLimitStatusIndicator_C.HandleMcpOutpostItemsChanged
-// (BlueprintCallable, BlueprintEvent)
-
-void UItemManagementInventoryLimitStatusIndicator_C::HandleMcpOutpostItemsChanged()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementInventoryLimitStatusIndicator.ItemManagementInventoryLimitStatusIndicator_C.HandleMcpOutpostItemsChanged");
-
-	UItemManagementInventoryLimitStatusIndicator_C_HandleMcpOutpostItemsChanged_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function ItemManagementInventoryLimitStatusIndicator.ItemManagementInventoryLimitStatusIndicator_C.ExecuteUbergraph_ItemManagementInventoryLimitStatusIndicator
 // ()
 // Parameters:
-// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData)
+// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 
 void UItemManagementInventoryLimitStatusIndicator_C::ExecuteUbergraph_ItemManagementInventoryLimitStatusIndicator(int EntryPoint)
 {
