@@ -2,8 +2,6 @@
 
 #include <map>
 
-bool bSTWMode = true;
-
 struct QuickBarsPointer
 {
     unsigned char pad[0x1C48];
@@ -156,7 +154,7 @@ public:
         ItemsToAddMap.insert_or_assign(pWood, 999);
         ItemsToAddMap.insert_or_assign(pMetal, 999);
         ItemsToAddMap.insert_or_assign(pStone, 999);
-        if (bSTWMode) {
+        if (Globals::bSTWMode) {
             ItemsToAddMap.insert_or_assign(pRocketsSTW, 999);
             ItemsToAddMap.insert_or_assign(pShellsSTW, 999);
             ItemsToAddMap.insert_or_assign(pMediumSTW, 999);
@@ -185,6 +183,7 @@ public:
         QuickBars->EnableSlot(EFortQuickBars::Secondary, 1);
         QuickBars->EnableSlot(EFortQuickBars::Secondary, 2);
         QuickBars->EnableSlot(EFortQuickBars::Secondary, 3);
+        QuickBars->EnableSlot(EFortQuickBars::Secondary, 4);
 
         AddDefaultQuickBarItems();
 

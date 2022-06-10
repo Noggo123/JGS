@@ -53,6 +53,8 @@ DWORD WINAPI MainThread(LPVOID)
     Globals::HeadPart = FindObjectFast<UCustomCharacterPart>("/Game/Characters/CharacterParts/Female/Medium/Heads/F_Med_Head1.F_Med_Head1");
     Globals::BodyPart = FindObjectFast<UCustomCharacterPart>("/Game/Characters/CharacterParts/Female/Medium/Bodies/F_Med_Soldier_01.F_Med_Soldier_01");
 
+    Globals::bSTWMode = false;
+
     auto NewConsole = Globals::GPS->STATIC_SpawnObject(UFortConsole::StaticClass(), FortEngine->GameViewport);
     FortEngine->GameViewport->ViewportConsole = (UFortConsole*)(NewConsole);
 

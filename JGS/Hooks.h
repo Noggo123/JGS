@@ -2,42 +2,75 @@
 
 namespace Hooks
 {
+
+	static void SpawnFloorLoot()
+	{
+		TArray<AActor*> OutActors;
+		Globals::GPS->STATIC_GetAllActorsOfClass(Globals::World, UObject::FindClass("BlueprintGeneratedClass Tiered_Athena_FloorLoot_01.Tiered_Athena_FloorLoot_01_C"), &OutActors);
+
+		for (int i = 0; i < OutActors.Num(); i++)
+		{
+			bool bShouldSpawn = Globals::MathLib->STATIC_RandomBoolWithWeight(0.6f);
+			bool bIsConsumable = !Globals::MathLib->STATIC_RandomBoolWithWeight(0.2f);
+
+			auto Actor = OutActors[i];
+
+			if (Actor && bShouldSpawn)
+			{
+				auto SpawnLoc = Actor->K2_GetActorLocation();
+
+				auto NewFortPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), SpawnLoc, FRotator()));
+
+				NewFortPickup->PrimaryPickupItemEntry.Count = 1;
+				if (bIsConsumable)
+				{
+					if (Globals::bSTWMode)
+					{
+						NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::STWWeapons[rand() % Globals::STWWeapons.size()];
+						NewFortPickup->PrimaryPickupItemEntry.Durability = 1000000;
+					}
+					else {
+						NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::RangedWeapons[rand() % Globals::RangedWeapons.size()];
+					}
+				}
+				else {
+					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::Consumables[rand() % Globals::Consumables.size()];
+				}
+				NewFortPickup->OnRep_PrimaryPickupItemEntry();
+
+				NewFortPickup->TossPickup(SpawnLoc, nullptr, 1);
+
+				//LOG("Spawned Pickup: " << NewFortPickup->GetName() << " With weapon definition: " << NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetName());
+			}
+		}
+	}
+
+	FGameplayAbilitySpec* FindAbilitySpecFromHandle(UAbilitySystemComponent* AbilitySystem, FGameplayAbilitySpecHandle Handle)
+	{
+		for (int i = 0; i < AbilitySystem->ActivatableAbilities.Items.Num(); i++)
+		{
+			auto Spec = AbilitySystem->ActivatableAbilities.Items[i];
+
+			if (Spec.Handle.Handle == Handle.Handle)
+			{
+				return &Spec;
+			}
+		}
+
+		return nullptr;
+	}
+
+	bool (*InternalTryActivateAbilityLong)(UAbilitySystemComponent* AbilitySystemComp, FGameplayAbilitySpecHandle AbilityToActivate, FPredictionKey InPredictionKey, UGameplayAbility** OutInstancedAbility, void* OnGameplayAbilityEndedDelegate, const FGameplayEventData* TriggerEventData);
+
+	bool InternalTryActivateAbility(UAbilitySystemComponent* AbilitySystemComp, FGameplayAbilitySpecHandle AbilityToActivate, FPredictionKey InPredictionKey = FPredictionKey(), UGameplayAbility** OutInstancedAbility = nullptr, void* OnGameplayAbilityEndedDelegate = nullptr, const FGameplayEventData* TriggerEventData = nullptr)
+	{
+		return InternalTryActivateAbilityLong(AbilitySystemComp, AbilityToActivate, InPredictionKey, OutInstancedAbility, OnGameplayAbilityEndedDelegate, TriggerEventData);
+	}
+
 	bool bIsReady = false;
 	bool bHasSpawned = false;
 	bool bIsInGame = false;
 	bool bHasInitedTheBeacon = false;
-
-	bool (*InternalTryActivateAbility)(UAbilitySystemComponent*, FGameplayAbilitySpecHandle, FPredictionKey, UGameplayAbility**, void*, const FGameplayEventData* TriggerEventData);
-	AActor* (*SpawnActorInternal)(UWorld*, UClass*, FTransform, FActorSpawnParameters);
-
-	template<typename T = AActor>
-	T* SpawnActor(FVector Location, FRotator Rotation, UClass* ActorClass)
-	{
-		auto DEG_TO_RAD = 3.14159 / 180;
-		auto DIVIDE_BY_2 = DEG_TO_RAD / 2;
-
-		auto SP = sin(Rotation.Pitch * DIVIDE_BY_2);
-		auto CP = cos(Rotation.Pitch * DIVIDE_BY_2);
-
-		auto SY = sin(Rotation.Yaw * DIVIDE_BY_2);
-		auto CY = cos(Rotation.Yaw * DIVIDE_BY_2);
-
-		auto SR = sin(Rotation.Roll * DIVIDE_BY_2);
-		auto CR = cos(Rotation.Roll * DIVIDE_BY_2);
-
-		FQuat Quat;
-		Quat.X = CR * SP * SY - SR * CP * CY;
-		Quat.Y = -CR * SP * CY - SR * CP * SY;
-		Quat.Z = CR * CP * SY - SR * SP * CY;
-		Quat.W = CR * CP * CY + SR * SP * SY;
-
-		FTransform Transform;
-		Transform.Rotation = Quat;
-		Transform.Scale3D = { 1, 1, 1 };
-		Transform.Translation = Location;
-
-		return (T*)SpawnActorInternal(Globals::World, ActorClass, Transform, FActorSpawnParameters());
-	}
 
 	LPVOID(*ProcessEvent)(void*, void*, void*);
 	LPVOID ProcessEventHook(UObject* pObject, UFunction* pFunction, LPVOID pParams)
@@ -45,32 +78,19 @@ namespace Hooks
 		auto ObjName = pObject->GetName();
 		auto FuncName = pFunction->GetName();
 
-		if (FuncName.find("ReadyToStartMatch") != std::string::npos)
+		if (FuncName.contains("Tick"))
 		{
-			if (!bHasInitedTheBeacon) {
-				Globals::FortEngine = UObject::FindObject<UFortEngine>("FortEngine_");
-				Globals::World = Globals::FortEngine->GameViewport->World;
-				Globals::PC = reinterpret_cast<AFortPlayerController*>(Globals::FortEngine->GameInstance->LocalPlayers[0]->PlayerController);
+			if (GetAsyncKeyState(VK_F1) & 1)
+			{
+				SpawnFloorLoot();
+			}
 
-				Beacons::InitHooks(); //Sets up the beacon and inits replication for use!
-
-				bHasInitedTheBeacon = true;
-
-				auto GameState = (AFortGameStateAthena*)(Globals::World->GameState);
-				GameState->GamePhase = EAthenaGamePhase::Warmup;
-				GameState->OnRep_GamePhase(EAthenaGamePhase::None);
-
-				TArray<AActor*> OutHLODs;
-				Globals::GPS->STATIC_GetAllActorsOfClass(Globals::World, AFortHLODSMActor::StaticClass(), &OutHLODs);
-				for (int i = 0; i < OutHLODs.Num(); i++)
-				{
-					auto Actor = OutHLODs[i];
-
-					if (Actor)
-					{
-						Actor->K2_DestroyActor();
-					}
-				}
+			if (GetAsyncKeyState(VK_F2) & 1)
+			{
+				if (Beacons::Beacon->BeaconState == 0)
+					Beacons::Beacon->BeaconState = 1;
+				else
+					Beacons::Beacon->BeaconState = 0;
 			}
 		}
 
@@ -92,17 +112,56 @@ namespace Hooks
 			}
 		}
 
-		if (pFunction->FunctionFlags & 0x01000000 || pFunction->FunctionFlags & 0x00200000 && 
-			!FuncName.contains("UpdateCamera") &&
-			!FuncName.contains("NoBase") &&
-			!FuncName.contains("ClientAckGoodMove") &&
-			!FuncName.contains("ServerMoveOld") &&
-			!FuncName.contains("ClientAdjustPosition"))
+		if (FuncName.contains("ReadyToStartMatch"))
 		{
-			//LOG("RPC: " << FuncName);
+			if (!bHasInitedTheBeacon) {
+				Globals::FortEngine = UObject::FindObject<UFortEngine>("FortEngine_");
+				Globals::World = Globals::FortEngine->GameViewport->World;
+				Globals::PC = reinterpret_cast<AFortPlayerController*>(Globals::FortEngine->GameInstance->LocalPlayers[0]->PlayerController);
+
+				Beacons::InitHooks(); //Sets up the beacon and inits replication for use!
+
+				bHasInitedTheBeacon = true;
+
+				Globals::World->AuthorityGameMode->GameSession->MaxPlayers = 50;
+				((AFortGameModeAthena*)Globals::World->AuthorityGameMode)->bAlwaysDBNO = true;
+				((AGameMode*)Globals::World->AuthorityGameMode)->StartMatch();
+
+				Discord::UpdateStatus("Server is now up and joinable!");
+
+				StaticLoadObject<UBlueprintGeneratedClass>(L"/Game/Abilities/Player/Constructor/Perks/ContainmentUnit/GE_Constructor_ContainmentUnit_Applied.GE_Constructor_ContainmentUnit_Applied_C");
+			}
+		}
+
+		if (pFunction->FunctionFlags & 0x01000000 || pFunction->FunctionFlags & 0x00200000 &&
+			!FuncName.contains("UpdateCamera") &&
+			!FuncName.contains("NoBase"))
+		{
+			if (!FuncName.contains("ClientAckGoodMove") &&
+				!FuncName.contains("ServerMove") &&
+				!FuncName.contains("ClientAdjustPosition"))
+			{
+				//LOG("RPC: " << FuncName);
+			}
 		}
 
 		/////////// RPCS ////////////
+
+		//My shitty attempt at getting gameplay abilities working
+		if (FuncName.contains("ServerTryActivateAbility"))
+		{
+			auto Params = (UAbilitySystemComponent_ServerTryActivateAbility_Params*)pParams;
+			auto AbilitySystemComp = (UAbilitySystemComponent*)pObject;
+
+			auto AbilityToActivate = Params->AbilityToActivate;
+			auto PredictionKey = Params->PredictionKey;
+
+			UGameplayAbility* InstancedAbility = nullptr;
+
+			InternalTryActivateAbilityLong(AbilitySystemComp, AbilityToActivate, PredictionKey, &InstancedAbility, nullptr, nullptr);
+
+			return NULL;
+		}
 
 		if (FuncName.contains("ServerReadyToStartMatch"))
 		{
@@ -131,18 +190,96 @@ namespace Hooks
 
 			if (PC)
 			{
-				auto WorldInventory = PC->WorldInventory;
-				if (WorldInventory) {
-					auto ItemInstances = WorldInventory->Inventory.ItemInstances;
+				FindInventory(PC)->ExecuteInventoryItem(Params->ItemGuid);
+			}
+		}
 
+		if (FuncName.contains("ServerReturnToMainMenu"))
+		{
+			auto PC = (AFortPlayerController*)pObject;
+			PC->ClientTravel(L"/Game/Maps/Frontend", ETravelType::TRAVEL_Absolute, false, FGuid());
+		}
+
+		if (FuncName.contains("ServerHandlePickup"))
+		{
+			auto Pawn = (AFortPlayerPawn*)pObject;
+			auto Params = (AFortPlayerPawn_ServerHandlePickup_Params*)pParams;
+
+			if (Pawn)
+			{
+				auto PC = (AFortPlayerController*)Pawn->Controller;
+				if (PC)
+				{
+					auto WorldInventory = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory;
+					if (WorldInventory)
+					{
+						auto PickupEntry = Params->Pickup->PrimaryPickupItemEntry;
+						auto PickupDef = PickupEntry.ItemDefinition;
+						auto NewPickupWorldItem = (UFortWorldItem*)PickupDef->CreateTemporaryItemInstanceBP(PickupEntry.Count, 1);
+						NewPickupWorldItem->ItemEntry = PickupEntry;
+
+						WorldInventory->Inventory.ItemInstances.Add(NewPickupWorldItem);
+						WorldInventory->Inventory.ReplicatedEntries.Add(NewPickupWorldItem->ItemEntry);
+
+						FindInventory((AFortPlayerController*)PC)->UpdateInventory();
+					}
+				}
+			}
+		}
+
+		if (FuncName.contains("ServerSpawnInventoryDrop"))
+		{
+			auto PC = (AFortPlayerControllerAthena*)pObject;
+			auto Params = (AFortPlayerController_ServerSpawnInventoryDrop_Params*)pParams;
+
+			if (PC->IsInAircraft())
+				return NULL;
+
+			if (PC)
+			{
+				auto WorldInventory = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory;
+				if (WorldInventory)
+				{
+					auto ItemInstances = WorldInventory->Inventory.ItemInstances;
 					for (int i = 0; i < ItemInstances.Num(); i++)
 					{
 						auto ItemInstance = ItemInstances[i];
-
-						if (Util::AreGuidsTheSame(Params->ItemGuid, ItemInstance->GetItemGuid()))
+						if (Util::AreGuidsTheSame(ItemInstance->GetItemGuid(), Params->ItemGuid))
 						{
-							if (PC->Pawn)
-								((AFortPlayerPawn*)PC->Pawn)->EquipWeaponDefinition((UFortWeaponItemDefinition*)ItemInstance->GetItemDefinitionBP(), Params->ItemGuid);
+							auto Entry = ItemInstance->ItemEntry;
+							auto ItemDefintion = ItemInstance->GetItemDefinitionBP();
+
+							int Count = 0;
+
+							if (Params->Count == Entry.Count) //Remove it from the array
+							{
+								ItemInstances.Remove(i);
+
+								for (int j = 0; j < WorldInventory->Inventory.ReplicatedEntries.Num(); j++)
+								{
+									auto Entry = WorldInventory->Inventory.ReplicatedEntries[j];
+
+									Count = Entry.Count;
+
+									if (Util::AreGuidsTheSame(Entry.ItemGuid, Params->ItemGuid))
+									{
+										WorldInventory->Inventory.ReplicatedEntries.Remove(j);
+									}
+								}
+							} else {
+								ItemInstance->ItemEntry.Count = Entry.Count - Params->Count;
+								Count = Params->Count;
+							}
+
+							auto NewFortPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), PC->Pawn->K2_GetActorLocation(), FRotator()));
+
+							NewFortPickup->PrimaryPickupItemEntry.Count = Count;
+							NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = ItemDefintion;
+							NewFortPickup->OnRep_PrimaryPickupItemEntry();
+
+							NewFortPickup->TossPickup(PC->Pawn->K2_GetActorLocation(), nullptr, 1);
+
+							FindInventory(PC)->UpdateInventory();
 						}
 					}
 				}
@@ -156,21 +293,140 @@ namespace Hooks
 			if (PC->Pawn)
 				PC->Pawn->K2_DestroyActor(); //Destroy old pawn on spawn island
 
-			auto NewPawn = (APlayerPawn_Athena_C*)(Util::SpawnActor(APlayerPawn_Athena_C::StaticClass(), ((AFortGameStateAthena*)Globals::World->GameState)->Aircraft->K2_GetActorLocation(), {}));
+			auto NewPawn = (APlayerPawn_Athena_C*)(Util::SpawnActor(APlayerPawn_Athena_C::StaticClass(), ((AFortGameStateAthena*)Globals::World->GameState)->GetAircraft()->K2_GetActorLocation(), {}));
 			if (NewPawn) {
 				PC->Possess(NewPawn);
-
-				((AFortPlayerState*)NewPawn->PlayerState)->OnRep_PlayerTeam();
-
-				auto PickaxeGuid = PC->QuickBars->PrimaryQuickBar.Slots[0].Items[0];
-				PC->ServerExecuteInventoryItem(PickaxeGuid);
+				auto HealthSet = NewPawn->HealthSet;
+				HealthSet->CurrentShield.Minimum = 0;
+				HealthSet->CurrentShield.Maximum = 100;
+				HealthSet->CurrentShield.BaseValue = -28;
+				HealthSet->Shield.Minimum = 0;
+				HealthSet->Shield.Maximum = 100;
+				HealthSet->Shield.BaseValue = 100;
+				HealthSet->OnRep_Shield();
+				HealthSet->OnRep_CurrentShield();
 			}
 		}
 
-		if (FuncName.contains("ServerReturnToMainMenu"))
+		if (FuncName.contains("ServerAbilityRPCBatch"))
+		{
+			auto AbilityComp = (UAbilitySystemComponent*)pObject;
+			auto CurrentParams = (UAbilitySystemComponent_ServerAbilityRPCBatch_Params*)pParams;
+
+			FGameplayAbilitySpec* FoundSpec = FindAbilitySpecFromHandle(AbilityComp, CurrentParams->BatchInfo.AbilitySpecHandle);
+
+			if (FoundSpec && FoundSpec->Ability)
+			{
+				if (FoundSpec->Ability->GetName().contains("GenericDamage"))
+				{
+					UGameplayAbility* InstancedAbility = nullptr;
+					InternalTryActivateAbilityLong(AbilityComp, CurrentParams->BatchInfo.AbilitySpecHandle, CurrentParams->BatchInfo.PredictionKey, &InstancedAbility, nullptr, &FoundSpec->Ability->CurrentEventData);
+				}
+			}
+		}
+
+		if (FuncName.contains("ServerLoadingScreenDropped"))
 		{
 			auto PC = (AFortPlayerController*)pObject;
-			PC->ClientTravel(L"/Game/Maps/Frontend", ETravelType::TRAVEL_Absolute, false, FGuid());
+			auto Pawn = (APlayerPawn_Athena_C*)PC->Pawn;
+
+			CreateThread(0, 0, (LPTHREAD_START_ROUTINE)Beacons::GrantGameplayAbilities, Pawn, 0, 0);
+		}
+
+		if (FuncName.contains("ServerAttemptInteract"))
+		{
+			auto PlayerController = (AFortPlayerControllerAthena*)pObject;
+			auto CurrentParams = (AFortPlayerController_ServerAttemptInteract_Params*)pParams;
+
+			auto ReceivingActor = CurrentParams->ReceivingActor;
+
+			if (ReceivingActor && ReceivingActor->Class->GetName().contains("Tiered_Chest"))
+			{
+				auto Chest = (ABuildingContainer*)ReceivingActor;
+				Chest->bAlreadySearched = true;
+				Chest->bDestroyContainerOnSearch = true;
+				Chest->OnSetSearched();
+				Chest->OnLoot();
+				Chest->OnRep_bAlreadySearched();
+
+				auto Location = ReceivingActor->K2_GetActorLocation();
+
+				auto NewFortPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
+
+				NewFortPickup->PrimaryPickupItemEntry.Count = 1;
+				if (Globals::bSTWMode)
+				{
+					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::STWWeapons[rand() % Globals::STWWeapons.size()];
+					NewFortPickup->PrimaryPickupItemEntry.Durability = 1000000;
+				}
+				else {
+					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::RangedWeapons[rand() % Globals::RangedWeapons.size()];
+				}
+				NewFortPickup->OnRep_PrimaryPickupItemEntry();
+				NewFortPickup->TossPickup(Location, nullptr, 1);
+
+				auto NewFortPickup1 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
+
+				NewFortPickup1->PrimaryPickupItemEntry.Count = 1;
+				NewFortPickup1->PrimaryPickupItemEntry.ItemDefinition = Globals::Consumables[rand() % Globals::Consumables.size()];
+				NewFortPickup1->OnRep_PrimaryPickupItemEntry();
+				NewFortPickup1->TossPickup(Location, nullptr, 1);
+
+				ReceivingActor->K2_DestroyActor();
+
+			}
+			if (ReceivingActor && ReceivingActor->Class->GetName().contains("AthenaSupplyDrop_02"))
+			{
+				auto SupplyDrop = (ABuildingContainer*)ReceivingActor;
+
+				auto Location = ReceivingActor->K2_GetActorLocation();
+
+				auto NewFortPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
+
+				NewFortPickup->PrimaryPickupItemEntry.Count = 1;
+				if (Globals::bSTWMode)
+				{
+					auto ItemDefinition = Globals::STWWeapons[rand() % Globals::STWWeapons.size()];
+					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = ItemDefinition;
+					NewFortPickup->PrimaryPickupItemEntry.Durability = 1000000;
+					
+				}
+				else {
+					auto ItemDefinition = Globals::SupplyDrop[rand() % Globals::SupplyDrop.size()];
+					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = ItemDefinition;
+				}
+				NewFortPickup->OnRep_PrimaryPickupItemEntry();
+				NewFortPickup->TossPickup(Location, nullptr, 1);
+
+				auto NewFortPickup1 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
+
+				NewFortPickup1->PrimaryPickupItemEntry.Count = 1;
+				NewFortPickup1->PrimaryPickupItemEntry.ItemDefinition = Globals::Consumables[rand() % Globals::Consumables.size()];
+				NewFortPickup1->OnRep_PrimaryPickupItemEntry();
+				NewFortPickup1->TossPickup(Location, nullptr, 1);
+
+				auto NewFortPickup2 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
+
+				NewFortPickup2->PrimaryPickupItemEntry.Count = 1;
+				NewFortPickup2->PrimaryPickupItemEntry.ItemDefinition = Globals::Consumables[rand() % Globals::Consumables.size()];
+				NewFortPickup2->OnRep_PrimaryPickupItemEntry();
+				NewFortPickup2->TossPickup(Location, nullptr, 1);
+
+				auto NewFortPickup3 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
+
+				NewFortPickup3->PrimaryPickupItemEntry.Count = 1;
+				NewFortPickup3->PrimaryPickupItemEntry.ItemDefinition = Globals::Traps[rand() % Globals::Traps.size()];
+				NewFortPickup3->OnRep_PrimaryPickupItemEntry();
+				NewFortPickup3->TossPickup(Location, nullptr, 1);
+			}
+		}
+
+		if (FuncName.contains("ReceiveDestroyed") && Beacons::Beacon)
+		{
+			auto Actor = (AActor*)pObject;
+
+			if (Beacons::NotifyActorDestroyed && Beacons::Beacon->NetDriver)
+				Beacons::NotifyActorDestroyed(Beacons::Beacon->NetDriver, Actor, false);
 		}
 
 		/////////// RPCS ////////////
@@ -181,7 +437,7 @@ namespace Hooks
 	void Init()
 	{
 		auto FEVFT = *reinterpret_cast<void***>(Globals::FortEngine);
-		auto PEAddr = FEVFT[64];
+		auto PEAddr = FEVFT[62];
 
 		MH_CreateHook(reinterpret_cast<LPVOID>(PEAddr), ProcessEventHook, reinterpret_cast<LPVOID*>(&ProcessEvent));
 		MH_EnableHook(reinterpret_cast<LPVOID>(PEAddr));

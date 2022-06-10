@@ -2,22 +2,32 @@
 
 namespace Abilities
 {
-	void GrantGameplayAbility(AFortPlayerPawn* InPawn, UClass* InGameplayAbility)
-	{
-		auto AbilitySystemComponent = InPawn->AbilitySystemComponent;
+    static void GrantGameplayAbility(APlayerPawn_Athena_C* TargetPawn, UClass* GameplayAbilityClass)
+    {
+        auto AbilitySystemComponent = TargetPawn->AbilitySystemComponent;
 
-		auto DefaultGameplayEffect = UObject::FindObject<UGameplayEffect>("GE_Athena_PurpleStuff_C GE_Athena_PurpleStuff.Default__GE_Athena_PurpleStuff_C");
-		if (DefaultGameplayEffect) {
-			DefaultGameplayEffect->GrantedAbilities.Add(FGameplayAbilitySpecDef());
-			DefaultGameplayEffect->GrantedAbilities.operator[](0).Ability = InGameplayAbility;
-			DefaultGameplayEffect->GrantedAbilities.operator[](0).RemovalPolicy = EGameplayEffectGrantedAbilityRemovePolicy::DoNothing;
-			DefaultGameplayEffect->GrantedAbilities.operator[](0).Level = 1.0;
-			DefaultGameplayEffect->DurationPolicy = EGameplayEffectDurationType::Infinite;
+        static UGameplayEffect* DefaultGameplayEffect = UObject::FindObject<UGameplayEffect>("GE_Constructor_ContainmentUnit_Applied_C GE_Constructor_ContainmentUnit_Applied.Default__GE_Constructor_ContainmentUnit_Applied_C");
 
-			auto EffectClass = UObject::FindClass("BlueprintGeneratedClass GE_Athena_PurpleStuff.GE_Athena_PurpleStuff_C");
-			if (EffectClass) {
-				AbilitySystemComponent->BP_ApplyGameplayEffectToSelf(EffectClass, 1.0, FGameplayEffectContextHandle());
-			}
-		}
-	}
+        if (!DefaultGameplayEffect)
+            return;
+
+        TArray<FGameplayAbilitySpecDef> GrantedAbilities = DefaultGameplayEffect->GrantedAbilities;
+
+        // overwrite current gameplay ability with the one we want to activate
+        GrantedAbilities[0].Ability = GameplayAbilityClass;
+
+        // give this gameplay effect an infinite duration
+        DefaultGameplayEffect->DurationPolicy = EGameplayEffectDurationType::Infinite;
+
+        static auto GameplayEffectClass = UObject::FindObject<UClass>("BlueprintGeneratedClass GE_Constructor_ContainmentUnit_Applied.GE_Constructor_ContainmentUnit_Applied_C");
+
+        if (!GameplayEffectClass)
+            return;
+
+        auto handle = FGameplayEffectContextHandle();
+
+        //LOG("AbilitySystemComp: " << AbilitySystemComponent->GetName() << " Ability: " << GameplayAbilityClass->GetName());
+
+        AbilitySystemComponent->BP_ApplyGameplayEffectToTarget(GameplayEffectClass, AbilitySystemComponent, 1, handle);
+    }
 }

@@ -34,6 +34,8 @@ namespace Globals
     std::vector<UFortItemDefinition*> STWWeapons;
     std::vector<UFortItemDefinition*> Traps;
     std::vector<UFortItemDefinition*> Consumables;
+    std::vector<UFortItemDefinition*> SupplyDrop;
+    bool bSTWMode = false;
 }
 
 static void LoadLootPools()
@@ -234,4 +236,17 @@ static void LoadLootPools()
     Globals::STWWeapons.push_back(FindObjectFast<UFortItemDefinition>("/Game/Items/Weapons/Ranged/WIP/ShotGod.ShotGod"));
     Globals::STWWeapons.push_back(FindObjectFast<UFortItemDefinition>("/Game/Items/Weapons/Ranged/WIP/TestGod.TestGod"));
     Globals::STWWeapons.push_back(FindObjectFast<UFortItemDefinition>("/Game/Items/Weapons/Ranged/WIP/WannaGun.WannaGun"));
+
+    // loot pool for supply drop (weapons only)
+    Globals::SupplyDrop.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Sniper_AMR_Athena_SR_Ore_T03.WID_Sniper_AMR_Athena_SR_Ore_T03"));
+    Globals::SupplyDrop.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Sniper_Standard_Scope_Athena_SR_Ore_T03.WID_Sniper_Standard_Scope_Athena_SR_Ore_T03"));
+    Globals::SupplyDrop.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Launcher_Grenade_Athena_VR_Ore_T03.WID_Launcher_Grenade_Athena_VR_Ore_T03"));
+    Globals::SupplyDrop.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Launcher_Grenade_Athena_SR_Ore_T03.WID_Launcher_Grenade_Athena_SR_Ore_T03"));
+    Globals::SupplyDrop.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Assault_Surgical_Athena_VR_Ore_T03.WID_Assault_Surgical_Athena_VR_Ore_T03"));
+    Globals::SupplyDrop.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Assault_AutoHigh_Athena_VR_Ore_T03.WID_Assault_AutoHigh_Athena_VR_Ore_T03"));
+    Globals::SupplyDrop.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Assault_AutoHigh_Athena_SR_Ore_T03.WID_Assault_AutoHigh_Athena_SR_Ore_T03"));
+    Globals::SupplyDrop.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Sniper_Standard_Scope_Athena_VR_Ore_T03.WID_Sniper_Standard_Scope_Athena_VR_Ore_T03"));
+    Globals::SupplyDrop.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Shotgun_SemiAuto_Athena_VR_Ore_T03.WID_Shotgun_SemiAuto_Athena_VR_Ore_T03"));
+    
+    
 }

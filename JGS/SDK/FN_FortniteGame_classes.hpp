@@ -3551,7 +3551,7 @@ public:
 	TAssetPtr<class UClass>                            SecondaryFireAbility;                                     // 0x04D0(0x0020) (Edit)
 	TAssetPtr<class UClass>                            ReloadAbility;                                            // 0x04F0(0x0020) (Edit)
 	TArray<TAssetPtr<class UClass>>                    EquippedAbilities;                                        // 0x0510(0x0010) (Edit, ZeroConstructor)
-	TAssetPtr<class UFortWorldItemDefinition>          AmmoData;                                                 // 0x0520(0x0020) (Edit)
+	TAssetPtr<class UFortWorldItemDefinition>		   AmmoData;                                                 // 0x0520(0x0020) (Edit)
 	float                                              LowAmmoPercentage;                                        // 0x0540(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	float                                              DegradedPercentage;                                       // 0x0544(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<EFortWeaponTriggerType>                TriggerType;                                              // 0x0548(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
