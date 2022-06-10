@@ -127,6 +127,8 @@ namespace Hooks
 				((AFortGameModeAthena*)Globals::World->AuthorityGameMode)->bAlwaysDBNO = true;
 				((AGameMode*)Globals::World->AuthorityGameMode)->StartMatch();
 
+				((AFortGameStateAthena*)Globals::World->GameState)->PlayersLeft--;
+
 				Discord::UpdateStatus("Server is now up and joinable!");
 
 				StaticLoadObject<UBlueprintGeneratedClass>(L"/Game/Abilities/Player/Constructor/Perks/ContainmentUnit/GE_Constructor_ContainmentUnit_Applied.GE_Constructor_ContainmentUnit_Applied_C");
@@ -420,6 +422,19 @@ namespace Hooks
 				NewFortPickup3->TossPickup(Location, nullptr, 1);
 			}
 		}
+
+		if (FuncName.contains("GamePhaseChanged") && Beacons::Beacon)
+		{
+			if (((AFortGameStateAthena*)Globals::World->GameState)->GamePhase == EAthenaGamePhase::Aircraft)
+				Beacons::Beacon->BeaconState = 0;
+		}
+
+#ifndef CHEATS
+		if (FuncName.contains("ServerCheat") || FuncName.contains("ServerCheatAll"))
+		{
+			return NULL;
+		}
+#endif
 
 		if (FuncName.contains("ReceiveDestroyed") && Beacons::Beacon)
 		{

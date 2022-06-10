@@ -19,6 +19,8 @@ static T* FindObjectFast(std::string ObjectName, UClass* ObjectClass = UObject::
     return StaticFindObject(ObjectClass, nullptr, OrigInName, false);
 }
 
+//#define CHEATS
+
 namespace Globals
 {
 	UWorld* World;

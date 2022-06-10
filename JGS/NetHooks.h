@@ -114,7 +114,7 @@ namespace Beacons
 
 		auto PlayerState = (AFortPlayerStateAthena*)(PlayerController->PlayerState);
 
-		PlayerState->TeamIndex = EFortTeam::HumanPvP_Team69;
+		//PlayerState->TeamIndex = EFortTeam::HumanPvP_Team69;
 		PlayerState->OnRep_TeamIndex();
 
 		PlayerState->bHasFinishedLoading = true;
