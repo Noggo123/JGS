@@ -169,7 +169,31 @@ namespace Hooks
 					{
 						auto PickupEntry = Params->Pickup->PrimaryPickupItemEntry;
 						auto PickupDef = PickupEntry.ItemDefinition;
-						auto NewPickupWorldItem = (UFortWorldItem*)PickupDef->CreateTemporaryItemInstanceBP(PickupEntry.Count, 1);
+
+						int Count = 0;
+
+						for (int i = 0; i < WorldInventory->Inventory.ItemInstances.Num(); i++)
+						{
+							auto Instance = WorldInventory->Inventory.ItemInstances[i];
+
+							if (Instance->GetItemDefinitionBP() == PickupDef && !Instance->GetItemDefinitionBP()->GetFullName().contains("FortWeaponItemDefinition"))
+							{
+								WorldInventory->Inventory.ItemInstances.Remove(i);
+							}
+
+							for (int j = 0; j < WorldInventory->Inventory.ReplicatedEntries.Num(); j++)
+							{
+								auto Entry = WorldInventory->Inventory.ReplicatedEntries[j];
+
+								if (Entry.ItemDefinition == PickupDef && !Entry.ItemDefinition->GetFullName().contains("FortWeaponItemDefinition"))
+								{
+									WorldInventory->Inventory.ReplicatedEntries.Remove(j);
+									Count = Entry.Count;
+								}
+							}
+						}
+
+						auto NewPickupWorldItem = (UFortWorldItem*)PickupDef->CreateTemporaryItemInstanceBP(PickupEntry.Count + Count, 1);
 						NewPickupWorldItem->ItemEntry = PickupEntry;
 						NewPickupWorldItem->bTemporaryItemOwningController = true;
 						NewPickupWorldItem->SetOwningControllerForTemporaryItem(PC);
