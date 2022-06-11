@@ -36,8 +36,13 @@ namespace Hooks
 					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::Consumables[rand() % Globals::Consumables.size()];
 				}
 				NewFortPickup->OnRep_PrimaryPickupItemEntry();
-
 				NewFortPickup->TossPickup(SpawnLoc, nullptr, 1);
+
+				auto AmmoDefintion = ((UFortWorldItemDefinition*)NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)->GetAmmoWorldItemDefinition_BP();
+				auto AmmoPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), NewFortPickup->K2_GetActorLocation(), {}));
+				AmmoPickup->PrimaryPickupItemEntry.Count = 30;
+				AmmoPickup->OnRep_PrimaryPickupItemEntry();
+				AmmoPickup->TossPickup(NewFortPickup->K2_GetActorLocation(), nullptr, 999);
 
 				//LOG("Spawned Pickup: " << NewFortPickup->GetName() << " With weapon definition: " << NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetName());
 			}
@@ -121,7 +126,6 @@ namespace Hooks
 				((AFortGameModeAthena*)Globals::World->AuthorityGameMode)->bAlwaysDBNO = true;
 #endif
 				((AGameMode*)Globals::World->AuthorityGameMode)->StartMatch();
-
 
 				Discord::UpdateStatus("Server is now up and joinable!");
 
@@ -214,11 +218,19 @@ namespace Hooks
 						auto PickupDef = PickupEntry.ItemDefinition;
 						auto NewPickupWorldItem = (UFortWorldItem*)PickupDef->CreateTemporaryItemInstanceBP(PickupEntry.Count, 1);
 						NewPickupWorldItem->ItemEntry = PickupEntry;
+						NewPickupWorldItem->bTemporaryItemOwningController = true;
+						NewPickupWorldItem->SetOwningControllerForTemporaryItem(PC);
 
 						WorldInventory->Inventory.ItemInstances.Add(NewPickupWorldItem);
 						WorldInventory->Inventory.ReplicatedEntries.Add(NewPickupWorldItem->ItemEntry);
 
 						FindInventory((AFortPlayerController*)PC)->UpdateInventory();
+
+						auto statval = new FFortItemEntryStateValue;
+						statval->IntValue = NewPickupWorldItem->ItemEntry.Count;
+						statval->NameValue = FName("Item");
+						statval->StateType = EFortItemEntryState::NewItemCount;
+						PC->ServerSetInventoryStateValue(NewPickupWorldItem->GetItemGuid(), (*statval));
 					}
 				}
 			}
@@ -302,6 +314,9 @@ namespace Hooks
 				HealthSet->Shield.BaseValue = 100;
 				HealthSet->OnRep_Shield();
 				HealthSet->OnRep_CurrentShield();
+
+				FindInventory(PC)->ClearInventory();
+				FindInventory(PC)->UpdateInventory();
 			}
 		}
 
@@ -314,11 +329,8 @@ namespace Hooks
 
 			if (FoundSpec && FoundSpec->Ability)
 			{
-				//if (FoundSpec->Ability->GetName().contains("GenericDamage"))
-				//{
-					UGameplayAbility* InstancedAbility = nullptr;
-					InternalTryActivateAbilityLong(AbilityComp, CurrentParams->BatchInfo.AbilitySpecHandle, CurrentParams->BatchInfo.PredictionKey, &InstancedAbility, nullptr, &FoundSpec->Ability->CurrentEventData);
-				//}
+				UGameplayAbility* InstancedAbility = nullptr;
+				InternalTryActivateAbilityLong(AbilityComp, CurrentParams->BatchInfo.AbilitySpecHandle, CurrentParams->BatchInfo.PredictionKey, &InstancedAbility, nullptr, &FoundSpec->Ability->CurrentEventData);
 			}
 		}
 
@@ -362,6 +374,12 @@ namespace Hooks
 				NewFortPickup->OnRep_PrimaryPickupItemEntry();
 				NewFortPickup->TossPickup(Location, nullptr, 1);
 
+				auto AmmoDefintion = ((UFortWorldItemDefinition*)NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)->GetAmmoWorldItemDefinition_BP();
+				auto AmmoPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), NewFortPickup->K2_GetActorLocation(), {}));
+				AmmoPickup->PrimaryPickupItemEntry.Count = 30;
+				AmmoPickup->OnRep_PrimaryPickupItemEntry();
+				AmmoPickup->TossPickup(Location, nullptr, 999);
+
 				auto NewFortPickup1 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
 
 				NewFortPickup1->PrimaryPickupItemEntry.Count = 1;
@@ -394,6 +412,12 @@ namespace Hooks
 				}
 				NewFortPickup->OnRep_PrimaryPickupItemEntry();
 				NewFortPickup->TossPickup(Location, nullptr, 1);
+
+				auto AmmoDefintion = ((UFortWorldItemDefinition*)NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)->GetAmmoWorldItemDefinition_BP();
+				auto AmmoPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), NewFortPickup->K2_GetActorLocation(), {}));
+				AmmoPickup->PrimaryPickupItemEntry.Count = 30;
+				AmmoPickup->OnRep_PrimaryPickupItemEntry();
+				AmmoPickup->TossPickup(Location, nullptr, 999);
 
 				auto NewFortPickup1 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
 
@@ -434,6 +458,11 @@ namespace Hooks
 		if (FuncName.contains("ClientOnPawnDied"))
 		{
 			auto PC = (AFortPlayerControllerAthena*)pObject;
+
+			if (PC)
+			{
+				FindInventory(PC)->SpawnAllLootInInventory();
+			}
 		}
 
 		if (FuncName.contains("ReceiveDestroyed") && Beacons::Beacon)

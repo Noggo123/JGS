@@ -14,10 +14,10 @@ namespace SDK
 
 std::string UObject::GetName()
 {
-	std::string name(Name.ToString());
-	if (Name.DisplayIndex > 0)
+	std::string name(Name.GetName());
+	if (Name.Number > 0)
 	{
-		name += '_' + std::to_string(Name.DisplayIndex);
+		name += '_' + std::to_string(Name.Number);
 	}
 
 	auto pos = name.rfind('/');

@@ -19,22 +19,72 @@ static auto Realloc = reinterpret_cast<void* (*)(void* Memory, int64_t NewSize, 
 
 class UObject;
 
-struct TUObjectArray
+class FUObjectItem
 {
-	uint8_t* Objects;
-	uint32_t MaxElements;
-	uint32_t NumElements;
+public:
+	UObject* Object;
+	int32_t Flags;
+	int32_t ClusterIndex;
+	int32_t SerialNumber;
 
-	inline int32_t Num()
+	enum class ObjectFlags : int32_t
+	{
+		None = 0,
+		Native = 1 << 25,
+		Async = 1 << 26,
+		AsyncLoading = 1 << 27,
+		Unreachable = 1 << 28,
+		PendingKill = 1 << 29,
+		RootSet = 1 << 30,
+		NoStrongReference = 1 << 31
+	};
+
+	inline bool IsUnreachable() const
+	{
+		return !!(Flags & static_cast<std::underlying_type_t<ObjectFlags>>(ObjectFlags::Unreachable));
+	}
+	inline bool IsPendingKill() const
+	{
+		return !!(Flags & static_cast<std::underlying_type_t<ObjectFlags>>(ObjectFlags::PendingKill));
+	}
+};
+
+class TUObjectArray
+{
+public:
+	inline int32_t Num() const
 	{
 		return NumElements;
 	}
 
-	inline UObject* GetByIndex(int32_t id)
+	inline UObject* GetByIndex(int32_t index) const
 	{
-		auto Offset = 24 * id;
-		return *(UObject**)(Objects + Offset);
+		return Objects[index].Object;
 	}
+
+	inline FUObjectItem* GetItemByIndex(int32_t index) const
+	{
+		if (index < NumElements)
+		{
+			return &Objects[index];
+		}
+		return nullptr;
+	}
+
+private:
+	FUObjectItem* Objects;
+	int32_t MaxElements;
+	int32_t NumElements;
+};
+
+class FUObjectArray
+{
+public:
+	int32_t ObjFirstGCIndex;
+	int32_t ObjLastNonGCIndex;
+	int32_t MaxObjectsNotConsideredByGC;
+	int32_t OpenForDisregardForGC;
+	TUObjectArray ObjObjects;
 };
 
 template<class T>
@@ -141,35 +191,154 @@ struct FName;
 inline void (*FreeInternal)(void*);
 inline void (*FNameToString)(FName* pThis, FString& out);
 
-struct FName
+class FNameEntry
 {
-	uint32_t ComparisonIndex;
-	uint32_t DisplayIndex;
+public:
+	static const auto NAME_WIDE_MASK = 0x1;
+	static const auto NAME_INDEX_SHIFT = 1;
 
-	FName() = default;
-
-	explicit FName(int64_t name)
+	int32_t Index;
+	char UnknownData00[0x04];
+	FNameEntry* HashNext;
+	union
 	{
-		DisplayIndex = (name & 0xFFFFFFFF00000000LL) >> 32;
-		ComparisonIndex = (name & 0xFFFFFFFFLL);
+		char AnsiName[1024];
+		wchar_t WideName[1024];
 	};
 
-	FName(uint32_t comparisonIndex, uint32_t displayIndex) : ComparisonIndex(comparisonIndex),
-		DisplayIndex(displayIndex)
+	inline const int32_t GetIndex() const
 	{
+		return Index >> NAME_INDEX_SHIFT;
 	}
 
-	auto ToString()
+	inline bool IsWide() const
 	{
-		FString temp;
-		FNameToString(this, temp);
-
-		std::string ret(temp.ToString());
-
-		FreeInternal((void*)temp.c_str());
-
-		return ret;
+		return Index & NAME_WIDE_MASK;
 	}
+
+	inline const char* GetAnsiName() const
+	{
+		return AnsiName;
+	}
+
+	inline const wchar_t* GetWideName() const
+	{
+		return WideName;
+	}
+};
+
+template<typename ElementType, int32_t MaxTotalElements, int32_t ElementsPerChunk>
+class TStaticIndirectArrayThreadSafeRead
+{
+public:
+	inline size_t Num() const
+	{
+		return NumElements;
+	}
+
+	inline bool IsValidIndex(int32_t index) const
+	{
+		return index < Num() && index >= 0;
+	}
+
+	inline ElementType const* const& operator[](int32_t index) const
+	{
+		return *GetItemPtr(index);
+	}
+
+private:
+	inline ElementType const* const* GetItemPtr(int32_t Index) const
+	{
+		int32_t ChunkIndex = Index / ElementsPerChunk;
+		int32_t WithinChunkIndex = Index % ElementsPerChunk;
+		ElementType** Chunk = Chunks[ChunkIndex];
+		return Chunk + WithinChunkIndex;
+	}
+
+	enum
+	{
+		ChunkTableSize = (MaxTotalElements + ElementsPerChunk - 1) / ElementsPerChunk
+	};
+
+	ElementType** Chunks[ChunkTableSize];
+	int32_t NumElements;
+	int32_t NumChunks;
+};
+
+using TNameEntryArray = TStaticIndirectArrayThreadSafeRead<FNameEntry, 2 * 1024 * 1024, 16384>;
+
+struct FName
+{
+	union
+	{
+		struct
+		{
+			int32_t ComparisonIndex;
+			int32_t Number;
+		};
+
+		uint64_t CompositeComparisonValue;
+	};
+
+	inline FName()
+		: ComparisonIndex(0),
+		Number(0)
+	{
+	};
+
+	inline FName(int32_t i)
+		: ComparisonIndex(i),
+		Number(0)
+	{
+	};
+
+	FName(const char* nameToFind)
+		: ComparisonIndex(0),
+		Number(0)
+	{
+		static std::set<int> cache;
+
+		for (auto i : cache)
+		{
+			if (!std::strcmp(GetGlobalNames()[i]->GetAnsiName(), nameToFind))
+			{
+				ComparisonIndex = i;
+
+				return;
+			}
+		}
+
+		for (auto i = 0; i < GetGlobalNames().Num(); ++i)
+		{
+			if (GetGlobalNames()[i] != nullptr)
+			{
+				if (!std::strcmp(GetGlobalNames()[i]->GetAnsiName(), nameToFind))
+				{
+					cache.insert(i);
+
+					ComparisonIndex = i;
+
+					return;
+				}
+			}
+		}
+	};
+
+	static TNameEntryArray* GNames;
+	static inline TNameEntryArray& GetGlobalNames()
+	{
+		return *GNames;
+	};
+
+	inline const char* GetName() const
+	{
+		return GetGlobalNames()[ComparisonIndex]->GetAnsiName();
+	};
+
+	inline bool operator==(const FName& other) const
+	{
+		return ComparisonIndex == other.ComparisonIndex;
+	};
 };
 
 template<class TEnum>
@@ -276,6 +445,11 @@ class TMap
 struct FWeakObjectPtr
 {
 public:
+	inline bool SerialNumbersMatch(FUObjectItem* ObjectItem) const
+	{
+		return ObjectItem->SerialNumber == ObjectSerialNumber;
+	}
+
 	bool IsValid() const;
 
 	UObject* Get() const;
@@ -339,6 +513,13 @@ template<typename TObjectID>
 class TPersistentObjectPtr
 {
 public:
+	inline UObject* Get() const
+	{
+		UObject* Object = WeakPtr.Get();
+		return Object;
+	}
+
+
 	FWeakObjectPtr WeakPtr;
 	int32_t TagAtLastTest;
 	TObjectID ObjectID;
@@ -354,10 +535,20 @@ class FAssetPtr : public TPersistentObjectPtr<FStringAssetReference_>
 
 };
 
-template<typename ObjectType>
-class TAssetPtr : FAssetPtr
+template<class T = UObject>
+class TAssetPtr
 {
+	template <class U>
+	friend class TAssetPtr;
 
+public:
+
+	inline T* Get() const
+	{
+		return dynamic_cast<T*>(AssetPtr.Get());
+	}
+
+	FAssetPtr AssetPtr;
 };
 
 struct FUniqueObjectGuid_

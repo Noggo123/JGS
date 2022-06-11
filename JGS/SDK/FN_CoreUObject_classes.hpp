@@ -17,7 +17,7 @@ namespace SDK
 class UObject
 {
 public:
-	static TUObjectArray*                              GObjects;                                                 // 0x0000(0x0000)
+	static FUObjectArray*                              GObjects;                                                 // 0x0000(0x0000)
 	void*                                              Vtable;                                                   // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
 	int32_t                                            ObjectFlags;                                              // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
 	int32_t                                            InternalIndex;                                            // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
@@ -25,9 +25,9 @@ public:
 	FName                                              Name;                                                     // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
 	class UObject*                                     Outer;                                                    // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
 
-	static inline TUObjectArray* GetGlobalObjects()
+	static inline TUObjectArray& GetGlobalObjects()
 	{
-		return GObjects;
+		return GObjects->ObjObjects;
 	}
 
 	std::string GetName();
@@ -37,9 +37,9 @@ public:
 	template<typename T>
 	static T* FindObject(const std::string& name)
 	{
-		for (int i = 0; i < GetGlobalObjects()->Num(); ++i)
+		for (int i = 0; i < GetGlobalObjects().Num(); ++i)
 		{
-			auto object = GetGlobalObjects()->GetByIndex(i);
+			auto object = GetGlobalObjects().GetByIndex(i);
 	
 			if (object == nullptr)
 			{
@@ -56,9 +56,9 @@ public:
 
 	static UClass* FindClass(const std::string& name)
 	{
-		for (int i = 0; i < GetGlobalObjects()->Num(); ++i)
+		for (int i = 0; i < GetGlobalObjects().Num(); ++i)
 		{
-			auto object = GetGlobalObjects()->GetByIndex(i);
+			auto object = GetGlobalObjects().GetByIndex(i);
 	
 			if (object == nullptr)
 			{
@@ -76,7 +76,7 @@ public:
 	template<typename T>
 	static T* GetObjectCasted(std::size_t index)
 	{
-		return static_cast<T*>(GetGlobalObjects()->GetByIndex(index));
+		return static_cast<T*>(GetGlobalObjects().GetByIndex(index));
 	}
 
 	bool IsA(UClass* cmp) const;

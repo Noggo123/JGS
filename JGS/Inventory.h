@@ -226,6 +226,71 @@ public:
         reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars->OnRep_SecondaryQuickBar();
 	}
 
+    void SpawnAllLootInInventory()
+    {
+        if (PC) {
+            for (int i = 0; i < reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ItemInstances.Num(); i++)
+            {
+                auto ItemInstance = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ItemInstances[i];
+                reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ItemInstances.Remove(i);
+
+                if (ItemInstance->GetItemDefinitionBP()->GetFullName().contains("FortBuildingItemDefinition"))
+                    continue;
+
+                if (ItemInstance->GetItemDefinitionBP()->GetFullName().contains("FortEditToolItemDefinition"))
+                    continue;
+
+                if (ItemInstance->GetItemDefinitionBP()->GetFullName().contains("FortWeaponMeleeItemDefinition"))
+                    continue;
+
+                auto NewFortPickup = (AFortPickupAthena*)(Util::SpawnActor(AFortPickupAthena::StaticClass(), PC->Pawn->K2_GetActorLocation(), {}));
+                NewFortPickup->PrimaryPickupItemEntry = ItemInstance->ItemEntry;
+                NewFortPickup->OnRep_PrimaryPickupItemEntry();
+                NewFortPickup->TossPickup(PC->Pawn->K2_GetActorLocation(), nullptr, 999);
+            }
+
+            for (int i = 0; i < reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
+            {
+                reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ReplicatedEntries.Remove(i);
+            }
+        }
+    }
+
+    void ClearInventory()
+    {
+        for (int i = 0; i < reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ItemInstances.Num(); i++)
+        {
+            auto ItemInstance = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ItemInstances[i];
+
+            if (ItemInstance->GetItemDefinitionBP()->GetFullName().contains("FortBuildingItemDefinition"))
+                continue;
+
+            if (ItemInstance->GetItemDefinitionBP()->GetFullName().contains("FortEditToolItemDefinition"))
+                continue;
+
+            if (ItemInstance->GetItemDefinitionBP()->GetFullName().contains("FortWeaponMeleeItemDefinition"))
+                continue;
+
+            reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ItemInstances.Remove(i);
+        }
+
+        for (int i = 0; i < reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
+        {
+            auto Entry = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ReplicatedEntries[i];
+
+            if (Entry.ItemDefinition->GetFullName().contains("FortBuildingItemDefinition"))
+                continue;
+
+            if (Entry.ItemDefinition->GetFullName().contains("FortEditToolItemDefinition"))
+                continue;
+
+            if (Entry.ItemDefinition->GetFullName().contains("FortWeaponMeleeItemDefinition"))
+                continue;
+
+            reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ReplicatedEntries.Remove(i);
+        }
+    }
+
     void CreateBuildPreviews()
     {
         BuildPreviewRoof = static_cast<ABuildingPlayerPrimitivePreview*>(Util::SpawnActor(ABuildingPlayerPrimitivePreview::StaticClass(), {}, {}));

@@ -31,11 +31,13 @@ DWORD WINAPI MainThread(LPVOID)
     LOG("Setting Up!");
 
     auto BaseAddr = Util::BaseAddress();
-    auto GObjectsAddress = BaseAddr + 0x6661390;
+    auto GObjectsAddress = BaseAddr + 0x6661380;
     auto FNameToStringAddress = BaseAddr + 0x1302390;
     auto FreeMemoryAddress = BaseAddr + 0x1233210;
+    auto GNamesAddress = BaseAddr + 0x66587C8;
 
-    SDK::UObject::GObjects = decltype(SDK::UObject::GObjects)(GObjectsAddress);
+    FName::GNames = *reinterpret_cast<TNameEntryArray**>((uintptr_t**)GNamesAddress);
+    UObject::GObjects = reinterpret_cast<FUObjectArray*>((uintptr_t*)GObjectsAddress);
     SDK::FNameToString = decltype(SDK::FNameToString)(FNameToStringAddress);
     SDK::FreeInternal = decltype(SDK::FreeInternal)(FreeMemoryAddress);
 
