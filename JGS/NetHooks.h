@@ -57,9 +57,10 @@ namespace Beacons
 
 				auto AmmoDefintion = ((UFortWorldItemDefinition*)NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)->GetAmmoWorldItemDefinition_BP();
 				auto AmmoPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), NewFortPickup->K2_GetActorLocation(), {}));
-				AmmoPickup->PrimaryPickupItemEntry.Count = 30;
+				AmmoPickup->PrimaryPickupItemEntry.Count = AmmoDefintion->DropCount;
+				AmmoPickup->PrimaryPickupItemEntry.ItemDefinition = AmmoDefintion;
 				AmmoPickup->OnRep_PrimaryPickupItemEntry();
-				AmmoPickup->TossPickup(NewFortPickup->K2_GetActorLocation(), nullptr, 999);
+				AmmoPickup->TossPickup(SpawnLoc, nullptr, 999);
 
 				Actor->K2_DestroyActor();
 				//LOG("Spawned Pickup: " << NewFortPickup->GetName() << " With weapon definition: " << NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetName());
@@ -210,6 +211,7 @@ namespace Beacons
 
 		auto NewInv = CreateInventoryForPlayerController(PlayerController);
 		NewInv->SetupInventory();
+		NewInv->CreateBuildPreviews();
 		NewInv->UpdateInventory();
 
 		PlayerState->OnRep_HeroType();
@@ -222,6 +224,56 @@ namespace Beacons
 	PVOID CollectGarbageInternalHook(uint32_t KeepFlags, bool bPerformFullPurge)
 	{
 		return NULL;
+	}
+
+	__int64 (*OnReload)(UObject* a1, unsigned int a2);
+	__int64 __fastcall OnReloadHook(AFortWeapon* Weapon, unsigned int a2)
+	{
+		if (Weapon)
+		{
+			auto ItemDefiniton = (UFortWeaponItemDefinition*)Weapon->WeaponData;
+			auto AmmoDef = ItemDefiniton->GetAmmoWorldItemDefinition_BP();
+			
+			if (AmmoDef == nullptr)
+				AmmoDef = ItemDefiniton;
+
+			LOG("Reload Cost ItemDef: " << AmmoDef->GetName());
+			LOG("Removing " << a2 << " Ammo!");
+
+			auto Pawn = (APawn*)Weapon->Owner;
+			auto Controller = (AFortPlayerController*)Pawn->Controller;
+			auto WorldInventory = reinterpret_cast<InventoryPointer*>(Controller)->WorldInventory;
+
+			for (int i = 0; i < WorldInventory->Inventory.ItemInstances.Num(); i++)
+			{
+				auto ItemInstance = WorldInventory->Inventory.ItemInstances[i];
+
+				if (ItemInstance->GetItemDefinitionBP() == AmmoDef)
+				{
+					int newCount = ItemInstance->ItemEntry.Count - a2;
+
+					WorldInventory->Inventory.ItemInstances.Remove(i);
+
+					for (int j = 0; j < WorldInventory->Inventory.ReplicatedEntries.Num(); j++)
+					{
+						auto Entry = WorldInventory->Inventory.ReplicatedEntries[j];
+
+						if (Entry.ItemDefinition == AmmoDef)
+						{
+							WorldInventory->Inventory.ReplicatedEntries.Remove(j);
+						}
+					}
+
+					auto NewWorldItem = (UFortWorldItem*)(AmmoDef->CreateTemporaryItemInstanceBP(newCount, 1));
+
+					WorldInventory->Inventory.ReplicatedEntries.Add(NewWorldItem->ItemEntry);
+					WorldInventory->Inventory.ItemInstances.Add(NewWorldItem);
+				}
+			}
+
+			FindInventory(Controller)->UpdateInventory();
+		}
+		return OnReload(Weapon, a2);
 	}
 
 	void InitHooks()
@@ -255,6 +307,9 @@ namespace Beacons
 		auto pCollectGarbageInternalAddress = Util::FindPattern("\x48\x8B\xC4\x48\x89\x58\x08\x88\x50\x10", "xxxxxxxxxx");
 		MH_CreateHook(static_cast<LPVOID>(pCollectGarbageInternalAddress), CollectGarbageInternalHook, reinterpret_cast<LPVOID*>(&CollectGarbageInternal));
 		MH_EnableHook(static_cast<LPVOID>(pCollectGarbageInternalAddress));
+
+		MH_CreateHook((void*)(BaseAddr + 0x9239C0), OnReloadHook, (void**)(&OnReload));
+		MH_EnableHook((void*)(BaseAddr + 0x9239C0));
 
 		Beacon = (AOnlineBeaconHost*)(Util::SpawnActor(AOnlineBeaconHost::StaticClass(), {}, {}));
 		Beacon->ListenPort = 7777;

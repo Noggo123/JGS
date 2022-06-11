@@ -328,7 +328,8 @@ namespace Hooks
 
 				auto AmmoDefintion = ((UFortWorldItemDefinition*)NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)->GetAmmoWorldItemDefinition_BP();
 				auto AmmoPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), NewFortPickup->K2_GetActorLocation(), {}));
-				AmmoPickup->PrimaryPickupItemEntry.Count = 30;
+				AmmoPickup->PrimaryPickupItemEntry.Count = AmmoDefintion->DropCount;
+				AmmoPickup->PrimaryPickupItemEntry.ItemDefinition = AmmoDefintion;
 				AmmoPickup->OnRep_PrimaryPickupItemEntry();
 				AmmoPickup->TossPickup(Location, nullptr, 999);
 
