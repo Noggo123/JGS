@@ -178,8 +178,16 @@ namespace Replication
 
 	bool IsActorRelevantToConnection(AActor* Actor, UNetConnection* NetConnection)
 	{
-		auto ActorLocation = NetConnection->ViewTarget->K2_GetActorLocation();
-		return IsNetRelevantFor(Actor, NetConnection->ViewTarget, NetConnection->ViewTarget, ActorLocation);
+		if (NetConnection)
+		{
+			if (NetConnection->ViewTarget)
+			{
+				auto ActorLocation = NetConnection->ViewTarget->K2_GetActorLocation();
+				return IsNetRelevantFor(Actor, NetConnection->ViewTarget, NetConnection->ViewTarget, ActorLocation);
+			}
+		}
+
+		return false; //Hope this fixs the damn issue
 	}
 
 	void ReplicateActors(UNetDriver* NetDriver)
@@ -202,6 +210,9 @@ namespace Replication
 				continue;
 
 			if (i >= NumClientsToTick)
+				continue;
+
+			if (!Connection->ViewTarget)
 				continue;
 
 			if (Connection->PlayerController)
@@ -233,13 +244,16 @@ namespace Replication
 
 				if (!Actor->bAlwaysRelevant && !Actor->bNetUseOwnerRelevancy && !Actor->bOnlyRelevantToOwner)
 				{
-					auto Viewer = Connection->ViewTarget;
-					auto Loc = Viewer->K2_GetActorLocation();
-					if (!IsNetRelevantFor(Actor, Viewer, Connection->ViewTarget, Loc))
+					if (Connection && Connection->ViewTarget)
 					{
-						if (Channel)
-							ActorChannelClose(Channel, 0, 0, 0);
-						continue;
+						auto Viewer = Connection->ViewTarget;
+						auto Loc = Viewer->K2_GetActorLocation();
+						if (!IsNetRelevantFor(Actor, Viewer, Connection->ViewTarget, Loc))
+						{
+							if (Channel)
+								ActorChannelClose(Channel, 0, 0, 0);
+							continue;
+						}
 					}
 				}
 
