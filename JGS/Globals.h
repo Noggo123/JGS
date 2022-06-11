@@ -23,7 +23,6 @@ static T* FindObjectFast(std::string ObjectName, UClass* ObjectClass = UObject::
 //#define DBNO_ENABLED
 //#define SAME_TEAM
 //#define LOG_RPCS
-#define STW
 
 namespace Globals
 {

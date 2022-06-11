@@ -75,7 +75,6 @@ namespace Beacons
 
 	APlayerController* SpawnPlayActorHook(UWorld*, UNetConnection* Connection, ENetRole NetRole, FURL a4, void* a5, FString& Src, uint8_t a7)
 	{
-#ifndef STW
 		auto PlayerController = (AFortPlayerControllerAthena*)SpawnPlayActor(Globals::World, Connection, NetRole, a4, a5, Src, a7);
 		Connection->PlayerController = PlayerController;
 		PlayerController->NetConnection = Connection;
@@ -141,53 +140,6 @@ namespace Beacons
 		PlayerState->OnRep_PlayerTeam();
 
 		return PlayerController;
-#else
-		auto PlayerController = (AFortPlayerControllerZone*)SpawnPlayActor(Globals::World, Connection, NetRole, a4, a5, Src, a7);
-		Connection->PlayerController = PlayerController;
-		PlayerController->NetConnection = Connection;
-		Connection->OwningActor = PlayerController;
-
-		auto Pawn = (APlayerPawn_Generic_C*)(Util::SpawnActor(APlayerPawn_Generic_C::StaticClass(), {0, 0, 1800}, {}));
-		Pawn->bCanBeDamaged = false;
-		Pawn->SetOwner(PlayerController);
-		PlayerController->Possess(Pawn);
-
-		PlayerController->ClientForceProfileQuery();
-
-		Pawn->ServerChoosePart(EFortCustomPartType::Head, Globals::HeadPart);
-		Pawn->ServerChoosePart(EFortCustomPartType::Body, Globals::BodyPart);
-		((AFortPlayerState*)Pawn->PlayerState)->OnRep_CharacterParts();
-
-		Pawn->CharacterMovement->bReplicates = true;
-		Pawn->SetReplicateMovement(true);
-		Pawn->OnRep_ReplicatedBasedMovement();
-
-		Pawn->OnRep_ReplicatedMovement();
-
-		PlayerController->bHasServerFinishedLoading = true;
-		PlayerController->OnRep_bHasServerFinishedLoading();
-
-		auto PlayerState = (AFortPlayerStateZone*)(PlayerController->PlayerState);
-		PlayerState->bHasFinishedLoading = true;
-		PlayerState->bHasStartedPlaying = true;
-		PlayerState->bIsGameSessionAdmin = true;
-		PlayerState->bIsGameSessionOwner = true;
-		PlayerState->bIsWorldDataOwner = true;
-		PlayerState->bIsReadyToContinue = true;
-		PlayerState->OnRep_bHasStartedPlaying();
-		PlayerState->OnRep_CharacterParts();
-
-		auto NewInv = CreateInventoryForPlayerController(PlayerController);
-		NewInv->SetupInventory();
-		NewInv->UpdateInventory();
-
-		PlayerState->OnRep_HeroType();
-		PlayerState->OnRep_PlayerTeam();
-
-		return PlayerController;
-#endif
-
-		return SpawnPlayActor(Globals::World, Connection, NetRole, a4, a5, Src, a7);
 	}
 
 	PVOID(*CollectGarbageInternal)(uint32_t, bool) = nullptr;
@@ -224,9 +176,9 @@ namespace Beacons
 		MH_CreateHook((void*)(BaseAddr + Offsets::KickPatch), KickPatch, nullptr);
 		MH_EnableHook((void*)(BaseAddr + Offsets::KickPatch));
 
-		//auto pCollectGarbageInternalAddress = Util::FindPattern("\x48\x8B\xC4\x48\x89\x58\x08\x88\x50\x10", "xxxxxxxxxx");
-		//MH_CreateHook(static_cast<LPVOID>(pCollectGarbageInternalAddress), CollectGarbageInternalHook, reinterpret_cast<LPVOID*>(&CollectGarbageInternal));
-		//MH_EnableHook(static_cast<LPVOID>(pCollectGarbageInternalAddress));
+		auto pCollectGarbageInternalAddress = Util::FindPattern("\x48\x8B\xC4\x48\x89\x58\x08\x88\x50\x10", "xxxxxxxxxx");
+		MH_CreateHook(static_cast<LPVOID>(pCollectGarbageInternalAddress), CollectGarbageInternalHook, reinterpret_cast<LPVOID*>(&CollectGarbageInternal));
+		MH_EnableHook(static_cast<LPVOID>(pCollectGarbageInternalAddress));
 
 		Beacon = (AOnlineBeaconHost*)(Util::SpawnActor(AOnlineBeaconHost::StaticClass(), {}, {}));
 		Beacon->ListenPort = 7777;

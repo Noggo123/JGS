@@ -67,11 +67,7 @@ DWORD WINAPI MainThread(LPVOID)
 
     Discord::UpdateStatus("Server is now loading map...");
 
-#ifndef STW
     Globals::PC->SwitchLevel(TEXT("Athena_Terrain"));
-#else
-    Globals::PC->SwitchLevel(TEXT("Zone_Outpost_Stonewood"));
-#endif
 
     Hooks::bIsReady = true;
 

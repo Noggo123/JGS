@@ -2,7 +2,6 @@
 
 namespace Hooks
 {
-#ifndef STW
 	static void SpawnFloorLoot()
 	{
 		TArray<AActor*> OutActors;
@@ -44,7 +43,6 @@ namespace Hooks
 			}
 		}
 	}
-#endif
 
 	FGameplayAbilitySpec* FindAbilitySpecFromHandle(UAbilitySystemComponent* AbilitySystem, FGameplayAbilitySpecHandle Handle)
 	{
@@ -76,12 +74,10 @@ namespace Hooks
 
 		if (FuncName.contains("Tick"))
 		{
-#ifndef STW
 			if (GetAsyncKeyState(VK_F1) & 1)
 			{
 				SpawnFloorLoot();
 			}
-#endif
 
 			if (GetAsyncKeyState(VK_F2) & 1)
 			{
@@ -92,7 +88,6 @@ namespace Hooks
 			}
 		}
 
-#ifndef STW
 		if (FuncName.find("AircraftExitedDropZone") != std::string::npos)
 		{
 			for (int i = 0; i < Beacons::Beacon->NetDriver->ClientConnections.Num(); i++)
@@ -110,7 +105,6 @@ namespace Hooks
 				}
 			}
 		}
-#endif
 
 		if (FuncName.contains("ReadyToStartMatch"))
 		{
@@ -122,16 +116,9 @@ namespace Hooks
 				Beacons::InitHooks(); //Sets up the beacon and inits replication for use!
 
 				bHasInitedTheBeacon = true;
-#ifndef STW
 				Globals::World->AuthorityGameMode->GameSession->MaxPlayers = 100;
-#else
-				Globals::World->AuthorityGameMode->GameSession->MaxPlayers = 16;
-#endif
-
 #ifdef DBNO_ENABLED
-#ifndef STW
 				((AFortGameModeAthena*)Globals::World->AuthorityGameMode)->bAlwaysDBNO = true;
-#endif
 #endif
 				((AGameMode*)Globals::World->AuthorityGameMode)->StartMatch();
 
@@ -242,10 +229,8 @@ namespace Hooks
 			auto PC = (AFortPlayerControllerAthena*)pObject;
 			auto Params = (AFortPlayerController_ServerSpawnInventoryDrop_Params*)pParams;
 
-#ifndef STW
 			if (PC->IsInAircraft())
 				return NULL;
-#endif
 
 			if (PC)
 			{
@@ -298,7 +283,6 @@ namespace Hooks
 			}
 		}
 
-#ifndef STW
 		if (FuncName.contains("ServerAttemptAircraftJump"))
 		{
 			auto PC = (AFortPlayerControllerAthena*)pObject;
@@ -320,7 +304,6 @@ namespace Hooks
 				HealthSet->OnRep_CurrentShield();
 			}
 		}
-#endif
 
 		if (FuncName.contains("ServerAbilityRPCBatch"))
 		{
@@ -331,8 +314,11 @@ namespace Hooks
 
 			if (FoundSpec && FoundSpec->Ability)
 			{
-				UGameplayAbility* InstancedAbility = nullptr;
-				InternalTryActivateAbilityLong(AbilityComp, CurrentParams->BatchInfo.AbilitySpecHandle, CurrentParams->BatchInfo.PredictionKey, &InstancedAbility, nullptr, &FoundSpec->Ability->CurrentEventData);
+				//if (FoundSpec->Ability->GetName().contains("GenericDamage"))
+				//{
+					UGameplayAbility* InstancedAbility = nullptr;
+					InternalTryActivateAbilityLong(AbilityComp, CurrentParams->BatchInfo.AbilitySpecHandle, CurrentParams->BatchInfo.PredictionKey, &InstancedAbility, nullptr, &FoundSpec->Ability->CurrentEventData);
+				//}
 			}
 		}
 
@@ -432,13 +418,11 @@ namespace Hooks
 			}
 		}
 
-#ifndef STW
 		if (FuncName.contains("GamePhaseChanged") && Beacons::Beacon)
 		{
 			if (((AFortGameStateAthena*)Globals::World->GameState)->GamePhase == EAthenaGamePhase::Aircraft)
 				Beacons::Beacon->BeaconState = 0;
 		}
-#endif
 
 #ifndef CHEATS
 		if (FuncName.contains("ServerCheat") || FuncName.contains("ServerCheatAll"))
@@ -446,6 +430,11 @@ namespace Hooks
 			return NULL;
 		}
 #endif
+
+		if (FuncName.contains("ClientOnPawnDied"))
+		{
+			auto PC = (AFortPlayerControllerAthena*)pObject;
+		}
 
 		if (FuncName.contains("ReceiveDestroyed") && Beacons::Beacon)
 		{
