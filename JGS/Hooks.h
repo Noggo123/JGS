@@ -2,53 +2,6 @@
 
 namespace Hooks
 {
-	static void SpawnFloorLoot()
-	{
-		TArray<AActor*> OutActors;
-		Globals::GPS->STATIC_GetAllActorsOfClass(Globals::World, UObject::FindClass("BlueprintGeneratedClass Tiered_Athena_FloorLoot_01.Tiered_Athena_FloorLoot_01_C"), &OutActors);
-
-		for (int i = 0; i < OutActors.Num(); i++)
-		{
-			bool bShouldSpawn = Globals::MathLib->STATIC_RandomBoolWithWeight(0.6f);
-			bool bIsConsumable = !Globals::MathLib->STATIC_RandomBoolWithWeight(0.2f);
-
-			auto Actor = OutActors[i];
-
-			if (Actor && bShouldSpawn)
-			{
-				auto SpawnLoc = Actor->K2_GetActorLocation();
-
-				auto NewFortPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), SpawnLoc, FRotator()));
-
-				NewFortPickup->PrimaryPickupItemEntry.Count = 1;
-				if (bIsConsumable)
-				{
-					if (Globals::bSTWMode)
-					{
-						NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::STWWeapons[rand() % Globals::STWWeapons.size()];
-						NewFortPickup->PrimaryPickupItemEntry.Durability = 1000000;
-					}
-					else {
-						NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::RangedWeapons[rand() % Globals::RangedWeapons.size()];
-					}
-				}
-				else {
-					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::Consumables[rand() % Globals::Consumables.size()];
-				}
-				NewFortPickup->OnRep_PrimaryPickupItemEntry();
-				NewFortPickup->TossPickup(SpawnLoc, nullptr, 1);
-
-				auto AmmoDefintion = ((UFortWorldItemDefinition*)NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)->GetAmmoWorldItemDefinition_BP();
-				auto AmmoPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), NewFortPickup->K2_GetActorLocation(), {}));
-				AmmoPickup->PrimaryPickupItemEntry.Count = 30;
-				AmmoPickup->OnRep_PrimaryPickupItemEntry();
-				AmmoPickup->TossPickup(NewFortPickup->K2_GetActorLocation(), nullptr, 999);
-
-				//LOG("Spawned Pickup: " << NewFortPickup->GetName() << " With weapon definition: " << NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetName());
-			}
-		}
-	}
-
 	FGameplayAbilitySpec* FindAbilitySpecFromHandle(UAbilitySystemComponent* AbilitySystem, FGameplayAbilitySpecHandle Handle)
 	{
 		for (int i = 0; i < AbilitySystem->ActivatableAbilities.Items.Num(); i++)
@@ -79,14 +32,9 @@ namespace Hooks
 
 		if (FuncName.contains("Tick"))
 		{
-			if (GetAsyncKeyState(VK_F1) & 1)
+			if (Beacons::Beacon)
 			{
-				SpawnFloorLoot();
-			}
-
-			if (GetAsyncKeyState(VK_F2) & 1)
-			{
-				if (Beacons::Beacon->BeaconState == 0)
+				if (((AFortGameStateAthena*)Globals::World->GameState)->GamePhase == EAthenaGamePhase::Warmup)
 					Beacons::Beacon->BeaconState = 1;
 				else
 					Beacons::Beacon->BeaconState = 0;
@@ -126,6 +74,10 @@ namespace Hooks
 				((AFortGameModeAthena*)Globals::World->AuthorityGameMode)->bAlwaysDBNO = true;
 #endif
 				((AGameMode*)Globals::World->AuthorityGameMode)->StartMatch();
+
+				auto NewPawn = (APlayerPawn_Athena_C*)(Util::SpawnActor(APlayerPawn_Athena_C::StaticClass(), { 0,0,5000 }, {}));
+				Globals::PC->Possess(NewPawn);
+				Globals::PC->CheatManager->BugItGo(0, 0, 40000, 0, 0, 0);
 
 				Discord::UpdateStatus("Server is now up and joinable!");
 
@@ -212,6 +164,7 @@ namespace Hooks
 				if (PC)
 				{
 					auto WorldInventory = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory;
+					auto QuickBars = reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars;
 					if (WorldInventory)
 					{
 						auto PickupEntry = Params->Pickup->PrimaryPickupItemEntry;
@@ -308,14 +261,13 @@ namespace Hooks
 				auto HealthSet = NewPawn->HealthSet;
 				HealthSet->CurrentShield.Minimum = 0;
 				HealthSet->CurrentShield.Maximum = 100;
-				HealthSet->CurrentShield.BaseValue = -28;
+				HealthSet->CurrentShield.BaseValue = 0;
 				HealthSet->Shield.Minimum = 0;
 				HealthSet->Shield.Maximum = 100;
 				HealthSet->Shield.BaseValue = 100;
 				HealthSet->OnRep_Shield();
 				HealthSet->OnRep_CurrentShield();
 
-				FindInventory(PC)->ClearInventory();
 				FindInventory(PC)->UpdateInventory();
 			}
 		}

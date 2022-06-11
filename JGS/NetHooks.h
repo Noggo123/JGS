@@ -6,6 +6,7 @@
 namespace Beacons
 {
 	bool bSetupCharPartArray = false;
+	bool bSetupFloorLoot = false;
 
 	AOnlineBeaconHost* Beacon;
 
@@ -17,6 +18,54 @@ namespace Beacons
 	void (*TickFlush)(UNetDriver*, float DeltaSeconds);
 	void (*NotifyActorDestroyed)(UNetDriver*, AActor*, bool);
 	bool (*DestroyActor)(UWorld*, AActor*, bool, bool);
+
+	static void SpawnFloorLoot()
+	{
+		TArray<AActor*> OutActors;
+		Globals::GPS->STATIC_GetAllActorsOfClass(Globals::World, UObject::FindClass("BlueprintGeneratedClass Tiered_Athena_FloorLoot_01.Tiered_Athena_FloorLoot_01_C"), &OutActors);
+
+		for (int i = 0; i < OutActors.Num(); i++)
+		{
+			bool bShouldSpawn = Globals::MathLib->STATIC_RandomBoolWithWeight(0.6f);
+			bool bIsConsumable = !Globals::MathLib->STATIC_RandomBoolWithWeight(0.2f);
+
+			auto Actor = OutActors[i];
+
+			if (Actor && bShouldSpawn)
+			{
+				auto SpawnLoc = Actor->K2_GetActorLocation();
+
+				auto NewFortPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), SpawnLoc, FRotator()));
+
+				NewFortPickup->PrimaryPickupItemEntry.Count = 1;
+				if (bIsConsumable)
+				{
+					if (Globals::bSTWMode)
+					{
+						NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::STWWeapons[rand() % Globals::STWWeapons.size()];
+						NewFortPickup->PrimaryPickupItemEntry.Durability = 1000000;
+					}
+					else {
+						NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::RangedWeapons[rand() % Globals::RangedWeapons.size()];
+					}
+				}
+				else {
+					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::Consumables[rand() % Globals::Consumables.size()];
+				}
+				NewFortPickup->OnRep_PrimaryPickupItemEntry();
+				NewFortPickup->TossPickup(SpawnLoc, nullptr, 1);
+
+				auto AmmoDefintion = ((UFortWorldItemDefinition*)NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)->GetAmmoWorldItemDefinition_BP();
+				auto AmmoPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), NewFortPickup->K2_GetActorLocation(), {}));
+				AmmoPickup->PrimaryPickupItemEntry.Count = 30;
+				AmmoPickup->OnRep_PrimaryPickupItemEntry();
+				AmmoPickup->TossPickup(NewFortPickup->K2_GetActorLocation(), nullptr, 999);
+
+				Actor->K2_DestroyActor();
+				//LOG("Spawned Pickup: " << NewFortPickup->GetName() << " With weapon definition: " << NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetName());
+			}
+		}
+	}
 
 	FVector GetPlayerStart()
 	{
@@ -75,6 +124,18 @@ namespace Beacons
 
 	APlayerController* SpawnPlayActorHook(UWorld*, UNetConnection* Connection, ENetRole NetRole, FURL a4, void* a5, FString& Src, uint8_t a7)
 	{
+		if (!bSetupCharPartArray)
+		{
+			LoadCharacterParts();
+			bSetupCharPartArray = true;
+		}
+
+		if (!bSetupFloorLoot)
+		{
+			SpawnFloorLoot();
+			bSetupFloorLoot = true;
+		}
+
 		auto PlayerController = (AFortPlayerControllerAthena*)SpawnPlayActor(Globals::World, Connection, NetRole, a4, a5, Src, a7);
 		Connection->PlayerController = PlayerController;
 		PlayerController->NetConnection = Connection;
@@ -90,7 +151,7 @@ namespace Beacons
 		auto HealthSet = Pawn->HealthSet;
 		HealthSet->CurrentShield.Minimum = 0;
 		HealthSet->CurrentShield.Maximum = 100;
-		HealthSet->CurrentShield.BaseValue = -28;
+		HealthSet->CurrentShield.BaseValue = 0;
 		HealthSet->Shield.Minimum = 0;
 		HealthSet->Shield.Maximum = 100;
 		HealthSet->Shield.BaseValue = 100;
@@ -99,8 +160,23 @@ namespace Beacons
 
 		PlayerController->ClientForceProfileQuery();
 
-		Pawn->ServerChoosePart(EFortCustomPartType::Head, Globals::HeadPart);
-		Pawn->ServerChoosePart(EFortCustomPartType::Body, Globals::BodyPart);
+		auto RandomParts = Globals::CharacterParts[rand() % Globals::CharacterParts.size()];
+
+		if (RandomParts.HeadPart)
+		{
+			Pawn->ServerChoosePart(EFortCustomPartType::Head, RandomParts.HeadPart);
+		}
+
+		if (RandomParts.BodyPart)
+		{
+			Pawn->ServerChoosePart(EFortCustomPartType::Body, RandomParts.BodyPart);
+		}
+
+		if (RandomParts.HatPart)
+		{
+			Pawn->ServerChoosePart(EFortCustomPartType::Hat, RandomParts.HatPart);
+		}
+
 		((AFortPlayerState*)Pawn->PlayerState)->OnRep_CharacterParts();
 
 		Pawn->CharacterMovement->bReplicates = true;

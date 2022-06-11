@@ -256,41 +256,6 @@ public:
         }
     }
 
-    void ClearInventory()
-    {
-        for (int i = 0; i < reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ItemInstances.Num(); i++)
-        {
-            auto ItemInstance = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ItemInstances[i];
-
-            if (ItemInstance->GetItemDefinitionBP()->GetFullName().contains("FortBuildingItemDefinition"))
-                continue;
-
-            if (ItemInstance->GetItemDefinitionBP()->GetFullName().contains("FortEditToolItemDefinition"))
-                continue;
-
-            if (ItemInstance->GetItemDefinitionBP()->GetFullName().contains("FortWeaponMeleeItemDefinition"))
-                continue;
-
-            reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ItemInstances.Remove(i);
-        }
-
-        for (int i = 0; i < reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
-        {
-            auto Entry = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ReplicatedEntries[i];
-
-            if (Entry.ItemDefinition->GetFullName().contains("FortBuildingItemDefinition"))
-                continue;
-
-            if (Entry.ItemDefinition->GetFullName().contains("FortEditToolItemDefinition"))
-                continue;
-
-            if (Entry.ItemDefinition->GetFullName().contains("FortWeaponMeleeItemDefinition"))
-                continue;
-
-            reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ReplicatedEntries.Remove(i);
-        }
-    }
-
     void CreateBuildPreviews()
     {
         BuildPreviewRoof = static_cast<ABuildingPlayerPrimitivePreview*>(Util::SpawnActor(ABuildingPlayerPrimitivePreview::StaticClass(), {}, {}));
@@ -369,61 +334,29 @@ public:
                     ((AFortPlayerPawn*)PC->Pawn)->EquipWeaponDefinition((UFortWeaponItemDefinition*)ItemInstance->GetItemDefinitionBP(), InGuid);
             }
 
-            /*if (Util::AreGuidsTheSame(InGuid, WallGuid))
+            if (Util::AreGuidsTheSame(InGuid, WallGuid))
             {
                 reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass = BuildClassWall;
-                reinterpret_cast<BuildPreviewPointer*>(PC)->BuildPreviewMarker = BuildPreviewWall;
-                BuildPreviewWall->SetActorHiddenInGame(false);
-                BuildPreviewFloor->SetActorHiddenInGame(true);
-                BuildPreviewStair->SetActorHiddenInGame(true);
-                BuildPreviewRoof->SetActorHiddenInGame(true);
-
-                ((UFortCheatManager*)PC->CheatManager)->BuildWith(L"Wood");
-
                 BuildClassWall = reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass;
             }
 
             if (Util::AreGuidsTheSame(InGuid, FloorGuid))
             {
                 reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass = BuildClassFloor;
-                reinterpret_cast<BuildPreviewPointer*>(PC)->BuildPreviewMarker = BuildPreviewFloor;
-                BuildPreviewWall->SetActorHiddenInGame(true);
-                BuildPreviewFloor->SetActorHiddenInGame(false);
-                BuildPreviewStair->SetActorHiddenInGame(true);
-                BuildPreviewRoof->SetActorHiddenInGame(true);
-
-                ((UFortCheatManager*)PC->CheatManager)->BuildWith(L"Wood");
-
                 BuildClassFloor = reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass;
             }
 
             if (Util::AreGuidsTheSame(InGuid, StairGuid))
             {
                 reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass = BuildClassStair;
-                reinterpret_cast<BuildPreviewPointer*>(PC)->BuildPreviewMarker = BuildPreviewStair;
-                BuildPreviewWall->SetActorHiddenInGame(true);
-                BuildPreviewFloor->SetActorHiddenInGame(true);
-                BuildPreviewStair->SetActorHiddenInGame(false);
-                BuildPreviewRoof->SetActorHiddenInGame(true);
-
-                ((UFortCheatManager*)PC->CheatManager)->BuildWith(L"Wood");
-
                 BuildClassStair = reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass;
             }
 
             if (Util::AreGuidsTheSame(InGuid, RoofGuid))
             {
                 reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass = BuildClassRoof;
-                reinterpret_cast<BuildPreviewPointer*>(PC)->BuildPreviewMarker = BuildPreviewRoof;
-                BuildPreviewWall->SetActorHiddenInGame(true);
-                BuildPreviewFloor->SetActorHiddenInGame(true);
-                BuildPreviewStair->SetActorHiddenInGame(true);
-                BuildPreviewRoof->SetActorHiddenInGame(false);
-
-                ((UFortCheatManager*)PC->CheatManager)->BuildWith(L"Wood");
-
                 BuildClassRoof = reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass;
-            }*/
+            }
         }
     }
 };
