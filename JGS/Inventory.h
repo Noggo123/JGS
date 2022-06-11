@@ -289,6 +289,8 @@ public:
 
             reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ReplicatedEntries.Remove(i);
         }
+
+        UpdateInventory();
     }
 
     void CreateBuildPreviews()
