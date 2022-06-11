@@ -255,7 +255,7 @@ public:
             }
         }
     }
-
+    
     void CreateBuildPreviews()
     {
         BuildPreviewRoof = static_cast<ABuildingPlayerPrimitivePreview*>(Util::SpawnActor(ABuildingPlayerPrimitivePreview::StaticClass(), {}, {}));
