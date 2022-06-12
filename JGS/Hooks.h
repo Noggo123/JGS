@@ -298,6 +298,8 @@ namespace Hooks
 		{
 			auto PC = (AFortPlayerControllerAthena*)pObject;
 
+			((AOnlineBeacon*)Beacons::Beacon)->BeaconState = 1;
+
 			if (PC->Pawn)
 				PC->Pawn->K2_DestroyActor(); //Destroy old pawn on spawn island
 
@@ -453,14 +455,8 @@ namespace Hooks
 			}
 		}
 
-		if (FuncName.contains("GamePhaseChanged") && Beacons::Beacon)
-		{
-			if (((AFortGameStateAthena*)Globals::World->GameState)->GamePhase == EAthenaGamePhase::Aircraft)
-				Beacons::Beacon->BeaconState = 0;
-		}
-
 #ifndef CHEATS
-		if (FuncName.contains("ServerCheat") || FuncName.contains("ServerCheatAll"))
+		if (FuncName.contains("ServerCheat"))
 		{
 			return NULL;
 		}
@@ -493,7 +489,7 @@ namespace Hooks
 			{
 				auto FortController = (AFortPlayerController*)Params->InstigatedBy;
 
-				if (FortController->MyFortPawn->CurrentWeapon->WeaponData == FindObjectFast<UFortWeaponMeleeItemDefinition>("/Game/Athena/Items/Weapons/WID_Harvest_Pickaxe_Athena_C_T01.WID_Harvest_Pickaxe_Athena_C_T01"))
+				if (FortController->MyFortPawn->CurrentWeapon && FortController->MyFortPawn->CurrentWeapon->WeaponData == FindObjectFast<UFortWeaponMeleeItemDefinition>("/Game/Athena/Items/Weapons/WID_Harvest_Pickaxe_Athena_C_T01.WID_Harvest_Pickaxe_Athena_C_T01"))
 					FortController->ClientReportDamagedResourceBuilding(BuildingActor, BuildingActor->ResourceType, 10, false, false);
 			}
 		}
@@ -503,7 +499,7 @@ namespace Hooks
 			auto PC = (AFortPlayerControllerAthena*)pObject;
 			auto Params = (AFortPlayerController_ClientReportDamagedResourceBuilding_Params*)pParams;
 
-			if (PC)
+			if (PC && Params)
 			{
 				UFortResourceItemDefinition* ItemDef = nullptr;
 

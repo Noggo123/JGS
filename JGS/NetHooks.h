@@ -142,6 +142,9 @@ namespace Beacons
 		PlayerController->NetConnection = Connection;
 		Connection->OwningActor = PlayerController;
 
+		if (((AAthena_GameState_C*)Globals::World->GameState)->GamePhase != EAthenaGamePhase::Warmup && ((AAthena_GameState_C*)Globals::World->GameState)->GamePhase == EAthenaGamePhase::Setup)
+			PlayerController->ServerReturnToMainMenu();
+
 		auto Pawn = (APlayerPawn_Athena_C*)(Util::SpawnActor(APlayerPawn_Athena_C::StaticClass(), GetPlayerStart(), {}));
 		Pawn->bCanBeDamaged = false;
 		Pawn->SetOwner(PlayerController);
