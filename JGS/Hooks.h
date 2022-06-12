@@ -81,8 +81,6 @@ namespace Hooks
 
 				Globals::PC->CheatManager->DestroyAll(APlayerController::StaticClass());
 
-
-
 				Discord::UpdateStatus("Server is now up and joinable!");
 
 				StaticLoadObject<UBlueprintGeneratedClass>(L"/Game/Abilities/Player/Constructor/Perks/ContainmentUnit/GE_Constructor_ContainmentUnit_Applied.GE_Constructor_ContainmentUnit_Applied_C");
@@ -169,8 +167,11 @@ namespace Hooks
 			auto Pawn = (AFortPlayerPawn*)pObject;
 			auto Params = (AFortPlayerPawn_ServerHandlePickup_Params*)pParams;
 
-			if (Pawn)
+			if (Pawn && !Params->Pickup->bPickedUp)
 			{
+				Params->Pickup->bPickedUp = true;
+				Params->Pickup->OnRep_bPickedUp();
+
 				auto PC = (AFortPlayerController*)Pawn->Controller;
 				if (PC)
 				{
