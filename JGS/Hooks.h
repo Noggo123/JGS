@@ -1,5 +1,9 @@
 #pragma once
 
+#include <algorithm>
+#include <time.h>
+#include <vector>
+
 namespace Hooks
 {
 	FGameplayAbilitySpec* FindAbilitySpecFromHandle(UAbilitySystemComponent* AbilitySystem, FGameplayAbilitySpecHandle Handle)
@@ -75,9 +79,9 @@ namespace Hooks
 #endif
 				((AGameMode*)Globals::World->AuthorityGameMode)->StartMatch();
 
-				auto NewPawn = (APlayerPawn_Athena_C*)(Util::SpawnActor(APlayerPawn_Athena_C::StaticClass(), { 0,0,5000 }, {}));
-				Globals::PC->Possess(NewPawn);
-				Globals::PC->CheatManager->BugItGo(0, 0, 40000, 0, 0, 0);
+				Globals::PC->CheatManager->DestroyAll(APlayerController::StaticClass());
+
+
 
 				Discord::UpdateStatus("Server is now up and joinable!");
 
@@ -138,8 +142,11 @@ namespace Hooks
 
 		if (FuncName.contains("ServerExecuteInventoryItem"))
 		{
-			auto PC = (AFortPlayerController*)pObject;
+			auto PC = (AFortPlayerControllerAthena*)pObject;
 			auto Params = (AFortPlayerController_ServerExecuteInventoryItem_Params*)pParams;
+
+			if (PC->IsInAircraft())
+				return ProcessEvent(pObject, pFunction, pParams);
 
 			if (PC)
 			{
@@ -298,7 +305,7 @@ namespace Hooks
 		{
 			auto PC = (AFortPlayerControllerAthena*)pObject;
 
-			((AOnlineBeacon*)Beacons::Beacon)->BeaconState = 1;
+			Beacons::bHasBattleBusStarted = true;
 
 			if (PC->Pawn)
 				PC->Pawn->K2_DestroyActor(); //Destroy old pawn on spawn island
@@ -329,21 +336,9 @@ namespace Hooks
 
 			if (FoundSpec && FoundSpec->Ability)
 			{
-				auto BatchInfo = CurrentParams->BatchInfo;
-
 				UGameplayAbility* InstancedAbility = nullptr;
 				InternalTryActivateAbilityLong(AbilityComp, CurrentParams->BatchInfo.AbilitySpecHandle, CurrentParams->BatchInfo.PredictionKey, &InstancedAbility, nullptr, &FoundSpec->Ability->CurrentEventData);
-				AbilityComp->ServerSetReplicatedTargetData(BatchInfo.AbilitySpecHandle, BatchInfo.PredictionKey, BatchInfo.TargetData, FGameplayTag(), BatchInfo.PredictionKey);
-
-				if (BatchInfo.Ended)
-				{
-					FGameplayAbilityActivationInfo FakeInfo;
-					FakeInfo.PredictionKeyWhenActivated = BatchInfo.PredictionKey;
-					AbilityComp->ServerEndAbility(BatchInfo.AbilitySpecHandle, FakeInfo, BatchInfo.PredictionKey);
-				}
 			}
-
-			return NULL;
 		}
 
 		if (FuncName.contains("ServerLoadingScreenDropped"))
@@ -361,6 +356,44 @@ namespace Hooks
 
 			auto ReceivingActor = CurrentParams->ReceivingActor;
 
+			if (ReceivingActor && ReceivingActor->Class->GetName().contains("Tiered_Short_Ammo"))
+			{
+				auto AmmoBox = (ABuildingContainer*)ReceivingActor;
+				AmmoBox->bAlreadySearched = true;
+				AmmoBox->bDestroyContainerOnSearch = true;
+				AmmoBox->OnSetSearched();
+				AmmoBox->OnLoot();
+				AmmoBox->OnRep_bAlreadySearched();
+
+				auto Location = ReceivingActor->K2_GetActorLocation();
+
+				auto NewFortPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
+				auto NewFortPickup1 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
+				auto NewFortPickup2 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
+
+				auto AmmoDef = (UFortAmmoItemDefinition*)Globals::Ammo[rand() % Globals::Ammo.size()];
+				auto AmmoDef1 = (UFortAmmoItemDefinition*)Globals::Ammo[rand() % Globals::Ammo.size()];
+				auto AmmoDef2 = (UFortAmmoItemDefinition*)Globals::Ammo[rand() % Globals::Ammo.size()];
+				
+				NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = AmmoDef;
+				NewFortPickup1->PrimaryPickupItemEntry.ItemDefinition = AmmoDef1;
+				NewFortPickup2->PrimaryPickupItemEntry.ItemDefinition = AmmoDef2;
+
+				NewFortPickup->PrimaryPickupItemEntry.Count = AmmoDef->DropCount * 3;
+				NewFortPickup1->PrimaryPickupItemEntry.Count = AmmoDef1->DropCount * 3;
+				NewFortPickup2->PrimaryPickupItemEntry.Count = AmmoDef2->DropCount * 3;
+
+				NewFortPickup->OnRep_PrimaryPickupItemEntry();
+				NewFortPickup1->OnRep_PrimaryPickupItemEntry();
+				NewFortPickup2->OnRep_PrimaryPickupItemEntry();
+
+				NewFortPickup->TossPickup(Location, nullptr, 1);
+				NewFortPickup1->TossPickup(Location, nullptr, 1);
+				NewFortPickup2->TossPickup(Location, nullptr, 1);
+
+				ReceivingActor->K2_DestroyActor();
+			}
+
 			if (ReceivingActor && ReceivingActor->Class->GetName().contains("Tiered_Chest"))
 			{
 				auto Chest = (ABuildingContainer*)ReceivingActor;
@@ -375,23 +408,58 @@ namespace Hooks
 				auto NewFortPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
 
 				NewFortPickup->PrimaryPickupItemEntry.Count = 1;
-				if (Globals::bSTWMode)
+
+				bool bEpicOrLeg = Globals::MathLib->STATIC_RandomBoolWithWeight(0.1);
+
+				int Index = 0;
+
+				if (bEpicOrLeg)
 				{
-					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::STWWeapons[rand() % Globals::STWWeapons.size()];
-					NewFortPickup->PrimaryPickupItemEntry.Durability = 1000000;
+					Index = Globals::MathLib->STATIC_RandomIntegerInRange(2, 4);
 				}
 				else {
-					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::RangedWeapons[rand() % Globals::RangedWeapons.size()];
+					Index = Globals::MathLib->STATIC_RandomIntegerInRange(0, 2);
 				}
+
+				auto WeaponRarity = std::string(Globals::WeaponArrays.at(Index).c_str());
+
+				if (WeaponRarity == "Common")
+				{
+					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::CommonWeapons[rand() % Globals::CommonWeapons.size()];
+				}
+
+				if (WeaponRarity == "UnCommon")
+				{
+					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::UnCommonWeapons[rand() % Globals::UnCommonWeapons.size()];
+				}
+
+				if (WeaponRarity == "Rare")
+				{
+					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::RareWeapons[rand() % Globals::RareWeapons.size()];
+				}
+
+				if (WeaponRarity == "Epic")
+				{
+					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::EpicWeapons[rand() % Globals::EpicWeapons.size()];
+				}
+
+				if (WeaponRarity == "Legendary")
+				{
+					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::LegendaryWeapons[rand() % Globals::LegendaryWeapons.size()];
+				}
+
 				NewFortPickup->OnRep_PrimaryPickupItemEntry();
 				NewFortPickup->TossPickup(Location, nullptr, 1);
 
-				auto AmmoDefintion = ((UFortWorldItemDefinition*)NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)->GetAmmoWorldItemDefinition_BP();
-				auto AmmoPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), NewFortPickup->K2_GetActorLocation(), {}));
-				AmmoPickup->PrimaryPickupItemEntry.Count = AmmoDefintion->DropCount;
-				AmmoPickup->PrimaryPickupItemEntry.ItemDefinition = AmmoDefintion;
-				AmmoPickup->OnRep_PrimaryPickupItemEntry();
-				AmmoPickup->TossPickup(Location, nullptr, 999);
+				if (NewFortPickup && NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)
+				{
+					auto AmmoDefintion = ((UFortWorldItemDefinition*)NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)->GetAmmoWorldItemDefinition_BP();
+					auto AmmoPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), NewFortPickup->K2_GetActorLocation(), {}));
+					AmmoPickup->PrimaryPickupItemEntry.Count = AmmoDefintion->DropCount * 1.25;
+					AmmoPickup->PrimaryPickupItemEntry.ItemDefinition = AmmoDefintion;
+					AmmoPickup->OnRep_PrimaryPickupItemEntry();
+					AmmoPickup->TossPickup(Location, nullptr, 999);
+				}
 
 				auto NewFortPickup1 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
 
@@ -403,6 +471,7 @@ namespace Hooks
 				ReceivingActor->K2_DestroyActor();
 
 			}
+
 			if (ReceivingActor && ReceivingActor->Class->GetName().contains("AthenaSupplyDrop_02"))
 			{
 				auto SupplyDrop = (ABuildingContainer*)ReceivingActor;
@@ -412,17 +481,8 @@ namespace Hooks
 				auto NewFortPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
 
 				NewFortPickup->PrimaryPickupItemEntry.Count = 1;
-				if (Globals::bSTWMode)
-				{
-					auto ItemDefinition = Globals::STWWeapons[rand() % Globals::STWWeapons.size()];
-					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = ItemDefinition;
-					NewFortPickup->PrimaryPickupItemEntry.Durability = 1000000;
-					
-				}
-				else {
-					auto ItemDefinition = Globals::SupplyDrop[rand() % Globals::SupplyDrop.size()];
-					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = ItemDefinition;
-				}
+				auto ItemDefinition = Globals::SupplyDrop[rand() % Globals::SupplyDrop.size()];
+				NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = ItemDefinition;
 				NewFortPickup->OnRep_PrimaryPickupItemEntry();
 				NewFortPickup->TossPickup(Location, nullptr, 1);
 
@@ -485,12 +545,14 @@ namespace Hooks
 			auto BuildingActor = (ABuildingSMActor*)pObject;
 			auto Params = (ABuildingActor_OnDamageServer_Params*)pParams;
 
-			if (Params->InstigatedBy)
+			if (Params->InstigatedBy && Params->InstigatedBy->IsA(AFortPlayerController::StaticClass()))
 			{
 				auto FortController = (AFortPlayerController*)Params->InstigatedBy;
 
+				LOG("ResourceType: " << (int)BuildingActor->ResourceType.GetValue());
+
 				if (FortController->MyFortPawn->CurrentWeapon && FortController->MyFortPawn->CurrentWeapon->WeaponData == FindObjectFast<UFortWeaponMeleeItemDefinition>("/Game/Athena/Items/Weapons/WID_Harvest_Pickaxe_Athena_C_T01.WID_Harvest_Pickaxe_Athena_C_T01"))
-					FortController->ClientReportDamagedResourceBuilding(BuildingActor, BuildingActor->ResourceType, 10, false, false);
+					FortController->ClientReportDamagedResourceBuilding(BuildingActor, BuildingActor->ResourceType, Globals::MathLib->STATIC_RandomIntegerInRange(3, 6), false, false);
 			}
 		}
 
@@ -501,7 +563,7 @@ namespace Hooks
 
 			if (PC && Params)
 			{
-				UFortResourceItemDefinition* ItemDef = nullptr;
+				UFortResourceItemDefinition* ItemDef = FindObjectFast<UFortResourceItemDefinition>("/Game/Items/ResourcePickups/WoodItemData.WoodItemData");
 
 				if (Params->PotentialResourceType == EFortResourceType::Wood)
 					ItemDef = FindObjectFast<UFortResourceItemDefinition>("/Game/Items/ResourcePickups/WoodItemData.WoodItemData");

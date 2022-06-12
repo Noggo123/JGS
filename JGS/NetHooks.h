@@ -7,6 +7,7 @@ namespace Beacons
 {
 	bool bSetupCharPartArray = false;
 	bool bSetupFloorLoot = false;
+	bool bHasBattleBusStarted = false;
 
 	AOnlineBeaconHost* Beacon;
 
@@ -40,13 +41,45 @@ namespace Beacons
 				NewFortPickup->PrimaryPickupItemEntry.Count = 1;
 				if (bIsConsumable)
 				{
-					if (Globals::bSTWMode)
+					bool bEpicOrLeg = Globals::MathLib->STATIC_RandomBoolWithWeight(0.07);
+
+					int Index = 0;
+
+					if (bEpicOrLeg)
 					{
-						NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::STWWeapons[rand() % Globals::STWWeapons.size()];
-						NewFortPickup->PrimaryPickupItemEntry.Durability = 1000000;
+						Index = Globals::MathLib->STATIC_RandomIntegerInRange(3, 4);
 					}
 					else {
-						NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::RangedWeapons[rand() % Globals::RangedWeapons.size()];
+						Index = Globals::MathLib->STATIC_RandomIntegerInRange(0, 2);
+					}
+
+					LOG("Index: " << Index);
+
+					auto WeaponRarity = std::string(Globals::WeaponArrays.at(Index).c_str());
+
+					if (WeaponRarity == "Common")
+					{
+						NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::CommonWeapons[rand() % Globals::CommonWeapons.size()];
+					}
+
+					if (WeaponRarity == "UnCommon")
+					{
+						NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::UnCommonWeapons[rand() % Globals::UnCommonWeapons.size()];
+					}
+
+					if (WeaponRarity == "Rare")
+					{
+						NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::RareWeapons[rand() % Globals::RareWeapons.size()];
+					}
+
+					if (WeaponRarity == "Epic")
+					{
+						NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::EpicWeapons[rand() % Globals::EpicWeapons.size()];
+					}
+
+					if (WeaponRarity == "Legendary")
+					{
+						NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::LegendaryWeapons[rand() % Globals::LegendaryWeapons.size()];
 					}
 				}
 				else {
@@ -55,12 +88,15 @@ namespace Beacons
 				NewFortPickup->OnRep_PrimaryPickupItemEntry();
 				NewFortPickup->TossPickup(SpawnLoc, nullptr, 1);
 
-				auto AmmoDefintion = ((UFortWorldItemDefinition*)NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)->GetAmmoWorldItemDefinition_BP();
-				auto AmmoPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), NewFortPickup->K2_GetActorLocation(), {}));
-				AmmoPickup->PrimaryPickupItemEntry.Count = AmmoDefintion->DropCount;
-				AmmoPickup->PrimaryPickupItemEntry.ItemDefinition = AmmoDefintion;
-				AmmoPickup->OnRep_PrimaryPickupItemEntry();
-				AmmoPickup->TossPickup(SpawnLoc, nullptr, 999);
+				if (bIsConsumable && NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)
+				{
+					auto AmmoDefintion = ((UFortWorldItemDefinition*)NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)->GetAmmoWorldItemDefinition_BP();
+					auto AmmoPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), NewFortPickup->K2_GetActorLocation(), {}));
+					AmmoPickup->PrimaryPickupItemEntry.Count = AmmoDefintion->DropCount * 1.25;
+					AmmoPickup->PrimaryPickupItemEntry.ItemDefinition = AmmoDefintion;
+					AmmoPickup->OnRep_PrimaryPickupItemEntry();
+					AmmoPickup->TossPickup(SpawnLoc, nullptr, 999);
+				}
 
 				Actor->K2_DestroyActor();
 				//LOG("Spawned Pickup: " << NewFortPickup->GetName() << " With weapon definition: " << NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetName());
@@ -77,6 +113,11 @@ namespace Beacons
 
 	void __fastcall AOnlineBeaconHost_NotifyControlMessageHook(AOnlineBeaconHost* BeaconHost, UNetConnection* NetConnection, uint8_t a3, void* a4)
 	{
+		if (bHasBattleBusStarted)
+		{
+			return;
+		}
+
 		if (std::to_string(a3) == "4") {
 			NetConnection->CurrentNetSpeed = 30000;
 			return;
@@ -141,9 +182,6 @@ namespace Beacons
 		Connection->PlayerController = PlayerController;
 		PlayerController->NetConnection = Connection;
 		Connection->OwningActor = PlayerController;
-
-		if (((AAthena_GameState_C*)Globals::World->GameState)->GamePhase != EAthenaGamePhase::Warmup && ((AAthena_GameState_C*)Globals::World->GameState)->GamePhase == EAthenaGamePhase::Setup)
-			PlayerController->ServerReturnToMainMenu();
 
 		auto Pawn = (APlayerPawn_Athena_C*)(Util::SpawnActor(APlayerPawn_Athena_C::StaticClass(), GetPlayerStart(), {}));
 		Pawn->bCanBeDamaged = false;
