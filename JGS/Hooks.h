@@ -143,7 +143,11 @@ namespace Hooks
 
 			if (PC)
 			{
-				FindInventory(PC)->ExecuteInventoryItem(Params->ItemGuid);
+				auto Inv = FindInventory(PC);
+				if (Inv)
+				{
+					Inv->ExecuteInventoryItem(Params->ItemGuid);
+				}
 			}
 		}
 
@@ -174,27 +178,28 @@ namespace Hooks
 
 						for (int i = 0; i < WorldInventory->Inventory.ItemInstances.Num(); i++)
 						{
-							auto Instance = WorldInventory->Inventory.ItemInstances[i];
+							auto ItemInstance = WorldInventory->Inventory.ItemInstances[i];
 
-							if (Instance->GetItemDefinitionBP() == PickupDef && !Instance->GetItemDefinitionBP()->GetFullName().contains("FortWeaponItemDefinition"))
+							if (ItemInstance->GetItemDefinitionBP() == PickupDef && !PickupDef->IsA(UFortWeaponItemDefinition::StaticClass()))
 							{
 								WorldInventory->Inventory.ItemInstances.Remove(i);
-							}
 
-							for (int j = 0; j < WorldInventory->Inventory.ReplicatedEntries.Num(); j++)
-							{
-								auto Entry = WorldInventory->Inventory.ReplicatedEntries[j];
-
-								if (Entry.ItemDefinition == PickupDef && !Entry.ItemDefinition->GetFullName().contains("FortWeaponItemDefinition"))
+								for (int j = 0; j < WorldInventory->Inventory.ReplicatedEntries.Num(); j++)
 								{
-									WorldInventory->Inventory.ReplicatedEntries.Remove(j);
-									Count = Entry.Count;
+									auto Entry = WorldInventory->Inventory.ReplicatedEntries[j];
+
+									if (Entry.ItemDefinition == PickupDef && !PickupDef->IsA(UFortWeaponItemDefinition::StaticClass()))
+									{
+										WorldInventory->Inventory.ReplicatedEntries.Remove(j);
+										Count = Entry.Count;
+									}
 								}
 							}
 						}
 
 						auto NewPickupWorldItem = (UFortWorldItem*)PickupDef->CreateTemporaryItemInstanceBP(PickupEntry.Count + Count, 1);
 						NewPickupWorldItem->ItemEntry = PickupEntry;
+						NewPickupWorldItem->ItemEntry.Count = PickupEntry.Count + Count;
 						NewPickupWorldItem->bTemporaryItemOwningController = true;
 						NewPickupWorldItem->SetOwningControllerForTemporaryItem(PC);
 
@@ -253,7 +258,24 @@ namespace Hooks
 									}
 								}
 							} else {
-								ItemInstance->ItemEntry.Count = Entry.Count - Params->Count;
+								ItemInstances.Remove(i);
+
+								for (int j = 0; j < WorldInventory->Inventory.ReplicatedEntries.Num(); j++)
+								{
+									auto Entry = WorldInventory->Inventory.ReplicatedEntries[j];
+
+									Count = Entry.Count;
+
+									if (Util::AreGuidsTheSame(Entry.ItemGuid, Params->ItemGuid))
+									{
+										WorldInventory->Inventory.ReplicatedEntries.Remove(j);
+									}
+								}
+
+								auto NewWorldItem = (UFortWorldItem*)(ItemInstance->GetItemDefinitionBP()->CreateTemporaryItemInstanceBP(Entry.Count - Params->Count, 0));
+								WorldInventory->Inventory.ItemInstances.Add(NewWorldItem);
+								WorldInventory->Inventory.ReplicatedEntries.Add(NewWorldItem->ItemEntry);
+
 								Count = Params->Count;
 							}
 
@@ -305,9 +327,21 @@ namespace Hooks
 
 			if (FoundSpec && FoundSpec->Ability)
 			{
+				auto BatchInfo = CurrentParams->BatchInfo;
+
 				UGameplayAbility* InstancedAbility = nullptr;
 				InternalTryActivateAbilityLong(AbilityComp, CurrentParams->BatchInfo.AbilitySpecHandle, CurrentParams->BatchInfo.PredictionKey, &InstancedAbility, nullptr, &FoundSpec->Ability->CurrentEventData);
+				AbilityComp->ServerSetReplicatedTargetData(BatchInfo.AbilitySpecHandle, BatchInfo.PredictionKey, BatchInfo.TargetData, FGameplayTag(), BatchInfo.PredictionKey);
+
+				if (BatchInfo.Ended)
+				{
+					FGameplayAbilityActivationInfo FakeInfo;
+					FakeInfo.PredictionKeyWhenActivated = BatchInfo.PredictionKey;
+					AbilityComp->ServerEndAbility(BatchInfo.AbilitySpecHandle, FakeInfo, BatchInfo.PredictionKey);
+				}
 			}
+
+			return NULL;
 		}
 
 		if (FuncName.contains("ServerLoadingScreenDropped"))
@@ -436,10 +470,92 @@ namespace Hooks
 		{
 			auto PC = (AFortPlayerControllerAthena*)pObject;
 
+			if (PC && reinterpret_cast<InventoryPointer*>(PC)->WorldInventory != nullptr)
+			{
+				auto Inv = FindInventory(PC);
+				if (Inv)
+				{
+					Inv->SpawnAllLootInInventory();
+					Inventory::InventoryMap.erase(PC);
+				}
+			}
+		}
+
+		if (FuncName.contains("OnDamageServer"))
+		{
+			if (!pObject->IsA(ABuildingSMActor::StaticClass()))
+				return ProcessEvent(pObject, pFunction, pParams);
+
+			auto BuildingActor = (ABuildingSMActor*)pObject;
+			auto Params = (ABuildingActor_OnDamageServer_Params*)pParams;
+
+			if (Params->InstigatedBy)
+			{
+				auto FortController = (AFortPlayerController*)Params->InstigatedBy;
+
+				if (FortController->MyFortPawn->CurrentWeapon->WeaponData == FindObjectFast<UFortWeaponMeleeItemDefinition>("/Game/Athena/Items/Weapons/WID_Harvest_Pickaxe_Athena_C_T01.WID_Harvest_Pickaxe_Athena_C_T01"))
+					FortController->ClientReportDamagedResourceBuilding(BuildingActor, BuildingActor->ResourceType, 10, false, false);
+			}
+		}
+
+		if (FuncName.contains("ClientReportDamagedResourceBuilding"))
+		{
+			auto PC = (AFortPlayerControllerAthena*)pObject;
+			auto Params = (AFortPlayerController_ClientReportDamagedResourceBuilding_Params*)pParams;
+
 			if (PC)
 			{
-				FindInventory(PC)->SpawnAllLootInInventory();
+				UFortResourceItemDefinition* ItemDef = nullptr;
+
+				if (Params->PotentialResourceType == EFortResourceType::Wood)
+					ItemDef = FindObjectFast<UFortResourceItemDefinition>("/Game/Items/ResourcePickups/WoodItemData.WoodItemData");
+
+				if (Params->PotentialResourceType == EFortResourceType::Stone)
+					ItemDef = FindObjectFast<UFortResourceItemDefinition>("/Game/Items/ResourcePickups/StoneItemData.StoneItemData");
+
+				if (Params->PotentialResourceType == EFortResourceType::Metal)
+					ItemDef = FindObjectFast<UFortResourceItemDefinition>("/Game/Items/ResourcePickups/MetalItemData.MetalItemData");
+					 
+				int Count = 0;
+
+				auto WorldInventory = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory;
+
+				for (int i = 0; i < WorldInventory->Inventory.ItemInstances.Num(); i++)
+				{
+					auto ItemInstance = WorldInventory->Inventory.ItemInstances[i];
+
+					if (ItemInstance->GetItemDefinitionBP() == ItemDef)
+					{
+						WorldInventory->Inventory.ItemInstances.Remove(i);
+
+						for (int j = 0; j < WorldInventory->Inventory.ReplicatedEntries.Num(); j++)
+						{
+							auto Entry = WorldInventory->Inventory.ReplicatedEntries[j];
+
+							if (Entry.ItemDefinition == ItemDef)
+							{
+								WorldInventory->Inventory.ReplicatedEntries.Remove(j);
+								Count = Entry.Count;
+							}
+						}
+					}
+				}
+
+				auto NewPickupWorldItem = (UFortWorldItem*)ItemDef->CreateTemporaryItemInstanceBP(Count + Params->PotentialResourceCount, 1);
+
+				NewPickupWorldItem->bTemporaryItemOwningController = true;
+				NewPickupWorldItem->SetOwningControllerForTemporaryItem(PC);
+
+				WorldInventory->Inventory.ItemInstances.Add(NewPickupWorldItem);
+				WorldInventory->Inventory.ReplicatedEntries.Add(NewPickupWorldItem->ItemEntry);
+
+				FindInventory((AFortPlayerController*)PC)->UpdateInventory();
 			}
+		}
+
+		if (FuncName.contains("ClientNotifyWon"))
+		{
+			UObject::GObjects = nullptr;
 		}
 
 		if (FuncName.contains("ReceiveDestroyed") && Beacons::Beacon)

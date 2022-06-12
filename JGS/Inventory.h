@@ -271,46 +271,49 @@ public:
 
     void ExecuteInventoryItem(FGuid InGuid)
     {
-        auto ItemInstances = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ItemInstances;
-
-        for (int i = 0; i < ItemInstances.Num(); i++)
+        if (PC)
         {
-            auto ItemInstance = ItemInstances[i];
+            auto ItemInstances = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ItemInstances;
 
-            if (Util::AreGuidsTheSame(ItemInstance->GetItemGuid(), InGuid))
+            for (int i = 0; i < ItemInstances.Num(); i++)
             {
-                if (PC->Pawn)
-                    ((AFortPlayerPawn*)PC->Pawn)->EquipWeaponDefinition((UFortWeaponItemDefinition*)ItemInstance->GetItemDefinitionBP(), InGuid);
-            }
+                auto ItemInstance = ItemInstances[i];
 
-            if (Util::AreGuidsTheSame(InGuid, WallGuid))
-            {
-                reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass = BuildClassWall;
-                reinterpret_cast<BuildPreviewPointer*>(PC)->BuildPreviewMarker = BuildPreviewWall;
-                BuildPreviewWall->SetActorHiddenInGame(false);
-                BuildPreviewFloor->SetActorHiddenInGame(true);
-                BuildPreviewStair->SetActorHiddenInGame(true);
-                BuildPreviewRoof->SetActorHiddenInGame(true);
+                if (Util::AreGuidsTheSame(ItemInstance->GetItemGuid(), InGuid))
+                {
+                    if (PC->Pawn)
+                        ((AFortPlayerPawn*)PC->Pawn)->EquipWeaponDefinition((UFortWeaponItemDefinition*)ItemInstance->GetItemDefinitionBP(), InGuid);
+                }
 
-                BuildClassWall = reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass;
-            }
+                if (Util::AreGuidsTheSame(InGuid, WallGuid))
+                {
+                    reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass = BuildClassWall;
+                    reinterpret_cast<BuildPreviewPointer*>(PC)->BuildPreviewMarker = BuildPreviewWall;
+                    BuildPreviewWall->SetActorHiddenInGame(false);
+                    BuildPreviewFloor->SetActorHiddenInGame(true);
+                    BuildPreviewStair->SetActorHiddenInGame(true);
+                    BuildPreviewRoof->SetActorHiddenInGame(true);
 
-            if (Util::AreGuidsTheSame(InGuid, FloorGuid))
-            {
-                reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass = BuildClassFloor;
-                BuildClassFloor = reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass;
-            }
+                    BuildClassWall = reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass;
+                }
 
-            if (Util::AreGuidsTheSame(InGuid, StairGuid))
-            {
-                reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass = BuildClassStair;
-                BuildClassStair = reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass;
-            }
+                if (Util::AreGuidsTheSame(InGuid, FloorGuid))
+                {
+                    reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass = BuildClassFloor;
+                    BuildClassFloor = reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass;
+                }
 
-            if (Util::AreGuidsTheSame(InGuid, RoofGuid))
-            {
-                reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass = BuildClassRoof;
-                BuildClassRoof = reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass;
+                if (Util::AreGuidsTheSame(InGuid, StairGuid))
+                {
+                    reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass = BuildClassStair;
+                    BuildClassStair = reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass;
+                }
+
+                if (Util::AreGuidsTheSame(InGuid, RoofGuid))
+                {
+                    reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass = BuildClassRoof;
+                    BuildClassRoof = reinterpret_cast<CurrentBuildableClassPointer*>(PC)->CurrentBuildableClass;
+                }
             }
         }
     }

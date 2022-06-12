@@ -30,6 +30,8 @@ DWORD WINAPI MainThread(LPVOID)
 
     LOG("Setting Up!");
 
+    srand(time(0));
+
     auto BaseAddr = Util::BaseAddress();
     auto GObjectsAddress = BaseAddr + 0x6661380;
     auto FNameToStringAddress = BaseAddr + 0x1302390;
