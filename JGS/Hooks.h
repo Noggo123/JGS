@@ -167,11 +167,8 @@ namespace Hooks
 			auto Pawn = (AFortPlayerPawn*)pObject;
 			auto Params = (AFortPlayerPawn_ServerHandlePickup_Params*)pParams;
 
-			if (Pawn && !Params->Pickup->bPickedUp)
+			if (Pawn)
 			{
-				Params->Pickup->bPickedUp = true;
-				Params->Pickup->OnRep_bPickedUp();
-
 				auto PC = (AFortPlayerController*)Pawn->Controller;
 				if (PC)
 				{
@@ -221,6 +218,7 @@ namespace Hooks
 						statval->NameValue = FName("Item");
 						statval->StateType = EFortItemEntryState::NewItemCount;
 						PC->ServerSetInventoryStateValue(NewPickupWorldItem->GetItemGuid(), (*statval));
+						QuickBars->ServerAddItemInternal(NewPickupWorldItem->GetItemGuid(), EFortQuickBars::Primary, QuickBars->PrimaryQuickBar.SecondaryFocusedSlot);
 					}
 				}
 			}
