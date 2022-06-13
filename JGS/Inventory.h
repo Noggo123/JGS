@@ -285,6 +285,11 @@ public:
                     {
                         if (PC->Pawn)
                             ((AFortPlayerPawn*)PC->Pawn)->EquipWeaponDefinition((UFortWeaponItemDefinition*)ItemInstance->GetItemDefinitionBP(), InGuid);
+
+                        if (ItemInstance->GetItemDefinitionBP()->IsA(UFortTrapItemDefinition::StaticClass()))
+                        {
+                            ((AFortPlayerPawn*)PC->Pawn)->PickUpActor(nullptr, (UFortDecoItemDefinition*)ItemInstance->GetItemDefinitionBP());
+                        }
                     }
                 }
             }

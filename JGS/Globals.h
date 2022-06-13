@@ -23,6 +23,7 @@ static T* FindObjectFast(std::string ObjectName, UClass* ObjectClass = UObject::
 //#define DBNO_ENABLED
 //#define SAME_TEAM
 //#define LOG_RPCS
+//#define DUOS
 
 struct CharPart
 {
@@ -141,6 +142,7 @@ static void LoadLootPools()
     Globals::Ammo.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Ammo/AthenaAmmoDataBulletsMedium.AthenaAmmoDataBulletsMedium"));
     Globals::Ammo.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Ammo/AthenaAmmoDataBulletsLight.AthenaAmmoDataBulletsLight"));
     Globals::Ammo.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Ammo/AthenaAmmoDataBulletsHeavy.AthenaAmmoDataBulletsHeavy"));
+    Globals::Ammo.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Ammo/AthenaAmmoDataEnergyCell.AthenaAmmoDataEnergyCell"));
 }
 
 static void LoadCharacterParts()

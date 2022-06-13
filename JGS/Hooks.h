@@ -21,7 +21,7 @@ namespace Hooks
 		return nullptr;
 	}
 
-	bool (*InternalTryActivateAbilityLong)(UAbilitySystemComponent* AbilitySystemComp, FGameplayAbilitySpecHandle AbilityToActivate, FPredictionKey InPredictionKey, UGameplayAbility** OutInstancedAbility, void* OnGameplayAbilityEndedDelegate, const FGameplayEventData* TriggerEventData);
+	char (*InternalTryActivateAbilityLong)(UAbilitySystemComponent* AbilitySystemComp, FGameplayAbilitySpecHandle AbilityToActivate, FPredictionKey InPredictionKey, UGameplayAbility** OutInstancedAbility, void* OnGameplayAbilityEndedDelegate, const FGameplayEventData* TriggerEventData);
 
 	bool bIsReady = false;
 	bool bHasSpawned = false;
@@ -74,6 +74,11 @@ namespace Hooks
 
 				bHasInitedTheBeacon = true;
 				Globals::World->AuthorityGameMode->GameSession->MaxPlayers = 100;
+
+#ifdef DUOS
+				((AFortGameStateAthena*)Globals::World->GameState)->CurrentPlaylistId = 10;
+#endif
+
 #ifdef DBNO_ENABLED
 				((AFortGameModeAthena*)Globals::World->AuthorityGameMode)->bAlwaysDBNO = true;
 #endif
@@ -167,11 +172,8 @@ namespace Hooks
 			auto Pawn = (AFortPlayerPawn*)pObject;
 			auto Params = (AFortPlayerPawn_ServerHandlePickup_Params*)pParams;
 
-			if (Pawn && !Params->Pickup->bPickedUp)
+			if (Pawn)
 			{
-				Params->Pickup->bPickedUp = true;
-				Params->Pickup->OnRep_bPickedUp();
-
 				auto PC = (AFortPlayerController*)Pawn->Controller;
 				if (PC)
 				{
@@ -338,7 +340,11 @@ namespace Hooks
 			if (FoundSpec && FoundSpec->Ability)
 			{
 				UGameplayAbility* InstancedAbility = nullptr;
-				InternalTryActivateAbilityLong(AbilityComp, CurrentParams->BatchInfo.AbilitySpecHandle, CurrentParams->BatchInfo.PredictionKey, &InstancedAbility, nullptr, &FoundSpec->Ability->CurrentEventData);
+				char bFailed = InternalTryActivateAbilityLong(AbilityComp, CurrentParams->BatchInfo.AbilitySpecHandle, CurrentParams->BatchInfo.PredictionKey, &InstancedAbility, nullptr, &FoundSpec->Ability->CurrentEventData);
+				if (bFailed)
+				{
+					AbilityComp->ClientActivateAbilityFailed(CurrentParams->BatchInfo.AbilitySpecHandle, CurrentParams->BatchInfo.PredictionKey.Base);
+				}
 			}
 		}
 
@@ -470,7 +476,6 @@ namespace Hooks
 				NewFortPickup1->TossPickup(Location, nullptr, 1);
 
 				ReceivingActor->K2_DestroyActor();
-
 			}
 
 			if (ReceivingActor && ReceivingActor->Class->GetName().contains("AthenaSupplyDrop_02"))
@@ -516,10 +521,52 @@ namespace Hooks
 			}
 		}
 
+		if (FuncName.contains("BlueprintCanInteract"))
+		{
+			auto BuildingActor = (ABuildingActor*)pObject;
+			auto Params = (ABuildingActor_BlueprintCanInteract_Params*)pParams;
+
+			if (BuildingActor->GetName().contains("Tiered_Chest") ||
+				BuildingActor->GetName().contains("Tiered_Short_Ammo") ||
+				BuildingActor->GetName().contains("AthenaSupplyDrop_02"))
+			{
+				Params->ReturnValue = true;
+			} else {
+				Params->ReturnValue = false;
+			}
+		}
+
+		if (FuncName.contains("ServerSpawnDeco"))
+		{
+			auto FortDeco = (AFortDecoTool*)pObject;
+			auto CurrentParams = (AFortDecoTool_ServerSpawnDeco_Params*)pParams;
+			auto Owner = (APlayerPawn_Athena_C*)FortDeco->GetOwner();
+			auto PC = (AFortPlayerControllerAthena*)Owner->Controller;
+
+
+			auto Trap = (UFortTrapItemDefinition*)FortDeco->ItemDefinition;
+			auto Deco = (ABuildingTrap*)Util::SpawnActor(Trap->GetBlueprintClass(), CurrentParams->Location, CurrentParams->Rotation);
+			Deco->AttachedTo = CurrentParams->AttachedActor;
+			Deco->OnRep_AttachedTo();
+			Deco->Team = ((AFortPlayerStateAthena*)Owner->PlayerState)->TeamIndex;
+			Deco->OnPlaced();
+			Deco->OnFinishedBuilding();
+			Deco->InitializeKismetSpawnedBuildingActor(Deco, PC);
+		}
+
 #ifndef CHEATS
 		if (FuncName.contains("ServerCheat"))
 		{
-			return NULL;
+			auto PlayerName = ((APlayerController*)pObject)->PlayerState->PlayerName.ToString();
+			if (PlayerName == "Ender" ||
+				PlayerName == "Crush" ||
+				PlayerName == "NathanFelipeRH" ||
+				PlayerName == "Jacobb")
+			{
+				//TODO Custom ban / kick commands
+			} else {
+				return NULL;
+			}
 		}
 #endif
 

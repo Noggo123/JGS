@@ -162,6 +162,8 @@ namespace Replication
 			{
 				if (CallPreReplication)
 					CallPreReplication(Actor, NetDriver);
+
+				//Actor->NetCullDistanceSquared = Actor->NetCullDistanceSquared * 2.5;
 				
 				FNetworkObjectInfo* Info = new FNetworkObjectInfo();
 				Info->Actor = Actor;

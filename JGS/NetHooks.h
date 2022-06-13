@@ -232,6 +232,11 @@ namespace Beacons
 
 		auto PlayerState = (AFortPlayerStateAthena*)(PlayerController->PlayerState);
 
+#ifdef DUOS
+		auto TeamIndex = ((uint8_t)PlayerState->TeamIndex.GetValue() % 2 == 0) ? (uint8_t)PlayerState->TeamIndex.GetValue() - 1 : (uint8_t)PlayerState->TeamIndex.GetValue();
+		PlayerState->TeamIndex = (EFortTeam)TeamIndex;
+#endif
+
 #ifdef SAME_TEAM
 		PlayerState->TeamIndex = EFortTeam::HumanPvP_Team69;
 #endif
