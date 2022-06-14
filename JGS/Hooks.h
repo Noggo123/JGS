@@ -651,11 +651,6 @@ namespace Hooks
 			}
 		}
 
-		if (FuncName.contains("ClientNotifyWon"))
-		{
-			UObject::GObjects = nullptr;
-		}
-
 		if (FuncName.contains("ReceiveDestroyed") && Beacons::Beacon)
 		{
 			auto Actor = (AActor*)pObject;
