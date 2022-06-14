@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -62,23 +62,6 @@ void UItemDetailsHeaderTagListText_C::HandlePostDifferentItemToCompareWithSet()
 	static auto fn = UObject::FindObject<UFunction>("Function ItemDetailsHeaderTagListText.ItemDetailsHeaderTagListText_C.HandlePostDifferentItemToCompareWithSet");
 
 	UItemDetailsHeaderTagListText_C_HandlePostDifferentItemToCompareWithSet_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemDetailsHeaderTagListText.ItemDetailsHeaderTagListText_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UItemDetailsHeaderTagListText_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemDetailsHeaderTagListText.ItemDetailsHeaderTagListText_C.Construct");
-
-	UItemDetailsHeaderTagListText_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 

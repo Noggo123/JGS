@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,43 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function EnemyPawn_Parent.EnemyPawn_Parent_C.Orphaned
+struct AEnemyPawn_Parent_C_Orphaned_Params
+{
+	bool                                               IsOrphaned;                                               // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	class AFortPawn*                                   AttachedPawn;                                             // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function EnemyPawn_Parent.EnemyPawn_Parent_C.OnRep_SpecialEventHalloweenPumpkinHeadApplied
+struct AEnemyPawn_Parent_C_OnRep_SpecialEventHalloweenPumpkinHeadApplied_Params
+{
+};
+
+// Function EnemyPawn_Parent.EnemyPawn_Parent_C.SpecialEventHalloweenPumpkinHeadHusk
+struct AEnemyPawn_Parent_C_SpecialEventHalloweenPumpkinHeadHusk_Params
+{
+	bool                                               ApplyPumpkinHeadMesh;                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               DebugApplicationOrRemoval_;                               // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function EnemyPawn_Parent.EnemyPawn_Parent_C.SpawnMeshAttachedToCharacter
+struct AEnemyPawn_Parent_C_SpawnMeshAttachedToCharacter_Params
+{
+	class UStaticMesh*                                 Static_Mesh;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       Socket_Name;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FTransform                                  Relative_Transform;                                       // (Parm, IsPlainOldData)
+	bool                                               Absolute_Location;                                        // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Absolute_Rotation;                                        // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               Absolute_Scale;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	class UStaticMeshComponent*                        Static_Mesh_Component_Reference;                          // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function EnemyPawn_Parent.EnemyPawn_Parent_C.RestorePreviousMaterialOnCharacterMesh
+struct AEnemyPawn_Parent_C_RestorePreviousMaterialOnCharacterMesh_Params
+{
+	float                                              Delay_in_Seconds;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function EnemyPawn_Parent.EnemyPawn_Parent_C.CharacterSpawnInSafetyCheck
 struct AEnemyPawn_Parent_C_CharacterSpawnInSafetyCheck_Params
@@ -33,13 +70,21 @@ struct AEnemyPawn_Parent_C_SetCharacterFresnelGlowColors_Params
 	struct FLinearColor                                Outer_Color;                                              // (Parm, IsPlainOldData)
 };
 
-// Function EnemyPawn_Parent.EnemyPawn_Parent_C.SpawnParticleSystemAttachedToCharacterMesh
-struct AEnemyPawn_Parent_C_SpawnParticleSystemAttachedToCharacterMesh_Params
+// Function EnemyPawn_Parent.EnemyPawn_Parent_C.SpawnParticleSystemOnCharacterMesh
+struct AEnemyPawn_Parent_C_SpawnParticleSystemOnCharacterMesh_Params
 {
-	class UParticleSystem*                             Particle_System;                                          // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FName                                       Attach_Point_Name;                                        // (Parm, ZeroConstructor, IsPlainOldData)
+	class UParticleSystem*                             ParticleSystemTemplate;                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	class UParticleSystemComponent*                    ParticleSystemComponentReferenceVar;                      // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       AttachPointName;                                          // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FVector                                     Location;                                                 // (Parm, IsPlainOldData)
 	struct FRotator                                    Rotation;                                                 // (Parm, IsPlainOldData)
+	TArray<struct FParticleSysParam>                   InstanceParameters;                                       // (Parm, OutParm, ZeroConstructor, ReferenceParm)
+	bool                                               AutoActivate;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               AutoDestroy;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               AbsoluteLocation;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               AbsoluteRotation;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               AbsoluteScale;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+	class UParticleSystemComponent*                    PSComponentReference;                                     // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function EnemyPawn_Parent.EnemyPawn_Parent_C.OverridePhysicalMaterialOnCharacterMesh
@@ -59,11 +104,6 @@ struct AEnemyPawn_Parent_C_OverrideMaterialAndCopyParametersOnCharacterMesh_Para
 	class UMaterial*                                   New_Material_To_Apply;                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function EnemyPawn_Parent.EnemyPawn_Parent_C.OnRep_PumpkinHeadActiveGE
-struct AEnemyPawn_Parent_C_OnRep_PumpkinHeadActiveGE_Params
-{
-};
-
 // Function EnemyPawn_Parent.EnemyPawn_Parent_C.PlayAdditiveHitReacts
 struct AEnemyPawn_Parent_C_PlayAdditiveHitReacts_Params
 {
@@ -71,22 +111,22 @@ struct AEnemyPawn_Parent_C_PlayAdditiveHitReacts_Params
 	class UAnimMontage*                                Anim_Montage;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function EnemyPawn_Parent.EnemyPawn_Parent_C.SetActiveElementalAmbientParticles
-struct AEnemyPawn_Parent_C_SetActiveElementalAmbientParticles_Params
+// Function EnemyPawn_Parent.EnemyPawn_Parent_C.SetActiveParticlesOnCharacterMesh
+struct AEnemyPawn_Parent_C_SetActiveParticlesOnCharacterMesh_Params
 {
 	bool                                               Active;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               Reset;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function EnemyPawn_Parent.EnemyPawn_Parent_C.SetScalarParameterOnAllMIDs
-struct AEnemyPawn_Parent_C_SetScalarParameterOnAllMIDs_Params
+// Function EnemyPawn_Parent.EnemyPawn_Parent_C.SetScalarParameterOnAllCharacterMIDs
+struct AEnemyPawn_Parent_C_SetScalarParameterOnAllCharacterMIDs_Params
 {
 	struct FName                                       Parameter_Name;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 	float                                              Scalar_Value;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function EnemyPawn_Parent.EnemyPawn_Parent_C.SetVectorParameterOnAllMIDs
-struct AEnemyPawn_Parent_C_SetVectorParameterOnAllMIDs_Params
+// Function EnemyPawn_Parent.EnemyPawn_Parent_C.SetVectorParameterOnAllCharacterMIDs
+struct AEnemyPawn_Parent_C_SetVectorParameterOnAllCharacterMIDs_Params
 {
 	struct FName                                       Parameter_Name;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FLinearColor                                Linear_Color;                                             // (Parm, IsPlainOldData)
@@ -177,13 +217,8 @@ struct AEnemyPawn_Parent_C_BeginDeathFX_Params
 {
 };
 
-// Function EnemyPawn_Parent.EnemyPawn_Parent_C.DeactivateEffectsPreDespawn
-struct AEnemyPawn_Parent_C_DeactivateEffectsPreDespawn_Params
-{
-};
-
-// Function EnemyPawn_Parent.EnemyPawn_Parent_C.ActivateEffectsPostSpawnIn
-struct AEnemyPawn_Parent_C_ActivateEffectsPostSpawnIn_Params
+// Function EnemyPawn_Parent.EnemyPawn_Parent_C.PostSpawnIn
+struct AEnemyPawn_Parent_C_PostSpawnIn_Params
 {
 };
 
@@ -238,6 +273,23 @@ struct AEnemyPawn_Parent_C_OnBeginSleepEffects_Params
 // Function EnemyPawn_Parent.EnemyPawn_Parent_C.OnEndSleepEffects
 struct AEnemyPawn_Parent_C_OnEndSleepEffects_Params
 {
+};
+
+// Function EnemyPawn_Parent.EnemyPawn_Parent_C.RestorePreviousMaterialDelayCompleted
+struct AEnemyPawn_Parent_C_RestorePreviousMaterialDelayCompleted_Params
+{
+};
+
+// Function EnemyPawn_Parent.EnemyPawn_Parent_C.RestorePreviousMaterialDelay
+struct AEnemyPawn_Parent_C_RestorePreviousMaterialDelay_Params
+{
+	float                                              Delay_Amount;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function EnemyPawn_Parent.EnemyPawn_Parent_C.OnCheatUpdateSpecialEventGE
+struct AEnemyPawn_Parent_C_OnCheatUpdateSpecialEventGE_Params
+{
+	bool*                                              bShouldUseSpecialEventGE;                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function EnemyPawn_Parent.EnemyPawn_Parent_C.ExecuteUbergraph_EnemyPawn_Parent

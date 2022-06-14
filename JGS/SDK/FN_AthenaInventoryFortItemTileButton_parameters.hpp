@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -69,8 +69,8 @@ struct UAthenaInventoryFortItemTileButton_C_HandleEquipSlotChanged_Params
 	int*                                               EquipSlot;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function AthenaInventoryFortItemTileButton.AthenaInventoryFortItemTileButton_C.OnInventoryItemSelected_Event_0_1
-struct UAthenaInventoryFortItemTileButton_C_OnInventoryItemSelected_Event_0_1_Params
+// Function AthenaInventoryFortItemTileButton.AthenaInventoryFortItemTileButton_C.OnInventoryItemSelected_Event_1
+struct UAthenaInventoryFortItemTileButton_C_OnInventoryItemSelected_Event_1_Params
 {
 	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -45,12 +45,6 @@ struct A_WaterMeshBlueprintMaster_C_SetupMeshCollisionVolumes_Params
 // Function _WaterMeshBlueprintMaster._WaterMeshBlueprintMaster_C.UserConstructionScript
 struct A_WaterMeshBlueprintMaster_C_UserConstructionScript_Params
 {
-};
-
-// Function _WaterMeshBlueprintMaster._WaterMeshBlueprintMaster_C.ReturnWaterHitLocation
-struct A_WaterMeshBlueprintMaster_C_ReturnWaterHitLocation_Params
-{
-	class APlayerPawn_Generic_C*                       CallingActor;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function _WaterMeshBlueprintMaster._WaterMeshBlueprintMaster_C.BndEvt__CollisionMesh2_K2Node_ComponentBoundEvent_220_ComponentEndOverlapSignature__DelegateSignature

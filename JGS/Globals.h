@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-static auto StaticLoadObjectInternal = reinterpret_cast<UObject* (*)(UClass* InClass, UObject* InOuter, const TCHAR* Name, const TCHAR* FileName, uint32_t LoadFlags, UPackageMap* Sandbox, bool bAllowObjectReconciliation)>(uintptr_t(GetModuleHandle(NULL)) + 0x13E0180);
+static auto StaticLoadObjectInternal = reinterpret_cast<UObject* (*)(UClass* InClass, UObject* InOuter, const TCHAR* Name, const TCHAR* FileName, uint32_t LoadFlags, UPackageMap* Sandbox, bool bAllowObjectReconciliation)>(uintptr_t(GetModuleHandle(NULL)) + 0x142EE30);
 
 template <typename T>
 static T* StaticLoadObject(const TCHAR* InPath)
@@ -15,7 +15,7 @@ static T* FindObjectFast(std::string ObjectName, UClass* ObjectClass = UObject::
 {
     auto OrigInName = std::wstring(ObjectName.begin(), ObjectName.end()).c_str();
 
-    auto StaticFindObject = (T * (*)(UClass*, UObject * Package, const wchar_t* OrigInName, bool ExactClass))((uintptr_t)GetModuleHandleA(0) + 0x13DE630);
+    auto StaticFindObject = (T * (*)(UClass*, UObject * Package, const wchar_t* OrigInName, bool ExactClass))((uintptr_t)GetModuleHandleA(0) + 0x142D2E0);
     return StaticFindObject(ObjectClass, nullptr, OrigInName, false);
 }
 
@@ -36,13 +36,18 @@ namespace Globals
 {
 	UWorld* World;
 	UFortEngine* FortEngine;
+
 	AFortPlayerController* PC;
 	APlayerPawn_Generic_C* Pawn;
+
 	UGameplayStatics* GPS;
+
 	UKismetMathLibrary* MathLib;
     UKismetSystemLibrary* SystemLib;
+
     UCustomCharacterPart* HeadPart;
     UCustomCharacterPart* BodyPart;
+
     std::vector<UFortItemDefinition*> Traps;
     std::vector<UFortItemDefinition*> Consumables;
     std::vector<UFortItemDefinition*> SupplyDrop;
@@ -64,7 +69,6 @@ namespace Globals
     };
 
     std::vector<CharPart> CharacterParts;
-    bool bSTWMode = false;
 }
 
 static void LoadLootPools()

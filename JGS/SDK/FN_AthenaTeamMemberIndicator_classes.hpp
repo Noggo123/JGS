@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -30,6 +30,7 @@ public:
 	}
 
 
+	void On_Team_Talking_Changed(TArray<bool>* Team_Talking);
 	void On_Team_Reviving_Changed(TArray<bool>* Team_Reviving);
 	void On_Team_DBNO_Changed(TArray<bool>* DBNOStates);
 	void Construct();

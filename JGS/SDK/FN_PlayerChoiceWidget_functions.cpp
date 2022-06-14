@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,16 +37,16 @@ class UPlayerChoiceButtonWidget_C* UPlayerChoiceWidget_C::CreateButtonAndSetText
 }
 
 
-// Function PlayerChoiceWidget.PlayerChoiceWidget_C.GetText_0_1
+// Function PlayerChoiceWidget.PlayerChoiceWidget_C.GetText_1
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // struct FText                   ReturnValue                    (Parm, OutParm, ReturnParm)
 
-struct FText UPlayerChoiceWidget_C::GetText_0_1()
+struct FText UPlayerChoiceWidget_C::GetText_1()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerChoiceWidget.PlayerChoiceWidget_C.GetText_0_1");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerChoiceWidget.PlayerChoiceWidget_C.GetText_1");
 
-	UPlayerChoiceWidget_C_GetText_0_1_Params params;
+	UPlayerChoiceWidget_C_GetText_1_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -58,14 +58,14 @@ struct FText UPlayerChoiceWidget_C::GetText_0_1()
 }
 
 
-// Function PlayerChoiceWidget.PlayerChoiceWidget_C.Get_TextBlock_Choice3_Text_0_1
+// Function PlayerChoiceWidget.PlayerChoiceWidget_C.Get_TextBlock_Choice3_Text_1
 // (Public, BlueprintCallable, BlueprintEvent, BlueprintPure)
 
-void UPlayerChoiceWidget_C::Get_TextBlock_Choice3_Text_0_1()
+void UPlayerChoiceWidget_C::Get_TextBlock_Choice3_Text_1()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerChoiceWidget.PlayerChoiceWidget_C.Get_TextBlock_Choice3_Text_0_1");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerChoiceWidget.PlayerChoiceWidget_C.Get_TextBlock_Choice3_Text_1");
 
-	UPlayerChoiceWidget_C_Get_TextBlock_Choice3_Text_0_1_Params params;
+	UPlayerChoiceWidget_C_Get_TextBlock_Choice3_Text_1_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -75,14 +75,14 @@ void UPlayerChoiceWidget_C::Get_TextBlock_Choice3_Text_0_1()
 }
 
 
-// Function PlayerChoiceWidget.PlayerChoiceWidget_C.Get_TextBlock_Choice2_Text_0_1
+// Function PlayerChoiceWidget.PlayerChoiceWidget_C.Get_TextBlock_Choice2_Text_1
 // (Public, BlueprintCallable, BlueprintEvent, BlueprintPure)
 
-void UPlayerChoiceWidget_C::Get_TextBlock_Choice2_Text_0_1()
+void UPlayerChoiceWidget_C::Get_TextBlock_Choice2_Text_1()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerChoiceWidget.PlayerChoiceWidget_C.Get_TextBlock_Choice2_Text_0_1");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerChoiceWidget.PlayerChoiceWidget_C.Get_TextBlock_Choice2_Text_1");
 
-	UPlayerChoiceWidget_C_Get_TextBlock_Choice2_Text_0_1_Params params;
+	UPlayerChoiceWidget_C_Get_TextBlock_Choice2_Text_1_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -92,14 +92,14 @@ void UPlayerChoiceWidget_C::Get_TextBlock_Choice2_Text_0_1()
 }
 
 
-// Function PlayerChoiceWidget.PlayerChoiceWidget_C.Get_TextBlock_Choice1_Text_0_1
+// Function PlayerChoiceWidget.PlayerChoiceWidget_C.Get_TextBlock_Choice1_Text_1
 // (Public, BlueprintCallable, BlueprintEvent, BlueprintPure)
 
-void UPlayerChoiceWidget_C::Get_TextBlock_Choice1_Text_0_1()
+void UPlayerChoiceWidget_C::Get_TextBlock_Choice1_Text_1()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerChoiceWidget.PlayerChoiceWidget_C.Get_TextBlock_Choice1_Text_0_1");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerChoiceWidget.PlayerChoiceWidget_C.Get_TextBlock_Choice1_Text_1");
 
-	UPlayerChoiceWidget_C_Get_TextBlock_Choice1_Text_0_1_Params params;
+	UPlayerChoiceWidget_C_Get_TextBlock_Choice1_Text_1_Params params;
 
 	auto flags = fn->FunctionFlags;
 

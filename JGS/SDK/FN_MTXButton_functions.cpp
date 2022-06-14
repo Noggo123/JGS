@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -29,16 +29,16 @@ void UMTXButton_C::UpdateState()
 }
 
 
-// Function MTXButton.MTXButton_C.Get_Button_ToolTipWidget_0_1
+// Function MTXButton.MTXButton_C.Get_Button_ToolTipWidget_1
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-class UWidget* UMTXButton_C::Get_Button_ToolTipWidget_0_1()
+class UWidget* UMTXButton_C::Get_Button_ToolTipWidget_1()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function MTXButton.MTXButton_C.Get_Button_ToolTipWidget_0_1");
+	static auto fn = UObject::FindObject<UFunction>("Function MTXButton.MTXButton_C.Get_Button_ToolTipWidget_1");
 
-	UMTXButton_C_Get_Button_ToolTipWidget_0_1_Params params;
+	UMTXButton_C_Get_Button_ToolTipWidget_1_Params params;
 
 	auto flags = fn->FunctionFlags;
 

@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,23 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function PowerToastWidget.PowerToastWidget_C.UpdatePowerRating
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UPowerToastWidget_C::UpdatePowerRating()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PowerToastWidget.PowerToastWidget_C.UpdatePowerRating");
+
+	UPowerToastWidget_C_UpdatePowerRating_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function PowerToastWidget.PowerToastWidget_C.StartIntro
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -62,6 +79,23 @@ void UPowerToastWidget_C::SetToast(class UFortUINotification* Toast)
 
 	UPowerToastWidget_C_SetToast_Params params;
 	params.Toast = Toast;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PowerToastWidget.PowerToastWidget_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UPowerToastWidget_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PowerToastWidget.PowerToastWidget_C.Construct");
+
+	UPowerToastWidget_C_Construct_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -204,23 +238,6 @@ void UPowerToastWidget_C::OnPlayerInfoChanged(struct FFortTeamMemberInfo* NewInf
 }
 
 
-// Function PowerToastWidget.PowerToastWidget_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UPowerToastWidget_C::Construct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PowerToastWidget.PowerToastWidget_C.Construct");
-
-	UPowerToastWidget_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function PowerToastWidget.PowerToastWidget_C.BndEvt__Intro_K2Node_ComponentBoundEvent_0_OnWidgetAnimationPlaybackStatusChanged__DelegateSignature
 // (BlueprintEvent)
 
@@ -255,17 +272,34 @@ void UPowerToastWidget_C::BndEvt__Outro_K2Node_ComponentBoundEvent_1_OnWidgetAni
 }
 
 
-// Function PowerToastWidget.PowerToastWidget_C.OnTeamMemberFinishedSynchronizing_Event_0_1
+// Function PowerToastWidget.PowerToastWidget_C.OnTeamMemberFinishedSynchronizing_Event_1
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FUniqueNetIdRepl        NewTeamMemberId                (Parm)
 
-void UPowerToastWidget_C::OnTeamMemberFinishedSynchronizing_Event_0_1(const struct FUniqueNetIdRepl& NewTeamMemberId)
+void UPowerToastWidget_C::OnTeamMemberFinishedSynchronizing_Event_1(const struct FUniqueNetIdRepl& NewTeamMemberId)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PowerToastWidget.PowerToastWidget_C.OnTeamMemberFinishedSynchronizing_Event_0_1");
+	static auto fn = UObject::FindObject<UFunction>("Function PowerToastWidget.PowerToastWidget_C.OnTeamMemberFinishedSynchronizing_Event_1");
 
-	UPowerToastWidget_C_OnTeamMemberFinishedSynchronizing_Event_0_1_Params params;
+	UPowerToastWidget_C_OnTeamMemberFinishedSynchronizing_Event_1_Params params;
 	params.NewTeamMemberId = NewTeamMemberId;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PowerToastWidget.PowerToastWidget_C.HandleSynchronizeTimeout
+// (BlueprintCallable, BlueprintEvent)
+
+void UPowerToastWidget_C::HandleSynchronizeTimeout()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PowerToastWidget.PowerToastWidget_C.HandleSynchronizeTimeout");
+
+	UPowerToastWidget_C_HandleSynchronizeTimeout_Params params;
 
 	auto flags = fn->FunctionFlags;
 

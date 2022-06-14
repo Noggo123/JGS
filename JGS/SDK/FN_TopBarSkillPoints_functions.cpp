@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,49 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function TopBarSkillPoints.TopBarSkillPoints_C.GetMissionRewardBadgeTooltipWidget
+// (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UWidget*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class UWidget* UTopBarSkillPoints_C::GetMissionRewardBadgeTooltipWidget()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function TopBarSkillPoints.TopBarSkillPoints_C.GetMissionRewardBadgeTooltipWidget");
+
+	UTopBarSkillPoints_C_GetMissionRewardBadgeTooltipWidget_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function TopBarSkillPoints.TopBarSkillPoints_C.Has Mission Reward Boost
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           Result                         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UTopBarSkillPoints_C::Has_Mission_Reward_Boost(bool* Result)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function TopBarSkillPoints.TopBarSkillPoints_C.Has Mission Reward Boost");
+
+	UTopBarSkillPoints_C_Has_Mission_Reward_Boost_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Result != nullptr)
+		*Result = params.Result;
+}
+
 
 // Function TopBarSkillPoints.TopBarSkillPoints_C.GetFounderBadgetTooltipWidget
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)

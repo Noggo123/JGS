@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -347,16 +347,16 @@ void UQuestTreeEntry_C::OnHovered()
 }
 
 
-// Function QuestTreeEntry.QuestTreeEntry_C.OnQuestSeen_Event_0_1
+// Function QuestTreeEntry.QuestTreeEntry_C.OnQuestSeen_Event_1
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UFortQuestItem*          Quest                          (Parm, ZeroConstructor, IsPlainOldData)
 
-void UQuestTreeEntry_C::OnQuestSeen_Event_0_1(class UFortQuestItem* Quest)
+void UQuestTreeEntry_C::OnQuestSeen_Event_1(class UFortQuestItem* Quest)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function QuestTreeEntry.QuestTreeEntry_C.OnQuestSeen_Event_0_1");
+	static auto fn = UObject::FindObject<UFunction>("Function QuestTreeEntry.QuestTreeEntry_C.OnQuestSeen_Event_1");
 
-	UQuestTreeEntry_C_OnQuestSeen_Event_0_1_Params params;
+	UQuestTreeEntry_C_OnQuestSeen_Event_1_Params params;
 	params.Quest = Quest;
 
 	auto flags = fn->FunctionFlags;
@@ -375,6 +375,23 @@ void UQuestTreeEntry_C::Destruct()
 	static auto fn = UObject::FindObject<UFunction>("Function QuestTreeEntry.QuestTreeEntry_C.Destruct");
 
 	UQuestTreeEntry_C_Destruct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function QuestTreeEntry.QuestTreeEntry_C.OnDeselected
+// (Event, Protected, BlueprintEvent)
+
+void UQuestTreeEntry_C::OnDeselected()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function QuestTreeEntry.QuestTreeEntry_C.OnDeselected");
+
+	UQuestTreeEntry_C_OnDeselected_Params params;
 
 	auto flags = fn->FunctionFlags;
 

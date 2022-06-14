@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -35,6 +35,7 @@ public:
 	}
 
 
+	void TryAndShowDropTarget();
 	void IsSelected(bool* Selected);
 	struct FEventReply OnFocusReceived(struct FGeometry* MyGeometry, struct FFocusEvent* InFocusEvent);
 	void SetSelected(bool Selected);
@@ -46,7 +47,7 @@ public:
 	void OnFocusLost(struct FFocusEvent* InFocusEvent);
 	void BndEvt__InputActionWidget_K2Node_ComponentBoundEvent_6_OnInputMethodChanged__DelegateSignature(bool bUsingGamepad);
 	void Tick(struct FGeometry* MyGeometry, float* InDeltaTime);
-	void OnQuickbarContentsChanged_Event_0_1(EFortQuickBars QuickbarIndex);
+	void OnQuickbarContentsChanged_Event_1(EFortQuickBars QuickbarIndex);
 	void ExecuteUbergraph_AthenaInventoryEquipSlot(int EntryPoint);
 	void OnEquipRequested__DelegateSignature(int SlotIndex);
 };

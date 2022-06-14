@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,225 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function ItemManagementScreen.ItemManagementScreen_C.HandleMulchItemsCallback
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            Quantity                       (Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementScreen_C::HandleMulchItemsCallback(int Quantity, class UFortItem* Item)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.HandleMulchItemsCallback");
+
+	UItemManagementScreen_C_HandleMulchItemsCallback_Params params;
+	params.Quantity = Quantity;
+	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementScreen.ItemManagementScreen_C.GetMaxTransferCount
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Count                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementScreen_C::GetMaxTransferCount(class UFortItem* Item, int* Count)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.GetMaxTransferCount");
+
+	UItemManagementScreen_C_GetMaxTransferCount_Params params;
+	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Count != nullptr)
+		*Count = params.Count;
+}
+
+
+// Function ItemManagementScreen.ItemManagementScreen_C.CompleteItemDrop
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Quantity                       (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementScreen_C::CompleteItemDrop(class UFortItem* Item, int Quantity)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.CompleteItemDrop");
+
+	UItemManagementScreen_C_CompleteItemDrop_Params params;
+	params.Item = Item;
+	params.Quantity = Quantity;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementScreen.ItemManagementScreen_C.HandleDropItemsCallback
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            Quantity                       (Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementScreen_C::HandleDropItemsCallback(int Quantity, class UFortItem* Item)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.HandleDropItemsCallback");
+
+	UItemManagementScreen_C_HandleDropItemsCallback_Params params;
+	params.Quantity = Quantity;
+	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementScreen.ItemManagementScreen_C.HandleDrop
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementScreen_C::HandleDrop(class UFortItem* Item)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.HandleDrop");
+
+	UItemManagementScreen_C_HandleDrop_Params params;
+	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementScreen.ItemManagementScreen_C.CompleteItemTransfer
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Quantity                       (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementScreen_C::CompleteItemTransfer(class UFortItem* Item, int Quantity)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.CompleteItemTransfer");
+
+	UItemManagementScreen_C_CompleteItemTransfer_Params params;
+	params.Item = Item;
+	params.Quantity = Quantity;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementScreen.ItemManagementScreen_C.HandleTransferItemsCallback
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            Quantity                       (Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementScreen_C::HandleTransferItemsCallback(int Quantity, class UFortItem* Item)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.HandleTransferItemsCallback");
+
+	UItemManagementScreen_C_HandleTransferItemsCallback_Params params;
+	params.Quantity = Quantity;
+	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementScreen.ItemManagementScreen_C.DestroyQuantitySelector
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UItemManagementScreen_C::DestroyQuantitySelector()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.DestroyQuantitySelector");
+
+	UItemManagementScreen_C_DestroyQuantitySelector_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementScreen.ItemManagementScreen_C.CreateQuantitySelector
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FText                   Title                          (Parm)
+// struct FText                   ConfirmText                    (Parm)
+// int                            InitialQuantity                (Parm, ZeroConstructor, IsPlainOldData)
+// int                            MaxQuantity                    (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementScreen_C::CreateQuantitySelector(class UFortItem* Item, const struct FText& Title, const struct FText& ConfirmText, int InitialQuantity, int MaxQuantity)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.CreateQuantitySelector");
+
+	UItemManagementScreen_C_CreateQuantitySelector_Params params;
+	params.Item = Item;
+	params.Title = Title;
+	params.ConfirmText = ConfirmText;
+	params.InitialQuantity = InitialQuantity;
+	params.MaxQuantity = MaxQuantity;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementScreen.ItemManagementScreen_C.HandleTransfer
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortItem*               ItemToTransfer                 (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementScreen_C::HandleTransfer(class UFortItem* ItemToTransfer)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.HandleTransfer");
+
+	UItemManagementScreen_C_HandleTransfer_Params params;
+	params.ItemToTransfer = ItemToTransfer;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function ItemManagementScreen.ItemManagementScreen_C.ShowCraftError
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -53,26 +272,22 @@ void UItemManagementScreen_C::CraftAndSlot(class UFortSchematicItem* SchematicIt
 
 
 // Function ItemManagementScreen.ItemManagementScreen_C.HandleEquip
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UFortItem*               ItemToEquip                    (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
-void UItemManagementScreen_C::HandleEquip(class UFortItem* ItemToEquip, bool* PassThrough)
+void UItemManagementScreen_C::HandleEquip(class UFortItem* Item)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.HandleEquip");
 
 	UItemManagementScreen_C_HandleEquip_Params params;
-	params.ItemToEquip = ItemToEquip;
+	params.Item = Item;
 
 	auto flags = fn->FunctionFlags;
 
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (PassThrough != nullptr)
-		*PassThrough = params.PassThrough;
 }
 
 
@@ -143,12 +358,11 @@ void UItemManagementScreen_C::GetDescriptionText(struct FText* ItemDescription)
 
 
 // Function ItemManagementScreen.ItemManagementScreen_C.HandleInspect
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UFortItem*               ItemToInspect                  (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           PassThrough                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UItemManagementScreen_C::HandleInspect(class UFortItem* ItemToInspect, bool* PassThrough)
+void UItemManagementScreen_C::HandleInspect(class UFortItem* ItemToInspect)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.HandleInspect");
 
@@ -160,9 +374,6 @@ void UItemManagementScreen_C::HandleInspect(class UFortItem* ItemToInspect, bool
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	if (PassThrough != nullptr)
-		*PassThrough = params.PassThrough;
 }
 
 
@@ -279,14 +490,31 @@ void UItemManagementScreen_C::HandleCraftItemBP(class UFortSchematicItem** Schem
 }
 
 
-// Function ItemManagementScreen.ItemManagementScreen_C.CraftabilityRefresh
+// Function ItemManagementScreen.ItemManagementScreen_C.DefaultActionRefresh
 // (BlueprintCallable, BlueprintEvent)
 
-void UItemManagementScreen_C::CraftabilityRefresh()
+void UItemManagementScreen_C::DefaultActionRefresh()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.CraftabilityRefresh");
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.DefaultActionRefresh");
 
-	UItemManagementScreen_C_CraftabilityRefresh_Params params;
+	UItemManagementScreen_C_DefaultActionRefresh_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementScreen.ItemManagementScreen_C.OnActivated
+// (Event, Protected, BlueprintEvent)
+
+void UItemManagementScreen_C::OnActivated()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.OnActivated");
+
+	UItemManagementScreen_C_OnActivated_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -316,23 +544,6 @@ void UItemManagementScreen_C::HandleConsumeItemBP(class UFortConsumableAccountIt
 }
 
 
-// Function ItemManagementScreen.ItemManagementScreen_C.OnActivated
-// (Event, Protected, BlueprintEvent)
-
-void UItemManagementScreen_C::OnActivated()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.OnActivated");
-
-	UItemManagementScreen_C_OnActivated_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function ItemManagementScreen.ItemManagementScreen_C.HandleInspectItemBP
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -343,6 +554,66 @@ void UItemManagementScreen_C::HandleInspectItemBP(class UFortItem** Item)
 	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.HandleInspectItemBP");
 
 	UItemManagementScreen_C_HandleInspectItemBP_Params params;
+	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementScreen.ItemManagementScreen_C.HandleTransferItemBP
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UFortItem**              Item                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementScreen_C::HandleTransferItemBP(class UFortItem** Item)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.HandleTransferItemBP");
+
+	UItemManagementScreen_C_HandleTransferItemBP_Params params;
+	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementScreen.ItemManagementScreen_C.HandleDropItemBP
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UFortItem**              Item                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementScreen_C::HandleDropItemBP(class UFortItem** Item)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.HandleDropItemBP");
+
+	UItemManagementScreen_C_HandleDropItemBP_Params params;
+	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementScreen.ItemManagementScreen_C.HandleMulchQuantitySelection
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UFortItem**              Item                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementScreen_C::HandleMulchQuantitySelection(class UFortItem** Item)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementScreen.ItemManagementScreen_C.HandleMulchQuantitySelection");
+
+	UItemManagementScreen_C_HandleMulchQuantitySelection_Params params;
 	params.Item = Item;
 
 	auto flags = fn->FunctionFlags;

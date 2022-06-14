@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -59,15 +59,15 @@ enum class EControllerHand : uint8_t
 	Pad                            = 2,
 	ExternalCamera                 = 3,
 	Gun                            = 4,
-	Special_1                      = 5,
-	Special_2                      = 6,
-	Special_3                      = 7,
-	Special_4                      = 8,
-	Special_5                      = 9,
-	Special_6                      = 10,
-	Special_7                      = 11,
-	Special_8                      = 12,
-	Special_9                      = 13,
+	Special                        = 5,
+	Special01                      = 6,
+	Special02                      = 7,
+	Special03                      = 8,
+	Special04                      = 9,
+	Special05                      = 10,
+	Special06                      = 11,
+	Special07                      = 12,
+	Special08                      = 13,
 	EControllerHand_MAX            = 14
 };
 

@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,23 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.TryAndShowDropTarget
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UAthenaInventoryEquipSlot_C::TryAndShowDropTarget()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.TryAndShowDropTarget");
+
+	UAthenaInventoryEquipSlot_C_TryAndShowDropTarget_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.IsSelected
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
@@ -253,16 +270,16 @@ void UAthenaInventoryEquipSlot_C::Tick(struct FGeometry* MyGeometry, float* InDe
 }
 
 
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnQuickbarContentsChanged_Event_0_1
+// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnQuickbarContentsChanged_Event_1
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // EFortQuickBars                 QuickbarIndex                  (Parm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaInventoryEquipSlot_C::OnQuickbarContentsChanged_Event_0_1(EFortQuickBars QuickbarIndex)
+void UAthenaInventoryEquipSlot_C::OnQuickbarContentsChanged_Event_1(EFortQuickBars QuickbarIndex)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnQuickbarContentsChanged_Event_0_1");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnQuickbarContentsChanged_Event_1");
 
-	UAthenaInventoryEquipSlot_C_OnQuickbarContentsChanged_Event_0_1_Params params;
+	UAthenaInventoryEquipSlot_C_OnQuickbarContentsChanged_Event_1_Params params;
 	params.QuickbarIndex = QuickbarIndex;
 
 	auto flags = fn->FunctionFlags;

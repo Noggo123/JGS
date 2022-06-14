@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,23 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function SurvivorSquadBonusTraitsDetailWidget.SurvivorSquadBonusTraitsDetailWidget_C.HandlePostDifferentItemToDetailSet
-// (Event, Protected, BlueprintEvent)
-
-void USurvivorSquadBonusTraitsDetailWidget_C::HandlePostDifferentItemToDetailSet()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function SurvivorSquadBonusTraitsDetailWidget.SurvivorSquadBonusTraitsDetailWidget_C.HandlePostDifferentItemToDetailSet");
-
-	USurvivorSquadBonusTraitsDetailWidget_C_HandlePostDifferentItemToDetailSet_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function SurvivorSquadBonusTraitsDetailWidget.SurvivorSquadBonusTraitsDetailWidget_C.HandlePostDifferentSquadSlotSetBP
 // (Event, Protected, BlueprintEvent)
@@ -54,6 +37,23 @@ void USurvivorSquadBonusTraitsDetailWidget_C::HandleTraitValuesUpdatedBP()
 	static auto fn = UObject::FindObject<UFunction>("Function SurvivorSquadBonusTraitsDetailWidget.SurvivorSquadBonusTraitsDetailWidget_C.HandleTraitValuesUpdatedBP");
 
 	USurvivorSquadBonusTraitsDetailWidget_C_HandleTraitValuesUpdatedBP_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function SurvivorSquadBonusTraitsDetailWidget.SurvivorSquadBonusTraitsDetailWidget_C.HandlePostDifferentItemToDetailSet
+// (Event, Protected, BlueprintEvent)
+
+void USurvivorSquadBonusTraitsDetailWidget_C::HandlePostDifferentItemToDetailSet()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function SurvivorSquadBonusTraitsDetailWidget.SurvivorSquadBonusTraitsDetailWidget_C.HandlePostDifferentItemToDetailSet");
+
+	USurvivorSquadBonusTraitsDetailWidget_C_HandlePostDifferentItemToDetailSet_Params params;
 
 	auto flags = fn->FunctionFlags;
 

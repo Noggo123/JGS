@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -18,6 +18,12 @@ namespace SDK
 struct APlayerPawn_Generic_C_Melee_Effect_Color_Params
 {
 	struct FVector                                     Melee_Color_Set;                                          // (Parm, OutParm, IsPlainOldData)
+};
+
+// Function PlayerPawn_Generic.PlayerPawn_Generic_C.TriggerGameplayWindEmitter
+struct APlayerPawn_Generic_C_TriggerGameplayWindEmitter_Params
+{
+	TEnumAsByte<EPlayerWindParticleEmitters>           Player_Wind_Particle_Emitter_To_Fire;                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.Are the wind and water RTT passes enabled
@@ -394,6 +400,18 @@ struct APlayerPawn_Generic_C_SpawnDBNOParticles_Params
 	struct FVector                                     HitNormal;                                                // (Parm, IsPlainOldData)
 };
 
+// Function PlayerPawn_Generic.PlayerPawn_Generic_C.PlayGameplayWindEffect
+struct APlayerPawn_Generic_C_PlayGameplayWindEffect_Params
+{
+	TEnumAsByte<EPlayerWindParticleEmitters>           Player_Wind_Particle_Emitter_To_Fire;                     // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function PlayerPawn_Generic.PlayerPawn_Generic_C.Player Creates a Splash
+struct APlayerPawn_Generic_C_Player_Creates_a_Splash_Params
+{
+	struct FTransform                                  NewTransform;                                             // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+};
+
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.OnLand_CE
 struct APlayerPawn_Generic_C_OnLand_CE_Params
 {
@@ -446,29 +464,29 @@ struct APlayerPawn_Generic_C_GameplayCue_Shield_Reapplied_Params
 	struct FGameplayCueParameters                      Parameters;                                               // (Parm)
 };
 
+// Function PlayerPawn_Generic.PlayerPawn_Generic_C.AnimTrailsSetup
+struct APlayerPawn_Generic_C_AnimTrailsSetup_Params
+{
+	class UParticleSystem**                            ParticleSystemReference;                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FName*                                      FirstSocketName;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FName*                                      SecondSocketName;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+	float*                                             Width;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function PlayerPawn_Generic.PlayerPawn_Generic_C.AnimTrailsDisable
+struct APlayerPawn_Generic_C_AnimTrailsDisable_Params
+{
+};
+
+// Function PlayerPawn_Generic.PlayerPawn_Generic_C.AnimTrailsNotify
+struct APlayerPawn_Generic_C_AnimTrailsNotify_Params
+{
+	bool*                                              bActive;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.MultiEndAnimTrails
 struct APlayerPawn_Generic_C_MultiEndAnimTrails_Params
 {
-};
-
-// Function PlayerPawn_Generic.PlayerPawn_Generic_C.DisableAnimTrails
-struct APlayerPawn_Generic_C_DisableAnimTrails_Params
-{
-};
-
-// Function PlayerPawn_Generic.PlayerPawn_Generic_C.AnimTrailsCE
-struct APlayerPawn_Generic_C_AnimTrailsCE_Params
-{
-	bool                                               Active;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function PlayerPawn_Generic.PlayerPawn_Generic_C.SetupAnimTrails
-struct APlayerPawn_Generic_C_SetupAnimTrails_Params
-{
-	class UParticleSystem*                             Particle_System_Reference;                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FName                                       First_Socket_Name;                                        // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FName                                       Second_Socket_Name;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Width;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.ExecuteUbergraph_PlayerPawn_Generic

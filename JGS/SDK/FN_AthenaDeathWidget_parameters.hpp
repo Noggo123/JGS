@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -84,12 +84,6 @@ struct UAthenaDeathWidget_C_On_Kill_Feed_Updated_Params
 // Function AthenaDeathWidget.AthenaDeathWidget_C.TeamMemberChanged
 struct UAthenaDeathWidget_C_TeamMemberChanged_Params
 {
-};
-
-// Function AthenaDeathWidget.AthenaDeathWidget_C.PreConstruct
-struct UAthenaDeathWidget_C_PreConstruct_Params
-{
-	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaDeathWidget.AthenaDeathWidget_C.BndEvt__FollowNextTeammate_K2Node_ComponentBoundEvent_11_CommonButtonClicked__DelegateSignature

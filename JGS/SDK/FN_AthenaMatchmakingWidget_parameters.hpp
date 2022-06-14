@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -31,11 +31,6 @@ struct UAthenaMatchmakingWidget_C_SetAutoFillOptions_Params
 {
 };
 
-// Function AthenaMatchmakingWidget.AthenaMatchmakingWidget_C.RefreshInput
-struct UAthenaMatchmakingWidget_C_RefreshInput_Params
-{
-};
-
 // Function AthenaMatchmakingWidget.AthenaMatchmakingWidget_C.BndEvt__BP_PlayButton_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature
 struct UAthenaMatchmakingWidget_C_BndEvt__BP_PlayButton_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature_Params
 {
@@ -46,11 +41,6 @@ struct UAthenaMatchmakingWidget_C_BndEvt__BP_PlayButton_K2Node_ComponentBoundEve
 struct UAthenaMatchmakingWidget_C_BndEvt__BP_CancelButton_K2Node_ComponentBoundEvent_19_CommonButtonClicked__DelegateSignature_Params
 {
 	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function AthenaMatchmakingWidget.AthenaMatchmakingWidget_C.OnActivated
-struct UAthenaMatchmakingWidget_C_OnActivated_Params
-{
 };
 
 // Function AthenaMatchmakingWidget.AthenaMatchmakingWidget_C.SetPlayButtonState

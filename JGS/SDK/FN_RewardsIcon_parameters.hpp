@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -34,8 +34,8 @@ struct URewardsIcon_C_PlayShowAnimation_Params
 {
 };
 
-// Function RewardsIcon.RewardsIcon_C.On_ImageIcon_MouseButtonDown_0_1
-struct URewardsIcon_C_On_ImageIcon_MouseButtonDown_0_1_Params
+// Function RewardsIcon.RewardsIcon_C.On_ImageIcon_MouseButtonDown_1
+struct URewardsIcon_C_On_ImageIcon_MouseButtonDown_1_Params
 {
 	struct FGeometry                                   MyGeometry;                                               // (Parm, IsPlainOldData)
 	struct FPointerEvent                               MouseEvent;                                               // (ConstParm, Parm, OutParm, ReferenceParm)

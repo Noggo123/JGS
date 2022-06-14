@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -45,7 +45,7 @@ public:
 	void Play_Show_Animation_Sound();
 	void Play_Hide_Animation_Sound();
 	void PlayShowAnimation();
-	struct FEventReply On_ImageIcon_MouseButtonDown_0_1(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent);
+	struct FEventReply On_ImageIcon_MouseButtonDown_1(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent);
 	void RandomizeDesignView();
 	void PopulateFromRandomLootLevel(class UTexture2D** Texture);
 	void PopulateFromCollectionBookRewards();

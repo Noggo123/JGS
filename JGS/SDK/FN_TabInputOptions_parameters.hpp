@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,8 +14,8 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function TabInputOptions.TabInputOptions_C.NewFunction_0_1
-struct UTabInputOptions_C_NewFunction_0_1_Params
+// Function TabInputOptions.TabInputOptions_C.NewFunction_1
+struct UTabInputOptions_C_NewFunction_1_Params
 {
 };
 

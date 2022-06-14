@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,14 +12,14 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function AthenaRotator.AthenaRotator_C.NewFunction_0_1
+// Function AthenaRotator.AthenaRotator_C.NewFunction_1
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void UAthenaRotator_C::NewFunction_0_1()
+void UAthenaRotator_C::NewFunction_1()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaRotator.AthenaRotator_C.NewFunction_0_1");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaRotator.AthenaRotator_C.NewFunction_1");
 
-	UAthenaRotator_C_NewFunction_0_1_Params params;
+	UAthenaRotator_C_NewFunction_1_Params params;
 
 	auto flags = fn->FunctionFlags;
 

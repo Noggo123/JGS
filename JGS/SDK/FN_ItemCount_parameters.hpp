@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,24 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function ItemCount.ItemCount_C.SetBrushAndTextStyle
+struct UItemCount_C_SetBrushAndTextStyle_Params
+{
+	TEnumAsByte<EFortBrushSize>                        InBrushSize;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      InStyle;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemCount.ItemCount_C.UpdateOverrideState
+struct UItemCount_C_UpdateOverrideState_Params
+{
+};
+
+// Function ItemCount.ItemCount_C.SetOverrideValue
+struct UItemCount_C_SetOverrideValue_Params
+{
+	int                                                OverrrideValue;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function ItemCount.ItemCount_C.SetIsBeingPreviewed
 struct UItemCount_C_SetIsBeingPreviewed_Params

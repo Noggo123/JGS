@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -35,14 +35,14 @@ void UEulaWidget_C::SetViewOnly(bool bViewOnly)
 // Function EulaWidget.EulaWidget_C.SetEulaText
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FText                   Eula                           (Parm)
+// struct FText                   EULA                           (Parm)
 
-void UEulaWidget_C::SetEulaText(const struct FText& Eula)
+void UEulaWidget_C::SetEulaText(const struct FText& EULA)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function EulaWidget.EulaWidget_C.SetEulaText");
 
 	UEulaWidget_C_SetEulaText_Params params;
-	params.Eula = Eula;
+	params.EULA = EULA;
 
 	auto flags = fn->FunctionFlags;
 

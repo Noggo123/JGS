@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -38,7 +38,7 @@ public:
 	void Get_Valid_Offers(TArray<struct FCardPackOffer>* Offers);
 	bool Is_Transform_Feature_Unlocked();
 	void HandleCardPackStore(const struct FName& TabId);
-	void HandleMtxStore(const struct FName& Tab_ID);
+	void HandleMtxStore(const struct FName& Tab_Id);
 	void Handle_Unclaimed_Resources_Updated();
 	void Toggle_Unclaimed_Research_Timer(bool Enable);
 	void Determine_Unclaimed_Resources_at_Threshold(bool* Result);
@@ -62,8 +62,8 @@ public:
 	void OnHomebaseInventoryUpdated();
 	void HandleRefreshSkillTreeNodePage();
 	void Destruct();
-	void OnQuestSeen_Event_0_1(class UFortQuestItem* Quest);
-	void SquadSlotMarkedAsSeen_Event_0_1();
+	void OnQuestSeen_Event_1(class UFortQuestItem* Quest);
+	void SquadSlotMarkedAsSeen_Event_1();
 	void HandleMainTabSelected(struct FName* TabNameID);
 	void HandleMainTabCreated(struct FName* TabNameID, class UCommonButton** TabButton);
 	void ExecuteUbergraph_MainTabsScreen(int EntryPoint);

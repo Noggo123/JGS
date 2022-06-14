@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -355,26 +355,6 @@ struct APlayerPawn_Athena_Generic_C_OnDeathServer_Params
 	struct FGameplayEffectContextHandle*               EffectContext;                                            // (Parm)
 };
 
-// Function PlayerPawn_Athena_Generic.PlayerPawn_Athena_Generic_C.SetupAnimTrails
-struct APlayerPawn_Athena_Generic_C_SetupAnimTrails_Params
-{
-	class UParticleSystem*                             Particle_System_Reference;                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FName                                       First_Socket_Name;                                        // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FName                                       Second_Socket_Name;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	float                                              Width;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function PlayerPawn_Athena_Generic.PlayerPawn_Athena_Generic_C.AnimTrailsCE
-struct APlayerPawn_Athena_Generic_C_AnimTrailsCE_Params
-{
-	bool                                               Active;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function PlayerPawn_Athena_Generic.PlayerPawn_Athena_Generic_C.DisableAnimTrails
-struct APlayerPawn_Athena_Generic_C_DisableAnimTrails_Params
-{
-};
-
 // Function PlayerPawn_Athena_Generic.PlayerPawn_Athena_Generic_C.Entered WaterVolume
 struct APlayerPawn_Athena_Generic_C_Entered_WaterVolume_Params
 {
@@ -393,6 +373,26 @@ struct APlayerPawn_Athena_Generic_C_BindOnDestroyed_Params
 
 // Function PlayerPawn_Athena_Generic.PlayerPawn_Athena_Generic_C.FadeOutCapsuleShadow
 struct APlayerPawn_Athena_Generic_C_FadeOutCapsuleShadow_Params
+{
+};
+
+// Function PlayerPawn_Athena_Generic.PlayerPawn_Athena_Generic_C.AnimTrailsNotify
+struct APlayerPawn_Athena_Generic_C_AnimTrailsNotify_Params
+{
+	bool*                                              bActive;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function PlayerPawn_Athena_Generic.PlayerPawn_Athena_Generic_C.AnimTrailsSetup
+struct APlayerPawn_Athena_Generic_C_AnimTrailsSetup_Params
+{
+	class UParticleSystem**                            ParticleSystemReference;                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FName*                                      FirstSocketName;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FName*                                      SecondSocketName;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+	float*                                             Width;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function PlayerPawn_Athena_Generic.PlayerPawn_Athena_Generic_C.AnimTrailsDisable
+struct APlayerPawn_Athena_Generic_C_AnimTrailsDisable_Params
 {
 };
 

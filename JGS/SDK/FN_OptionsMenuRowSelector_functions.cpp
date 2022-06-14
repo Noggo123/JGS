@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -117,17 +117,17 @@ void UOptionsMenuRowSelector_C::Construct()
 }
 
 
-// Function OptionsMenuRowSelector.OptionsMenuRowSelector_C.OnSelectedButtonChanged_Event_0_1
+// Function OptionsMenuRowSelector.OptionsMenuRowSelector_C.OnSelectedButtonChanged_Event_1
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UCommonButton*           AssociatedButton               (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ButtonIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
-void UOptionsMenuRowSelector_C::OnSelectedButtonChanged_Event_0_1(class UCommonButton* AssociatedButton, int ButtonIndex)
+void UOptionsMenuRowSelector_C::OnSelectedButtonChanged_Event_1(class UCommonButton* AssociatedButton, int ButtonIndex)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuRowSelector.OptionsMenuRowSelector_C.OnSelectedButtonChanged_Event_0_1");
+	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuRowSelector.OptionsMenuRowSelector_C.OnSelectedButtonChanged_Event_1");
 
-	UOptionsMenuRowSelector_C_OnSelectedButtonChanged_Event_0_1_Params params;
+	UOptionsMenuRowSelector_C_OnSelectedButtonChanged_Event_1_Params params;
 	params.AssociatedButton = AssociatedButton;
 	params.ButtonIndex = ButtonIndex;
 
@@ -219,14 +219,14 @@ void UOptionsMenuRowSelector_C::ExecuteUbergraph_OptionsMenuRowSelector(int Entr
 // Function OptionsMenuRowSelector.OptionsMenuRowSelector_C.Selector Button Selected__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Tab_ID                         (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Tab_Id                         (Parm, ZeroConstructor, IsPlainOldData)
 
-void UOptionsMenuRowSelector_C::Selector_Button_Selected__DelegateSignature(int Tab_ID)
+void UOptionsMenuRowSelector_C::Selector_Button_Selected__DelegateSignature(int Tab_Id)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function OptionsMenuRowSelector.OptionsMenuRowSelector_C.Selector Button Selected__DelegateSignature");
 
 	UOptionsMenuRowSelector_C_Selector_Button_Selected__DelegateSignature_Params params;
-	params.Tab_ID = Tab_ID;
+	params.Tab_Id = Tab_Id;
 
 	auto flags = fn->FunctionFlags;
 

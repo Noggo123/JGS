@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Function AthenaMainStatTile.AthenaMainStatTile_C.SetStatValue
-// (Public, BlueprintCallable, BlueprintEvent)
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FText                   StatValueAsText                (Parm)
 
@@ -33,7 +33,7 @@ void UAthenaMainStatTile_C::SetStatValue(const struct FText& StatValueAsText)
 
 
 // Function AthenaMainStatTile.AthenaMainStatTile_C.SetTagAndDisplayName
-// (Public, BlueprintCallable, BlueprintEvent)
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FString                 Tag                            (Parm, ZeroConstructor)
 // struct FText                   DisplayName                    (Parm)
@@ -75,7 +75,7 @@ void UAthenaMainStatTile_C::PreConstruct(bool* IsDesignTime)
 
 
 // Function AthenaMainStatTile.AthenaMainStatTile_C.ExecuteUbergraph_AthenaMainStatTile
-// ()
+// (HasDefaults)
 // Parameters:
 // int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 

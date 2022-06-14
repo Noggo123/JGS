@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function CheckFrontEndRewardsAction.CheckFrontEndRewardsAction_C.HandleRewardsIgnored
+struct ACheckFrontEndRewardsAction_C_HandleRewardsIgnored_Params
+{
+	class UFrontEndRewards_Widget_C*                   RewardsWidget;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function CheckFrontEndRewardsAction.CheckFrontEndRewardsAction_C.CanShowFrontendRewards
 struct ACheckFrontEndRewardsAction_C_CanShowFrontendRewards_Params

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -61,6 +61,11 @@ struct UAthenaPickupManager_C_HandleWorldItemListChanged_Params
 
 // Function AthenaPickupManager.AthenaPickupManager_C.Destruct
 struct UAthenaPickupManager_C_Destruct_Params
+{
+};
+
+// Function AthenaPickupManager.AthenaPickupManager_C.HandleBuildingMaterialChanged
+struct UAthenaPickupManager_C_HandleBuildingMaterialChanged_Params
 {
 };
 

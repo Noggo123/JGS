@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -117,26 +117,6 @@ void UBP_FortExpeditionReturnsWidget_C::Refresh_In_Progress_Widgets(class UFortE
 }
 
 
-// Function BP_FortExpeditionReturnsWidget.BP_FortExpeditionReturnsWidget_C.SetData
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UFortExpeditionItem**    InItem                         (Parm, ZeroConstructor, IsPlainOldData)
-
-void UBP_FortExpeditionReturnsWidget_C::SetData(class UFortExpeditionItem** InItem)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FortExpeditionReturnsWidget.BP_FortExpeditionReturnsWidget_C.SetData");
-
-	UBP_FortExpeditionReturnsWidget_C_SetData_Params params;
-	params.InItem = InItem;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function BP_FortExpeditionReturnsWidget.BP_FortExpeditionReturnsWidget_C.OnExpeditionInProgressUpdated
 // (Event, Protected, BlueprintEvent)
 
@@ -162,6 +142,26 @@ void UBP_FortExpeditionReturnsWidget_C::Construct()
 	static auto fn = UObject::FindObject<UFunction>("Function BP_FortExpeditionReturnsWidget.BP_FortExpeditionReturnsWidget_C.Construct");
 
 	UBP_FortExpeditionReturnsWidget_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BP_FortExpeditionReturnsWidget.BP_FortExpeditionReturnsWidget_C.SetData
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortExpeditionItem**    InItem                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void UBP_FortExpeditionReturnsWidget_C::SetData(class UFortExpeditionItem** InItem)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BP_FortExpeditionReturnsWidget.BP_FortExpeditionReturnsWidget_C.SetData");
+
+	UBP_FortExpeditionReturnsWidget_C_SetData_Params params;
+	params.InItem = InItem;
 
 	auto flags = fn->FunctionFlags;
 

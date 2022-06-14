@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function AthenaHUD.AthenaHUD_C.SetupCameraMode
+struct UAthenaHUD_C_SetupCameraMode_Params
+{
+};
 
 // Function AthenaHUD.AthenaHUD_C.AddTeamMemberIndicator
 struct UAthenaHUD_C_AddTeamMemberIndicator_Params
@@ -248,6 +253,11 @@ struct UAthenaHUD_C_On_Team_Won_Params
 
 // Function AthenaHUD.AthenaHUD_C.TeamMembersChanged
 struct UAthenaHUD_C_TeamMembersChanged_Params
+{
+};
+
+// Function AthenaHUD.AthenaHUD_C.ShowGameOverLayer
+struct UAthenaHUD_C_ShowGameOverLayer_Params
 {
 };
 

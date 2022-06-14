@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -16,11 +16,6 @@ namespace SDK
 
 // Function QuestTrackerEntry.QuestTrackerEntry_C.Construct
 struct UQuestTrackerEntry_C_Construct_Params
-{
-};
-
-// Function QuestTrackerEntry.QuestTrackerEntry_C.OnSetup
-struct UQuestTrackerEntry_C_OnSetup_Params
 {
 };
 

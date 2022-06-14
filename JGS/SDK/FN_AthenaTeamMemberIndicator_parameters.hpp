@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.On Team Talking Changed
+struct UAthenaTeamMemberIndicator_C_On_Team_Talking_Changed_Params
+{
+	TArray<bool>                                       Team_Talking;                                             // (Parm, OutParm, ZeroConstructor, ReferenceParm)
+};
 
 // Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.On Team Reviving Changed
 struct UAthenaTeamMemberIndicator_C_On_Team_Reviving_Changed_Params

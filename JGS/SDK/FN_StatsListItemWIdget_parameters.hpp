@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function StatsListItemWIdget.StatsListItemWIdget_C.SetTextAndBorderHighlight
+struct UStatsListItemWIdget_C_SetTextAndBorderHighlight_Params
+{
+	bool                                               bHightlight;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function StatsListItemWIdget.StatsListItemWIdget_C.GetListItemTooltipWidget
 struct UStatsListItemWIdget_C_GetListItemTooltipWidget_Params
@@ -61,21 +67,6 @@ struct UStatsListItemWIdget_C_Update_Params
 {
 };
 
-// Function StatsListItemWIdget.StatsListItemWIdget_C.DisplayAttributeChanged
-struct UStatsListItemWIdget_C_DisplayAttributeChanged_Params
-{
-};
-
-// Function StatsListItemWIdget.StatsListItemWIdget_C.PreviewStarted
-struct UStatsListItemWIdget_C_PreviewStarted_Params
-{
-};
-
-// Function StatsListItemWIdget.StatsListItemWIdget_C.PreviewEnded
-struct UStatsListItemWIdget_C_PreviewEnded_Params
-{
-};
-
 // Function StatsListItemWIdget.StatsListItemWIdget_C.ValueChanged
 struct UStatsListItemWIdget_C_ValueChanged_Params
 {
@@ -84,6 +75,21 @@ struct UStatsListItemWIdget_C_ValueChanged_Params
 
 // Function StatsListItemWIdget.StatsListItemWIdget_C.Construct
 struct UStatsListItemWIdget_C_Construct_Params
+{
+};
+
+// Function StatsListItemWIdget.StatsListItemWIdget_C.PreviewEnded
+struct UStatsListItemWIdget_C_PreviewEnded_Params
+{
+};
+
+// Function StatsListItemWIdget.StatsListItemWIdget_C.PreviewStarted
+struct UStatsListItemWIdget_C_PreviewStarted_Params
+{
+};
+
+// Function StatsListItemWIdget.StatsListItemWIdget_C.DisplayAttributeChanged
+struct UStatsListItemWIdget_C_DisplayAttributeChanged_Params
 {
 };
 

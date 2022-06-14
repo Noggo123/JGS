@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -174,14 +174,14 @@ void UXpBoosts_C::Construct()
 // Function XpBoosts.XpBoosts_C.Give Boost Clicked
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        Player_To_Boost                (Parm)
+// struct FUniqueNetIdRepl        Player_to_Boost                (Parm)
 
-void UXpBoosts_C::Give_Boost_Clicked(const struct FUniqueNetIdRepl& Player_To_Boost)
+void UXpBoosts_C::Give_Boost_Clicked(const struct FUniqueNetIdRepl& Player_to_Boost)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function XpBoosts.XpBoosts_C.Give Boost Clicked");
 
 	UXpBoosts_C_Give_Boost_Clicked_Params params;
-	params.Player_To_Boost = Player_To_Boost;
+	params.Player_to_Boost = Player_to_Boost;
 
 	auto flags = fn->FunctionFlags;
 

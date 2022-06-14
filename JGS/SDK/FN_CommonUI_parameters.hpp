@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -18,308 +18,6 @@ namespace SDK
 struct UCommonUserWidget_SetConsumePointerInput_Params
 {
 	bool                                               bInConsumePointerInput;                                   // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function CommonUI.CommonTabListWidget.SetTabEnabled
-struct UCommonTabListWidget_SetTabEnabled_Params
-{
-	struct FName                                       TabNameID;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bEnable;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function CommonUI.CommonTabListWidget.SetListeningForInput
-struct UCommonTabListWidget_SetListeningForInput_Params
-{
-	bool                                               bShouldListen;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function CommonUI.CommonTabListWidget.SetLinkedSwitcher
-struct UCommonTabListWidget_SetLinkedSwitcher_Params
-{
-	class UCommonWidgetSwitcher*                       CommonSwitcher;                                           // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-};
-
-// Function CommonUI.CommonTabListWidget.SelectTabByID
-struct UCommonTabListWidget_SelectTabByID_Params
-{
-	struct FName                                       TabNameID;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bSuppressClickFeedback;                                   // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function CommonUI.CommonTabListWidget.RemoveTab
-struct UCommonTabListWidget_RemoveTab_Params
-{
-	struct FName                                       TabNameID;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function CommonUI.CommonTabListWidget.RemoveAllTabs
-struct UCommonTabListWidget_RemoveAllTabs_Params
-{
-};
-
-// Function CommonUI.CommonTabListWidget.RegisterTab
-struct UCommonTabListWidget_RegisterTab_Params
-{
-	struct FName                                       TabNameID;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	class UClass*                                      ButtonWidgetType;                                         // (Parm, ZeroConstructor, IsPlainOldData)
-	class UWidget*                                     ContentWidget;                                            // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// DelegateFunction CommonUI.CommonTabListWidget.OnTabSelected__DelegateSignature
-struct UCommonTabListWidget_OnTabSelected__DelegateSignature_Params
-{
-	struct FName                                       TabId;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// DelegateFunction CommonUI.CommonTabListWidget.OnTabButtonRemoved__DelegateSignature
-struct UCommonTabListWidget_OnTabButtonRemoved__DelegateSignature_Params
-{
-	struct FName                                       TabId;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonButton*                               TabButton;                                                // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-};
-
-// DelegateFunction CommonUI.CommonTabListWidget.OnTabButtonCreated__DelegateSignature
-struct UCommonTabListWidget_OnTabButtonCreated__DelegateSignature_Params
-{
-	struct FName                                       TabId;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonButton*                               TabButton;                                                // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-};
-
-// Function CommonUI.CommonTabListWidget.HandleTabRemoved
-struct UCommonTabListWidget_HandleTabRemoved_Params
-{
-	struct FName                                       TabNameID;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonButton*                               TabButton;                                                // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-};
-
-// Function CommonUI.CommonTabListWidget.HandleTabCreated
-struct UCommonTabListWidget_HandleTabCreated_Params
-{
-	struct FName                                       TabNameID;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonButton*                               TabButton;                                                // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-};
-
-// Function CommonUI.CommonTabListWidget.HandleTabButtonSelected
-struct UCommonTabListWidget_HandleTabButtonSelected_Params
-{
-	class UCommonButton*                               SelectedTabButton;                                        // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	int                                                ButtonIndex;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function CommonUI.CommonTabListWidget.HandlePreviousTabInputAction
-struct UCommonTabListWidget_HandlePreviousTabInputAction_Params
-{
-	bool                                               bPassThrough;                                             // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function CommonUI.CommonTabListWidget.HandlePreLinkedSwitcherChanged_BP
-struct UCommonTabListWidget_HandlePreLinkedSwitcherChanged_BP_Params
-{
-};
-
-// Function CommonUI.CommonTabListWidget.HandlePostLinkedSwitcherChanged_BP
-struct UCommonTabListWidget_HandlePostLinkedSwitcherChanged_BP_Params
-{
-};
-
-// Function CommonUI.CommonTabListWidget.HandleNextTabInputAction
-struct UCommonTabListWidget_HandleNextTabInputAction_Params
-{
-	bool                                               bPassThrough;                                             // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function CommonUI.CommonTabListWidget.GetTabCount
-struct UCommonTabListWidget_GetTabCount_Params
-{
-	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function CommonUI.CommonTabListWidget.GetTabButtonByID
-struct UCommonTabListWidget_GetTabButtonByID_Params
-{
-	struct FName                                       TabNameID;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonButton*                               ReturnValue;                                              // (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
-};
-
-// Function CommonUI.CommonTabListWidget.GetLinkedSwitcher
-struct UCommonTabListWidget_GetLinkedSwitcher_Params
-{
-	class UCommonWidgetSwitcher*                       ReturnValue;                                              // (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
-};
-
-// Function CommonUI.CommonTabListWidget.GetActiveTab
-struct UCommonTabListWidget_GetActiveTab_Params
-{
-	struct FName                                       ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function CommonUI.CommonTabListWidget.DisableTabWithReason
-struct UCommonTabListWidget_DisableTabWithReason_Params
-{
-	struct FName                                       TabNameID;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FText                                       Reason;                                                   // (ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// Function CommonUI.CommonActivatablePanel.SetInputActionHandlerWithProgress
-struct UCommonActivatablePanel_SetInputActionHandlerWithProgress_Params
-{
-	struct FDataTableRowHandle                         InputActionRow;                                           // (Parm)
-	struct FScriptDelegate                             CommitedEvent;                                            // (Parm, ZeroConstructor)
-	struct FScriptDelegate                             ProgressEvent;                                            // (Parm, ZeroConstructor)
-};
-
-// Function CommonUI.CommonActivatablePanel.SetInputActionHandler
-struct UCommonActivatablePanel_SetInputActionHandler_Params
-{
-	struct FDataTableRowHandle                         InputActionRow;                                           // (Parm)
-	struct FScriptDelegate                             CommitedEvent;                                            // (Parm, ZeroConstructor)
-};
-
-// Function CommonUI.CommonActivatablePanel.SetActionHandlerStateWithDisabledCommitEvent
-struct UCommonActivatablePanel_SetActionHandlerStateWithDisabledCommitEvent_Params
-{
-	class UDataTable*                                  DataTable;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FName                                       RowName;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	EInputActionState                                  State;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FScriptDelegate                             DisabledCommitEvent;                                      // (Parm, ZeroConstructor)
-};
-
-// Function CommonUI.CommonActivatablePanel.SetActionHandlerStateFromHandleWithDisabledCommitEvent
-struct UCommonActivatablePanel_SetActionHandlerStateFromHandleWithDisabledCommitEvent_Params
-{
-	struct FDataTableRowHandle                         InputActionRow;                                           // (Parm)
-	EInputActionState                                  State;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FScriptDelegate                             DisabledCommitEvent;                                      // (Parm, ZeroConstructor)
-};
-
-// Function CommonUI.CommonActivatablePanel.SetActionHandlerStateFromHandle
-struct UCommonActivatablePanel_SetActionHandlerStateFromHandle_Params
-{
-	struct FDataTableRowHandle                         InputActionRow;                                           // (Parm)
-	EInputActionState                                  State;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function CommonUI.CommonActivatablePanel.SetActionHandlerState
-struct UCommonActivatablePanel_SetActionHandlerState_Params
-{
-	class UDataTable*                                  DataTable;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FName                                       RowName;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	EInputActionState                                  State;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function CommonUI.CommonActivatablePanel.RemoveInputActionHandler
-struct UCommonActivatablePanel_RemoveInputActionHandler_Params
-{
-	struct FDataTableRowHandle                         InputActionRow;                                           // (Parm)
-};
-
-// Function CommonUI.CommonActivatablePanel.RemoveAllInputActionHandlers
-struct UCommonActivatablePanel_RemoveAllInputActionHandlers_Params
-{
-};
-
-// Function CommonUI.CommonActivatablePanel.PopPanel
-struct UCommonActivatablePanel_PopPanel_Params
-{
-};
-
-// Function CommonUI.CommonActivatablePanel.OnInputModeChanged
-struct UCommonActivatablePanel_OnInputModeChanged_Params
-{
-	bool                                               bUsingGamepad;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function CommonUI.CommonActivatablePanel.OnDeactivated
-struct UCommonActivatablePanel_OnDeactivated_Params
-{
-};
-
-// Function CommonUI.CommonActivatablePanel.OnBeginOutro
-struct UCommonActivatablePanel_OnBeginOutro_Params
-{
-};
-
-// Function CommonUI.CommonActivatablePanel.OnBeginIntro
-struct UCommonActivatablePanel_OnBeginIntro_Params
-{
-};
-
-// Function CommonUI.CommonActivatablePanel.OnActivated
-struct UCommonActivatablePanel_OnActivated_Params
-{
-};
-
-// Function CommonUI.CommonActivatablePanel.IsIntroed
-struct UCommonActivatablePanel_IsIntroed_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function CommonUI.CommonActivatablePanel.IsActivated
-struct UCommonActivatablePanel_IsActivated_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function CommonUI.CommonActivatablePanel.HasInputActionHandler
-struct UCommonActivatablePanel_HasInputActionHandler_Params
-{
-	struct FDataTableRowHandle                         InputActionRow;                                           // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function CommonUI.CommonActivatablePanel.GetInputActions
-struct UCommonActivatablePanel_GetInputActions_Params
-{
-	TArray<struct FCommonInputActionHandlerData>       InputActionDataRows;                                      // (Parm, OutParm, ZeroConstructor)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function CommonUI.CommonActivatablePanel.EndOutro
-struct UCommonActivatablePanel_EndOutro_Params
-{
-};
-
-// Function CommonUI.CommonActivatablePanel.EndIntro
-struct UCommonActivatablePanel_EndIntro_Params
-{
-};
-
-// Function CommonUI.CommonActivatablePanel.BeginOutro
-struct UCommonActivatablePanel_BeginOutro_Params
-{
-};
-
-// Function CommonUI.CommonActivatablePanel.BeginIntro
-struct UCommonActivatablePanel_BeginIntro_Params
-{
-};
-
-// Function CommonUI.CommonActivatablePanel.AddInputActionNoHandler
-struct UCommonActivatablePanel_AddInputActionNoHandler_Params
-{
-	class UDataTable*                                  DataTable;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FName                                       RowName;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function CommonUI.CommonActivatablePanel.AddInputActionHandlerWithProgress
-struct UCommonActivatablePanel_AddInputActionHandlerWithProgress_Params
-{
-	class UDataTable*                                  DataTable;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FName                                       RowName;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FScriptDelegate                             CommitedEvent;                                            // (Parm, ZeroConstructor)
-	struct FScriptDelegate                             ProgressEvent;                                            // (Parm, ZeroConstructor)
-};
-
-// Function CommonUI.CommonActivatablePanel.AddInputActionHandler
-struct UCommonActivatablePanel_AddInputActionHandler_Params
-{
-	class UDataTable*                                  DataTable;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FName                                       RowName;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FScriptDelegate                             CommitedEvent;                                            // (Parm, ZeroConstructor)
 };
 
 // Function CommonUI.CommonButton.SetTriggeredInputAction
@@ -582,6 +280,484 @@ struct UCommonButton_ClearSelection_Params
 {
 };
 
+// Function CommonUI.CommonActivatablePanel.SetInputActionHandlerWithProgress
+struct UCommonActivatablePanel_SetInputActionHandlerWithProgress_Params
+{
+	struct FDataTableRowHandle                         InputActionRow;                                           // (Parm)
+	struct FScriptDelegate                             CommitedEvent;                                            // (Parm, ZeroConstructor)
+	struct FScriptDelegate                             ProgressEvent;                                            // (Parm, ZeroConstructor)
+};
+
+// Function CommonUI.CommonActivatablePanel.SetInputActionHandler
+struct UCommonActivatablePanel_SetInputActionHandler_Params
+{
+	struct FDataTableRowHandle                         InputActionRow;                                           // (Parm)
+	struct FScriptDelegate                             CommitedEvent;                                            // (Parm, ZeroConstructor)
+};
+
+// Function CommonUI.CommonActivatablePanel.SetActionHandlerStateWithDisabledCommitEvent
+struct UCommonActivatablePanel_SetActionHandlerStateWithDisabledCommitEvent_Params
+{
+	class UDataTable*                                  DataTable;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       RowName;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	EInputActionState                                  State;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FScriptDelegate                             DisabledCommitEvent;                                      // (Parm, ZeroConstructor)
+};
+
+// Function CommonUI.CommonActivatablePanel.SetActionHandlerStateFromHandleWithDisabledCommitEvent
+struct UCommonActivatablePanel_SetActionHandlerStateFromHandleWithDisabledCommitEvent_Params
+{
+	struct FDataTableRowHandle                         InputActionRow;                                           // (Parm)
+	EInputActionState                                  State;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FScriptDelegate                             DisabledCommitEvent;                                      // (Parm, ZeroConstructor)
+};
+
+// Function CommonUI.CommonActivatablePanel.SetActionHandlerStateFromHandle
+struct UCommonActivatablePanel_SetActionHandlerStateFromHandle_Params
+{
+	struct FDataTableRowHandle                         InputActionRow;                                           // (Parm)
+	EInputActionState                                  State;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function CommonUI.CommonActivatablePanel.SetActionHandlerState
+struct UCommonActivatablePanel_SetActionHandlerState_Params
+{
+	class UDataTable*                                  DataTable;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       RowName;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	EInputActionState                                  State;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function CommonUI.CommonActivatablePanel.RemoveInputActionHandler
+struct UCommonActivatablePanel_RemoveInputActionHandler_Params
+{
+	struct FDataTableRowHandle                         InputActionRow;                                           // (Parm)
+};
+
+// Function CommonUI.CommonActivatablePanel.RemoveAllInputActionHandlers
+struct UCommonActivatablePanel_RemoveAllInputActionHandlers_Params
+{
+};
+
+// Function CommonUI.CommonActivatablePanel.PopPanel
+struct UCommonActivatablePanel_PopPanel_Params
+{
+};
+
+// Function CommonUI.CommonActivatablePanel.OnInputModeChanged
+struct UCommonActivatablePanel_OnInputModeChanged_Params
+{
+	bool                                               bUsingGamepad;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function CommonUI.CommonActivatablePanel.OnDeactivated
+struct UCommonActivatablePanel_OnDeactivated_Params
+{
+};
+
+// Function CommonUI.CommonActivatablePanel.OnBeginOutro
+struct UCommonActivatablePanel_OnBeginOutro_Params
+{
+};
+
+// Function CommonUI.CommonActivatablePanel.OnBeginIntro
+struct UCommonActivatablePanel_OnBeginIntro_Params
+{
+};
+
+// Function CommonUI.CommonActivatablePanel.OnActivated
+struct UCommonActivatablePanel_OnActivated_Params
+{
+};
+
+// Function CommonUI.CommonActivatablePanel.IsIntroed
+struct UCommonActivatablePanel_IsIntroed_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function CommonUI.CommonActivatablePanel.IsActivated
+struct UCommonActivatablePanel_IsActivated_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function CommonUI.CommonActivatablePanel.HasInputActionHandler
+struct UCommonActivatablePanel_HasInputActionHandler_Params
+{
+	struct FDataTableRowHandle                         InputActionRow;                                           // (Parm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function CommonUI.CommonActivatablePanel.GetInputActions
+struct UCommonActivatablePanel_GetInputActions_Params
+{
+	TArray<struct FCommonInputActionHandlerData>       InputActionDataRows;                                      // (Parm, OutParm, ZeroConstructor)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function CommonUI.CommonActivatablePanel.EndOutro
+struct UCommonActivatablePanel_EndOutro_Params
+{
+};
+
+// Function CommonUI.CommonActivatablePanel.EndIntro
+struct UCommonActivatablePanel_EndIntro_Params
+{
+};
+
+// Function CommonUI.CommonActivatablePanel.BeginOutro
+struct UCommonActivatablePanel_BeginOutro_Params
+{
+};
+
+// Function CommonUI.CommonActivatablePanel.BeginIntro
+struct UCommonActivatablePanel_BeginIntro_Params
+{
+};
+
+// Function CommonUI.CommonActivatablePanel.AddInputActionNoHandler
+struct UCommonActivatablePanel_AddInputActionNoHandler_Params
+{
+	class UDataTable*                                  DataTable;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       RowName;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function CommonUI.CommonActivatablePanel.AddInputActionHandlerWithProgress
+struct UCommonActivatablePanel_AddInputActionHandlerWithProgress_Params
+{
+	class UDataTable*                                  DataTable;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       RowName;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FScriptDelegate                             CommitedEvent;                                            // (Parm, ZeroConstructor)
+	struct FScriptDelegate                             ProgressEvent;                                            // (Parm, ZeroConstructor)
+};
+
+// Function CommonUI.CommonActivatablePanel.AddInputActionHandler
+struct UCommonActivatablePanel_AddInputActionHandler_Params
+{
+	class UDataTable*                                  DataTable;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       RowName;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FScriptDelegate                             CommitedEvent;                                            // (Parm, ZeroConstructor)
+};
+
+// Function CommonUI.CommonListView.SetSimulateDoubleClickOnSelectedItemClick
+struct UCommonListView_SetSimulateDoubleClickOnSelectedItemClick_Params
+{
+	bool                                               bInSimulateDoubleClick;                                   // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function CommonUI.CommonListView.SetSelectionMode
+struct UCommonListView_SetSelectionMode_Params
+{
+	TEnumAsByte<ESelectionMode>                        SelectionMode;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function CommonUI.CommonListView.SetSelectedItem
+struct UCommonListView_SetSelectedItem_Params
+{
+	class UObject*                                     Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bWaitIfPendingRefresh;                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function CommonUI.CommonListView.SetSelectedIndex
+struct UCommonListView_SetSelectedIndex_Params
+{
+	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function CommonUI.CommonListView.SetItemSelection
+struct UCommonListView_SetItemSelection_Params
+{
+	class UObject*                                     Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bSelected;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function CommonUI.CommonListView.SetItemHeight
+struct UCommonListView_SetItemHeight_Params
+{
+	float                                              NewHeight;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function CommonUI.CommonListView.SetDesiredItemPadding
+struct UCommonListView_SetDesiredItemPadding_Params
+{
+	struct FMargin                                     DesiredPadding;                                           // (ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// Function CommonUI.CommonListView.SetDataProvider
+struct UCommonListView_SetDataProvider_Params
+{
+	TArray<class UObject*>                             InDataProvider;                                           // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+};
+
+// Function CommonUI.CommonListView.ScrollIntoView
+struct UCommonListView_ScrollIntoView_Params
+{
+	class UObject*                                     Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               NavigateOnScrollIntoView;                                 // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function CommonUI.CommonListView.IsRefreshPending
+struct UCommonListView_IsRefreshPending_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function CommonUI.CommonListView.IsItemVisible
+struct UCommonListView_IsItemVisible_Params
+{
+	class UObject*                                     Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function CommonUI.CommonListView.GetSelectionModeBP
+struct UCommonListView_GetSelectionModeBP_Params
+{
+	TEnumAsByte<ESelectionMode>                        ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function CommonUI.CommonListView.GetSelectedItems
+struct UCommonListView_GetSelectedItems_Params
+{
+	TArray<class UObject*>                             Items;                                                    // (Parm, OutParm, ZeroConstructor)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function CommonUI.CommonListView.GetSelectedItem
+struct UCommonListView_GetSelectedItem_Params
+{
+	class UObject*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function CommonUI.CommonListView.GetNumItemsSelected
+struct UCommonListView_GetNumItemsSelected_Params
+{
+	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function CommonUI.CommonListView.GetNumItems
+struct UCommonListView_GetNumItems_Params
+{
+	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function CommonUI.CommonListView.GetItemAt
+struct UCommonListView_GetItemAt_Params
+{
+	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	class UObject*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function CommonUI.CommonListView.GetIndexForItem
+struct UCommonListView_GetIndexForItem_Params
+{
+	class UObject*                                     Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function CommonUI.CommonListView.DynamicHandleItemUnhoveredCommonButton
+struct UCommonListView_DynamicHandleItemUnhoveredCommonButton_Params
+{
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+};
+
+// Function CommonUI.CommonListView.DynamicHandleItemHoveredCommonButton
+struct UCommonListView_DynamicHandleItemHoveredCommonButton_Params
+{
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+};
+
+// Function CommonUI.CommonListView.DynamicHandleItemDoubleClickedCommonButton
+struct UCommonListView_DynamicHandleItemDoubleClickedCommonButton_Params
+{
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+};
+
+// Function CommonUI.CommonListView.DynamicHandleItemClickedUserWidget
+struct UCommonListView_DynamicHandleItemClickedUserWidget_Params
+{
+	class UUserWidget*                                 Widget;                                                   // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+};
+
+// Function CommonUI.CommonListView.DynamicHandleItemClickedCommonButton
+struct UCommonListView_DynamicHandleItemClickedCommonButton_Params
+{
+	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+};
+
+// Function CommonUI.CommonListView.ClearSelection
+struct UCommonListView_ClearSelection_Params
+{
+};
+
+// Function CommonUI.CommonListView.Clear
+struct UCommonListView_Clear_Params
+{
+};
+
+// Function CommonUI.CommonListView.AddItem
+struct UCommonListView_AddItem_Params
+{
+	class UObject*                                     Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function CommonUI.CommonTileView.SetItemWidth
+struct UCommonTileView_SetItemWidth_Params
+{
+	float                                              NewWidth;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function CommonUI.CommonTabListWidget.SetTabVisibility
+struct UCommonTabListWidget_SetTabVisibility_Params
+{
+	struct FName                                       TabNameID;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	ESlateVisibility                                   NewVisibility;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function CommonUI.CommonTabListWidget.SetTabEnabled
+struct UCommonTabListWidget_SetTabEnabled_Params
+{
+	struct FName                                       TabNameID;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bEnable;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function CommonUI.CommonTabListWidget.SetListeningForInput
+struct UCommonTabListWidget_SetListeningForInput_Params
+{
+	bool                                               bShouldListen;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function CommonUI.CommonTabListWidget.SetLinkedSwitcher
+struct UCommonTabListWidget_SetLinkedSwitcher_Params
+{
+	class UCommonWidgetSwitcher*                       CommonSwitcher;                                           // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+};
+
+// Function CommonUI.CommonTabListWidget.SelectTabByID
+struct UCommonTabListWidget_SelectTabByID_Params
+{
+	struct FName                                       TabNameID;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bSuppressClickFeedback;                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function CommonUI.CommonTabListWidget.RemoveTab
+struct UCommonTabListWidget_RemoveTab_Params
+{
+	struct FName                                       TabNameID;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function CommonUI.CommonTabListWidget.RemoveAllTabs
+struct UCommonTabListWidget_RemoveAllTabs_Params
+{
+};
+
+// Function CommonUI.CommonTabListWidget.RegisterTab
+struct UCommonTabListWidget_RegisterTab_Params
+{
+	struct FName                                       TabNameID;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      ButtonWidgetType;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+	class UWidget*                                     ContentWidget;                                            // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// DelegateFunction CommonUI.CommonTabListWidget.OnTabSelected__DelegateSignature
+struct UCommonTabListWidget_OnTabSelected__DelegateSignature_Params
+{
+	struct FName                                       TabId;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// DelegateFunction CommonUI.CommonTabListWidget.OnTabButtonRemoved__DelegateSignature
+struct UCommonTabListWidget_OnTabButtonRemoved__DelegateSignature_Params
+{
+	struct FName                                       TabId;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               TabButton;                                                // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+};
+
+// DelegateFunction CommonUI.CommonTabListWidget.OnTabButtonCreated__DelegateSignature
+struct UCommonTabListWidget_OnTabButtonCreated__DelegateSignature_Params
+{
+	struct FName                                       TabId;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               TabButton;                                                // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+};
+
+// Function CommonUI.CommonTabListWidget.HandleTabRemoved
+struct UCommonTabListWidget_HandleTabRemoved_Params
+{
+	struct FName                                       TabNameID;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               TabButton;                                                // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+};
+
+// Function CommonUI.CommonTabListWidget.HandleTabCreated
+struct UCommonTabListWidget_HandleTabCreated_Params
+{
+	struct FName                                       TabNameID;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               TabButton;                                                // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+};
+
+// Function CommonUI.CommonTabListWidget.HandleTabButtonSelected
+struct UCommonTabListWidget_HandleTabButtonSelected_Params
+{
+	class UCommonButton*                               SelectedTabButton;                                        // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	int                                                ButtonIndex;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function CommonUI.CommonTabListWidget.HandlePreviousTabInputAction
+struct UCommonTabListWidget_HandlePreviousTabInputAction_Params
+{
+	bool                                               bPassThrough;                                             // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function CommonUI.CommonTabListWidget.HandlePreLinkedSwitcherChanged_BP
+struct UCommonTabListWidget_HandlePreLinkedSwitcherChanged_BP_Params
+{
+};
+
+// Function CommonUI.CommonTabListWidget.HandlePostLinkedSwitcherChanged_BP
+struct UCommonTabListWidget_HandlePostLinkedSwitcherChanged_BP_Params
+{
+};
+
+// Function CommonUI.CommonTabListWidget.HandleNextTabInputAction
+struct UCommonTabListWidget_HandleNextTabInputAction_Params
+{
+	bool                                               bPassThrough;                                             // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function CommonUI.CommonTabListWidget.GetTabCount
+struct UCommonTabListWidget_GetTabCount_Params
+{
+	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function CommonUI.CommonTabListWidget.GetTabButtonByID
+struct UCommonTabListWidget_GetTabButtonByID_Params
+{
+	struct FName                                       TabNameID;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	class UCommonButton*                               ReturnValue;                                              // (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+};
+
+// Function CommonUI.CommonTabListWidget.GetLinkedSwitcher
+struct UCommonTabListWidget_GetLinkedSwitcher_Params
+{
+	class UCommonWidgetSwitcher*                       ReturnValue;                                              // (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+};
+
+// Function CommonUI.CommonTabListWidget.GetActiveTab
+struct UCommonTabListWidget_GetActiveTab_Params
+{
+	struct FName                                       ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function CommonUI.CommonTabListWidget.DisableTabWithReason
+struct UCommonTabListWidget_DisableTabWithReason_Params
+{
+	struct FName                                       TabNameID;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FText                                       Reason;                                                   // (ConstParm, Parm, OutParm, ReferenceParm)
+};
+
 // Function CommonUI.CommonWidgetGroupBase.RemoveWidget
 struct UCommonWidgetGroupBase_RemoveWidget_Params
 {
@@ -755,175 +931,6 @@ struct UCommonNumericTextBlock_GetTargetValue_Params
 	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function CommonUI.CommonListView.SetSimulateDoubleClickOnSelectedItemClick
-struct UCommonListView_SetSimulateDoubleClickOnSelectedItemClick_Params
-{
-	bool                                               bInSimulateDoubleClick;                                   // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function CommonUI.CommonListView.SetSelectionMode
-struct UCommonListView_SetSelectionMode_Params
-{
-	TEnumAsByte<ESelectionMode>                        SelectionMode;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function CommonUI.CommonListView.SetSelectedItem
-struct UCommonListView_SetSelectedItem_Params
-{
-	class UObject*                                     Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bWaitIfPendingRefresh;                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function CommonUI.CommonListView.SetSelectedIndex
-struct UCommonListView_SetSelectedIndex_Params
-{
-	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function CommonUI.CommonListView.SetItemSelection
-struct UCommonListView_SetItemSelection_Params
-{
-	class UObject*                                     Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               bSelected;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function CommonUI.CommonListView.SetItemHeight
-struct UCommonListView_SetItemHeight_Params
-{
-	float                                              NewHeight;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function CommonUI.CommonListView.SetDesiredItemPadding
-struct UCommonListView_SetDesiredItemPadding_Params
-{
-	struct FMargin                                     DesiredPadding;                                           // (ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// Function CommonUI.CommonListView.SetDataProvider
-struct UCommonListView_SetDataProvider_Params
-{
-	TArray<class UObject*>                             InDataProvider;                                           // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
-};
-
-// Function CommonUI.CommonListView.ScrollIntoView
-struct UCommonListView_ScrollIntoView_Params
-{
-	class UObject*                                     Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               NavigateOnScrollIntoView;                                 // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function CommonUI.CommonListView.IsRefreshPending
-struct UCommonListView_IsRefreshPending_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function CommonUI.CommonListView.IsItemVisible
-struct UCommonListView_IsItemVisible_Params
-{
-	class UObject*                                     Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function CommonUI.CommonListView.GetSelectionModeBP
-struct UCommonListView_GetSelectionModeBP_Params
-{
-	TEnumAsByte<ESelectionMode>                        ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function CommonUI.CommonListView.GetSelectedItems
-struct UCommonListView_GetSelectedItems_Params
-{
-	TArray<class UObject*>                             Items;                                                    // (Parm, OutParm, ZeroConstructor)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function CommonUI.CommonListView.GetSelectedItem
-struct UCommonListView_GetSelectedItem_Params
-{
-	class UObject*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function CommonUI.CommonListView.GetNumItemsSelected
-struct UCommonListView_GetNumItemsSelected_Params
-{
-	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function CommonUI.CommonListView.GetNumItems
-struct UCommonListView_GetNumItems_Params
-{
-	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function CommonUI.CommonListView.GetItemAt
-struct UCommonListView_GetItemAt_Params
-{
-	int                                                Index;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	class UObject*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function CommonUI.CommonListView.GetIndexForItem
-struct UCommonListView_GetIndexForItem_Params
-{
-	class UObject*                                     Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function CommonUI.CommonListView.DynamicHandleItemUnhoveredCommonButton
-struct UCommonListView_DynamicHandleItemUnhoveredCommonButton_Params
-{
-	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-};
-
-// Function CommonUI.CommonListView.DynamicHandleItemHoveredCommonButton
-struct UCommonListView_DynamicHandleItemHoveredCommonButton_Params
-{
-	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-};
-
-// Function CommonUI.CommonListView.DynamicHandleItemDoubleClickedCommonButton
-struct UCommonListView_DynamicHandleItemDoubleClickedCommonButton_Params
-{
-	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-};
-
-// Function CommonUI.CommonListView.DynamicHandleItemClickedUserWidget
-struct UCommonListView_DynamicHandleItemClickedUserWidget_Params
-{
-	class UUserWidget*                                 Widget;                                                   // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-};
-
-// Function CommonUI.CommonListView.DynamicHandleItemClickedCommonButton
-struct UCommonListView_DynamicHandleItemClickedCommonButton_Params
-{
-	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-};
-
-// Function CommonUI.CommonListView.ClearSelection
-struct UCommonListView_ClearSelection_Params
-{
-};
-
-// Function CommonUI.CommonListView.Clear
-struct UCommonListView_Clear_Params
-{
-};
-
-// Function CommonUI.CommonListView.AddItem
-struct UCommonListView_AddItem_Params
-{
-	class UObject*                                     Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function CommonUI.CommonTileView.SetItemWidth
-struct UCommonTileView_SetItemWidth_Params
-{
-	float                                              NewWidth;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function CommonUI.CommonActionWidget.SetInputAction
 struct UCommonActionWidget_SetInputAction_Params
 {
@@ -1063,6 +1070,11 @@ struct UCommonCustomNavigation_OnCustomNavigationEvent__DelegateSignature_Params
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
+// Function CommonUI.CommonInputManager.SuspendStartingOperationProcessing
+struct UCommonInputManager_SuspendStartingOperationProcessing_Params
+{
+};
+
 // Function CommonUI.CommonInputManager.StopListeningForExistingHeldAction
 struct UCommonInputManager_StopListeningForExistingHeldAction_Params
 {
@@ -1085,6 +1097,11 @@ struct UCommonInputManager_StartListeningForExistingHeldAction_Params
 struct UCommonInputManager_SetGlobalInputHandlerPriorityFilter_Params
 {
 	int                                                InFilterPriority;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function CommonUI.CommonInputManager.ResumeStartingOperationProcessing
+struct UCommonInputManager_ResumeStartingOperationProcessing_Params
+{
 };
 
 // Function CommonUI.CommonInputManager.PushActivatablePanel
@@ -1333,6 +1350,25 @@ struct UCommonTextStyle_GetFont_Params
 struct UCommonTextStyle_GetColor_Params
 {
 	struct FLinearColor                                OutColor;                                                 // (Parm, OutParm, IsPlainOldData)
+};
+
+// Function CommonUI.CommonDateTimeTextBlock.SetTimespanValue
+struct UCommonDateTimeTextBlock_SetTimespanValue_Params
+{
+	struct FTimespan                                   InTimespan;                                               // (ConstParm, Parm)
+};
+
+// Function CommonUI.CommonDateTimeTextBlock.SetDateTimeValue
+struct UCommonDateTimeTextBlock_SetDateTimeValue_Params
+{
+	struct FDateTime                                   InDateTime;                                               // (ConstParm, Parm)
+	bool                                               bShowAsCountdown;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function CommonUI.CommonDateTimeTextBlock.GetDateTime
+struct UCommonDateTimeTextBlock_GetDateTime_Params
+{
+	struct FDateTime                                   ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function CommonUI.CommonUIContext.SetGamepadInputType

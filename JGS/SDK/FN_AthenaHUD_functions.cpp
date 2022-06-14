@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,23 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function AthenaHUD.AthenaHUD_C.SetupCameraMode
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UAthenaHUD_C::SetupCameraMode()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.SetupCameraMode");
+
+	UAthenaHUD_C_SetupCameraMode_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function AthenaHUD.AthenaHUD_C.AddTeamMemberIndicator
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -790,6 +807,23 @@ void UAthenaHUD_C::TeamMembersChanged()
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.TeamMembersChanged");
 
 	UAthenaHUD_C_TeamMembersChanged_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaHUD.AthenaHUD_C.ShowGameOverLayer
+// (BlueprintCallable, BlueprintEvent)
+
+void UAthenaHUD_C::ShowGameOverLayer()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaHUD.AthenaHUD_C.ShowGameOverLayer");
+
+	UAthenaHUD_C_ShowGameOverLayer_Params params;
 
 	auto flags = fn->FunctionFlags;
 

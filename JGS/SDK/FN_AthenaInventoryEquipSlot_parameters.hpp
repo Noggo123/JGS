@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.TryAndShowDropTarget
+struct UAthenaInventoryEquipSlot_C_TryAndShowDropTarget_Params
+{
+};
 
 // Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.IsSelected
 struct UAthenaInventoryEquipSlot_C_IsSelected_Params
@@ -88,8 +93,8 @@ struct UAthenaInventoryEquipSlot_C_Tick_Params
 	float*                                             InDeltaTime;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnQuickbarContentsChanged_Event_0_1
-struct UAthenaInventoryEquipSlot_C_OnQuickbarContentsChanged_Event_0_1_Params
+// Function AthenaInventoryEquipSlot.AthenaInventoryEquipSlot_C.OnQuickbarContentsChanged_Event_1
+struct UAthenaInventoryEquipSlot_C_OnQuickbarContentsChanged_Event_1_Params
 {
 	EFortQuickBars                                     QuickbarIndex;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };

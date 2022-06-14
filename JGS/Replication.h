@@ -23,7 +23,7 @@ namespace Replication
 	inline static __int64 (*SetChannelActor)(UActorChannel*, AActor*);
 	inline static void (*CallPreReplication)(AActor*, UNetDriver*);
 	inline static void (*SendClientAdjustment)(APlayerController*);
-	inline static void (*ActorChannelClose)(UActorChannel*, __int64 /*Not used*/, __int64 /*Not used*/, __int64 /*Used once for getname so i will just use the actor*/);
+	inline static void (*ActorChannelClose)(UActorChannel*);
 	inline static bool (*IsNetRelevantFor)(AActor*, AActor*, AActor*, FVector&);
 
 	UActorChannel* ReplicateToClient(AActor* InActor, UNetConnection* InConnection)
@@ -172,7 +172,7 @@ namespace Replication
 			}
 		}
 
-		FreeInternal((void*)Actors.Data);
+		Containers::Free((void*)Actors.Data);
 		Actors.Data = 0;
 		Actors.Count = 0;
 		Actors.Max = 0;
@@ -253,7 +253,7 @@ namespace Replication
 						if (!IsNetRelevantFor(Actor, Viewer, Connection->ViewTarget, Loc))
 						{
 							if (Channel)
-								ActorChannelClose(Channel, 0, 0, 0);
+								ActorChannelClose(Channel);
 							continue;
 						}
 					}

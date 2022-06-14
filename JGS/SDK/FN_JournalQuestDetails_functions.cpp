@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -163,13 +163,15 @@ void UJournalQuestDetails_C::StopConversation()
 // Function JournalQuestDetails.JournalQuestDetails_C.AbandonQuest
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
+// class UFortQuestItem*          QuestToAbandon                 (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           questAbandoned_                (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UJournalQuestDetails_C::AbandonQuest(bool* questAbandoned_)
+void UJournalQuestDetails_C::AbandonQuest(class UFortQuestItem* QuestToAbandon, bool* questAbandoned_)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function JournalQuestDetails.JournalQuestDetails_C.AbandonQuest");
 
 	UJournalQuestDetails_C_AbandonQuest_Params params;
+	params.QuestToAbandon = QuestToAbandon;
 
 	auto flags = fn->FunctionFlags;
 

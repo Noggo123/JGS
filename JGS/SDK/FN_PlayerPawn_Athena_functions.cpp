@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,28 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function PlayerPawn_Athena.PlayerPawn_Athena_C.GetLocationInCircle_XY
+// (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// struct FVector                 LocationLocalSpace             (Parm, OutParm, IsPlainOldData)
+
+void APlayerPawn_Athena_C::GetLocationInCircle_XY(struct FVector* LocationLocalSpace)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Athena.PlayerPawn_Athena_C.GetLocationInCircle_XY");
+
+	APlayerPawn_Athena_C_GetLocationInCircle_XY_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (LocationLocalSpace != nullptr)
+		*LocationLocalSpace = params.LocationLocalSpace;
+}
+
 
 // Function PlayerPawn_Athena.PlayerPawn_Athena_C.InitAthenaFoleyAudio
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -46,19 +68,65 @@ void APlayerPawn_Athena_C::UserConstructionScript()
 }
 
 
-// Function PlayerPawn_Athena.PlayerPawn_Athena_C.GameplayCue.Abilities.Activation.Generic.HarvestBuff.Tier2
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TEnumAsByte<EGameplayCueEvent>* EventType                      (Parm, ZeroConstructor, IsPlainOldData)
-// struct FGameplayCueParameters* Parameters                     (Parm)
+// Function PlayerPawn_Athena.PlayerPawn_Athena_C.LightningFlashTL__FinishedFunc
+// (BlueprintEvent)
 
-void APlayerPawn_Athena_C::GameplayCue_Abilities_Activation_Generic_HarvestBuff_Tier2(TEnumAsByte<EGameplayCueEvent>* EventType, struct FGameplayCueParameters* Parameters)
+void APlayerPawn_Athena_C::LightningFlashTL__FinishedFunc()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Athena.PlayerPawn_Athena_C.GameplayCue.Abilities.Activation.Generic.HarvestBuff.Tier2");
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Athena.PlayerPawn_Athena_C.LightningFlashTL__FinishedFunc");
 
-	APlayerPawn_Athena_C_GameplayCue_Abilities_Activation_Generic_HarvestBuff_Tier2_Params params;
-	params.EventType = EventType;
-	params.Parameters = Parameters;
+	APlayerPawn_Athena_C_LightningFlashTL__FinishedFunc_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Athena.PlayerPawn_Athena_C.LightningFlashTL__UpdateFunc
+// (BlueprintEvent)
+
+void APlayerPawn_Athena_C::LightningFlashTL__UpdateFunc()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Athena.PlayerPawn_Athena_C.LightningFlashTL__UpdateFunc");
+
+	APlayerPawn_Athena_C_LightningFlashTL__UpdateFunc_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Athena.PlayerPawn_Athena_C.Storm Audio Fader__FinishedFunc
+// (BlueprintEvent)
+
+void APlayerPawn_Athena_C::Storm_Audio_Fader__FinishedFunc()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Athena.PlayerPawn_Athena_C.Storm Audio Fader__FinishedFunc");
+
+	APlayerPawn_Athena_C_Storm_Audio_Fader__FinishedFunc_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Athena.PlayerPawn_Athena_C.Storm Audio Fader__UpdateFunc
+// (BlueprintEvent)
+
+void APlayerPawn_Athena_C::Storm_Audio_Fader__UpdateFunc()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Athena.PlayerPawn_Athena_C.Storm Audio Fader__UpdateFunc");
+
+	APlayerPawn_Athena_C_Storm_Audio_Fader__UpdateFunc_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -79,6 +147,28 @@ void APlayerPawn_Athena_C::GameplayCue_Abilities_Activation_Generic_HarvestBuff_
 	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Athena.PlayerPawn_Athena_C.GameplayCue.Abilities.Activation.Generic.HarvestBuff.Tier1");
 
 	APlayerPawn_Athena_C_GameplayCue_Abilities_Activation_Generic_HarvestBuff_Tier1_Params params;
+	params.EventType = EventType;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Athena.PlayerPawn_Athena_C.GameplayCue.Abilities.Activation.Generic.HarvestBuff.Tier2
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TEnumAsByte<EGameplayCueEvent>* EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters* Parameters                     (Parm)
+
+void APlayerPawn_Athena_C::GameplayCue_Abilities_Activation_Generic_HarvestBuff_Tier2(TEnumAsByte<EGameplayCueEvent>* EventType, struct FGameplayCueParameters* Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Athena.PlayerPawn_Athena_C.GameplayCue.Abilities.Activation.Generic.HarvestBuff.Tier2");
+
+	APlayerPawn_Athena_C_GameplayCue_Abilities_Activation_Generic_HarvestBuff_Tier2_Params params;
 	params.EventType = EventType;
 	params.Parameters = Parameters;
 
@@ -346,6 +436,204 @@ void APlayerPawn_Athena_C::GameplayCue_Athena_Player_BeingRevivedFromDBNO(TEnumA
 	APlayerPawn_Athena_C_GameplayCue_Athena_Player_BeingRevivedFromDBNO_Params params;
 	params.EventType = EventType;
 	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Athena.PlayerPawn_Athena_C.AddStormFX
+// (BlueprintCallable, BlueprintEvent)
+
+void APlayerPawn_Athena_C::AddStormFX()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Athena.PlayerPawn_Athena_C.AddStormFX");
+
+	APlayerPawn_Athena_C_AddStormFX_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Athena.PlayerPawn_Athena_C.RemoveStormFX
+// (BlueprintCallable, BlueprintEvent)
+
+void APlayerPawn_Athena_C::RemoveStormFX()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Athena.PlayerPawn_Athena_C.RemoveStormFX");
+
+	APlayerPawn_Athena_C_RemoveStormFX_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Athena.PlayerPawn_Athena_C.StartRandomLightningFlashes
+// (BlueprintCallable, BlueprintEvent)
+
+void APlayerPawn_Athena_C::StartRandomLightningFlashes()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Athena.PlayerPawn_Athena_C.StartRandomLightningFlashes");
+
+	APlayerPawn_Athena_C_StartRandomLightningFlashes_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Athena.PlayerPawn_Athena_C.RandomLightningFlashesRepeat
+// (BlueprintCallable, BlueprintEvent)
+
+void APlayerPawn_Athena_C::RandomLightningFlashesRepeat()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Athena.PlayerPawn_Athena_C.RandomLightningFlashesRepeat");
+
+	APlayerPawn_Athena_C_RandomLightningFlashesRepeat_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Athena.PlayerPawn_Athena_C.ZapFX
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            ZapCount                       (Parm, ZeroConstructor, IsPlainOldData)
+
+void APlayerPawn_Athena_C::ZapFX(int ZapCount)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Athena.PlayerPawn_Athena_C.ZapFX");
+
+	APlayerPawn_Athena_C_ZapFX_Params params;
+	params.ZapCount = ZapCount;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Athena.PlayerPawn_Athena_C.GameplayCue.Abilities.Activation.DBNOResurrect
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TEnumAsByte<EGameplayCueEvent>* EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGameplayCueParameters* Parameters                     (Parm)
+
+void APlayerPawn_Athena_C::GameplayCue_Abilities_Activation_DBNOResurrect(TEnumAsByte<EGameplayCueEvent>* EventType, struct FGameplayCueParameters* Parameters)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Athena.PlayerPawn_Athena_C.GameplayCue.Abilities.Activation.DBNOResurrect");
+
+	APlayerPawn_Athena_C_GameplayCue_Abilities_Activation_DBNOResurrect_Params params;
+	params.EventType = EventType;
+	params.Parameters = Parameters;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Athena.PlayerPawn_Athena_C.UpdateInvulnerableVisuals
+// (BlueprintCallable, BlueprintEvent)
+
+void APlayerPawn_Athena_C::UpdateInvulnerableVisuals()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Athena.PlayerPawn_Athena_C.UpdateInvulnerableVisuals");
+
+	APlayerPawn_Athena_C_UpdateInvulnerableVisuals_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Athena.PlayerPawn_Athena_C.Add Storm Audio
+// (BlueprintCallable, BlueprintEvent)
+
+void APlayerPawn_Athena_C::Add_Storm_Audio()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Athena.PlayerPawn_Athena_C.Add Storm Audio");
+
+	APlayerPawn_Athena_C_Add_Storm_Audio_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Athena.PlayerPawn_Athena_C.Remove Storm Audio
+// (BlueprintCallable, BlueprintEvent)
+
+void APlayerPawn_Athena_C::Remove_Storm_Audio()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Athena.PlayerPawn_Athena_C.Remove Storm Audio");
+
+	APlayerPawn_Athena_C_Remove_Storm_Audio_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Athena.PlayerPawn_Athena_C.Play Lightning Flash Audio
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FVector                 Location                       (Parm, IsPlainOldData)
+
+void APlayerPawn_Athena_C::Play_Lightning_Flash_Audio(const struct FVector& Location)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Athena.PlayerPawn_Athena_C.Play Lightning Flash Audio");
+
+	APlayerPawn_Athena_C_Play_Lightning_Flash_Audio_Params params;
+	params.Location = Location;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Athena.PlayerPawn_Athena_C.Start Storm Audio Fader
+// (BlueprintCallable, BlueprintEvent)
+
+void APlayerPawn_Athena_C::Start_Storm_Audio_Fader()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Athena.PlayerPawn_Athena_C.Start Storm Audio Fader");
+
+	APlayerPawn_Athena_C_Start_Storm_Audio_Fader_Params params;
 
 	auto flags = fn->FunctionFlags;
 

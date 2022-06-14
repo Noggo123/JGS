@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -47,8 +47,8 @@ struct UItemWindow_C_AddInfo_Params
 	struct FText                                       Title;                                                    // (Parm)
 };
 
-// Function ItemWindow.ItemWindow_C.OnSelectedButtonChanged_Event_0_1
-struct UItemWindow_C_OnSelectedButtonChanged_Event_0_1_Params
+// Function ItemWindow.ItemWindow_C.OnSelectedButtonChanged_Event_1
+struct UItemWindow_C_OnSelectedButtonChanged_Event_1_Params
 {
 	class UCommonButton*                               AssociatedButton;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ButtonIndex;                                              // (Parm, ZeroConstructor, IsPlainOldData)

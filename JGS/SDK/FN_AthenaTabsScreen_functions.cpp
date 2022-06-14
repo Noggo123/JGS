@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -138,6 +138,28 @@ void UAthenaTabsScreen_C::OnDeactivated()
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaTabsScreen.AthenaTabsScreen_C.OnDeactivated");
 
 	UAthenaTabsScreen_C_OnDeactivated_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaTabsScreen.AthenaTabsScreen_C.HandleTabContentCreated
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
+// class UCommonUserWidget*       TabWidget                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaTabsScreen_C::HandleTabContentCreated(const struct FName& TabId, class UCommonUserWidget* TabWidget)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaTabsScreen.AthenaTabsScreen_C.HandleTabContentCreated");
+
+	UAthenaTabsScreen_C_HandleTabContentCreated_Params params;
+	params.TabId = TabId;
+	params.TabWidget = TabWidget;
 
 	auto flags = fn->FunctionFlags;
 

@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -959,14 +959,14 @@ void UBP_LocalPlayerBannerEditor_C::BndEvt__CommonTileView_0_K2Node_ComponentBou
 }
 
 
-// Function BP_LocalPlayerBannerEditor.BP_LocalPlayerBannerEditor_C.BannerTileBangUpdated_Event_0_1
+// Function BP_LocalPlayerBannerEditor.BP_LocalPlayerBannerEditor_C.BannerTileBangUpdated_Event_1
 // (BlueprintCallable, BlueprintEvent)
 
-void UBP_LocalPlayerBannerEditor_C::BannerTileBangUpdated_Event_0_1()
+void UBP_LocalPlayerBannerEditor_C::BannerTileBangUpdated_Event_1()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_LocalPlayerBannerEditor.BP_LocalPlayerBannerEditor_C.BannerTileBangUpdated_Event_0_1");
+	static auto fn = UObject::FindObject<UFunction>("Function BP_LocalPlayerBannerEditor.BP_LocalPlayerBannerEditor_C.BannerTileBangUpdated_Event_1");
 
-	UBP_LocalPlayerBannerEditor_C_BannerTileBangUpdated_Event_0_1_Params params;
+	UBP_LocalPlayerBannerEditor_C_BannerTileBangUpdated_Event_1_Params params;
 
 	auto flags = fn->FunctionFlags;
 

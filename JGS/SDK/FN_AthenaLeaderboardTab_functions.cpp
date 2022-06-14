@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -280,16 +280,16 @@ void UAthenaLeaderboardTab_C::OnUpdateTabButtonText(class UCommonButton** Button
 // Parameters:
 // bool*                          bWasSuccessful                 (Parm, ZeroConstructor, IsPlainOldData)
 // class UFortLeaderboardRowProxyInstance** LocalUserRow                   (Parm, ZeroConstructor, IsPlainOldData)
-// struct FText*                  ErrorStr                       (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FText*                  QueryErrorStr                  (ConstParm, Parm, OutParm, ReferenceParm)
 
-void UAthenaLeaderboardTab_C::OnUpdateLeaderboardListUI(bool* bWasSuccessful, class UFortLeaderboardRowProxyInstance** LocalUserRow, struct FText* ErrorStr)
+void UAthenaLeaderboardTab_C::OnUpdateLeaderboardListUI(bool* bWasSuccessful, class UFortLeaderboardRowProxyInstance** LocalUserRow, struct FText* QueryErrorStr)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaLeaderboardTab.AthenaLeaderboardTab_C.OnUpdateLeaderboardListUI");
 
 	UAthenaLeaderboardTab_C_OnUpdateLeaderboardListUI_Params params;
 	params.bWasSuccessful = bWasSuccessful;
 	params.LocalUserRow = LocalUserRow;
-	params.ErrorStr = ErrorStr;
+	params.QueryErrorStr = QueryErrorStr;
 
 	auto flags = fn->FunctionFlags;
 

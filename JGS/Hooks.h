@@ -34,17 +34,6 @@ namespace Hooks
 		auto ObjName = pObject->GetName();
 		auto FuncName = pFunction->GetName();
 
-		if (FuncName.contains("Tick"))
-		{
-			if (Beacons::Beacon)
-			{
-				if (((AFortGameStateAthena*)Globals::World->GameState)->GamePhase == EAthenaGamePhase::Warmup)
-					Beacons::Beacon->BeaconState = 1;
-				else
-					Beacons::Beacon->BeaconState = 0;
-			}
-		}
-
 		if (FuncName.find("AircraftExitedDropZone") != std::string::npos)
 		{
 			for (int i = 0; i < Beacons::Beacon->NetDriver->ClientConnections.Num(); i++)
@@ -296,7 +285,7 @@ namespace Hooks
 							NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = ItemDefintion;
 							NewFortPickup->OnRep_PrimaryPickupItemEntry();
 
-							NewFortPickup->TossPickup(PC->Pawn->K2_GetActorLocation(), nullptr, 1);
+							NewFortPickup->TossPickup(PC->Pawn->K2_GetActorLocation(), nullptr, 1, true);
 
 							FindInventory(PC)->UpdateInventory();
 						}
@@ -395,9 +384,9 @@ namespace Hooks
 				NewFortPickup1->OnRep_PrimaryPickupItemEntry();
 				NewFortPickup2->OnRep_PrimaryPickupItemEntry();
 
-				NewFortPickup->TossPickup(Location, nullptr, 1);
-				NewFortPickup1->TossPickup(Location, nullptr, 1);
-				NewFortPickup2->TossPickup(Location, nullptr, 1);
+				NewFortPickup->TossPickup(Location, nullptr, 1, true);
+				NewFortPickup1->TossPickup(Location, nullptr, 1, true);
+				NewFortPickup2->TossPickup(Location, nullptr, 1, true);
 
 				ReceivingActor->K2_DestroyActor();
 			}
@@ -457,7 +446,7 @@ namespace Hooks
 				}
 
 				NewFortPickup->OnRep_PrimaryPickupItemEntry();
-				NewFortPickup->TossPickup(Location, nullptr, 1);
+				NewFortPickup->TossPickup(Location, nullptr, 1, true);
 
 				if (NewFortPickup && NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)
 				{
@@ -466,7 +455,7 @@ namespace Hooks
 					AmmoPickup->PrimaryPickupItemEntry.Count = AmmoDefintion->DropCount * 1.25;
 					AmmoPickup->PrimaryPickupItemEntry.ItemDefinition = AmmoDefintion;
 					AmmoPickup->OnRep_PrimaryPickupItemEntry();
-					AmmoPickup->TossPickup(Location, nullptr, 999);
+					AmmoPickup->TossPickup(Location, nullptr, 999, true);
 				}
 
 				auto NewFortPickup1 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
@@ -474,7 +463,7 @@ namespace Hooks
 				NewFortPickup1->PrimaryPickupItemEntry.Count = 1;
 				NewFortPickup1->PrimaryPickupItemEntry.ItemDefinition = Globals::Consumables[rand() % Globals::Consumables.size()];
 				NewFortPickup1->OnRep_PrimaryPickupItemEntry();
-				NewFortPickup1->TossPickup(Location, nullptr, 1);
+				NewFortPickup1->TossPickup(Location, nullptr, 1, true);
 
 				ReceivingActor->K2_DestroyActor();
 			}
@@ -491,34 +480,34 @@ namespace Hooks
 				auto ItemDefinition = Globals::SupplyDrop[rand() % Globals::SupplyDrop.size()];
 				NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = ItemDefinition;
 				NewFortPickup->OnRep_PrimaryPickupItemEntry();
-				NewFortPickup->TossPickup(Location, nullptr, 1);
+				NewFortPickup->TossPickup(Location, nullptr, 1, true);
 
 				auto AmmoDefintion = ((UFortWorldItemDefinition*)NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)->GetAmmoWorldItemDefinition_BP();
 				auto AmmoPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), NewFortPickup->K2_GetActorLocation(), {}));
 				AmmoPickup->PrimaryPickupItemEntry.Count = 30;
 				AmmoPickup->OnRep_PrimaryPickupItemEntry();
-				AmmoPickup->TossPickup(Location, nullptr, 999);
+				AmmoPickup->TossPickup(Location, nullptr, 999, true);
 
 				auto NewFortPickup1 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
 
 				NewFortPickup1->PrimaryPickupItemEntry.Count = 1;
 				NewFortPickup1->PrimaryPickupItemEntry.ItemDefinition = Globals::Consumables[rand() % Globals::Consumables.size()];
 				NewFortPickup1->OnRep_PrimaryPickupItemEntry();
-				NewFortPickup1->TossPickup(Location, nullptr, 1);
+				NewFortPickup1->TossPickup(Location, nullptr, 1, true);
 
 				auto NewFortPickup2 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
 
 				NewFortPickup2->PrimaryPickupItemEntry.Count = 1;
 				NewFortPickup2->PrimaryPickupItemEntry.ItemDefinition = Globals::Consumables[rand() % Globals::Consumables.size()];
 				NewFortPickup2->OnRep_PrimaryPickupItemEntry();
-				NewFortPickup2->TossPickup(Location, nullptr, 1);
+				NewFortPickup2->TossPickup(Location, nullptr, 1, true);
 
 				auto NewFortPickup3 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
 
 				NewFortPickup3->PrimaryPickupItemEntry.Count = 1;
 				NewFortPickup3->PrimaryPickupItemEntry.ItemDefinition = Globals::Traps[rand() % Globals::Traps.size()];
 				NewFortPickup3->OnRep_PrimaryPickupItemEntry();
-				NewFortPickup3->TossPickup(Location, nullptr, 1);
+				NewFortPickup3->TossPickup(Location, nullptr, 1, true);
 			}
 		}
 

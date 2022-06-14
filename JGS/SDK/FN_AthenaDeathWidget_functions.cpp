@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -247,26 +247,6 @@ void UAthenaDeathWidget_C::TeamMemberChanged()
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaDeathWidget.AthenaDeathWidget_C.TeamMemberChanged");
 
 	UAthenaDeathWidget_C_TeamMemberChanged_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaDeathWidget.AthenaDeathWidget_C.PreConstruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// bool*                          IsDesignTime                   (Parm, ZeroConstructor, IsPlainOldData)
-
-void UAthenaDeathWidget_C::PreConstruct(bool* IsDesignTime)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaDeathWidget.AthenaDeathWidget_C.PreConstruct");
-
-	UAthenaDeathWidget_C_PreConstruct_Params params;
-	params.IsDesignTime = IsDesignTime;
 
 	auto flags = fn->FunctionFlags;
 

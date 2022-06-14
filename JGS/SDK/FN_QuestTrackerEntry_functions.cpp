@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -29,25 +29,8 @@ void UQuestTrackerEntry_C::Construct()
 }
 
 
-// Function QuestTrackerEntry.QuestTrackerEntry_C.OnSetup
-// (Event, Protected, BlueprintEvent)
-
-void UQuestTrackerEntry_C::OnSetup()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuestTrackerEntry.QuestTrackerEntry_C.OnSetup");
-
-	UQuestTrackerEntry_C_OnSetup_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function QuestTrackerEntry.QuestTrackerEntry_C.ExecuteUbergraph_QuestTrackerEntry
-// (HasDefaults)
+// ()
 // Parameters:
 // int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
 

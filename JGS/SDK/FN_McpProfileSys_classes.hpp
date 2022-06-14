@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -80,7 +80,7 @@ public:
 
 
 // Class McpProfileSys.McpProfileGroup
-// 0x0178 (0x01A0 - 0x0028)
+// 0x0188 (0x01B0 - 0x0028)
 class UMcpProfileGroup : public UObject
 {
 public:
@@ -110,6 +110,8 @@ public:
 	unsigned char                                      UnknownData07[0x3];                                       // 0x0185(0x0003) MISSED OFFSET
 	struct FString                                     ApplyStashEndPoint;                                       // 0x0188(0x0010) (ZeroConstructor, Config)
 	unsigned char                                      UnknownData08[0x8];                                       // 0x0198(0x0008) MISSED OFFSET
+	bool                                               bSendProfileCommandRevisions;                             // 0x01A0(0x0001) (ZeroConstructor, Config, IsPlainOldData)
+	unsigned char                                      UnknownData09[0xF];                                       // 0x01A1(0x000F) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,25 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function MissionBlueprintFunctionLibrary.MissionBlueprintFunctionLibrary_C.HideParticleComponentsAttachedToMesh
+struct UMissionBlueprintFunctionLibrary_C_HideParticleComponentsAttachedToMesh_Params
+{
+	class UStaticMeshComponent*                        MeshComponent;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+	class UObject*                                     __WorldContext;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               SuccessfullyDeactivatedParticle;                          // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function MissionBlueprintFunctionLibrary.MissionBlueprintFunctionLibrary_C.HasPlayerCompletedQuestObjective
+struct UMissionBlueprintFunctionLibrary_C_HasPlayerCompletedQuestObjective_Params
+{
+	class AFortPlayerController*                       PlayerController;                                         // (Parm, ZeroConstructor, IsPlainOldData)
+	class UFortQuestItemDefinition*                    QuestReference;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       QuestBackendObjectiveName;                                // (Parm, ZeroConstructor, IsPlainOldData)
+	class UObject*                                     __WorldContext;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	class AFortPlayerController*                       PlayerControllerOut;                                      // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	bool                                               CompletedQuestObjective;                                  // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function MissionBlueprintFunctionLibrary.MissionBlueprintFunctionLibrary_C.GetContributingControllersNearActor
 struct UMissionBlueprintFunctionLibrary_C_GetContributingControllersNearActor_Params

@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -121,17 +121,17 @@ void UItemWindow_C::AddInfo(const struct FText& Title, TArray<class UFortItemDef
 }
 
 
-// Function ItemWindow.ItemWindow_C.OnSelectedButtonChanged_Event_0_1
+// Function ItemWindow.ItemWindow_C.OnSelectedButtonChanged_Event_1
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UCommonButton*           AssociatedButton               (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ButtonIndex                    (Parm, ZeroConstructor, IsPlainOldData)
 
-void UItemWindow_C::OnSelectedButtonChanged_Event_0_1(class UCommonButton* AssociatedButton, int ButtonIndex)
+void UItemWindow_C::OnSelectedButtonChanged_Event_1(class UCommonButton* AssociatedButton, int ButtonIndex)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ItemWindow.ItemWindow_C.OnSelectedButtonChanged_Event_0_1");
+	static auto fn = UObject::FindObject<UFunction>("Function ItemWindow.ItemWindow_C.OnSelectedButtonChanged_Event_1");
 
-	UItemWindow_C_OnSelectedButtonChanged_Event_0_1_Params params;
+	UItemWindow_C_OnSelectedButtonChanged_Event_1_Params params;
 	params.AssociatedButton = AssociatedButton;
 	params.ButtonIndex = ButtonIndex;
 

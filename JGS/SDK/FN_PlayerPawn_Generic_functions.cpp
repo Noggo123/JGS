@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -31,6 +31,26 @@ void APlayerPawn_Generic_C::Melee_Effect_Color(struct FVector* Melee_Color_Set)
 
 	if (Melee_Color_Set != nullptr)
 		*Melee_Color_Set = params.Melee_Color_Set;
+}
+
+
+// Function PlayerPawn_Generic.PlayerPawn_Generic_C.TriggerGameplayWindEmitter
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TEnumAsByte<EPlayerWindParticleEmitters> Player_Wind_Particle_Emitter_To_Fire (Parm, ZeroConstructor, IsPlainOldData)
+
+void APlayerPawn_Generic_C::TriggerGameplayWindEmitter(TEnumAsByte<EPlayerWindParticleEmitters> Player_Wind_Particle_Emitter_To_Fire)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.TriggerGameplayWindEmitter");
+
+	APlayerPawn_Generic_C_TriggerGameplayWindEmitter_Params params;
+	params.Player_Wind_Particle_Emitter_To_Fire = Player_Wind_Particle_Emitter_To_Fire;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
 }
 
 
@@ -1242,6 +1262,46 @@ void APlayerPawn_Generic_C::SpawnDBNOParticles(const struct FVector& ParticleLoc
 }
 
 
+// Function PlayerPawn_Generic.PlayerPawn_Generic_C.PlayGameplayWindEffect
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TEnumAsByte<EPlayerWindParticleEmitters> Player_Wind_Particle_Emitter_To_Fire (Parm, ZeroConstructor, IsPlainOldData)
+
+void APlayerPawn_Generic_C::PlayGameplayWindEffect(TEnumAsByte<EPlayerWindParticleEmitters> Player_Wind_Particle_Emitter_To_Fire)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.PlayGameplayWindEffect");
+
+	APlayerPawn_Generic_C_PlayGameplayWindEffect_Params params;
+	params.Player_Wind_Particle_Emitter_To_Fire = Player_Wind_Particle_Emitter_To_Fire;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Generic.PlayerPawn_Generic_C.Player Creates a Splash
+// (HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FTransform              NewTransform                   (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+
+void APlayerPawn_Generic_C::Player_Creates_a_Splash(const struct FTransform& NewTransform)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.Player Creates a Splash");
+
+	APlayerPawn_Generic_C_Player_Creates_a_Splash_Params params;
+	params.NewTransform = NewTransform;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.OnLand_CE
 // (BlueprintCallable, BlueprintEvent)
 
@@ -1408,6 +1468,69 @@ void APlayerPawn_Generic_C::GameplayCue_Shield_Reapplied(TEnumAsByte<EGameplayCu
 }
 
 
+// Function PlayerPawn_Generic.PlayerPawn_Generic_C.AnimTrailsSetup
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UParticleSystem**        ParticleSystemReference        (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName*                  FirstSocketName                (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName*                  SecondSocketName               (Parm, ZeroConstructor, IsPlainOldData)
+// float*                         Width                          (Parm, ZeroConstructor, IsPlainOldData)
+
+void APlayerPawn_Generic_C::AnimTrailsSetup(class UParticleSystem** ParticleSystemReference, struct FName* FirstSocketName, struct FName* SecondSocketName, float* Width)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.AnimTrailsSetup");
+
+	APlayerPawn_Generic_C_AnimTrailsSetup_Params params;
+	params.ParticleSystemReference = ParticleSystemReference;
+	params.FirstSocketName = FirstSocketName;
+	params.SecondSocketName = SecondSocketName;
+	params.Width = Width;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Generic.PlayerPawn_Generic_C.AnimTrailsDisable
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void APlayerPawn_Generic_C::AnimTrailsDisable()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.AnimTrailsDisable");
+
+	APlayerPawn_Generic_C_AnimTrailsDisable_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerPawn_Generic.PlayerPawn_Generic_C.AnimTrailsNotify
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool*                          bActive                        (Parm, ZeroConstructor, IsPlainOldData)
+
+void APlayerPawn_Generic_C::AnimTrailsNotify(bool* bActive)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.AnimTrailsNotify");
+
+	APlayerPawn_Generic_C_AnimTrailsNotify_Params params;
+	params.bActive = bActive;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function PlayerPawn_Generic.PlayerPawn_Generic_C.MultiEndAnimTrails
 // (Net, NetMulticast, BlueprintCallable, BlueprintEvent)
 
@@ -1416,69 +1539,6 @@ void APlayerPawn_Generic_C::MultiEndAnimTrails()
 	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.MultiEndAnimTrails");
 
 	APlayerPawn_Generic_C_MultiEndAnimTrails_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerPawn_Generic.PlayerPawn_Generic_C.DisableAnimTrails
-// (BlueprintCallable, BlueprintEvent)
-
-void APlayerPawn_Generic_C::DisableAnimTrails()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.DisableAnimTrails");
-
-	APlayerPawn_Generic_C_DisableAnimTrails_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerPawn_Generic.PlayerPawn_Generic_C.AnimTrailsCE
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           Active                         (Parm, ZeroConstructor, IsPlainOldData)
-
-void APlayerPawn_Generic_C::AnimTrailsCE(bool Active)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.AnimTrailsCE");
-
-	APlayerPawn_Generic_C_AnimTrailsCE_Params params;
-	params.Active = Active;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerPawn_Generic.PlayerPawn_Generic_C.SetupAnimTrails
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UParticleSystem*         Particle_System_Reference      (Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   First_Socket_Name              (Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   Second_Socket_Name             (Parm, ZeroConstructor, IsPlainOldData)
-// float                          Width                          (Parm, ZeroConstructor, IsPlainOldData)
-
-void APlayerPawn_Generic_C::SetupAnimTrails(class UParticleSystem* Particle_System_Reference, const struct FName& First_Socket_Name, const struct FName& Second_Socket_Name, float Width)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerPawn_Generic.PlayerPawn_Generic_C.SetupAnimTrails");
-
-	APlayerPawn_Generic_C_SetupAnimTrails_Params params;
-	params.Particle_System_Reference = Particle_System_Reference;
-	params.First_Socket_Name = First_Socket_Name;
-	params.Second_Socket_Name = Second_Socket_Name;
-	params.Width = Width;
 
 	auto flags = fn->FunctionFlags;
 

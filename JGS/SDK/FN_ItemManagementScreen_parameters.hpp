@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,75 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function ItemManagementScreen.ItemManagementScreen_C.HandleMulchItemsCallback
+struct UItemManagementScreen_C_HandleMulchItemsCallback_Params
+{
+	int                                                Quantity;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementScreen.ItemManagementScreen_C.GetMaxTransferCount
+struct UItemManagementScreen_C_GetMaxTransferCount_Params
+{
+	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Count;                                                    // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementScreen.ItemManagementScreen_C.CompleteItemDrop
+struct UItemManagementScreen_C_CompleteItemDrop_Params
+{
+	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Quantity;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementScreen.ItemManagementScreen_C.HandleDropItemsCallback
+struct UItemManagementScreen_C_HandleDropItemsCallback_Params
+{
+	int                                                Quantity;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementScreen.ItemManagementScreen_C.HandleDrop
+struct UItemManagementScreen_C_HandleDrop_Params
+{
+	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementScreen.ItemManagementScreen_C.CompleteItemTransfer
+struct UItemManagementScreen_C_CompleteItemTransfer_Params
+{
+	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Quantity;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementScreen.ItemManagementScreen_C.HandleTransferItemsCallback
+struct UItemManagementScreen_C_HandleTransferItemsCallback_Params
+{
+	int                                                Quantity;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementScreen.ItemManagementScreen_C.DestroyQuantitySelector
+struct UItemManagementScreen_C_DestroyQuantitySelector_Params
+{
+};
+
+// Function ItemManagementScreen.ItemManagementScreen_C.CreateQuantitySelector
+struct UItemManagementScreen_C_CreateQuantitySelector_Params
+{
+	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FText                                       Title;                                                    // (Parm)
+	struct FText                                       ConfirmText;                                              // (Parm)
+	int                                                InitialQuantity;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                MaxQuantity;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementScreen.ItemManagementScreen_C.HandleTransfer
+struct UItemManagementScreen_C_HandleTransfer_Params
+{
+	class UFortItem*                                   ItemToTransfer;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function ItemManagementScreen.ItemManagementScreen_C.ShowCraftError
 struct UItemManagementScreen_C_ShowCraftError_Params
@@ -29,8 +98,7 @@ struct UItemManagementScreen_C_CraftAndSlot_Params
 // Function ItemManagementScreen.ItemManagementScreen_C.HandleEquip
 struct UItemManagementScreen_C_HandleEquip_Params
 {
-	class UFortItem*                                   ItemToEquip;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               PassThrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemManagementScreen.ItemManagementScreen_C.SizeInventoryPanel
@@ -57,7 +125,6 @@ struct UItemManagementScreen_C_GetDescriptionText_Params
 struct UItemManagementScreen_C_HandleInspect_Params
 {
 	class UFortItem*                                   ItemToInspect;                                            // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               PassThrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemManagementScreen.ItemManagementScreen_C.HandleClose
@@ -94,8 +161,13 @@ struct UItemManagementScreen_C_HandleCraftItemBP_Params
 	class UFortSchematicItem**                         SchematicItem;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function ItemManagementScreen.ItemManagementScreen_C.CraftabilityRefresh
-struct UItemManagementScreen_C_CraftabilityRefresh_Params
+// Function ItemManagementScreen.ItemManagementScreen_C.DefaultActionRefresh
+struct UItemManagementScreen_C_DefaultActionRefresh_Params
+{
+};
+
+// Function ItemManagementScreen.ItemManagementScreen_C.OnActivated
+struct UItemManagementScreen_C_OnActivated_Params
 {
 };
 
@@ -105,13 +177,26 @@ struct UItemManagementScreen_C_HandleConsumeItemBP_Params
 	class UFortConsumableAccountItem**                 ConsumableItem;                                           // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function ItemManagementScreen.ItemManagementScreen_C.OnActivated
-struct UItemManagementScreen_C_OnActivated_Params
-{
-};
-
 // Function ItemManagementScreen.ItemManagementScreen_C.HandleInspectItemBP
 struct UItemManagementScreen_C_HandleInspectItemBP_Params
+{
+	class UFortItem**                                  Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementScreen.ItemManagementScreen_C.HandleTransferItemBP
+struct UItemManagementScreen_C_HandleTransferItemBP_Params
+{
+	class UFortItem**                                  Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementScreen.ItemManagementScreen_C.HandleDropItemBP
+struct UItemManagementScreen_C_HandleDropItemBP_Params
+{
+	class UFortItem**                                  Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementScreen.ItemManagementScreen_C.HandleMulchQuantitySelection
+struct UItemManagementScreen_C_HandleMulchQuantitySelection_Params
 {
 	class UFortItem**                                  Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };

@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -189,16 +189,16 @@ void UAthenaInventoryFortItemTileButton_C::HandleEquipSlotChanged(int* EquipSlot
 }
 
 
-// Function AthenaInventoryFortItemTileButton.AthenaInventoryFortItemTileButton_C.OnInventoryItemSelected_Event_0_1
+// Function AthenaInventoryFortItemTileButton.AthenaInventoryFortItemTileButton_C.OnInventoryItemSelected_Event_1
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaInventoryFortItemTileButton_C::OnInventoryItemSelected_Event_0_1(class UFortItem* Item)
+void UAthenaInventoryFortItemTileButton_C::OnInventoryItemSelected_Event_1(class UFortItem* Item)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryFortItemTileButton.AthenaInventoryFortItemTileButton_C.OnInventoryItemSelected_Event_0_1");
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaInventoryFortItemTileButton.AthenaInventoryFortItemTileButton_C.OnInventoryItemSelected_Event_1");
 
-	UAthenaInventoryFortItemTileButton_C_OnInventoryItemSelected_Event_0_1_Params params;
+	UAthenaInventoryFortItemTileButton_C_OnInventoryItemSelected_Event_1_Params params;
 	params.Item = Item;
 
 	auto flags = fn->FunctionFlags;

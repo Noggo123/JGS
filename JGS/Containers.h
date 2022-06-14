@@ -16,8 +16,8 @@ namespace Containers
 	typedef unsigned __int32 uint32;
 	typedef unsigned __int64 uint64;
 
-	static auto Malloc = reinterpret_cast<void* (*)(int32_t Size, int32_t Alignment)>(uintptr_t(GetModuleHandle(0)) + 0x123BF70);
-	static auto Free = reinterpret_cast<void (*)(void* Memory)>(uintptr_t(GetModuleHandle(0)) + 0x1233210);
+	static auto Malloc = reinterpret_cast<void* (*)(int32_t Size, int32_t Alignment)>(uintptr_t(GetModuleHandle(0)) + 0x128A100);
+	static auto Free = reinterpret_cast<void (*)(void* Memory)>(uintptr_t(GetModuleHandle(0)) + 0x1281200);
 
 	template<class TArrayType>
 	class TArray

@@ -86,7 +86,7 @@ namespace Beacons
 					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::Consumables[rand() % Globals::Consumables.size()];
 				}
 				NewFortPickup->OnRep_PrimaryPickupItemEntry();
-				NewFortPickup->TossPickup(SpawnLoc, nullptr, 1);
+				NewFortPickup->TossPickup(SpawnLoc, nullptr, 1, true);
 
 				if (bIsConsumable && NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)
 				{
@@ -95,7 +95,7 @@ namespace Beacons
 					AmmoPickup->PrimaryPickupItemEntry.Count = AmmoDefintion->DropCount * 1.25;
 					AmmoPickup->PrimaryPickupItemEntry.ItemDefinition = AmmoDefintion;
 					AmmoPickup->OnRep_PrimaryPickupItemEntry();
-					AmmoPickup->TossPickup(SpawnLoc, nullptr, 999);
+					AmmoPickup->TossPickup(SpawnLoc, nullptr, 999, true);
 				}
 
 				Actor->K2_DestroyActor();
@@ -414,10 +414,10 @@ namespace Beacons
 		MH_CreateHook(static_cast<LPVOID>(pCollectGarbageInternalAddress), CollectGarbageInternalHook, reinterpret_cast<LPVOID*>(&CollectGarbageInternal));
 		MH_EnableHook(static_cast<LPVOID>(pCollectGarbageInternalAddress));
 
-		MH_CreateHook((void*)(BaseAddr + 0x9239C0), OnReloadHook, (void**)(&OnReload));
+		/*MH_CreateHook((void*)(BaseAddr + 0x9239C0), OnReloadHook, (void**)(&OnReload));
 		MH_EnableHook((void*)(BaseAddr + 0x9239C0));
 		MH_CreateHook((void*)(BaseAddr + 0x81E0B0), OnBuildHook, (void**)(&OnBuild));
-		MH_EnableHook((void*)(BaseAddr + 0x81E0B0));
+		MH_EnableHook((void*)(BaseAddr + 0x81E0B0));*/
 
 		Beacon = (AOnlineBeaconHost*)(Util::SpawnActor(AOnlineBeaconHost::StaticClass(), {}, {}));
 		Beacon->ListenPort = 7777;

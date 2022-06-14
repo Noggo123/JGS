@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -69,14 +69,14 @@ void UTabVideoOptions_C::Initialize_Data()
 // Function TabVideoOptions.TabVideoOptions_C.View Distance Changed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Tab_ID                         (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Tab_Id                         (Parm, ZeroConstructor, IsPlainOldData)
 
-void UTabVideoOptions_C::View_Distance_Changed(int Tab_ID)
+void UTabVideoOptions_C::View_Distance_Changed(int Tab_Id)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function TabVideoOptions.TabVideoOptions_C.View Distance Changed");
 
 	UTabVideoOptions_C_View_Distance_Changed_Params params;
-	params.Tab_ID = Tab_ID;
+	params.Tab_Id = Tab_Id;
 
 	auto flags = fn->FunctionFlags;
 
@@ -89,14 +89,14 @@ void UTabVideoOptions_C::View_Distance_Changed(int Tab_ID)
 // Function TabVideoOptions.TabVideoOptions_C.Discrete Resolution Changed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Tab_ID                         (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Tab_Id                         (Parm, ZeroConstructor, IsPlainOldData)
 
-void UTabVideoOptions_C::Discrete_Resolution_Changed(int Tab_ID)
+void UTabVideoOptions_C::Discrete_Resolution_Changed(int Tab_Id)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function TabVideoOptions.TabVideoOptions_C.Discrete Resolution Changed");
 
 	UTabVideoOptions_C_Discrete_Resolution_Changed_Params params;
-	params.Tab_ID = Tab_ID;
+	params.Tab_Id = Tab_Id;
 
 	auto flags = fn->FunctionFlags;
 
@@ -109,14 +109,14 @@ void UTabVideoOptions_C::Discrete_Resolution_Changed(int Tab_ID)
 // Function TabVideoOptions.TabVideoOptions_C.Shadows Changed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Tab_ID                         (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Tab_Id                         (Parm, ZeroConstructor, IsPlainOldData)
 
-void UTabVideoOptions_C::Shadows_Changed(int Tab_ID)
+void UTabVideoOptions_C::Shadows_Changed(int Tab_Id)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function TabVideoOptions.TabVideoOptions_C.Shadows Changed");
 
 	UTabVideoOptions_C_Shadows_Changed_Params params;
-	params.Tab_ID = Tab_ID;
+	params.Tab_Id = Tab_Id;
 
 	auto flags = fn->FunctionFlags;
 
@@ -129,14 +129,14 @@ void UTabVideoOptions_C::Shadows_Changed(int Tab_ID)
 // Function TabVideoOptions.TabVideoOptions_C.Anti-Aliasing Changed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Tab_ID                         (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Tab_Id                         (Parm, ZeroConstructor, IsPlainOldData)
 
-void UTabVideoOptions_C::Anti_Aliasing_Changed(int Tab_ID)
+void UTabVideoOptions_C::Anti_Aliasing_Changed(int Tab_Id)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function TabVideoOptions.TabVideoOptions_C.Anti-Aliasing Changed");
 
 	UTabVideoOptions_C_Anti_Aliasing_Changed_Params params;
-	params.Tab_ID = Tab_ID;
+	params.Tab_Id = Tab_Id;
 
 	auto flags = fn->FunctionFlags;
 
@@ -149,14 +149,14 @@ void UTabVideoOptions_C::Anti_Aliasing_Changed(int Tab_ID)
 // Function TabVideoOptions.TabVideoOptions_C.Textures Changed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Tab_ID                         (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Tab_Id                         (Parm, ZeroConstructor, IsPlainOldData)
 
-void UTabVideoOptions_C::Textures_Changed(int Tab_ID)
+void UTabVideoOptions_C::Textures_Changed(int Tab_Id)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function TabVideoOptions.TabVideoOptions_C.Textures Changed");
 
 	UTabVideoOptions_C_Textures_Changed_Params params;
-	params.Tab_ID = Tab_ID;
+	params.Tab_Id = Tab_Id;
 
 	auto flags = fn->FunctionFlags;
 
@@ -169,14 +169,14 @@ void UTabVideoOptions_C::Textures_Changed(int Tab_ID)
 // Function TabVideoOptions.TabVideoOptions_C.Post-Processing Changed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Tab_ID                         (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Tab_Id                         (Parm, ZeroConstructor, IsPlainOldData)
 
-void UTabVideoOptions_C::Post_Processing_Changed(int Tab_ID)
+void UTabVideoOptions_C::Post_Processing_Changed(int Tab_Id)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function TabVideoOptions.TabVideoOptions_C.Post-Processing Changed");
 
 	UTabVideoOptions_C_Post_Processing_Changed_Params params;
-	params.Tab_ID = Tab_ID;
+	params.Tab_Id = Tab_Id;
 
 	auto flags = fn->FunctionFlags;
 
@@ -189,14 +189,14 @@ void UTabVideoOptions_C::Post_Processing_Changed(int Tab_ID)
 // Function TabVideoOptions.TabVideoOptions_C.Effects Changed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Tab_ID                         (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Tab_Id                         (Parm, ZeroConstructor, IsPlainOldData)
 
-void UTabVideoOptions_C::Effects_Changed(int Tab_ID)
+void UTabVideoOptions_C::Effects_Changed(int Tab_Id)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function TabVideoOptions.TabVideoOptions_C.Effects Changed");
 
 	UTabVideoOptions_C_Effects_Changed_Params params;
-	params.Tab_ID = Tab_ID;
+	params.Tab_Id = Tab_Id;
 
 	auto flags = fn->FunctionFlags;
 
@@ -209,14 +209,14 @@ void UTabVideoOptions_C::Effects_Changed(int Tab_ID)
 // Function TabVideoOptions.TabVideoOptions_C.Quality Changed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int                            Tab_ID                         (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Tab_Id                         (Parm, ZeroConstructor, IsPlainOldData)
 
-void UTabVideoOptions_C::Quality_Changed(int Tab_ID)
+void UTabVideoOptions_C::Quality_Changed(int Tab_Id)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function TabVideoOptions.TabVideoOptions_C.Quality Changed");
 
 	UTabVideoOptions_C_Quality_Changed_Params params;
-	params.Tab_ID = Tab_ID;
+	params.Tab_Id = Tab_Id;
 
 	auto flags = fn->FunctionFlags;
 
@@ -263,16 +263,16 @@ void UTabVideoOptions_C::Window_Mode__Changed(int Selected_Index)
 }
 
 
-// Function TabVideoOptions.TabVideoOptions_C.CustomEvent_22_23
+// Function TabVideoOptions.TabVideoOptions_C.CustomEvent_23
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int                            Selected_Index                 (Parm, ZeroConstructor, IsPlainOldData)
 
-void UTabVideoOptions_C::CustomEvent_22_23(int Selected_Index)
+void UTabVideoOptions_C::CustomEvent_23(int Selected_Index)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function TabVideoOptions.TabVideoOptions_C.CustomEvent_22_23");
+	static auto fn = UObject::FindObject<UFunction>("Function TabVideoOptions.TabVideoOptions_C.CustomEvent_23");
 
-	UTabVideoOptions_C_CustomEvent_22_23_Params params;
+	UTabVideoOptions_C_CustomEvent_23_Params params;
 	params.Selected_Index = Selected_Index;
 
 	auto flags = fn->FunctionFlags;
@@ -283,16 +283,16 @@ void UTabVideoOptions_C::CustomEvent_22_23(int Selected_Index)
 }
 
 
-// Function TabVideoOptions.TabVideoOptions_C.CustomEvent_23_24
+// Function TabVideoOptions.TabVideoOptions_C.CustomEvent_24
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int                            Selected_Index                 (Parm, ZeroConstructor, IsPlainOldData)
 
-void UTabVideoOptions_C::CustomEvent_23_24(int Selected_Index)
+void UTabVideoOptions_C::CustomEvent_24(int Selected_Index)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function TabVideoOptions.TabVideoOptions_C.CustomEvent_23_24");
+	static auto fn = UObject::FindObject<UFunction>("Function TabVideoOptions.TabVideoOptions_C.CustomEvent_24");
 
-	UTabVideoOptions_C_CustomEvent_23_24_Params params;
+	UTabVideoOptions_C_CustomEvent_24_Params params;
 	params.Selected_Index = Selected_Index;
 
 	auto flags = fn->FunctionFlags;
@@ -397,16 +397,16 @@ void UTabVideoOptions_C::CustomEvent(int Selected_Index)
 }
 
 
-// Function TabVideoOptions.TabVideoOptions_C.CustomEvent_1_2
+// Function TabVideoOptions.TabVideoOptions_C.CustomEvent_2
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int                            Selected_Index                 (Parm, ZeroConstructor, IsPlainOldData)
 
-void UTabVideoOptions_C::CustomEvent_1_2(int Selected_Index)
+void UTabVideoOptions_C::CustomEvent_2(int Selected_Index)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function TabVideoOptions.TabVideoOptions_C.CustomEvent_1_2");
+	static auto fn = UObject::FindObject<UFunction>("Function TabVideoOptions.TabVideoOptions_C.CustomEvent_2");
 
-	UTabVideoOptions_C_CustomEvent_1_2_Params params;
+	UTabVideoOptions_C_CustomEvent_2_Params params;
 	params.Selected_Index = Selected_Index;
 
 	auto flags = fn->FunctionFlags;

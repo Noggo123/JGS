@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -153,16 +153,16 @@ void UHorizontalTabList_C::HandleTabCreated(struct FName* TabNameID, class UComm
 }
 
 
-// Function HorizontalTabList.HorizontalTabList_C.CustomEvent_0_1
+// Function HorizontalTabList.HorizontalTabList_C.CustomEvent_1
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FName                   TabId                          (Parm, ZeroConstructor, IsPlainOldData)
 
-void UHorizontalTabList_C::CustomEvent_0_1(const struct FName& TabId)
+void UHorizontalTabList_C::CustomEvent_1(const struct FName& TabId)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function HorizontalTabList.HorizontalTabList_C.CustomEvent_0_1");
+	static auto fn = UObject::FindObject<UFunction>("Function HorizontalTabList.HorizontalTabList_C.CustomEvent_1");
 
-	UHorizontalTabList_C_CustomEvent_0_1_Params params;
+	UHorizontalTabList_C_CustomEvent_1_Params params;
 	params.TabId = TabId;
 
 	auto flags = fn->FunctionFlags;

@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,28 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function DailyRewardsMissingFoundersPack.DailyRewardsMissingFoundersPack_C.CanUpgradeFoundersPack
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           CanUpgrade                     (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UDailyRewardsMissingFoundersPack_C::CanUpgradeFoundersPack(bool* CanUpgrade)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function DailyRewardsMissingFoundersPack.DailyRewardsMissingFoundersPack_C.CanUpgradeFoundersPack");
+
+	UDailyRewardsMissingFoundersPack_C_CanUpgradeFoundersPack_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (CanUpgrade != nullptr)
+		*CanUpgrade = params.CanUpgrade;
+}
+
 
 // Function DailyRewardsMissingFoundersPack.DailyRewardsMissingFoundersPack_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)

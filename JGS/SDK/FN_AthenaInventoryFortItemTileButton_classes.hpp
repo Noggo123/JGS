@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -39,7 +39,7 @@ public:
 	void OnDragDetected(struct FGeometry* MyGeometry, struct FPointerEvent* PointerEvent, class UDragDropOperation** Operation);
 	void UpdateStyle();
 	void HandleEquipSlotChanged(int* EquipSlot);
-	void OnInventoryItemSelected_Event_0_1(class UFortItem* Item);
+	void OnInventoryItemSelected_Event_1(class UFortItem* Item);
 	void Construct();
 	void Destruct();
 	void OnSelected();

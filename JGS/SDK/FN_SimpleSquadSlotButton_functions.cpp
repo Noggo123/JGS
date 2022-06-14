@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,26 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function SimpleSquadSlotButton.SimpleSquadSlotButton_C.UpdateTypeIconOffset
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                          VerticalOffset                 (Parm, ZeroConstructor, IsPlainOldData)
+
+void USimpleSquadSlotButton_C::UpdateTypeIconOffset(float VerticalOffset)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function SimpleSquadSlotButton.SimpleSquadSlotButton_C.UpdateTypeIconOffset");
+
+	USimpleSquadSlotButton_C_UpdateTypeIconOffset_Params params;
+	params.VerticalOffset = VerticalOffset;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function SimpleSquadSlotButton.SimpleSquadSlotButton_C.Update SubType Icon Glow
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)

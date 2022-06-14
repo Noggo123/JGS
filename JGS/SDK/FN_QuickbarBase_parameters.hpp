@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -73,8 +73,8 @@ struct UQuickbarBase_C_OnQuickbarForceFullUpdate_Params
 	EFortQuickBars                                     QuickbarIndex;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function QuickbarBase.QuickbarBase_C.OnQuickbarSecondarySlotFocusChanged_Event_0_1
-struct UQuickbarBase_C_OnQuickbarSecondarySlotFocusChanged_Event_0_1_Params
+// Function QuickbarBase.QuickbarBase_C.OnQuickbarSecondarySlotFocusChanged_Event_1
+struct UQuickbarBase_C_OnQuickbarSecondarySlotFocusChanged_Event_1_Params
 {
 	EFortQuickBars                                     QuickbarIndex;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                Slot;                                                     // (Parm, ZeroConstructor, IsPlainOldData)

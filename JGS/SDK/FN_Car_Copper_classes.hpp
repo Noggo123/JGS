@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -21,7 +21,7 @@ public:
 	float                                              Timeline_2_SirenLightMultiplier_0FF34BB7440D69B151AEB98B69DAACB9;// 0x0FD8(0x0004) (ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<ETimelineDirection>                    Timeline_2__Direction_0FF34BB7440D69B151AEB98B69DAACB9;   // 0x0FDC(0x0001) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x3];                                       // 0x0FDD(0x0003) MISSED OFFSET
-	class UTimelineComponent*                          Timeline_2_3;                                             // 0x0FE0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UTimelineComponent*                          Timeline_3;                                               // 0x0FE0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	float                                              BounceCar_Vertical_Bounce_Component_05733C554001D77C015F47B548F45A12;// 0x0FE8(0x0004) (ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<ETimelineDirection>                    BounceCar__Direction_05733C554001D77C015F47B548F45A12;    // 0x0FEC(0x0001) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData01[0x3];                                       // 0x0FED(0x0003) MISSED OFFSET
@@ -29,7 +29,7 @@ public:
 	float                                              Timeline_0_AlarmLightMultiplier_0249B75D481A6B889F74E6BC52A3E21B;// 0x0FF8(0x0004) (ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<ETimelineDirection>                    Timeline_0__Direction_0249B75D481A6B889F74E6BC52A3E21B;   // 0x0FFC(0x0001) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData02[0x3];                                       // 0x0FFD(0x0003) MISSED OFFSET
-	class UTimelineComponent*                          Timeline_0_1;                                             // 0x1000(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UTimelineComponent*                          Timeline_1;                                               // 0x1000(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	bool                                               OverallAlarmCycleFinished;                                // 0x1008(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData03[0x3];                                       // 0x1009(0x0003) MISSED OFFSET
 	struct FLinearColor                                InitialEmissiveMultiplier;                                // 0x100C(0x0010) (Edit, BlueprintVisible, IsPlainOldData)

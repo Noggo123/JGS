@@ -1,4 +1,4 @@
-// Fortnite (1.7.2) SDK
+// Fortnite (1.8) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -160,23 +160,6 @@ void UQuestTrackerSubEntry_C::PostCompletionDelay()
 	static auto fn = UObject::FindObject<UFunction>("Function QuestTrackerSubEntry.QuestTrackerSubEntry_C.PostCompletionDelay");
 
 	UQuestTrackerSubEntry_C_PostCompletionDelay_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function QuestTrackerSubEntry.QuestTrackerSubEntry_C.OnSetup
-// (Event, Protected, BlueprintEvent)
-
-void UQuestTrackerSubEntry_C::OnSetup()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuestTrackerSubEntry.QuestTrackerSubEntry_C.OnSetup");
-
-	UQuestTrackerSubEntry_C_OnSetup_Params params;
 
 	auto flags = fn->FunctionFlags;
 
