@@ -376,9 +376,9 @@ namespace Hooks
 				NewFortPickup1->PrimaryPickupItemEntry.ItemDefinition = AmmoDef1;
 				NewFortPickup2->PrimaryPickupItemEntry.ItemDefinition = AmmoDef2;
 
-				NewFortPickup->PrimaryPickupItemEntry.Count = AmmoDef->DropCount * 3;
-				NewFortPickup1->PrimaryPickupItemEntry.Count = AmmoDef1->DropCount * 3;
-				NewFortPickup2->PrimaryPickupItemEntry.Count = AmmoDef2->DropCount * 3;
+				NewFortPickup->PrimaryPickupItemEntry.Count = 15;
+				NewFortPickup1->PrimaryPickupItemEntry.Count = 15
+				NewFortPickup2->PrimaryPickupItemEntry.Count = 15;
 
 				NewFortPickup->OnRep_PrimaryPickupItemEntry();
 				NewFortPickup1->OnRep_PrimaryPickupItemEntry();
@@ -452,7 +452,7 @@ namespace Hooks
 				{
 					auto AmmoDefintion = ((UFortWorldItemDefinition*)NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)->GetAmmoWorldItemDefinition_BP();
 					auto AmmoPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), NewFortPickup->K2_GetActorLocation(), {}));
-					AmmoPickup->PrimaryPickupItemEntry.Count = AmmoDefintion->DropCount * 1.25;
+					AmmoPickup->PrimaryPickupItemEntry.Count = 15;
 					AmmoPickup->PrimaryPickupItemEntry.ItemDefinition = AmmoDefintion;
 					AmmoPickup->OnRep_PrimaryPickupItemEntry();
 					AmmoPickup->TossPickup(Location, nullptr, 999, true);

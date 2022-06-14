@@ -100,6 +100,7 @@ static void LoadLootPools()
     Globals::RareWeapons.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Pistol_SixShooter_Athena_R_Ore_T03.WID_Pistol_SixShooter_Athena_R_Ore_T03"));
     Globals::RareWeapons.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Shotgun_SemiAuto_Athena_R_Ore_T03.WID_Shotgun_SemiAuto_Athena_R_Ore_T03"));
     Globals::RareWeapons.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Sniper_BoltAction_Scope_Athena_R_Ore_T03.WID_Sniper_BoltAction_Scope_Athena_R_Ore_T03"));
+    Globals::RareWeapons.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Launcher_Rocket_Athena_R_Ore_T03.WID_Launcher_Rocket_Athena_R_Ore_T03"));
 
     Globals::EpicWeapons.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Assault_AutoHigh_Athena_VR_Ore_T03.WID_Assault_AutoHigh_Athena_VR_Ore_T03"));
     Globals::EpicWeapons.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Assault_Surgical_Athena_VR_Ore_T03.WID_Assault_AutoHigh_Athena_VR_Ore_T03"));
@@ -109,12 +110,14 @@ static void LoadLootPools()
     Globals::EpicWeapons.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Shotgun_SemiAuto_Athena_VR_Ore_T03.WID_Assault_AutoHigh_Athena_VR_Ore_T03"));
     Globals::EpicWeapons.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Sniper_BoltAction_Scope_Athena_VR_Ore_T03.WID_Assault_AutoHigh_Athena_VR_Ore_T03"));
     Globals::EpicWeapons.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Sniper_Standard_Scope_Athena_VR_Ore_T03.WID_Assault_AutoHigh_Athena_VR_Ore_T03"));
+    Globals::EpicWeapons.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Launcher_Rocket_Athena_VR_Ore_T03.WID_Launcher_Rocket_Athena_VR_Ore_T03"));
 
     Globals::LegendaryWeapons.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Assault_AutoHigh_Athena_SR_Ore_T03.WID_Assault_AutoHigh_Athena_SR_Ore_T03"));
     Globals::LegendaryWeapons.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Launcher_Grenade_Athena_SR_Ore_T03.WID_Launcher_Grenade_Athena_SR_Ore_T03"));
     Globals::LegendaryWeapons.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Launcher_Rocket_Athena_SR_Ore_T03.WID_Launcher_Rocket_Athena_SR_Ore_T03"));
     Globals::LegendaryWeapons.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Sniper_BoltAction_Scope_Athena_SR_Ore_T03.WID_Sniper_BoltAction_Scope_Athena_SR_Ore_T03"));
     Globals::LegendaryWeapons.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Sniper_Standard_Scope_Athena_SR_Ore_T03.WID_Sniper_Standard_Scope_Athena_SR_Ore_T03"));
+    Globals::LegendaryWeapons.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Launcher_Rocket_Athena_SR_Ore_T03.WID_Launcher_Rocket_Athena_SR_Ore_T03"));
 
 
     //Traps / Femboy traps :hot:
@@ -151,76 +154,85 @@ static void LoadLootPools()
 
 static void LoadCharacterParts()
 {
-    //HID_Commando_Athena_05
-    //HID_Commando_Athena_06
-    //HID_Commando_Athena_12
-    //HID_Commando_Athena_14
-    //HID_Commando_Athena_22
-    //HID_Commando_Athena_25
-    //HID_Commando_Athena_26
+    //HID_001_Athena_Commando_F
+    //HID_002_Athena_Commando_F
+    //HID_003_Athena_Commando_F
+    //HID_004_Athena_Commando_F
+    //HID_005_Athena_Commando_M
+    //HID_006_Athena_Commando_M
+    //HID_007_Athena_Commando_M
+    //HID_008_Athena_Commando_M
 
-    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Heads/M_MED_ASN_Jae_Head_01_ATH.M_MED_ASN_Jae_Head_01_ATH"); //05
-    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Bodies/M_Med_Soldier_01_CV05_ATH.M_Med_Soldier_01_CV05_ATH"); //05
-    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Heads/M_MED_HIS_Sparks_Head_01_ATH.M_MED_HIS_Sparks_Head_01_ATH"); //06
-    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Bodies/M_Med_Soldier_01_TV14_ATH.M_Med_Soldier_01_TV14_ATH"); //06
-    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Heads/F_MED_BLK_Red_Head_01_ATH.F_MED_BLK_Red_Head_01_ATH"); //12
-    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Bodies/F_Med_Soldier_TV12_ATH.F_Med_Soldier_TV12_ATH"); //12
-    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Heads/F_MED_CAU_Armstrong_Head_01_ATH.F_MED_CAU_Armstrong_Head_01_ATH"); //14
-    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Bodies/F_Med_Soldier_TV17_ATH.F_Med_Soldier_TV17_ATH"); //14
-    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Bodies/F_Med_Soldier_CV02_ATH.F_Med_Soldier_CV02_ATH"); //22
-    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Heads/F_Med_Head1_ATH.F_Med_Head1_ATH"); //22
-    StaticLoadObject<UCustomCharacterPart>(L"/Game/Characters/CharacterParts/Hats/Ramirez_Glasses.Ramirez_Glasses"); //22
-    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Heads/F_MED_ASN_Sarah_Head_01_ATH.F_MED_ASN_Sarah_Head_01_ATH"); //25
-    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Bodies/F_Med_Soldier_CV04_ATH.F_Med_Soldier_CV04_ATH"); //25
-    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Heads/M_Med_Soldier_Head_01_ATH.M_Med_Soldier_Head_01_ATH"); //26
-    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Bodies/M_Med_Soldier_01_Base_ATH.M_Med_Soldier_01_Base_ATH"); //26
+    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Bodies/CP_001_Athena_Body.CP_001_Athena_Body"); //01
+    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Heads/F_Med_Head1_ATH.F_Med_Head1_ATH"); //01
+    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Bodies/CP_002_Athena_Body.CP_002_Athena_Body"); //02
+    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Heads/F_MED_BLK_Red_Head_01_ATH.F_MED_BLK_Red_Head_01_ATH"); //02
+    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Bodies/CP_003_Athena_Body.CP_003_Athena_Body"); //03
+    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Heads/F_MED_ASN_Sarah_Head_01_ATH.F_MED_ASN_Sarah_Head_01_ATH"); //03
+    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Bodies/CP_004_Athena_Body.CP_004_Athena_Body"); //04
+    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Heads/F_MED_CAU_Armstrong_Head_01_ATH.F_MED_CAU_Armstrong_Head_01_ATH"); //04
+    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Heads/M_Med_Soldier_Head_01_ATH.M_Med_Soldier_Head_01_ATH"); //05
+    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Bodies/CP_005_Athena_Body.CP_005_Athena_Body"); //05
+    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Heads/M_Med_BLK_Sydney_Head_01_ATH.M_Med_BLK_Sydney_Head_01_ATH"); //06
+    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Bodies/CP_006_Athena_Body.CP_006_Athena_Body"); //06
+    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Heads/M_MED_HIS_Sparks_Head_01_ATH.M_MED_HIS_Sparks_Head_01_ATH"); //07
+    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Bodies/CP_007_Athena_Body.CP_007_Athena_Body"); //07
+    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Heads/M_MED_ASN_Jae_Head_01_ATH.M_MED_ASN_Jae_Head_01_ATH"); //08
+    StaticLoadObject<UCustomCharacterPart>(L"/Game/Athena/Heroes/Meshes/Bodies/CP_008_Athena_Body.CP_008_Athena_Body"); //08
+
+    //01
+    Globals::CharacterParts.push_back({
+        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Heads/F_Med_Head1_ATH.F_Med_Head1_ATH"),
+        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Bodies/CP_001_Athena_Body.CP_001_Athena_Body"),
+        nullptr
+    });
+
+    //02
+    Globals::CharacterParts.push_back({
+        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Heads/F_MED_BLK_Red_Head_01_ATH.F_MED_BLK_Red_Head_01_ATH"),
+        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Bodies/CP_002_Athena_Body.CP_002_Athena_Body"),
+        nullptr
+    });
+
+    //03
+    Globals::CharacterParts.push_back({
+        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Heads/F_MED_ASN_Sarah_Head_01_ATH.F_MED_ASN_Sarah_Head_01_ATH"),
+        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Bodies/CP_003_Athena_Body.CP_003_Athena_Body"),
+        nullptr
+    });
+
+    //04
+    Globals::CharacterParts.push_back({
+        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Heads/F_MED_CAU_Armstrong_Head_01_ATH.F_MED_CAU_Armstrong_Head_01_ATH"),
+        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Bodies/CP_004_Athena_Body.CP_004_Athena_Body"),
+        nullptr
+    });
 
     //05
     Globals::CharacterParts.push_back({
-        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Heads/M_MED_ASN_Jae_Head_01_ATH.M_MED_ASN_Jae_Head_01_ATH"),
-        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Bodies/M_Med_Soldier_01_CV05_ATH.M_Med_Soldier_01_CV05_ATH"),
+        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Heads/M_Med_Soldier_Head_01_ATH.M_Med_Soldier_Head_01_ATH"),
+        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Bodies/CP_005_Athena_Body.CP_005_Athena_Body"),
         nullptr
     });
 
     //06
     Globals::CharacterParts.push_back({
+        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Heads/M_Med_BLK_Sydney_Head_01_ATH.M_Med_BLK_Sydney_Head_01_ATH"),
+        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Bodies/CP_006_Athena_Body.CP_006_Athena_Body"),
+        nullptr
+    });
+
+    //07
+    Globals::CharacterParts.push_back({
         FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Heads/M_MED_HIS_Sparks_Head_01_ATH.M_MED_HIS_Sparks_Head_01_ATH"),
-        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Bodies/M_Med_Soldier_01_TV14_ATH.M_Med_Soldier_01_TV14_ATH"),
+        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Bodies/CP_007_Athena_Body.CP_007_Athena_Body"),
         nullptr
     });
 
-    //12
+    //08
     Globals::CharacterParts.push_back({
-        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Heads/F_MED_BLK_Red_Head_01_ATH.F_MED_BLK_Red_Head_01_ATH"),
-        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Bodies/F_Med_Soldier_TV12_ATH.F_Med_Soldier_TV12_ATH"),
-        nullptr
-    });
-
-    //14
-    Globals::CharacterParts.push_back({
-        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Heads/F_MED_CAU_Armstrong_Head_01_ATH.F_MED_CAU_Armstrong_Head_01_ATH"),
-        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Bodies/F_Med_Soldier_TV17_ATH.F_Med_Soldier_TV17_ATH"),
-        nullptr
-    });
-
-    //22
-    Globals::CharacterParts.push_back({
-        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Heads/F_Med_Head1_ATH.F_Med_Head1_ATH"),
-        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Bodies/F_Med_Soldier_CV02_ATH.F_Med_Soldier_CV02_ATH"),
-        FindObjectFast<UCustomCharacterPart>("/Game/Characters/CharacterParts/Hats/Ramirez_Glasses.Ramirez_Glasses")
-    });
-
-    //25
-    Globals::CharacterParts.push_back({
-        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Heads/F_MED_ASN_Sarah_Head_01_ATH.F_MED_ASN_Sarah_Head_01_ATH"),
-        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Bodies/F_Med_Soldier_CV04_ATH.F_Med_Soldier_CV04_ATH"),
-        nullptr
-    });
-
-    //26
-    Globals::CharacterParts.push_back({
-        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Heads/M_Med_Soldier_Head_01_ATH.M_Med_Soldier_Head_01_ATH"),
-        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Bodies/M_Med_Soldier_01_Base_ATH.M_Med_Soldier_01_Base_ATH"),
+        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Heads/M_MED_ASN_Jae_Head_01_ATH.M_MED_ASN_Jae_Head_01_ATH"),
+        FindObjectFast<UCustomCharacterPart>("/Game/Athena/Heroes/Meshes/Bodies/CP_008_Athena_Body.CP_008_Athena_Body"),
         nullptr
     });
 }
