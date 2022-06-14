@@ -66,6 +66,8 @@ namespace Hooks
 
 #ifdef DUOS
 				((AFortGameStateAthena*)Globals::World->GameState)->CurrentPlaylistId = 10;
+#else
+				((AFortGameStateAthena*)Globals::World->GameState)->CurrentPlaylistId = 2;
 #endif
 
 #ifdef DBNO_ENABLED
