@@ -431,6 +431,12 @@ struct FScriptMulticastDelegate
 	char UnknownData[16];
 };
 
+template<typename Key>
+class TSet
+{
+	unsigned char pad[0x50];
+};
+
 template<typename Key, typename Value>
 class TMap
 {

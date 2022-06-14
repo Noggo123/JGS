@@ -1,18 +1,5 @@
 #pragma once
 
-struct FNetworkObjectInfo
-{
-	AActor* Actor;
-	double NextUpdateTime;
-	double LastNetReplicateTime;
-	float OptimalNetUpdateDelta;
-	float LastNetUpdateTime;
-	uint32_t bPendingNetUpdate : 1;
-	uint32_t bForceRelevantNextUpdate : 1;
-	std::vector<UNetConnection*> DormantConnections;
-	std::vector<UNetConnection*> RecentlyDormantConnections;
-};
-
 inline int32_t Rand() { return rand(); };
 inline float FRand() { return Rand() / (float)RAND_MAX; };
 
@@ -25,6 +12,11 @@ namespace Replication
 	inline static void (*SendClientAdjustment)(APlayerController*);
 	inline static void (*ActorChannelClose)(UActorChannel*);
 	inline static bool (*IsNetRelevantFor)(AActor*, AActor*, AActor*, FVector&);
+
+	FNetworkObjectList& GetNetworkObjectList(UNetDriver* Driver)
+	{
+		return *(*(TSharedPtr<FNetworkObjectList>*)(__int64(Driver) + 0x3F8));
+	}
 
 	UActorChannel* ReplicateToClient(AActor* InActor, UNetConnection* InConnection)
 	{
@@ -128,12 +120,11 @@ namespace Replication
 
 	void BuildConsiderList(UNetDriver* NetDriver, std::vector<FNetworkObjectInfo*>& OutConsiderList)
 	{
-		TArray<AActor*> Actors;
-		Globals::GPS->STATIC_GetAllActorsOfClass(Globals::World, AActor::StaticClass(), &Actors);
-
+		auto Actors = GetNetworkObjectList(NetDriver).ActiveNetworkObjects;
+			
 		for (int i = 0; i < Actors.Num(); i++)
 		{
-			auto Actor = Actors[i];
+			auto Actor = Actors[i].Get()->Actor;
 
 			if (!Actor)
 				continue;
@@ -171,11 +162,6 @@ namespace Replication
 				OutConsiderList.push_back(Info);
 			}
 		}
-
-		Containers::Free((void*)Actors.Data);
-		Actors.Data = 0;
-		Actors.Count = 0;
-		Actors.Max = 0;
 	}
 
 	bool IsActorRelevantToConnection(AActor* Actor, UNetConnection* NetConnection)

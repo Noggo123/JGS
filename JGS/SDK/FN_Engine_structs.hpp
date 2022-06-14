@@ -8468,10 +8468,10 @@ struct FFastArraySerializerGuidReferences
 // 0x00B0
 struct FFastArraySerializer
 {
-	Containers::TMap<int32_t, int32_t> ItemMap;
+	TMap<int32_t, int32_t> ItemMap;
 	int32_t IDCounter;
 	int32_t	ArrayReplicationKey;
-	Containers::TMap<int32_t, FFastArraySerializerGuidReferences> GuidReferencesMap;
+	TMap<int32_t, FFastArraySerializerGuidReferences> GuidReferencesMap;
 	int32_t CachedNumItems;
 	int32_t CachedNumItemsToConsiderForWriting;
 
@@ -8492,7 +8492,7 @@ struct FFastArraySerializer
 	/** This must be called if you just remove something from the array */
 	void MarkArrayDirty()
 	{
-		ItemMap.Reset();		// This allows to clients to add predictive elements to arrays without affecting replication.
+		//ItemMap.Reset();		// This allows to clients to add predictive elements to arrays without affecting replication.
 		IncrementArrayReplicationKey();
 
 		// Invalidate the cached item counts so that they're recomputed during the next write

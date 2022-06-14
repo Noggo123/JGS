@@ -10756,7 +10756,11 @@ class UActorChannel : public UChannel
 {
 public:
 	class AActor*                                      Actor;                                                    // 0x0068(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0xE0];                                      // 0x0070(0x00E0) MISSED OFFSET
+	uint32_t                                           ActorNetGUID;											 // 0x0070(0x0004)
+	float                                              CustomTimeDilation;                                       // 0x0074(0x0004)
+	double                                             RelevantTime;                                             // 0x0078(0x0008)
+	double                                             LastUpdateTime;                                           // 0x0080(0x0008)
+	unsigned char                                      NewUnknowData[0xC8];                                      // 0x0088(0x00C8)
 	TArray<class UObject*>                             CreateSubObjects;                                         // 0x0150(0x0010) (ZeroConstructor)
 	unsigned char                                      UnknownData01[0xD0];                                      // 0x0160(0x00D0) MISSED OFFSET
 

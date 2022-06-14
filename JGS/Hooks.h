@@ -314,7 +314,7 @@ namespace Hooks
 				HealthSet->CurrentShield.BaseValue = 0;
 				HealthSet->Shield.Minimum = 0;
 				HealthSet->Shield.Maximum = 100;
-				HealthSet->Shield.BaseValue = 100;
+				HealthSet->Shield.BaseValue = 0;
 				HealthSet->OnRep_Shield();
 				HealthSet->OnRep_CurrentShield();
 
@@ -565,6 +565,11 @@ namespace Hooks
 		if (FuncName.contains("ClientOnPawnDied"))
 		{
 			auto PC = (AFortPlayerControllerAthena*)pObject;
+
+			if (PC->Pawn)
+			{
+				PC->Pawn->ReceiveDestroyed();
+			}
 
 			if (PC && reinterpret_cast<InventoryPointer*>(PC)->WorldInventory != nullptr)
 			{
