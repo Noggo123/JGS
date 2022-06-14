@@ -120,11 +120,12 @@ namespace Replication
 
 	void BuildConsiderList(UNetDriver* NetDriver, std::vector<FNetworkObjectInfo*>& OutConsiderList)
 	{
-		auto Actors = GetNetworkObjectList(NetDriver).ActiveNetworkObjects;
+		TArray<AActor*> Actors;
+		Globals::GPS->STATIC_GetAllActorsOfClass(Globals::World, AActor::StaticClass(), &Actors);
 			
 		for (int i = 0; i < Actors.Num(); i++)
 		{
-			auto Actor = Actors[i].Get()->Actor;
+			auto Actor = Actors[i];
 
 			if (!Actor)
 				continue;
@@ -162,6 +163,10 @@ namespace Replication
 				OutConsiderList.push_back(Info);
 			}
 		}
+
+		Free((void*)Actors.Data);
+		Actors.Count = 0;
+		Actors.Max = 0;
 	}
 
 	bool IsActorRelevantToConnection(AActor* Actor, UNetConnection* NetConnection)
