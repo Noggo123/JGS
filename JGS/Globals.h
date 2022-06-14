@@ -44,6 +44,7 @@ namespace Globals
 
 	UKismetMathLibrary* MathLib;
     UKismetSystemLibrary* SystemLib;
+    UFortKismetLibrary* FortLib;
 
     UCustomCharacterPart* HeadPart;
     UCustomCharacterPart* BodyPart;

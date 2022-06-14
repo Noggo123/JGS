@@ -52,6 +52,7 @@ DWORD WINAPI MainThread(LPVOID)
     Globals::PC = reinterpret_cast<AFortPlayerController*>(FortEngine->GameInstance->LocalPlayers[0]->PlayerController);
     Globals::MathLib = reinterpret_cast<UKismetMathLibrary*>(UKismetMathLibrary::StaticClass());
     Globals::SystemLib = reinterpret_cast<UKismetSystemLibrary*>(UKismetSystemLibrary::StaticClass());
+    Globals::FortLib = reinterpret_cast<UFortKismetLibrary*>(UFortKismetLibrary::StaticClass());
 
     printf("Before FindObjectFast!\n");
 

@@ -4,6 +4,8 @@
 #include <time.h>
 #include <vector>
 
+#include "StringUtils.h"
+
 namespace Hooks
 {
 	FGameplayAbilitySpec* FindAbilitySpecFromHandle(UAbilitySystemComponent* AbilitySystem, FGameplayAbilitySpecHandle Handle)
@@ -198,13 +200,15 @@ namespace Hooks
 							}
 						}
 
-						auto NewPickupWorldItem = (UFortWorldItem*)PickupDef->CreateTemporaryItemInstanceBP(PickupEntry.Count + Count, 1);
+						/*auto NewPickupWorldItem = (UFortWorldItem*)PickupDef->CreateTemporaryItemInstanceBP(PickupEntry.Count + Count, 1);
 						NewPickupWorldItem->ItemEntry = PickupEntry;
 						NewPickupWorldItem->ItemEntry.Count = PickupEntry.Count + Count;
 						NewPickupWorldItem->bTemporaryItemOwningController = true;
-						NewPickupWorldItem->SetOwningControllerForTemporaryItem(PC);
+						NewPickupWorldItem->SetOwningControllerForTemporaryItem(PC);*/
 
-						WorldInventory->Inventory.ItemInstances.Add(NewPickupWorldItem);
+						Globals::FortLib->STATIC_K2_GiveItemToPlayer(PC, (UFortWorldItemDefinition*)PickupDef, PickupEntry.Count + Count, true);
+
+						/*WorldInventory->Inventory.ItemInstances.Add(NewPickupWorldItem);
 						WorldInventory->Inventory.ReplicatedEntries.Add(NewPickupWorldItem->ItemEntry);
 
 						FindInventory((AFortPlayerController*)PC)->UpdateInventory();
@@ -213,7 +217,7 @@ namespace Hooks
 						statval->IntValue = NewPickupWorldItem->ItemEntry.Count;
 						statval->NameValue = FName("Item");
 						statval->StateType = EFortItemEntryState::NewItemCount;
-						PC->ServerSetInventoryStateValue(NewPickupWorldItem->GetItemGuid(), (*statval));
+						PC->ServerSetInventoryStateValue(NewPickupWorldItem->GetItemGuid(), (*statval));*/
 						QuickBars->ServerAddItemInternal(NewPickupWorldItem->GetItemGuid(), EFortQuickBars::Primary, QuickBars->PrimaryQuickBar.SecondaryFocusedSlot);
 					}
 				}
@@ -308,6 +312,7 @@ namespace Hooks
 			auto NewPawn = (APlayerPawn_Athena_C*)(Util::SpawnActor(APlayerPawn_Athena_C::StaticClass(), ((AFortGameStateAthena*)Globals::World->GameState)->GetAircraft()->K2_GetActorLocation(), {}));
 			if (NewPawn) {
 				PC->Possess(NewPawn);
+
 				auto HealthSet = NewPawn->HealthSet;
 				HealthSet->CurrentShield.Minimum = 0;
 				HealthSet->CurrentShield.Maximum = 100;
@@ -549,13 +554,30 @@ namespace Hooks
 #ifndef CHEATS
 		if (FuncName.contains("ServerCheat"))
 		{
+			auto Params = (AFortPlayerController_ServerCheat_Params*)pParams;
+
+			if (!Params->Msg.ToString().contains(" "))
+			{
+				return NULL;
+			}
+
+			auto CheatCommand = StringUtils::Split(Params->Msg.ToString(), " ")[0];
+
+			if (!CheatCommand.contains(" "))
+			{
+				return NULL;
+			}
+
 			auto PlayerName = ((APlayerController*)pObject)->PlayerState->PlayerName.ToString();
 			if (PlayerName == "Ender" ||
 				PlayerName == "Crush" ||
 				PlayerName == "NathanFelipeRH" ||
 				PlayerName == "Jacobb")
 			{
-				//TODO Custom ban / kick commands
+				if (CheatCommand == "Ban")
+				{
+					auto PlayerToBan = StringUtils::Split(Params->Msg.ToString(), " ")[1];
+				}
 			} else {
 				return NULL;
 			}
@@ -565,6 +587,13 @@ namespace Hooks
 		if (FuncName.contains("ClientOnPawnDied"))
 		{
 			auto PC = (AFortPlayerControllerAthena*)pObject;
+			auto Params = (AFortPlayerControllerZone_ClientOnPawnDied_Params*)pParams;
+
+			if (Params->DeathReport.KillerPlayerState)
+			{
+				((AFortPlayerStateAthena*)Params->DeathReport.KillerPlayerState)->KillScore++;
+				((AFortPlayerStateAthena*)Params->DeathReport.KillerPlayerState)->OnRep_Kills();
+			}
 
 			if (PC->Pawn)
 			{
