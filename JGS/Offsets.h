@@ -23,7 +23,7 @@ namespace Offsets
 
 	//Gameplay
 	uintptr_t InternalTryActivateAbility = 0x3E3D720;
-	uintptr_t OnReload = 0x0;
-	uintptr_t OnBuild = 0x0;
+	uintptr_t OnReload = 0x9456B0;
+	uintptr_t OnBuild = 0x83E100;
 	uintptr_t OnRepair = 0x0;
 }

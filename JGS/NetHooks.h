@@ -382,6 +382,13 @@ namespace Beacons
 		return OnBuild(Controller, a2);
 	}
 
+	__int64 (*OnRepair)(UObject* a1, int);
+	__int64 OnRepairHook(UObject* a1, int a2)
+	{
+		LOG("Shit: " << a1->GetFullName());
+		return OnRepair(a1, a2);
+	}
+
 	void InitHooks()
 	{
 		Replication::InitOffsets();
@@ -414,10 +421,10 @@ namespace Beacons
 		MH_CreateHook(static_cast<LPVOID>(pCollectGarbageInternalAddress), CollectGarbageInternalHook, reinterpret_cast<LPVOID*>(&CollectGarbageInternal));
 		MH_EnableHook(static_cast<LPVOID>(pCollectGarbageInternalAddress));
 
-		/*MH_CreateHook((void*)(BaseAddr + 0x9239C0), OnReloadHook, (void**)(&OnReload));
-		MH_EnableHook((void*)(BaseAddr + 0x9239C0));
-		MH_CreateHook((void*)(BaseAddr + 0x81E0B0), OnBuildHook, (void**)(&OnBuild));
-		MH_EnableHook((void*)(BaseAddr + 0x81E0B0));*/
+		MH_CreateHook((void*)(BaseAddr + Offsets::OnReload), OnReloadHook, (void**)(&OnReload));
+		MH_EnableHook((void*)(BaseAddr + Offsets::OnReload));
+		MH_CreateHook((void*)(BaseAddr + Offsets::OnBuild), OnBuildHook, (void**)(&OnBuild));
+		MH_EnableHook((void*)(BaseAddr + Offsets::OnBuild));
 
 		Beacon = (AOnlineBeaconHost*)(Util::SpawnActor(AOnlineBeaconHost::StaticClass(), {}, {}));
 		Beacon->ListenPort = 7777;
