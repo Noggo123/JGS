@@ -377,7 +377,7 @@ namespace Hooks
 				NewFortPickup2->PrimaryPickupItemEntry.ItemDefinition = AmmoDef2;
 
 				NewFortPickup->PrimaryPickupItemEntry.Count = 15;
-				NewFortPickup1->PrimaryPickupItemEntry.Count = 15
+				NewFortPickup1->PrimaryPickupItemEntry.Count = 15;
 				NewFortPickup2->PrimaryPickupItemEntry.Count = 15;
 
 				NewFortPickup->OnRep_PrimaryPickupItemEntry();
