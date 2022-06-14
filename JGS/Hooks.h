@@ -218,7 +218,7 @@ namespace Hooks
 						statval->NameValue = FName("Item");
 						statval->StateType = EFortItemEntryState::NewItemCount;
 						PC->ServerSetInventoryStateValue(NewPickupWorldItem->GetItemGuid(), (*statval));*/
-						QuickBars->ServerAddItemInternal(NewPickupWorldItem->GetItemGuid(), EFortQuickBars::Primary, QuickBars->PrimaryQuickBar.SecondaryFocusedSlot);
+						//QuickBars->ServerAddItemInternal(NewPickupWorldItem->GetItemGuid(), EFortQuickBars::Primary, QuickBars->PrimaryQuickBar.SecondaryFocusedSlot);
 					}
 				}
 			}
