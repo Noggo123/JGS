@@ -15,7 +15,7 @@ namespace Replication
 
 	FNetworkObjectList& GetNetworkObjectList(UNetDriver* Driver)
 	{
-		return *(*(TSharedPtr<FNetworkObjectList>*)(__int64(Driver) + 0x3F8));
+		return *(*(TSharedPtr<FNetworkObjectList>*)(__int64(Driver) + (sizeof(UNetDriver) - (sizeof(int) * 2) - sizeof(TSharedPtr<FNetworkObjectList>))));
 	}
 
 	UActorChannel* ReplicateToClient(AActor* InActor, UNetConnection* InConnection)
