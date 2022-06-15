@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,17 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
-
-// Function AthenaLobby.AthenaLobby_C.ShowModalNews
-struct UAthenaLobby_C_ShowModalNews_Params
-{
-};
-
-// Function AthenaLobby.AthenaLobby_C.OnInputNews
-struct UAthenaLobby_C_OnInputNews_Params
-{
-	bool                                               bPassThrough;                                             // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-};
 
 // Function AthenaLobby.AthenaLobby_C.OnInputFillChangeGamepad
 struct UAthenaLobby_C_OnInputFillChangeGamepad_Params
@@ -209,16 +198,6 @@ struct UAthenaLobby_C_DialogResult_156754AE468EF93DCA2009A412591BA7_Params
 	struct FName                                       ResultName;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function AthenaLobby.AthenaLobby_C.OnFailure_DA5E62624D068772EA890193344BA4AE
-struct UAthenaLobby_C_OnFailure_DA5E62624D068772EA890193344BA4AE_Params
-{
-};
-
-// Function AthenaLobby.AthenaLobby_C.OnSuccess_DA5E62624D068772EA890193344BA4AE
-struct UAthenaLobby_C_OnSuccess_DA5E62624D068772EA890193344BA4AE_Params
-{
-};
-
 // Function AthenaLobby.AthenaLobby_C.BndEvt__SwitcherDetails_K2Node_ComponentBoundEvent_0_OnActiveWidgetChanged__DelegateSignature
 struct UAthenaLobby_C_BndEvt__SwitcherDetails_K2Node_ComponentBoundEvent_0_OnActiveWidgetChanged__DelegateSignature_Params
 {
@@ -226,15 +205,15 @@ struct UAthenaLobby_C_BndEvt__SwitcherDetails_K2Node_ComponentBoundEvent_0_OnAct
 	int                                                ActiveWidgetIndex;                                        // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function AthenaLobby.AthenaLobby_C.Event Abandon
+struct UAthenaLobby_C_Event_Abandon_Params
+{
+};
+
 // Function AthenaLobby.AthenaLobby_C.OnEndCursorOverPlayer
 struct UAthenaLobby_C_OnEndCursorOverPlayer_Params
 {
 	int*                                               PlayerIndex;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function AthenaLobby.AthenaLobby_C.Event Abandon
-struct UAthenaLobby_C_Event_Abandon_Params
-{
 };
 
 // Function AthenaLobby.AthenaLobby_C.OnNavigationLeft
@@ -258,6 +237,11 @@ struct UAthenaLobby_C_Construct_Params
 {
 };
 
+// Function AthenaLobby.AthenaLobby_C.OnActivated
+struct UAthenaLobby_C_OnActivated_Params
+{
+};
+
 // Function AthenaLobby.AthenaLobby_C.OnPlayerClicked
 struct UAthenaLobby_C_OnPlayerClicked_Params
 {
@@ -272,11 +256,6 @@ struct UAthenaLobby_C_OnBeginCursorOverPlayer_Params
 
 // Function AthenaLobby.AthenaLobby_C.BndEvt__PlayerPanel_K2Node_ComponentBoundEvent_308_OnClosed__DelegateSignature
 struct UAthenaLobby_C_BndEvt__PlayerPanel_K2Node_ComponentBoundEvent_308_OnClosed__DelegateSignature_Params
-{
-};
-
-// Function AthenaLobby.AthenaLobby_C.OnActivated
-struct UAthenaLobby_C_OnActivated_Params
 {
 };
 

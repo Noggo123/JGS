@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,28 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.On Team Talking Changed
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TArray<bool>                   Team_Talking                   (Parm, OutParm, ZeroConstructor, ReferenceParm)
-
-void UAthenaTeamMemberIndicator_C::On_Team_Talking_Changed(TArray<bool>* Team_Talking)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.On Team Talking Changed");
-
-	UAthenaTeamMemberIndicator_C_On_Team_Talking_Changed_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (Team_Talking != nullptr)
-		*Team_Talking = params.Team_Talking;
-}
-
 
 // Function AthenaTeamMemberIndicator.AthenaTeamMemberIndicator_C.On Team Reviving Changed
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -46,8 +46,8 @@ struct UOptionsMenuRowSelector_C_Construct_Params
 {
 };
 
-// Function OptionsMenuRowSelector.OptionsMenuRowSelector_C.OnSelectedButtonChanged_Event_1
-struct UOptionsMenuRowSelector_C_OnSelectedButtonChanged_Event_1_Params
+// Function OptionsMenuRowSelector.OptionsMenuRowSelector_C.OnSelectedButtonChanged_Event_0_1
+struct UOptionsMenuRowSelector_C_OnSelectedButtonChanged_Event_0_1_Params
 {
 	class UCommonButton*                               AssociatedButton;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ButtonIndex;                                              // (Parm, ZeroConstructor, IsPlainOldData)
@@ -79,7 +79,7 @@ struct UOptionsMenuRowSelector_C_ExecuteUbergraph_OptionsMenuRowSelector_Params
 // Function OptionsMenuRowSelector.OptionsMenuRowSelector_C.Selector Button Selected__DelegateSignature
 struct UOptionsMenuRowSelector_C_Selector_Button_Selected__DelegateSignature_Params
 {
-	int                                                Tab_Id;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Tab_ID;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,18 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
-
-// Function TopBarSkillPoints.TopBarSkillPoints_C.GetMissionRewardBadgeTooltipWidget
-struct UTopBarSkillPoints_C_GetMissionRewardBadgeTooltipWidget_Params
-{
-	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function TopBarSkillPoints.TopBarSkillPoints_C.Has Mission Reward Boost
-struct UTopBarSkillPoints_C_Has_Mission_Reward_Boost_Params
-{
-	bool                                               Result;                                                   // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-};
 
 // Function TopBarSkillPoints.TopBarSkillPoints_C.GetFounderBadgetTooltipWidget
 struct UTopBarSkillPoints_C_GetFounderBadgetTooltipWidget_Params

@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,26 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function B_Ranged_Generic.B_Ranged_Generic_C.ActivateOrDeactivateWindParticle
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           bNewActive                     (Parm, ZeroConstructor, IsPlainOldData)
-
-void AB_Ranged_Generic_C::ActivateOrDeactivateWindParticle(bool bNewActive)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function B_Ranged_Generic.B_Ranged_Generic_C.ActivateOrDeactivateWindParticle");
-
-	AB_Ranged_Generic_C_ActivateOrDeactivateWindParticle_Params params;
-	params.bNewActive = bNewActive;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function B_Ranged_Generic.B_Ranged_Generic_C.DeactivateMuzzleFX
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -177,14 +157,14 @@ void AB_Ranged_Generic_C::Muzzle_Play_Reload_FX(TEnumAsByte<EFortReloadFXState> 
 // Function B_Ranged_Generic.B_Ranged_Generic_C.Muzzle Flash FX
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           Persistent_Fire                (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           Condition                      (Parm, ZeroConstructor, IsPlainOldData)
 
-void AB_Ranged_Generic_C::Muzzle_Flash_FX(bool Persistent_Fire)
+void AB_Ranged_Generic_C::Muzzle_Flash_FX(bool Condition)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function B_Ranged_Generic.B_Ranged_Generic_C.Muzzle Flash FX");
 
 	AB_Ranged_Generic_C_Muzzle_Flash_FX_Params params;
-	params.Persistent_Fire = Persistent_Fire;
+	params.Condition = Condition;
 
 	auto flags = fn->FunctionFlags;
 
@@ -245,14 +225,14 @@ void AB_Ranged_Generic_C::UserConstructionScript()
 }
 
 
-// Function B_Ranged_Generic.B_Ranged_Generic_C.AnimateScopePostProcess__FinishedFunc
+// Function B_Ranged_Generic.B_Ranged_Generic_C.Timeline_0__FinishedFunc
 // (BlueprintEvent)
 
-void AB_Ranged_Generic_C::AnimateScopePostProcess__FinishedFunc()
+void AB_Ranged_Generic_C::Timeline_0__FinishedFunc()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function B_Ranged_Generic.B_Ranged_Generic_C.AnimateScopePostProcess__FinishedFunc");
+	static auto fn = UObject::FindObject<UFunction>("Function B_Ranged_Generic.B_Ranged_Generic_C.Timeline_0__FinishedFunc");
 
-	AB_Ranged_Generic_C_AnimateScopePostProcess__FinishedFunc_Params params;
+	AB_Ranged_Generic_C_Timeline_0__FinishedFunc_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -262,14 +242,14 @@ void AB_Ranged_Generic_C::AnimateScopePostProcess__FinishedFunc()
 }
 
 
-// Function B_Ranged_Generic.B_Ranged_Generic_C.AnimateScopePostProcess__UpdateFunc
+// Function B_Ranged_Generic.B_Ranged_Generic_C.Timeline_0__UpdateFunc
 // (BlueprintEvent)
 
-void AB_Ranged_Generic_C::AnimateScopePostProcess__UpdateFunc()
+void AB_Ranged_Generic_C::Timeline_0__UpdateFunc()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function B_Ranged_Generic.B_Ranged_Generic_C.AnimateScopePostProcess__UpdateFunc");
+	static auto fn = UObject::FindObject<UFunction>("Function B_Ranged_Generic.B_Ranged_Generic_C.Timeline_0__UpdateFunc");
 
-	AB_Ranged_Generic_C_AnimateScopePostProcess__UpdateFunc_Params params;
+	AB_Ranged_Generic_C_Timeline_0__UpdateFunc_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -409,60 +389,6 @@ void AB_Ranged_Generic_C::OnPlayReloadFX(TEnumAsByte<EFortReloadFXState>* Reload
 
 	AB_Ranged_Generic_C_OnPlayReloadFX_Params params;
 	params.ReloadStage = ReloadStage;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function B_Ranged_Generic.B_Ranged_Generic_C.OnSetTargeting
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool*                          bNewIsTargeting                (Parm, ZeroConstructor, IsPlainOldData)
-
-void AB_Ranged_Generic_C::OnSetTargeting(bool* bNewIsTargeting)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function B_Ranged_Generic.B_Ranged_Generic_C.OnSetTargeting");
-
-	AB_Ranged_Generic_C_OnSetTargeting_Params params;
-	params.bNewIsTargeting = bNewIsTargeting;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function B_Ranged_Generic.B_Ranged_Generic_C.K2_OnUnEquip
-// (Event, Public, BlueprintEvent)
-
-void AB_Ranged_Generic_C::K2_OnUnEquip()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function B_Ranged_Generic.B_Ranged_Generic_C.K2_OnUnEquip");
-
-	AB_Ranged_Generic_C_K2_OnUnEquip_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function B_Ranged_Generic.B_Ranged_Generic_C.InitializeScopeVariables
-// (BlueprintCallable, BlueprintEvent)
-
-void AB_Ranged_Generic_C::InitializeScopeVariables()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function B_Ranged_Generic.B_Ranged_Generic_C.InitializeScopeVariables");
-
-	AB_Ranged_Generic_C_InitializeScopeVariables_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -631,14 +557,51 @@ void AB_Ranged_Generic_C::SetWeaponPierceThrough_ClientRep(bool Enable, int Targ
 }
 
 
-// Function B_Ranged_Generic.B_Ranged_Generic_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function B_Ranged_Generic.B_Ranged_Generic_C.InitializeScopeVariables
+// (BlueprintCallable, BlueprintEvent)
 
-void AB_Ranged_Generic_C::ReceiveBeginPlay()
+void AB_Ranged_Generic_C::InitializeScopeVariables()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function B_Ranged_Generic.B_Ranged_Generic_C.ReceiveBeginPlay");
+	static auto fn = UObject::FindObject<UFunction>("Function B_Ranged_Generic.B_Ranged_Generic_C.InitializeScopeVariables");
 
-	AB_Ranged_Generic_C_ReceiveBeginPlay_Params params;
+	AB_Ranged_Generic_C_InitializeScopeVariables_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function B_Ranged_Generic.B_Ranged_Generic_C.OnSetTargeting
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool*                          bNewIsTargeting                (Parm, ZeroConstructor, IsPlainOldData)
+
+void AB_Ranged_Generic_C::OnSetTargeting(bool* bNewIsTargeting)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function B_Ranged_Generic.B_Ranged_Generic_C.OnSetTargeting");
+
+	AB_Ranged_Generic_C_OnSetTargeting_Params params;
+	params.bNewIsTargeting = bNewIsTargeting;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function B_Ranged_Generic.B_Ranged_Generic_C.K2_OnUnEquip
+// (Event, Public, BlueprintEvent)
+
+void AB_Ranged_Generic_C::K2_OnUnEquip()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function B_Ranged_Generic.B_Ranged_Generic_C.K2_OnUnEquip");
+
+	AB_Ranged_Generic_C_K2_OnUnEquip_Params params;
 
 	auto flags = fn->FunctionFlags;
 

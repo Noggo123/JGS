@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,11 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass TheaterMapViewer.TheaterMapViewer_C
-// 0x0008 (0x0698 - 0x0690)
+// 0x0008 (0x0618 - 0x0610)
 class ATheaterMapViewer_C : public AFortTheaterMapViewer
 {
 public:
-	class USceneComponent*                             DefaultSceneRoot;                                         // 0x0690(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class USceneComponent*                             DefaultSceneRoot;                                         // 0x0610(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,8 +14,8 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function AthenaRotator.AthenaRotator_C.NewFunction_1
-struct UAthenaRotator_C_NewFunction_1_Params
+// Function AthenaRotator.AthenaRotator_C.NewFunction_0_1
+struct UAthenaRotator_C_NewFunction_0_1_Params
 {
 };
 

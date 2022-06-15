@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,119 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function PlayerBanner.PlayerBanner_C.SetBannerIconAndColorFromProfile
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UPlayerBanner_C::SetBannerIconAndColorFromProfile()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerBanner.PlayerBanner_C.SetBannerIconAndColorFromProfile");
-
-	UPlayerBanner_C_SetBannerIconAndColorFromProfile_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerBanner.PlayerBanner_C.SetBannerIconAndColor
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FName                   IconId                         (Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   ColorId                        (Parm, ZeroConstructor, IsPlainOldData)
-
-void UPlayerBanner_C::SetBannerIconAndColor(const struct FName& IconId, const struct FName& ColorId)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerBanner.PlayerBanner_C.SetBannerIconAndColor");
-
-	UPlayerBanner_C_SetBannerIconAndColor_Params params;
-	params.IconId = IconId;
-	params.ColorId = ColorId;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerBanner.PlayerBanner_C.ToggleBannerMask
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           Enable                         (Parm, ZeroConstructor, IsPlainOldData)
-
-void UPlayerBanner_C::ToggleBannerMask(bool Enable)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerBanner.PlayerBanner_C.ToggleBannerMask");
-
-	UPlayerBanner_C_ToggleBannerMask_Params params;
-	params.Enable = Enable;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerBanner.PlayerBanner_C.RefreshSurround
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UPlayerBanner_C::RefreshSurround()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerBanner.PlayerBanner_C.RefreshSurround");
-
-	UPlayerBanner_C_RefreshSurround_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerBanner.PlayerBanner_C.OnSurroundIconLoaded
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UObject*                 LoadedObject                   (Parm, ZeroConstructor, IsPlainOldData)
-
-void UPlayerBanner_C::OnSurroundIconLoaded(class UObject* LoadedObject)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerBanner.PlayerBanner_C.OnSurroundIconLoaded");
-
-	UPlayerBanner_C_OnSurroundIconLoaded_Params params;
-	params.LoadedObject = LoadedObject;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerBanner.PlayerBanner_C.EnableSurround
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UPlayerBanner_C::EnableSurround()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerBanner.PlayerBanner_C.EnableSurround");
-
-	UPlayerBanner_C_EnableSurround_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function PlayerBanner.PlayerBanner_C.ClearBannerState
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -185,7 +72,7 @@ void UPlayerBanner_C::GetBannerMID(class UMaterialInstanceDynamic** BannerMID)
 
 
 // Function PlayerBanner.PlayerBanner_C.SetBannerOwner
-// (Public, BlueprintCallable, BlueprintEvent)
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FUniqueNetIdRepl        OwnerId                        (Parm)
 
@@ -299,26 +186,6 @@ void UPlayerBanner_C::PreConstruct(bool* IsDesignTime)
 
 	UPlayerBanner_C_PreConstruct_Params params;
 	params.IsDesignTime = IsDesignTime;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function PlayerBanner.PlayerBanner_C.Account Info Changed
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FFortPublicAccountInfo  NewInfo                        (Parm)
-
-void UPlayerBanner_C::Account_Info_Changed(const struct FFortPublicAccountInfo& NewInfo)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerBanner.PlayerBanner_C.Account Info Changed");
-
-	UPlayerBanner_C_Account_Info_Changed_Params params;
-	params.NewInfo = NewInfo;
 
 	auto flags = fn->FunctionFlags;
 

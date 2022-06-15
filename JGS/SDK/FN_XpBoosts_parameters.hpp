@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -64,7 +64,7 @@ struct UXpBoosts_C_Construct_Params
 // Function XpBoosts.XpBoosts_C.Give Boost Clicked
 struct UXpBoosts_C_Give_Boost_Clicked_Params
 {
-	struct FUniqueNetIdRepl                            Player_to_Boost;                                          // (Parm)
+	struct FUniqueNetIdRepl                            Player_To_Boost;                                          // (Parm)
 };
 
 // Function XpBoosts.XpBoosts_C.On Party Left

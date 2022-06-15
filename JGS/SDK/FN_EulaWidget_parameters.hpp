@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,7 +23,7 @@ struct UEulaWidget_C_SetViewOnly_Params
 // Function EulaWidget.EulaWidget_C.SetEulaText
 struct UEulaWidget_C_SetEulaText_Params
 {
-	struct FText                                       EULA;                                                     // (Parm)
+	struct FText                                       Eula;                                                     // (Parm)
 };
 
 // Function EulaWidget.EulaWidget_C.BndEvt__IconTextButton_0_K2Node_ComponentBoundEvent_44_CommonButtonClicked__DelegateSignature

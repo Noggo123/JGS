@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,7 +22,7 @@ public:
 	float                                              BeaconConnectionTimeout;                                  // 0x0394(0x0004) (ZeroConstructor, Config, IsPlainOldData)
 	class UNetDriver*                                  NetDriver;                                                // 0x0398(0x0008) (ZeroConstructor, IsPlainOldData)
 	int BeaconState;
-	unsigned char                                      UnknownData01[12];                                        // 0x03A0(0x0010) MISSED OFFSET
+	unsigned char                                      UnknownData01[12];                                      // 0x03A0(0x0010) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -451,11 +451,11 @@ public:
 
 
 // Class OnlineSubsystemUtils.IpConnection
-// 0x0020 (0x337B0 - 0x33790)
+// 0x0020 (0x33760 - 0x33740)
 class UIpConnection : public UNetConnection
 {
 public:
-	unsigned char                                      UnknownData00[0x20];                                      // 0x33790(0x0020) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x20];                                      // 0x33740(0x0020) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

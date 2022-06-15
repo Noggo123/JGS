@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function TabGameOptionsHud.TabGameOptionsHud_C.Set Settings Tooltip
+struct UTabGameOptionsHud_C_Set_Settings_Tooltip_Params
+{
+	class UCommonTextBlock*                            Tooltip_To_Display;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function TabGameOptionsHud.TabGameOptionsHud_C.Construct
 struct UTabGameOptionsHud_C_Construct_Params

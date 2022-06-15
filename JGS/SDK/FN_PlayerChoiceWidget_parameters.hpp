@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,24 +22,24 @@ struct UPlayerChoiceWidget_C_CreateButtonAndSetText_Params
 	class UPlayerChoiceButtonWidget_C*                 ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function PlayerChoiceWidget.PlayerChoiceWidget_C.GetText_1
-struct UPlayerChoiceWidget_C_GetText_1_Params
+// Function PlayerChoiceWidget.PlayerChoiceWidget_C.GetText_0_1
+struct UPlayerChoiceWidget_C_GetText_0_1_Params
 {
 	struct FText                                       ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
-// Function PlayerChoiceWidget.PlayerChoiceWidget_C.Get_TextBlock_Choice3_Text_1
-struct UPlayerChoiceWidget_C_Get_TextBlock_Choice3_Text_1_Params
+// Function PlayerChoiceWidget.PlayerChoiceWidget_C.Get_TextBlock_Choice3_Text_0_1
+struct UPlayerChoiceWidget_C_Get_TextBlock_Choice3_Text_0_1_Params
 {
 };
 
-// Function PlayerChoiceWidget.PlayerChoiceWidget_C.Get_TextBlock_Choice2_Text_1
-struct UPlayerChoiceWidget_C_Get_TextBlock_Choice2_Text_1_Params
+// Function PlayerChoiceWidget.PlayerChoiceWidget_C.Get_TextBlock_Choice2_Text_0_1
+struct UPlayerChoiceWidget_C_Get_TextBlock_Choice2_Text_0_1_Params
 {
 };
 
-// Function PlayerChoiceWidget.PlayerChoiceWidget_C.Get_TextBlock_Choice1_Text_1
-struct UPlayerChoiceWidget_C_Get_TextBlock_Choice1_Text_1_Params
+// Function PlayerChoiceWidget.PlayerChoiceWidget_C.Get_TextBlock_Choice1_Text_0_1
+struct UPlayerChoiceWidget_C_Get_TextBlock_Choice1_Text_0_1_Params
 {
 };
 

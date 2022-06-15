@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,23 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function AthenaQuickbarSecondary.AthenaQuickbarSecondary_C.HandleMaximizeShowing
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAthenaQuickbarSecondary_C::HandleMaximizeShowing()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickbarSecondary.AthenaQuickbarSecondary_C.HandleMaximizeShowing");
-
-	UAthenaQuickbarSecondary_C_HandleMaximizeShowing_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function AthenaQuickbarSecondary.AthenaQuickbarSecondary_C.HandleShowHideRail
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -54,6 +37,23 @@ void UAthenaQuickbarSecondary_C::HandleMinimizeHiding()
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickbarSecondary.AthenaQuickbarSecondary_C.HandleMinimizeHiding");
 
 	UAthenaQuickbarSecondary_C_HandleMinimizeHiding_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaQuickbarSecondary.AthenaQuickbarSecondary_C.HandleUpdateSlots
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UAthenaQuickbarSecondary_C::HandleUpdateSlots()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickbarSecondary.AthenaQuickbarSecondary_C.HandleUpdateSlots");
+
+	UAthenaQuickbarSecondary_C_HandleUpdateSlots_Params params;
 
 	auto flags = fn->FunctionFlags;
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,12 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
-
-// Function SimpleSquadSlotButton.SimpleSquadSlotButton_C.UpdateTypeIconOffset
-struct USimpleSquadSlotButton_C_UpdateTypeIconOffset_Params
-{
-	float                                              VerticalOffset;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-};
 
 // Function SimpleSquadSlotButton.SimpleSquadSlotButton_C.Update SubType Icon Glow
 struct USimpleSquadSlotButton_C_Update_SubType_Icon_Glow_Params

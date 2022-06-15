@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,11 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass Athena_GameState.Athena_GameState_C
-// 0x0008 (0x14F8 - 0x14F0)
+// 0x0008 (0x14E8 - 0x14E0)
 class AAthena_GameState_C : public AFortGameStateAthena
 {
 public:
-	class USceneComponent*                             DefaultSceneRoot;                                         // 0x14F0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class USceneComponent*                             DefaultSceneRoot;                                         // 0x14E0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

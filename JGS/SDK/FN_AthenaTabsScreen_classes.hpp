@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -38,7 +38,6 @@ public:
 	void BndEvt__TopTabList_K2Node_ComponentBoundEvent_0_OnTabButtonCreated__DelegateSignature(const struct FName& TabId, class UCommonButton* TabButton);
 	void BndEvt__TopTabList_K2Node_ComponentBoundEvent_0_OnTabSelected__DelegateSignature(const struct FName& TabId);
 	void OnDeactivated();
-	void HandleTabContentCreated(const struct FName& TabId, class UCommonUserWidget* TabWidget);
 	void ExecuteUbergraph_AthenaTabsScreen(int EntryPoint);
 };
 

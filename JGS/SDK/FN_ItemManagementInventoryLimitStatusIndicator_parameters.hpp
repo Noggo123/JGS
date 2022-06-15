@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -29,8 +29,8 @@ struct UItemManagementInventoryLimitStatusIndicator_C_RefreshWorldInventoryStatu
 {
 };
 
-// Function ItemManagementInventoryLimitStatusIndicator.ItemManagementInventoryLimitStatusIndicator_C.TrackAccountInventory
-struct UItemManagementInventoryLimitStatusIndicator_C_TrackAccountInventory_Params
+// Function ItemManagementInventoryLimitStatusIndicator.ItemManagementInventoryLimitStatusIndicator_C.TrackVaultInventory
+struct UItemManagementInventoryLimitStatusIndicator_C_TrackVaultInventory_Params
 {
 };
 
@@ -66,12 +66,6 @@ struct UItemManagementInventoryLimitStatusIndicator_C_HandleOutpostItemListChang
 {
 	TArray<class UFortWorldItem*>                      ItemsAdded;                                               // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 	TArray<class UFortWorldItem*>                      ItemsRemoved;                                             // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
-};
-
-// Function ItemManagementInventoryLimitStatusIndicator.ItemManagementInventoryLimitStatusIndicator_C.HandleDeployableBaseInventoryChanged
-struct UItemManagementInventoryLimitStatusIndicator_C_HandleDeployableBaseInventoryChanged_Params
-{
-	class ADeployableBasePlot*                         Plot;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemManagementInventoryLimitStatusIndicator.ItemManagementInventoryLimitStatusIndicator_C.ExecuteUbergraph_ItemManagementInventoryLimitStatusIndicator

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -64,7 +64,7 @@ struct UMainTabsScreen_C_HandleCardPackStore_Params
 // Function MainTabsScreen.MainTabsScreen_C.HandleMtxStore
 struct UMainTabsScreen_C_HandleMtxStore_Params
 {
-	struct FName                                       Tab_Id;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       Tab_ID;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function MainTabsScreen.MainTabsScreen_C.Handle Unclaimed Resources Updated
@@ -203,14 +203,14 @@ struct UMainTabsScreen_C_Destruct_Params
 {
 };
 
-// Function MainTabsScreen.MainTabsScreen_C.OnQuestSeen_Event_1
-struct UMainTabsScreen_C_OnQuestSeen_Event_1_Params
+// Function MainTabsScreen.MainTabsScreen_C.OnQuestSeen_Event_0_1
+struct UMainTabsScreen_C_OnQuestSeen_Event_0_1_Params
 {
 	class UFortQuestItem*                              Quest;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function MainTabsScreen.MainTabsScreen_C.SquadSlotMarkedAsSeen_Event_1
-struct UMainTabsScreen_C_SquadSlotMarkedAsSeen_Event_1_Params
+// Function MainTabsScreen.MainTabsScreen_C.SquadSlotMarkedAsSeen_Event_0_1
+struct UMainTabsScreen_C_SquadSlotMarkedAsSeen_Event_0_1_Params
 {
 };
 

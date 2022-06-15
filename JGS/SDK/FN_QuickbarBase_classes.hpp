@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -41,7 +41,7 @@ public:
 	void OnQuickbarSlotFocusChanged(EFortQuickBars QuickbarIndex, int Slot);
 	void OnQuickbarContentsChanged(EFortQuickBars QuickbarIndex);
 	void OnQuickbarForceFullUpdate(EFortQuickBars QuickbarIndex);
-	void OnQuickbarSecondarySlotFocusChanged_Event_1(EFortQuickBars QuickbarIndex, int Slot);
+	void OnQuickbarSecondarySlotFocusChanged_Event_0_1(EFortQuickBars QuickbarIndex, int Slot);
 	void OnLocalPlayerDied(const struct FFortPlayerDeathReport& DeathReport);
 	void OnLocalPlayerRevived();
 	void OnLocalPlayerSpawned();

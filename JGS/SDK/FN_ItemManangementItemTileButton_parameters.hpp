@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -116,11 +116,6 @@ struct UItemManangementItemTileButton_C_OnSelected_Params
 
 // Function ItemManangementItemTileButton.ItemManangementItemTileButton_C.Construct
 struct UItemManangementItemTileButton_C_Construct_Params
-{
-};
-
-// Function ItemManangementItemTileButton.ItemManangementItemTileButton_C.HandleItemChangedBP
-struct UItemManangementItemTileButton_C_HandleItemChangedBP_Params
 {
 };
 

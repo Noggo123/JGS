@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,48 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function QuantitySelector.QuantitySelector_C.SetCurrentValue
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int                            NewValue                       (Parm, ZeroConstructor, IsPlainOldData)
-
-void UQuantitySelector_C::SetCurrentValue(int NewValue)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuantitySelector.QuantitySelector_C.SetCurrentValue");
-
-	UQuantitySelector_C_SetCurrentValue_Params params;
-	params.NewValue = NewValue;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function QuantitySelector.QuantitySelector_C.GetCurrentValue
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int                            CurrentValue                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UQuantitySelector_C::GetCurrentValue(int* CurrentValue)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function QuantitySelector.QuantitySelector_C.GetCurrentValue");
-
-	UQuantitySelector_C_GetCurrentValue_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (CurrentValue != nullptr)
-		*CurrentValue = params.CurrentValue;
-}
-
 
 // Function QuantitySelector.QuantitySelector_C.SetupForInputMode
 // (Public, BlueprintCallable, BlueprintEvent)

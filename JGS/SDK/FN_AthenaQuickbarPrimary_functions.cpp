@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,6 +20,23 @@ void UAthenaQuickbarPrimary_C::HandleShowHideWeaponRail()
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.HandleShowHideWeaponRail");
 
 	UAthenaQuickbarPrimary_C_HandleShowHideWeaponRail_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.HandleUpdateSlots
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UAthenaQuickbarPrimary_C::HandleUpdateSlots()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaQuickbarPrimary.AthenaQuickbarPrimary_C.HandleUpdateSlots");
+
+	UAthenaQuickbarPrimary_C_HandleUpdateSlots_Params params;
 
 	auto flags = fn->FunctionFlags;
 

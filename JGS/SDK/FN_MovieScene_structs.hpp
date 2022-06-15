@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -40,16 +40,6 @@ enum class EMovieSceneCompletionMode : uint8_t
 	KeepState                      = 0,
 	RestoreState                   = 1,
 	EMovieSceneCompletionMode_MAX  = 2
-};
-
-
-// Enum MovieScene.ESectionEvaluationFlags
-enum class ESectionEvaluationFlags : uint8_t
-{
-	None                           = 0,
-	PreRoll                        = 1,
-	PostRoll                       = 2,
-	ESectionEvaluationFlags_MAX    = 3
 };
 
 
@@ -149,10 +139,10 @@ struct FMovieSceneTrackEvalOptions
 };
 
 // ScriptStruct MovieScene.MovieSceneSegment
-// 0x0050
+// 0x0040
 struct FMovieSceneSegment
 {
-	unsigned char                                      UnknownData00[0x50];                                      // 0x0000(0x0050) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x40];                                      // 0x0000(0x0040) MISSED OFFSET
 };
 
 // ScriptStruct MovieScene.MovieSceneEvalTemplatePtr
@@ -346,13 +336,11 @@ struct FMovieSceneEditorData
 };
 
 // ScriptStruct MovieScene.SectionEvaluationData
-// 0x000C
+// 0x0008
 struct FSectionEvaluationData
 {
 	int                                                ImplIndex;                                                // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
 	float                                              ForcedTime;                                               // 0x0004(0x0004) (ZeroConstructor, IsPlainOldData)
-	ESectionEvaluationFlags                            Flags;                                                    // 0x0008(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x0009(0x0003) MISSED OFFSET
 };
 
 // ScriptStruct MovieScene.MovieSceneEvalTemplateBase
@@ -390,8 +378,8 @@ struct FMovieSceneSectionParameters
 {
 	float                                              StartOffset;                                              // 0x0000(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	float                                              TimeScale;                                                // 0x0004(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              PrerollTime;                                              // 0x0008(0x0004) (ZeroConstructor, Deprecated, IsPlainOldData)
-	float                                              PostrollTime;                                             // 0x000C(0x0004) (ZeroConstructor, Deprecated, IsPlainOldData)
+	float                                              PrerollTime;                                              // 0x0008(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              PostrollTime;                                             // 0x000C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct MovieScene.MovieSceneSequenceCachedSignature

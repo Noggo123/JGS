@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -43,7 +43,7 @@ public:
 
 	void OnWaveStarted(const struct FText& LevelText, int Level, const struct FText& WaveText, int WaveNum);
 	void OnWaveCompleted(int Wave, TArray<struct FFortItemInstanceQuantityPair> Rewards);
-	void OnHordeTierInitialized_Event_1(TArray<struct FFortItemInstanceQuantityPair> Items);
+	void OnHordeTierInitialized_Event_0_1(TArray<struct FFortItemInstanceQuantityPair> Items);
 	void OnWaveModifiersAdded(TArray<class UFortGameplayModifierItemDefinition*> Modifiers);
 	void Construct();
 	void OnModifierAppearanceAnimComplete();

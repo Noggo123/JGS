@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -8468,10 +8468,10 @@ struct FFastArraySerializerGuidReferences
 // 0x00B0
 struct FFastArraySerializer
 {
-	TMap<int32_t, int32_t> ItemMap;
+	Containers::TMap<int32_t, int32_t> ItemMap;
 	int32_t IDCounter;
 	int32_t	ArrayReplicationKey;
-	TMap<int32_t, FFastArraySerializerGuidReferences> GuidReferencesMap;
+	Containers::TMap<int32_t, FFastArraySerializerGuidReferences> GuidReferencesMap;
 	int32_t CachedNumItems;
 	int32_t CachedNumItemsToConsiderForWriting;
 
@@ -8492,7 +8492,7 @@ struct FFastArraySerializer
 	/** This must be called if you just remove something from the array */
 	void MarkArrayDirty()
 	{
-		//ItemMap.Reset();		// This allows to clients to add predictive elements to arrays without affecting replication.
+		ItemMap.Reset();		// This allows to clients to add predictive elements to arrays without affecting replication.
 		IncrementArrayReplicationKey();
 
 		// Invalidate the cached item counts so that they're recomputed during the next write
@@ -8517,7 +8517,7 @@ struct FDataTableRowHandle
 };
 
 // ScriptStruct Engine.ExposedValueCopyRecord
-// 0x0080
+// 0x0070
 struct FExposedValueCopyRecord
 {
 	class UProperty*                                   SourceProperty;                                           // 0x0000(0x0008) (ZeroConstructor, Deprecated, IsPlainOldData)
@@ -8534,9 +8534,7 @@ struct FExposedValueCopyRecord
 	class UBoolProperty*                               CachedBoolSourceProperty;                                 // 0x0038(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
 	class UBoolProperty*                               CachedBoolDestProperty;                                   // 0x0040(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
 	class UStructProperty*                             CachedStructDestProperty;                                 // 0x0048(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	class UProperty*                                   CachedSourceProperty;                                     // 0x0050(0x0008) (ZeroConstructor, IsPlainOldData)
-	class UProperty*                                   CachedSourceStructSubProperty;                            // 0x0058(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x20];                                      // 0x0060(0x0020) MISSED OFFSET
+	unsigned char                                      UnknownData02[0x20];                                      // 0x0050(0x0020) MISSED OFFSET
 };
 
 // ScriptStruct Engine.ExposedValueHandler
@@ -8545,8 +8543,7 @@ struct FExposedValueHandler
 {
 	struct FName                                       BoundFunction;                                            // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
 	TArray<struct FExposedValueCopyRecord>             CopyRecords;                                              // 0x0008(0x0010) (ZeroConstructor)
-	class UFunction*                                   Function;                                                 // 0x0018(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0020(0x0008) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x10];                                      // 0x0018(0x0010) MISSED OFFSET
 };
 
 // ScriptStruct Engine.AnimNode_Base
@@ -9896,8 +9893,8 @@ struct FClientReceiveData
 	int                                                MessageIndex;                                             // 0x0010(0x0004) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0014(0x0004) MISSED OFFSET
 	struct FString                                     MessageString;                                            // 0x0018(0x0010) (ZeroConstructor)
-	class APlayerState*                                RelatedPlayerState_2;                                     // 0x0028(0x0008) (ZeroConstructor, IsPlainOldData)
-	class APlayerState*                                RelatedPlayerState_3;                                     // 0x0030(0x0008) (ZeroConstructor, IsPlainOldData)
+	class APlayerState*                                RelatedPlayerState_1_2;                                   // 0x0028(0x0008) (ZeroConstructor, IsPlainOldData)
+	class APlayerState*                                RelatedPlayerState_2_3;                                   // 0x0030(0x0008) (ZeroConstructor, IsPlainOldData)
 	class UObject*                                     OptionalObject;                                           // 0x0038(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 

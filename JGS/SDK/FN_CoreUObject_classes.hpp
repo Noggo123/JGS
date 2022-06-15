@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -30,9 +30,9 @@ public:
 		return GObjects->ObjObjects;
 	}
 
-	std::string GetName() const;
+	std::string GetName();
 
-	std::string GetFullName() const;
+	std::string GetFullName();
 
 	template<typename T>
 	static T* FindObject(const std::string& name)
@@ -46,7 +46,7 @@ public:
 				continue;
 			}
 	
-			if (object->GetFullName().contains(name))
+			if (object->GetFullName().find(name) != std::string::npos)
 			{
 				return static_cast<T*>(object);
 			}
@@ -59,12 +59,12 @@ public:
 		for (int i = 0; i < GetGlobalObjects().Num(); ++i)
 		{
 			auto object = GetGlobalObjects().GetByIndex(i);
-
+	
 			if (object == nullptr)
 			{
 				continue;
 			}
-
+	
 			if (object->GetFullName() == name)
 			{
 				return reinterpret_cast<UClass*>(object);

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -31,7 +31,7 @@ public:
 
 
 	void UpdateState();
-	class UWidget* Get_Button_ToolTipWidget_1();
+	class UWidget* Get_Button_ToolTipWidget_0_1();
 	void UpdateAmount(const struct FFortPrivateAccountInfo& FortPrivateAccountInfo);
 	void Construct();
 	void HandleLocalAccountInfoChanged(const struct FFortPrivateAccountInfo& NewInfo);

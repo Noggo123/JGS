@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -354,23 +354,6 @@ void UItemManangementItemTileButton_C::Construct()
 	static auto fn = UObject::FindObject<UFunction>("Function ItemManangementItemTileButton.ItemManangementItemTileButton_C.Construct");
 
 	UItemManangementItemTileButton_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemManangementItemTileButton.ItemManangementItemTileButton_C.HandleItemChangedBP
-// (Event, Protected, BlueprintEvent)
-
-void UItemManangementItemTileButton_C::HandleItemChangedBP()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function ItemManangementItemTileButton.ItemManangementItemTileButton_C.HandleItemChangedBP");
-
-	UItemManangementItemTileButton_C_HandleItemChangedBP_Params params;
 
 	auto flags = fn->FunctionFlags;
 

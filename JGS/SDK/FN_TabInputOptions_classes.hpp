@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -35,7 +35,7 @@ public:
 	}
 
 
-	void NewFunction_1();
+	void NewFunction_0_1();
 	void Set_Input_Enabled();
 	void Overlay_Key_Pressed(const struct FKey& NewKey);
 	void Construct();

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass EnemyPawn_Parent.EnemyPawn_Parent_C
-// 0x0328 (0x1E18 - 0x1AF0)
+// 0x0300 (0x1DF0 - 0x1AF0)
 class AEnemyPawn_Parent_C : public AFortAIPawn
 {
 public:
@@ -71,7 +71,7 @@ public:
 	struct FTransform                                  SpawnParticlesTransform;                                  // 0x1C50(0x0030) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
 	class UMaterialInstanceDynamic*                    Dynamic_Material_Instance_1;                              // 0x1C80(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	class UParticleSystem*                             SpawnParticles;                                           // 0x1C88(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UParticleSystemComponent*                    CharacterElementalParticles;                              // 0x1C90(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UParticleSystemComponent*                    CharacterAmbientParticles;                                // 0x1C90(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	bool                                               AllowHeadshot;                                            // 0x1C98(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData08[0x7];                                       // 0x1C99(0x0007) MISSED OFFSET
 	struct FGameplayTagContainer                       TC_RangedWeapon;                                          // 0x1CA0(0x0020) (Edit, BlueprintVisible, DisableEditOnInstance)
@@ -80,47 +80,45 @@ public:
 	class USoundBase*                                  Death_Normal_Sound;                                       // 0x1CD0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	class USoundBase*                                  Elemental_Audio_Layer_Sound;                              // 0x1CD8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	bool                                               SpecialEventHalloweenPumpkinHead;                         // 0x1CE0(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	bool                                               SpecialEventHalloweenPumpkinHeadApplied;                  // 0x1CE1(0x0001) (Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData09[0x6];                                       // 0x1CE2(0x0006) MISSED OFFSET
+	unsigned char                                      UnknownData09[0x7];                                       // 0x1CE1(0x0007) MISSED OFFSET
 	struct FGameplayTagContainer                       TC_NPCCharacterTypeHuskBasic;                             // 0x1CE8(0x0020) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FGameplayTagContainer                       TC_SpecialEventHalloweenPumpkinHead;                      // 0x1D08(0x0020) (Edit, BlueprintVisible, DisableEditOnInstance)
-	float                                              PumpkinHeadPercentage;                                    // 0x1D28(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData10[0x4];                                       // 0x1D2C(0x0004) MISSED OFFSET
-	class UClass*                                      GE_SpecialEvent_Halloween_PumpkinHead;                    // 0x1D30(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UStaticMeshComponent*                        Pumpkin_Head_Mesh;                                        // 0x1D38(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UStaticMeshComponent*                        Pumpkin_Eyeglow_Mesh;                                     // 0x1D40(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FRotator                                    PumpkinHeadRotation;                                      // 0x1D48(0x000C) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
-	struct FVector                                     PumpkinHeadScale;                                         // 0x1D54(0x000C) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
-	struct FVector                                     PumpkinHeadOffset;                                        // 0x1D60(0x000C) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData11[0x4];                                       // 0x1D6C(0x0004) MISSED OFFSET
-	class UParticleSystemComponent*                    PumpkinEyesFX;                                            // 0x1D70(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FName                                       Headshot_FX_Socket;                                       // 0x1D78(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UMaterial*                                   Material_Alteration_0;                                    // 0x1D80(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UMaterial*                                   Material_Alteration_1;                                    // 0x1D88(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UParticleSystemComponent*                    SleepParticleSystemComp;                                  // 0x1D90(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class USoundBase*                                  Husk_Sleeping_Sound;                                      // 0x1D98(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UAudioComponent*                             HuskSleepSound;                                           // 0x1DA0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UParticleSystemComponent*                    WakeUpParticleSystemComp;                                 // 0x1DA8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              AwokenMaxDistance;                                        // 0x1DB0(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData12[0x4];                                       // 0x1DB4(0x0004) MISSED OFFSET
-	class USkeletalMeshComponent*                      AwokenSkeletalMesh;                                       // 0x1DB8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UMaterialInstanceDynamic*                    AwokenSkelMeshMID;                                        // 0x1DC0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              AwokenFadeInTime;                                         // 0x1DC8(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              AwokenFadeOutTime;                                        // 0x1DCC(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              AwokenDuration;                                           // 0x1DD0(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	bool                                               Sleeping;                                                 // 0x1DD4(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	bool                                               HasGlowColorsAssigned;                                    // 0x1DD5(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	bool                                               SpawnInTimelineCompletedSuccessfully;                     // 0x1DD6(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData13[0x1];                                       // 0x1DD7(0x0001) MISSED OFFSET
-	struct FTimerHandle                                CharacterSpawnInSafetyCheckHandle;                        // 0x1DD8(0x0008) (Edit, BlueprintVisible, DisableEditOnInstance)
-	class UMaterialInstanceDynamic*                    Base_MID_0;                                               // 0x1DE0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UMaterialInstanceDynamic*                    Previous_MID_0;                                           // 0x1DE8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UParticleSystem*                             CharacterElementalParticlesTemplate;                      // 0x1DF0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FVector                                     FrozenHuskMeshScale;                                      // 0x1DF8(0x000C) (Edit, BlueprintVisible, IsPlainOldData)
-	bool                                               SpawnFrozenHuskMesh;                                      // 0x1E04(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData14[0x3];                                       // 0x1E05(0x0003) MISSED OFFSET
-	class UParticleSystem*                             CharacterAmbientParticlesTemplate;                        // 0x1E08(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UParticleSystemComponent*                    CharacterAmbientParticles;                                // 0x1E10(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              PumpkinHeadPercentage;                                    // 0x1D08(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData10[0x4];                                       // 0x1D0C(0x0004) MISSED OFFSET
+	class UClass*                                      GE_SpecialEvent_Halloween_PumpkinHead;                    // 0x1D10(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FActiveGameplayEffectHandle                 PumpkinHeadActiveGE;                                      // 0x1D18(0x0008) (Edit, BlueprintVisible, Net, DisableEditOnInstance)
+	class UStaticMeshComponent*                        Pumpkin_Head_Mesh;                                        // 0x1D20(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UStaticMeshComponent*                        Pumpkin_Eyeglow_Mesh;                                     // 0x1D28(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FRotator                                    PumpkinHeadRotation;                                      // 0x1D30(0x000C) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
+	struct FVector                                     PumpkinHeadScale;                                         // 0x1D3C(0x000C) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
+	struct FVector                                     PumpkinHeadOffset;                                        // 0x1D48(0x000C) (Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData11[0x4];                                       // 0x1D54(0x0004) MISSED OFFSET
+	class UParticleSystemComponent*                    Pumpkin_Eye_R;                                            // 0x1D58(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UParticleSystemComponent*                    Pumpking_Eye_L;                                           // 0x1D60(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FName                                       Headshot_FX_Socket;                                       // 0x1D68(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UMaterial*                                   Material_Alteration_0;                                    // 0x1D70(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UMaterial*                                   Material_Alteration_1;                                    // 0x1D78(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	bool                                               Temp_Disable_Elemental_Effects;                           // 0x1D80(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	TEnumAsByte<ElementalEnum>                         ElementalType;                                            // 0x1D81(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData12[0x6];                                       // 0x1D82(0x0006) MISSED OFFSET
+	class UParticleSystem*                             Particle_Fire_Ambient;                                    // 0x1D88(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UParticleSystem*                             Particle_Ice_Ambient;                                     // 0x1D90(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UParticleSystem*                             Particle_Electrical_Ambient;                              // 0x1D98(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UParticleSystemComponent*                    SleepParticleSystemComp;                                  // 0x1DA0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class USoundBase*                                  Husk_Sleeping_Sound;                                      // 0x1DA8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UAudioComponent*                             HuskSleepSound;                                           // 0x1DB0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UParticleSystemComponent*                    WakeUpParticleSystemComp;                                 // 0x1DB8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              AwokenMaxDistance;                                        // 0x1DC0(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData13[0x4];                                       // 0x1DC4(0x0004) MISSED OFFSET
+	class USkeletalMeshComponent*                      AwokenSkeletalMesh;                                       // 0x1DC8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UMaterialInstanceDynamic*                    AwokenSkelMeshMID;                                        // 0x1DD0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              AwokenFadeInTime;                                         // 0x1DD8(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              AwokenFadeOutTime;                                        // 0x1DDC(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              AwokenDuration;                                           // 0x1DE0(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               Sleeping;                                                 // 0x1DE4(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               HasGlowColorsAssigned;                                    // 0x1DE5(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               SpawnInTimelineCompletedSuccessfully;                     // 0x1DE6(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData14[0x1];                                       // 0x1DE7(0x0001) MISSED OFFSET
+	struct FTimerHandle                                CharacterSpawnInSafetyCheckHandle;                        // 0x1DE8(0x0008) (Edit, BlueprintVisible, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{
@@ -129,22 +127,18 @@ public:
 	}
 
 
-	void Orphaned(bool* IsOrphaned, class AFortPawn** AttachedPawn);
-	void OnRep_SpecialEventHalloweenPumpkinHeadApplied();
-	void SpecialEventHalloweenPumpkinHeadHusk(bool ApplyPumpkinHeadMesh, bool DebugApplicationOrRemoval_);
-	void SpawnMeshAttachedToCharacter(class UStaticMesh* Static_Mesh, const struct FName& Socket_Name, const struct FTransform& Relative_Transform, bool Absolute_Location, bool Absolute_Rotation, bool Absolute_Scale, class UStaticMeshComponent** Static_Mesh_Component_Reference);
-	void RestorePreviousMaterialOnCharacterMesh(float Delay_in_Seconds);
 	void CharacterSpawnInSafetyCheck();
 	void SetCharacterEyeColors(const struct FLinearColor& Eye_Color_Inner, const struct FLinearColor& Eye_Color_Outer);
 	void SetCharacterFresnelGlowColors(const struct FLinearColor& Inner_Color, const struct FLinearColor& Outer_Color);
-	void SpawnParticleSystemOnCharacterMesh(class UParticleSystem* ParticleSystemTemplate, class UParticleSystemComponent* ParticleSystemComponentReferenceVar, const struct FName& AttachPointName, const struct FVector& Location, const struct FRotator& Rotation, bool AutoActivate, bool AutoDestroy, bool AbsoluteLocation, bool AbsoluteRotation, bool AbsoluteScale, TArray<struct FParticleSysParam>* InstanceParameters, class UParticleSystemComponent** PSComponentReference);
+	void SpawnParticleSystemAttachedToCharacterMesh(class UParticleSystem* Particle_System, const struct FName& Attach_Point_Name, const struct FVector& Location, const struct FRotator& Rotation);
 	void OverridePhysicalMaterialOnCharacterMesh(class UPhysicalMaterial* Physical_Material_Override);
 	void DestroyAwokenSkeletalMesh();
 	void OverrideMaterialAndCopyParametersOnCharacterMesh(class UMaterial* New_Material_To_Apply);
+	void OnRep_PumpkinHeadActiveGE();
 	void PlayAdditiveHitReacts(const struct FVector& Hit_Direction, class UAnimMontage* Anim_Montage);
-	void SetActiveParticlesOnCharacterMesh(bool Active, bool Reset);
-	void SetScalarParameterOnAllCharacterMIDs(const struct FName& Parameter_Name, float Scalar_Value);
-	void SetVectorParameterOnAllCharacterMIDs(const struct FName& Parameter_Name, const struct FLinearColor& Linear_Color);
+	void SetActiveElementalAmbientParticles(bool Active, bool Reset);
+	void SetScalarParameterOnAllMIDs(const struct FName& Parameter_Name, float Scalar_Value);
+	void SetVectorParameterOnAllMIDs(const struct FName& Parameter_Name, const struct FLinearColor& Linear_Color);
 	void PickColorFromAnArrayOfColors(TArray<struct FLinearColor>* ArrayOfColors, struct FLinearColor* Color);
 	void StopDeathFX();
 	void StopMaterialTimeline();
@@ -160,7 +154,8 @@ public:
 	void ReceiveBeginPlay();
 	void OnDeathPlayEffects(float* Damage, struct FGameplayTagContainer* DamageTags, struct FVector* Momentum, struct FHitResult* HitInfo, class AFortPawn** InstigatedBy, class AActor** DamageCauser, struct FGameplayEffectContextHandle* EffectContext);
 	void BeginDeathFX();
-	void PostSpawnIn();
+	void DeactivateEffectsPreDespawn();
+	void ActivateEffectsPostSpawnIn();
 	void DespawnEnemy(const struct FVector& RiftLocationWS);
 	void DebugEnemySpawnIn();
 	void OnFinishedEncounterSpawn();
@@ -170,9 +165,6 @@ public:
 	void AdditiveHitReactDelay();
 	void OnBeginSleepEffects();
 	void OnEndSleepEffects();
-	void RestorePreviousMaterialDelayCompleted();
-	void RestorePreviousMaterialDelay(float Delay_Amount);
-	void OnCheatUpdateSpecialEventGE(bool* bShouldUseSpecialEventGE);
 	void ExecuteUbergraph_EnemyPawn_Parent(int EntryPoint);
 };
 

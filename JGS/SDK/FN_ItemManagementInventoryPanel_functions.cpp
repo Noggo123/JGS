@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -77,6 +77,65 @@ void UItemManagementInventoryPanel_C::SelectTrapByTag(const struct FGameplayTag&
 
 	if (Success != nullptr)
 		*Success = params.Success;
+}
+
+
+// Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.HandleMulchQuantityCallback
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            Quantity                       (Parm, ZeroConstructor, IsPlainOldData)
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementInventoryPanel_C::HandleMulchQuantityCallback(int Quantity, class UFortItem* Item)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.HandleMulchQuantityCallback");
+
+	UItemManagementInventoryPanel_C_HandleMulchQuantityCallback_Params params;
+	params.Quantity = Quantity;
+	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.DestroyMulchQuantitySelector
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UItemManagementInventoryPanel_C::DestroyMulchQuantitySelector()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.DestroyMulchQuantitySelector");
+
+	UItemManagementInventoryPanel_C_DestroyMulchQuantitySelector_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.CreateMulchQuantitySelector
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFortItem*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementInventoryPanel_C::CreateMulchQuantitySelector(class UFortItem* Item)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.CreateMulchQuantitySelector");
+
+	UItemManagementInventoryPanel_C_CreateMulchQuantitySelector_Params params;
+	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
 }
 
 
@@ -410,6 +469,26 @@ void UItemManagementInventoryPanel_C::HandleQuickBarChangedBP(EFortQuickBars* Qu
 
 	UItemManagementInventoryPanel_C_HandleQuickBarChangedBP_Params params;
 	params.QuickBarType = QuickBarType;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.HandleMulchQuantitySelection
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UFortItem**              Item                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UItemManagementInventoryPanel_C::HandleMulchQuantitySelection(class UFortItem** Item)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.HandleMulchQuantitySelection");
+
+	UItemManagementInventoryPanel_C_HandleMulchQuantitySelection_Params params;
+	params.Item = Item;
 
 	auto flags = fn->FunctionFlags;
 

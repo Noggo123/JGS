@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,13 +20,13 @@ struct UItemDetailsHeaderItemDisplayText_C_GetDisplayName_Params
 	struct FText                                       DisplayName;                                              // (Parm, OutParm)
 };
 
-// Function ItemDetailsHeaderItemDisplayText.ItemDetailsHeaderItemDisplayText_C.HandlePostDifferentItemToDetailSet
-struct UItemDetailsHeaderItemDisplayText_C_HandlePostDifferentItemToDetailSet_Params
+// Function ItemDetailsHeaderItemDisplayText.ItemDetailsHeaderItemDisplayText_C.HandlePostDifferentItemToCompareWithSet
+struct UItemDetailsHeaderItemDisplayText_C_HandlePostDifferentItemToCompareWithSet_Params
 {
 };
 
-// Function ItemDetailsHeaderItemDisplayText.ItemDetailsHeaderItemDisplayText_C.HandlePostDifferentItemToCompareWithSet
-struct UItemDetailsHeaderItemDisplayText_C_HandlePostDifferentItemToCompareWithSet_Params
+// Function ItemDetailsHeaderItemDisplayText.ItemDetailsHeaderItemDisplayText_C.HandlePostDifferentItemToDetailSet
+struct UItemDetailsHeaderItemDisplayText_C_HandlePostDifferentItemToDetailSet_Params
 {
 };
 

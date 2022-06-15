@@ -4,32 +4,32 @@
 
 struct QuickBarsPointer
 {
-    unsigned char pad[0x1A88];
+    unsigned char pad[0x1C48];
     AFortQuickBars* QuickBars;
 };
 
 struct InventoryPointer
 {
-    unsigned char pad[0x1D28];
+    unsigned char pad[0x1E78];
     AFortInventory* WorldInventory;
 };
 
 struct BuildPreviewPointer
 {
-    unsigned char pad[0x1788];
+    unsigned char pad[0x1948];
     ABuildingPlayerPrimitivePreview* BuildPreviewMarker;
 };
 
 struct CurrentBuildableClassPointer
 {
-    unsigned char pad[0x1940];
+    unsigned char pad[0x1B00];
     UClass* CurrentBuildableClass;
 };
 
 struct AFortAsBuildPreviewMID
 {
 public:
-    unsigned char UnknownData00[0x1928];
+    unsigned char UnknownData00[0x1AE8];
     class UMaterialInstanceDynamic* BuildPreviewMarkerMID;
 };
 
@@ -246,7 +246,7 @@ public:
                 auto NewFortPickup = (AFortPickupAthena*)(Util::SpawnActor(AFortPickupAthena::StaticClass(), PC->Pawn->K2_GetActorLocation(), {}));
                 NewFortPickup->PrimaryPickupItemEntry = ItemInstance->ItemEntry;
                 NewFortPickup->OnRep_PrimaryPickupItemEntry();
-                NewFortPickup->TossPickup(PC->Pawn->K2_GetActorLocation(), nullptr, 999, true);
+                NewFortPickup->TossPickup(PC->Pawn->K2_GetActorLocation(), nullptr, 999);
             }
 
             for (int i = 0; i < reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)

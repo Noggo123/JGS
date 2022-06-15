@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -40,9 +40,6 @@ public:
 	}
 
 
-	void SetBrushAndTextStyle(TEnumAsByte<EFortBrushSize> InBrushSize, class UClass* InStyle);
-	void UpdateOverrideState();
-	void SetOverrideValue(int OverrrideValue);
 	void SetIsBeingPreviewed(bool BeingPreviewed);
 	void SetItemDefinition(class UFortItemDefinition* ItemDefinition);
 	void Construct();

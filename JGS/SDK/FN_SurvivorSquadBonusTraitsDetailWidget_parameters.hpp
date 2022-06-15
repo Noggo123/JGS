@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,6 +14,11 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
+// Function SurvivorSquadBonusTraitsDetailWidget.SurvivorSquadBonusTraitsDetailWidget_C.HandlePostDifferentItemToDetailSet
+struct USurvivorSquadBonusTraitsDetailWidget_C_HandlePostDifferentItemToDetailSet_Params
+{
+};
+
 // Function SurvivorSquadBonusTraitsDetailWidget.SurvivorSquadBonusTraitsDetailWidget_C.HandlePostDifferentSquadSlotSetBP
 struct USurvivorSquadBonusTraitsDetailWidget_C_HandlePostDifferentSquadSlotSetBP_Params
 {
@@ -21,11 +26,6 @@ struct USurvivorSquadBonusTraitsDetailWidget_C_HandlePostDifferentSquadSlotSetBP
 
 // Function SurvivorSquadBonusTraitsDetailWidget.SurvivorSquadBonusTraitsDetailWidget_C.HandleTraitValuesUpdatedBP
 struct USurvivorSquadBonusTraitsDetailWidget_C_HandleTraitValuesUpdatedBP_Params
-{
-};
-
-// Function SurvivorSquadBonusTraitsDetailWidget.SurvivorSquadBonusTraitsDetailWidget_C.HandlePostDifferentItemToDetailSet
-struct USurvivorSquadBonusTraitsDetailWidget_C_HandlePostDifferentItemToDetailSet_Params
 {
 };
 

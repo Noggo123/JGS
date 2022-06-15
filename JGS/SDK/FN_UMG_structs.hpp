@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -149,38 +149,6 @@ enum class EWidgetInteractionSource : uint8_t
 //Script Structs
 //---------------------------------------------------------------------------
 
-// ScriptStruct UMG.WidgetTransform
-// 0x001C
-struct FWidgetTransform
-{
-	struct FVector2D                                   Translation;                                              // 0x0000(0x0008) (Edit, BlueprintVisible, IsPlainOldData)
-	struct FVector2D                                   Scale;                                                    // 0x0008(0x0008) (Edit, BlueprintVisible, IsPlainOldData)
-	struct FVector2D                                   Shear;                                                    // 0x0010(0x0008) (Edit, BlueprintVisible, IsPlainOldData)
-	float                                              Angle;                                                    // 0x0018(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-};
-
-// ScriptStruct UMG.EventReply
-// 0x00B8
-struct FEventReply
-{
-	unsigned char                                      UnknownData00[0xB8];                                      // 0x0000(0x00B8) MISSED OFFSET
-};
-
-// ScriptStruct UMG.NamedSlotBinding
-// 0x0010
-struct FNamedSlotBinding
-{
-	struct FName                                       Name;                                                     // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
-	class UWidget*                                     Content;                                                  // 0x0008(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-};
-
-// ScriptStruct UMG.PaintContext
-// 0x0030
-struct FPaintContext
-{
-	unsigned char                                      UnknownData00[0x30];                                      // 0x0000(0x0030) MISSED OFFSET
-};
-
 // ScriptStruct UMG.PropertyPathSegment
 // 0x0020
 struct FPropertyPathSegment
@@ -213,6 +181,23 @@ struct FSlateMeshVertex
 	struct FVector2D                                   UV5;                                                      // 0x0034(0x0008) (IsPlainOldData)
 };
 
+// ScriptStruct UMG.WidgetTransform
+// 0x001C
+struct FWidgetTransform
+{
+	struct FVector2D                                   Translation;                                              // 0x0000(0x0008) (Edit, BlueprintVisible, IsPlainOldData)
+	struct FVector2D                                   Scale;                                                    // 0x0008(0x0008) (Edit, BlueprintVisible, IsPlainOldData)
+	struct FVector2D                                   Shear;                                                    // 0x0010(0x0008) (Edit, BlueprintVisible, IsPlainOldData)
+	float                                              Angle;                                                    // 0x0018(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct UMG.EventReply
+// 0x00B8
+struct FEventReply
+{
+	unsigned char                                      UnknownData00[0xB8];                                      // 0x0000(0x00B8) MISSED OFFSET
+};
+
 // ScriptStruct UMG.DelegateRuntimeBinding
 // 0x0038
 struct FDelegateRuntimeBinding
@@ -223,6 +208,21 @@ struct FDelegateRuntimeBinding
 	struct FDynamicPropertyPath                        SourcePath;                                               // 0x0020(0x0010)
 	EBindingKind                                       Kind;                                                     // 0x0030(0x0001) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x7];                                       // 0x0031(0x0007) MISSED OFFSET
+};
+
+// ScriptStruct UMG.NamedSlotBinding
+// 0x0010
+struct FNamedSlotBinding
+{
+	struct FName                                       Name;                                                     // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	class UWidget*                                     Content;                                                  // 0x0008(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+};
+
+// ScriptStruct UMG.PaintContext
+// 0x0030
+struct FPaintContext
+{
+	unsigned char                                      UnknownData00[0x30];                                      // 0x0000(0x0030) MISSED OFFSET
 };
 
 // ScriptStruct UMG.AnchorData

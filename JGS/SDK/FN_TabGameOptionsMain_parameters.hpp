@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function TabGameOptionsMain.TabGameOptionsMain_C.Set Settings Tooltip
+struct UTabGameOptionsMain_C_Set_Settings_Tooltip_Params
+{
+	class UCommonTextBlock*                            Tooltip_To_Display;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+};
 
 // Function TabGameOptionsMain.TabGameOptionsMain_C.Initialize Data
 struct UTabGameOptionsMain_C_Initialize_Data_Params
@@ -148,24 +154,6 @@ struct UTabGameOptionsMain_C_BndEvt__ScopedMultiplier_K2Node_ComponentBoundEvent
 
 // Function TabGameOptionsMain.TabGameOptionsMain_C.BndEvt__TargetingMultiplier_K2Node_ComponentBoundEvent_219_SliderChanged__DelegateSignature
 struct UTabGameOptionsMain_C_BndEvt__TargetingMultiplier_K2Node_ComponentBoundEvent_219_SliderChanged__DelegateSignature_Params
-{
-	float                                              Slider_Value;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function TabGameOptionsMain.TabGameOptionsMain_C.BndEvt__ToggleTargeting_K2Node_ComponentBoundEvent_207_Selection Changed__DelegateSignature
-struct UTabGameOptionsMain_C_BndEvt__ToggleTargeting_K2Node_ComponentBoundEvent_207_Selection_Changed__DelegateSignature_Params
-{
-	int                                                Selected_Index;                                           // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function TabGameOptionsMain.TabGameOptionsMain_C.BndEvt__GamepadScopedMultiplier_K2Node_ComponentBoundEvent_401_SliderChanged__DelegateSignature
-struct UTabGameOptionsMain_C_BndEvt__GamepadScopedMultiplier_K2Node_ComponentBoundEvent_401_SliderChanged__DelegateSignature_Params
-{
-	float                                              Slider_Value;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function TabGameOptionsMain.TabGameOptionsMain_C.BndEvt__GamepadTargetingMultiplier_K2Node_ComponentBoundEvent_423_SliderChanged__DelegateSignature
-struct UTabGameOptionsMain_C_BndEvt__GamepadTargetingMultiplier_K2Node_ComponentBoundEvent_423_SliderChanged__DelegateSignature_Params
 {
 	float                                              Slider_Value;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };

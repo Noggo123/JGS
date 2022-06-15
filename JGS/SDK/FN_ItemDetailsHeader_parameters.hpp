@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -27,6 +27,12 @@ struct UItemDetailsHeader_C_UpdateItemsForWidgets_Params
 // Function ItemDetailsHeader.ItemDetailsHeader_C.Construct
 struct UItemDetailsHeader_C_Construct_Params
 {
+};
+
+// Function ItemDetailsHeader.ItemDetailsHeader_C.PreConstruct
+struct UItemDetailsHeader_C_PreConstruct_Params
+{
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemDetailsHeader.ItemDetailsHeader_C.HandleDifferentItemToDetailSet

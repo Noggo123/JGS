@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,18 +37,18 @@ void URewardsWidget_C::OnHandleAction(struct FEventReply* Result, bool* bPassThr
 }
 
 
-// Function RewardsWidget.RewardsWidget_C.On_ClosedChest_MouseButtonDown_2
+// Function RewardsWidget.RewardsWidget_C.On_ClosedChest_MouseButtonDown_1_2
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FGeometry               MyGeometry                     (Parm, IsPlainOldData)
 // struct FPointerEvent           MouseEvent                     (ConstParm, Parm, OutParm, ReferenceParm)
 // struct FEventReply             ReturnValue                    (Parm, OutParm, ReturnParm)
 
-struct FEventReply URewardsWidget_C::On_ClosedChest_MouseButtonDown_2(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
+struct FEventReply URewardsWidget_C::On_ClosedChest_MouseButtonDown_1_2(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function RewardsWidget.RewardsWidget_C.On_ClosedChest_MouseButtonDown_2");
+	static auto fn = UObject::FindObject<UFunction>("Function RewardsWidget.RewardsWidget_C.On_ClosedChest_MouseButtonDown_1_2");
 
-	URewardsWidget_C_On_ClosedChest_MouseButtonDown_2_Params params;
+	URewardsWidget_C_On_ClosedChest_MouseButtonDown_1_2_Params params;
 	params.MyGeometry = MyGeometry;
 	params.MouseEvent = MouseEvent;
 

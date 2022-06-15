@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -24,14 +24,14 @@ struct UBP_LocalPlayerProfileManagement_C_UpdateBannerEditorButton_Params
 {
 };
 
-// Function BP_LocalPlayerProfileManagement.BP_LocalPlayerProfileManagement_C.Get_LeavePartyButton_Visibility_1
-struct UBP_LocalPlayerProfileManagement_C_Get_LeavePartyButton_Visibility_1_Params
+// Function BP_LocalPlayerProfileManagement.BP_LocalPlayerProfileManagement_C.Get_LeavePartyButton_Visibility_0_1
+struct UBP_LocalPlayerProfileManagement_C_Get_LeavePartyButton_Visibility_0_1_Params
 {
 	ESlateVisibility                                   ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function BP_LocalPlayerProfileManagement.BP_LocalPlayerProfileManagement_C.Get_ViewProfileButton_Visibility_1
-struct UBP_LocalPlayerProfileManagement_C_Get_ViewProfileButton_Visibility_1_Params
+// Function BP_LocalPlayerProfileManagement.BP_LocalPlayerProfileManagement_C.Get_ViewProfileButton_Visibility_0_1
+struct UBP_LocalPlayerProfileManagement_C_Get_ViewProfileButton_Visibility_0_1_Params
 {
 	ESlateVisibility                                   ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };

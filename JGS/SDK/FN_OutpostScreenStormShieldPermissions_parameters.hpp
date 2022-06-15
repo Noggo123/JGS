@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -58,14 +58,14 @@ struct UOutpostScreenStormShieldPermissions_C_Construct_Params
 {
 };
 
-// Function OutpostScreenStormShieldPermissions.OutpostScreenStormShieldPermissions_C.UpdatePrivilagesEvent_1
-struct UOutpostScreenStormShieldPermissions_C_UpdatePrivilagesEvent_1_Params
+// Function OutpostScreenStormShieldPermissions.OutpostScreenStormShieldPermissions_C.UpdatePrivilagesEvent_0_1
+struct UOutpostScreenStormShieldPermissions_C_UpdatePrivilagesEvent_0_1_Params
 {
 	struct FFortTeamMemberInfo                         NewTeamMemberInfo;                                        // (Parm)
 };
 
-// Function OutpostScreenStormShieldPermissions.OutpostScreenStormShieldPermissions_C.UpdatePrivilagesEvent_2
-struct UOutpostScreenStormShieldPermissions_C_UpdatePrivilagesEvent_2_Params
+// Function OutpostScreenStormShieldPermissions.OutpostScreenStormShieldPermissions_C.UpdatePrivilagesEvent_1_2
+struct UOutpostScreenStormShieldPermissions_C_UpdatePrivilagesEvent_1_2_Params
 {
 	int                                                PlayerIndex;                                              // (Parm, ZeroConstructor, IsPlainOldData)
 };

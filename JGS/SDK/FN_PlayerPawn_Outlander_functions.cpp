@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -577,7 +577,7 @@ void APlayerPawn_Outlander_C::GameplayCue_Abilities_Activation_Outlander_AntiMat
 
 
 // Function PlayerPawn_Outlander.PlayerPawn_Outlander_C.SetTeleportEffects
-// (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
+// (Net, NetMulticast, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // bool                           On                             (Parm, ZeroConstructor, IsPlainOldData)
 

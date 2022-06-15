@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,14 +12,14 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function TabInputOptions.TabInputOptions_C.NewFunction_1
+// Function TabInputOptions.TabInputOptions_C.NewFunction_0_1
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void UTabInputOptions_C::NewFunction_1()
+void UTabInputOptions_C::NewFunction_0_1()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function TabInputOptions.TabInputOptions_C.NewFunction_1");
+	static auto fn = UObject::FindObject<UFunction>("Function TabInputOptions.TabInputOptions_C.NewFunction_0_1");
 
-	UTabInputOptions_C_NewFunction_1_Params params;
+	UTabInputOptions_C_NewFunction_0_1_Params params;
 
 	auto flags = fn->FunctionFlags;
 

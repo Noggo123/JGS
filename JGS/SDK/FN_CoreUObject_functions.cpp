@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,7 +12,7 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-std::string UObject::GetName() const
+std::string UObject::GetName()
 {
 	std::string name(Name.GetName());
 	if (Name.Number > 0)
@@ -29,7 +29,7 @@ std::string UObject::GetName() const
 	return name.substr(pos + 1);
 }
 
-std::string UObject::GetFullName() const
+std::string UObject::GetFullName()
 {
 	std::string name;
 

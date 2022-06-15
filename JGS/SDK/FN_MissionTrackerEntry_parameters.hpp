@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -16,6 +16,11 @@ namespace SDK
 
 // Function MissionTrackerEntry.MissionTrackerEntry_C.Construct
 struct UMissionTrackerEntry_C_Construct_Params
+{
+};
+
+// Function MissionTrackerEntry.MissionTrackerEntry_C.OnMissionSet
+struct UMissionTrackerEntry_C_OnMissionSet_Params
 {
 };
 

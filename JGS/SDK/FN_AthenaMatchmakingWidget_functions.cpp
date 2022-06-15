@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -69,6 +69,23 @@ void UAthenaMatchmakingWidget_C::SetAutoFillOptions()
 }
 
 
+// Function AthenaMatchmakingWidget.AthenaMatchmakingWidget_C.RefreshInput
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UAthenaMatchmakingWidget_C::RefreshInput()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingWidget.AthenaMatchmakingWidget_C.RefreshInput");
+
+	UAthenaMatchmakingWidget_C_RefreshInput_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AthenaMatchmakingWidget.AthenaMatchmakingWidget_C.BndEvt__BP_PlayButton_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
@@ -100,6 +117,23 @@ void UAthenaMatchmakingWidget_C::BndEvt__BP_CancelButton_K2Node_ComponentBoundEv
 
 	UAthenaMatchmakingWidget_C_BndEvt__BP_CancelButton_K2Node_ComponentBoundEvent_19_CommonButtonClicked__DelegateSignature_Params params;
 	params.Button = Button;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaMatchmakingWidget.AthenaMatchmakingWidget_C.OnActivated
+// (Event, Protected, BlueprintEvent)
+
+void UAthenaMatchmakingWidget_C::OnActivated()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaMatchmakingWidget.AthenaMatchmakingWidget_C.OnActivated");
+
+	UAthenaMatchmakingWidget_C_OnActivated_Params params;
 
 	auto flags = fn->FunctionFlags;
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -39,12 +39,12 @@ public:
 	void Update_Row_Selector(int Tab_Number);
 	void Initialize_Row_Selector(const struct FText& Row_Text, bool Require_Selection, class UCommonTextBlock* Tab_Tooltip, TArray<struct FText>* Buttons, TArray<struct FText>* Hover_Texts);
 	void Construct();
-	void OnSelectedButtonChanged_Event_1(class UCommonButton* AssociatedButton, int ButtonIndex);
+	void OnSelectedButtonChanged_Event_0_1(class UCommonButton* AssociatedButton, int ButtonIndex);
 	void OnMouseLeave(struct FPointerEvent* MouseEvent);
 	void Destruct();
 	void PreConstruct(bool* IsDesignTime);
 	void ExecuteUbergraph_OptionsMenuRowSelector(int EntryPoint);
-	void Selector_Button_Selected__DelegateSignature(int Tab_Id);
+	void Selector_Button_Selected__DelegateSignature(int Tab_ID);
 };
 
 

@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -1329,26 +1329,6 @@ void UFrontEndRewards_Widget_C::ExecuteUbergraph_FrontEndRewards_Widget(int Entr
 
 	UFrontEndRewards_Widget_C_ExecuteUbergraph_FrontEndRewards_Widget_Params params;
 	params.EntryPoint = EntryPoint;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.OnRewardsIgnored__DelegateSignature
-// (Public, Delegate, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UFrontEndRewards_Widget_C* RewardsWidget                  (Parm, ZeroConstructor, IsPlainOldData)
-
-void UFrontEndRewards_Widget_C::OnRewardsIgnored__DelegateSignature(class UFrontEndRewards_Widget_C* RewardsWidget)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function FrontEndRewards_Widget.FrontEndRewards_Widget_C.OnRewardsIgnored__DelegateSignature");
-
-	UFrontEndRewards_Widget_C_OnRewardsIgnored__DelegateSignature_Params params;
-	params.RewardsWidget = RewardsWidget;
 
 	auto flags = fn->FunctionFlags;
 

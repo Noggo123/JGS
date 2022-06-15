@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,26 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function TabGameOptionsMain.TabGameOptionsMain_C.Set Settings Tooltip
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCommonTextBlock*        Tooltip_To_Display             (Parm, ZeroConstructor, IsPlainOldData)
+
+void UTabGameOptionsMain_C::Set_Settings_Tooltip(class UCommonTextBlock* Tooltip_To_Display)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function TabGameOptionsMain.TabGameOptionsMain_C.Set Settings Tooltip");
+
+	UTabGameOptionsMain_C_Set_Settings_Tooltip_Params params;
+	params.Tooltip_To_Display = Tooltip_To_Display;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function TabGameOptionsMain.TabGameOptionsMain_C.Initialize Data
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -464,66 +484,6 @@ void UTabGameOptionsMain_C::BndEvt__TargetingMultiplier_K2Node_ComponentBoundEve
 	static auto fn = UObject::FindObject<UFunction>("Function TabGameOptionsMain.TabGameOptionsMain_C.BndEvt__TargetingMultiplier_K2Node_ComponentBoundEvent_219_SliderChanged__DelegateSignature");
 
 	UTabGameOptionsMain_C_BndEvt__TargetingMultiplier_K2Node_ComponentBoundEvent_219_SliderChanged__DelegateSignature_Params params;
-	params.Slider_Value = Slider_Value;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function TabGameOptionsMain.TabGameOptionsMain_C.BndEvt__ToggleTargeting_K2Node_ComponentBoundEvent_207_Selection Changed__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// int                            Selected_Index                 (Parm, ZeroConstructor, IsPlainOldData)
-
-void UTabGameOptionsMain_C::BndEvt__ToggleTargeting_K2Node_ComponentBoundEvent_207_Selection_Changed__DelegateSignature(int Selected_Index)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TabGameOptionsMain.TabGameOptionsMain_C.BndEvt__ToggleTargeting_K2Node_ComponentBoundEvent_207_Selection Changed__DelegateSignature");
-
-	UTabGameOptionsMain_C_BndEvt__ToggleTargeting_K2Node_ComponentBoundEvent_207_Selection_Changed__DelegateSignature_Params params;
-	params.Selected_Index = Selected_Index;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function TabGameOptionsMain.TabGameOptionsMain_C.BndEvt__GamepadScopedMultiplier_K2Node_ComponentBoundEvent_401_SliderChanged__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// float                          Slider_Value                   (Parm, ZeroConstructor, IsPlainOldData)
-
-void UTabGameOptionsMain_C::BndEvt__GamepadScopedMultiplier_K2Node_ComponentBoundEvent_401_SliderChanged__DelegateSignature(float Slider_Value)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TabGameOptionsMain.TabGameOptionsMain_C.BndEvt__GamepadScopedMultiplier_K2Node_ComponentBoundEvent_401_SliderChanged__DelegateSignature");
-
-	UTabGameOptionsMain_C_BndEvt__GamepadScopedMultiplier_K2Node_ComponentBoundEvent_401_SliderChanged__DelegateSignature_Params params;
-	params.Slider_Value = Slider_Value;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function TabGameOptionsMain.TabGameOptionsMain_C.BndEvt__GamepadTargetingMultiplier_K2Node_ComponentBoundEvent_423_SliderChanged__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// float                          Slider_Value                   (Parm, ZeroConstructor, IsPlainOldData)
-
-void UTabGameOptionsMain_C::BndEvt__GamepadTargetingMultiplier_K2Node_ComponentBoundEvent_423_SliderChanged__DelegateSignature(float Slider_Value)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function TabGameOptionsMain.TabGameOptionsMain_C.BndEvt__GamepadTargetingMultiplier_K2Node_ComponentBoundEvent_423_SliderChanged__DelegateSignature");
-
-	UTabGameOptionsMain_C_BndEvt__GamepadTargetingMultiplier_K2Node_ComponentBoundEvent_423_SliderChanged__DelegateSignature_Params params;
 	params.Slider_Value = Slider_Value;
 
 	auto flags = fn->FunctionFlags;

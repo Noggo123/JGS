@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ inline Fn GetVFunction(const void *instance, std::size_t index)
 	return reinterpret_cast<Fn>(vtable[index]);
 }
 
-static auto Realloc = reinterpret_cast<void* (*)(void* Memory, int64_t NewSize, uint32_t Alignment)>(uintptr_t(GetModuleHandle(0)) + 0x128C650);
+static auto Realloc = reinterpret_cast<void* (*)(void* Memory, int64_t NewSize, uint32_t Alignment)>(uintptr_t(GetModuleHandle(0)) + 0x123E4C0);
 
 class UObject;
 
@@ -148,6 +148,49 @@ public:
 	int32_t Max;
 };
 
+struct FString : private TArray<wchar_t>
+{
+	inline FString()
+	{
+	};
+
+	FString(const wchar_t* other)
+	{
+		Max = Count = *other ? std::wcslen(other) + 1 : 0;
+
+		if (Count)
+		{
+			Data = const_cast<wchar_t*>(other);
+		}
+	};
+
+	inline bool IsValid() const
+	{
+		return Data != nullptr;
+	}
+
+	inline const wchar_t* c_str() const
+	{
+		return Data;
+	}
+
+	std::string ToString() const
+	{
+		auto length = std::wcslen(Data);
+
+		std::string str(length, '\0');
+
+		std::use_facet<std::ctype<wchar_t>>(std::locale()).narrow(Data, Data + length, '?', &str[0]);
+
+		return str;
+	}
+};
+
+struct FName;
+
+inline void (*FreeInternal)(void*);
+inline void (*FNameToString)(FName* pThis, FString& out);
+
 class FNameEntry
 {
 public:
@@ -239,19 +282,19 @@ struct FName
 
 	inline FName()
 		: ComparisonIndex(0),
-		  Number(0)
+		Number(0)
 	{
 	};
 
 	inline FName(int32_t i)
 		: ComparisonIndex(i),
-		  Number(0)
+		Number(0)
 	{
 	};
 
 	FName(const char* nameToFind)
 		: ComparisonIndex(0),
-		  Number(0)
+		Number(0)
 	{
 		static std::set<int> cache;
 
@@ -260,7 +303,7 @@ struct FName
 			if (!std::strcmp(GetGlobalNames()[i]->GetAnsiName(), nameToFind))
 			{
 				ComparisonIndex = i;
-				
+
 				return;
 			}
 		}
@@ -281,7 +324,7 @@ struct FName
 		}
 	};
 
-	static TNameEntryArray *GNames;
+	static TNameEntryArray* GNames;
 	static inline TNameEntryArray& GetGlobalNames()
 	{
 		return *GNames;
@@ -292,48 +335,10 @@ struct FName
 		return GetGlobalNames()[ComparisonIndex]->GetAnsiName();
 	};
 
-	inline bool operator==(const FName &other) const
+	inline bool operator==(const FName& other) const
 	{
 		return ComparisonIndex == other.ComparisonIndex;
 	};
-};
-
-struct FString : private TArray<wchar_t>
-{
-	inline FString()
-	{
-	};
-
-	FString(const wchar_t* other)
-	{
-		Max = Count = *other ? std::wcslen(other) + 1 : 0;
-
-		if (Count)
-		{
-			Data = const_cast<wchar_t*>(other);
-		}
-	};
-
-	inline bool IsValid() const
-	{
-		return Data != nullptr;
-	}
-
-	inline const wchar_t* c_str() const
-	{
-		return Data;
-	}
-
-	std::string ToString() const
-	{
-		auto length = std::wcslen(Data);
-
-		std::string str(length, '\0');
-
-		std::use_facet<std::ctype<wchar_t>>(std::locale()).narrow(Data, Data + length, '?', &str[0]);
-
-		return str;
-	}
 };
 
 template<class TEnum>
@@ -431,12 +436,6 @@ struct FScriptMulticastDelegate
 	char UnknownData[16];
 };
 
-template<typename Key>
-class TSet
-{
-	unsigned char pad[0x50];
-};
-
 template<typename Key, typename Value>
 class TMap
 {
@@ -514,6 +513,13 @@ template<typename TObjectID>
 class TPersistentObjectPtr
 {
 public:
+	inline UObject* Get() const
+	{
+		UObject* Object = WeakPtr.Get();
+		return Object;
+	}
+
+
 	FWeakObjectPtr WeakPtr;
 	int32_t TagAtLastTest;
 	TObjectID ObjectID;
@@ -529,10 +535,20 @@ class FAssetPtr : public TPersistentObjectPtr<FStringAssetReference_>
 
 };
 
-template<typename ObjectType>
-class TAssetPtr : FAssetPtr
+template<class T = UObject>
+class TAssetPtr
 {
+	template <class U>
+	friend class TAssetPtr;
 
+public:
+
+	inline T* Get() const
+	{
+		return dynamic_cast<T*>(AssetPtr.Get());
+	}
+
+	FAssetPtr AssetPtr;
 };
 
 struct FUniqueObjectGuid_

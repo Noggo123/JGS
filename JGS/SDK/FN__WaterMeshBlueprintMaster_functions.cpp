@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -111,6 +111,26 @@ void A_WaterMeshBlueprintMaster_C::UserConstructionScript()
 	static auto fn = UObject::FindObject<UFunction>("Function _WaterMeshBlueprintMaster._WaterMeshBlueprintMaster_C.UserConstructionScript");
 
 	A_WaterMeshBlueprintMaster_C_UserConstructionScript_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function _WaterMeshBlueprintMaster._WaterMeshBlueprintMaster_C.ReturnWaterHitLocation
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class APlayerPawn_Generic_C*   CallingActor                   (Parm, ZeroConstructor, IsPlainOldData)
+
+void A_WaterMeshBlueprintMaster_C::ReturnWaterHitLocation(class APlayerPawn_Generic_C* CallingActor)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function _WaterMeshBlueprintMaster._WaterMeshBlueprintMaster_C.ReturnWaterHitLocation");
+
+	A_WaterMeshBlueprintMaster_C_ReturnWaterHitLocation_Params params;
+	params.CallingActor = CallingActor;
 
 	auto flags = fn->FunctionFlags;
 

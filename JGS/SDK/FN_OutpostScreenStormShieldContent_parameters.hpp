@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -42,8 +42,8 @@ struct UOutpostScreenStormShieldContent_C_SetButtonState_Params
 	bool                                               enabled_;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function OutpostScreenStormShieldContent.OutpostScreenStormShieldContent_C.Get_GetHelpButton_ToolTipWidget_1
-struct UOutpostScreenStormShieldContent_C_Get_GetHelpButton_ToolTipWidget_1_Params
+// Function OutpostScreenStormShieldContent.OutpostScreenStormShieldContent_C.Get_GetHelpButton_ToolTipWidget_0_1
+struct UOutpostScreenStormShieldContent_C_Get_GetHelpButton_ToolTipWidget_0_1_Params
 {
 	class UWidget*                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
@@ -106,20 +106,20 @@ struct UOutpostScreenStormShieldContent_C_ResrouceProgress_Wood_Params
 	int                                                NewParam1;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function OutpostScreenStormShieldContent.OutpostScreenStormShieldContent_C.GetPercent_3
-struct UOutpostScreenStormShieldContent_C_GetPercent_3_Params
+// Function OutpostScreenStormShieldContent.OutpostScreenStormShieldContent_C.GetPercent_2_3
+struct UOutpostScreenStormShieldContent_C_GetPercent_2_3_Params
 {
 	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function OutpostScreenStormShieldContent.OutpostScreenStormShieldContent_C.GetPercent_2
-struct UOutpostScreenStormShieldContent_C_GetPercent_2_Params
+// Function OutpostScreenStormShieldContent.OutpostScreenStormShieldContent_C.GetPercent_1_2
+struct UOutpostScreenStormShieldContent_C_GetPercent_1_2_Params
 {
 	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function OutpostScreenStormShieldContent.OutpostScreenStormShieldContent_C.GetPercent_1
-struct UOutpostScreenStormShieldContent_C_GetPercent_1_Params
+// Function OutpostScreenStormShieldContent.OutpostScreenStormShieldContent_C.GetPercent_0_1
+struct UOutpostScreenStormShieldContent_C_GetPercent_0_1_Params
 {
 	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };

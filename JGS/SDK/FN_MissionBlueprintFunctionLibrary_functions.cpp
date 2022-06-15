@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,65 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function MissionBlueprintFunctionLibrary.MissionBlueprintFunctionLibrary_C.HideParticleComponentsAttachedToMesh
-// (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UStaticMeshComponent*    MeshComponent                  (Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           SuccessfullyDeactivatedParticle (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UMissionBlueprintFunctionLibrary_C::STATIC_HideParticleComponentsAttachedToMesh(class UStaticMeshComponent* MeshComponent, class UObject* __WorldContext, bool* SuccessfullyDeactivatedParticle)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MissionBlueprintFunctionLibrary.MissionBlueprintFunctionLibrary_C.HideParticleComponentsAttachedToMesh");
-
-	UMissionBlueprintFunctionLibrary_C_HideParticleComponentsAttachedToMesh_Params params;
-	params.MeshComponent = MeshComponent;
-	params.__WorldContext = __WorldContext;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (SuccessfullyDeactivatedParticle != nullptr)
-		*SuccessfullyDeactivatedParticle = params.SuccessfullyDeactivatedParticle;
-}
-
-
-// Function MissionBlueprintFunctionLibrary.MissionBlueprintFunctionLibrary_C.HasPlayerCompletedQuestObjective
-// (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AFortPlayerController*   PlayerController               (Parm, ZeroConstructor, IsPlainOldData)
-// class UFortQuestItemDefinition* QuestReference                 (Parm, ZeroConstructor, IsPlainOldData)
-// struct FName                   QuestBackendObjectiveName      (Parm, ZeroConstructor, IsPlainOldData)
-// class UObject*                 __WorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
-// class AFortPlayerController*   PlayerControllerOut            (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-// bool                           CompletedQuestObjective        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UMissionBlueprintFunctionLibrary_C::STATIC_HasPlayerCompletedQuestObjective(class AFortPlayerController* PlayerController, class UFortQuestItemDefinition* QuestReference, const struct FName& QuestBackendObjectiveName, class UObject* __WorldContext, class AFortPlayerController** PlayerControllerOut, bool* CompletedQuestObjective)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function MissionBlueprintFunctionLibrary.MissionBlueprintFunctionLibrary_C.HasPlayerCompletedQuestObjective");
-
-	UMissionBlueprintFunctionLibrary_C_HasPlayerCompletedQuestObjective_Params params;
-	params.PlayerController = PlayerController;
-	params.QuestReference = QuestReference;
-	params.QuestBackendObjectiveName = QuestBackendObjectiveName;
-	params.__WorldContext = __WorldContext;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (PlayerControllerOut != nullptr)
-		*PlayerControllerOut = params.PlayerControllerOut;
-	if (CompletedQuestObjective != nullptr)
-		*CompletedQuestObjective = params.CompletedQuestObjective;
-}
-
 
 // Function MissionBlueprintFunctionLibrary.MissionBlueprintFunctionLibrary_C.GetContributingControllersNearActor
 // (Static, Public, HasOutParms, BlueprintCallable, BlueprintEvent)

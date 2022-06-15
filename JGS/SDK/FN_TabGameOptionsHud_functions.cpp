@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,26 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function TabGameOptionsHud.TabGameOptionsHud_C.Set Settings Tooltip
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCommonTextBlock*        Tooltip_To_Display             (Parm, ZeroConstructor, IsPlainOldData)
+
+void UTabGameOptionsHud_C::Set_Settings_Tooltip(class UCommonTextBlock* Tooltip_To_Display)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function TabGameOptionsHud.TabGameOptionsHud_C.Set Settings Tooltip");
+
+	UTabGameOptionsHud_C_Set_Settings_Tooltip_Params params;
+	params.Tooltip_To_Display = Tooltip_To_Display;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function TabGameOptionsHud.TabGameOptionsHud_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)

@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,16 +12,16 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function ArrowCursorWidget.ArrowCursorWidget_C.GetBackground_1
+// Function ArrowCursorWidget.ArrowCursorWidget_C.GetBackground_0_1
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // struct FSlateBrush             ReturnValue                    (Parm, OutParm, ReturnParm)
 
-struct FSlateBrush UArrowCursorWidget_C::GetBackground_1()
+struct FSlateBrush UArrowCursorWidget_C::GetBackground_0_1()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ArrowCursorWidget.ArrowCursorWidget_C.GetBackground_1");
+	static auto fn = UObject::FindObject<UFunction>("Function ArrowCursorWidget.ArrowCursorWidget_C.GetBackground_0_1");
 
-	UArrowCursorWidget_C_GetBackground_1_Params params;
+	UArrowCursorWidget_C_GetBackground_0_1_Params params;
 
 	auto flags = fn->FunctionFlags;
 

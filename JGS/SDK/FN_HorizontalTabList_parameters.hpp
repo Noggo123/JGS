@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -57,8 +57,8 @@ struct UHorizontalTabList_C_HandleTabCreated_Params
 	class UCommonButton**                              TabButton;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function HorizontalTabList.HorizontalTabList_C.CustomEvent_1
-struct UHorizontalTabList_C_CustomEvent_1_Params
+// Function HorizontalTabList.HorizontalTabList_C.CustomEvent_0_1
+struct UHorizontalTabList_C_CustomEvent_0_1_Params
 {
 	struct FName                                       TabId;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };

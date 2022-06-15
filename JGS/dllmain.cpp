@@ -33,16 +33,17 @@ DWORD WINAPI MainThread(LPVOID)
     srand(time(0));
 
     auto BaseAddr = Util::BaseAddress();
+    auto GObjectsAddress = BaseAddr + 0x6661380;
+    auto FNameToStringAddress = BaseAddr + 0x1302390;
+    auto FreeMemoryAddress = BaseAddr + 0x1233210;
+    auto GNamesAddress = BaseAddr + 0x66587C8;
 
-    auto pGObjectAddress = Util::FindPattern("\x48\x8D\x0D\x00\x00\x00\x00\xE8\x00\x00\x00\x00\xE8\x00\x00\x00\x00\xE8\x00\x00\x00\x00\x48\x8B\xD6", "xxx????x????x????x????xxx");
-    auto pGObjectOffset = *reinterpret_cast<uint32_t*>(pGObjectAddress + 3);
-    SDK::UObject::GObjects = reinterpret_cast<SDK::FUObjectArray*>(pGObjectAddress + 7 + pGObjectOffset);
+    FName::GNames = *reinterpret_cast<TNameEntryArray**>((uintptr_t**)GNamesAddress);
+    UObject::GObjects = reinterpret_cast<FUObjectArray*>((uintptr_t*)GObjectsAddress);
+    SDK::FNameToString = decltype(SDK::FNameToString)(FNameToStringAddress);
+    SDK::FreeInternal = decltype(SDK::FreeInternal)(FreeMemoryAddress);
 
-    auto pGNameAddress = Util::FindPattern("\x48\x8B\x05\x00\x00\x00\x00\x48\x85\xC0\x75\x50\xB9\x00\x00\x00\x00\x48\x89\x5C\x24", "xxx????xxxxxx????xxxx");
-    auto pGNameOffset = *reinterpret_cast<uint32_t*>(pGNameAddress + 3);
-
-    SDK::FName::GNames = *reinterpret_cast<SDK::TNameEntryArray**>(pGNameAddress + 7 + pGNameOffset);
-
+    //Hooks::SpawnActorInternal = decltype(Hooks::SpawnActorInternal)(BaseAddr + Offsets::SpawnActor);
     Hooks::InternalTryActivateAbilityLong = decltype(Hooks::InternalTryActivateAbilityLong)(BaseAddr + Offsets::InternalTryActivateAbility);
 
     auto FortEngine = SDK::UObject::FindObject<UFortEngine>("FortEngine_");
@@ -52,14 +53,11 @@ DWORD WINAPI MainThread(LPVOID)
     Globals::PC = reinterpret_cast<AFortPlayerController*>(FortEngine->GameInstance->LocalPlayers[0]->PlayerController);
     Globals::MathLib = reinterpret_cast<UKismetMathLibrary*>(UKismetMathLibrary::StaticClass());
     Globals::SystemLib = reinterpret_cast<UKismetSystemLibrary*>(UKismetSystemLibrary::StaticClass());
-    Globals::FortLib = reinterpret_cast<UFortKismetLibrary*>(UFortKismetLibrary::StaticClass());
-
-    printf("Before FindObjectFast!\n");
 
     Globals::HeadPart = FindObjectFast<UCustomCharacterPart>("/Game/Characters/CharacterParts/Female/Medium/Heads/F_Med_Head1.F_Med_Head1");
     Globals::BodyPart = FindObjectFast<UCustomCharacterPart>("/Game/Characters/CharacterParts/Female/Medium/Bodies/F_Med_Soldier_01.F_Med_Soldier_01");
 
-    printf("After FindObjectFast!\n");
+    Globals::bSTWMode = false;
 
     auto NewConsole = Globals::GPS->STATIC_SpawnObject(UFortConsole::StaticClass(), FortEngine->GameViewport);
     FortEngine->GameViewport->ViewportConsole = (UFortConsole*)(NewConsole);

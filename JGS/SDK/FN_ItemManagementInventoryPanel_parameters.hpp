@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,6 +32,24 @@ struct UItemManagementInventoryPanel_C_SelectTrapByTag_Params
 {
 	struct FGameplayTag                                Tag;                                                      // (Parm)
 	bool                                               Success;                                                  // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.HandleMulchQuantityCallback
+struct UItemManagementInventoryPanel_C_HandleMulchQuantityCallback_Params
+{
+	int                                                Quantity;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.DestroyMulchQuantitySelector
+struct UItemManagementInventoryPanel_C_DestroyMulchQuantitySelector_Params
+{
+};
+
+// Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.CreateMulchQuantitySelector
+struct UItemManagementInventoryPanel_C_CreateMulchQuantitySelector_Params
+{
+	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.HideEquipSlotDragTargets
@@ -132,6 +150,12 @@ struct UItemManagementInventoryPanel_C_HandleDifferentFrontendInventoryFilterSet
 struct UItemManagementInventoryPanel_C_HandleQuickBarChangedBP_Params
 {
 	EFortQuickBars*                                    QuickBarType;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.HandleMulchQuantitySelection
+struct UItemManagementInventoryPanel_C_HandleMulchQuantitySelection_Params
+{
+	class UFortItem**                                  Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ItemManagementInventoryPanel.ItemManagementInventoryPanel_C.BndEvt__SortTypeButtonWorldItems_K2Node_ComponentBoundEvent_282_CommonButtonClicked__DelegateSignature

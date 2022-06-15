@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -53,13 +53,6 @@ struct UAthenaTabsScreen_C_BndEvt__TopTabList_K2Node_ComponentBoundEvent_0_OnTab
 // Function AthenaTabsScreen.AthenaTabsScreen_C.OnDeactivated
 struct UAthenaTabsScreen_C_OnDeactivated_Params
 {
-};
-
-// Function AthenaTabsScreen.AthenaTabsScreen_C.HandleTabContentCreated
-struct UAthenaTabsScreen_C_HandleTabContentCreated_Params
-{
-	struct FName                                       TabId;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
-	class UCommonUserWidget*                           TabWidget;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaTabsScreen.AthenaTabsScreen_C.ExecuteUbergraph_AthenaTabsScreen

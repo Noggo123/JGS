@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -18,6 +18,12 @@ namespace SDK
 struct UAthenaWinWidget_C_BndEvt__LeaveButton_K2Node_ComponentBoundEvent_76_CommonButtonClicked__DelegateSignature_Params
 {
 	class UCommonButton*                               Button;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaWinWidget.AthenaWinWidget_C.PreConstruct
+struct UAthenaWinWidget_C_PreConstruct_Params
+{
+	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaWinWidget.AthenaWinWidget_C.OnActivated

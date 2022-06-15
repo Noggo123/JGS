@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,26 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function StatsListItemWIdget.StatsListItemWIdget_C.SetTextAndBorderHighlight
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                           bHightlight                    (Parm, ZeroConstructor, IsPlainOldData)
-
-void UStatsListItemWIdget_C::SetTextAndBorderHighlight(bool bHightlight)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StatsListItemWIdget.StatsListItemWIdget_C.SetTextAndBorderHighlight");
-
-	UStatsListItemWIdget_C_SetTextAndBorderHighlight_Params params;
-	params.bHightlight = bHightlight;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
 
 // Function StatsListItemWIdget.StatsListItemWIdget_C.GetListItemTooltipWidget
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
@@ -190,6 +170,57 @@ void UStatsListItemWIdget_C::Update()
 }
 
 
+// Function StatsListItemWIdget.StatsListItemWIdget_C.DisplayAttributeChanged
+// (Event, Public, BlueprintEvent)
+
+void UStatsListItemWIdget_C::DisplayAttributeChanged()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function StatsListItemWIdget.StatsListItemWIdget_C.DisplayAttributeChanged");
+
+	UStatsListItemWIdget_C_DisplayAttributeChanged_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function StatsListItemWIdget.StatsListItemWIdget_C.PreviewStarted
+// (Event, Public, BlueprintEvent)
+
+void UStatsListItemWIdget_C::PreviewStarted()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function StatsListItemWIdget.StatsListItemWIdget_C.PreviewStarted");
+
+	UStatsListItemWIdget_C_PreviewStarted_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function StatsListItemWIdget.StatsListItemWIdget_C.PreviewEnded
+// (Event, Public, BlueprintEvent)
+
+void UStatsListItemWIdget_C::PreviewEnded()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function StatsListItemWIdget.StatsListItemWIdget_C.PreviewEnded");
+
+	UStatsListItemWIdget_C_PreviewEnded_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function StatsListItemWIdget.StatsListItemWIdget_C.ValueChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -218,57 +249,6 @@ void UStatsListItemWIdget_C::Construct()
 	static auto fn = UObject::FindObject<UFunction>("Function StatsListItemWIdget.StatsListItemWIdget_C.Construct");
 
 	UStatsListItemWIdget_C_Construct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function StatsListItemWIdget.StatsListItemWIdget_C.PreviewEnded
-// (Event, Public, BlueprintEvent)
-
-void UStatsListItemWIdget_C::PreviewEnded()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StatsListItemWIdget.StatsListItemWIdget_C.PreviewEnded");
-
-	UStatsListItemWIdget_C_PreviewEnded_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function StatsListItemWIdget.StatsListItemWIdget_C.PreviewStarted
-// (Event, Public, BlueprintEvent)
-
-void UStatsListItemWIdget_C::PreviewStarted()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StatsListItemWIdget.StatsListItemWIdget_C.PreviewStarted");
-
-	UStatsListItemWIdget_C_PreviewStarted_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function StatsListItemWIdget.StatsListItemWIdget_C.DisplayAttributeChanged
-// (Event, Public, BlueprintEvent)
-
-void UStatsListItemWIdget_C::DisplayAttributeChanged()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function StatsListItemWIdget.StatsListItemWIdget_C.DisplayAttributeChanged");
-
-	UStatsListItemWIdget_C_DisplayAttributeChanged_Params params;
 
 	auto flags = fn->FunctionFlags;
 

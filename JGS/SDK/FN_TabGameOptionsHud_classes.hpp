@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -18,7 +18,7 @@ class UTabGameOptionsHud_C : public UTabGameOptions_C
 {
 public:
 	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x02A8(0x0008) (Transient, DuplicateTransient)
-	class UCommonTextBlock*                            TooltipDisplayReference;                                  // 0x02B0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UCommonTextBlock*                            Tooltip_Display;                                          // 0x02B0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -27,6 +27,7 @@ public:
 	}
 
 
+	void Set_Settings_Tooltip(class UCommonTextBlock* Tooltip_To_Display);
 	void Construct();
 	void UpdateOptionsTab();
 	void CenterOnTab();

@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -111,19 +111,14 @@ struct UQuestTreeEntry_C_OnHovered_Params
 {
 };
 
-// Function QuestTreeEntry.QuestTreeEntry_C.OnQuestSeen_Event_1
-struct UQuestTreeEntry_C_OnQuestSeen_Event_1_Params
+// Function QuestTreeEntry.QuestTreeEntry_C.OnQuestSeen_Event_0_1
+struct UQuestTreeEntry_C_OnQuestSeen_Event_0_1_Params
 {
 	class UFortQuestItem*                              Quest;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function QuestTreeEntry.QuestTreeEntry_C.Destruct
 struct UQuestTreeEntry_C_Destruct_Params
-{
-};
-
-// Function QuestTreeEntry.QuestTreeEntry_C.OnDeselected
-struct UQuestTreeEntry_C_OnDeselected_Params
 {
 };
 

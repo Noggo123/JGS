@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -21,8 +21,8 @@ struct URewardsWidget_C_OnHandleAction_Params
 	bool                                               bPassThrough;                                             // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function RewardsWidget.RewardsWidget_C.On_ClosedChest_MouseButtonDown_2
-struct URewardsWidget_C_On_ClosedChest_MouseButtonDown_2_Params
+// Function RewardsWidget.RewardsWidget_C.On_ClosedChest_MouseButtonDown_1_2
+struct URewardsWidget_C_On_ClosedChest_MouseButtonDown_1_2_Params
 {
 	struct FGeometry                                   MyGeometry;                                               // (Parm, IsPlainOldData)
 	struct FPointerEvent                               MouseEvent;                                               // (ConstParm, Parm, OutParm, ReferenceParm)

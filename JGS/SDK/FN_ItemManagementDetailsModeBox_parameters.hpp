@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,27 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
-
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.UnbindEvents
-struct UItemManagementDetailsModeBox_C_UnbindEvents_Params
-{
-};
-
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RefreshTransferAction
-struct UItemManagementDetailsModeBox_C_RefreshTransferAction_Params
-{
-};
-
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleTransfer
-struct UItemManagementDetailsModeBox_C_HandleTransfer_Params
-{
-	bool                                               PassThrough;                                              // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RegisterTransfer
-struct UItemManagementDetailsModeBox_C_RegisterTransfer_Params
-{
-};
 
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RegisterInspectUpgrade
 struct UItemManagementDetailsModeBox_C_RegisterInspectUpgrade_Params
@@ -53,6 +32,43 @@ struct UItemManagementDetailsModeBox_C_RegisterLeaveInventory_Params
 
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RefreshMulchAction
 struct UItemManagementDetailsModeBox_C_RefreshMulchAction_Params
+{
+};
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.ForceRefreshTab
+struct UItemManagementDetailsModeBox_C_ForceRefreshTab_Params
+{
+	class UHorizontalTabList_C*                        TabList;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.RegisterCraftingCompare
+struct UItemManagementDetailsModeBox_C_RegisterCraftingCompare_Params
+{
+};
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.HandleDropItemCallback
+struct UItemManagementDetailsModeBox_C_HandleDropItemCallback_Params
+{
+	int                                                ChosenQuantity;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+	class UFortItem*                                   Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.DropItem
+struct UItemManagementDetailsModeBox_C_DropItem_Params
+{
+	class UFortWorldItem*                              Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	int                                                Quantity;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.CreateQuantitySelectorWidget
+struct UItemManagementDetailsModeBox_C_CreateQuantitySelectorWidget_Params
+{
+	class UFortWorldItem*                              Item;                                                     // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FText                                       ConfirmationText;                                         // (Parm)
+};
+
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.DestroyQuantitySelectorWidget
+struct UItemManagementDetailsModeBox_C_DestroyQuantitySelectorWidget_Params
 {
 };
 
@@ -285,21 +301,16 @@ struct UItemManagementDetailsModeBox_C_HandleConsumeItemProgressChangedBP_Params
 {
 };
 
+// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.Construct
+struct UItemManagementDetailsModeBox_C_Construct_Params
+{
+};
+
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.BndEvt__DetailPanelTabList-MSB_K2Node_ComponentBoundEvent_18_OnTabButtonCreated__DelegateSignature
 struct UItemManagementDetailsModeBox_C_BndEvt__DetailPanelTabList_MSB_K2Node_ComponentBoundEvent_18_OnTabButtonCreated__DelegateSignature_Params
 {
 	struct FName                                       TabId;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	class UCommonButton*                               TabButton;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.OnDeactivated
-struct UItemManagementDetailsModeBox_C_OnDeactivated_Params
-{
-};
-
-// Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.Construct
-struct UItemManagementDetailsModeBox_C_Construct_Params
-{
 };
 
 // Function ItemManagementDetailsModeBox.ItemManagementDetailsModeBox_C.ExecuteUbergraph_ItemManagementDetailsModeBox

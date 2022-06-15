@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -431,6 +431,7 @@ struct FGameplayAbilityTargetingLocationInfo
 // 0x0018
 struct FGameplayEffectSpecHandle
 {
+	
 	unsigned char                                      UnknownData00[0x18];                                      // 0x0000(0x0018) MISSED OFFSET
 };
 
@@ -709,8 +710,8 @@ struct FActiveGameplayCue : public FFastArraySerializerItem
 struct FActiveGameplayCueContainer : public FFastArraySerializer
 {
 	TArray<struct FActiveGameplayCue>                  GameplayCues;                                             // 0x00B0(0x0010) (ZeroConstructor)
-	unsigned char                                      UnknownData00[0x8];                                       // 0x00C0(0x0008) MISSED OFFSET
-	class UAbilitySystemComponent*                     Owner;                                                    // 0x00C8(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UAbilitySystemComponent*                     Owner;                                                    // 0x00C0(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x8];                                       // 0x00C8(0x0008) MISSED OFFSET
 };
 
 // ScriptStruct GameplayAbilities.MinimalReplicationTagCountMap

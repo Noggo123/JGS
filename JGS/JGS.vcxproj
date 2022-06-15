@@ -79,7 +79,6 @@
     <ClInclude Include="Offsets.h" />
     <ClInclude Include="Replication.h" />
     <ClInclude Include="SDK.hpp" />
-    <ClInclude Include="StringUtils.h" />
     <ClInclude Include="Util.h" />
   </ItemGroup>
   <ItemGroup>

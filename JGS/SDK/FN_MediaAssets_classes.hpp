@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -137,15 +137,15 @@ public:
 
 
 // Class MediaAssets.MediaSoundWave
-// 0x00E0 (0x0350 - 0x0270)
+// 0x00D8 (0x0340 - 0x0268)
 class UMediaSoundWave : public USoundWave
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0270(0x0008) MISSED OFFSET
-	int                                                AudioTrackIndex;                                          // 0x0278(0x0004) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x027C(0x0004) MISSED OFFSET
-	class UMediaPlayer*                                MediaPlayer;                                              // 0x0280(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0xC8];                                      // 0x0288(0x00C8) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0268(0x0008) MISSED OFFSET
+	int                                                AudioTrackIndex;                                          // 0x0270(0x0004) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x0274(0x0004) MISSED OFFSET
+	class UMediaPlayer*                                MediaPlayer;                                              // 0x0278(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData02[0xC0];                                      // 0x0280(0x00C0) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

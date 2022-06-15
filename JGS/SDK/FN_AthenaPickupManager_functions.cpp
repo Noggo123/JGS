@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -169,23 +169,6 @@ void UAthenaPickupManager_C::Destruct()
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaPickupManager.AthenaPickupManager_C.Destruct");
 
 	UAthenaPickupManager_C_Destruct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AthenaPickupManager.AthenaPickupManager_C.HandleBuildingMaterialChanged
-// (BlueprintCallable, BlueprintEvent)
-
-void UAthenaPickupManager_C::HandleBuildingMaterialChanged()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaPickupManager.AthenaPickupManager_C.HandleBuildingMaterialChanged");
-
-	UAthenaPickupManager_C_HandleBuildingMaterialChanged_Params params;
 
 	auto flags = fn->FunctionFlags;
 

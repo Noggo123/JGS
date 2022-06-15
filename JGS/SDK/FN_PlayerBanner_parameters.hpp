@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,40 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
-
-// Function PlayerBanner.PlayerBanner_C.SetBannerIconAndColorFromProfile
-struct UPlayerBanner_C_SetBannerIconAndColorFromProfile_Params
-{
-};
-
-// Function PlayerBanner.PlayerBanner_C.SetBannerIconAndColor
-struct UPlayerBanner_C_SetBannerIconAndColor_Params
-{
-	struct FName                                       IconId;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FName                                       ColorId;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function PlayerBanner.PlayerBanner_C.ToggleBannerMask
-struct UPlayerBanner_C_ToggleBannerMask_Params
-{
-	bool                                               Enable;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function PlayerBanner.PlayerBanner_C.RefreshSurround
-struct UPlayerBanner_C_RefreshSurround_Params
-{
-};
-
-// Function PlayerBanner.PlayerBanner_C.OnSurroundIconLoaded
-struct UPlayerBanner_C_OnSurroundIconLoaded_Params
-{
-	class UObject*                                     LoadedObject;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function PlayerBanner.PlayerBanner_C.EnableSurround
-struct UPlayerBanner_C_EnableSurround_Params
-{
-};
 
 // Function PlayerBanner.PlayerBanner_C.ClearBannerState
 struct UPlayerBanner_C_ClearBannerState_Params
@@ -100,12 +66,6 @@ struct UPlayerBanner_C_OnTeamMemberStateChanged_Params
 struct UPlayerBanner_C_PreConstruct_Params
 {
 	bool*                                              IsDesignTime;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function PlayerBanner.PlayerBanner_C.Account Info Changed
-struct UPlayerBanner_C_Account_Info_Changed_Params
-{
-	struct FFortPublicAccountInfo                      NewInfo;                                                  // (Parm)
 };
 
 // Function PlayerBanner.PlayerBanner_C.ExecuteUbergraph_PlayerBanner

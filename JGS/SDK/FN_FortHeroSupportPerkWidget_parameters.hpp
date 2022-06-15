@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,12 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
-
-// Function FortHeroSupportPerkWidget.FortHeroSupportPerkWidget_C.IsInInvalidSlot
-struct UFortHeroSupportPerkWidget_C_IsInInvalidSlot_Params
-{
-	bool                                               InInvalidSlot;                                            // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-};
 
 // Function FortHeroSupportPerkWidget.FortHeroSupportPerkWidget_C.UpdateComparisonVisibility
 struct UFortHeroSupportPerkWidget_C_UpdateComparisonVisibility_Params

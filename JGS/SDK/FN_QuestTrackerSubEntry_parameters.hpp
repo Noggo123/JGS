@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -57,6 +57,11 @@ struct UQuestTrackerSubEntry_C_OnCompletionFlashFInished_Params
 
 // Function QuestTrackerSubEntry.QuestTrackerSubEntry_C.PostCompletionDelay
 struct UQuestTrackerSubEntry_C_PostCompletionDelay_Params
+{
+};
+
+// Function QuestTrackerSubEntry.QuestTrackerSubEntry_C.OnSetup
+struct UQuestTrackerSubEntry_C_OnSetup_Params
 {
 };
 

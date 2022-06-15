@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,28 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function FortHeroSupportPerkWidget.FortHeroSupportPerkWidget_C.IsInInvalidSlot
-// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// bool                           InInvalidSlot                  (Parm, OutParm, ZeroConstructor, IsPlainOldData)
-
-void UFortHeroSupportPerkWidget_C::IsInInvalidSlot(bool* InInvalidSlot)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function FortHeroSupportPerkWidget.FortHeroSupportPerkWidget_C.IsInInvalidSlot");
-
-	UFortHeroSupportPerkWidget_C_IsInInvalidSlot_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	if (InInvalidSlot != nullptr)
-		*InInvalidSlot = params.InInvalidSlot;
-}
-
 
 // Function FortHeroSupportPerkWidget.FortHeroSupportPerkWidget_C.UpdateComparisonVisibility
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -86,7 +64,7 @@ void UFortHeroSupportPerkWidget_C::UpdateActiveDisplay()
 
 
 // Function FortHeroSupportPerkWidget.FortHeroSupportPerkWidget_C.UpdateLockedVisibility
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 
 void UFortHeroSupportPerkWidget_C::UpdateLockedVisibility()
 {

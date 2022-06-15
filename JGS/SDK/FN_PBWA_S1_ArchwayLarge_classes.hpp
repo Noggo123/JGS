@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass PBWA_S1_ArchwayLarge.PBWA_S1_ArchwayLarge_C
-// 0x0000 (0x10C0 - 0x10C0)
+// 0x0000 (0x10B0 - 0x10B0)
 class APBWA_S1_ArchwayLarge_C : public ABuildingWall
 {
 public:

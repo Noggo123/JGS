@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -46,7 +46,6 @@ public:
 	void HandleWorldItemsChanged();
 	void HandleWorldItemListChanged(TArray<class UFortWorldItem*> ItemsAdded, TArray<class UFortWorldItem*> ItemsRemoved);
 	void Destruct();
-	void HandleBuildingMaterialChanged();
 	void ExecuteUbergraph_AthenaPickupManager(int EntryPoint);
 };
 

@@ -1,4 +1,4 @@
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -213,14 +213,14 @@ void UXpBoostRow_C::ExecuteUbergraph_XpBoostRow(int EntryPoint)
 // Function XpBoostRow.XpBoostRow_C.Give Boost Clicked__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FUniqueNetIdRepl        Player_to_Boost                (Parm)
+// struct FUniqueNetIdRepl        Player_To_Boost                (Parm)
 
-void UXpBoostRow_C::Give_Boost_Clicked__DelegateSignature(const struct FUniqueNetIdRepl& Player_to_Boost)
+void UXpBoostRow_C::Give_Boost_Clicked__DelegateSignature(const struct FUniqueNetIdRepl& Player_To_Boost)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function XpBoostRow.XpBoostRow_C.Give Boost Clicked__DelegateSignature");
 
 	UXpBoostRow_C_Give_Boost_Clicked__DelegateSignature_Params params;
-	params.Player_to_Boost = Player_to_Boost;
+	params.Player_To_Boost = Player_To_Boost;
 
 	auto flags = fn->FunctionFlags;
 

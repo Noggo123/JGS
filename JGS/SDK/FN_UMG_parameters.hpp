@@ -1,6 +1,6 @@
 #pragma once
 
-// Fortnite (1.8) SDK
+// Fortnite (1.7.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,186 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function UMG.AsyncTaskDownloadImage.DownloadImage
+struct UAsyncTaskDownloadImage_DownloadImage_Params
+{
+	struct FString                                     URL;                                                      // (Parm, ZeroConstructor)
+	class UAsyncTaskDownloadImage*                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function UMG.DragDropOperation.Drop
+struct UDragDropOperation_Drop_Params
+{
+	struct FPointerEvent                               PointerEvent;                                             // (ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// Function UMG.DragDropOperation.Dragged
+struct UDragDropOperation_Dragged_Params
+{
+	struct FPointerEvent                               PointerEvent;                                             // (ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// Function UMG.DragDropOperation.DragCancelled
+struct UDragDropOperation_DragCancelled_Params
+{
+	struct FPointerEvent                               PointerEvent;                                             // (ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// Function UMG.BoolBinding.GetValue
+struct UBoolBinding_GetValue_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function UMG.BrushBinding.GetValue
+struct UBrushBinding_GetValue_Params
+{
+	struct FSlateBrush                                 ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function UMG.CheckedStateBinding.GetValue
+struct UCheckedStateBinding_GetValue_Params
+{
+	ECheckBoxState                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function UMG.ColorBinding.GetSlateValue
+struct UColorBinding_GetSlateValue_Params
+{
+	struct FSlateColor                                 ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function UMG.ColorBinding.GetLinearValue
+struct UColorBinding_GetLinearValue_Params
+{
+	struct FLinearColor                                ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function UMG.FloatBinding.GetValue
+struct UFloatBinding_GetValue_Params
+{
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function UMG.Int32Binding.GetValue
+struct UInt32Binding_GetValue_Params
+{
+	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function UMG.MouseCursorBinding.GetValue
+struct UMouseCursorBinding_GetValue_Params
+{
+	TEnumAsByte<EMouseCursor>                          ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function UMG.TextBinding.GetTextValue
+struct UTextBinding_GetTextValue_Params
+{
+	struct FText                                       ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+// Function UMG.TextBinding.GetStringValue
+struct UTextBinding_GetStringValue_Params
+{
+	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
+};
+
+// Function UMG.VisibilityBinding.GetValue
+struct UVisibilityBinding_GetValue_Params
+{
+	ESlateVisibility                                   ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function UMG.WidgetBinding.GetValue
+struct UWidgetBinding_GetValue_Params
+{
+	class UWidget*                                     ReturnValue;                                              // (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+};
+
+// Function UMG.SlateBlueprintLibrary.ScreenToWidgetLocal
+struct USlateBlueprintLibrary_ScreenToWidgetLocal_Params
+{
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGeometry                                   Geometry;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FVector2D                                   ScreenPosition;                                           // (Parm, IsPlainOldData)
+	struct FVector2D                                   LocalCoordinate;                                          // (Parm, OutParm, IsPlainOldData)
+};
+
+// Function UMG.SlateBlueprintLibrary.ScreenToWidgetAbsolute
+struct USlateBlueprintLibrary_ScreenToWidgetAbsolute_Params
+{
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector2D                                   ScreenPosition;                                           // (Parm, IsPlainOldData)
+	struct FVector2D                                   AbsoluteCoordinate;                                       // (Parm, OutParm, IsPlainOldData)
+};
+
+// Function UMG.SlateBlueprintLibrary.ScreenToViewport
+struct USlateBlueprintLibrary_ScreenToViewport_Params
+{
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector2D                                   ScreenPosition;                                           // (Parm, IsPlainOldData)
+	struct FVector2D                                   ViewportPosition;                                         // (Parm, OutParm, IsPlainOldData)
+};
+
+// Function UMG.SlateBlueprintLibrary.LocalToViewport
+struct USlateBlueprintLibrary_LocalToViewport_Params
+{
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FGeometry                                   Geometry;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FVector2D                                   LocalCoordinate;                                          // (Parm, IsPlainOldData)
+	struct FVector2D                                   PixelPosition;                                            // (Parm, OutParm, IsPlainOldData)
+	struct FVector2D                                   ViewportPosition;                                         // (Parm, OutParm, IsPlainOldData)
+};
+
+// Function UMG.SlateBlueprintLibrary.LocalToAbsolute
+struct USlateBlueprintLibrary_LocalToAbsolute_Params
+{
+	struct FGeometry                                   Geometry;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FVector2D                                   LocalCoordinate;                                          // (Parm, IsPlainOldData)
+	struct FVector2D                                   ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function UMG.SlateBlueprintLibrary.IsUnderLocation
+struct USlateBlueprintLibrary_IsUnderLocation_Params
+{
+	struct FGeometry                                   Geometry;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FVector2D                                   AbsoluteCoordinate;                                       // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function UMG.SlateBlueprintLibrary.GetLocalSize
+struct USlateBlueprintLibrary_GetLocalSize_Params
+{
+	struct FGeometry                                   Geometry;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FVector2D                                   ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
+
+// Function UMG.SlateBlueprintLibrary.EqualEqual_SlateBrush
+struct USlateBlueprintLibrary_EqualEqual_SlateBrush_Params
+{
+	struct FSlateBrush                                 A;                                                        // (ConstParm, Parm, OutParm, ReferenceParm)
+	struct FSlateBrush                                 B;                                                        // (ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function UMG.SlateBlueprintLibrary.AbsoluteToViewport
+struct USlateBlueprintLibrary_AbsoluteToViewport_Params
+{
+	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FVector2D                                   AbsoluteDesktopCoordinate;                                // (Parm, IsPlainOldData)
+	struct FVector2D                                   PixelPosition;                                            // (Parm, OutParm, IsPlainOldData)
+	struct FVector2D                                   ViewportPosition;                                         // (Parm, OutParm, IsPlainOldData)
+};
+
+// Function UMG.SlateBlueprintLibrary.AbsoluteToLocal
+struct USlateBlueprintLibrary_AbsoluteToLocal_Params
+{
+	struct FGeometry                                   Geometry;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+	struct FVector2D                                   AbsoluteCoordinate;                                       // (Parm, IsPlainOldData)
+	struct FVector2D                                   ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
+};
 
 // Function UMG.Widget.SetVisibility
 struct UWidget_SetVisibility_Params
@@ -836,186 +1016,6 @@ struct UUserWidget_AddToPlayerScreen_Params
 {
 	int                                                ZOrder;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function UMG.AsyncTaskDownloadImage.DownloadImage
-struct UAsyncTaskDownloadImage_DownloadImage_Params
-{
-	struct FString                                     URL;                                                      // (Parm, ZeroConstructor)
-	class UAsyncTaskDownloadImage*                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function UMG.DragDropOperation.Drop
-struct UDragDropOperation_Drop_Params
-{
-	struct FPointerEvent                               PointerEvent;                                             // (ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// Function UMG.DragDropOperation.Dragged
-struct UDragDropOperation_Dragged_Params
-{
-	struct FPointerEvent                               PointerEvent;                                             // (ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// Function UMG.DragDropOperation.DragCancelled
-struct UDragDropOperation_DragCancelled_Params
-{
-	struct FPointerEvent                               PointerEvent;                                             // (ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// Function UMG.BoolBinding.GetValue
-struct UBoolBinding_GetValue_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function UMG.BrushBinding.GetValue
-struct UBrushBinding_GetValue_Params
-{
-	struct FSlateBrush                                 ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function UMG.CheckedStateBinding.GetValue
-struct UCheckedStateBinding_GetValue_Params
-{
-	ECheckBoxState                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function UMG.ColorBinding.GetSlateValue
-struct UColorBinding_GetSlateValue_Params
-{
-	struct FSlateColor                                 ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function UMG.ColorBinding.GetLinearValue
-struct UColorBinding_GetLinearValue_Params
-{
-	struct FLinearColor                                ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function UMG.FloatBinding.GetValue
-struct UFloatBinding_GetValue_Params
-{
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function UMG.Int32Binding.GetValue
-struct UInt32Binding_GetValue_Params
-{
-	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function UMG.MouseCursorBinding.GetValue
-struct UMouseCursorBinding_GetValue_Params
-{
-	TEnumAsByte<EMouseCursor>                          ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function UMG.TextBinding.GetTextValue
-struct UTextBinding_GetTextValue_Params
-{
-	struct FText                                       ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function UMG.TextBinding.GetStringValue
-struct UTextBinding_GetStringValue_Params
-{
-	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
-};
-
-// Function UMG.VisibilityBinding.GetValue
-struct UVisibilityBinding_GetValue_Params
-{
-	ESlateVisibility                                   ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function UMG.WidgetBinding.GetValue
-struct UWidgetBinding_GetValue_Params
-{
-	class UWidget*                                     ReturnValue;                                              // (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
-};
-
-// Function UMG.SlateBlueprintLibrary.ScreenToWidgetLocal
-struct USlateBlueprintLibrary_ScreenToWidgetLocal_Params
-{
-	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGeometry                                   Geometry;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	struct FVector2D                                   ScreenPosition;                                           // (Parm, IsPlainOldData)
-	struct FVector2D                                   LocalCoordinate;                                          // (Parm, OutParm, IsPlainOldData)
-};
-
-// Function UMG.SlateBlueprintLibrary.ScreenToWidgetAbsolute
-struct USlateBlueprintLibrary_ScreenToWidgetAbsolute_Params
-{
-	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector2D                                   ScreenPosition;                                           // (Parm, IsPlainOldData)
-	struct FVector2D                                   AbsoluteCoordinate;                                       // (Parm, OutParm, IsPlainOldData)
-};
-
-// Function UMG.SlateBlueprintLibrary.ScreenToViewport
-struct USlateBlueprintLibrary_ScreenToViewport_Params
-{
-	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector2D                                   ScreenPosition;                                           // (Parm, IsPlainOldData)
-	struct FVector2D                                   ViewportPosition;                                         // (Parm, OutParm, IsPlainOldData)
-};
-
-// Function UMG.SlateBlueprintLibrary.LocalToViewport
-struct USlateBlueprintLibrary_LocalToViewport_Params
-{
-	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FGeometry                                   Geometry;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	struct FVector2D                                   LocalCoordinate;                                          // (Parm, IsPlainOldData)
-	struct FVector2D                                   PixelPosition;                                            // (Parm, OutParm, IsPlainOldData)
-	struct FVector2D                                   ViewportPosition;                                         // (Parm, OutParm, IsPlainOldData)
-};
-
-// Function UMG.SlateBlueprintLibrary.LocalToAbsolute
-struct USlateBlueprintLibrary_LocalToAbsolute_Params
-{
-	struct FGeometry                                   Geometry;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	struct FVector2D                                   LocalCoordinate;                                          // (Parm, IsPlainOldData)
-	struct FVector2D                                   ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function UMG.SlateBlueprintLibrary.IsUnderLocation
-struct USlateBlueprintLibrary_IsUnderLocation_Params
-{
-	struct FGeometry                                   Geometry;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	struct FVector2D                                   AbsoluteCoordinate;                                       // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function UMG.SlateBlueprintLibrary.GetLocalSize
-struct USlateBlueprintLibrary_GetLocalSize_Params
-{
-	struct FGeometry                                   Geometry;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	struct FVector2D                                   ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
-};
-
-// Function UMG.SlateBlueprintLibrary.EqualEqual_SlateBrush
-struct USlateBlueprintLibrary_EqualEqual_SlateBrush_Params
-{
-	struct FSlateBrush                                 A;                                                        // (ConstParm, Parm, OutParm, ReferenceParm)
-	struct FSlateBrush                                 B;                                                        // (ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function UMG.SlateBlueprintLibrary.AbsoluteToViewport
-struct USlateBlueprintLibrary_AbsoluteToViewport_Params
-{
-	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FVector2D                                   AbsoluteDesktopCoordinate;                                // (Parm, IsPlainOldData)
-	struct FVector2D                                   PixelPosition;                                            // (Parm, OutParm, IsPlainOldData)
-	struct FVector2D                                   ViewportPosition;                                         // (Parm, OutParm, IsPlainOldData)
-};
-
-// Function UMG.SlateBlueprintLibrary.AbsoluteToLocal
-struct USlateBlueprintLibrary_AbsoluteToLocal_Params
-{
-	struct FGeometry                                   Geometry;                                                 // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
-	struct FVector2D                                   AbsoluteCoordinate;                                       // (Parm, IsPlainOldData)
-	struct FVector2D                                   ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
 };
 
 // Function UMG.BackgroundBlurSlot.SetVerticalAlignment
@@ -2628,18 +2628,6 @@ struct UTextBlock_SetColorAndOpacity_Params
 struct UTextBlock_GetText_Params
 {
 	struct FText                                       ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
-
-// Function UMG.TextBlock.GetDynamicOutlineMaterial
-struct UTextBlock_GetDynamicOutlineMaterial_Params
-{
-	class UMaterialInstanceDynamic*                    ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function UMG.TextBlock.GetDynamicFontMaterial
-struct UTextBlock_GetDynamicFontMaterial_Params
-{
-	class UMaterialInstanceDynamic*                    ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function UMG.Throbber.SetNumberOfPieces
