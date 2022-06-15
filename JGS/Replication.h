@@ -164,9 +164,9 @@ namespace Replication
 			}
 		}
 
-		Free((void*)Actors.Data);
-		Actors.Count = 0;
-		Actors.Max = 0;
+		Free((void*)OutActors.Data);
+		OutActors.Count = 0;
+		OutActors.Max = 0;
 	}
 
 	bool IsActorRelevantToConnection(AActor* Actor, UNetConnection* NetConnection)
