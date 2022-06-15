@@ -200,15 +200,15 @@ namespace Hooks
 							}
 						}
 
-						/*auto NewPickupWorldItem = (UFortWorldItem*)PickupDef->CreateTemporaryItemInstanceBP(PickupEntry.Count + Count, 1);
+						auto NewPickupWorldItem = (UFortWorldItem*)PickupDef->CreateTemporaryItemInstanceBP(PickupEntry.Count + Count, 1);
 						NewPickupWorldItem->ItemEntry = PickupEntry;
 						NewPickupWorldItem->ItemEntry.Count = PickupEntry.Count + Count;
 						NewPickupWorldItem->bTemporaryItemOwningController = true;
-						NewPickupWorldItem->SetOwningControllerForTemporaryItem(PC);*/
+						NewPickupWorldItem->SetOwningControllerForTemporaryItem(PC);
 
-						Globals::FortLib->STATIC_K2_GiveItemToPlayer(PC, (UFortWorldItemDefinition*)PickupDef, PickupEntry.Count + Count, true);
+						//Globals::FortLib->STATIC_K2_GiveItemToPlayer(PC, (UFortWorldItemDefinition*)PickupDef, PickupEntry.Count + Count, true);
 
-						/*WorldInventory->Inventory.ItemInstances.Add(NewPickupWorldItem);
+						WorldInventory->Inventory.ItemInstances.Add(NewPickupWorldItem);
 						WorldInventory->Inventory.ReplicatedEntries.Add(NewPickupWorldItem->ItemEntry);
 
 						FindInventory((AFortPlayerController*)PC)->UpdateInventory();
@@ -217,8 +217,8 @@ namespace Hooks
 						statval->IntValue = NewPickupWorldItem->ItemEntry.Count;
 						statval->NameValue = FName("Item");
 						statval->StateType = EFortItemEntryState::NewItemCount;
-						PC->ServerSetInventoryStateValue(NewPickupWorldItem->GetItemGuid(), (*statval));*/
-						//QuickBars->ServerAddItemInternal(NewPickupWorldItem->GetItemGuid(), EFortQuickBars::Primary, QuickBars->PrimaryQuickBar.SecondaryFocusedSlot);
+						PC->ServerSetInventoryStateValue(NewPickupWorldItem->GetItemGuid(), (*statval));
+						QuickBars->ServerAddItemInternal(NewPickupWorldItem->GetItemGuid(), EFortQuickBars::Primary, QuickBars->PrimaryQuickBar.SecondaryFocusedSlot);
 					}
 				}
 			}
