@@ -124,7 +124,7 @@ namespace Replication
 
 		for (int i = 0; i < Actors.Num(); i++)
 		{
-			auto Actor = Actors[i];
+			auto Actor = Actors[i].Get()->Actor;
 
 			if (!Actor)
 				continue;
