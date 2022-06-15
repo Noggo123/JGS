@@ -120,11 +120,12 @@ namespace Replication
 
 	void BuildConsiderList(UNetDriver* NetDriver, std::vector<FNetworkObjectInfo*>& OutConsiderList)
 	{
-		auto Actors = GetNetworkObjectList(NetDriver).ActiveNetworkObjects;
+		TArray<AActor*> OutActors;
+		Globals::GPS->STATIC_GetAllActorsOfClass(Globals::World, AActor::StaticClass(), &OutActors);
 
 		for (int i = 0; i < Actors.Num(); i++)
 		{
-			auto Actor = Actors[i].Get()->Actor;
+			auto Actor = OutActors[i];
 
 			if (!Actor)
 				continue;
