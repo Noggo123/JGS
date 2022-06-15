@@ -123,7 +123,7 @@ namespace Replication
 		TArray<AActor*> OutActors;
 		Globals::GPS->STATIC_GetAllActorsOfClass(Globals::World, AActor::StaticClass(), &OutActors);
 
-		for (int i = 0; i < Actors.Num(); i++)
+		for (int i = 0; i < OutActors.Num(); i++)
 		{
 			auto Actor = OutActors[i];
 
