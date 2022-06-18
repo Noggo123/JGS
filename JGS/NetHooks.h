@@ -130,7 +130,7 @@ namespace Beacons
 
 	void TickFlushHook(UNetDriver* NetDriver, float DeltaSeconds)
 	{
-		Replication::ReplicateActors(NetDriver);
+		ReplicateActors(NetDriver);
 
 		return TickFlush(NetDriver, DeltaSeconds);
 	}
@@ -384,7 +384,7 @@ namespace Beacons
 
 	void InitHooks()
 	{
-		Replication::InitOffsets();
+		InitOffsets();
 
 		auto BaseAddr = Util::BaseAddress();
 

@@ -2,6 +2,7 @@
 
 struct FNetworkObjectInfo
 {
+public:
 	AActor* Actor;
 	double NextUpdateTime;
 	double LastNetReplicateTime;
@@ -13,331 +14,308 @@ struct FNetworkObjectInfo
 	std::vector<UNetConnection*> RecentlyDormantConnections;
 };
 
-inline int32_t Rand() { return rand(); };
-inline float FRand() { return Rand() / (float)RAND_MAX; };
+UChannel* (*CreateChannel)(UNetConnection*, int, bool, int32_t);
+__int64(*SetChannelActor)(UActorChannel*, AActor*);
+void(*CallPreReplication)(AActor*, UNetDriver*);
+bool(*ReplicateActor)(UActorChannel*);
+void(*SendClientAdjustment)(AActor*);
+static void* (*AddNetworkActor)(UWorld*, AActor*);
+static char (*IsNetRelevantFor)(AActor*, AActor*, AActor*, FVector&);
+void (*ActorChannelClose)(UActorChannel*, __int64, __int64, __int64);
 
-namespace Replication
+std::vector<FNetworkObjectInfo*> PrivateObjectList;
+
+UActorChannel* ReplicateToClient(AActor* InActor, UNetConnection* InConnection)
 {
-	inline static UChannel* (*CreateChannel)(UNetConnection*, int, bool, int32_t);
-	inline static __int64 (*ReplicateActor)(UActorChannel*);
-	inline static __int64 (*SetChannelActor)(UActorChannel*, AActor*);
-	inline static void (*CallPreReplication)(AActor*, UNetDriver*);
-	inline static void (*SendClientAdjustment)(APlayerController*);
-	inline static void (*ActorChannelClose)(UActorChannel*, __int64 /*Not used*/, __int64 /*Not used*/, __int64 /*Used once for getname so i will just use the actor*/);
-	inline static bool (*IsNetRelevantFor)(AActor*, AActor*, AActor*, FVector&);
+	if (InActor->IsA(APlayerController::StaticClass()) && InActor != InConnection->PlayerController)
+		return nullptr;
 
-	UActorChannel* ReplicateToClient(AActor* InActor, UNetConnection* InConnection)
-	{
-		if (InActor->IsA(APlayerController::StaticClass()) && InActor != InConnection->PlayerController)
-			return nullptr;
+	auto Channel = (UActorChannel*)(CreateChannel(InConnection, 2, true, -1));
 
-		auto Channel = (UActorChannel*)(CreateChannel(InConnection, 2, true, -1));
-
-		if (Channel) {
-			SetChannelActor(Channel, InActor);
-			Channel->Connection = InConnection;
-
-			return Channel;
-		}
-
-		return NULL;
+	if (Channel) {
+		SetChannelActor(Channel, InActor);
+		Channel->Connection = InConnection;
 	}
 
-	int PrepConnections(UNetDriver* NetDriver)
+	return NULL;
+}
+
+int PrepConnections(UNetDriver* NetDriver)
+{
+	int ReadyConnections = 0;
+
+	for (int ConnIdx = 0; ConnIdx < NetDriver->ClientConnections.Num(); ConnIdx++)
 	{
-		int ReadyConnections = 0;
+		UNetConnection* Connection = NetDriver->ClientConnections[ConnIdx];
+		if (!Connection) continue;
 
-		for (int ConnIdx = 0; ConnIdx < NetDriver->ClientConnections.Num(); ConnIdx++)
+		AActor* OwningActor = Connection->OwningActor;
+
+		if (OwningActor)
 		{
-			UNetConnection* Connection = NetDriver->ClientConnections[ConnIdx];
-			if (!Connection) continue;
+			ReadyConnections++;
+			AActor* DesiredViewTarget = OwningActor;
 
-			AActor* OwningActor = Connection->OwningActor;
-
-			if (OwningActor)
+			if (Connection->PlayerController)
 			{
-				ReadyConnections++;
-				AActor* DesiredViewTarget = OwningActor;
-
-				if (Connection->PlayerController)
+				if (AActor* ViewTarget = Connection->PlayerController->GetViewTarget())
 				{
-					if (AActor* ViewTarget = Connection->PlayerController->GetViewTarget())
-					{
-						DesiredViewTarget = ViewTarget;
-					}
-				}
-
-				Connection->ViewTarget = DesiredViewTarget;
-
-				for (int ChildIdx = 0; ChildIdx < Connection->Children.Num(); ++ChildIdx)
-				{
-					UNetConnection* ChildConnection = Connection->Children[ChildIdx];
-					if (ChildConnection && ChildConnection->PlayerController && ChildConnection->ViewTarget)
-					{
-						ChildConnection->ViewTarget = DesiredViewTarget;
-					}
+					DesiredViewTarget = ViewTarget;
 				}
 			}
-			else
-			{
-				Connection->ViewTarget = nullptr;
 
-				for (int ChildIdx = 0; ChildIdx < Connection->Children.Num(); ++ChildIdx)
+			Connection->ViewTarget = DesiredViewTarget;
+
+			for (int ChildIdx = 0; ChildIdx < Connection->Children.Num(); ++ChildIdx)
+			{
+				UNetConnection* ChildConnection = Connection->Children[ChildIdx];
+				if (ChildConnection && ChildConnection->PlayerController && ChildConnection->ViewTarget)
 				{
-					UNetConnection* ChildConnection = Connection->Children[ChildIdx];
-					if (ChildConnection && ChildConnection->PlayerController && ChildConnection->ViewTarget)
-					{
-						ChildConnection->ViewTarget = nullptr;
-					}
+					ChildConnection->ViewTarget = DesiredViewTarget;
 				}
 			}
 		}
-
-		return ReadyConnections;
-	}
-
-	UActorChannel* FindChannel(AActor* Actor, UNetConnection* Connection)
-	{
-		for (int i = 0; i < Connection->OpenChannels.Num(); i++)
+		else
 		{
-			auto Channel = Connection->OpenChannels[i];
+			Connection->ViewTarget = nullptr;
 
-			if (Channel && Channel->Class)
+			for (int ChildIdx = 0; ChildIdx < Connection->Children.Num(); ++ChildIdx)
 			{
-				if (Channel->Class == UActorChannel::StaticClass())
+				UNetConnection* ChildConnection = Connection->Children[ChildIdx];
+				if (ChildConnection && ChildConnection->PlayerController && ChildConnection->ViewTarget)
 				{
-					if (((UActorChannel*)Channel)->Actor == Actor)
-						return ((UActorChannel*)Channel);
+					ChildConnection->ViewTarget = nullptr;
 				}
-			}
-		}
-
-		return NULL;
-	}
-
-	UNetConnection* GetOwningConnection(AActor* Actor)
-	{
-		for (auto Owner = Actor; Actor; Actor = Actor->GetOwner())
-		{
-			if (Actor->IsA(APlayerController::StaticClass()))
-			{
-				return ((APlayerController*)Actor)->NetConnection;
 			}
 		}
 	}
 
-	void BuildConsiderList(UNetDriver* NetDriver, std::vector<FNetworkObjectInfo*>& OutConsiderList)
+	return ReadyConnections;
+}
+
+UActorChannel* FindChannel(AActor* Actor, UNetConnection* Connection)
+{
+	for (int i = 0; i < Connection->OpenChannels.Num(); i++)
 	{
-		TArray<AActor*> Actors;
-		Globals::GPS->STATIC_GetAllActorsOfClass(Globals::World, AActor::StaticClass(), &Actors);
+		auto Channel = Connection->OpenChannels[i];
 
-		for (int i = 0; i < Actors.Num(); i++)
+		if (Channel && Channel->Class)
 		{
-			auto Actor = Actors[i];
+			if (Channel->Class == UActorChannel::StaticClass())
+			{
+				if (((UActorChannel*)Channel)->Actor == Actor)
+					return ((UActorChannel*)Channel);
+			}
+		}
+	}
 
-			if (!Actor)
+	return NULL;
+}
+
+UNetConnection* GetOwningConnection(AActor* Actor)
+{
+	for (auto Owner = Actor; Actor; Actor = Actor->GetOwner())
+	{
+		if (Actor->IsA(APlayerController::StaticClass()))
+		{
+			return ((APlayerController*)Actor)->NetConnection;
+		}
+	}
+}
+
+std::vector<FNetworkObjectInfo*>& GetNetworkObjectList()
+{
+	return PrivateObjectList;
+}
+
+void BuildConsiderList(UNetDriver* NetDriver, std::vector<FNetworkObjectInfo*>& OutConsiderList, float ServerTickTime)
+{
+	auto World = NetDriver->World;
+
+	if (!World)
+		return;
+
+	auto TimeSeconds = Globals::GPS->STATIC_GetTimeSeconds(World);
+
+	for (auto ActorInfo : GetNetworkObjectList())
+	{
+		if (!ActorInfo)
+		{
+			continue;
+		}
+
+		if (!ActorInfo->bPendingNetUpdate && TimeSeconds <= ActorInfo->NextUpdateTime)
+			continue;
+
+		auto Actor = ActorInfo->Actor;
+
+		if (!Actor)
+		{
+			continue;
+		}
+
+		if (Actor->bActorIsBeingDestroyed)
+		{
+			continue;
+		}
+
+		if (Actor->RemoteRole == ENetRole::ROLE_None)
+		{
+			continue;
+		}
+
+		if (Actor->NetDormancy == ENetDormancy::DORM_Initial && Actor->bNetStartup)
+		{
+			continue;
+		}
+
+		if (ActorInfo->LastNetReplicateTime == 0)
+		{
+			ActorInfo->LastNetReplicateTime = TimeSeconds;
+			ActorInfo->OptimalNetUpdateDelta = 1.0f / Actor->NetUpdateFrequency;
+		}
+
+		const float ScaleDownStartTime = 2.0f;
+		const float ScaleDownTimeRange = 5.0f;
+
+		const float LastReplicateDelta = TimeSeconds - ActorInfo->LastNetReplicateTime;
+
+		if (LastReplicateDelta > ScaleDownStartTime)
+		{
+			if (Actor->MinNetUpdateFrequency == 0.0f)
+			{
+				Actor->MinNetUpdateFrequency = 2.0f;
+			}
+
+			const float MinOptimalDelta = 1.0f / Actor->NetUpdateFrequency;									  // Don't go faster than NetUpdateFrequency
+			const float MaxOptimalDelta = Globals::MathLib->STATIC_Max(1.0f / Actor->MinNetUpdateFrequency, MinOptimalDelta); // Don't go slower than MinNetUpdateFrequency (or NetUpdateFrequency if it's slower)
+
+			const float Alpha = Globals::MathLib->STATIC_Clamp((LastReplicateDelta - ScaleDownStartTime) / ScaleDownTimeRange, 0.0f, 1.0f);
+			ActorInfo->OptimalNetUpdateDelta = Globals::MathLib->STATIC_Lerp(MinOptimalDelta, MaxOptimalDelta, Alpha);
+		}
+
+		if (!ActorInfo->bPendingNetUpdate)
+		{
+			const float NextUpdateDelta = true ? ActorInfo->OptimalNetUpdateDelta : 1.0f / Actor->NetUpdateFrequency;
+
+			ActorInfo->NextUpdateTime = TimeSeconds + Globals::MathLib->STATIC_RandomFloat() * ServerTickTime + NextUpdateDelta;
+			ActorInfo->LastNetUpdateTime = NetDriver->Time;
+		}
+
+		ActorInfo->bPendingNetUpdate = false;
+
+		if (Actor && NetDriver && &OutConsiderList && Actor->Name.ComparisonIndex != 0 && ActorInfo)
+		{
+			CallPreReplication(Actor, NetDriver);
+			OutConsiderList.push_back(ActorInfo);
+		}
+	}
+}
+
+void ReplicateActors(UNetDriver* NetDriver)
+{
+	++*(DWORD*)(__int64(NetDriver) + 648);
+
+	auto NumClientsToTick = PrepConnections(NetDriver);
+
+	if (NumClientsToTick == 0)
+		return;
+
+	auto DeltaSeconds = Globals::GPS->STATIC_GetWorldDeltaSeconds(Globals::World);
+
+	bool bCPUSaturated = false;
+	float ServerTickTime = (*(float(__fastcall**)(UEngine*, __int64, __int64))(*(__int64*)__int64(Globals::FortEngine) + 632))(Globals::FortEngine, 0, 0);
+	if (ServerTickTime == 0.f)
+	{
+		ServerTickTime = DeltaSeconds;
+	}
+	else
+	{
+		ServerTickTime = 1.f / ServerTickTime;
+		bCPUSaturated = DeltaSeconds > 1.2f * ServerTickTime;
+	}
+
+	auto TimeSeconds = Globals::GPS->STATIC_GetTimeSeconds(Globals::World);
+
+	std::vector<FNetworkObjectInfo*> ConsiderList = std::vector<FNetworkObjectInfo*>();
+	BuildConsiderList(NetDriver, ConsiderList, ServerTickTime);
+
+	for (int i = 0; i < NetDriver->ClientConnections.Num(); i++)
+	{
+		auto Connection = NetDriver->ClientConnections[i];
+
+		if (!Connection)
+			continue;
+
+		if (i >= NumClientsToTick)
+			break; // Only tick on ready connections
+
+		if (Connection->PlayerController)
+			SendClientAdjustment(Connection->PlayerController);
+
+		for (auto ActorInfo : ConsiderList)
+		{
+			if (!ActorInfo)
 				continue;
 
-			if (!Actor)
-			{
+			if (!ActorInfo->Actor)
 				continue;
+
+			auto Channel = FindChannel(ActorInfo->Actor, Connection);
+
+			if (!Channel)
+				Channel = ReplicateToClient(ActorInfo->Actor, Connection);
+
+			if (!ActorInfo->Actor->bAlwaysRelevant && Connection->PlayerController && !ActorInfo->Actor->bNetUseOwnerRelevancy && !ActorInfo->Actor->bOnlyRelevantToOwner)
+			{
+				auto Viewer = Connection->PlayerController->Pawn ? (AActor*)Connection->PlayerController->Pawn : Connection->PlayerController;
+				auto Loc = Viewer->K2_GetActorLocation();
+				if (!IsNetRelevantFor(ActorInfo->Actor, Viewer, Connection->ViewTarget, Loc))
+				{
+					continue;
+				}
 			}
 
-			if (Actor->bActorIsBeingDestroyed)
+			if (Channel)
 			{
-				continue;
-			}
+				if (ReplicateActor(Channel))
+				{
+					const float MinOptimalDelta = 1.0f / ActorInfo->Actor->NetUpdateFrequency;
+					const float MaxOptimalDelta = Globals::MathLib->STATIC_Max(1.0f / ActorInfo->Actor->MinNetUpdateFrequency, MinOptimalDelta);
+					const float DeltaBetweenReplications = (TimeSeconds - ActorInfo->LastNetReplicateTime);
 
-			if (Actor->RemoteRole == ENetRole::ROLE_None)
-			{
-				continue;
-			}
-
-			if (Actor->NetDormancy == ENetDormancy::DORM_Initial && Actor->bNetStartup)
-			{
-				continue;
-			}
-
-			if (Actor->Name.ComparisonIndex != 0)
-			{
-				if (CallPreReplication)
-					CallPreReplication(Actor, NetDriver);
-
-				FNetworkObjectInfo* Info = new FNetworkObjectInfo();
-				Info->Actor = Actor;
-
-				OutConsiderList.push_back(Info);
+					ActorInfo->OptimalNetUpdateDelta = Globals::MathLib->STATIC_Clamp(DeltaBetweenReplications * 0.7f, MinOptimalDelta, MaxOptimalDelta);
+					ActorInfo->LastNetReplicateTime = TimeSeconds;
+				}
 			}
 		}
-
-		FreeInternal((void*)Actors.Data);
-		Actors.Data = 0;
-		Actors.Count = 0;
-		Actors.Max = 0;
 	}
 
-	bool IsActorRelevantToConnection(AActor* Actor, UNetConnection* NetConnection)
+	ConsiderList.empty();
+	ConsiderList.clear();
+}
+
+static void* AddNetworkActorHook(UWorld* World, AActor* Actor)
+{
+	if (Actor)
 	{
-		if (NetConnection)
-		{
-			if (NetConnection->ViewTarget)
-			{
-				auto ActorLocation = NetConnection->ViewTarget->K2_GetActorLocation();
-				return IsNetRelevantFor(Actor, NetConnection->ViewTarget, NetConnection->ViewTarget, ActorLocation);
-			}
-		}
-
-		return false; //Hope this fixs the damn issue
+		auto ObjectInfo = new FNetworkObjectInfo();
+		ObjectInfo->Actor = Actor;
+		GetNetworkObjectList().push_back(ObjectInfo);
 	}
 
-	void ReplicateActors(UNetDriver* NetDriver)
-	{
-		++*(DWORD*)(__int64(NetDriver) + 648);
+	return AddNetworkActor(World, Actor);
+}
 
-		float DeltaSeconds = Globals::GPS->STATIC_GetWorldDeltaSeconds(Globals::World);
-		float TimeSeconds = Globals::GPS->STATIC_GetTimeSeconds(Globals::World);
+void InitOffsets()
+{
+	auto BaseAddress = (uintptr_t)GetModuleHandle(NULL);
 
-		auto NumClientsToTick = PrepConnections(NetDriver);
-
-		if (NumClientsToTick == 0)
-			return;
-
-		std::vector<FNetworkObjectInfo*> ConsiderList;
-		BuildConsiderList(NetDriver, ConsiderList);
-
-		for (int i = 0; i < NetDriver->ClientConnections.Num(); i++)
-		{
-			auto Connection = NetDriver->ClientConnections[i];
-
-			if (!Connection)
-				continue;
-
-			if (i >= NumClientsToTick)
-			{
-				for (int32_t ConsiderIdx = 0; ConsiderIdx < ConsiderList.size(); ConsiderIdx++)
-				{
-					AActor* Actor = ConsiderList[ConsiderIdx]->Actor;
-
-					if (Actor != NULL && !ConsiderList[ConsiderIdx]->bPendingNetUpdate)
-					{
-						UActorChannel* Channel = FindChannel(Actor, Connection);
-
-						if (Channel != NULL && Channel->LastUpdateTime < ConsiderList[ConsiderIdx]->LastNetUpdateTime)
-						{
-							ConsiderList[ConsiderIdx]->bPendingNetUpdate = true;
-						}
-					}
-				}
-			}
-			else if (Connection->ViewTarget)
-			{
-				if (Connection->PlayerController)
-				{
-					SendClientAdjustment(Connection->PlayerController);
-				}
-
-				for (int32_t ChildIdx = 0; ChildIdx < Connection->Children.Num(); ChildIdx++)
-				{
-					if (Connection->Children[ChildIdx]->PlayerController != NULL)
-					{
-						SendClientAdjustment(Connection->Children[ChildIdx]->PlayerController);
-					}
-				}
-
-				for (auto ActorInfo : ConsiderList)
-				{
-					if (!ActorInfo)
-					{
-						continue;
-					}
-
-					AActor* Actor = ActorInfo->Actor;
-
-					bool bIsRelevant = false;
-
-					auto Channel = FindChannel(Actor, Connection);
-
-					if (!Actor->bTearOff && (!Channel || NetDriver->Time - Channel->RelevantTime > 1.f))
-					{
-						if (IsActorRelevantToConnection(Actor, Connection))
-						{
-							bIsRelevant = true;
-						}
-					}
-
-					if (!Actor->bAlwaysRelevant && !Actor->bNetUseOwnerRelevancy && !Actor->bOnlyRelevantToOwner)
-					{
-						if (Connection && Connection->ViewTarget)
-						{
-							auto Viewer = Connection->ViewTarget;
-							auto Loc = Viewer->K2_GetActorLocation();
-							if (!IsNetRelevantFor(Actor, Viewer, Connection->ViewTarget, Loc))
-							{
-								if (Channel)
-									ActorChannelClose(Channel, 0, 0, 0);
-								continue;
-							}
-						}
-					}
-
-					if (!Channel) {
-						Channel = ReplicateToClient(Actor, Connection);
-
-						if (Actor->NetUpdateFrequency < 1.0f)
-						{
-							ActorInfo->NextUpdateTime = TimeSeconds + 0.2f * FRand();
-						}
-					}
-
-					if (Channel)
-					{
-						if (bIsRelevant)
-						{
-							Channel->RelevantTime = NetDriver->Time + 0.5f * Globals::MathLib->STATIC_RandomFloat();
-						}
-
-						if (ReplicateActor(Channel))
-						{
-							const float MinOptimalDelta = 1.0f / Actor->NetUpdateFrequency;
-							const float MaxOptimalDelta = Globals::MathLib->STATIC_Max(1.0f / Actor->MinNetUpdateFrequency, MinOptimalDelta);
-							const float DeltaBetweenReplications = (TimeSeconds - ActorInfo->LastNetReplicateTime);
-
-							ActorInfo->OptimalNetUpdateDelta = Globals::MathLib->STATIC_Clamp(DeltaBetweenReplications * 0.7f, MinOptimalDelta, MaxOptimalDelta);
-							ActorInfo->LastNetReplicateTime = TimeSeconds;
-						}
-					}
-
-					if (Channel != NULL && NetDriver->Time - Channel->RelevantTime <= 1.f)
-					{
-						ActorInfo->bPendingNetUpdate = true;
-					}
-					else if (IsActorRelevantToConnection(Actor, Connection))
-					{
-						ActorInfo->bPendingNetUpdate = true;
-						if (Channel != NULL)
-						{
-							Channel->RelevantTime = NetDriver->Time + 0.5f * Globals::MathLib->STATIC_RandomFloat();
-						}
-					}
-				}
-			}
-
-		}
-
-		ConsiderList.empty();
-		ConsiderList.clear();
-	}
-
-	void InitOffsets()
-	{
-		auto BaseAddress = (uintptr_t)GetModuleHandle(NULL);
-
-		CreateChannel = decltype(CreateChannel)(BaseAddress + Offsets::CreateChannel);
-		SetChannelActor = decltype(SetChannelActor)(BaseAddress + Offsets::SetChannelActor);
-		ReplicateActor = decltype(ReplicateActor)(BaseAddress + Offsets::ReplicateActor);
-		CallPreReplication = decltype(CallPreReplication)(BaseAddress + Offsets::CallPreReplication);
-		SendClientAdjustment = decltype(SendClientAdjustment)(BaseAddress + Offsets::SendClientAdjustment);
-		ActorChannelClose = decltype(ActorChannelClose)(BaseAddress + Offsets::ActorChannelClose);
-		IsNetRelevantFor = decltype(IsNetRelevantFor)(BaseAddress + Offsets::IsNetRelevantFor);
-	}
+	CreateChannel = decltype(CreateChannel)(BaseAddress + Offsets::CreateChannel);
+	SetChannelActor = decltype(SetChannelActor)(BaseAddress + Offsets::SetChannelActor);
+	ReplicateActor = decltype(ReplicateActor)(BaseAddress + Offsets::ReplicateActor);
+	CallPreReplication = decltype(CallPreReplication)(BaseAddress + Offsets::CallPreReplication);
+	SendClientAdjustment = decltype(SendClientAdjustment)(BaseAddress + Offsets::SendClientAdjustment);
+	ActorChannelClose = decltype(ActorChannelClose)(BaseAddress + Offsets::ActorChannelClose);
+	IsNetRelevantFor = decltype(IsNetRelevantFor)(BaseAddress + Offsets::IsNetRelevantFor);
 }

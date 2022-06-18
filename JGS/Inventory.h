@@ -218,8 +218,10 @@ public:
 
 	void UpdateInventory()
 	{
-        reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->HandleInventoryLocalUpdate();
         PC->HandleWorldInventoryLocalUpdate();
+
+        reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->HandleInventoryLocalUpdate();
+        reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->bRequiresLocalUpdate = true;
         reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars->OnRep_PrimaryQuickBar();
         reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars->OnRep_SecondaryQuickBar();
         reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars->ForceNetUpdate();

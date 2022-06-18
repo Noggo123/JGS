@@ -218,11 +218,6 @@ namespace Hooks
 
 						FindInventory((AFortPlayerController*)PC)->UpdateInventory();
 
-						auto statval = new FFortItemEntryStateValue;
-						statval->IntValue = NewPickupWorldItem->ItemEntry.Count;
-						statval->NameValue = FName("Item");
-						statval->StateType = EFortItemEntryState::NewItemCount;
-						PC->ServerSetInventoryStateValue(NewPickupWorldItem->GetItemGuid(), (*statval));
 						QuickBars->ServerAddItemInternal(NewPickupWorldItem->GetItemGuid(), EFortQuickBars::Primary, QuickBars->PrimaryQuickBar.SecondaryFocusedSlot);
 					}
 				}
