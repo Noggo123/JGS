@@ -257,9 +257,9 @@ namespace Replication
 
 					auto Channel = FindChannel(Actor, Connection);
 
-					if (!Actor->bTearOff && (!Channel || Time - Channel->RelevantTime > 1.f))
+					if (!Actor->bTearOff && (!Channel || NetDriver->Time - Channel->RelevantTime > 1.f))
 					{
-						if (IsActorRelevantToConnection(Actor, ConnectionViewers))
+						if (IsActorRelevantToConnection(Actor, Connection))
 						{
 							bIsRelevant = true;
 						}
