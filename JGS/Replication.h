@@ -224,7 +224,7 @@ void ReplicateActors(UNetDriver* NetDriver)
 	auto DeltaSeconds = Globals::GPS->STATIC_GetWorldDeltaSeconds(Globals::World);
 
 	bool bCPUSaturated = false;
-	float ServerTickTime = (*(float(__fastcall**)(UEngine*, __int64, __int64))(*(__int64*)__int64(Globals::FortEngine) + 632))(Globals::FortEngine, 0, 0);
+	float ServerTickTime = (*(float(__fastcall**)(__int64, __int64, __int64))(*(__int64*)Globals::FortEngine + __int64(616)))(__int64(Globals::FortEngine), DeltaSeconds, __int64(0));
 	if (ServerTickTime == 0.f)
 	{
 		ServerTickTime = DeltaSeconds;
@@ -301,6 +301,7 @@ static void* AddNetworkActorHook(UWorld* World, AActor* Actor)
 	{
 		auto ObjectInfo = new FNetworkObjectInfo();
 		ObjectInfo->Actor = Actor;
+		ObjectInfo->bPendingNetUpdate = true;
 		GetNetworkObjectList().push_back(ObjectInfo);
 	}
 
