@@ -164,7 +164,7 @@ namespace Replication
 					CallPreReplication(Actor, NetDriver);
 
 				//Actor->NetCullDistanceSquared = Actor->NetCullDistanceSquared * 2.5;
-
+				
 				FNetworkObjectInfo* Info = new FNetworkObjectInfo();
 				Info->Actor = Actor;
 
@@ -194,7 +194,7 @@ namespace Replication
 
 	void ReplicateActors(UNetDriver* NetDriver)
 	{
-		++* (DWORD*)(__int64(NetDriver) + 648);
+		++*(DWORD*)(__int64(NetDriver) + 648);
 
 		auto NumClientsToTick = PrepConnections(NetDriver);
 
