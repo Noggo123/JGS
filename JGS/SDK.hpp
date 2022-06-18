@@ -6,6 +6,12 @@
 #include <string>
 #include <locale>
 
+class FNetworkGUID
+{
+public:
+	uint32_t Value;
+};
+
 #include "Containers.h"
 #include "SDK/FN_Basic.hpp"
 

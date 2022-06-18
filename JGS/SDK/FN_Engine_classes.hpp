@@ -10753,8 +10753,27 @@ public:
 class UActorChannel : public UChannel
 {
 public:
-	class AActor*                                      Actor;                                                    // 0x0068(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x1C0];                                     // 0x0070(0x01C0) MISSED OFFSET
+	class AActor* Actor;
+	FNetworkGUID ActorNetGUID;
+	float CustomTimeDilation;
+	double RelevantTime;
+	double LastUpdateTime;
+	uint32_t SpawnAcked : 1;
+	uint32_t bForceCompareProperties : 1;
+	uint32_t bIsReplicatingActor : 1;
+	uint32_t bClearRecentActorRefs : 1;
+	void* ActorReplicator;
+	unsigned char pad[0x50];
+	TArray<void*> QueuedBunches;
+	double QueuedBunchStartTime;
+	unsigned char pad02[0x50];
+	TArray<TWeakObjectPtr<UObject>>	CreateSubObjects;
+	TArray<FNetworkGUID> QueuedMustBeMappedGuidsInLastBunch;
+	TArray<void*> QueuedExportBunches;
+	TMap<int32_t, int32_t> SubobjectRepKeyMap;
+	unsigned char pad01[0x50];
+	TArray<int32_t> PendingObjKeys;
+
 
 	static UClass* StaticClass()
 	{

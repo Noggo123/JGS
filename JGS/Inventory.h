@@ -218,12 +218,14 @@ public:
 
 	void UpdateInventory()
 	{
-        reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.MarkArrayDirty();
-
         reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->HandleInventoryLocalUpdate();
         PC->HandleWorldInventoryLocalUpdate();
         reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars->OnRep_PrimaryQuickBar();
         reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars->OnRep_SecondaryQuickBar();
+        reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars->ForceNetUpdate();
+        reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->ForceNetUpdate();
+
+        reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.MarkArrayDirty();
 	}
 
     void SpawnAllLootInInventory()
