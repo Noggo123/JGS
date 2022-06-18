@@ -73,9 +73,6 @@ DWORD WINAPI MainThread(LPVOID)
 
     Globals::PC->SwitchLevel(TEXT("Athena_Terrain"));
 
-    MH_CreateHook((LPVOID)(BaseAddr + 0x2493BC0), AddNetworkActorHook, (LPVOID*)(&AddNetworkActor));
-    MH_EnableHook((LPVOID)(BaseAddr + 0x2493BC0));
-
     Hooks::bIsReady = true;
 
     Hooks::Init();
