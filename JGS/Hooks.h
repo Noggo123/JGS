@@ -550,8 +550,6 @@ namespace Hooks
 			{
 				auto FortController = (AFortPlayerController*)Params->InstigatedBy;
 
-				LOG("HitSound: " << BuildingActor->PlayHitSound->GetName());
-
 				if (FortController->MyFortPawn->CurrentWeapon && FortController->MyFortPawn->CurrentWeapon->WeaponData == FindObjectFast<UFortWeaponMeleeItemDefinition>("/Game/Athena/Items/Weapons/WID_Harvest_Pickaxe_Athena_C_T01.WID_Harvest_Pickaxe_Athena_C_T01"))
 					FortController->ClientReportDamagedResourceBuilding(BuildingActor, BuildingActor->ResourceType, Globals::MathLib->STATIC_RandomIntegerInRange(3, 6), false, false);
 			}
