@@ -174,6 +174,25 @@ namespace Beacons
 
 		if (!bSetupFloorLoot)
 		{
+			TArray<AActor*> Actors;
+			Globals::GPS->STATIC_GetAllActorsOfClass(Globals::World, ABuildingContainer::StaticClass(), &Actors);
+
+			for (int i = 0; i < Actors.Num(); i++)
+			{
+				auto Actor = (ABuildingContainer*)Actors[i];
+
+				if (Actor->GetName().contains("Tiered_Chest") ||
+					Actor->GetName().contains("Tiered_Short_Ammo"))
+				{
+					continue;
+				}
+				else {
+					Actor->bAlreadySearched = true;
+					Actor->bStartAlreadySearched_Athena = true;
+					Actor->OnRep_bAlreadySearched();
+				}
+			}
+
 			SpawnFloorLoot();
 			bSetupFloorLoot = true;
 		}
@@ -251,13 +270,10 @@ namespace Beacons
 		PlayerState->OnRep_bHasStartedPlaying();
 		PlayerState->OnRep_CharacterParts();
 
-		auto NewCheatManager = (UFortCheatManager*)(Globals::GPS->STATIC_SpawnObject(UFortCheatManager::StaticClass(), PlayerController));
-		PlayerController->CheatManager = NewCheatManager;
-		NewCheatManager->BackpackSetSize(5);
+		PlayerController->OverriddenBackpackSize = 5;
 
 		auto NewInv = CreateInventoryForPlayerController(PlayerController);
 		NewInv->SetupInventory();
-		NewInv->CreateBuildPreviews();
 		NewInv->UpdateInventory();
 
 		PlayerState->OnRep_HeroType();

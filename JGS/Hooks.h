@@ -362,7 +362,7 @@ namespace Hooks
 			{
 				auto AmmoBox = (ABuildingContainer*)ReceivingActor;
 				AmmoBox->bAlreadySearched = true;
-				AmmoBox->bDestroyContainerOnSearch = true;
+				//AmmoBox->bDestroyContainerOnSearch = true;
 				AmmoBox->OnSetSearched();
 				AmmoBox->OnLoot();
 				AmmoBox->OnRep_bAlreadySearched();
@@ -393,14 +393,14 @@ namespace Hooks
 				NewFortPickup1->TossPickup(Location, nullptr, 1);
 				NewFortPickup2->TossPickup(Location, nullptr, 1);
 
-				ReceivingActor->K2_DestroyActor();
+				//ReceivingActor->K2_DestroyActor();
 			}
 
 			if (ReceivingActor && ReceivingActor->Class->GetName().contains("Tiered_Chest"))
 			{
 				auto Chest = (ABuildingContainer*)ReceivingActor;
 				Chest->bAlreadySearched = true;
-				Chest->bDestroyContainerOnSearch = true;
+				//Chest->bDestroyContainerOnSearch = true;
 				Chest->OnSetSearched();
 				Chest->OnLoot();
 				Chest->OnRep_bAlreadySearched();
@@ -470,7 +470,7 @@ namespace Hooks
 				NewFortPickup1->OnRep_PrimaryPickupItemEntry();
 				NewFortPickup1->TossPickup(Location, nullptr, 1);
 
-				ReceivingActor->K2_DestroyActor();
+				//ReceivingActor->K2_DestroyActor();
 			}
 
 			if (ReceivingActor && ReceivingActor->Class->GetName().contains("AthenaSupplyDrop_02"))
@@ -514,39 +514,6 @@ namespace Hooks
 				NewFortPickup3->OnRep_PrimaryPickupItemEntry();
 				NewFortPickup3->TossPickup(Location, nullptr, 1);
 			}
-		}
-
-		if (FuncName.contains("BlueprintCanInteract"))
-		{
-			auto BuildingActor = (ABuildingActor*)pObject;
-			auto Params = (ABuildingActor_BlueprintCanInteract_Params*)pParams;
-
-			if (BuildingActor->GetName().contains("Tiered_Chest") ||
-				BuildingActor->GetName().contains("Tiered_Short_Ammo") ||
-				BuildingActor->GetName().contains("AthenaSupplyDrop_02"))
-			{
-				Params->ReturnValue = true;
-			} else {
-				Params->ReturnValue = false;
-			}
-		}
-
-		if (FuncName.contains("ServerSpawnDeco"))
-		{
-			auto FortDeco = (AFortDecoTool*)pObject;
-			auto CurrentParams = (AFortDecoTool_ServerSpawnDeco_Params*)pParams;
-			auto Owner = (APlayerPawn_Athena_C*)FortDeco->GetOwner();
-			auto PC = (AFortPlayerControllerAthena*)Owner->Controller;
-
-
-			auto Trap = (UFortTrapItemDefinition*)FortDeco->ItemDefinition;
-			auto Deco = (ABuildingTrap*)Util::SpawnActor(Trap->GetBlueprintClass(), CurrentParams->Location, CurrentParams->Rotation);
-			Deco->AttachedTo = CurrentParams->AttachedActor;
-			Deco->OnRep_AttachedTo();
-			Deco->Team = ((AFortPlayerStateAthena*)Owner->PlayerState)->TeamIndex;
-			Deco->OnPlaced();
-			Deco->OnFinishedBuilding();
-			Deco->InitializeKismetSpawnedBuildingActor(Deco, PC);
 		}
 
 #ifndef CHEATS
