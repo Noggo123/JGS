@@ -229,6 +229,8 @@ namespace Beacons
 		PlayerController->OnRep_bHasServerFinishedLoading();
 
 		auto PlayerState = (AFortPlayerStateAthena*)(PlayerController->PlayerState);
+		PlayerState->bAlwaysRelevant = true;
+		PlayerState->PlayerTeam->bAlwaysRelevant = true;
 
 #ifdef DUOS
 		auto TeamIndex = ((uint8_t)PlayerState->TeamIndex.GetValue() % 2 == 0) ? (uint8_t)PlayerState->TeamIndex.GetValue() - 1 : (uint8_t)PlayerState->TeamIndex.GetValue();
@@ -249,7 +251,9 @@ namespace Beacons
 		PlayerState->OnRep_bHasStartedPlaying();
 		PlayerState->OnRep_CharacterParts();
 
-		PlayerController->OverriddenBackpackSize = 5;
+		auto NewCheatManager = (UFortCheatManager*)(Globals::GPS->STATIC_SpawnObject(UFortCheatManager::StaticClass(), PlayerController));
+		PlayerController->CheatManager = NewCheatManager;
+		NewCheatManager->BackpackSetSize(5);
 
 		auto NewInv = CreateInventoryForPlayerController(PlayerController);
 		NewInv->SetupInventory();
@@ -277,9 +281,6 @@ namespace Beacons
 			
 			if (AmmoDef == nullptr)
 				AmmoDef = ItemDefiniton;
-
-			LOG("Reload Cost ItemDef: " << AmmoDef->GetName());
-			LOG("Removing " << a2 << " Ammo!");
 
 			auto Pawn = (APawn*)Weapon->Owner;
 			auto Controller = (AFortPlayerController*)Pawn->Controller;

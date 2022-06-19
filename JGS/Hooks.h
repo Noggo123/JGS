@@ -549,7 +549,7 @@ namespace Hooks
 			if (Params->InstigatedBy && Params->InstigatedBy->IsA(AFortPlayerController::StaticClass()))
 			{
 				auto FortController = (AFortPlayerController*)Params->InstigatedBy;
-
+				
 				if (FortController->MyFortPawn->CurrentWeapon && FortController->MyFortPawn->CurrentWeapon->WeaponData == FindObjectFast<UFortWeaponMeleeItemDefinition>("/Game/Athena/Items/Weapons/WID_Harvest_Pickaxe_Athena_C_T01.WID_Harvest_Pickaxe_Athena_C_T01"))
 					FortController->ClientReportDamagedResourceBuilding(BuildingActor, BuildingActor->ResourceType, Globals::MathLib->STATIC_RandomIntegerInRange(3, 6), false, false);
 			}
