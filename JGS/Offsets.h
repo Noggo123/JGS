@@ -11,8 +11,6 @@ namespace Offsets
 	uintptr_t SendClientAdjustment = 0x232BAD0;
 	uintptr_t ActorChannelClose = 0x20A8450;
 	uintptr_t IsNetRelevantFor = 0x1ECC700;
-	uintptr_t NotifyActorDestroyed = 0x2232500;
-	uintptr_t DestroyActor = 0x21C1C40;
 
 	//Beacons
 	uintptr_t InitHost = 0x391E000;

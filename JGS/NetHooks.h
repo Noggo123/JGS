@@ -17,8 +17,6 @@ namespace Beacons
 	void(*UWorld_NotifyControlMessage)(UWorld* World, UNetConnection* NetConnection, uint8_t a3, void* a4);
 
 	void (*TickFlush)(UNetDriver*, float DeltaSeconds);
-	void (*NotifyActorDestroyed)(UNetDriver*, AActor*, bool);
-	bool (*DestroyActor)(UWorld*, AActor*, bool, bool);
 
 	static void SpawnFloorLoot()
 	{
@@ -174,25 +172,6 @@ namespace Beacons
 
 		if (!bSetupFloorLoot)
 		{
-			TArray<AActor*> Actors;
-			Globals::GPS->STATIC_GetAllActorsOfClass(Globals::World, ABuildingContainer::StaticClass(), &Actors);
-
-			for (int i = 0; i < Actors.Num(); i++)
-			{
-				auto Actor = (ABuildingContainer*)Actors[i];
-
-				if (Actor->GetName().contains("Tiered_Chest") ||
-					Actor->GetName().contains("Tiered_Short_Ammo"))
-				{
-					continue;
-				}
-				else {
-					Actor->bAlreadySearched = true;
-					Actor->bStartAlreadySearched_Athena = true;
-					Actor->OnRep_bAlreadySearched();
-				}
-			}
-
 			SpawnFloorLoot();
 			bSetupFloorLoot = true;
 		}
@@ -415,7 +394,6 @@ namespace Beacons
 		InitHost = decltype(InitHost)(BaseAddr + Offsets::InitHost);
 		TickFlush = decltype(TickFlush)(TickFlushAddr);
 		SpawnPlayActor = decltype(SpawnPlayActor)(SpawnPlayActorAddr);
-		NotifyActorDestroyed = decltype(NotifyActorDestroyed)(BaseAddr + Offsets::NotifyActorDestroyed);
 
 		MH_CreateHook((void*)(AOnlineBeaconHost_NotifyControlMessageAddr), AOnlineBeaconHost_NotifyControlMessageHook, nullptr);
 		MH_EnableHook((void*)(AOnlineBeaconHost_NotifyControlMessageAddr));

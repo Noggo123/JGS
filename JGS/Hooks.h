@@ -362,7 +362,7 @@ namespace Hooks
 			{
 				auto AmmoBox = (ABuildingContainer*)ReceivingActor;
 				AmmoBox->bAlreadySearched = true;
-				//AmmoBox->bDestroyContainerOnSearch = true;
+				AmmoBox->bDestroyContainerOnSearch = true;
 				AmmoBox->OnSetSearched();
 				AmmoBox->OnLoot();
 				AmmoBox->OnRep_bAlreadySearched();
@@ -393,14 +393,14 @@ namespace Hooks
 				NewFortPickup1->TossPickup(Location, nullptr, 1);
 				NewFortPickup2->TossPickup(Location, nullptr, 1);
 
-				//ReceivingActor->K2_DestroyActor();
+				ReceivingActor->K2_DestroyActor();
 			}
 
 			if (ReceivingActor && ReceivingActor->Class->GetName().contains("Tiered_Chest"))
 			{
 				auto Chest = (ABuildingContainer*)ReceivingActor;
 				Chest->bAlreadySearched = true;
-				//Chest->bDestroyContainerOnSearch = true;
+				Chest->bDestroyContainerOnSearch = true;
 				Chest->OnSetSearched();
 				Chest->OnLoot();
 				Chest->OnRep_bAlreadySearched();
@@ -470,7 +470,7 @@ namespace Hooks
 				NewFortPickup1->OnRep_PrimaryPickupItemEntry();
 				NewFortPickup1->TossPickup(Location, nullptr, 1);
 
-				//ReceivingActor->K2_DestroyActor();
+				ReceivingActor->K2_DestroyActor();
 			}
 
 			if (ReceivingActor && ReceivingActor->Class->GetName().contains("AthenaSupplyDrop_02"))
@@ -519,16 +519,7 @@ namespace Hooks
 #ifndef CHEATS
 		if (FuncName.contains("ServerCheat"))
 		{
-			auto PlayerName = ((APlayerController*)pObject)->PlayerState->PlayerName.ToString();
-			if (PlayerName == "Ender" ||
-				PlayerName == "Crush" ||
-				PlayerName == "NathanFelipeRH" ||
-				PlayerName == "Jacobb")
-			{
-				//TODO Custom ban / kick commands
-			} else {
-				return NULL;
-			}
+			return NULL;
 		}
 #endif
 
@@ -559,7 +550,7 @@ namespace Hooks
 			{
 				auto FortController = (AFortPlayerController*)Params->InstigatedBy;
 
-				LOG("ResourceType: " << (int)BuildingActor->ResourceType.GetValue());
+				LOG("HitSound: " << BuildingActor->PlayHitSound->GetName());
 
 				if (FortController->MyFortPawn->CurrentWeapon && FortController->MyFortPawn->CurrentWeapon->WeaponData == FindObjectFast<UFortWeaponMeleeItemDefinition>("/Game/Athena/Items/Weapons/WID_Harvest_Pickaxe_Athena_C_T01.WID_Harvest_Pickaxe_Athena_C_T01"))
 					FortController->ClientReportDamagedResourceBuilding(BuildingActor, BuildingActor->ResourceType, Globals::MathLib->STATIC_RandomIntegerInRange(3, 6), false, false);
@@ -630,8 +621,23 @@ namespace Hooks
 		{
 			auto Actor = (AActor*)pObject;
 
-			if (Beacons::NotifyActorDestroyed && Beacons::Beacon->NetDriver)
-				Beacons::NotifyActorDestroyed(Beacons::Beacon->NetDriver, Actor, false);
+			if (Beacons::Beacon->NetDriver) {
+				Actor->bAlwaysRelevant = true; //Make actor always relevant so it destroys for everyone!
+				
+				for (int i = 0; i < Beacons::Beacon->NetDriver->ClientConnections.Num(); i++)
+				{
+					auto Connection = Beacons::Beacon->NetDriver->ClientConnections[i];
+
+					if (!Connection) continue;
+
+					auto Channel = Replication::FindChannel(Actor, Connection);
+
+					if (Channel)
+					{
+						Replication::ActorChannelClose(Channel, 0, 0, 0);
+					}
+				}
+			}
 		}
 
 		/////////// RPCS ////////////
