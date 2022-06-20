@@ -145,6 +145,11 @@ static void LoadLootPools()
     Globals::Ammo.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Ammo/AthenaAmmoDataEnergyCell.AthenaAmmoDataEnergyCell"));
 }
 
+static bool CanStackItemDefinition()
+{
+    return true;
+}
+
 static void LoadCharacterParts()
 {
     //HID_Commando_Athena_05

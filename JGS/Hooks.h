@@ -190,7 +190,7 @@ namespace Hooks
 						{
 							auto ItemInstance = WorldInventory->Inventory.ItemInstances[i];
 
-							printf("ServerHandlePickup1 %i %s %s\n", i, ItemInstance->GetItemDefinitionBP()->GetFullName().c_str(), PickupDef->GetFullName());
+							printf("ServerHandlePickup1 %i %s %s\n", i, ItemInstance->GetItemDefinitionBP()->GetFullName().c_str(), PickupDef->GetFullName().c_str());
 
 							if (ItemInstance->GetItemDefinitionBP() == PickupDef && !PickupDef->IsA(UFortWeaponItemDefinition::StaticClass()))
 							{
