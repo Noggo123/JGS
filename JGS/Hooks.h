@@ -207,7 +207,7 @@ namespace Hooks
 							}
 
 							// massive hack
-							if (ItemInstance->GetItemDefinitionBP() == PickupDef && PickupDef->IsA(UFortConsumableItemDefinition::StaticClass()))
+							if (PickupDef->IsA(UFortConsumableItemDefinition::StaticClass()))
 							{
 								WorldInventory->Inventory.ItemInstances.Remove(i);
 
@@ -215,7 +215,7 @@ namespace Hooks
 								{
 									auto Entry = WorldInventory->Inventory.ReplicatedEntries[j];
 
-									if (Entry.ItemDefinition == PickupDef && PickupDef->IsA(UFortConsumableItemDefinition::StaticClass()))
+									if (PickupDef->IsA(UFortConsumableItemDefinition::StaticClass()))
 									{
 										WorldInventory->Inventory.ReplicatedEntries.Remove(j);
 										Count = Entry.Count;
