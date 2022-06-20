@@ -190,33 +190,22 @@ namespace Hooks
 						{
 							auto ItemInstance = WorldInventory->Inventory.ItemInstances[i];
 
+							printf("ServerHandlePickup1 %i %s %s\n", i, ItemInstance->GetItemDefinitionBP()->GetFullName().c_str(), PickupDef->GetFullName());
+
 							if (ItemInstance->GetItemDefinitionBP() == PickupDef && !PickupDef->IsA(UFortWeaponItemDefinition::StaticClass()))
 							{
+								printf("Removed1 %i\n", i);
 								WorldInventory->Inventory.ItemInstances.Remove(i);
 
 								for (int j = 0; j < WorldInventory->Inventory.ReplicatedEntries.Num(); j++)
 								{
 									auto Entry = WorldInventory->Inventory.ReplicatedEntries[j];
+
+									printf("ServerHandlePickup2 %i %s\n", j, Entry.ItemDefinition->GetFullName().c_str());
 
 									if (Entry.ItemDefinition == PickupDef && !PickupDef->IsA(UFortWeaponItemDefinition::StaticClass()))
 									{
-										WorldInventory->Inventory.ReplicatedEntries.Remove(j);
-										Count = Entry.Count;
-									}
-								}
-							}
-
-							// massive hack
-							if (PickupDef->IsA(UFortConsumableItemDefinition::StaticClass()))
-							{
-								WorldInventory->Inventory.ItemInstances.Remove(i);
-
-								for (int j = 0; j < WorldInventory->Inventory.ReplicatedEntries.Num(); j++)
-								{
-									auto Entry = WorldInventory->Inventory.ReplicatedEntries[j];
-
-									if (PickupDef->IsA(UFortConsumableItemDefinition::StaticClass()))
-									{
+										printf("Removed2 %i\n", j);
 										WorldInventory->Inventory.ReplicatedEntries.Remove(j);
 										Count = Entry.Count;
 									}
