@@ -190,22 +190,22 @@ namespace Hooks
 						{
 							auto ItemInstance = WorldInventory->Inventory.ItemInstances[i];
 
-							printf("ServerHandlePickup1 %i %s %s\n", i, ItemInstance->GetItemDefinitionBP()->GetFullName().c_str(), PickupDef->GetFullName().c_str());
+							//printf("ServerHandlePickup1 %i %s %s\n", i, ItemInstance->GetItemDefinitionBP()->GetFullName().c_str(), PickupDef->GetFullName().c_str());
 
-							if (ItemInstance->GetItemDefinitionBP() == PickupDef && !PickupDef->IsA(UFortWeaponItemDefinition::StaticClass()))
+							if (ItemInstance->GetItemDefinitionBP() == PickupDef && IsPickupStackable(PickupDef))
 							{
-								printf("Removed1 %i\n", i);
+								//printf("Removed1 %i\n", i);
 								WorldInventory->Inventory.ItemInstances.Remove(i);
 
 								for (int j = 0; j < WorldInventory->Inventory.ReplicatedEntries.Num(); j++)
 								{
 									auto Entry = WorldInventory->Inventory.ReplicatedEntries[j];
 
-									printf("ServerHandlePickup2 %i %s\n", j, Entry.ItemDefinition->GetFullName().c_str());
+									//printf("ServerHandlePickup2 %i %s\n", j, Entry.ItemDefinition->GetFullName().c_str());
 
-									if (Entry.ItemDefinition == PickupDef && !PickupDef->IsA(UFortWeaponItemDefinition::StaticClass()))
+									if (Entry.ItemDefinition == PickupDef && IsPickupStackable(PickupDef))
 									{
-										printf("Removed2 %i\n", j);
+										//printf("Removed2 %i\n", j);
 										WorldInventory->Inventory.ReplicatedEntries.Remove(j);
 										Count = Entry.Count;
 									}

@@ -145,9 +145,17 @@ static void LoadLootPools()
     Globals::Ammo.push_back(FindObjectFast<UFortItemDefinition>("/Game/Athena/Items/Ammo/AthenaAmmoDataEnergyCell.AthenaAmmoDataEnergyCell"));
 }
 
-static bool CanStackItemDefinition()
+// janky but whatever
+static bool IsPickupStackable(UFortItemDefinition* PickupDef)
 {
-    return true;
+    auto pickupDefName = PickupDef->GetName().c_str();
+    if (pickupDefName == "Athena_Bandage" ||
+        pickupDefName == "Athena_Grenade" ||
+        pickupDefName == "Athena_Medkit" ||
+        pickupDefName == "Athena_Shields") {
+        return true;
+    }
+    return !PickupDef->IsA(UFortWeaponItemDefinition::StaticClass());
 }
 
 static void LoadCharacterParts()
