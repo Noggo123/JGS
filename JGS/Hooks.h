@@ -226,7 +226,7 @@ namespace Hooks
 
 						FindInventory((AFortPlayerController*)PC)->UpdateInventory();
 
-						if (HasCount)
+						if (!HasCount)
 						{
 							QuickBars->ServerAddItemInternal(NewPickupWorldItem->GetItemGuid(), EFortQuickBars::Primary, QuickBars->PrimaryQuickBar.SecondaryFocusedSlot);
 						}
