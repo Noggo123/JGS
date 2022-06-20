@@ -148,11 +148,11 @@ static void LoadLootPools()
 // janky but whatever
 static bool IsPickupStackable(UFortItemDefinition* PickupDef)
 {
-    auto pickupDefName = PickupDef->GetName().c_str();
-    if (pickupDefName == "Athena_Bandage" ||
-        pickupDefName == "Athena_Grenade" ||
-        pickupDefName == "Athena_Medkit" ||
-        pickupDefName == "Athena_Shields") {
+    std::string pickupDefName = PickupDef->GetFullName();
+    if (pickupDefName.contains("Athena_Bandage") ||
+        pickupDefName.contains("Athena_Grenade") ||
+        pickupDefName.contains("Athena_Medkit") ||
+        pickupDefName.contains("Athena_Shields")) {
         return true;
     }
     return !PickupDef->IsA(UFortWeaponItemDefinition::StaticClass());
