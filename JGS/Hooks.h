@@ -196,7 +196,7 @@ namespace Hooks
 							if (ItemInstance->GetItemDefinitionBP() == PickupDef && IsPickupStackable(PickupDef))
 							{
 								//printf("Removed1 %i\n", i);
-								WorldInventory->Inventory.ItemInstances.Remove(i);
+								//WorldInventory->Inventory.ItemInstances.Remove(i);
 
 								for (int j = 0; j < WorldInventory->Inventory.ReplicatedEntries.Num(); j++)
 								{
@@ -207,7 +207,7 @@ namespace Hooks
 									if (Entry.ItemDefinition == PickupDef && IsPickupStackable(PickupDef))
 									{
 										//printf("Removed2 %i\n", j);
-										WorldInventory->Inventory.ReplicatedEntries.Remove(j);
+										//WorldInventory->Inventory.ReplicatedEntries.Remove(j);
 										Count = Entry.Count;
 										HasCount = true;
 									}
@@ -222,7 +222,7 @@ namespace Hooks
 						for (int i = 0; i < WorldInventory->Inventory.ItemInstances.Num(); i++)
 						{
 							auto ItemInstance = WorldInventory->Inventory.ItemInstances[i];
-							if (ItemInstance->GetOwningController() == PC && Util::AreGuidsTheSame(ItemInstance->GetItemGuid(), PickupEntry.ItemGuid))
+							if (ItemInstance->GetOwningController() == PC && ItemInstance->GetItemDefinitionBP() == PickupDef)
 							{
 								NewPickupWorldItem = ItemInstance;
 								NewPickupWorldItem->ItemEntry.Count = PickupEntry.Count + Count;
