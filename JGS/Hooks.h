@@ -185,6 +185,7 @@ namespace Hooks
 						auto PickupDef = PickupEntry.ItemDefinition;
 
 						int Count = 0;
+						bool HasCount = false;
 
 						for (int i = 0; i < WorldInventory->Inventory.ItemInstances.Num(); i++)
 						{
@@ -208,6 +209,7 @@ namespace Hooks
 										//printf("Removed2 %i\n", j);
 										WorldInventory->Inventory.ReplicatedEntries.Remove(j);
 										Count = Entry.Count;
+										HasCount = true;
 									}
 								}
 							}
@@ -224,7 +226,10 @@ namespace Hooks
 
 						FindInventory((AFortPlayerController*)PC)->UpdateInventory();
 
-						QuickBars->ServerAddItemInternal(NewPickupWorldItem->GetItemGuid(), EFortQuickBars::Primary, QuickBars->PrimaryQuickBar.SecondaryFocusedSlot);
+						if (HasCount)
+						{
+							QuickBars->ServerAddItemInternal(NewPickupWorldItem->GetItemGuid(), EFortQuickBars::Primary, QuickBars->PrimaryQuickBar.SecondaryFocusedSlot);
+						}
 					}
 				}
 			}
