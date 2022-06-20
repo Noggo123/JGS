@@ -215,18 +215,37 @@ namespace Hooks
 							}
 						}
 
-						auto NewPickupWorldItem = (UFortWorldItem*)PickupDef->CreateTemporaryItemInstanceBP(PickupEntry.Count + Count, 1);
-						NewPickupWorldItem->ItemEntry = PickupEntry;
-						NewPickupWorldItem->ItemEntry.Count = PickupEntry.Count + Count;
-						NewPickupWorldItem->bTemporaryItemOwningController = true;
-						NewPickupWorldItem->SetOwningControllerForTemporaryItem(PC);
+						UFortWorldItem* NewPickupWorldItem = nullptr;
+						bool CreateNewPickup = true;
 
-						WorldInventory->Inventory.ItemInstances.Add(NewPickupWorldItem);
-						WorldInventory->Inventory.ReplicatedEntries.Add(NewPickupWorldItem->ItemEntry);
+						// trash code but whatever
+						for (int i = 0; i < WorldInventory->Inventory.ItemInstances.Num(); i++)
+						{
+							auto ItemInstance = WorldInventory->Inventory.ItemInstances[i];
+							if (ItemInstance->GetOwningController() == PC && Util::AreGuidsTheSame(ItemInstance->GetItemGuid(), PickupEntry.ItemGuid))
+							{
+								NewPickupWorldItem = ItemInstance;
+								NewPickupWorldItem->ItemEntry.Count = PickupEntry.Count + Count;
+								CreateNewPickup = false;
+								break;
+							}
+						}
+
+						if (CreateNewPickup)
+						{
+							auto NewPickupWorldItem = (UFortWorldItem*)PickupDef->CreateTemporaryItemInstanceBP(PickupEntry.Count + Count, 1);
+							NewPickupWorldItem->ItemEntry = PickupEntry;
+							NewPickupWorldItem->ItemEntry.Count = PickupEntry.Count + Count;
+							NewPickupWorldItem->bTemporaryItemOwningController = true;
+							NewPickupWorldItem->SetOwningControllerForTemporaryItem(PC);
+
+							WorldInventory->Inventory.ItemInstances.Add(NewPickupWorldItem);
+							WorldInventory->Inventory.ReplicatedEntries.Add(NewPickupWorldItem->ItemEntry);
+						}
 
 						FindInventory((AFortPlayerController*)PC)->UpdateInventory();
 
-						if (!HasCount)
+						if (!HasCount && NewPickupWorldItem != nullptr)
 						{
 							QuickBars->ServerAddItemInternal(NewPickupWorldItem->GetItemGuid(), EFortQuickBars::Primary, QuickBars->PrimaryQuickBar.SecondaryFocusedSlot);
 						}
