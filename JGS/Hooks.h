@@ -184,46 +184,41 @@ namespace Hooks
 						auto PickupEntry = Params->Pickup->PrimaryPickupItemEntry;
 						auto PickupDef = PickupEntry.ItemDefinition;
 
-						bool ItemInstanceFound = false;
+						int Count = 0;
+
 						for (int i = 0; i < WorldInventory->Inventory.ItemInstances.Num(); i++)
 						{
 							auto ItemInstance = WorldInventory->Inventory.ItemInstances[i];
-							if (ItemInstance->GetItemDefinitionBP() == PickupDef)
-								ItemInstanceFound = true;
-						}
 
-						if (!ItemInstanceFound)
-						{
-							auto NewPickupWorldItem = (UFortWorldItem*)PickupDef->CreateTemporaryItemInstanceBP(PickupEntry.Count, 1);
-							NewPickupWorldItem->ItemEntry = PickupEntry;
-							NewPickupWorldItem->ItemEntry.Count = PickupEntry.Count;
-							NewPickupWorldItem->bTemporaryItemOwningController = true;
-							NewPickupWorldItem->SetOwningControllerForTemporaryItem(PC);
-
-							WorldInventory->Inventory.ItemInstances.Add(NewPickupWorldItem);
-							WorldInventory->Inventory.ReplicatedEntries.Add(NewPickupWorldItem->ItemEntry);
-
-							QuickBars->ServerAddItemInternal(NewPickupWorldItem->GetItemGuid(), EFortQuickBars::Primary, QuickBars->PrimaryQuickBar.SecondaryFocusedSlot);
-						}
-
-						if (ItemInstanceFound)
-						{
-							for (int i = 0; i < WorldInventory->Inventory.ItemInstances.Num(); i++)
+							if (ItemInstance->GetItemDefinitionBP() == PickupDef && IsPickupStackable(PickupDef))
 							{
-								auto ItemInstance = WorldInventory->Inventory.ItemInstances[i];
-								if (ItemInstance->GetItemDefinitionBP() == PickupDef && IsPickupStackable(PickupDef))
+								WorldInventory->Inventory.ItemInstances.Remove(i);
+
+								for (int j = 0; j < WorldInventory->Inventory.ReplicatedEntries.Num(); j++)
 								{
-									for (int j = 0; j < WorldInventory->Inventory.ReplicatedEntries.Num(); j++)
+									auto Entry = WorldInventory->Inventory.ReplicatedEntries[j];
+
+									if (Entry.ItemDefinition == PickupDef && IsPickupStackable(PickupDef))
 									{
-										auto Entry = WorldInventory->Inventory.ReplicatedEntries[j];
-										if (Entry.ItemDefinition == PickupDef && IsPickupStackable(PickupDef))
-											Entry.Count = Entry.Count + PickupEntry.Count;
+										WorldInventory->Inventory.ReplicatedEntries.Remove(j);
+										Count = Entry.Count;
 									}
 								}
 							}
 						}
 
+						auto NewPickupWorldItem = (UFortWorldItem*)PickupDef->CreateTemporaryItemInstanceBP(PickupEntry.Count + Count, 1);
+						NewPickupWorldItem->ItemEntry = PickupEntry;
+						NewPickupWorldItem->ItemEntry.Count = PickupEntry.Count + Count;
+						NewPickupWorldItem->bTemporaryItemOwningController = true;
+						NewPickupWorldItem->SetOwningControllerForTemporaryItem(PC);
+
+						WorldInventory->Inventory.ItemInstances.Add(NewPickupWorldItem);
+						WorldInventory->Inventory.ReplicatedEntries.Add(NewPickupWorldItem->ItemEntry);
+
 						FindInventory((AFortPlayerController*)PC)->UpdateInventory();
+
+						QuickBars->ServerAddItemInternal(NewPickupWorldItem->GetItemGuid(), EFortQuickBars::Primary, QuickBars->PrimaryQuickBar.SecondaryFocusedSlot);
 					}
 				}
 			}
