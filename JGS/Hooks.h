@@ -376,15 +376,10 @@ namespace Hooks
 			auto AbilityComp = (UAbilitySystemComponent*)pObject;
 			auto CurrentParams = (UAbilitySystemComponent_ServerAbilityRPCBatch_Params*)pParams;
 
-			FGameplayAbilitySpec* FoundSpec = FindAbilitySpecFromHandle(AbilityComp, CurrentParams->BatchInfo.AbilitySpecHandle);
-
-			if (FoundSpec && FoundSpec->Ability)
+			UGameplayAbility* InstancedAbility = nullptr;
+			if (!InternalTryActivateAbilityLong(AbilityComp, CurrentParams->BatchInfo.AbilitySpecHandle, CurrentParams->BatchInfo.PredictionKey, &InstancedAbility, nullptr, nullptr))
 			{
-				UGameplayAbility* InstancedAbility = nullptr;
-				if (!InternalTryActivateAbilityLong(AbilityComp, CurrentParams->BatchInfo.AbilitySpecHandle, CurrentParams->BatchInfo.PredictionKey, &InstancedAbility, nullptr, &FoundSpec->Ability->CurrentEventData))
-				{
-					AbilityComp->ClientActivateAbilityFailed(CurrentParams->BatchInfo.AbilitySpecHandle, CurrentParams->BatchInfo.PredictionKey.Base);
-				}
+				AbilityComp->ClientActivateAbilityFailed(CurrentParams->BatchInfo.AbilitySpecHandle, CurrentParams->BatchInfo.PredictionKey.Base);
 			}
 		}
 
@@ -393,7 +388,7 @@ namespace Hooks
 			auto PC = (AFortPlayerController*)pObject;
 			auto Pawn = (APlayerPawn_Athena_C*)PC->Pawn;
 
-			CreateThread(0, 0, (LPTHREAD_START_ROUTINE)GPFuncs::GrantGameplayAbilities, Pawn, 0, 0);
+			GPFuncs::GrantGameplayAbilities(Pawn);
 		}
 
 		if (FuncName.contains("ServerAttemptInteract"))

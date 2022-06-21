@@ -2,32 +2,34 @@
 
 namespace Abilities
 {
+    FGameplayAbilitySpecHandle(*GiveAbility)(UAbilitySystemComponent*, FGameplayAbilitySpecHandle* outHandle, FGameplayAbilitySpec);
+
     static void GrantGameplayAbility(APlayerPawn_Athena_C* TargetPawn, UClass* GameplayAbilityClass)
     {
         auto AbilitySystemComponent = TargetPawn->AbilitySystemComponent;
 
-        static UGameplayEffect* DefaultGameplayEffect = UObject::FindObject<UGameplayEffect>("GE_Constructor_ContainmentUnit_Applied_C GE_Constructor_ContainmentUnit_Applied.Default__GE_Constructor_ContainmentUnit_Applied_C");
-
-        if (!DefaultGameplayEffect)
+        if (!AbilitySystemComponent)
             return;
 
-        TArray<FGameplayAbilitySpecDef> GrantedAbilities = DefaultGameplayEffect->GrantedAbilities;
+        auto GenerateNewSpec = [&]() -> FGameplayAbilitySpec
+        {
+            FGameplayAbilitySpecHandle Handle{ rand() };
 
-        // overwrite current gameplay ability with the one we want to activate
-        GrantedAbilities[0].Ability = GameplayAbilityClass;
+            FGameplayAbilitySpec Spec{ -1, -1, -1, Handle, GameplayAbilityClass->CreateDefaultObject<UGameplayAbility>(), 1, -1, nullptr, 0, false, false, false };
 
-        // give this gameplay effect an infinite duration
-        DefaultGameplayEffect->DurationPolicy = EGameplayEffectDurationType::Infinite;
+            return Spec;
+        };
 
-        static auto GameplayEffectClass = UObject::FindObject<UClass>("BlueprintGeneratedClass GE_Constructor_ContainmentUnit_Applied.GE_Constructor_ContainmentUnit_Applied_C");
+        auto Spec = GenerateNewSpec();
 
-        if (!GameplayEffectClass)
-            return;
+        for (int i = 0; i < AbilitySystemComponent->ActivatableAbilities.Items.Num(); i++)
+        {
+            auto& CurrentSpec = AbilitySystemComponent->ActivatableAbilities.Items[i];
 
-        auto handle = FGameplayEffectContextHandle();
+            if (CurrentSpec.Ability == Spec.Ability)
+                return;
+        }
 
-        //LOG("AbilitySystemComp: " << AbilitySystemComponent->GetName() << " Ability: " << GameplayAbilityClass->GetName());
-
-        AbilitySystemComponent->BP_ApplyGameplayEffectToTarget(GameplayEffectClass, AbilitySystemComponent, 1, handle);
+        auto Handle = GiveAbility(AbilitySystemComponent, &Spec.Handle, Spec);
     }
 }

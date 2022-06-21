@@ -20,5 +20,5 @@ namespace Offsets
 
 	//Gameplay
 	uintptr_t InternalTryActivateAbility = 0x3D51D30;
-	uintptr_t GiveAbility = 0x0;
+	uintptr_t GiveAbility = 0x3D50A60;
 }

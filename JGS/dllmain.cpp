@@ -50,11 +50,11 @@ DWORD WINAPI MainThread(LPVOID)
     SDK::FNameToString = decltype(SDK::FNameToString)(FNameToStringAddress);
     SDK::FreeInternal = decltype(SDK::FreeInternal)(FreeMemoryAddress);
 
-    //Hooks::SpawnActorInternal = decltype(Hooks::SpawnActorInternal)(BaseAddr + Offsets::SpawnActor);
     Hooks::InternalTryActivateAbilityLong = decltype(Hooks::InternalTryActivateAbilityLong)(BaseAddr + Offsets::InternalTryActivateAbility);
     FMemory_Free = decltype(FMemory_Free)(FreeMemoryAddress);
     FMemory_Realloc = decltype(FMemory_Realloc)(ReallocAddress);
     FMemory_Malloc = decltype(FMemory_Malloc)(MallocAddress);
+    Abilities::GiveAbility = decltype(Abilities::GiveAbility)(BaseAddr + Offsets::GiveAbility);
 
     auto FortEngine = SDK::UObject::FindObject<UFortEngine>("FortEngine_");
     Globals::FortEngine = FortEngine;
