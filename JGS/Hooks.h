@@ -282,6 +282,7 @@ namespace Hooks
 			if (PC)
 			{
 				auto WorldInventory = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory;
+				auto QuickBars = reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars;
 				if (WorldInventory)
 				{
 					auto ItemInstances = WorldInventory->Inventory.ItemInstances;
@@ -311,7 +312,8 @@ namespace Hooks
 										WorldInventory->Inventory.ReplicatedEntries.Remove(j);
 									}
 								}
-							} else {
+							}
+							else {
 								ItemInstances.Remove(i);
 
 								for (int j = 0; j < WorldInventory->Inventory.ReplicatedEntries.Num(); j++)
@@ -343,6 +345,19 @@ namespace Hooks
 							NewFortPickup->OnRep_PrimaryPickupItemEntry();
 
 							NewFortPickup->TossPickup(PC->Pawn->K2_GetActorLocation(), nullptr, 1);
+
+							for (int i = 0; i < QuickBars->PrimaryQuickBar.Slots.Num(); i++)
+							{
+								auto Slot = QuickBars->PrimaryQuickBar.Slots[i];
+
+								if (Util::AreGuidsTheSame(Slot.Items[i], ItemInstance->ItemEntry.ItemGuid))
+								{
+									if (i != -1)
+									{
+										QuickBars->EmptySlot(EFortQuickBars::Primary, i);
+									}
+								}
+							}
 
 							FindInventory(PC)->UpdateInventory();
 						}
