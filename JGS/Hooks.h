@@ -221,6 +221,9 @@ namespace Hooks
 						int PickupSlot = -1;
 						for (int i = 0; i < QuickBars->PrimaryQuickBar.Slots.Num(); i++)
 						{
+							if (!QuickBars->PrimaryQuickBar.Slots[i].Items.IsValidIndex(0))
+								continue;
+
 							if (Util::AreGuidsTheSame(PickupEntry.ItemGuid, QuickBars->PrimaryQuickBar.Slots[i].Items[0]))
 							{
 								PickupSlot = i;
