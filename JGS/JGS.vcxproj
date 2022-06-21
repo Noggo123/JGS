@@ -70,9 +70,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Abilities.h" />
+    <ClInclude Include="Classes.h" />
     <ClInclude Include="Containers.h" />
     <ClInclude Include="Discord.h" />
+    <ClInclude Include="Functions.h" />
     <ClInclude Include="Inventory.h" />
+    <ClInclude Include="MiscHooks.h" />
     <ClInclude Include="NetHooks.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="Hooks.h" />

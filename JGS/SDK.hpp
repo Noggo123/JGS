@@ -5,6 +5,7 @@
 #include <set>
 #include <string>
 #include <locale>
+#include <Windows.h>
 
 class FNetworkGUID
 {

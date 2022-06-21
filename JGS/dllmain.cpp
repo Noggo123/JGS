@@ -17,9 +17,14 @@ using namespace SDK;
 
 #include "Offsets.h"
 
+#include "Containers.h"
+#include "Classes.h"
+
 #include "Replication.h"
 #include "Inventory.h"
 #include "Abilities.h"
+#include "Functions.h"
+#include "MiscHooks.h"
 #include "NetHooks.h"
 
 #include "Hooks.h"
@@ -36,6 +41,8 @@ DWORD WINAPI MainThread(LPVOID)
     auto GObjectsAddress = BaseAddr + 0x6661380;
     auto FNameToStringAddress = BaseAddr + 0x1302390;
     auto FreeMemoryAddress = BaseAddr + 0x1233210;
+    auto ReallocAddress = BaseAddr + 0x123E4C0;
+    auto MallocAddress = BaseAddr + 0x0;
     auto GNamesAddress = BaseAddr + 0x66587C8;
 
     FName::GNames = *reinterpret_cast<TNameEntryArray**>((uintptr_t**)GNamesAddress);
@@ -45,6 +52,9 @@ DWORD WINAPI MainThread(LPVOID)
 
     //Hooks::SpawnActorInternal = decltype(Hooks::SpawnActorInternal)(BaseAddr + Offsets::SpawnActor);
     Hooks::InternalTryActivateAbilityLong = decltype(Hooks::InternalTryActivateAbilityLong)(BaseAddr + Offsets::InternalTryActivateAbility);
+    FMemory_Free = decltype(FMemory_Free)(FreeMemoryAddress);
+    FMemory_Realloc = decltype(FMemory_Realloc)(ReallocAddress);
+    FMemory_Malloc = decltype(FMemory_Malloc)(MallocAddress);
 
     auto FortEngine = SDK::UObject::FindObject<UFortEngine>("FortEngine_");
     Globals::FortEngine = FortEngine;

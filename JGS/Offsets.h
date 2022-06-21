@@ -14,12 +14,11 @@ namespace Offsets
 
 	//Beacons
 	uintptr_t InitHost = 0x391E000;
-	uintptr_t WelcomePlayer = 0x24A8F70;
+	uintptr_t SetWorld = 0x223C500;
 	uintptr_t SpawnPlayActor = 0x21D8700;
-	uintptr_t WorldNotifyControlMessage = 0x249DE10;
-	uintptr_t BeaconNotifyControlMessage = 0x3920F90;
 	uintptr_t KickPatch = 0x6DDBD0;
 
 	//Gameplay
 	uintptr_t InternalTryActivateAbility = 0x3D51D30;
+	uintptr_t GiveAbility = 0x0;
 }

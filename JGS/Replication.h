@@ -1,20 +1,9 @@
 #pragma once
 
-struct FNetworkObjectInfo
-{
-	AActor* Actor;
-	double NextUpdateTime;
-	double LastNetReplicateTime;
-	float OptimalNetUpdateDelta;
-	float LastNetUpdateTime;
-	uint32_t bPendingNetUpdate : 1;
-	uint32_t bForceRelevantNextUpdate : 1;
-	std::vector<UNetConnection*> DormantConnections;
-	std::vector<UNetConnection*> RecentlyDormantConnections;
-};
-
 inline int32_t Rand() { return rand(); };
 inline float FRand() { return Rand() / (float)RAND_MAX; };
+
+//(*(float (__fastcall **)(__int64, __int64, _QWORD))(*(_QWORD *)a1 + 616i64))(a1, a2, 0i64); getmaxtickrate
 
 namespace Replication
 {

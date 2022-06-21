@@ -273,13 +273,53 @@ struct FGuid
 	int                                                D;                                                        // 0x000C(0x0004) (Edit, ZeroConstructor, SaveGame, IsPlainOldData)
 };
 
-// ScriptStruct CoreUObject.Vector
-// 0x000C
 struct FVector
 {
-	float                                              X;                                                        // 0x0000(0x0004) (Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData)
-	float                                              Y;                                                        // 0x0004(0x0004) (Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData)
-	float                                              Z;                                                        // 0x0008(0x0004) (Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData)
+	float X;
+	float Y;
+	float Z;
+
+	FVector() = default;
+
+	FVector(float a1, float a2, float a3)
+		: X(a1), Y(a2), Z(a3)
+	{
+	}
+
+	auto operator-(FVector A)
+	{
+		return FVector{ this->X - A.X, this->Y - A.Y, this->Z - A.Z };
+	}
+
+	auto operator+(FVector A)
+	{
+		return FVector{ this->X + A.X, this->Y + A.Y, this->Z + A.Z };
+	}
+
+	auto operator==(FVector A) const
+	{
+		return (this->X == A.X && this->Y == A.Y && this->Z == A.Z);
+	}
+
+	auto operator!=(FVector A) const
+	{
+		return (this->X != A.X && this->Y != A.Y && this->Z != A.Z);
+	}
+
+	auto operator|(const FVector& V) const
+	{
+		return X * V.X + Y * V.Y + Z * V.Z;
+	}
+
+	operator bool() const
+	{
+		return X != 0 && Y != 0 && Z != 0;
+	}
+
+	auto SizeSquared() const
+	{
+		return X * X + Y * Y + Z * Z;
+	}
 };
 
 // ScriptStruct CoreUObject.Vector4
@@ -325,6 +365,48 @@ struct alignas(16) FPlane : public FVector
 	float                                              W;                                                        // 0x000C(0x0004) (Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData)
 };
 
+// Copyright 1998-2022 Epic Games, Inc. All Rights Reserved.
+FORCEINLINE void SinCos(float* ScalarSin, float* ScalarCos, float  Value)
+{
+	// Map Value to y in [-pi,pi], x = 2*pi*quotient + remainder.
+	float quotient = (0.31830988618f * 0.5f) * Value;
+	if (Value >= 0.0f)
+	{
+		quotient = (float)((int)(quotient + 0.5f));
+	}
+	else
+	{
+		quotient = (float)((int)(quotient - 0.5f));
+	}
+	float y = Value - (2.0f * 3.1415926535897932f) * quotient;
+
+	// Map y to [-pi/2,pi/2] with sin(y) = sin(Value).
+	float sign;
+	if (y > 1.57079632679f)
+	{
+		y = 3.1415926535897932f - y;
+		sign = -1.0f;
+	}
+	else if (y < -1.57079632679f)
+	{
+		y = -3.1415926535897932f - y;
+		sign = -1.0f;
+	}
+	else
+	{
+		sign = +1.0f;
+	}
+
+	float y2 = y * y;
+
+	// 11-degree minimax approximation
+	*ScalarSin = (((((-2.3889859e-08f * y2 + 2.7525562e-06f) * y2 - 0.00019840874f) * y2 + 0.0083333310f) * y2 - 0.16666667f) * y2 + 1.0f) * y;
+
+	// 10-degree minimax approximation
+	float p = ((((-2.6051615e-07f * y2 + 2.4760495e-05f) * y2 - 0.0013888378f) * y2 + 0.041666638f) * y2 - 0.5f) * y2 + 1.0f;
+	*ScalarCos = sign * p;
+}
+
 // ScriptStruct CoreUObject.Rotator
 // 0x000C
 struct FRotator
@@ -332,8 +414,17 @@ struct FRotator
 	float                                              Pitch;                                                    // 0x0000(0x0004) (Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData)
 	float                                              Yaw;                                                      // 0x0004(0x0004) (Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData)
 	float                                              Roll;                                                     // 0x0008(0x0004) (Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData)
-};
 
+	FVector Vector() const
+	{
+		float CP, SP, CY, SY;
+		SinCos(&SP, &CP, Pitch * (3.1415926535897932f / 180.0f));
+		SinCos(&SY, &CY, Yaw * (3.1415926535897932f / 180.0f));
+		FVector V = FVector(CP * CY, CP * SY, SP);
+
+		return V;
+	}
+};
 // ScriptStruct CoreUObject.Quat
 // 0x0010
 struct alignas(16) FQuat

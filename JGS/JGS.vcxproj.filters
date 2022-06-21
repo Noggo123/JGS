@@ -63,6 +63,15 @@
     <ClInclude Include="Discord.h">
       <Filter>Misc</Filter>
     </ClInclude>
+    <ClInclude Include="Classes.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="MiscHooks.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="Functions.h">
+      <Filter>Gameplay</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
