@@ -34,22 +34,11 @@ namespace Hooks
 		auto ObjName = pObject->GetName();
 		auto FuncName = pFunction->GetName();
 
-		if (FuncName.contains("Tick"))
-		{
-			if (Beacons::Beacon)
-			{
-				if (((AFortGameStateAthena*)Globals::World->GameState)->GamePhase == EAthenaGamePhase::Warmup)
-					Beacons::Beacon->BeaconState = 1;
-				else
-					Beacons::Beacon->BeaconState = 0;
-			}
-		}
-
 		if (FuncName.find("AircraftExitedDropZone") != std::string::npos)
 		{
-			for (int i = 0; i < Beacons::Beacon->NetDriver->ClientConnections.Num(); i++)
+			for (int i = 0; i < Globals::World->NetDriver->ClientConnections.Num(); i++)
 			{
-				auto Connection = Beacons::Beacon->NetDriver->ClientConnections[i];
+				auto Connection = Globals::World->NetDriver->ClientConnections[i];
 
 				if (Connection && Connection->PlayerController)
 				{
@@ -362,8 +351,6 @@ namespace Hooks
 		{
 			auto PC = (AFortPlayerControllerAthena*)pObject;
 
-			Beacons::bHasBattleBusStarted = true;
-
 			if (PC->Pawn)
 				PC->Pawn->K2_DestroyActor(); //Destroy old pawn on spawn island
 
@@ -406,7 +393,7 @@ namespace Hooks
 			auto PC = (AFortPlayerController*)pObject;
 			auto Pawn = (APlayerPawn_Athena_C*)PC->Pawn;
 
-			CreateThread(0, 0, (LPTHREAD_START_ROUTINE)Beacons::GrantGameplayAbilities, Pawn, 0, 0);
+			CreateThread(0, 0, (LPTHREAD_START_ROUTINE)GPFuncs::GrantGameplayAbilities, Pawn, 0, 0);
 		}
 
 		if (FuncName.contains("ServerAttemptInteract"))
@@ -751,16 +738,16 @@ namespace Hooks
 			UObject::GObjects = nullptr;
 		}
 
-		if (FuncName.contains("ReceiveDestroyed") && Beacons::Beacon)
+		if (FuncName.contains("ReceiveDestroyed"))
 		{
 			auto Actor = (AActor*)pObject;
 
-			if (Beacons::Beacon->NetDriver) {
+			if (Globals::World->NetDriver) {
 				Actor->bAlwaysRelevant = true; //Make actor always relevant so it destroys for everyone!
 				
-				for (int i = 0; i < Beacons::Beacon->NetDriver->ClientConnections.Num(); i++)
+				for (int i = 0; i < Globals::World->NetDriver->ClientConnections.Num(); i++)
 				{
-					auto Connection = Beacons::Beacon->NetDriver->ClientConnections[i];
+					auto Connection = Globals::World->NetDriver->ClientConnections[i];
 
 					if (!Connection) continue;
 
