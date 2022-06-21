@@ -346,19 +346,6 @@ namespace Hooks
 
 							NewFortPickup->TossPickup(PC->Pawn->K2_GetActorLocation(), nullptr, 1);
 
-							for (int i = 0; i < QuickBars->PrimaryQuickBar.Slots.Num(); i++)
-							{
-								auto Slot = QuickBars->PrimaryQuickBar.Slots[i];
-
-								if (Util::AreGuidsTheSame(Slot.Items[0], Params->ItemGuid))
-								{
-									if (i != -1)
-									{
-										QuickBars->EmptySlot(EFortQuickBars::Primary, i);
-									}
-								}
-							}
-
 							FindInventory(PC)->UpdateInventory();
 						}
 					}
