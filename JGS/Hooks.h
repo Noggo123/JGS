@@ -508,6 +508,84 @@ namespace Hooks
 					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::LegendaryWeapons[rand() % Globals::LegendaryWeapons.size()];
 				}
 
+				if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)
+				{
+					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Assault_Auto_"))
+					{
+						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 30;
+					}
+
+					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Assault_SemiAuto_"))
+					{
+						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 30;
+					}
+
+					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Assault_AutoHigh_"))
+					{
+						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 30;
+					}
+
+					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Assault_Surgical_"))
+					{
+						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 20;
+					}
+
+					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Shotgun_Standard_"))
+					{
+						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 5;
+					}
+
+					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Shotgun_SemiAuto_"))
+					{
+						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 8;
+					}
+
+					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Launcher_Grenade_"))
+					{
+						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 6;
+					}
+
+					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Launcher_Rocket_"))
+					{
+						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 1;
+					}
+
+					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Sniper_AMR_"))
+					{
+						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 4;
+					}
+
+					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Sniper_BoltAction_Scope_"))
+					{
+						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 1;
+					}
+
+					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Sniper_Standard_Scope_"))
+					{
+						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 10;
+					}
+
+					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Pistol_SixShooter_"))
+					{
+						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 6;
+					}
+
+					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Pistol_SemiAuto_"))
+					{
+						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 16;
+					}
+
+					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Pistol_Scavenger_"))
+					{
+						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 30;
+					}
+
+					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Pistol_AutoHeavy_"))
+					{
+						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 25;
+					}
+				}
+
 				NewFortPickup->OnRep_PrimaryPickupItemEntry();
 				NewFortPickup->TossPickup(Location, nullptr, 1);
 
