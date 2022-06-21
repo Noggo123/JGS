@@ -219,15 +219,23 @@ namespace Hooks
 						FindInventory((AFortPlayerController*)PC)->UpdateInventory();
 
 						int PickupSlot = -1;
-						for (int i = 0; i < QuickBars->PrimaryQuickBar.Slots.Num(); i++)
+						for (int i = 0; i < WorldInventory->Inventory.ItemInstances.Num(); i++)
 						{
-							if (!QuickBars->PrimaryQuickBar.Slots[i].Items.IsValidIndex(0))
-								continue;
+							auto ItemInstance = WorldInventory->Inventory.ItemInstances[i];
 
-							if (Util::AreGuidsTheSame(PickupEntry.ItemGuid, QuickBars->PrimaryQuickBar.Slots[i].Items[0]))
+							if (ItemInstance->GetItemDefinitionBP() == PickupDef && IsPickupStackable(PickupDef))
 							{
-								PickupSlot = i;
-								break;
+								for (int j = 0; j < QuickBars->PrimaryQuickBar.Slots.Num(); j++)
+								{
+									if (!QuickBars->PrimaryQuickBar.Slots[j].Items.IsValidIndex(0))
+										continue;
+
+									if (Util::AreGuidsTheSame(ItemInstance->GetItemGuid(), QuickBars->PrimaryQuickBar.Slots[j].Items[0]))
+									{
+										PickupSlot = j;
+										break;
+									}
+								}
 							}
 						}
 
