@@ -143,6 +143,24 @@ namespace Hooks
 			PC->bHasClientFinishedLoading = Params->bInHasFinishedLoading;
 		}
 
+		if (FuncName.contains("ServerSpawnDeco"))
+		{
+			auto FortDeco = (AFortDecoTool*)pObject;
+			auto CurrentParams = (AFortDecoTool_ServerSpawnDeco_Params*)pParams;
+			auto Owner = (APlayerPawn_Athena_C*)FortDeco->GetOwner();
+			auto PC = (AFortPlayerControllerAthena*)Owner->Controller;
+
+
+			auto Trap = (UFortTrapItemDefinition*)FortDeco->ItemDefinition;
+			auto Deco = (ABuildingTrap*)Util::SpawnActor(Trap->GetBlueprintClass(), CurrentParams->Location, CurrentParams->Rotation);
+			Deco->AttachedTo = CurrentParams->AttachedActor;
+			Deco->OnRep_AttachedTo();
+			Deco->Team = ((AFortPlayerStateAthena*)Owner->PlayerState)->TeamIndex;
+			Deco->OnPlaced();
+			Deco->OnFinishedBuilding();
+			Deco->InitializeKismetSpawnedBuildingActor(Deco, PC);
+		}
+
 		if (FuncName.contains("ServerExecuteInventoryItem"))
 		{
 			auto PC = (AFortPlayerControllerAthena*)pObject;
