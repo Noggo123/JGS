@@ -748,7 +748,7 @@ namespace Hooks
 
 					auto Channel = Replication::FindChannel(Actor, Connection);
 
-					if (!Channel)
+					if (!Channel && Actor)
 					{
 						Channel = Replication::ReplicateToClient(Actor, Connection); //open a channel to notify the actor is there then close so it destroys :bigbrain:
 					}

@@ -88,5 +88,7 @@ namespace Beacons
 		MH_EnableHook((LPVOID)(BaseAddr + Offsets::SpawnPlayActor));
 		MH_CreateHook((LPVOID)(BaseAddr + Offsets::KickPatch), KickPatch, nullptr);
 		MH_EnableHook((LPVOID)(BaseAddr + Offsets::KickPatch));
+
+		Misc::Init();
 	}
 }
