@@ -184,6 +184,28 @@ namespace Hooks
 						auto PickupEntry = Params->Pickup->PrimaryPickupItemEntry;
 						auto PickupDef = PickupEntry.ItemDefinition;
 
+						int PickupSlot = -1;
+
+						for (int i = 0; i < WorldInventory->Inventory.ItemInstances.Num(); i++)
+						{
+							auto ItemInstance = WorldInventory->Inventory.ItemInstances[i];
+
+							if (ItemInstance->GetItemDefinitionBP() == PickupDef && IsPickupStackable(PickupDef))
+							{
+								for (int j = 0; j < QuickBars->PrimaryQuickBar.Slots.Num(); j++)
+								{
+									if (!QuickBars->PrimaryQuickBar.Slots[j].Items.IsValidIndex(0))
+										continue;
+
+									if (Util::AreGuidsTheSame(ItemInstance->GetItemGuid(), QuickBars->PrimaryQuickBar.Slots[j].Items[0]))
+									{
+										PickupSlot = j;
+										break;
+									}
+								}
+							}
+						}
+
 						int Count = 0;
 
 						for (int i = 0; i < WorldInventory->Inventory.ItemInstances.Num(); i++)
@@ -217,27 +239,6 @@ namespace Hooks
 						WorldInventory->Inventory.ReplicatedEntries.Add(NewPickupWorldItem->ItemEntry);
 
 						FindInventory((AFortPlayerController*)PC)->UpdateInventory();
-
-						int PickupSlot = -1;
-						for (int i = 0; i < WorldInventory->Inventory.ItemInstances.Num(); i++)
-						{
-							auto ItemInstance = WorldInventory->Inventory.ItemInstances[i];
-
-							if (ItemInstance->GetItemDefinitionBP() == PickupDef && IsPickupStackable(PickupDef))
-							{
-								for (int j = 0; j < QuickBars->PrimaryQuickBar.Slots.Num(); j++)
-								{
-									if (!QuickBars->PrimaryQuickBar.Slots[j].Items.IsValidIndex(0))
-										continue;
-
-									if (Util::AreGuidsTheSame(ItemInstance->GetItemGuid(), QuickBars->PrimaryQuickBar.Slots[j].Items[0]))
-									{
-										PickupSlot = j;
-										break;
-									}
-								}
-							}
-						}
 
 						QuickBars->ServerAddItemInternal(NewPickupWorldItem->GetItemGuid(), EFortQuickBars::Primary, PickupSlot == -1 ? QuickBars->PrimaryQuickBar.SecondaryFocusedSlot : PickupSlot);
 					}
