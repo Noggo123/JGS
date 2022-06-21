@@ -294,6 +294,7 @@ namespace Hooks
 							auto ItemDefintion = ItemInstance->GetItemDefinitionBP();
 
 							int Count = 0;
+							int LoadedAmmo = 0;
 
 							if (Params->Count == Entry.Count) //Remove it from the array
 							{
@@ -332,10 +333,13 @@ namespace Hooks
 								Count = Params->Count;
 							}
 
+							LoadedAmmo = ItemInstance->ItemEntry.LoadedAmmo;
+
 							auto NewFortPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), PC->Pawn->K2_GetActorLocation(), FRotator()));
 
 							NewFortPickup->PrimaryPickupItemEntry.Count = Count;
 							NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = ItemDefintion;
+							NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = LoadedAmmo;
 							NewFortPickup->OnRep_PrimaryPickupItemEntry();
 
 							NewFortPickup->TossPickup(PC->Pawn->K2_GetActorLocation(), nullptr, 1);
