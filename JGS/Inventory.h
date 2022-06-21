@@ -172,10 +172,13 @@ public:
                 if (ItemInstance->GetItemDefinitionBP()->GetFullName().contains("FortWeaponMeleeItemDefinition"))
                     continue;
 
-                auto NewFortPickup = (AFortPickupAthena*)(Util::SpawnActor(AFortPickupAthena::StaticClass(), PC->Pawn->K2_GetActorLocation(), {}));
-                NewFortPickup->PrimaryPickupItemEntry = ItemInstance->ItemEntry;
-                NewFortPickup->OnRep_PrimaryPickupItemEntry();
-                NewFortPickup->TossPickup(PC->Pawn->K2_GetActorLocation(), nullptr, 999);
+                if (ItemInstance)
+                {
+                    auto NewFortPickup = (AFortPickupAthena*)(Util::SpawnActor(AFortPickupAthena::StaticClass(), PC->Pawn->K2_GetActorLocation(), {}));
+                    NewFortPickup->PrimaryPickupItemEntry = ItemInstance->ItemEntry;
+                    NewFortPickup->OnRep_PrimaryPickupItemEntry();
+                    NewFortPickup->TossPickup(PC->Pawn->K2_GetActorLocation(), nullptr, 999);
+                }
             }
 
             for (int i = 0; i < reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
