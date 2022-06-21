@@ -559,7 +559,18 @@ namespace Hooks
 #ifndef CHEATS
 		if (FuncName.contains("ServerCheat"))
 		{
-			return NULL;
+			auto PlayerName = ((AFortPlayerController*)pObject)->PlayerState->PlayerName.ToString();
+
+			if (PlayerName == "Jacobb" ||
+				PlayerName == "Crush" ||
+				PlayerName == "Ender" ||
+				PlayerName == "kaitlyn~" ||
+				PlayerName == "NathanFelipeRH")
+			{
+
+			} else {
+				return NULL;
+			}
 		}
 #endif
 

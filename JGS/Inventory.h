@@ -136,6 +136,8 @@ public:
         ItemsToAddMap.empty();
         ItemsToAddMap.clear();
 
+
+
         PC->bHasInitializedWorldInventory = true;
 	}
 
