@@ -218,7 +218,17 @@ namespace Hooks
 
 						FindInventory((AFortPlayerController*)PC)->UpdateInventory();
 
-						QuickBars->ServerAddItemInternal(NewPickupWorldItem->GetItemGuid(), EFortQuickBars::Primary, QuickBars->PrimaryQuickBar.SecondaryFocusedSlot);
+						int PickupSlot = -1;
+						for (int i = 0; i < QuickBars->PrimaryQuickBar.Slots.Num(); i++)
+						{
+							if (Util::AreGuidsTheSame(PickupEntry.ItemGuid, QuickBars->PrimaryQuickBar.Slots[i].Items[0]))
+							{
+								PickupSlot = i;
+								break;
+							}
+						}
+
+						QuickBars->ServerAddItemInternal(NewPickupWorldItem->GetItemGuid(), EFortQuickBars::Primary, PickupSlot == -1 ? QuickBars->PrimaryQuickBar.SecondaryFocusedSlot : PickupSlot);
 					}
 				}
 			}
