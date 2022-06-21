@@ -350,7 +350,7 @@ namespace Hooks
 							{
 								auto Slot = QuickBars->PrimaryQuickBar.Slots[i];
 
-								if (Util::AreGuidsTheSame(Slot.Items[i], ItemInstance->ItemEntry.ItemGuid))
+								if (Util::AreGuidsTheSame(Slot.Items[0], Params->ItemGuid))
 								{
 									if (i != -1)
 									{
