@@ -49,19 +49,9 @@ namespace Beacons
 		return 0;
 	}
 
-	PVOID(*CollectGarbageInternal)(uint32_t, bool) = nullptr;
-	PVOID CollectGarbageInternalHook(uint32_t KeepFlags, bool bPerformFullPurge)
-	{
-		return NULL;
-	}
-
 	void InitHooks()
 	{
 		Replication::InitOffsets();
-
-		auto pCollectGarbageInternalAddress = Util::FindPattern("\x48\x8B\xC4\x48\x89\x58\x08\x88\x50\x10", "xxxxxxxxxx");
-		MH_CreateHook(static_cast<LPVOID>(pCollectGarbageInternalAddress), CollectGarbageInternalHook, reinterpret_cast<LPVOID*>(&CollectGarbageInternal));
-		MH_EnableHook(static_cast<LPVOID>(pCollectGarbageInternalAddress));
 
 		auto BaseAddr = Util::BaseAddress();
 		InitHost = decltype(InitHost)(BaseAddr + Offsets::InitHost);
