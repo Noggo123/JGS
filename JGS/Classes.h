@@ -1,41 +1,6 @@
 #pragma once
+
 #include <intrin.h>
-
-struct FActorDestructionInfo
-{
-    TWeakObjectPtr<ULevel>		Level;
-    TWeakObjectPtr<UObject>		ObjOuter;
-    FVector			            DestroyedPosition;
-    int32       	            NetGUID;
-    FString			            PathName;
-    FName			            StreamingLevelName;
-};
-
-struct FNetworkObjectInfo
-{
-    AActor* Actor;
-    TWeakObjectPtr<AActor> WeakActor;
-    double NextUpdateTime;
-    double LastNetReplicateTime;
-    float OptimalNetUpdateDelta;
-    float LastNetUpdateTime;
-    uint32 bPendingNetUpdate : 1;
-    uint32 bForceRelevantNextUpdate : 1;
-    TSet<TWeakObjectPtr<UNetConnection>> DormantConnections;
-    TSet<TWeakObjectPtr<UNetConnection>> RecentlyDormantConnections;
-};
-
-class FNetworkObjectList
-{
-public:
-    typedef TSet<TSharedPtr<FNetworkObjectInfo>> FNetworkObjectSet;
-
-    FNetworkObjectSet AllNetworkObjects;
-    FNetworkObjectSet ActiveNetworkObjects;
-    FNetworkObjectSet ObjectsDormantOnAllConnections;
-
-    TMap<TWeakObjectPtr<UNetConnection>, int32> NumDormantObjectsPerConnection;
-};
 
 // ScriptStruct Engine.NetViewer
 // 0x0030

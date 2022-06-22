@@ -1345,3 +1345,164 @@ public:
         return Object;
     }
 };
+
+class FNetworkGUID
+{
+public:
+    uint32_t Value;
+};
+
+class FDelegateHandle
+{
+public:
+    uint64_t ID;
+};
+
+class IRepChangedPropertyTracker
+{
+public:
+    IRepChangedPropertyTracker() { }
+};
+
+class FRepChangedParent
+{
+public:
+    FRepChangedParent() : Active(1), OldActive(1), IsConditional(0) {}
+
+    uint32				Active : 1;
+    uint32				OldActive : 1;
+    uint32				IsConditional : 1;
+};
+
+class FRepChangedPropertyTracker : public IRepChangedPropertyTracker
+{
+public:
+    TArray_<FRepChangedParent>	Parents;
+    bool						bIsReplay;
+    bool						bIsClientReplayRecording;
+    TArray_<uint8>				ExternalData;
+    uint32						ExternalDataNumBits;
+};
+
+class FHandleToCmdIndex
+{
+public:
+    int32										CmdIndex;
+    TUniquePtr<TArray_<FHandleToCmdIndex>>	HandleToCmdIndex;
+};
+
+enum ELifetimeRepNotifyCondition
+{
+    REPNOTIFY_OnChanged = 0,
+    REPNOTIFY_Always = 1,
+};
+
+class FRepParentCmd
+{
+public:
+    FRepParentCmd(void* InProperty, int32 InArrayIndex) :
+        Property(InProperty),
+        ArrayIndex(InArrayIndex),
+        CmdStart(0),
+        CmdEnd(0),
+        RoleSwapIndex(-1),
+        Condition(0U),
+        RepNotifyCondition(ELifetimeRepNotifyCondition::REPNOTIFY_OnChanged),
+        Flags(0)
+    {}
+
+    void* Property;
+    int32				ArrayIndex;
+    uint16				CmdStart;
+    uint16				CmdEnd;
+    int32				RoleSwapIndex;
+    uint8_t	Condition;
+    ELifetimeRepNotifyCondition	RepNotifyCondition;
+
+    uint32				Flags;
+};
+
+class FRepLayoutCmd
+{
+public:
+    void* Property;			// Pointer back to property, used for NetSerialize calls, etc.
+    uint8		Type;
+    uint16		EndCmd;				// For arrays, this is the cmd index to jump to, to skip this arrays inner elements
+    uint16		ElementSize;		// For arrays, element size of data
+    int32		Offset;				// Absolute offset of property
+    uint16		RelativeHandle;		// Handle relative to start of array, or top list
+    uint16		ParentIndex;		// Index into Parents
+    uint32		CompatibleChecksum;	// Used to determine if property is still compatible
+};
+
+class FRepLayout
+{
+public:
+    TArray_< FRepParentCmd >		Parents;
+    TArray_< FRepLayoutCmd >		Cmds;
+
+    TArray_< FHandleToCmdIndex >	BaseHandleToCmdIndex;		// Converts a relative handle to the appropriate index into the Cmds array
+
+    int32						FirstNonCustomParent;
+    int32						RoleIndex;
+    int32						RemoteRoleIndex;
+
+    void* Owner;						// Either a UCkass or UFunction
+};
+
+struct FPacketIdRange
+{
+    int32	First;
+    int32	Last;
+};
+
+class FRepChangedHistory
+{
+public:
+    FRepChangedHistory() : Resend(false) {}
+
+    FPacketIdRange		OutPacketIdRange;
+    TArray_< uint16 >	Changed;
+    bool				Resend;
+};
+
+template<uint32 Alignment = 0>
+class TAlignedHeapAllocator
+{
+public:
+
+    enum { NeedsElementType = false };
+    enum { RequireRangeCheck = true };
+};
+
+typedef TArray_<uint8> FRepStateStaticBuffer;
+
+class FRepChangelistState
+{
+public:
+    FRepChangelistState() :
+        HistoryStart(0),
+        HistoryEnd(0),
+        CompareIndex(0)
+    { }
+
+    TSharedPtr< FRepLayout >						RepLayout;
+
+    static const int32 MAX_CHANGE_HISTORY = 64;
+
+    FRepChangedHistory								ChangeHistory[MAX_CHANGE_HISTORY];
+    int32											HistoryStart;
+    int32											HistoryEnd;
+    int32											CompareIndex;
+
+    FRepStateStaticBuffer							StaticBuffer;
+};
+
+class FReplicationChangelistMgr
+{
+public:
+    void* Driver;
+    TSharedPtr< FRepLayout >			RepLayout;
+    TUniquePtr< FRepChangelistState >	RepChangelistState;
+    uint32								LastReplicationFrame;
+};

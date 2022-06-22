@@ -128,19 +128,27 @@ public:
 		return Count;
 	};
 
-	inline void Remove(int32_t Index)
+	inline bool Remove(int Index)
 	{
-		TArray<T> NewArray;
-		for (int i = 0; i < this->Count; i++)
+		if (Index < Count)
 		{
-			if (i == Index)
-				continue;
+			if (Index != Count - 1)
+				Data[Index] = Data[Count - 1];
 
-			NewArray.Add(this->operator[](i));
+			--Count;
+
+			return true;
 		}
-		this->Data = (T*)Realloc(NewArray.Data, sizeof(T) * (NewArray.Count), 0);
-		this->Count = NewArray.Count;
-		this->Max = NewArray.Count;
+		return false;
+	}
+
+	inline void RemoveAt(int Index, int Lenght = 1)
+	{
+		for (; Lenght != 0; --Lenght)
+		{
+			if (!Remove(Index++))
+				break;
+		}
 	}
 
 	T* Data;

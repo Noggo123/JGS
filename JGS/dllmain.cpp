@@ -83,6 +83,8 @@ DWORD WINAPI MainThread(LPVOID)
 
     Globals::PC->SwitchLevel(TEXT("Athena_Terrain"));
 
+    Replication::InitOffsets();
+
     Hooks::bIsReady = true;
 
     Hooks::Init();

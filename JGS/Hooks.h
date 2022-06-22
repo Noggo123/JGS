@@ -650,6 +650,12 @@ namespace Hooks
 		if (FuncName.contains("ClientOnPawnDied"))
 		{
 			auto PC = (AFortPlayerControllerAthena*)pObject;
+			auto Pawn = PC->Pawn;
+
+			if (Pawn)
+			{
+				Pawn->ReceiveDestroyed();
+			}
 
 			if (PC && reinterpret_cast<InventoryPointer*>(PC)->WorldInventory != nullptr)
 			{
@@ -734,18 +740,11 @@ namespace Hooks
 			}
 		}
 
-		if (FuncName.contains("ClientNotifyWon"))
-		{
-			UObject::GObjects = nullptr;
-		}
-
 		if (FuncName.contains("ReceiveDestroyed"))
 		{
 			auto Actor = (AActor*)pObject;
 
 			if (Globals::World->NetDriver) {
-				Actor->bAlwaysRelevant = true; //Make actor always relevant so it destroys for everyone!
-				
 				for (int i = 0; i < Globals::World->NetDriver->ClientConnections.Num(); i++)
 				{
 					auto Connection = Globals::World->NetDriver->ClientConnections[i];
@@ -753,11 +752,6 @@ namespace Hooks
 					if (!Connection) continue;
 
 					auto Channel = Replication::FindChannel(Actor, Connection);
-
-					if (!Channel && Actor)
-					{
-						Channel = Replication::ReplicateToClient(Actor, Connection); //open a channel to notify the actor is there then close so it destroys :bigbrain:
-					}
 
 					if (Channel)
 					{
@@ -768,6 +762,23 @@ namespace Hooks
 		}
 
 		/////////// RPCS ////////////
+
+		if (pFunction->GetFullName() == "Function Engine.Actor.ForceNetUpdate")
+		{
+			auto Actor = (AActor*)pObject;
+
+			if (Actor->NetDormancy > ENetDormancy::DORM_Awake)
+			{
+				Actor->FlushNetDormancy();
+			}
+
+			FNetworkObjectInfo* NetActor = Replication::GetNetworkObjectInfoForActor(Actor);
+
+			if (NetActor != nullptr)
+			{
+				NetActor->NextUpdateTime = Globals::MathLib->STATIC_Min(NetActor->NextUpdateTime, (double)(Globals::GPS->STATIC_GetTimeSeconds(Globals::World) - 0.01f));
+			}
+		}
 
 		return ProcessEvent(pObject, pFunction, pParams);
 	}

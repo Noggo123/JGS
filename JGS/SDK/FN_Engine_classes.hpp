@@ -12,6 +12,13 @@ namespace SDK
 //Classes
 //---------------------------------------------------------------------------
 
+enum class EActorBeginPlayState : uint8_t
+{
+	HasNotBegunPlay,
+	BeginningPlay,
+	HasBegunPlay,
+};
+
 // Class Engine.Actor
 // 0x0360 (0x0388 - 0x0028)
 class AActor : public UObject
@@ -81,7 +88,8 @@ public:
 	TWeakObjectPtr<class AActor>                       ParentComponentActor;                                     // 0x01A0(0x0008) (ZeroConstructor, Deprecated, IsPlainOldData)
 	TWeakObjectPtr<class UChildActorComponent>         ParentComponent;                                          // 0x01A8(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
 	unsigned char                                      bAllowReceiveTickEventOnDedicatedServer : 1;              // 0x01B0(0x0001)
-	unsigned char                                      UnknownData14 : 3;                                        // 0x01B0(0x0001)
+	uint8_t											   bActorInitialized : 1;
+	EActorBeginPlayState							   ActorHasBegunPlay : 2;
 	unsigned char                                      bActorSeamlessTraveled : 1;                               // 0x01B0(0x0001)
 	unsigned char                                      bIgnoresOriginShifting : 1;                               // 0x01B0(0x0001) (Edit)
 	unsigned char                                      bEnableAutoLODGeneration : 1;                             // 0x01B0(0x0001) (Edit)
@@ -239,6 +247,8 @@ public:
 	void AddTickPrerequisiteActor(class AActor* PrerequisiteActor);
 	class UActorComponent* AddComponent(const struct FName& TemplateName, bool bManualAttachment, const struct FTransform& RelativeTransform, class UObject* ComponentTemplateContext);
 	bool ActorHasTag(const struct FName& Tag);
+
+	ULevel* GetLevel() const { return (ULevel*)Outer; }
 };
 
 
@@ -4300,6 +4310,10 @@ public:
 		return ptr;
 	}
 
+	bool HasVisibilityChangeRequestPending() const
+	{
+		return (OwningWorld && (this == OwningWorld->CurrentLevelPendingVisibility || this == OwningWorld->CurrentLevelPendingInvisibility));
+	}
 };
 
 
@@ -12089,6 +12103,41 @@ public:
 
 };
 
+struct FActorDestructionInfo
+{
+	TWeakObjectPtr<ULevel>		Level;
+	TWeakObjectPtr<UObject>		ObjOuter;
+	FVector			            DestroyedPosition;
+	int32       	            NetGUID;
+	FString			            PathName;
+	FName			            StreamingLevelName;
+};
+
+struct FNetworkObjectInfo
+{
+	AActor* Actor;
+	TWeakObjectPtr<AActor> WeakActor;
+	double NextUpdateTime;
+	double LastNetReplicateTime;
+	float OptimalNetUpdateDelta;
+	float LastNetUpdateTime;
+	uint32 bPendingNetUpdate : 1;
+	uint32 bForceRelevantNextUpdate : 1;
+	TSet<TWeakObjectPtr<UNetConnection>> DormantConnections;
+	TSet<TWeakObjectPtr<UNetConnection>> RecentlyDormantConnections;
+};
+
+class FNetworkObjectList
+{
+public:
+	typedef TSet<TSharedPtr<FNetworkObjectInfo>> FNetworkObjectSet;
+
+	FNetworkObjectSet AllNetworkObjects;
+	FNetworkObjectSet ActiveNetworkObjects;
+	FNetworkObjectSet ObjectsDormantOnAllConnections;
+
+	TMap<TWeakObjectPtr<UNetConnection>, int32> NumDormantObjectsPerConnection;
+};
 
 // Class Engine.NetDriver
 // 0x03E8 (0x0410 - 0x0028)
@@ -12123,7 +12172,65 @@ public:
 	struct FName                                       NetDriverName;                                            // 0x00E8(0x0008) (ZeroConstructor, Config, IsPlainOldData)
 	unsigned char                                      UnknownData05[0x8];                                       // 0x00F0(0x0008) MISSED OFFSET
 	float                                              Time;                                                     // 0x00F8(0x0004) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData06[0x314];                                     // 0x00FC(0x0314) MISSED OFFSET
+	double											   LastTickDispatchRealtime;
+	bool											   bIsPeer;
+	bool											   ProfileStats;
+	int32											   SendCycles;
+	int32											   RecvCycles;
+	uint32											   InBytesPerSecond;
+	uint32											   OutBytesPerSecond;
+	uint32											   InBytes;
+	uint32											   OutBytes;
+	uint32											   NetGUIDOutBytes;
+	uint32											   NetGUIDInBytes;
+	uint32											   InPackets;
+	uint32											   OutPackets;
+	uint32											   InBunches;
+	uint32											   OutBunches;
+	uint32										       InPacketsLost;
+	uint32											   OutPacketsLost;
+	uint32											   InOutOfOrderPackets;
+	uint32											   OutOutOfOrderPackets;
+	uint32											   VoicePacketsSent;
+	uint32						                       VoiceBytesSent;
+	uint32											   VoicePacketsRecv;
+	uint32											   VoiceBytesRecv;
+	uint32											   VoiceInPercent;
+	uint32											   VoiceOutPercent;
+	double											   StatUpdateTime;
+	float											   StatPeriod;
+	bool											   bCollectNetStats;
+	double											   LastCleanupTime;
+	bool											   bIsStandbyCheckingEnabled;
+	bool											   bHasStandbyCheatTriggered;
+	float											   StandbyRxCheatTime;
+	float											   StandbyTxCheatTime;
+	int32											   BadPingThreshold;
+	float											   PercentMissingForRxStandby;
+	float											   PercentMissingForTxStandby;
+	float											   PercentForBadPing;
+	float											   JoinInProgressStandbyWaitTime;
+	int32											   NetTag;
+	bool											   DebugRelevantActors;
+	TArray<TWeakObjectPtr<AActor>>					   LastPrioritizedActors;
+	TArray<TWeakObjectPtr<AActor>>					   LastRelevantActors;
+	TArray<TWeakObjectPtr<AActor>>					   LastSentActors;
+	TArray<TWeakObjectPtr<AActor>>					   LastNonRelevantActors;
+	TMap_<FNetworkGUID, FActorDestructionInfo>		   DestroyedStartupOrDormantActors;
+	TMap<TWeakObjectPtr<UObject>, TSharedPtr<FRepChangedPropertyTracker>> RepChangedPropertyTrackerMap;
+	uint32											   ReplicationFrame;
+	TMap<TWeakObjectPtr<UObject>, TSharedPtr<FRepLayout>> RepLayoutMap;
+	TMap<TWeakObjectPtr<UObject>, TSharedPtr<FReplicationChangelistMgr>> ReplicationChangeListMap;
+	TMap<FNetworkGUID, TSet<void*>>					   GuidToReplicatorMap;
+	int32											   TotalTrackedGuidMemoryBytes;
+	TSet<void*>										   UnmappedReplicators;
+	FDelegateHandle									   TickDispatchDelegateHandle;
+	FDelegateHandle									   TickFlushDelegateHandle;
+	FDelegateHandle									   PostTickFlushDelegateHandle;
+	float											   ProcessQueuedBunchesCurrentFrameMilliseconds;
+	TSharedPtr<FNetworkObjectList>					   NetworkObjects;
+	int												   LagState;
+	int32											   DuplicateLevelID;
 
 	static UClass* StaticClass()
 	{
@@ -12168,7 +12275,13 @@ public:
 	struct FUniqueNetIdRepl                            PlayerID;                                                 // 0x0150(0x0018)
 	unsigned char                                      UnknownData01[0x68];                                      // 0x0168(0x0068) MISSED OFFSET
 	double                                             LastReceiveTime;                                          // 0x01D0(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x33530];                                   // 0x01D8(0x33530) MISSED OFFSET
+	double											   LastReceiveRealtime;	// Last time a packet was received, using real time seconds (FPlatformTime::Seconds)
+	double											   LastGoodPacketRealtime;	// Last real time a packet was considered valid
+	double											   LastSendTime;			// Last time a packet was sent, for keepalives.
+	double											   LastTickTime;			// Last time of polling.
+	int32											   QueuedBits;			// Bits assumed to be queued up.
+	int32											   TickCount;				// Count of ticks.
+	unsigned char                                      UnknownData02[0x33508];                                   // 0x01D8(0x33530) MISSED OFFSET
 	TArray<class UChannel*>                            ChannelsToTick;                                           // 0x33708(0x0010) (ZeroConstructor)
 	unsigned char                                      UnknownData03[0x28];                                      // 0x33718(0x0028) MISSED OFFSET
 

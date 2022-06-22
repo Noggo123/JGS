@@ -15,7 +15,7 @@ namespace Beacons
 
 	void TickFlushHook(UNetDriver* NetDriver, float DeltaSeconds)
 	{
-		Replication::ReplicateActors(NetDriver);
+		Replication::ServerReplicateActors(NetDriver, Globals::GPS->STATIC_GetWorldDeltaSeconds(Globals::World));
 
 		return TickFlush(NetDriver, DeltaSeconds);
 	}
@@ -51,8 +51,6 @@ namespace Beacons
 
 	void InitHooks()
 	{
-		Replication::InitOffsets();
-
 		auto BaseAddr = Util::BaseAddress();
 		InitHost = decltype(InitHost)(BaseAddr + Offsets::InitHost);
 		SetWorld = decltype(SetWorld)(BaseAddr + Offsets::SetWorld);

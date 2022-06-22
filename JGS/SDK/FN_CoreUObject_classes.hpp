@@ -92,6 +92,16 @@ public:
 		return GetVFunction<void(*)(UObject*, class UFunction*, void*)>(this, 62)(this, function, parms);
 	}
 
+	bool IsPendingKill() const
+	{
+		auto ObjectItem = GetGlobalObjects().GetItemByIndex(InternalIndex);
+		if (ObjectItem)
+		{
+			return ObjectItem->IsPendingKill();
+		}
+
+		return false;
+	}
 
 	void ExecuteUbergraph(int EntryPoint);
 };
