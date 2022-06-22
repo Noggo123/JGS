@@ -16,6 +16,7 @@ namespace Misc
 			auto Pawn = (APawn*)Weapon->Owner;
 			auto Controller = (AFortPlayerController*)Pawn->Controller;
 			auto WorldInventory = reinterpret_cast<InventoryPointer*>(Controller)->WorldInventory;
+			auto QuickBars = reinterpret_cast<QuickBarsPointer*>(Controller)->QuickBars;
 
 			for (int i = 0; i < WorldInventory->Inventory.ItemInstances.Num(); i++)
 			{
@@ -43,6 +44,23 @@ namespace Misc
 
 						WorldInventory->Inventory.ReplicatedEntries.Add(NewWorldItem->ItemEntry);
 						WorldInventory->Inventory.ItemInstances.Add(NewWorldItem);
+					}
+					else {
+						/*for (int i = 0; i < QuickBars->PrimaryQuickBar.Slots.Num(); i++)
+						{
+							auto Slot = QuickBars->PrimaryQuickBar.Slots[i];
+
+							if (Slot.Items.IsValidIndex(0))
+							{
+								if (Util::AreGuidsTheSame(Slot.Items[0], ItemInstance->GetItemGuid()))
+								{
+									if (i != -1)
+										QuickBars->EmptySlot(EFortQuickBars::Primary, i);
+
+									Slot.Items.Remove(0);
+								}
+							}
+						}*/
 					}
 				}
 			}

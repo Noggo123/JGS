@@ -15,7 +15,7 @@ namespace Beacons
 
 	void TickFlushHook(UNetDriver* NetDriver, float DeltaSeconds)
 	{
-		Replication::ServerReplicateActors(NetDriver, Globals::GPS->STATIC_GetWorldDeltaSeconds(Globals::World));
+		Replication::ReplicateActors(NetDriver);
 
 		return TickFlush(NetDriver, DeltaSeconds);
 	}

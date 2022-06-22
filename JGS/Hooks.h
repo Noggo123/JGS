@@ -335,6 +335,22 @@ namespace Hooks
 								Count = Params->Count;
 							}
 
+							/*for (int i = 0; i < QuickBars->PrimaryQuickBar.Slots.Num(); i++)
+							{
+								auto Slot = QuickBars->PrimaryQuickBar.Slots[i];
+
+								if (Slot.Items.IsValidIndex(0))
+								{
+									if (Util::AreGuidsTheSame(Slot.Items[0], Params->ItemGuid))
+									{
+										if (i != -1)
+											QuickBars->EmptySlot(EFortQuickBars::Primary, i);
+
+										Slot.Items.Remove(0);
+									}
+								}
+							}*/
+
 							LoadedAmmo = ItemInstance->ItemEntry.LoadedAmmo;
 
 							auto NewFortPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), PC->Pawn->K2_GetActorLocation(), FRotator()));
@@ -651,11 +667,6 @@ namespace Hooks
 		{
 			auto PC = (AFortPlayerControllerAthena*)pObject;
 			auto Pawn = PC->Pawn;
-
-			if (Pawn)
-			{
-				Pawn->ReceiveDestroyed();
-			}
 
 			if (PC && reinterpret_cast<InventoryPointer*>(PC)->WorldInventory != nullptr)
 			{
