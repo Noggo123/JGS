@@ -4272,7 +4272,9 @@ public:
 class ULevel : public UObject
 {
 public:
-	unsigned char                                      UnknownData00[0x98];                                      // 0x0028(0x0098) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x78];                                      // 0x0028(0x0078) MISSED OFFSET
+	TArray<class AActor*>                              Actors;                                                   // 0x00A0(0x0010)
+	unsigned char                                      UnknownData1[0x10];                                      // 0x00B0(0x0010) MISSED OFFSET
 	class UWorld*                                      OwningWorld;                                              // 0x00C0(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
 	class UModel*                                      Model;                                                    // 0x00C8(0x0008) (ZeroConstructor, IsPlainOldData)
 	TArray<class UModelComponent*>                     ModelComponents;                                          // 0x00D0(0x0010) (ExportObject, ZeroConstructor)

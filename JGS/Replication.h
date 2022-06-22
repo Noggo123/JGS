@@ -7,8 +7,6 @@ inline float FRand() { return Rand() / (float)RAND_MAX; };
 
 namespace Replication
 {
-	static std::vector<FNetworkObjectInfo*> NetworkObjectList{};
-
 	inline static UChannel* (*CreateChannel)(UNetConnection*, int, bool, int32_t);
 	inline static __int64 (*ReplicateActor)(UActorChannel*);
 	inline static __int64 (*SetChannelActor)(UActorChannel*, AActor*);
@@ -85,83 +83,58 @@ namespace Replication
 	{
 		int32 NumInitiallyDormant = 0;
 
-		LOG("ServerReplicateActors_BuildConsiderList, Building ConsiderList " << Globals::GPS->STATIC_GetTimeSeconds(Globals::World));
+		//LOG("ServerReplicateActors_BuildConsiderList, Building ConsiderList " << Globals::GPS->STATIC_GetTimeSeconds(Globals::World));
 
-		std::vector<AActor*> ActorsToRemove;
+		auto World = NetDriver->World;
 
-		for (auto ActorInfo : NetworkObjectList)
+		if (!World)
+			return;
+
+		auto Levels = World->Levels;
+
+		for (int i = 0; i < Levels.Num(); i++)
 		{
-			if (!ActorInfo) continue;
-			if (!ActorInfo->Actor) continue;
+			auto Level = Levels[i];
 
-			if (!ActorInfo->bPendingNetUpdate && Globals::GPS->STATIC_GetTimeSeconds(Globals::World) <= ActorInfo->NextUpdateTime) continue;
-
-			AActor* Actor = ActorInfo->Actor;
-
-			if (Actor->IsPendingKill())
+			for (int j = 0; j < Level->Actors.Num(); j++)
 			{
-				ActorsToRemove.push_back(Actor);
-				continue;
-			}
+				auto Actor = Level->Actors[j];
 
-			if (Actor->RemoteRole == ENetRole::ROLE_None) continue;
-			if (!Actor->bActorInitialized) continue;
+				if (!Actor)
+					continue;
 
-			if (Actor->NetDormancy == ENetDormancy::DORM_Initial && Actor->bNetStartup)
-			{
-				NumInitiallyDormant++;
-				ActorsToRemove.push_back(Actor);
-				continue;
-			}
-
-			if (ActorInfo->LastNetReplicateTime == 0)
-			{
-				ActorInfo->LastNetReplicateTime = Globals::GPS->STATIC_GetTimeSeconds(Globals::World);
-				ActorInfo->OptimalNetUpdateDelta = 1.0f / Actor->NetUpdateFrequency;
-			}
-
-			const float ScaleDownStartTime = 2.0f;
-			const float ScaleDownTimeRange = 5.0f;
-
-			const float LastReplicateDelta = Globals::GPS->STATIC_GetTimeSeconds(Globals::World) - ActorInfo->LastNetReplicateTime;
-
-			if (LastReplicateDelta > ScaleDownStartTime)
-			{
-				if (Actor->MinNetUpdateFrequency == 0.0f)
+				if (Actor->IsPendingKill())
 				{
-					Actor->MinNetUpdateFrequency = 2.0f;
+					continue;
 				}
 
-				const float MinOptimalDelta = 1.0f / Actor->NetUpdateFrequency;
-				const float MaxOptimalDelta = Globals::MathLib->STATIC_Max(1.0f / Actor->MinNetUpdateFrequency, MinOptimalDelta);
-
-				const float Alpha = Globals::MathLib->STATIC_Clamp((LastReplicateDelta - ScaleDownStartTime) / ScaleDownTimeRange, 0.0f, 1.0f);
-				ActorInfo->OptimalNetUpdateDelta = Globals::MathLib->STATIC_Lerp(MinOptimalDelta, MaxOptimalDelta, Alpha);
-			}
-
-			if (Actor->NetDriverName.ComparisonIndex != 0)
-			{
-				if (!ActorInfo->bPendingNetUpdate)
+				if (Actor->GetRemoteRole() == ENetRole::ROLE_None)
 				{
-					const float NextUpdateDelta = 1.0f / Actor->NetUpdateFrequency;
-
-					ActorInfo->NextUpdateTime = Globals::GPS->STATIC_GetTimeSeconds(Globals::World) + Globals::MathLib->STATIC_RandomFloat() * ServerTickTime + NextUpdateDelta;
-
-					ActorInfo->LastNetUpdateTime = NetDriver->Time;
+					continue;
 				}
 
-				ActorInfo->bPendingNetUpdate = false;
+				if (Actor->NetDriverName.ComparisonIndex != NetDriver->NetDriverName.ComparisonIndex)
+				{
+					continue;
+				}
+
+				if (!Actor->bActorInitialized)
+				{
+					continue;
+				}
+
+				if (Actor->NetDormancy == ENetDormancy::DORM_Initial && Actor->bNetStartup)
+				{
+					NumInitiallyDormant++;
+					continue;
+				}
+
+				FNetworkObjectInfo* ActorInfo = new FNetworkObjectInfo;
+				ActorInfo->Actor = Actor;
 
 				OutConsiderList.push_back(ActorInfo);
-
-				if (CallPreReplication && Actor && NetDriver)
-					CallPreReplication(Actor, NetDriver);
+				CallPreReplication(Actor, NetDriver);
 			}
-		}
-
-		for (auto Actor : ActorsToRemove)
-		{
-			//TODO
 		}
 	}
 
@@ -176,6 +149,17 @@ namespace Replication
 		}
 
 		return false;
+	}
+
+	UNetConnection* GetOwningConnection(AActor* Actor)
+	{
+		for (auto Owner = Actor; Actor; Actor = Actor->GetOwner())
+		{
+			if (Actor->IsA(APlayerController::StaticClass()))
+			{
+				return ((APlayerController*)Actor)->NetConnection;
+			}
+		}
 	}
 
 	int32_t ServerReplicateActors_PrioritizeActors(UNetDriver* NetDriver, UNetConnection* Connection, std::vector<::FNetViewer>& ConnectionViewers, std::vector<FNetworkObjectInfo*> ConsiderList, bool bCPUSaturated, std::vector<FActorPriority*>& OutPriorityList)
@@ -204,7 +188,19 @@ namespace Replication
 
 				if (Actor->bOnlyRelevantToOwner)
 				{
-					//TODO
+					bool bHasNullViewTarget = false;
+
+					PriorityConnection = GetOwningConnection(Actor);
+
+					if (PriorityConnection == nullptr)
+					{
+						if (!bHasNullViewTarget && Channel != NULL && NetDriver->Time - Channel->RelevantTime >= NetDriver->RelevantTimeout)
+						{
+							ActorChannelClose(Channel, 0, 0, 0);
+						}
+
+						continue;
+					}
 				}
 
 				if (!Channel)
@@ -231,7 +227,7 @@ namespace Replication
 			}
 		}
 
-		LOG("ServerReplicateActors_PrioritizeActors: Potential " << MaxSortedActors << " ConsiderList " << ConsiderList.size() << " FinalSortedCount " << FinalSortedCount);
+		//LOG("ServerReplicateActors_PrioritizeActors: Potential " << MaxSortedActors << " ConsiderList " << ConsiderList.size() << " FinalSortedCount " << FinalSortedCount);
 
 		return FinalSortedCount;
 	}
@@ -245,7 +241,7 @@ namespace Replication
 		for (int32 j = 0; j < FinalSortedCount; j++)
 		{
 			UActorChannel* Channel = PriorityActors[j]->Channel;
-			LOG(" Maybe Replicate " << PriorityActors[j]->ActorInfo->Actor->GetName());
+			//LOG(" Maybe Replicate " << PriorityActors[j]->ActorInfo->Actor->GetName());
 			if (!Channel || Channel->Actor) //make sure didn't just close this channel
 			{
 				AActor* Actor = PriorityActors[j]->ActorInfo->Actor;
@@ -275,7 +271,7 @@ namespace Replication
 
 						if (Actor->NetUpdateFrequency < 1.0f)
 						{
-							LOG("Unable to replicate " << Actor->GetName());
+							//LOG("Unable to replicate " << Actor->GetName());
 							PriorityActors[j]->ActorInfo->NextUpdateTime = Globals::GPS->STATIC_GetTimeSeconds(Globals::World) + 0.2f * FRand();
 						}
 					}
@@ -286,7 +282,7 @@ namespace Replication
 						{
 							Channel->RelevantTime = NetDriver->Time + 0.5f * Globals::MathLib->STATIC_RandomFloat();
 
-							LOG("- Replicate " << Actor->GetName() << ". " << PriorityActors[j]->Priority);
+							//LOG("- Replicate " << Actor->GetName() << ". " << PriorityActors[j]->Priority);
 
 							if (ReplicateActor(Channel))
 							{
@@ -313,7 +309,7 @@ namespace Replication
 					// Fixme: this should be a setting
 					if (!Actor->bNetStartup)
 					{
-						LOG("- Closing channel for no longer relevant actor " << Actor->GetName());
+						//LOG("- Closing channel for no longer relevant actor " << Actor->GetName());
 						ActorChannelClose(Channel, 0, 0, 0);
 					}
 				}
@@ -415,15 +411,15 @@ namespace Replication
 
 					UActorChannel* Channel = PriorityActors[k]->Channel;
 
-					LOG("Saturated. " << Actor->GetName());
+					//LOG("Saturated. " << Actor->GetName());
 					if (Channel != NULL && NetDriver->Time - Channel->RelevantTime <= 1.f)
 					{
-						LOG(" Saturated. Mark " << Actor->GetName() << " NetUpdateTime to be checked for next tick")
+						//LOG(" Saturated. Mark " << Actor->GetName() << " NetUpdateTime to be checked for next tick")
 						PriorityActors[k]->ActorInfo->bPendingNetUpdate = true;
 					}
 					else if (IsActorRelevantToConnection(Actor, ConnectionViewers))
 					{
-						LOG(" Saturated. Mark " << Actor->GetName() << " NetUpdateTime to be checked for next tick")
+						//LOG(" Saturated. Mark " << Actor->GetName() << " NetUpdateTime to be checked for next tick")
 						PriorityActors[k]->ActorInfo->bPendingNetUpdate = true;
 						if (Channel != NULL)
 						{
@@ -451,53 +447,6 @@ namespace Replication
 		return Updated;
 	}
 
-	//We hook these for our own NetworkObjectList
-	void (*AddNetworkActor)(UWorld*, AActor*);
-	void (*RemoveNetworkActor)(UWorld*, AActor*);
-
-	void AddNetworkActorHook(UWorld* World, AActor* Actor)
-	{
-		if (Actor)
-		{
-			FNetworkObjectInfo* ActorInfo = new FNetworkObjectInfo;
-			ActorInfo->Actor = Actor;
-			ActorInfo->bPendingNetUpdate = true;
-
-			NetworkObjectList.push_back(ActorInfo);
-		}
-
-		return AddNetworkActor(World, Actor);
-	}
-
-	void RemoveNetworkActorHook(UWorld* World, AActor* Actor)
-	{
-		if (Actor)
-		{
-			for (auto ActorInfo : NetworkObjectList)
-			{
-				if (ActorInfo->Actor == Actor)
-				{
-
-				}
-			}
-		}
-
-		return RemoveNetworkActor(World, Actor);
-	}
-
-	FNetworkObjectInfo* GetNetworkObjectInfoForActor(AActor* Actor)
-	{
-		for (auto ActorInfo : NetworkObjectList)
-		{
-			if (ActorInfo->Actor == Actor)
-			{
-				return ActorInfo;
-			}
-		}
-
-		return nullptr;
-	}
-
 	void InitOffsets()
 	{
 		auto BaseAddress = (uintptr_t)GetModuleHandle(NULL);
@@ -509,10 +458,5 @@ namespace Replication
 		SendClientAdjustment = decltype(SendClientAdjustment)(BaseAddress + Offsets::SendClientAdjustment);
 		ActorChannelClose = decltype(ActorChannelClose)(BaseAddress + Offsets::ActorChannelClose);
 		IsNetRelevantFor = decltype(IsNetRelevantFor)(BaseAddress + Offsets::IsNetRelevantFor);
-
-		MH_CreateHook((LPVOID)(BaseAddress + Offsets::AddNetworkActor), AddNetworkActorHook, (LPVOID*)(&AddNetworkActor));
-		MH_EnableHook((LPVOID)(BaseAddress + Offsets::AddNetworkActor));
-		MH_CreateHook((LPVOID)(BaseAddress + Offsets::RemoveNetworkActor), RemoveNetworkActorHook, (LPVOID*)(&RemoveNetworkActor));
-		MH_EnableHook((LPVOID)(BaseAddress + Offsets::RemoveNetworkActor));
 	}
 }

@@ -763,23 +763,6 @@ namespace Hooks
 
 		/////////// RPCS ////////////
 
-		if (pFunction->GetFullName() == "Function Engine.Actor.ForceNetUpdate")
-		{
-			auto Actor = (AActor*)pObject;
-
-			if (Actor->NetDormancy > ENetDormancy::DORM_Awake)
-			{
-				Actor->FlushNetDormancy();
-			}
-
-			FNetworkObjectInfo* NetActor = Replication::GetNetworkObjectInfoForActor(Actor);
-
-			if (NetActor != nullptr)
-			{
-				NetActor->NextUpdateTime = Globals::MathLib->STATIC_Min(NetActor->NextUpdateTime, (double)(Globals::GPS->STATIC_GetTimeSeconds(Globals::World) - 0.01f));
-			}
-		}
-
 		return ProcessEvent(pObject, pFunction, pParams);
 	}
 
