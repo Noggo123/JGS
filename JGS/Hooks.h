@@ -44,7 +44,7 @@ namespace Hooks
 				{
 					auto FortPlayerController = (AFortPlayerControllerAthena*)(Connection->PlayerController);
 
-					if (FortPlayerController->IsInAircraft() && FortPlayerController->Pawn /*Check if the pawn is still on spawn island if its not than they are dead!*/)
+					if (FortPlayerController->IsInAircraft())
 					{
 						FortPlayerController->ServerAttemptAircraftJump({});
 					}
@@ -107,7 +107,10 @@ namespace Hooks
 
 			UGameplayAbility* InstancedAbility = nullptr;
 
-			InternalTryActivateAbilityLong(AbilitySystemComp, AbilityToActivate, PredictionKey, &InstancedAbility, nullptr, nullptr);
+			if (!InternalTryActivateAbilityLong(AbilitySystemComp, AbilityToActivate, PredictionKey, &InstancedAbility, nullptr, nullptr))
+			{
+
+			}
 
 			return NULL;
 		}
@@ -138,7 +141,6 @@ namespace Hooks
 			auto CurrentParams = (AFortDecoTool_ServerSpawnDeco_Params*)pParams;
 			auto Owner = (APlayerPawn_Athena_C*)FortDeco->GetOwner();
 			auto PC = (AFortPlayerControllerAthena*)Owner->Controller;
-
 
 			auto Trap = (UFortTrapItemDefinition*)FortDeco->ItemDefinition;
 			auto Deco = (ABuildingTrap*)Util::SpawnActor(Trap->GetBlueprintClass(), CurrentParams->Location, CurrentParams->Rotation);
@@ -184,8 +186,8 @@ namespace Hooks
 				auto PC = (AFortPlayerController*)Pawn->Controller;
 				if (PC)
 				{
-					auto WorldInventory = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory;
-					auto QuickBars = reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars;
+					auto WorldInventory = PC->WorldInventory;
+					auto QuickBars = PC->QuickBars;
 					if (WorldInventory)
 					{
 						auto PickupEntry = Params->Pickup->PrimaryPickupItemEntry;
@@ -281,8 +283,8 @@ namespace Hooks
 
 			if (PC)
 			{
-				auto WorldInventory = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory;
-				auto QuickBars = reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars;
+				auto WorldInventory = PC->WorldInventory;
+				auto QuickBars = PC->QuickBars;
 				if (WorldInventory)
 				{
 					auto ItemInstances = WorldInventory->Inventory.ItemInstances;
@@ -420,239 +422,235 @@ namespace Hooks
 
 			auto ReceivingActor = CurrentParams->ReceivingActor;
 
-			if (ReceivingActor && ReceivingActor->Class->GetName().contains("Tiered_Short_Ammo"))
+			if (ReceivingActor && ReceivingActor->IsA(ABuildingContainer::StaticClass()))
 			{
-				auto AmmoBox = (ABuildingContainer*)ReceivingActor;
-				AmmoBox->bAlreadySearched = true;
-				AmmoBox->bDestroyContainerOnSearch = true;
-				AmmoBox->OnSetSearched();
-				AmmoBox->OnLoot();
-				AmmoBox->OnRep_bAlreadySearched();
+				if (((ABuildingContainer*)ReceivingActor)->bAlreadySearched)
+					return ProcessEvent(pObject, pFunction, pParams);
 
-				auto Location = ReceivingActor->K2_GetActorLocation();
-
-				auto NewFortPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
-				auto NewFortPickup1 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
-				auto NewFortPickup2 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
-
-				auto AmmoDef = (UFortAmmoItemDefinition*)Globals::Ammo[rand() % Globals::Ammo.size()];
-				auto AmmoDef1 = (UFortAmmoItemDefinition*)Globals::Ammo[rand() % Globals::Ammo.size()];
-				auto AmmoDef2 = (UFortAmmoItemDefinition*)Globals::Ammo[rand() % Globals::Ammo.size()];
-				
-				NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = AmmoDef;
-				NewFortPickup1->PrimaryPickupItemEntry.ItemDefinition = AmmoDef1;
-				NewFortPickup2->PrimaryPickupItemEntry.ItemDefinition = AmmoDef2;
-
-				NewFortPickup->PrimaryPickupItemEntry.Count = AmmoDef->DropCount * 3;
-				NewFortPickup1->PrimaryPickupItemEntry.Count = AmmoDef1->DropCount * 3;
-				NewFortPickup2->PrimaryPickupItemEntry.Count = AmmoDef2->DropCount * 3;
-
-				NewFortPickup->OnRep_PrimaryPickupItemEntry();
-				NewFortPickup1->OnRep_PrimaryPickupItemEntry();
-				NewFortPickup2->OnRep_PrimaryPickupItemEntry();
-
-				NewFortPickup->TossPickup(Location, nullptr, 1);
-				NewFortPickup1->TossPickup(Location, nullptr, 1);
-				NewFortPickup2->TossPickup(Location, nullptr, 1);
-
-				ReceivingActor->K2_DestroyActor();
-			}
-
-			if (ReceivingActor && ReceivingActor->Class->GetName().contains("Tiered_Chest"))
-			{
-				auto Chest = (ABuildingContainer*)ReceivingActor;
-				Chest->bAlreadySearched = true;
-				Chest->bDestroyContainerOnSearch = true;
-				Chest->OnSetSearched();
-				Chest->OnLoot();
-				Chest->OnRep_bAlreadySearched();
-
-				auto Location = ReceivingActor->K2_GetActorLocation();
-
-				auto NewFortPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
-
-				NewFortPickup->PrimaryPickupItemEntry.Count = 1;
-
-				bool bEpicOrLeg = Globals::MathLib->STATIC_RandomBoolWithWeight(0.1);
-
-				int Index = 0;
-
-				if (bEpicOrLeg)
+				if (ReceivingActor && ReceivingActor->Class->GetName().contains("Tiered_Short_Ammo"))
 				{
-					Index = Globals::MathLib->STATIC_RandomIntegerInRange(2, 4);
-				}
-				else {
-					Index = Globals::MathLib->STATIC_RandomIntegerInRange(0, 2);
+					auto AmmoBox = (ABuildingContainer*)ReceivingActor;
+					AmmoBox->bAlreadySearched = true;
+					AmmoBox->OnRep_bAlreadySearched();
+
+					auto Location = ReceivingActor->K2_GetActorLocation();
+
+					auto NewFortPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
+					auto NewFortPickup1 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
+					auto NewFortPickup2 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
+
+					auto AmmoDef = (UFortAmmoItemDefinition*)Globals::Ammo[rand() % Globals::Ammo.size()];
+					auto AmmoDef1 = (UFortAmmoItemDefinition*)Globals::Ammo[rand() % Globals::Ammo.size()];
+					auto AmmoDef2 = (UFortAmmoItemDefinition*)Globals::Ammo[rand() % Globals::Ammo.size()];
+
+					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = AmmoDef;
+					NewFortPickup1->PrimaryPickupItemEntry.ItemDefinition = AmmoDef1;
+					NewFortPickup2->PrimaryPickupItemEntry.ItemDefinition = AmmoDef2;
+
+					NewFortPickup->PrimaryPickupItemEntry.Count = AmmoDef->DropCount * 3;
+					NewFortPickup1->PrimaryPickupItemEntry.Count = AmmoDef1->DropCount * 3;
+					NewFortPickup2->PrimaryPickupItemEntry.Count = AmmoDef2->DropCount * 3;
+
+					NewFortPickup->OnRep_PrimaryPickupItemEntry();
+					NewFortPickup1->OnRep_PrimaryPickupItemEntry();
+					NewFortPickup2->OnRep_PrimaryPickupItemEntry();
+
+					NewFortPickup->TossPickup(Location, nullptr, 1);
+					NewFortPickup1->TossPickup(Location, nullptr, 1);
+					NewFortPickup2->TossPickup(Location, nullptr, 1);
 				}
 
-				auto WeaponRarity = std::string(Globals::WeaponArrays.at(Index).c_str());
-
-				if (WeaponRarity == "Common")
+				if (ReceivingActor && ReceivingActor->Class->GetName().contains("Tiered_Chest"))
 				{
-					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::CommonWeapons[rand() % Globals::CommonWeapons.size()];
+					auto Chest = (ABuildingContainer*)ReceivingActor;
+					Chest->bAlreadySearched = true;
+					Chest->OnRep_bAlreadySearched();
+
+					auto Location = ReceivingActor->K2_GetActorLocation();
+
+					auto NewFortPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
+
+					NewFortPickup->PrimaryPickupItemEntry.Count = 1;
+
+					bool bEpicOrLeg = Globals::MathLib->STATIC_RandomBoolWithWeight(0.1);
+
+					int Index = 0;
+
+					if (bEpicOrLeg)
+					{
+						Index = Globals::MathLib->STATIC_RandomIntegerInRange(2, 4);
+					}
+					else {
+						Index = Globals::MathLib->STATIC_RandomIntegerInRange(0, 2);
+					}
+
+					auto WeaponRarity = std::string(Globals::WeaponArrays.at(Index).c_str());
+
+					if (WeaponRarity == "Common")
+					{
+						NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::CommonWeapons[rand() % Globals::CommonWeapons.size()];
+					}
+
+					if (WeaponRarity == "UnCommon")
+					{
+						NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::UnCommonWeapons[rand() % Globals::UnCommonWeapons.size()];
+					}
+
+					if (WeaponRarity == "Rare")
+					{
+						NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::RareWeapons[rand() % Globals::RareWeapons.size()];
+					}
+
+					if (WeaponRarity == "Epic")
+					{
+						NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::EpicWeapons[rand() % Globals::EpicWeapons.size()];
+					}
+
+					if (WeaponRarity == "Legendary")
+					{
+						NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::LegendaryWeapons[rand() % Globals::LegendaryWeapons.size()];
+					}
+
+					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)
+					{
+						if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Assault_Auto_"))
+						{
+							NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 30;
+						}
+
+						if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Assault_SemiAuto_"))
+						{
+							NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 30;
+						}
+
+						if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Assault_AutoHigh_"))
+						{
+							NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 30;
+						}
+
+						if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Assault_Surgical_"))
+						{
+							NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 20;
+						}
+
+						if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Shotgun_Standard_"))
+						{
+							NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 5;
+						}
+
+						if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Shotgun_SemiAuto_"))
+						{
+							NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 8;
+						}
+
+						if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Launcher_Grenade_"))
+						{
+							NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 6;
+						}
+
+						if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Launcher_Rocket_"))
+						{
+							NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 1;
+						}
+
+						if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Sniper_AMR_"))
+						{
+							NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 4;
+						}
+
+						if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Sniper_BoltAction_Scope_"))
+						{
+							NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 1;
+						}
+
+						if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Sniper_Standard_Scope_"))
+						{
+							NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 10;
+						}
+
+						if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Pistol_SixShooter_"))
+						{
+							NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 6;
+						}
+
+						if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Pistol_SemiAuto_"))
+						{
+							NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 16;
+						}
+
+						if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Pistol_Scavenger_"))
+						{
+							NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 30;
+						}
+
+						if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Pistol_AutoHeavy_"))
+						{
+							NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 25;
+						}
+					}
+
+					NewFortPickup->OnRep_PrimaryPickupItemEntry();
+					NewFortPickup->TossPickup(Location, nullptr, 1);
+
+					if (NewFortPickup && NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)
+					{
+						auto AmmoDefintion = ((UFortWorldItemDefinition*)NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)->GetAmmoWorldItemDefinition_BP();
+						auto AmmoPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), NewFortPickup->K2_GetActorLocation(), {}));
+						AmmoPickup->PrimaryPickupItemEntry.Count = AmmoDefintion->DropCount * 1.25;
+						AmmoPickup->PrimaryPickupItemEntry.ItemDefinition = AmmoDefintion;
+						AmmoPickup->OnRep_PrimaryPickupItemEntry();
+						AmmoPickup->TossPickup(Location, nullptr, 999);
+					}
+
+					auto NewFortPickup1 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
+
+					NewFortPickup1->PrimaryPickupItemEntry.Count = 1;
+					NewFortPickup1->PrimaryPickupItemEntry.ItemDefinition = Globals::Consumables[rand() % Globals::Consumables.size()];
+					NewFortPickup1->OnRep_PrimaryPickupItemEntry();
+					NewFortPickup1->TossPickup(Location, nullptr, 1);
 				}
 
-				if (WeaponRarity == "UnCommon")
+				if (ReceivingActor && ReceivingActor->Class->GetName().contains("AthenaSupplyDrop_02"))
 				{
-					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::UnCommonWeapons[rand() % Globals::UnCommonWeapons.size()];
-				}
+					auto SupplyDrop = (ABuildingContainer*)ReceivingActor;
 
-				if (WeaponRarity == "Rare")
-				{
-					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::RareWeapons[rand() % Globals::RareWeapons.size()];
-				}
+					auto Location = ReceivingActor->K2_GetActorLocation();
 
-				if (WeaponRarity == "Epic")
-				{
-					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::EpicWeapons[rand() % Globals::EpicWeapons.size()];
-				}
+					auto NewFortPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
 
-				if (WeaponRarity == "Legendary")
-				{
-					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = Globals::LegendaryWeapons[rand() % Globals::LegendaryWeapons.size()];
-				}
+					NewFortPickup->PrimaryPickupItemEntry.Count = 1;
+					auto ItemDefinition = Globals::SupplyDrop[rand() % Globals::SupplyDrop.size()];
+					NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = ItemDefinition;
+					NewFortPickup->OnRep_PrimaryPickupItemEntry();
+					NewFortPickup->TossPickup(Location, nullptr, 1);
 
-				if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)
-				{
-					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Assault_Auto_"))
-					{
-						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 30;
-					}
-
-					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Assault_SemiAuto_"))
-					{
-						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 30;
-					}
-
-					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Assault_AutoHigh_"))
-					{
-						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 30;
-					}
-
-					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Assault_Surgical_"))
-					{
-						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 20;
-					}
-
-					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Shotgun_Standard_"))
-					{
-						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 5;
-					}
-
-					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Shotgun_SemiAuto_"))
-					{
-						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 8;
-					}
-
-					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Launcher_Grenade_"))
-					{
-						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 6;
-					}
-
-					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Launcher_Rocket_"))
-					{
-						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 1;
-					}
-
-					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Sniper_AMR_"))
-					{
-						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 4;
-					}
-
-					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Sniper_BoltAction_Scope_"))
-					{
-						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 1;
-					}
-
-					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Sniper_Standard_Scope_"))
-					{
-						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 10;
-					}
-
-					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Pistol_SixShooter_"))
-					{
-						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 6;
-					}
-
-					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Pistol_SemiAuto_"))
-					{
-						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 16;
-					}
-
-					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Pistol_Scavenger_"))
-					{
-						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 30;
-					}
-
-					if (NewFortPickup->PrimaryPickupItemEntry.ItemDefinition->GetFullName().contains("WID_Pistol_AutoHeavy_"))
-					{
-						NewFortPickup->PrimaryPickupItemEntry.LoadedAmmo = 25;
-					}
-				}
-
-				NewFortPickup->OnRep_PrimaryPickupItemEntry();
-				NewFortPickup->TossPickup(Location, nullptr, 1);
-
-				if (NewFortPickup && NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)
-				{
 					auto AmmoDefintion = ((UFortWorldItemDefinition*)NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)->GetAmmoWorldItemDefinition_BP();
 					auto AmmoPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), NewFortPickup->K2_GetActorLocation(), {}));
-					AmmoPickup->PrimaryPickupItemEntry.Count = AmmoDefintion->DropCount * 1.25;
-					AmmoPickup->PrimaryPickupItemEntry.ItemDefinition = AmmoDefintion;
+					AmmoPickup->PrimaryPickupItemEntry.Count = 30;
 					AmmoPickup->OnRep_PrimaryPickupItemEntry();
 					AmmoPickup->TossPickup(Location, nullptr, 999);
+
+					auto NewFortPickup1 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
+
+					NewFortPickup1->PrimaryPickupItemEntry.Count = 1;
+					NewFortPickup1->PrimaryPickupItemEntry.ItemDefinition = Globals::Consumables[rand() % Globals::Consumables.size()];
+					NewFortPickup1->OnRep_PrimaryPickupItemEntry();
+					NewFortPickup1->TossPickup(Location, nullptr, 1);
+
+					auto NewFortPickup2 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
+
+					NewFortPickup2->PrimaryPickupItemEntry.Count = 1;
+					NewFortPickup2->PrimaryPickupItemEntry.ItemDefinition = Globals::Consumables[rand() % Globals::Consumables.size()];
+					NewFortPickup2->OnRep_PrimaryPickupItemEntry();
+					NewFortPickup2->TossPickup(Location, nullptr, 1);
+
+					auto NewFortPickup3 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
+
+					NewFortPickup3->PrimaryPickupItemEntry.Count = 1;
+					NewFortPickup3->PrimaryPickupItemEntry.ItemDefinition = Globals::Traps[rand() % Globals::Traps.size()];
+					NewFortPickup3->OnRep_PrimaryPickupItemEntry();
+					NewFortPickup3->TossPickup(Location, nullptr, 1);
 				}
-
-				auto NewFortPickup1 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
-
-				NewFortPickup1->PrimaryPickupItemEntry.Count = 1;
-				NewFortPickup1->PrimaryPickupItemEntry.ItemDefinition = Globals::Consumables[rand() % Globals::Consumables.size()];
-				NewFortPickup1->OnRep_PrimaryPickupItemEntry();
-				NewFortPickup1->TossPickup(Location, nullptr, 1);
-
-				ReceivingActor->K2_DestroyActor();
-			}
-
-			if (ReceivingActor && ReceivingActor->Class->GetName().contains("AthenaSupplyDrop_02"))
-			{
-				auto SupplyDrop = (ABuildingContainer*)ReceivingActor;
-
-				auto Location = ReceivingActor->K2_GetActorLocation();
-
-				auto NewFortPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
-
-				NewFortPickup->PrimaryPickupItemEntry.Count = 1;
-				auto ItemDefinition = Globals::SupplyDrop[rand() % Globals::SupplyDrop.size()];
-				NewFortPickup->PrimaryPickupItemEntry.ItemDefinition = ItemDefinition;
-				NewFortPickup->OnRep_PrimaryPickupItemEntry();
-				NewFortPickup->TossPickup(Location, nullptr, 1);
-
-				auto AmmoDefintion = ((UFortWorldItemDefinition*)NewFortPickup->PrimaryPickupItemEntry.ItemDefinition)->GetAmmoWorldItemDefinition_BP();
-				auto AmmoPickup = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), NewFortPickup->K2_GetActorLocation(), {}));
-				AmmoPickup->PrimaryPickupItemEntry.Count = 30;
-				AmmoPickup->OnRep_PrimaryPickupItemEntry();
-				AmmoPickup->TossPickup(Location, nullptr, 999);
-
-				auto NewFortPickup1 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
-
-				NewFortPickup1->PrimaryPickupItemEntry.Count = 1;
-				NewFortPickup1->PrimaryPickupItemEntry.ItemDefinition = Globals::Consumables[rand() % Globals::Consumables.size()];
-				NewFortPickup1->OnRep_PrimaryPickupItemEntry();
-				NewFortPickup1->TossPickup(Location, nullptr, 1);
-
-				auto NewFortPickup2 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
-
-				NewFortPickup2->PrimaryPickupItemEntry.Count = 1;
-				NewFortPickup2->PrimaryPickupItemEntry.ItemDefinition = Globals::Consumables[rand() % Globals::Consumables.size()];
-				NewFortPickup2->OnRep_PrimaryPickupItemEntry();
-				NewFortPickup2->TossPickup(Location, nullptr, 1);
-
-				auto NewFortPickup3 = reinterpret_cast<AFortPickupAthena*>(Util::SpawnActor(AFortPickupAthena::StaticClass(), Location, FRotator()));
-
-				NewFortPickup3->PrimaryPickupItemEntry.Count = 1;
-				NewFortPickup3->PrimaryPickupItemEntry.ItemDefinition = Globals::Traps[rand() % Globals::Traps.size()];
-				NewFortPickup3->OnRep_PrimaryPickupItemEntry();
-				NewFortPickup3->TossPickup(Location, nullptr, 1);
 			}
 		}
 
@@ -668,7 +666,7 @@ namespace Hooks
 			auto PC = (AFortPlayerControllerAthena*)pObject;
 			auto Pawn = PC->Pawn;
 
-			if (PC && reinterpret_cast<InventoryPointer*>(PC)->WorldInventory != nullptr)
+			if (PC && PC->WorldInventory != nullptr)
 			{
 				auto Inv = FindInventory(PC);
 				if (Inv)
@@ -716,7 +714,7 @@ namespace Hooks
 					 
 				int Count = 0;
 
-				auto WorldInventory = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory;
+				auto WorldInventory = PC->WorldInventory;
 
 				for (int i = 0; i < WorldInventory->Inventory.ItemInstances.Num(); i++)
 				{

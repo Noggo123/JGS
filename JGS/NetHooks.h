@@ -7,6 +7,7 @@ namespace Beacons
 {
 	bool bSetupCharPartArray = false;
 	bool bSetupFloorLoot = false;
+	bool bMadeEverythingSearched = false;
 
 	bool (*InitHost)(AOnlineBeaconHost*);
 	APlayerController* (*SpawnPlayActor)(UWorld* a1, UPlayer* a2, ENetRole a3, FURL a4, void* a5, FString& Src, uint8_t a7);
@@ -32,6 +33,12 @@ namespace Beacons
 		{
 			GPFuncs::SpawnFloorLoot();
 			bSetupFloorLoot = true;
+		}
+
+		if (!bMadeEverythingSearched)
+		{
+			//GPFuncs::MakeEverythingSearched();
+			bMadeEverythingSearched = true;
 		}
 
 		auto PlayerController = (AFortPlayerControllerAthena*)SpawnPlayActor(Globals::World, Connection, NetRole, a4, a5, Src, a7);

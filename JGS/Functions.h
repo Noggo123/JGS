@@ -171,6 +171,22 @@ namespace GPFuncs
 		return OutActors[rand() % OutActors.Num()]->K2_GetActorLocation();
 	}
 
+	static void MakeEverythingSearched()
+	{
+		TArray<AActor*> OutActors;
+		Globals::GPS->STATIC_GetAllActorsOfClass(Globals::World, ABuildingContainer::StaticClass(), &OutActors);
+
+		for (int32_t i = 0; i < OutActors.Num(); i++)
+		{
+			auto Actor = (ABuildingContainer*)OutActors[i];
+
+			if (Actor->GetFullName().contains("Tiered_Chest") || Actor->GetFullName().contains("Tiered_Short_Ammo")) continue;
+
+			Actor->bAlreadySearched = true;
+			Actor->OnRep_bAlreadySearched();
+		}
+	}
+
 	void SpawnPlayer(AFortPlayerControllerAthena* PlayerController)
 	{
 		auto Pawn = (APlayerPawn_Athena_C*)(Util::SpawnActor(APlayerPawn_Athena_C::StaticClass(), GPFuncs::GetPlayerStart(), {}));

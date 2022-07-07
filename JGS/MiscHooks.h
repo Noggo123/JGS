@@ -15,8 +15,8 @@ namespace Misc
 
 			auto Pawn = (APawn*)Weapon->Owner;
 			auto Controller = (AFortPlayerController*)Pawn->Controller;
-			auto WorldInventory = reinterpret_cast<InventoryPointer*>(Controller)->WorldInventory;
-			auto QuickBars = reinterpret_cast<QuickBarsPointer*>(Controller)->QuickBars;
+			auto WorldInventory = Controller->WorldInventory;
+			auto QuickBars = Controller->QuickBars;
 
 			for (int i = 0; i < WorldInventory->Inventory.ItemInstances.Num(); i++)
 			{
@@ -88,7 +88,7 @@ namespace Misc
 
 			if (ResourceDef)
 			{
-				auto WorldInventory = reinterpret_cast<InventoryPointer*>(Controller)->WorldInventory;
+				auto WorldInventory = Controller->WorldInventory;
 
 				for (int i = 0; i < WorldInventory->Inventory.ItemInstances.Num(); i++)
 				{

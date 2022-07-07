@@ -557,6 +557,7 @@ public:
 	}
 
 	FAssetPtr AssetPtr;
+	int Pad;
 };
 
 struct FUniqueObjectGuid_

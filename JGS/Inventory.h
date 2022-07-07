@@ -2,37 +2,6 @@
 
 #include <map>
 
-struct QuickBarsPointer
-{
-    unsigned char pad[0x1C48];
-    AFortQuickBars* QuickBars;
-};
-
-struct InventoryPointer
-{
-    unsigned char pad[0x1E78];
-    AFortInventory* WorldInventory;
-};
-
-struct BuildPreviewPointer
-{
-    unsigned char pad[0x1948];
-    ABuildingPlayerPrimitivePreview* BuildPreviewMarker;
-};
-
-struct CurrentBuildableClassPointer
-{
-    unsigned char pad[0x1B00];
-    UClass* CurrentBuildableClass;
-};
-
-struct AFortAsBuildPreviewMID
-{
-public:
-    unsigned char UnknownData00[0x1AE8];
-    class UMaterialInstanceDynamic* BuildPreviewMarkerMID;
-};
-
 class Inventory
 {
 public:
@@ -47,8 +16,8 @@ public:
 
     void AddDefaultQuickBarItems()
     {
-        auto QuickBars = reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars;
-        auto FortInventory = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory;
+        auto QuickBars = PC->QuickBars;
+        auto FortInventory = PC->WorldInventory;
 
         static auto PickaxeDef = FindObjectFast<UFortWeaponItemDefinition>("/Game/Athena/Items/Weapons/WID_Harvest_Pickaxe_Athena_C_T01.WID_Harvest_Pickaxe_Athena_C_T01");
         static auto EditToolDef = FindObjectFast<UFortEditToolItemDefinition>("/Game/Items/Weapons/BuildingTools/EditTool.EditTool");
@@ -101,11 +70,11 @@ public:
 
         auto NewQuickBars = (AFortQuickBars*)Util::SpawnActor(AFortQuickBars::StaticClass(), {}, {});
         NewQuickBars->SetOwner(PC);
-        reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars = NewQuickBars;
+        PC->QuickBars = NewQuickBars;
         PC->OnRep_QuickBar();
 
-        auto FortInventory = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory;
-        auto QuickBars = reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars;
+        auto FortInventory = PC->WorldInventory;
+        auto QuickBars = PC->QuickBars;
         
         QuickBars->EnableSlot(EFortQuickBars::Primary, 0);
         QuickBars->EnableSlot(EFortQuickBars::Primary, 1);
@@ -143,23 +112,23 @@ public:
 	{
         PC->HandleWorldInventoryLocalUpdate();
 
-        reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->HandleInventoryLocalUpdate();
-        reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->bRequiresLocalUpdate = true;
-        reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars->OnRep_PrimaryQuickBar();
-        reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars->OnRep_SecondaryQuickBar();
-        reinterpret_cast<QuickBarsPointer*>(PC)->QuickBars->ForceNetUpdate();
-        reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->ForceNetUpdate();
+        PC->WorldInventory->HandleInventoryLocalUpdate();
+        PC->WorldInventory->bRequiresLocalUpdate = true;
+        PC->QuickBars->OnRep_PrimaryQuickBar();
+        PC->QuickBars->OnRep_SecondaryQuickBar();
+        PC->QuickBars->ForceNetUpdate();
+        PC->WorldInventory->ForceNetUpdate();
 
-        reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.MarkArrayDirty();
+        PC->WorldInventory->Inventory.MarkArrayDirty();
 	}
 
     void SpawnAllLootInInventory()
     {
         if (PC) {
-            for (int i = 0; i < reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ItemInstances.Num(); i++)
+            for (int i = 0; i < PC->WorldInventory->Inventory.ItemInstances.Num(); i++)
             {
-                auto ItemInstance = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ItemInstances[i];
-                reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ItemInstances.Remove(i);
+                auto ItemInstance = PC->WorldInventory->Inventory.ItemInstances[i];
+                PC->WorldInventory->Inventory.ItemInstances.Remove(i);
 
                 if (ItemInstance->GetItemDefinitionBP()->GetFullName().contains("FortBuildingItemDefinition"))
                     continue;
@@ -179,9 +148,9 @@ public:
                 }
             }
 
-            for (int i = 0; i < reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
+            for (int i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
             {
-                reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ReplicatedEntries.Remove(i);
+                PC->WorldInventory->Inventory.ReplicatedEntries.Remove(i);
             }
         }
     }
@@ -190,9 +159,9 @@ public:
     {
         if (PC)
         {
-            if (reinterpret_cast<InventoryPointer*>(PC)->WorldInventory)
+            if (PC->WorldInventory)
             {
-                auto ItemInstances = reinterpret_cast<InventoryPointer*>(PC)->WorldInventory->Inventory.ItemInstances;
+                auto ItemInstances = PC->WorldInventory->Inventory.ItemInstances;
 
                 for (int i = 0; i < ItemInstances.Num(); i++)
                 {
