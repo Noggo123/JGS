@@ -109,7 +109,7 @@ namespace Hooks
 
 			if (!InternalTryActivateAbilityLong(AbilitySystemComp, AbilityToActivate, PredictionKey, &InstancedAbility, nullptr, nullptr))
 			{
-
+				AbilitySystemComp->ClientActivateAbilityFailed(AbilityToActivate, PredictionKey.Base);
 			}
 
 			return NULL;
@@ -375,9 +375,6 @@ namespace Hooks
 		{
 			auto PC = (AFortPlayerControllerAthena*)pObject;
 
-			if (PC->Pawn)
-				PC->Pawn->K2_DestroyActor(); //Destroy old pawn on spawn island
-
 			auto NewPawn = (APlayerPawn_Athena_C*)(Util::SpawnActor(APlayerPawn_Athena_C::StaticClass(), ((AFortGameStateAthena*)Globals::World->GameState)->GetAircraft()->K2_GetActorLocation(), {}));
 			if (NewPawn) {
 				PC->Possess(NewPawn);
@@ -390,6 +387,8 @@ namespace Hooks
 				HealthSet->Shield.BaseValue = 100;
 				HealthSet->OnRep_Shield();
 				HealthSet->OnRep_CurrentShield();
+
+				PC->SetControlRotation(((AFortPlayerControllerAthena_ServerAttemptAircraftJump_Params*)pParams)->ClientRotation);
 
 				FindInventory(PC)->UpdateInventory();
 			}

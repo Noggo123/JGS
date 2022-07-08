@@ -127,10 +127,23 @@ public:
 	{
 		FQuat Quat;
 		FTransform Transform;
-		Quat.W = 0;
-		Quat.X = Rotation.Pitch;
-		Quat.Y = Rotation.Roll;
-		Quat.Z = Rotation.Yaw;
+
+		auto DEG_TO_RAD = 3.14159 / 180;
+		auto DIVIDE_BY_2 = DEG_TO_RAD / 2;
+
+		auto SP = sin(Rotation.Pitch * DIVIDE_BY_2);
+		auto CP = cos(Rotation.Pitch * DIVIDE_BY_2);
+
+		auto SY = sin(Rotation.Yaw * DIVIDE_BY_2);
+		auto CY = cos(Rotation.Yaw * DIVIDE_BY_2);
+
+		auto SR = sin(Rotation.Roll * DIVIDE_BY_2);
+		auto CR = cos(Rotation.Roll * DIVIDE_BY_2);
+
+		Quat.X = CR * SP * SY - SR * CP * CY;
+		Quat.Y = -CR * SP * CY - SR * CP * SY;
+		Quat.Z = CR * CP * SY - SR * SP * CY;
+		Quat.W = CR * CP * CY + SR * SP * SY;
 
 		Transform.Rotation = Quat;
 		Transform.Scale3D = FVector{ 1,1,1 };
