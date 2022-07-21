@@ -114,44 +114,7 @@ namespace Hooks
 
 			return NULL;
 		}
-
-		if (FuncName.contains("ServerReadyToStartMatch"))
-		{
-			auto PC = (AFortPlayerController*)pObject;
-			PC->bReadyToStartMatch = true;
-		}
-
-		if (FuncName.contains("ServerClientPawnLoaded"))
-		{
-			auto PC = (AFortPlayerController*)pObject;
-			auto Params = (AFortPlayerController_ServerClientPawnLoaded_Params*)pParams;
-			PC->bClientPawnIsLoaded = Params->bIsPawnLoaded;
-		}
-
-		if (FuncName.contains("ServerSetClientHasFinishedLoading"))
-		{
-			auto PC = (AFortPlayerController*)pObject;
-			auto Params = (AFortPlayerController_ServerSetClientHasFinishedLoading_Params*)pParams;
-			PC->bHasClientFinishedLoading = Params->bInHasFinishedLoading;
-		}
-
-		if (FuncName.contains("ServerSpawnDeco"))
-		{
-			auto FortDeco = (AFortDecoTool*)pObject;
-			auto CurrentParams = (AFortDecoTool_ServerSpawnDeco_Params*)pParams;
-			auto Owner = (APlayerPawn_Athena_C*)FortDeco->GetOwner();
-			auto PC = (AFortPlayerControllerAthena*)Owner->Controller;
-
-			auto Trap = (UFortTrapItemDefinition*)FortDeco->ItemDefinition;
-			auto Deco = (ABuildingTrap*)Util::SpawnActor(Trap->GetBlueprintClass(), CurrentParams->Location, CurrentParams->Rotation);
-			Deco->AttachedTo = CurrentParams->AttachedActor;
-			Deco->OnRep_AttachedTo();
-			Deco->Team = ((AFortPlayerStateAthena*)Owner->PlayerState)->TeamIndex;
-			Deco->OnPlaced();
-			Deco->OnFinishedBuilding();
-			Deco->InitializeKismetSpawnedBuildingActor(Deco, PC);
-		}
-
+		
 		if (FuncName.contains("ServerExecuteInventoryItem"))
 		{
 			auto PC = (AFortPlayerControllerAthena*)pObject;
@@ -387,6 +350,11 @@ namespace Hooks
 				HealthSet->Shield.BaseValue = 100;
 				HealthSet->OnRep_Shield();
 				HealthSet->OnRep_CurrentShield();
+
+				NewPawn->HealthRegenDelayGameplayEffect = nullptr;
+				NewPawn->ShieldRegenDelayGameplayEffect = nullptr;
+				NewPawn->ShieldRegenGameplayEffect = nullptr;
+				NewPawn->HealthRegenGameplayEffect = nullptr;
 
 				PC->SetControlRotation(((AFortPlayerControllerAthena_ServerAttemptAircraftJump_Params*)pParams)->ClientRotation);
 
@@ -684,7 +652,7 @@ namespace Hooks
 			auto BuildingActor = (ABuildingSMActor*)pObject;
 			auto Params = (ABuildingActor_OnDamageServer_Params*)pParams;
 
-			if (Params->InstigatedBy && Params->InstigatedBy->IsA(AFortPlayerController::StaticClass()))
+			if (Params->InstigatedBy && Params->InstigatedBy->IsA(AFortPlayerController::StaticClass()) && !BuildingActor->bPlayerPlaced)
 			{
 				auto FortController = (AFortPlayerController*)Params->InstigatedBy;
 				
@@ -750,18 +718,68 @@ namespace Hooks
 
 		if (FuncName.contains("ServerCreateBuildingActor"))
 		{
-			auto PlayerController = (AFortPlayerController*)pObject;
-			auto Params = (AFortPlayerController_ServerCreateBuildingActor_Params*)pParams;
+			auto params = (AFortPlayerController_ServerCreateBuildingActor_Params*)(pParams);
+			auto BuildClass = params->BuildingClassData.BuildingClass;
+			auto Loc = params->BuildLoc;
+			auto Rot = params->BuildRot;
 
-			if (PlayerController)
+			auto BuildingActor = (ABuildingSMActor*)Util::SpawnActor(BuildClass, Loc, Rot);
+			if (BuildingActor)
 			{
-				auto Class = Params->BuildingClassData.BuildingClass;
-				auto Rot = Params->BuildRot;
-				auto Loc = Params->BuildLoc;
+				auto PC = (AFortPlayerController*)(pObject);
+				
+				BuildingActor->Team = ((AFortPlayerStateAthena*)((AFortPlayerController*)pObject)->PlayerState)->TeamIndex;
+				BuildingActor->bPlayerPlaced = true;
+				BuildingActor->ForceNetUpdate();
+				BuildingActor->InitializeKismetSpawnedBuildingActor(BuildingActor, PC);
 
-				auto BuildingActor = (ABuildingSMActor*)Util::SpawnActor(Class, Loc, Rot);
-				BuildingActor->Team = ((AFortPlayerStateAthena*)PlayerController->PlayerState)->TeamIndex;
-				BuildingActor->InitializeKismetSpawnedBuildingActor(BuildingActor, PlayerController);
+				UFortResourceItemDefinition* ResourceDef = FindObjectFast<UFortResourceItemDefinition>("/Game/Items/ResourcePickups/WoodItemData.WoodItemData");
+
+				if (BuildingActor->ResourceType == EFortResourceType::Wood)
+					ResourceDef = FindObjectFast<UFortResourceItemDefinition>("/Game/Items/ResourcePickups/WoodItemData.WoodItemData");
+
+				if (BuildingActor->ResourceType == EFortResourceType::Stone)
+					ResourceDef = FindObjectFast<UFortResourceItemDefinition>("/Game/Items/ResourcePickups/StoneItemData.StoneItemData");
+
+				if (BuildingActor->ResourceType == EFortResourceType::Metal)
+					ResourceDef = FindObjectFast<UFortResourceItemDefinition>("/Game/Items/ResourcePickups/MetalItemData.MetalItemData");
+
+				if (ResourceDef)
+				{
+					auto WorldInventory = PC->WorldInventory;
+
+					for (int i = 0; i < WorldInventory->Inventory.ItemInstances.Num(); i++)
+					{
+						auto ItemInstance = WorldInventory->Inventory.ItemInstances[i];
+
+						if (ItemInstance->GetItemDefinitionBP() == ResourceDef)
+						{
+							int newCount = ItemInstance->ItemEntry.Count - 10;
+
+							WorldInventory->Inventory.ItemInstances.Remove(i);
+
+							for (int j = 0; j < WorldInventory->Inventory.ReplicatedEntries.Num(); j++)
+							{
+								auto Entry = WorldInventory->Inventory.ReplicatedEntries[j];
+
+								if (Entry.ItemDefinition == ResourceDef)
+								{
+									WorldInventory->Inventory.ReplicatedEntries.Remove(j);
+								}
+							}
+
+							if (newCount != 0)
+							{
+								auto NewWorldItem = (UFortWorldItem*)(ResourceDef->CreateTemporaryItemInstanceBP(newCount, 1));
+
+								WorldInventory->Inventory.ReplicatedEntries.Add(NewWorldItem->ItemEntry);
+								WorldInventory->Inventory.ItemInstances.Add(NewWorldItem);
+							}
+						}
+					}
+
+					FindInventory(PC)->UpdateInventory();
+				}
 			}
 
 			return NULL;

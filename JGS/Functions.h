@@ -206,6 +206,11 @@ namespace GPFuncs
 		HealthSet->OnRep_Shield();
 		HealthSet->OnRep_CurrentShield();
 
+		Pawn->HealthRegenDelayGameplayEffect = nullptr;
+		Pawn->ShieldRegenDelayGameplayEffect = nullptr;
+		Pawn->ShieldRegenGameplayEffect = nullptr;
+		Pawn->HealthRegenGameplayEffect = nullptr;
+
 		PlayerController->ClientForceProfileQuery();
 
 		auto RandomParts = Globals::CharacterParts[rand() % Globals::CharacterParts.size()];
