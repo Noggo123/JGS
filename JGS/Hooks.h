@@ -378,6 +378,8 @@ namespace Hooks
 		{
 			auto PC = (AFortPlayerController*)pObject;
 			auto Pawn = (APlayerPawn_Athena_C*)PC->Pawn;
+			if (!Pawn)
+				return NULL;
 
 			GPFuncs::GrantGameplayAbilities(Pawn);
 		}
@@ -388,6 +390,8 @@ namespace Hooks
 			auto CurrentParams = (AFortPlayerController_ServerAttemptInteract_Params*)pParams;
 
 			auto ReceivingActor = CurrentParams->ReceivingActor;
+			if (!ReceivingActor)
+				return NULL;
 
 			if (ReceivingActor->IsA(ABuildingContainer::StaticClass()))
 			{
